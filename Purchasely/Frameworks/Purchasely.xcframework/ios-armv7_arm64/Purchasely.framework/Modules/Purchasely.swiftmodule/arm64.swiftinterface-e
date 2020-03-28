@@ -1,0 +1,275 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.1.3 (swiftlang-1100.0.282.1 clang-1100.0.33.15)
+// swift-module-flags: -target arm64-apple-ios10.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name Purchasely
+import Foundation
+@_exported import Purchasely
+import StoreKit
+import Swift
+import SwiftyJSON
+import UIKit
+import WebKit
+extension Array {
+  public subscript(safe index: Swift.Int) -> Element? {
+    get
+  }
+}
+public func loc(_ textToTranslate: Swift.String, comment: Swift.String = "") -> Swift.String
+extension NSNotification.Name {
+  public static let ply_purchasedSubscription: Foundation.Notification.Name
+}
+public enum PLYAlertMessage {
+  case inAppSuccess
+  case inAppDeferred
+  case inAppSuccessUnauthentified
+  case inAppRestorationSuccess
+  case inAppRestorationError(Swift.Error)
+  case inAppError(Swift.Error)
+  case unsubscribeAndroid
+  public var title: Swift.String {
+    get
+  }
+  public var content: Swift.String {
+    get
+  }
+  public var buttonTitle: Swift.String {
+    get
+  }
+}
+@objc public class PLYAppStoreReceipt : ObjectiveC.NSObject {
+  @objc override dynamic public init()
+  @objc deinit
+}
+public enum PLYEnvironment : Swift.String {
+  case prod
+  case staging
+  public typealias RawValue = Swift.String
+  public init?(rawValue: Swift.String)
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum PLYError : Swift.Error {
+  case application(message: Swift.String?, code: Swift.String?)
+  case parsing
+  case network(statusCode: Swift.Int?, error: Swift.Error?)
+  case productNotFound
+  case deferredPayment
+  case alreadyPremium
+  case absentReceipt
+  case validationFailed
+  case clientInvalid
+  case paymentCancelled
+  case paymentInvalid
+  case paymentNotAllowed
+  case storeProductNotAvailable
+  case cloudServicePermissionDenied
+  case cloudServiceNetworkConnectionFailed
+  case cloudServiceRevoked
+  case purchaseAlreadyRunning
+  case restorationAlreadyRunning
+  case noProductsToRestore
+  case restorationFailedWithErrors([Swift.Error])
+  case restorationPartial([Swift.String], [Swift.Error])
+  case receiptValidationTimedOut
+  case unknown
+}
+extension PLYError : Foundation.LocalizedError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
+public enum PLYEvent {
+  case appStarted
+  case productPageViewed
+  case loginTapped
+  case purchaseFromStoreTapped(StoreKit.SKPayment, StoreKit.SKProduct)
+  case purchaseTapped(StoreKit.SKProduct)
+  case inAppPurchasing(StoreKit.SKPaymentTransaction)
+  case inAppPurchased(StoreKit.SKPaymentTransaction)
+  case inAppRenewed(StoreKit.SKPaymentTransaction)
+  case receiptCreated
+  case receiptValidated
+  case restoreStarted
+  case inAppRestored(StoreKit.SKPaymentTransaction)
+  case restoreSucceeded
+  case restoreFailed(Swift.Error?)
+  case inAppDeferred(StoreKit.SKPaymentTransaction)
+  case inAppPurchaseFailed(Swift.Error?)
+  case linkOpened(Foundation.URL)
+  public var name: Swift.String {
+    get
+  }
+}
+public enum PluralType {
+  case none
+  case one
+  case many
+  public static func == (a: Purchasely.PluralType, b: Purchasely.PluralType) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+}
+public func PLYLocalizedPluralString(_ key: Swift.String, count: Swift.Int) -> Swift.String
+public func PLYLocalizedPluralString(_ key: Swift.String, pluralType: Purchasely.PluralType) -> Swift.String
+public class PLYLogger {
+  public enum LogLevel : Swift.Int {
+    case debug
+    case info
+    case warn
+    case error
+    public typealias RawValue = Swift.Int
+    public init?(rawValue: Swift.Int)
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  @objc deinit
+}
+@objc open class AZJsonModel : ObjectiveC.NSObject {
+  open var json: SwiftyJSON.JSON
+  @objc override dynamic public init()
+  required public init?(json: SwiftyJSON.JSON)
+  open class func parse<T>(fromJsonArray jsonArray: [SwiftyJSON.JSON]) -> [T] where T : Purchasely.AZJsonModel
+  @objc deinit
+}
+@objc public class PLYPlan : Purchasely.AZJsonModel {
+  public var vendorId: Swift.String
+  public var name: Swift.String? {
+    get
+    set
+  }
+  @objc override dynamic public init()
+  @objc deinit
+}
+extension PLYPlan {
+  public var localizedFullPrice: Swift.String? {
+    get
+  }
+  public var localizedPrice: Swift.String? {
+    get
+  }
+  public var localizedPeriod: Swift.String? {
+    get
+  }
+  public var hasIntroductoryPrice: Swift.Bool {
+    get
+  }
+  public var localizedFullIntroductoryPrice: Swift.String? {
+    get
+  }
+  public var localizedIntroductoryPrice: Swift.String? {
+    get
+  }
+  public var localizedIntroductoryPeriod: Swift.String? {
+    get
+  }
+  public var localizedIntroductoryDuration: Swift.String? {
+    get
+  }
+}
+@objc public class PLYProduct : Purchasely.AZJsonModel {
+  public var vendorId: Swift.String
+  public var name: Swift.String? {
+    get
+    set
+  }
+  public var plans: [Purchasely.PLYPlan]? {
+    get
+    set
+  }
+  public var termsAndConditions: Swift.String? {
+    get
+    set
+  }
+  required public init?(json: SwiftyJSON.JSON)
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc public class PLYSubscription : Purchasely.AZJsonModel {
+  public var plan: Purchasely.PLYPlan
+  public var subscriptionSource: Purchasely.PLYSubscriptionSource?
+  public func unsubscribe()
+  @objc override dynamic public init()
+  @objc deinit
+}
+public enum PLYSubscriptionSource : Swift.String {
+  case appStore
+  case playStore
+  public typealias RawValue = Swift.String
+  public init?(rawValue: Swift.String)
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum PLYUIControllerType {
+  case subscriptionList
+  case productPage
+  public static func == (a: Purchasely.PLYUIControllerType, b: Purchasely.PLYUIControllerType) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+}
+public protocol PLYUIDelegate {
+  func display(controller: UIKit.UIViewController, type: Purchasely.PLYUIControllerType)
+  func display(alert: Purchasely.PLYAlertMessage)
+}
+extension PLYUIDelegate {
+  public func display(controller: UIKit.UIViewController, type: Purchasely.PLYUIControllerType)
+  public func display(alert: Purchasely.PLYAlertMessage)
+}
+public typealias PLYVoidClosure = () -> Swift.Void
+public typealias PLYErrorClosure = (Purchasely.PLYError) -> ()
+public typealias PLYJSONHandler = (SwiftyJSON.JSON) -> Swift.Void
+public protocol PLYEventDelegate {
+  func eventTriggered(_ event: Purchasely.PLYEvent)
+}
+extension Purchasely {
+  public func purchase(plan: Purchasely.PLYPlan, success: @escaping Purchasely.PLYVoidClosure, failure: @escaping Purchasely.PLYErrorClosure)
+  public func purchase(appleProductId: Swift.String, success: @escaping Purchasely.PLYVoidClosure, failure: @escaping Purchasely.PLYErrorClosure)
+  public func restoreAllProducts(success: @escaping Purchasely.PLYVoidClosure, failure: @escaping Purchasely.PLYErrorClosure)
+}
+extension Purchasely {
+  public class func product(with vendorId: Swift.String, success: @escaping (Purchasely.PLYProduct) -> Swift.Void, failure: @escaping (Swift.Error?) -> Swift.Void)
+  public class func plan(with vendorId: Swift.String, success: @escaping (Purchasely.PLYPlan) -> Swift.Void, failure: @escaping (Swift.Error?) -> Swift.Void)
+  public class func userSubscriptions(success: @escaping ([Purchasely.PLYSubscription]?) -> Swift.Void, failure: @escaping (Swift.Error?) -> Swift.Void)
+}
+extension Purchasely : Purchasely.PLYUIDelegate {
+}
+extension Purchasely {
+  public class func productController(for productVendorId: Swift.String, presentationId: Swift.Int? = nil, success: @escaping (UIKit.UIViewController) -> Swift.Void, failure: @escaping (Swift.Error?) -> Swift.Void)
+}
+open class Purchasely {
+  public var deviceKey: Swift.String {
+    get
+  }
+  open class func start(withAPIKey apiKey: Swift.String, appUserId: Swift.String? = nil, eventDelegate: Purchasely.PLYEventDelegate? = nil, uiDelegate: Purchasely.PLYUIDelegate? = nil, logLevel: Purchasely.PLYLogger.LogLevel = .error)
+  open class func setEventDelegate(_ eventDelegate: Purchasely.PLYEventDelegate?)
+  open class func setUIDelegate(_ uiDelegate: Purchasely.PLYUIDelegate?)
+  open class func setAppUserId(_ appUserId: Swift.String?)
+  open class func setEnvironment(_ environment: Purchasely.PLYEnvironment)
+  open class func setLogLevel(_ logLevel: Purchasely.PLYLogger.LogLevel)
+  open class func isReadyToPurchase(_ ready: Swift.Bool)
+  @objc deinit
+}
+@available(iOS 11.0, *)
+extension SKProductStorePromotionController {
+  open func resetStorePromotionsVisibility(for products: [StoreKit.SKProduct], completed: (() -> Swift.Void)?)
+}
+extension UIColor {
+  public static func ply_fromHex(hex: Swift.String) -> UIKit.UIColor?
+}
+extension Purchasely.PLYEnvironment : Swift.Equatable {}
+extension Purchasely.PLYEnvironment : Swift.Hashable {}
+extension Purchasely.PLYEnvironment : Swift.RawRepresentable {}
+extension Purchasely.PluralType : Swift.Equatable {}
+extension Purchasely.PluralType : Swift.Hashable {}
+extension Purchasely.PLYLogger.LogLevel : Swift.Equatable {}
+extension Purchasely.PLYLogger.LogLevel : Swift.Hashable {}
+extension Purchasely.PLYLogger.LogLevel : Swift.RawRepresentable {}
+extension Purchasely.PLYSubscriptionSource : Swift.Equatable {}
+extension Purchasely.PLYSubscriptionSource : Swift.Hashable {}
+extension Purchasely.PLYSubscriptionSource : Swift.RawRepresentable {}
+extension Purchasely.PLYUIControllerType : Swift.Equatable {}
+extension Purchasely.PLYUIControllerType : Swift.Hashable {}
