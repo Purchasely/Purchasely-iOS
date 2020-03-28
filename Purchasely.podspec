@@ -33,7 +33,7 @@ Purchasely handles everything from product presentation to app receipt validatio
   s.swift_versions = ['5.0', '5.1', '5.2']
   s.ios.deployment_target = '10.0'
 
-  s.vendored_frameworks = ['Purchasely/Frameworks/Purchasely.framework']
+  s.vendored_frameworks = ['Purchasely/Frameworks/Purchasely.xcframework']
 
   s.frameworks = 'UIKit', 'StoreKit'
 

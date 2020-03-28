@@ -1,5 +1,6 @@
 use_frameworks!
 
 target 'Purchasely_Example' do
-	pod 'Purchasely', :path => '../' # :git => 'git@github.com:Purchasely/Purchasely-iOS.git'
+	pod 'Purchasely', :git => 'git@github.com:Purchasely/Purchasely-iOS.git', :branch => 'fix/framework'
+	#pod 'Purchasely', :path => '../' # :git => 'git@github.com:Purchasely/Purchasely-iOS.git'
 end
