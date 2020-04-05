@@ -238,7 +238,7 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Purchasely_Example/Pods-Purchasely_Example-artifacts.sh",
-				"${PODS_ROOT}/Purchasely/Purchasely/Frameworks/Purchasely.xcframework",
+				"${PODS_ROOT}/../../Purchasely/Frameworks/Purchasely.xcframework",
 			);
 			name = "[CP] Prepare Artifacts";
 			outputPaths = (

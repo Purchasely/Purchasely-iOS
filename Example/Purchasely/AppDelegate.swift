@@ -18,13 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
 
-		Purchasely.setEnvironment(.staging) // Only for internal tests
-		Purchasely.start(withAPIKey: "a9bcc756-b3a2-4e17-b46d-d5da40b6d202",
-						 eventDelegate: nil,
-						 logLevel: .debug)
-		Purchasely.setAppUserId("USER_ID")
-//
-//		Purchasely.start(withAPIKey: "YOUR_KEY", appUserId: "123456789", logLevel: .debug)
+		Purchasely.start(withAPIKey: "YOUR_KEY", appUserId: "123456789", logLevel: .debug)
 
         return true
     }
