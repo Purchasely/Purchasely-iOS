@@ -10,6 +10,8 @@
 "ply_modal_alert_in_app_deferred_title" = "Just a moment …";
 "ply_modal_alert_in_app_deferred_content" = "Your purchase couldn\'t be completed yet and requires a validation from your parent. Once the validation is completed you will be able to enjoy your purchase.";
 "ply_modal_alert_in_app_deferred_button" = "Ok";
+"ply_modal_alert_default_error_title" = "Fel";
+"ply_modal_alert_default_error_button" = "Ok";
 "ply_in_app_already_subscribed_error" = "Du är redan kund för vårt onlineerbjudande och utnyttjar redan de här förmånerna.";
 "ply_in_app_no_product_found_error" = "Det gick inte att hitta produkten.";
 "ply_in_app_absent_receipt" = "Kvittot hittades inte. Försök igen genom att återställa köpet.";
@@ -56,3 +58,10 @@
 "ply_unsubscribe_google_title" = "Säga upp en prenumeration";
 "ply_unsubscribe_google_content" = "Besök play.google.com.\n Kontrollera att du är inloggad på rätt Google-konto.\n Klicka på Mina prenumerationer uppe till vänster.\n Välj den prenumeration du vill säga upp.\n Klicka på Hantera följt av Säg upp prenumerationen.";
 "ply_unsubscribe_google_button" = "Ok";
+"ply_subscriptions_title" = "My subscriptions";
+"ply_subscriptions_active_group_title" = "Active";
+"ply_subscription_title" = "Modify your subscription";
+"ply_subscription_detail_group_title" = "Your subscription";
+"ply_subscription_plans_group_title" = "Options";
+"ply_subscription_unsubscribe_button" = "Cancel subscription";
+"ply_subscription_unsubscribe_change_plan_not_available_google" = "This subscription wasn\'t made from the App Store.";

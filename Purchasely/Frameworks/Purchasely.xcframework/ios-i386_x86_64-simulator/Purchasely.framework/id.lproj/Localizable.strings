@@ -10,6 +10,8 @@
 "ply_modal_alert_in_app_deferred_title" = "Just a moment …";
 "ply_modal_alert_in_app_deferred_content" = "Your purchase couldn\'t be completed yet and requires a validation from your parent. Once the validation is completed you will be able to enjoy your purchase.";
 "ply_modal_alert_in_app_deferred_button" = "Ok";
+"ply_modal_alert_default_error_title" = "Kesalahan";
+"ply_modal_alert_default_error_button" = "Ok";
 "ply_in_app_already_subscribed_error" = "Anda sudah menjadi pelanggan dari penawaran online kami dan Anda sudah menikmati manfaatnya.";
 "ply_in_app_no_product_found_error" = "Tidak dapat menemukan produk.";
 "ply_in_app_absent_receipt" = "Tanda terima tidak ditemukan. Coba lagi dengan mengembalikan pembelian.";
@@ -56,3 +58,10 @@
 "ply_unsubscribe_google_title" = "Membatalkan langganan";
 "ply_unsubscribe_google_content" = "Buka play.google.com.\n Pastikan Anda sudah login ke Akun Google yang benar.\n Di sebelah kiri, klik Langganan saya.\n Pilih langganan yang ingin Anda batalkan.\n Klik Kelola lalu Batalkan langganan.";
 "ply_unsubscribe_google_button" = "Ok";
+"ply_subscriptions_title" = "My subscriptions";
+"ply_subscriptions_active_group_title" = "Active";
+"ply_subscription_title" = "Modify your subscription";
+"ply_subscription_detail_group_title" = "Your subscription";
+"ply_subscription_plans_group_title" = "Options";
+"ply_subscription_unsubscribe_button" = "Cancel subscription";
+"ply_subscription_unsubscribe_change_plan_not_available_google" = "This subscription wasn\'t made from the App Store.";

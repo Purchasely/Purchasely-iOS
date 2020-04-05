@@ -10,6 +10,8 @@
 "ply_modal_alert_in_app_deferred_title" = "Just a moment …";
 "ply_modal_alert_in_app_deferred_content" = "Your purchase couldn\'t be completed yet and requires a validation from your parent. Once the validation is completed you will be able to enjoy your purchase.";
 "ply_modal_alert_in_app_deferred_button" = "OK";
+"ply_modal_alert_default_error_title" = "Chyba";
+"ply_modal_alert_default_error_button" = "OK";
 "ply_in_app_already_subscribed_error" = "Jste již zákazníkem naší online nabídky a už využíváte jejích výhod.";
 "ply_in_app_no_product_found_error" = "Produkt nelze najít.";
 "ply_in_app_absent_receipt" = "Potvrzení nebylo nalezeno. Zkuste to znovu obnovením nákupu.";
@@ -56,3 +58,10 @@
 "ply_unsubscribe_google_title" = "Zrušení předplatného";
 "ply_unsubscribe_google_content" = "Přejděte na adresu play.google.com.\n Zkontrolujte, zda jste přihlášeni ke správnému účtu Google.\n Vlevo klikněte na Moje předplatné.\n Vyberte předplatné, které chcete zrušit.\n Klikněte na Spravovat a pak Zrušit předplatné.";
 "ply_unsubscribe_google_button" = "OK";
+"ply_subscriptions_title" = "My subscriptions";
+"ply_subscriptions_active_group_title" = "Active";
+"ply_subscription_title" = "Modify your subscription";
+"ply_subscription_detail_group_title" = "Your subscription";
+"ply_subscription_plans_group_title" = "Options";
+"ply_subscription_unsubscribe_button" = "Cancel subscription";
+"ply_subscription_unsubscribe_change_plan_not_available_google" = "This subscription wasn\'t made from the App Store.";

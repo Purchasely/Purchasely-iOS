@@ -10,6 +10,8 @@
 "ply_modal_alert_in_app_deferred_title" = "Just a moment …";
 "ply_modal_alert_in_app_deferred_content" = "Your purchase couldn\'t be completed yet and requires a validation from your parent. Once the validation is completed you will be able to enjoy your purchase.";
 "ply_modal_alert_in_app_deferred_button" = "Ok";
+"ply_modal_alert_default_error_title" = "Error";
+"ply_modal_alert_default_error_button" = "Ok";
 "ply_in_app_already_subscribed_error" = "You\'re already a customer of our online offer and you\'re already enjoying its benefits.";
 "ply_in_app_no_product_found_error" = "Unable to find the product.";
 "ply_in_app_absent_receipt" = "Receipt not found. Try again by restoring the purchase.";
@@ -56,3 +58,10 @@
 "ply_unsubscribe_google_title" = "Cancel a subscription";
 "ply_unsubscribe_google_content" = "Go to play.google.com.\n Check if you’re signed in to the correct Google Account.\n On the left, click My subscriptions.\n Select the subscription you want to cancel.\n Click Manage and then Cancel Subscription.";
 "ply_unsubscribe_google_button" = "Ok";
+"ply_subscriptions_title" = "My subscriptions";
+"ply_subscriptions_active_group_title" = "Active";
+"ply_subscription_title" = "Modify your subscription";
+"ply_subscription_detail_group_title" = "Your subscription";
+"ply_subscription_plans_group_title" = "Options";
+"ply_subscription_unsubscribe_button" = "Cancel subscription";
+"ply_subscription_unsubscribe_change_plan_not_available_google" = "This subscription wasn\'t made from the App Store.";
