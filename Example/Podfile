@@ -1,0 +1,5 @@
+use_frameworks!
+
+target 'Purchasely_Example' do
+	pod 'Purchasely', :path => '../'
+end
