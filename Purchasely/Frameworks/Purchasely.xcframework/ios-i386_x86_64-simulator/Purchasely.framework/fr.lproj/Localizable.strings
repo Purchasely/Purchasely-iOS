@@ -3,7 +3,7 @@
 "ply_modal_alert_in_app_error_title" = "Erreur";
 "ply_modal_alert_in_app_successfull_restore_message_title" = "Restauration terminée";
 "ply_modal_alert_in_app_restoration_error_title" = "Erreur";
-"ply_modal_alert_in_app_success_content" = "Votre achat a été validé avec succès. Vous pouvez dés à présent en profiter.";
+"ply_modal_alert_in_app_success_content" = "Votre achat a été validé avec succès. Vous pouvez dès à présent en profiter.";
 "ply_modal_alert_in_app_restore_status_success_content" = "Vos achats ont été restaurés";
 "ply_modal_alert_in_app_success_button" = "C\'est parti !";
 "ply_modal_alert_in_app_error_button" = "Ok";

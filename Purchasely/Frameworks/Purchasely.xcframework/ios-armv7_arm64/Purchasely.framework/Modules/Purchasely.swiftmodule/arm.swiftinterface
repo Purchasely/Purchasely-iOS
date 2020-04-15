@@ -89,6 +89,7 @@ public enum PLYEvent {
   case inAppRenewed(StoreKit.SKPaymentTransaction)
   case receiptCreated
   case receiptValidated
+  case receiptFailed
   case restoreStarted
   case inAppRestored(StoreKit.SKPaymentTransaction)
   case restoreSucceeded
