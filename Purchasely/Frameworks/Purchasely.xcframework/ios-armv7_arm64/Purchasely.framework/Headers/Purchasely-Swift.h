@@ -205,23 +205,74 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #endif
 
 
-SWIFT_CLASS("_TtC10Purchasely11AZJsonModel")
-@interface AZJsonModel : NSObject
+
+typedef SWIFT_ENUM(NSInteger, PLYAlertMessage, open) {
+  PLYAlertMessageInAppSuccess = 0,
+  PLYAlertMessageInAppDeferred = 1,
+  PLYAlertMessageInAppSuccessUnauthentified = 2,
+  PLYAlertMessageInAppRestorationSuccess = 3,
+  PLYAlertMessageInAppRestorationError = 4,
+  PLYAlertMessageInAppError = 5,
+  PLYAlertMessageUnsubscribeAndroid = 6,
+};
+
+typedef SWIFT_ENUM(NSInteger, PLYEnvironment, open) {
+  PLYEnvironmentProd = 0,
+  PLYEnvironmentStaging = 1,
+};
+
+typedef SWIFT_ENUM(NSInteger, PLYEvent, open) {
+  PLYEventAppStarted = 0,
+  PLYEventProductPageViewed = 1,
+  PLYEventLoginTapped = 2,
+  PLYEventPurchaseFromStoreTapped = 3,
+  PLYEventPurchaseTapped = 4,
+  PLYEventInAppPurchasing = 5,
+  PLYEventInAppPurchased = 6,
+  PLYEventInAppRenewed = 7,
+  PLYEventReceiptCreated = 8,
+  PLYEventReceiptValidated = 9,
+  PLYEventReceiptFailed = 10,
+  PLYEventRestoreStarted = 11,
+  PLYEventInAppRestored = 12,
+  PLYEventRestoreSucceeded = 13,
+  PLYEventRestoreFailed = 14,
+  PLYEventInAppDeferred = 15,
+  PLYEventInAppPurchaseFailed = 16,
+  PLYEventLinkOpened = 17,
+};
+
+
+SWIFT_PROTOCOL("_TtP10Purchasely16PLYEventDelegate_")
+@protocol PLYEventDelegate
+- (void)eventTriggered:(enum PLYEvent)event properties:(NSDictionary<NSString *, id> * _Nullable)properties;
+@end
+
+
+SWIFT_CLASS("_TtC10Purchasely12PLYJsonModel")
+@interface PLYJsonModel : NSObject
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
 
-
-
-SWIFT_CLASS("_TtC10Purchasely18PLYAppStoreReceipt")
-@interface PLYAppStoreReceipt : NSObject
+SWIFT_CLASS("_TtC10Purchasely9PLYLogger")
+@interface PLYLogger : NSObject
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
+typedef SWIFT_ENUM(NSInteger, LogLevel, open) {
+  LogLevelDebug = 0,
+  LogLevelInfo = 1,
+  LogLevelWarn = 2,
+  LogLevelError = 3,
+};
+
 
 SWIFT_CLASS("_TtC10Purchasely7PLYPlan")
-@interface PLYPlan : AZJsonModel
+@interface PLYPlan : PLYJsonModel
+@property (nonatomic, copy) NSString * _Nonnull vendorId;
+@property (nonatomic, copy) NSString * _Nullable name;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -230,16 +281,91 @@ SWIFT_CLASS("_TtC10Purchasely7PLYPlan")
 
 
 SWIFT_CLASS("_TtC10Purchasely10PLYProduct")
-@interface PLYProduct : AZJsonModel
+@interface PLYProduct : PLYJsonModel
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+enum PLYSubscriptionSource : NSInteger;
+
+SWIFT_CLASS("_TtC10Purchasely15PLYSubscription")
+@interface PLYSubscription : PLYJsonModel
+@property (nonatomic, strong) PLYPlan * _Nonnull plan;
+@property (nonatomic) enum PLYSubscriptionSource subscriptionSource;
+- (void)unsubscribe;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+typedef SWIFT_ENUM(NSInteger, PLYSubscriptionSource, open) {
+  PLYSubscriptionSourceAppStore = 0,
+  PLYSubscriptionSourcePlayStore = 1,
+  PLYSubscriptionSourceNone = 2,
+};
+
+typedef SWIFT_ENUM(NSInteger, PLYUIControllerType, open) {
+  PLYUIControllerTypeSubscriptionList = 0,
+  PLYUIControllerTypeProductPage = 1,
+};
+
+@class UIViewController;
+
+SWIFT_PROTOCOL("_TtP10Purchasely13PLYUIDelegate_")
+@protocol PLYUIDelegate
+- (void)displayWithController:(UIViewController * _Nonnull)controller type:(enum PLYUIControllerType)type;
+- (void)displayWithAlert:(enum PLYAlertMessage)alert error:(NSError * _Nullable)error;
+@end
+
+
+/// This class manages the In App purchase process from grabbing the product details to performing
+/// the purchase and sending the receipts to the server.
+/// This manager is also meant to be used for restoration
+SWIFT_CLASS("_TtC10Purchasely10Purchasely")
+@interface Purchasely : NSObject
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
 
-SWIFT_CLASS("_TtC10Purchasely15PLYSubscription")
-@interface PLYSubscription : AZJsonModel
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+
+
+
+
+
+
+@interface Purchasely (SWIFT_EXTENSION(Purchasely)) <PLYUIDelegate>
+- (void)displayWithController:(UIViewController * _Nonnull)controller type:(enum PLYUIControllerType)type;
+- (void)displayWithAlert:(enum PLYAlertMessage)alert error:(NSError * _Nullable)error;
+@end
+
+
+
+
+
+
+@interface Purchasely (SWIFT_EXTENSION(Purchasely))
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull deviceKey;)
++ (NSString * _Nonnull)deviceKey SWIFT_WARN_UNUSED_RESULT;
++ (void)startWithAPIKey:(NSString * _Nonnull)apiKey appUserId:(NSString * _Nullable)appUserId eventDelegate:(id <PLYEventDelegate> _Nullable)eventDelegate uiDelegate:(id <PLYUIDelegate> _Nullable)uiDelegate logLevel:(enum LogLevel)logLevel;
++ (void)setEventDelegate:(id <PLYEventDelegate> _Nullable)eventDelegate;
++ (void)setUIDelegate:(id <PLYUIDelegate> _Nullable)uiDelegate;
++ (void)setAppUserId:(NSString * _Nullable)appUserId;
++ (void)isReadyToPurchase:(BOOL)ready;
++ (void)setEnvironment:(enum PLYEnvironment)environment;
++ (void)setLogLevel:(enum LogLevel)logLevel;
++ (void)productWith:(NSString * _Nonnull)vendorId success:(void (^ _Nonnull)(PLYProduct * _Nonnull))success failure:(void (^ _Nonnull)(NSError * _Nullable))failure;
++ (void)planWith:(NSString * _Nonnull)vendorId success:(void (^ _Nonnull)(PLYPlan * _Nonnull))success failure:(void (^ _Nonnull)(NSError * _Nullable))failure;
++ (void)userSubscriptionsWithSuccess:(void (^ _Nonnull)(NSArray<PLYSubscription *> * _Nullable))success failure:(void (^ _Nonnull)(NSError * _Nullable))failure;
++ (void)productControllerFor:(NSString * _Nonnull)productVendorId success:(void (^ _Nonnull)(UIViewController * _Nonnull))success failure:(void (^ _Nonnull)(NSError * _Nullable))failure;
+/// This method performs a purchase on an plan of a Purchasely product
+/// :param: plan the PLYPlan that you setup in Purchasely admin
+/// :param: success the block called when the purchase was completed from end to end
+/// :param: failure the block called when any error occured. The error can be displayed to the user using localizedDescription
++ (void)purchaseWithPlan:(PLYPlan * _Nonnull)plan success:(void (^ _Nonnull)(void))success failure:(void (^ _Nonnull)(NSError * _Nonnull))failure;
+/// This method is used to restore prevous purchases. Some might be successful and some in error.
+/// :param: success The closure that is called when at least one item was successfully restored. It might contain an error in case some items weren’t restored successfully.
+/// :param: failure The closure that is called when at no item was restored
++ (void)restoreAllProductsWithSuccess:(void (^ _Nonnull)(void))success failure:(void (^ _Nonnull)(NSError * _Nonnull))failure;
 @end
 
 
@@ -487,23 +613,74 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #endif
 
 
-SWIFT_CLASS("_TtC10Purchasely11AZJsonModel")
-@interface AZJsonModel : NSObject
+
+typedef SWIFT_ENUM(NSInteger, PLYAlertMessage, open) {
+  PLYAlertMessageInAppSuccess = 0,
+  PLYAlertMessageInAppDeferred = 1,
+  PLYAlertMessageInAppSuccessUnauthentified = 2,
+  PLYAlertMessageInAppRestorationSuccess = 3,
+  PLYAlertMessageInAppRestorationError = 4,
+  PLYAlertMessageInAppError = 5,
+  PLYAlertMessageUnsubscribeAndroid = 6,
+};
+
+typedef SWIFT_ENUM(NSInteger, PLYEnvironment, open) {
+  PLYEnvironmentProd = 0,
+  PLYEnvironmentStaging = 1,
+};
+
+typedef SWIFT_ENUM(NSInteger, PLYEvent, open) {
+  PLYEventAppStarted = 0,
+  PLYEventProductPageViewed = 1,
+  PLYEventLoginTapped = 2,
+  PLYEventPurchaseFromStoreTapped = 3,
+  PLYEventPurchaseTapped = 4,
+  PLYEventInAppPurchasing = 5,
+  PLYEventInAppPurchased = 6,
+  PLYEventInAppRenewed = 7,
+  PLYEventReceiptCreated = 8,
+  PLYEventReceiptValidated = 9,
+  PLYEventReceiptFailed = 10,
+  PLYEventRestoreStarted = 11,
+  PLYEventInAppRestored = 12,
+  PLYEventRestoreSucceeded = 13,
+  PLYEventRestoreFailed = 14,
+  PLYEventInAppDeferred = 15,
+  PLYEventInAppPurchaseFailed = 16,
+  PLYEventLinkOpened = 17,
+};
+
+
+SWIFT_PROTOCOL("_TtP10Purchasely16PLYEventDelegate_")
+@protocol PLYEventDelegate
+- (void)eventTriggered:(enum PLYEvent)event properties:(NSDictionary<NSString *, id> * _Nullable)properties;
+@end
+
+
+SWIFT_CLASS("_TtC10Purchasely12PLYJsonModel")
+@interface PLYJsonModel : NSObject
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
 
-
-
-SWIFT_CLASS("_TtC10Purchasely18PLYAppStoreReceipt")
-@interface PLYAppStoreReceipt : NSObject
+SWIFT_CLASS("_TtC10Purchasely9PLYLogger")
+@interface PLYLogger : NSObject
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
+typedef SWIFT_ENUM(NSInteger, LogLevel, open) {
+  LogLevelDebug = 0,
+  LogLevelInfo = 1,
+  LogLevelWarn = 2,
+  LogLevelError = 3,
+};
+
 
 SWIFT_CLASS("_TtC10Purchasely7PLYPlan")
-@interface PLYPlan : AZJsonModel
+@interface PLYPlan : PLYJsonModel
+@property (nonatomic, copy) NSString * _Nonnull vendorId;
+@property (nonatomic, copy) NSString * _Nullable name;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -512,16 +689,91 @@ SWIFT_CLASS("_TtC10Purchasely7PLYPlan")
 
 
 SWIFT_CLASS("_TtC10Purchasely10PLYProduct")
-@interface PLYProduct : AZJsonModel
+@interface PLYProduct : PLYJsonModel
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+enum PLYSubscriptionSource : NSInteger;
+
+SWIFT_CLASS("_TtC10Purchasely15PLYSubscription")
+@interface PLYSubscription : PLYJsonModel
+@property (nonatomic, strong) PLYPlan * _Nonnull plan;
+@property (nonatomic) enum PLYSubscriptionSource subscriptionSource;
+- (void)unsubscribe;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+typedef SWIFT_ENUM(NSInteger, PLYSubscriptionSource, open) {
+  PLYSubscriptionSourceAppStore = 0,
+  PLYSubscriptionSourcePlayStore = 1,
+  PLYSubscriptionSourceNone = 2,
+};
+
+typedef SWIFT_ENUM(NSInteger, PLYUIControllerType, open) {
+  PLYUIControllerTypeSubscriptionList = 0,
+  PLYUIControllerTypeProductPage = 1,
+};
+
+@class UIViewController;
+
+SWIFT_PROTOCOL("_TtP10Purchasely13PLYUIDelegate_")
+@protocol PLYUIDelegate
+- (void)displayWithController:(UIViewController * _Nonnull)controller type:(enum PLYUIControllerType)type;
+- (void)displayWithAlert:(enum PLYAlertMessage)alert error:(NSError * _Nullable)error;
+@end
+
+
+/// This class manages the In App purchase process from grabbing the product details to performing
+/// the purchase and sending the receipts to the server.
+/// This manager is also meant to be used for restoration
+SWIFT_CLASS("_TtC10Purchasely10Purchasely")
+@interface Purchasely : NSObject
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
 
-SWIFT_CLASS("_TtC10Purchasely15PLYSubscription")
-@interface PLYSubscription : AZJsonModel
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+
+
+
+
+
+
+@interface Purchasely (SWIFT_EXTENSION(Purchasely)) <PLYUIDelegate>
+- (void)displayWithController:(UIViewController * _Nonnull)controller type:(enum PLYUIControllerType)type;
+- (void)displayWithAlert:(enum PLYAlertMessage)alert error:(NSError * _Nullable)error;
+@end
+
+
+
+
+
+
+@interface Purchasely (SWIFT_EXTENSION(Purchasely))
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull deviceKey;)
++ (NSString * _Nonnull)deviceKey SWIFT_WARN_UNUSED_RESULT;
++ (void)startWithAPIKey:(NSString * _Nonnull)apiKey appUserId:(NSString * _Nullable)appUserId eventDelegate:(id <PLYEventDelegate> _Nullable)eventDelegate uiDelegate:(id <PLYUIDelegate> _Nullable)uiDelegate logLevel:(enum LogLevel)logLevel;
++ (void)setEventDelegate:(id <PLYEventDelegate> _Nullable)eventDelegate;
++ (void)setUIDelegate:(id <PLYUIDelegate> _Nullable)uiDelegate;
++ (void)setAppUserId:(NSString * _Nullable)appUserId;
++ (void)isReadyToPurchase:(BOOL)ready;
++ (void)setEnvironment:(enum PLYEnvironment)environment;
++ (void)setLogLevel:(enum LogLevel)logLevel;
++ (void)productWith:(NSString * _Nonnull)vendorId success:(void (^ _Nonnull)(PLYProduct * _Nonnull))success failure:(void (^ _Nonnull)(NSError * _Nullable))failure;
++ (void)planWith:(NSString * _Nonnull)vendorId success:(void (^ _Nonnull)(PLYPlan * _Nonnull))success failure:(void (^ _Nonnull)(NSError * _Nullable))failure;
++ (void)userSubscriptionsWithSuccess:(void (^ _Nonnull)(NSArray<PLYSubscription *> * _Nullable))success failure:(void (^ _Nonnull)(NSError * _Nullable))failure;
++ (void)productControllerFor:(NSString * _Nonnull)productVendorId success:(void (^ _Nonnull)(UIViewController * _Nonnull))success failure:(void (^ _Nonnull)(NSError * _Nullable))failure;
+/// This method performs a purchase on an plan of a Purchasely product
+/// :param: plan the PLYPlan that you setup in Purchasely admin
+/// :param: success the block called when the purchase was completed from end to end
+/// :param: failure the block called when any error occured. The error can be displayed to the user using localizedDescription
++ (void)purchaseWithPlan:(PLYPlan * _Nonnull)plan success:(void (^ _Nonnull)(void))success failure:(void (^ _Nonnull)(NSError * _Nonnull))failure;
+/// This method is used to restore prevous purchases. Some might be successful and some in error.
+/// :param: success The closure that is called when at least one item was successfully restored. It might contain an error in case some items weren’t restored successfully.
+/// :param: failure The closure that is called when at no item was restored
++ (void)restoreAllProductsWithSuccess:(void (^ _Nonnull)(void))success failure:(void (^ _Nonnull)(NSError * _Nonnull))failure;
 @end
 
 

@@ -27,7 +27,7 @@
 "ply_in_app_already_being_restored_error" = "Une restauration des achats est déjà en cours";
 "ply_in_app_restore_status_nothing" = "Aucun achat n’a été trouvé";
 "ply_in_app_validation_failed" = "Validation du reçu impossible.";
-"ply_in_app_validation_timed_out" = "La validation de votre achat prend un peu plus de temps que prévu.";
+"ply_in_app_validation_timed_out" = "L\'achat a été pris en compte mais la validation prend un peu plus de temps que prévu. Revenez un peu plus tard.";
 "ply_in_app_restore_status_errors" = "La restauration a échouée avec les erreurs suivantes :";
 "ply_in_app_partial_restore_partial_with_errors" = "Les éléments suivants ont été restaurés :\n%@\nLes erreurs suivantes ont été identifiées :\n%@";
 "ply_in_app_unknown_error" = "Erreur inconnue";

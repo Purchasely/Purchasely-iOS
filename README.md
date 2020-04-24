@@ -4,7 +4,7 @@
 
 |   | Purchasely |
 | --- | --- |
-🔥 | In App purchase in your app using 6 lines of code (really !)
+🔥 | In App purchase in your app using 5 lines of code (really !)
 🌎 | Multi language supported (17 supported languages) and overrides possible 
 ✨ | Product presentation pages ready to display on iPhone, iPad and Apple TV and fully customizable from the admin site
 📱 | iPhone and iPad support
@@ -12,6 +12,7 @@
 🔔 | Receive user subscription status events with server-to-server notifications (Webhooks) including events like new purchase, renewal, cancellation, billing issue, …
 📊 | Analytics available in our dashboard (conversion rate, MRR, …) and sent by our SDK to the app for dispatching to your custom analytics tracking system
 🕐 | Detailed user activity (viewed product, subscribed, churned, …)
+🗣 | Available in Objective-C and Swift
 
 ## ✅ Requirements
 
@@ -108,7 +109,9 @@ Purchasely.setUIDelegate(self)
 
 To change the transition, size, position … of a presented controller (`PLYUIControllerType` gives you the type of controller displayed):
 ```
-func display(controller: UIViewController, type: PLYUIControllerType)
+func display(controller: UIViewController, type: PLYUIControllerType) {
+	// Present the controller
+}
 ```
 
 ## 📈 Integrate In App events to your analytics system
@@ -151,6 +154,16 @@ Purchasely.setUIDelegate(self)
 ```
 That way you could also override the behaviour and trigger some specific actions when the user taps on the button for example.
 
+```swift
+
+func display(alert: PLYAlertMessage, error: Error?) {
+	let alertTitle = alert.title
+	let alertContent = alert.content ?? error?.localizedDescription
+	let alertButtin = alert.buttonTitle
+
+	// Display your modal
+}
+```
 
 ## 🌍 Supported languages and override messages
 
@@ -252,6 +265,68 @@ itms-services://?action=purchaseIntent&bundleId=APP_BUNDLE_ID&productIdentifier=
 Replace `APP_BUNDLE_ID` and `IN_APP_PRODUCT_ID` by the appropriate values and paste it into Notes app. Clicking on it will start a purchase action just like the App Store would.
 
 Don't forget to add a promotional artwork following [Apple Guidelines](https://developer.apple.com/app-store/promoting-in-app-purchases/)
+
+## ✍️ Manually trigger purchases
+
+Purchasely provides presentation templates to be customized by you but if you want to create your own and only use Purchasely for handling the purchase process you can.
+We offer methods to:
+* Get a product
+* Get a plan
+* Get a users subscriptions
+* Purchase a product
+* Restore all products
+
+### Get a product
+
+```swift
+Purchasely.product(with: "PRODUCT_NAME", success: { (product) in
+	// Display the product and its plans
+}, failure: { (error) in
+	// Display error
+})
+```
+
+### Get a plan
+
+```swift
+Purchasely.plan(with: "PLAN_NAME", success: { (plan) in
+	// Use the plan to display a price or start a purchase
+}, failure: { (error) in
+	// Display error
+})
+```
+
+### Get a users subscriptions
+
+```swift
+Purchasely.userSubscriptions(success: { (subscriptions) in
+	// Subscription object contains the plan purchased and the source it was purchased from (iOS or Android)
+	// Calling unsubscribe() will either switch the user to its AppStore settings 
+	// or display a procedure on how to unsubscribe on Android
+}, failure: { (error) in
+	// Display error
+})
+
+```
+### Purchase a product
+
+```swift
+Purchasely.purchase(plan: plan, success: {
+	// Unlock / reload content and display a success / thank you message to user
+}, failure: { (error) in
+	// Display error
+})
+```
+### Restore all products
+
+```swift
+Purchasely.restoreAllProducts(success: {
+	// Reload content and display a success / thank you message to user
+}, failure: { (error) in
+	// Display error
+})
+```
+
 
 ## 🤕 Troubleshooting
 
