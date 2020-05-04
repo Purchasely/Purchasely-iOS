@@ -85,6 +85,7 @@ extension PLYError : Foundation.LocalizedError {
   case loginTapped
   case purchaseFromStoreTapped
   case purchaseTapped
+  case purchaseCancelled
   case inAppPurchasing
   case inAppPurchased
   case inAppRenewed

@@ -227,19 +227,20 @@ typedef SWIFT_ENUM(NSInteger, PLYEvent, open) {
   PLYEventLoginTapped = 2,
   PLYEventPurchaseFromStoreTapped = 3,
   PLYEventPurchaseTapped = 4,
-  PLYEventInAppPurchasing = 5,
-  PLYEventInAppPurchased = 6,
-  PLYEventInAppRenewed = 7,
-  PLYEventReceiptCreated = 8,
-  PLYEventReceiptValidated = 9,
-  PLYEventReceiptFailed = 10,
-  PLYEventRestoreStarted = 11,
-  PLYEventInAppRestored = 12,
-  PLYEventRestoreSucceeded = 13,
-  PLYEventRestoreFailed = 14,
-  PLYEventInAppDeferred = 15,
-  PLYEventInAppPurchaseFailed = 16,
-  PLYEventLinkOpened = 17,
+  PLYEventPurchaseCancelled = 5,
+  PLYEventInAppPurchasing = 6,
+  PLYEventInAppPurchased = 7,
+  PLYEventInAppRenewed = 8,
+  PLYEventReceiptCreated = 9,
+  PLYEventReceiptValidated = 10,
+  PLYEventReceiptFailed = 11,
+  PLYEventRestoreStarted = 12,
+  PLYEventInAppRestored = 13,
+  PLYEventRestoreSucceeded = 14,
+  PLYEventRestoreFailed = 15,
+  PLYEventInAppDeferred = 16,
+  PLYEventInAppPurchaseFailed = 17,
+  PLYEventLinkOpened = 18,
 };
 
 
@@ -367,6 +368,12 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 /// :param: failure The closure that is called when at no item was restored
 + (void)restoreAllProductsWithSuccess:(void (^ _Nonnull)(void))success failure:(void (^ _Nonnull)(NSError * _Nonnull))failure;
 @end
+
+
+
+
+
+
 
 
 
@@ -635,19 +642,20 @@ typedef SWIFT_ENUM(NSInteger, PLYEvent, open) {
   PLYEventLoginTapped = 2,
   PLYEventPurchaseFromStoreTapped = 3,
   PLYEventPurchaseTapped = 4,
-  PLYEventInAppPurchasing = 5,
-  PLYEventInAppPurchased = 6,
-  PLYEventInAppRenewed = 7,
-  PLYEventReceiptCreated = 8,
-  PLYEventReceiptValidated = 9,
-  PLYEventReceiptFailed = 10,
-  PLYEventRestoreStarted = 11,
-  PLYEventInAppRestored = 12,
-  PLYEventRestoreSucceeded = 13,
-  PLYEventRestoreFailed = 14,
-  PLYEventInAppDeferred = 15,
-  PLYEventInAppPurchaseFailed = 16,
-  PLYEventLinkOpened = 17,
+  PLYEventPurchaseCancelled = 5,
+  PLYEventInAppPurchasing = 6,
+  PLYEventInAppPurchased = 7,
+  PLYEventInAppRenewed = 8,
+  PLYEventReceiptCreated = 9,
+  PLYEventReceiptValidated = 10,
+  PLYEventReceiptFailed = 11,
+  PLYEventRestoreStarted = 12,
+  PLYEventInAppRestored = 13,
+  PLYEventRestoreSucceeded = 14,
+  PLYEventRestoreFailed = 15,
+  PLYEventInAppDeferred = 16,
+  PLYEventInAppPurchaseFailed = 17,
+  PLYEventLinkOpened = 18,
 };
 
 
@@ -775,6 +783,12 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 /// :param: failure The closure that is called when at no item was restored
 + (void)restoreAllProductsWithSuccess:(void (^ _Nonnull)(void))success failure:(void (^ _Nonnull)(NSError * _Nonnull))failure;
 @end
+
+
+
+
+
+
 
 
 
