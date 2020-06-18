@@ -28,8 +28,17 @@ fi
 CURRENT_VERSION=`cat ${PROJECT_NAME}.podspec | grep "s.version.*=.*" | sed "s/.*s.version.*=.*'\(.*\)'/\1/" 2> /dev/null`
 BUILD_REVISION=`echo ${CURRENT_VERSION} | sed "s/.*\.\([0-9]*\)/\1/"`
 NEW_BUILD_REVISION=$(($BUILD_REVISION+1))
-NEW_VERSION=`echo ${CURRENT_VERSION} | sed "s/\([0-9.]*\.\)\([0-9]*\)/\1${NEW_BUILD_REVISION}/"`
+
+if [ -z $1 ]; then
+	NEW_VERSION=`echo ${CURRENT_VERSION} | sed "s/\([0-9.]*\.\)\([0-9]*\)/\1${NEW_BUILD_REVISION}/"`
+	echo "No version set in parameters, bumping minor version to ${NEW_VERSION}"
+else
+	NEW_VERSION=$1
+	echo "Using version set in parameters: ${NEW_VERSION}"
+fi
 cat ${PROJECT_NAME}.podspec | sed "s/${CURRENT_VERSION}/${NEW_VERSION}/" > ${PROJECT_NAME}-new.podspec
+
+find Purchasely/Frameworks/Purchasely.xcframework -name Info.plist -exec plutil -replace CFBundleShortVersionString -string "${NEW_VERSION}" {} \;
 
 # Test that we only modified the version
 NUMBER_CHANGES=`diff ${PROJECT_NAME}-new.podspec ${PROJECT_NAME}.podspec|wc -l|tr -d " "`

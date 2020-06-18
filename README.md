@@ -57,7 +57,7 @@ Purchasely.setAppUserId("123456789")
 To remove the user (logged out) you can perform a :
 
 ```swift
-Purchasely.setUserId(nil)
+Purchasely.setAppUserId(nil)
 ```
 
 ### Notify when the app is ready
@@ -93,6 +93,17 @@ Purchasely.productController(for: "my_product_id", success: { [weak self](contro
 	// Display error and replace by your own fallback page ?
 })
 ```
+
+Since Purchasely 1.1.0 you can choose between multiple presentations by giving a `presentationId` :
+```swift
+ // Show an activity indicator while the offer is being loaded
+ Purchasely.productController(for: "my_product_id", with: "my_presentation_id", success: { [weak self](controller) in
+	 self?.present(controller, animated: true, completion: nil)
+ }, failure: { _ in
+	 // Display error and replace by your own fallback page ?
+ })
+```
+
 
 You can be alerted if the purchase was made by listening to the [Notifications](#notifications)
 
@@ -265,6 +276,26 @@ itms-services://?action=purchaseIntent&bundleId=APP_BUNDLE_ID&productIdentifier=
 Replace `APP_BUNDLE_ID` and `IN_APP_PRODUCT_ID` by the appropriate values and paste it into Notes app. Clicking on it will start a purchase action just like the App Store would.
 
 Don't forget to add a promotional artwork following [Apple Guidelines](https://developer.apple.com/app-store/promoting-in-app-purchases/)
+
+## 🧾 Display your subscriptions
+
+We believe that your customers should be able to unsubscribe as easily as they subscribed. This leads to a better global trust and offers some interesting opportunities like offering an upsell or downsell or getting to know why they choose unsubscribe.
+
+We provide a complete active subscriptions handling flow that you can call with a single line of code and that offers:
+* Active subscriptions list
+* Next renewal date
+* Upsell / downsell
+* Cancellation survey
+* Cancellation
+
+You can get the subscriptions list root controller by calling
+
+```swift
+Purchasely.controllerForSubscriptions()
+```
+
+⚠️ The controller must be added to a `UINavigationController`.
+
 
 ## ✍️ Manually trigger purchases
 

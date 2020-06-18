@@ -10,6 +10,10 @@
 "ply_modal_alert_in_app_deferred_title" = "Just a moment …";
 "ply_modal_alert_in_app_deferred_content" = "Your purchase couldn\'t be completed yet and requires a validation from your parent. Once the validation is completed you will be able to enjoy your purchase.";
 "ply_modal_alert_in_app_deferred_button" = "Ok";
+"ply_modal_change_plan_different_store_title" = "Caution!";
+"ply_modal_change_plan_different_store_content" = "You already purchase an equivalent product using the %@. You will have to manually cancel that subscription to avoid a double billing. Do you want to continue your purchase ?";
+"ply_modal_change_plan_different_store_continue_button" = "Continue";
+"ply_modal_change_plan_different_store_cancel_button" = "Cancel";
 "ply_modal_alert_default_error_title" = "Ошибка";
 "ply_modal_alert_default_error_button" = "Ok";
 "ply_in_app_already_subscribed_error" = "Вы уже пользуетесь нашим предложением и его преимуществами.";
@@ -58,6 +62,9 @@
 "ply_unsubscribe_google_title" = "Как отменить подписку";
 "ply_unsubscribe_google_content" = "Откройте сайт play.google.com.\n Убедитесь, что вы вошли в правильный аккаунт Google.\n Слева на экране нажмите Мои подписки.\n Найдите подписку, которую нужно отменить.\n Выберите Настроить затем Отменить подписку.";
 "ply_unsubscribe_google_button" = "Ok";
+"ply_unsubscribe_apple_title" = "Как отменить подписку";
+"ply_unsubscribe_apple_content" = "Откройте приложение «Настройки».\n Нажмите свое имя.\n Нажмите «Подписки».\n Выберите подписку для управления.\n Нажмите «Отменить подписку».";
+"ply_unsubscribe_apple_button" = "Ok";
 "ply_subscriptions_title" = "My subscriptions";
 "ply_subscriptions_active_group_title" = "Active";
 "ply_subscription_title" = "Modify your subscription";
@@ -65,3 +72,16 @@
 "ply_subscription_plans_group_title" = "Options";
 "ply_subscription_unsubscribe_button" = "Cancel subscription";
 "ply_subscription_unsubscribe_change_plan_not_available_google" = "This subscription wasn\'t made from the App Store.";
+"ply_subscriptions_empty_message" = "You currently have no active subscription";
+"ply_cancel_survey_title" = "Why do you want to cancel your subscription ?";
+"ply_cancel_survey_message" = "Before cancelling, tell us why. This will help us to improve our product iand and better meet the expectations of our customers.";
+"ply_cancel_survey_reason_1" = "I find the subscription too expensive ";
+"ply_cancel_survey_reason_2" = "I found a better application ";
+"ply_cancel_survey_reason_3" = "I no longer need this service";
+"ply_cancel_survey_reason_4" = "I don\'t use this service enough";
+"ply_cancel_survey_reason_5" = "My decision is related to technical issues ";
+"ply_cancel_survey_reason_6" = "Other";
+"ply_cancel_survey_reason_7" = " I do not wish to answer";
+"ply_powered_by_purchasely" = "Powered by Purchasely";
+"ply_subscription_renew_pattern" = "Next billing date: %@";
+"ply_subscription_cancel_pattern" = "Expires date: %@";

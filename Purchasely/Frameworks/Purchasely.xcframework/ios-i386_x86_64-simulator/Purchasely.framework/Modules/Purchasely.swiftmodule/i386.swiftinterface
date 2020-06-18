@@ -1,6 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.1.3 (swiftlang-1100.0.282.1 clang-1100.0.33.15)
+// swift-compiler-version: Apple Swift version 5.2.4 (swiftlang-1103.0.32.9 clang-1103.0.32.53)
 // swift-module-flags: -target i386-apple-ios10.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name Purchasely
+import CommonCrypto
 import Foundation
 @_exported import Purchasely
 import StoreKit
@@ -18,6 +19,7 @@ extension NSNotification.Name {
   public static let ply_purchasedSubscription: Foundation.Notification.Name
 }
 @objc public enum PLYAlertMessage : Swift.Int {
+  case commonError
   case inAppSuccess
   case inAppDeferred
   case inAppSuccessUnauthentified
@@ -80,6 +82,8 @@ extension PLYError : Foundation.LocalizedError {
   }
 }
 @objc public enum PLYEvent : Swift.Int {
+  case appInstalled
+  case appUpdated
   case appStarted
   case productPageViewed
   case loginTapped
@@ -99,6 +103,11 @@ extension PLYError : Foundation.LocalizedError {
   case inAppDeferred
   case inAppPurchaseFailed
   case linkOpened
+  case subscriptionsListViewed
+  case subscriptionDetailsViewed
+  case subscriptionCancelTapped
+  case subscriptionPlanTapped
+  case cancellationReasonPublished
   public var name: Swift.String {
     get
   }
@@ -107,6 +116,10 @@ extension PLYError : Foundation.LocalizedError {
   public var rawValue: Swift.Int {
     get
   }
+}
+@objc @_hasMissingDesignatedInitializers public class PLYImage : PLYJsonModel {
+  @objc override dynamic public init()
+  @objc deinit
 }
 public enum PluralType {
   case none
@@ -120,7 +133,7 @@ public enum PluralType {
 }
 public func PLYLocalizedPluralString(_ key: Swift.String, count: Swift.Int) -> Swift.String
 public func PLYLocalizedPluralString(_ key: Swift.String, pluralType: PluralType) -> Swift.String
-@objc public class PLYLogger : ObjectiveC.NSObject {
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class PLYLogger : ObjectiveC.NSObject {
   @objc public enum LogLevel : Swift.Int {
     case debug
     case info
@@ -134,21 +147,22 @@ public func PLYLocalizedPluralString(_ key: Swift.String, pluralType: PluralType
   }
   @objc deinit
 }
-@objc open class PLYJsonModel : ObjectiveC.NSObject {
+@objc @_inheritsConvenienceInitializers open class PLYJsonModel : ObjectiveC.NSObject {
   open var json: SwiftyJSON.JSON
   @objc override dynamic public init()
   required public init?(json: SwiftyJSON.JSON)
   open class func parse<T>(fromJsonArray jsonArray: [SwiftyJSON.JSON]) -> [T] where T : PLYJsonModel
   @objc deinit
 }
-@objc public class PLYPlan : PLYJsonModel {
+@_hasMissingDesignatedInitializers @objc public class PLYPlan : PLYJsonModel {
   @objc public var vendorId: Swift.String
   @objc public var name: Swift.String? {
     @objc get
     @objc set
   }
-  @objc override dynamic public init()
+  @objc override dynamic public func isEqual(_ object: Any?) -> Swift.Bool
   @objc deinit
+  @objc override dynamic public init()
 }
 extension PLYPlan {
   public var localizedFullPrice: Swift.String? {
@@ -190,16 +204,22 @@ extension PLYPlan {
     get
     set
   }
+  public var icon: PLYImage? {
+    get
+    set
+  }
   required public init?(json: SwiftyJSON.JSON)
-  @objc override dynamic public init()
   @objc deinit
+  @objc override dynamic public init()
 }
-@objc public class PLYSubscription : PLYJsonModel {
+@_hasMissingDesignatedInitializers @objc public class PLYSubscription : PLYJsonModel {
   @objc public var plan: PLYPlan
   @objc public var subscriptionSource: PLYSubscriptionSource
+  @objc public var nextRenewalDate: Foundation.Date?
+  @objc public var cancelledDate: Foundation.Date?
   @objc public func unsubscribe()
-  @objc override dynamic public init()
   @objc deinit
+  @objc override dynamic public init()
 }
 @objc public enum PLYSubscriptionSource : Swift.Int {
   case appStore
@@ -244,20 +264,28 @@ extension Purchasely {
   @objc dynamic public class func product(with vendorId: Swift.String, success: @escaping (PLYProduct) -> Swift.Void, failure: @escaping (Swift.Error?) -> Swift.Void)
   @objc dynamic public class func plan(with vendorId: Swift.String, success: @escaping (PLYPlan) -> Swift.Void, failure: @escaping (Swift.Error?) -> Swift.Void)
   @objc dynamic public class func userSubscriptions(success: @escaping ([PLYSubscription]?) -> Swift.Void, failure: @escaping (Swift.Error?) -> Swift.Void)
-  @objc dynamic public class func productController(for productVendorId: Swift.String, success: @escaping (UIKit.UIViewController) -> Swift.Void, failure: @escaping (Swift.Error?) -> Swift.Void)
+  @objc dynamic public class func productController(for productVendorId: Swift.String, with presentationVendorId: Swift.String? = nil, success: @escaping (UIKit.UIViewController) -> Swift.Void, failure: @escaping (Swift.Error?) -> Swift.Void)
+  @objc dynamic public class func controllerForSubscriptions() -> UIKit.UIViewController
+  @objc dynamic public class func controllerForSubscription(_ subscription: PLYSubscription) -> UIKit.UIViewController
   @objc public static func purchase(plan: PLYPlan, success: @escaping PLYVoidClosure, failure: @escaping PLYErrorClosure)
   @objc public static func restoreAllProducts(success: @escaping PLYVoidClosure, failure: @escaping PLYErrorClosure)
+}
+extension Purchasely : UserNotifications.UNUserNotificationCenterDelegate {
 }
 extension Purchasely : PLYUIDelegate {
   @objc dynamic public func display(controller: UIKit.UIViewController, type: PLYUIControllerType)
   @objc dynamic public func display(alert: PLYAlertMessage, error: Swift.Error?)
 }
-@objc public class Purchasely : ObjectiveC.NSObject {
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class Purchasely : ObjectiveC.NSObject {
   @objc deinit
 }
 @available(iOS 11.0, *)
 extension SKProductStorePromotionController {
   public func resetStorePromotionsVisibility(for products: [StoreKit.SKProduct], completed: (() -> Swift.Void)?)
+}
+extension String {
+  public func regexMatchGroup(_ pattern: Swift.String) -> [Swift.String]?
+  public func regexMatch(_ pattern: Swift.String) -> Swift.Bool
 }
 extension UIColor {
   public static func ply_fromHex(hex: Swift.String) -> UIKit.UIColor?
