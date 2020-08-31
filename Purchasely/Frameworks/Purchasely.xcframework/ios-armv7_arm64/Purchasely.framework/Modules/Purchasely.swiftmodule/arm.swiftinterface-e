@@ -14,7 +14,7 @@ extension Array {
     get
   }
 }
-public func loc(_ textToTranslate: Swift.String, comment: Swift.String = "") -> Swift.String
+public func loc(_ textToTranslate: Swift.String, comment: Swift.String = "", language: Swift.String? = nil) -> Swift.String
 extension NSNotification.Name {
   public static let ply_purchasedSubscription: Foundation.Notification.Name
 }
@@ -131,8 +131,8 @@ public enum PluralType {
   }
   public func hash(into hasher: inout Swift.Hasher)
 }
-public func PLYLocalizedPluralString(_ key: Swift.String, count: Swift.Int) -> Swift.String
-public func PLYLocalizedPluralString(_ key: Swift.String, pluralType: Purchasely.PluralType) -> Swift.String
+public func PLYLocalizedPluralString(_ key: Swift.String, count: Swift.Int, language: Swift.String?) -> Swift.String
+public func PLYLocalizedPluralString(_ key: Swift.String, pluralType: Purchasely.PluralType, language: Swift.String?) -> Swift.String
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class PLYLogger : ObjectiveC.NSObject {
   @objc public enum LogLevel : Swift.Int {
     case debug
@@ -165,30 +165,16 @@ public func PLYLocalizedPluralString(_ key: Swift.String, pluralType: Purchasely
   @objc override dynamic public init()
 }
 extension PLYPlan {
-  public var localizedFullPrice: Swift.String? {
-    get
-  }
-  public var localizedPrice: Swift.String? {
-    get
-  }
-  public var localizedPeriod: Swift.String? {
-    get
-  }
+  public func localizedFullPrice(language: Swift.String? = nil) -> Swift.String?
+  public func localizedPrice(language: Swift.String? = nil) -> Swift.String?
+  public func localizedPeriod(language: Swift.String? = nil) -> Swift.String?
   public var hasIntroductoryPrice: Swift.Bool {
     get
   }
-  public var localizedFullIntroductoryPrice: Swift.String? {
-    get
-  }
-  public var localizedIntroductoryPrice: Swift.String? {
-    get
-  }
-  public var localizedIntroductoryPeriod: Swift.String? {
-    get
-  }
-  public var localizedIntroductoryDuration: Swift.String? {
-    get
-  }
+  public func localizedFullIntroductoryPrice(language: Swift.String? = nil) -> Swift.String?
+  public func localizedIntroductoryPrice(language: Swift.String? = nil) -> Swift.String?
+  public func localizedIntroductoryPeriod(language: Swift.String? = nil) -> Swift.String?
+  public func localizedIntroductoryDuration(language: Swift.String? = nil) -> Swift.String?
 }
 @objc public class PLYProduct : Purchasely.PLYJsonModel {
   public var vendorId: Swift.String
