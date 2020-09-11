@@ -264,20 +264,6 @@ SWIFT_PROTOCOL("_TtP10Purchasely16PLYEventDelegate_")
 @end
 
 
-SWIFT_CLASS("_TtC10Purchasely12PLYJsonModel")
-@interface PLYJsonModel : NSObject
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
-@end
-
-
-SWIFT_CLASS("_TtC10Purchasely8PLYImage")
-@interface PLYImage : PLYJsonModel
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
-
-
-
 SWIFT_CLASS("_TtC10Purchasely9PLYLogger")
 @interface PLYLogger : NSObject
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
@@ -293,7 +279,7 @@ typedef SWIFT_ENUM(NSInteger, LogLevel, open) {
 
 
 SWIFT_CLASS("_TtC10Purchasely7PLYPlan")
-@interface PLYPlan : PLYJsonModel
+@interface PLYPlan : NSObject
 @property (nonatomic, copy) NSString * _Nonnull vendorId;
 @property (nonatomic, copy) NSString * _Nullable name;
 - (BOOL)isEqual:(id _Nullable)object SWIFT_WARN_UNUSED_RESULT;
@@ -306,18 +292,22 @@ SWIFT_CLASS("_TtC10Purchasely7PLYPlan")
 
 
 
+
+
 SWIFT_CLASS("_TtC10Purchasely10PLYProduct")
-@interface PLYProduct : PLYJsonModel
+@interface PLYProduct : NSObject
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
 
 
+
+
 enum PLYSubscriptionSource : NSInteger;
 
 SWIFT_CLASS("_TtC10Purchasely15PLYSubscription")
-@interface PLYSubscription : PLYJsonModel
+@interface PLYSubscription : NSObject
 @property (nonatomic, strong) PLYPlan * _Nonnull plan;
 @property (nonatomic) enum PLYSubscriptionSource subscriptionSource;
 @property (nonatomic, copy) NSDate * _Nullable nextRenewalDate;
@@ -326,6 +316,8 @@ SWIFT_CLASS("_TtC10Purchasely15PLYSubscription")
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
+
+
 
 typedef SWIFT_ENUM(NSInteger, PLYSubscriptionSource, open) {
   PLYSubscriptionSourceAppStore = 0,
@@ -718,20 +710,6 @@ SWIFT_PROTOCOL("_TtP10Purchasely16PLYEventDelegate_")
 @end
 
 
-SWIFT_CLASS("_TtC10Purchasely12PLYJsonModel")
-@interface PLYJsonModel : NSObject
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
-@end
-
-
-SWIFT_CLASS("_TtC10Purchasely8PLYImage")
-@interface PLYImage : PLYJsonModel
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
-
-
-
 SWIFT_CLASS("_TtC10Purchasely9PLYLogger")
 @interface PLYLogger : NSObject
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
@@ -747,7 +725,7 @@ typedef SWIFT_ENUM(NSInteger, LogLevel, open) {
 
 
 SWIFT_CLASS("_TtC10Purchasely7PLYPlan")
-@interface PLYPlan : PLYJsonModel
+@interface PLYPlan : NSObject
 @property (nonatomic, copy) NSString * _Nonnull vendorId;
 @property (nonatomic, copy) NSString * _Nullable name;
 - (BOOL)isEqual:(id _Nullable)object SWIFT_WARN_UNUSED_RESULT;
@@ -760,18 +738,22 @@ SWIFT_CLASS("_TtC10Purchasely7PLYPlan")
 
 
 
+
+
 SWIFT_CLASS("_TtC10Purchasely10PLYProduct")
-@interface PLYProduct : PLYJsonModel
+@interface PLYProduct : NSObject
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
 
 
+
+
 enum PLYSubscriptionSource : NSInteger;
 
 SWIFT_CLASS("_TtC10Purchasely15PLYSubscription")
-@interface PLYSubscription : PLYJsonModel
+@interface PLYSubscription : NSObject
 @property (nonatomic, strong) PLYPlan * _Nonnull plan;
 @property (nonatomic) enum PLYSubscriptionSource subscriptionSource;
 @property (nonatomic, copy) NSDate * _Nullable nextRenewalDate;
@@ -780,6 +762,8 @@ SWIFT_CLASS("_TtC10Purchasely15PLYSubscription")
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
+
+
 
 typedef SWIFT_ENUM(NSInteger, PLYSubscriptionSource, open) {
   PLYSubscriptionSourceAppStore = 0,
