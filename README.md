@@ -16,7 +16,7 @@
 
 ## ✅ Requirements
 
-- iOS 10.0+
+- iOS 11.0+
 
 ## 🏁 Quick start
 
@@ -24,10 +24,18 @@
 
 #### CocoaPods
 
-[CocoaPods](https://cocoapods.org) is a dependency manager for Cocoa projects. For usage and installation instructions, visit their website. To integrate Purchasely into your Xcode project using CocoaPods, specify it in your `Podfile`:
+You can use [CocoaPods](https://cocoapods.org) to install `Purchasely` by adding it to your `Podfile`:
 
 ```ruby
 pod 'Purchasely'
+```
+
+#### Carthage
+
+You can use [Carthage](https://github.com/Carthage/Carthage) to install `Purchasely` by adding it to your `Cartfile`:
+
+```ruby
+binary "https://raw.githubusercontent.com/Purchasely/Purchasely-iOS/master/Purchasely.json"
 ```
 
 ### Initialize the SDK
