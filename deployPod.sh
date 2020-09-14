@@ -40,6 +40,10 @@ cat ${PROJECT_NAME}.podspec | sed "s/${CURRENT_VERSION}/${NEW_VERSION}/" > ${PRO
 
 find Purchasely/Frameworks/Purchasely.xcframework -name Info.plist -exec plutil -replace CFBundleShortVersionString -string "${NEW_VERSION}" {} \;
 
+find Purchasely/Frameworks/Purchasely.framework -name Info.plist -exec plutil -replace CFBundleShortVersionString -string "${NEW_VERSION}" {} \;
+
+zip -r Purchasely/Frameworks/Purchasely.framework.zip Purchasely/Frameworks/Purchasely.framework
+
 # Test that we only modified the version
 NUMBER_CHANGES=`diff ${PROJECT_NAME}-new.podspec ${PROJECT_NAME}.podspec|wc -l|tr -d " "`
 if [ ${NUMBER_CHANGES} -ne 4 ]; then
