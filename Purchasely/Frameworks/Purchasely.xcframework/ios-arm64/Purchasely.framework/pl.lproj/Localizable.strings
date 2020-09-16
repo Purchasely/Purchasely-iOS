@@ -4,6 +4,7 @@
 "ply_modal_alert_in_app_successfull_restore_message_title" = "Przywracanie ukończone";
 "ply_modal_alert_in_app_restoration_error_title" = "Błąd";
 "ply_modal_alert_in_app_success_content" = "Twój zakup został zatwierdzony. Możesz rozpocząć korzystanie.";
+"ply_modal_alert_in_app_success_unauthentified_content" = "Your purchase has been successfully validated. Sign-in or register to enjoy your subscription on other devices!";
 "ply_modal_alert_in_app_restore_status_success_content" = "Zakup został przywrócony";
 "ply_modal_alert_in_app_success_button" = "Zaczynajmy!";
 "ply_modal_alert_in_app_error_button" = "Ok";
@@ -38,7 +39,8 @@
 "ply_in_app_parsing_error" = "Couldn\'t handle server response.";
 "ply_in_app_login_button" = "Masz już konto? Zaloguj się.";
 "ply_in_app_restore_button" = "Zwrot pieniędzy za zakup";
-"ply_in_app_period_day_plural_rule_none" = "dni";
+"ply_promo_code_button" = "Promo code?";
+"ply_in_app_period_day_plural_rule_none" = "dzień";
 "ply_in_app_period_day_plural_rule_one" = "dzień";
 "ply_in_app_period_day_plural_rule_many" = "%d dni";
 "ply_in_app_period_week_plural_rule_none" = "tygodni";
@@ -74,7 +76,7 @@
 "ply_subscription_unsubscribe_change_plan_not_available_google" = "This subscription wasn\'t made from the App Store.";
 "ply_subscriptions_empty_message" = "You currently have no active subscription";
 "ply_cancel_survey_title" = "Why do you want to cancel your subscription ?";
-"ply_cancel_survey_message" = "Before cancelling, tell us why. This will help us to improve our product iand and better meet the expectations of our customers.";
+"ply_cancel_survey_message" = "Before cancelling, tell us why. This will help us to improve our product and better meet the expectations of our customers.";
 "ply_cancel_survey_reason_1" = "I find the subscription too expensive ";
 "ply_cancel_survey_reason_2" = "I found a better application ";
 "ply_cancel_survey_reason_3" = "I no longer need this service";
@@ -85,3 +87,6 @@
 "ply_powered_by_purchasely" = "Powered by Purchasely";
 "ply_subscription_renew_pattern" = "Next billing date: %@";
 "ply_subscription_cancel_pattern" = "Expires date: %@";
+"ply_modal_downgrade_title" = "ID_91";
+"ply_modal_downgrade_description" = "Your plan change has been validated but it will become active at the end of the current subscription period on ";
+"ply_modal_downgrade_button" = "Got it!";

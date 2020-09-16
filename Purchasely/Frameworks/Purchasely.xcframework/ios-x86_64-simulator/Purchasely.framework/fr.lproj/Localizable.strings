@@ -4,6 +4,7 @@
 "ply_modal_alert_in_app_successfull_restore_message_title" = "Restauration terminée";
 "ply_modal_alert_in_app_restoration_error_title" = "Erreur";
 "ply_modal_alert_in_app_success_content" = "Votre achat a été validé avec succès. Vous pouvez dès à présent en profiter.";
+"ply_modal_alert_in_app_success_unauthentified_content" = "Votre achat a été validé avec succès. Pour profiter de votre abonnement sur tous vos appareils, identifiez vous avec votre compte ou créez en un nouveau.";
 "ply_modal_alert_in_app_restore_status_success_content" = "Vos achats ont été restaurés";
 "ply_modal_alert_in_app_success_button" = "C\'est parti !";
 "ply_modal_alert_in_app_error_button" = "Ok";
@@ -38,6 +39,7 @@
 "ply_in_app_parsing_error" = "Impossible d\'interpréter la réponse du serveur.";
 "ply_in_app_login_button" = "Déjà client ? Connectez-vous !";
 "ply_in_app_restore_button" = "Restaurez vos achats";
+"ply_promo_code_button" = "Code promo ?";
 "ply_in_app_period_day_plural_rule_none" = "jour";
 "ply_in_app_period_day_plural_rule_one" = "jour";
 "ply_in_app_period_day_plural_rule_many" = "%d jours";
@@ -85,3 +87,6 @@
 "ply_powered_by_purchasely" = "Powered by Purchasely";
 "ply_subscription_renew_pattern" = "Renouv. le %@";
 "ply_subscription_cancel_pattern" = "Expire le %@";
+"ply_modal_downgrade_title" = "Félicitations !";
+"ply_modal_downgrade_description" = "Votre changement de plan a bien été pris en compte mais ne deviendra effectif qu\'à l\'issue de la période en cours, à savoir le ";
+"ply_modal_downgrade_button" = "J\'ai compris";

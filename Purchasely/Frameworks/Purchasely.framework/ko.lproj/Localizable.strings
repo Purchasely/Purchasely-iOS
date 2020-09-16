@@ -4,6 +4,7 @@
 "ply_modal_alert_in_app_successfull_restore_message_title" = "복원 완료";
 "ply_modal_alert_in_app_restoration_error_title" = "오류";
 "ply_modal_alert_in_app_success_content" = "구매가 확인되었습니다. 이제 즐길 수 있습니다.";
+"ply_modal_alert_in_app_success_unauthentified_content" = "Your purchase has been successfully validated. Sign-in or register to enjoy your subscription on other devices!";
 "ply_modal_alert_in_app_restore_status_success_content" = "구매 내역이 복원되었습니다";
 "ply_modal_alert_in_app_success_button" = "탐험 시작!";
 "ply_modal_alert_in_app_error_button" = "확인";
@@ -38,6 +39,7 @@
 "ply_in_app_parsing_error" = "Couldn\'t handle server response.";
 "ply_in_app_login_button" = "이미 가입하셨습니까? 로그인하십시오.";
 "ply_in_app_restore_button" = "구매 복원";
+"ply_promo_code_button" = "Promo code?";
 "ply_in_app_period_day_plural_rule_none" = "일";
 "ply_in_app_period_day_plural_rule_one" = "일";
 "ply_in_app_period_day_plural_rule_many" = "%d일";
@@ -74,7 +76,7 @@
 "ply_subscription_unsubscribe_change_plan_not_available_google" = "This subscription wasn\'t made from the App Store.";
 "ply_subscriptions_empty_message" = "You currently have no active subscription";
 "ply_cancel_survey_title" = "Why do you want to cancel your subscription ?";
-"ply_cancel_survey_message" = "Before cancelling, tell us why. This will help us to improve our product iand and better meet the expectations of our customers.";
+"ply_cancel_survey_message" = "Before cancelling, tell us why. This will help us to improve our product and better meet the expectations of our customers.";
 "ply_cancel_survey_reason_1" = "I find the subscription too expensive ";
 "ply_cancel_survey_reason_2" = "I found a better application ";
 "ply_cancel_survey_reason_3" = "I no longer need this service";
@@ -85,3 +87,6 @@
 "ply_powered_by_purchasely" = "Powered by Purchasely";
 "ply_subscription_renew_pattern" = "Next billing date: %@";
 "ply_subscription_cancel_pattern" = "Expires date: %@";
+"ply_modal_downgrade_title" = "ID_91";
+"ply_modal_downgrade_description" = "Your plan change has been validated but it will become active at the end of the current subscription period on ";
+"ply_modal_downgrade_button" = "Got it!";
