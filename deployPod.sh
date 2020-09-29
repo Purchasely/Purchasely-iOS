@@ -56,7 +56,7 @@ fi
 mv ${PROJECT_NAME}-new.podspec ${PROJECT_NAME}.podspec
 
 # Lint pod
-pod lib lint ${PROJECT_NAME}.podspec --allow-warnings --sources=git@github.com:Purchasely/Purchasely-iOS.git,master
+pod lib lint ${PROJECT_NAME}.podspec --allow-warnings --sources=git@github.com:Purchasely/Purchasely-iOS.git,master --verbose
 
 if [ $? -ne 0 ]; then
 	logError "[ERROR] Problem when linting the pod"

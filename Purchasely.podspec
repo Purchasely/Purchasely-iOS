@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'Purchasely'
-  s.version          = '1.1.3'
+  s.version          = '1.1.4'
   s.summary          = 'The simplest way to add In App Purchase to your apps.'
 
 # This description is used to generate tags and improve search results.
@@ -36,4 +36,7 @@ Purchasely handles everything from product presentation to app receipt validatio
   s.vendored_frameworks = ['Purchasely/Frameworks/Purchasely.xcframework']
 
   s.frameworks = 'UIKit', 'StoreKit'
+
+  s.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+  s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
 end
