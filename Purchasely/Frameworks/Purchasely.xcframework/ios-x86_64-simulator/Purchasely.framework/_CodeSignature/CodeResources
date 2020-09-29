@@ -6,7 +6,7 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		lSR9GNBkgqxz5BQFqzqijZhVUAc=
+		jR5GNPSQtbCTx6LdKEDA3f4AxlE=
 		</data>
 		<key>Headers/Purchasely-Swift.h</key>
 		<data>
@@ -18,7 +18,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		HcamhKigrZJ0rZl01JZyc08o/9w=
+		kyiz7iCTk7op+esX43iMF0vdFJk=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
@@ -38,7 +38,7 @@
 		</data>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		wPhuNXRIv764jgiewAK/p/QDT7g=
+		bFUv+LmaLiU23+leqT2hghDVSP8=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/x86_64.swiftdoc</key>
 		<data>
@@ -50,7 +50,7 @@
 		</data>
 		<key>Modules/Purchasely.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		wPhuNXRIv764jgiewAK/p/QDT7g=
+		bFUv+LmaLiU23+leqT2hghDVSP8=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -58,71 +58,71 @@
 		</data>
 		<key>PLYCancelSubscriptionTableViewCell.nib</key>
 		<data>
-		8UG4dk5yeWtdSOk7/TvB/rciLRE=
+		iuj2ASXb8ApSDOTqLoIzBVNIrAg=
 		</data>
 		<key>PLYCancellationSurveyViewController.nib</key>
 		<data>
-		xGrOPAuaO92D/mGjJPdOy2KGGGY=
+		WGoGFRKqRbZQLpamEKpjKxDiADE=
 		</data>
 		<key>PLYEmptyTableViewCell.nib</key>
 		<data>
-		i0pA2xluT697Z4XgvT4ibil56vM=
+		ou8ngu79OVKUQCxHGXFd0QNFka0=
 		</data>
 		<key>PLYFeatureCarouselCell.nib/objects-12.3+.nib</key>
 		<data>
-		KeeUYyeJAA+xWs9zffbESfE5oCw=
+		njdoNCgENvPl9/1Md1eZErBYPYA=
 		</data>
 		<key>PLYFeatureCarouselCell.nib/runtime.nib</key>
 		<data>
-		g3tnfmPaDX/pSAr2+hFJxjQ2mQA=
+		sT4L3yh6W0y/PVqwAGhDo7YTzJI=
 		</data>
 		<key>PLYFeatureView.nib</key>
 		<data>
-		7eCLrWXK2FZap5s2/wjmHuwbK+c=
+		iKHoayLrEzKXdmXfn5u6LKiFrMk=
 		</data>
 		<key>PLYLoadingTableViewCell.nib</key>
 		<data>
-		ChW6bGsfR0fFwwcHuKvM0tWek5U=
+		Fh+U+yu4DqU6JhRvdCFqYaj0Adg=
 		</data>
 		<key>PLYNoSubscriptionTableViewCell.nib</key>
 		<data>
-		Hxr4GhfCp0SJn5Duhc30wCMQ8N0=
+		I9QAbYov9cM7fschV/ml+jQu1TA=
 		</data>
 		<key>PLYPlanTableViewCell.nib</key>
 		<data>
-		FQhMj9bw/Cci7q2XVA+233oExks=
+		dHBjeFZCR3GDa40K9luz8rlCrAI=
 		</data>
 		<key>PLYProductCarouselViewController.nib</key>
 		<data>
-		MC1pA3Xhkw9gdjqY5Hv7thBEdDU=
+		EkOqiKW+DNPxIm+xX9a6NXo3i/I=
 		</data>
 		<key>PLYProductFeatureListOverlayViewController.nib</key>
 		<data>
-		++X5OncsHbr8Fstl099pMrQF7Bg=
+		q/8Wu6I482se5azta1TyXTqWwsg=
 		</data>
 		<key>PLYProductFeatureListViewController.nib</key>
 		<data>
-		ktkXFNFyxmKPuDKVUm9xW9StoOw=
+		zkWPNVDmC9AnckXszFUqUtuMG9g=
 		</data>
 		<key>PLYPurchaseButtonView.nib</key>
 		<data>
-		qks5Xm4LNVaYfVmAP6XAQ+2I6h0=
+		MbAiTzh2pizm82tAH/gdVj5K74I=
 		</data>
 		<key>PLYSubscriptionTableViewCell.nib</key>
 		<data>
-		Ebx5kFkqsN0UK5ijChadETL2KfU=
+		vS2EcJ3c9AT2mIRDY6B3K6RF10g=
 		</data>
 		<key>PLYSubscriptionViewController.nib</key>
 		<data>
-		LqvpY5bITmkesdmyyQFj60gF0XU=
+		4Fy7uc9NwsTzr8LNf0FvOrsG4eI=
 		</data>
 		<key>PLYSubscriptionsViewController.nib</key>
 		<data>
-		CBPxHV5JzmIdG0qMQ+GLeJKaclc=
+		ZPvu5FK1kUjnm3vi6Sa5FyvId7Q=
 		</data>
 		<key>PLYWebViewViewController.nib</key>
 		<data>
-		pw0ar/OnuvnnWu1P1gymyPndCVY=
+		v92p8jQtPhwbyxXRlmPyJONC0iY=
 		</data>
 		<key>cs.lproj/Localizable.strings</key>
 		<dict>
@@ -284,7 +284,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			PQ9MyutGhjx/hXkFP7+fWWQWQNlqwE/SdV4C+0JHg7k=
+			i1zPZ6PU4flpbSPZ3v/b4Wa65o2TmFGKOF/FJ3tvkTk=
 			</data>
 		</dict>
 		<key>Headers/Purchasely-Swift.h</key>
@@ -333,7 +333,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			QMaDdO1olygtJyLZYusy7c9Rhj3+PfvaxejZqGXfBlM=
+			hYnKJzp4fhMtGzG1qStJuA1qVG0kyZO+fq87srC9a0w=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/x86_64.swiftdoc</key>
@@ -354,7 +354,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			QMaDdO1olygtJyLZYusy7c9Rhj3+PfvaxejZqGXfBlM=
+			hYnKJzp4fhMtGzG1qStJuA1qVG0kyZO+fq87srC9a0w=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -368,119 +368,119 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			UkN+VPlnqWWc8ty+Zd39cqPXOLPocFo0u6mYTt1gOoc=
+			1fjVahxMcnticaAfj5pAd2RpPiSeTvzSRcmyseYCpy4=
 			</data>
 		</dict>
 		<key>PLYCancellationSurveyViewController.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			LbRERDZ6+q17T+mnpf8eC2OH5+HKM2MSCaHU7swkri8=
+			BqZuIf1qE0glttrZWkN6tp4aRezhI8AXzm1Sbnaxz7A=
 			</data>
 		</dict>
 		<key>PLYEmptyTableViewCell.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			z2A4PWRtPaJ5A5O/LdPdOLVX1k+xUBK0XFDc/eDgy64=
+			hFBVAQmR2ipiUkHVImEpFRdaYqh61WLTxI40h4tJ3Fw=
 			</data>
 		</dict>
 		<key>PLYFeatureCarouselCell.nib/objects-12.3+.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			v6GHYWzahtiRO2PfejdDZKqRHged5vMKe6GyCclBdtA=
+			Q1T+nCKfSaDwLwNsjKQRYaWGqwJuURfqDwKB6YwWIJg=
 			</data>
 		</dict>
 		<key>PLYFeatureCarouselCell.nib/runtime.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			2Y7BpSJpZN8rNiAZunhpiUU9tib+rKQnIi8GGNvFRvY=
+			stnNXnnJavdZSeAQXJt6YiG8xa8OiNtfLX/l0i01eB8=
 			</data>
 		</dict>
 		<key>PLYFeatureView.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			9HmcIBgcunC0DahuBm1G2jUeEY3H/PN8+x3297ESSC4=
+			p9/XwO8i4P7WGvuk7Beb0/X3LUi+u3zN+HP/SM4fdJo=
 			</data>
 		</dict>
 		<key>PLYLoadingTableViewCell.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			KveQi+vDkm0OYsYhODuNesESHvKO/byGYcDiv+QPo3E=
+			qcHZcYaJC0QfSc+0A2JGTaoXQxhuc8eiKKZzDwDEzNo=
 			</data>
 		</dict>
 		<key>PLYNoSubscriptionTableViewCell.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			P1iQUyoHweCFDt64H2TlDXjAp0SP4kMW/NBLkPhPeNA=
+			yIStZFQnM2bs22JlxOEwln3wK/iCEo7rpK5T+Clgk4c=
 			</data>
 		</dict>
 		<key>PLYPlanTableViewCell.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Ipo8NbWFUIXiEiUQRYYCcfWo5ppYeTvwIdMC88PIRoo=
+			VkxvLlAB9L8spIezvCwwYDcrd8BM+wg/nagKkBvo3is=
 			</data>
 		</dict>
 		<key>PLYProductCarouselViewController.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ns8w2nqEfchHu5FOXEGofsSgp7tz4rzs4+5OB5G3Qj8=
+			SrvU+Xq6u0k7641kRgHzmKVE562/S1jEYjqBl3I9CiE=
 			</data>
 		</dict>
 		<key>PLYProductFeatureListOverlayViewController.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			AEelw1jg0fQx54XLWnS/kmv0/03wM+RFHDmqn6kqHAw=
+			9HtUKKnzJHaBlM2Tu6ymN9ZSD2pH/LHf/1rRCW03LxE=
 			</data>
 		</dict>
 		<key>PLYProductFeatureListViewController.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			h5NYOIgru8/veJ5M/dJWuA/0T90s1B4x+q1vGNCC3iI=
+			TsRGsKy0V8b5QR34ml6H73IoX7gZNrlxDWyJnIxuwRU=
 			</data>
 		</dict>
 		<key>PLYPurchaseButtonView.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			1/d8h3WP3pFSIMd+pEe0D8S3dz+cJGD0oDOFSaSOaGE=
+			d5LiH2n99nvt4p898vQRRTCR9p65II7bWlscRUYdiYs=
 			</data>
 		</dict>
 		<key>PLYSubscriptionTableViewCell.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			c15NHSgLVCY7Jxb3KBwVCjSZc+ukZKvM8fQ/iSsur4I=
+			XBi5yBYEGPkcpq1ZsJC296dfAzjy9NE8bSZrCwyhCfY=
 			</data>
 		</dict>
 		<key>PLYSubscriptionViewController.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			fAdXEhlbf3LHD1wLGUrSM1SbFUn043C9Mk/BnUy9LNE=
+			5nlzHx0ZEdAkEWAOQycmlKFMkhEovZQ+J3e98VREAyU=
 			</data>
 		</dict>
 		<key>PLYSubscriptionsViewController.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			dEpQ7e9fY4lB7C1p8cOkD7zaMIuioo+Dmw2y2rdqtBE=
+			Zg8R4gKzKg8aIyRjzCb8Vr09D6PR+j3HImHlnY7TM00=
 			</data>
 		</dict>
 		<key>PLYWebViewViewController.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			HjncSrIkB5PaM96l8YxL6Xzj4pwzXYwO/F2Riv2bMDU=
+			HrswrBszbIGPWzdqwj2OfsjMmjOHe+PSm74ynR2iLs8=
 			</data>
 		</dict>
 		<key>cs.lproj/Localizable.strings</key>
