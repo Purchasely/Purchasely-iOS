@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'Purchasely'
-  s.version          = '2.0.0'
+  s.version          = '2.0.1'
   s.summary          = 'The simplest way to add In App Purchase to your apps.'
 
 # This description is used to generate tags and improve search results.
@@ -34,11 +34,13 @@ Purchasely handles everything from product presentation to app receipt validatio
   s.ios.deployment_target = '11.0'
   s.tvos.deployment_target = '11.0'
 
-  s.ios.vendored_frameworks = ['Purchasely/Frameworks/ios/Purchasely.xcframework']
-  s.tvos.vendored_frameworks = ['Purchasely/Frameworks/tvos/Purchasely.xcframework']
+  s.vendored_frameworks = ['Purchasely/Frameworks/Purchasely.xcframework']
 
-  s.frameworks = 'UIKit', 'StoreKit'
+  s.ios.frameworks = 'UIKit', 'StoreKit'
+	s.tvos.frameworks = 'UIKit', 'TVUIKit', 'StoreKit'
 
-  s.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
-  s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+  s.ios.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+  s.ios.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+	s.tvos.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=appletvsimulator*]' => 'arm64' }
+	s.tvos.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=appletvsimulator*]' => 'arm64' }
 end
