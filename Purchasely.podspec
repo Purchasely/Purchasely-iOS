@@ -30,10 +30,12 @@ Purchasely handles everything from product presentation to app receipt validatio
   s.source           = { :git => 'https://github.com/Purchasely/Purchasely-iOS.git', :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/PurchaselyCom'
 
-  s.swift_versions = ['5.0', '5.1', '5.2']
-  s.ios.deployment_target = '10.0'
+  s.swift_versions = ['5.0', '5.1', '5.2', '5.3']
+  s.ios.deployment_target = '11.0'
+  s.tvos.deployment_target = '11.0'
 
-  s.vendored_frameworks = ['Purchasely/Frameworks/Purchasely.xcframework']
+  s.ios.vendored_frameworks = ['Purchasely/Frameworks/ios/Purchasely.xcframework']
+  s.tvos.vendored_frameworks = ['Purchasely/Frameworks/tvos/Purchasely.xcframework']
 
   s.frameworks = 'UIKit', 'StoreKit'
 
