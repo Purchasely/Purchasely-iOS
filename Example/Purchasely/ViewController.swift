@@ -33,7 +33,7 @@ extension ViewController {
 
 	@IBAction func purchase(_ sender: Any) {
 
-		Purchasely.productController(for: "PRODUCT_ID", success: { [weak self](controller) in
+		Purchasely.productController(for: "PURCHASELY_PLUS", success: { [weak self](controller) in
 			self?.present(controller, animated: true, completion: nil)
 			}, failure: { _ in
 				// Replace by our own page

@@ -18,11 +18,11 @@
 		</data>
 		<key>Modules/Purchasely.swiftmodule/Project/x86_64-apple-tvos-simulator.swiftsourceinfo</key>
 		<data>
-		CXFNUfdRgMdYduENASH0K+KYz3U=
+		UV4DLeatpOQvmx4kRYC69VQBhjg=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/Project/x86_64.swiftsourceinfo</key>
 		<data>
-		CXFNUfdRgMdYduENASH0K+KYz3U=
+		UV4DLeatpOQvmx4kRYC69VQBhjg=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-tvos-simulator.swiftdoc</key>
 		<data>
@@ -34,7 +34,7 @@
 		</data>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-tvos-simulator.swiftmodule</key>
 		<data>
-		Ajxux1QB45oR8K46wipIBEmo/XQ=
+		VebMwlPR7t0QnnAc7wWVSEzllpk=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/x86_64.swiftdoc</key>
 		<data>
@@ -46,7 +46,7 @@
 		</data>
 		<key>Modules/Purchasely.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		Ajxux1QB45oR8K46wipIBEmo/XQ=
+		VebMwlPR7t0QnnAc7wWVSEzllpk=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -54,7 +54,7 @@
 		</data>
 		<key>PLYWebViewViewController.nib</key>
 		<data>
-		Tqs62bIOfAxdaLwcQhznsQmZ+oI=
+		FJu/EpN2vAOZDYTHrtnSSw9HnDc=
 		</data>
 		<key>cs.lproj/Localizable.strings</key>
 		<dict>
@@ -230,14 +230,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			BckgQ1DxsSibez44rCS8FCHKOHZ7tRvQcj71P0qYoh4=
+			J03vAW0/Vri3lvJtGt3dMnXIjbWHl5IMndjv/X5FqoI=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/Project/x86_64.swiftsourceinfo</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			BckgQ1DxsSibez44rCS8FCHKOHZ7tRvQcj71P0qYoh4=
+			J03vAW0/Vri3lvJtGt3dMnXIjbWHl5IMndjv/X5FqoI=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-tvos-simulator.swiftdoc</key>
@@ -258,7 +258,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			bEClhH7PPFIM4I5GFmtSWztbRMWoRi7D4Rr65RyRsK4=
+			b3EAP1kahi28aT24FYIqZVmZAqD1LAzj0Oipze2OT1M=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/x86_64.swiftdoc</key>
@@ -279,7 +279,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			bEClhH7PPFIM4I5GFmtSWztbRMWoRi7D4Rr65RyRsK4=
+			b3EAP1kahi28aT24FYIqZVmZAqD1LAzj0Oipze2OT1M=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -293,7 +293,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			xhkyhjhM8TWyz1oK2R5t6Ou+d4yHa/WCCRZG/pfLwWo=
+			7ghgutH1O9+jP035zXACFn3I0NhR9dL4MOb3/c0/kh4=
 			</data>
 		</dict>
 		<key>cs.lproj/Localizable.strings</key>

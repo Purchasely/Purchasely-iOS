@@ -18,7 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
 
-		Purchasely.start(withAPIKey: "YOUR_KEY", appUserId: "123456789", logLevel: .debug)
+		Purchasely.start(withAPIKey: "afa96c76-1d8e-4e3c-a48f-204a3cd93a15",
+						 appUserId: "DEMO_USER",
+						 logLevel: .debug)
 
         return true
     }
