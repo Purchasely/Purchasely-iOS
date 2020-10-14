@@ -1,5 +1,5 @@
 framework module Purchasely {
-  umbrella header "Purchasely-umbrella.h"
+  umbrella header "Purchasely-iOS-umbrella.h"
 
   export *
   module * { export * }

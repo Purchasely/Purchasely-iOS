@@ -287,6 +287,17 @@ SWIFT_CLASS("_TtC10Purchasely7PLYPlan")
 
 
 
+@interface PLYPlan (SWIFT_EXTENSION(Purchasely))
+- (NSString * _Nullable)localizedFullPriceWithLanguage:(NSString * _Nullable)language SWIFT_WARN_UNUSED_RESULT;
+- (NSString * _Nullable)localizedPriceWithLanguage:(NSString * _Nullable)language SWIFT_WARN_UNUSED_RESULT;
+- (NSString * _Nullable)localizedPeriodWithLanguage:(NSString * _Nullable)language SWIFT_WARN_UNUSED_RESULT;
+@property (nonatomic, readonly) BOOL hasIntroductoryPrice;
+- (NSString * _Nullable)localizedFullIntroductoryPriceWithLanguage:(NSString * _Nullable)language SWIFT_WARN_UNUSED_RESULT;
+- (NSString * _Nullable)localizedIntroductoryPriceWithLanguage:(NSString * _Nullable)language SWIFT_WARN_UNUSED_RESULT;
+- (NSString * _Nullable)localizedIntroductoryPeriodWithLanguage:(NSString * _Nullable)language SWIFT_WARN_UNUSED_RESULT;
+- (NSString * _Nullable)localizedIntroductoryDurationWithLanguage:(NSString * _Nullable)language SWIFT_WARN_UNUSED_RESULT;
+@end
+
 
 SWIFT_CLASS("_TtC10Purchasely10PLYProduct")
 @interface PLYProduct : NSObject
@@ -367,10 +378,11 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 + (void)setLogLevel:(enum LogLevel)logLevel;
 + (void)productWith:(NSString * _Nonnull)vendorId success:(void (^ _Nonnull)(PLYProduct * _Nonnull))success failure:(void (^ _Nonnull)(NSError * _Nullable))failure;
 + (void)planWith:(NSString * _Nonnull)vendorId success:(void (^ _Nonnull)(PLYPlan * _Nonnull))success failure:(void (^ _Nonnull)(NSError * _Nullable))failure;
-+ (void)userSubscriptionsWithSuccess:(void (^ _Nonnull)(NSArray<PLYSubscription *> * _Nullable))success failure:(void (^ _Nonnull)(NSError * _Nullable))failure;
-+ (void)productControllerFor:(NSString * _Nonnull)productVendorId with:(NSString * _Nullable)presentationVendorId success:(void (^ _Nonnull)(UIViewController * _Nonnull))success failure:(void (^ _Nonnull)(NSError * _Nullable))failure;
-+ (UIViewController * _Nonnull)controllerForSubscriptions SWIFT_WARN_UNUSED_RESULT;
-+ (UIViewController * _Nonnull)controllerForSubscription:(PLYSubscription * _Nonnull)subscription SWIFT_WARN_UNUSED_RESULT;
++ (void)userSubscriptionsWithSuccess:(void (^ _Nonnull)(NSArray<PLYSubscription *> * _Nullable))success failure:(void (^ _Nonnull)(NSError * _Nonnull))failure;
++ (UIViewController * _Nonnull)productControllerFor:(NSString * _Nonnull)productVendorId with:(NSString * _Nullable)presentationVendorId SWIFT_WARN_UNUSED_RESULT;
++ (void)productControllerFor:(NSString * _Nonnull)productVendorId with:(NSString * _Nullable)presentationVendorId success:(void (^ _Nonnull)(UIViewController * _Nonnull))success failure:(void (^ _Nonnull)(NSError * _Nullable))failure SWIFT_DEPRECATED_MSG("", "productControllerFor:with:success:failure:");
++ (UIViewController * _Nonnull)subscriptionsController SWIFT_WARN_UNUSED_RESULT;
++ (UIViewController * _Nonnull)subscriptionControllerFor:(PLYSubscription * _Nonnull)subscription SWIFT_WARN_UNUSED_RESULT;
 /// This method performs a purchase on an plan of a Purchasely product
 /// :param: plan the PLYPlan that you setup in Purchasely admin
 /// :param: success the block called when the purchase was completed from end to end
@@ -381,6 +393,8 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 /// :param: failure The closure that is called when at no item was restored
 + (void)restoreAllProductsWithSuccess:(void (^ _Nonnull)(void))success failure:(void (^ _Nonnull)(NSError * _Nonnull))failure;
 @end
+
+
 
 
 
