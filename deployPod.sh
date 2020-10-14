@@ -38,7 +38,7 @@ else
 fi
 cat ${PROJECT_NAME}.podspec | sed "s/${CURRENT_VERSION}/${NEW_VERSION}/" > ${PROJECT_NAME}-new.podspec
 
-find Purchasely/Frameworks/*/Purchasely.xcframework -name Info.plist -exec plutil -replace CFBundleShortVersionString -string "${NEW_VERSION}" {} \;
+find Purchasely/Frameworks/Purchasely.xcframework -name Info.plist -exec plutil -replace CFBundleShortVersionString -string "${NEW_VERSION}" {} \;
 
 #find Purchasely/Frameworks/Purchasely.framework -name Info.plist -exec plutil -replace CFBundleShortVersionString -string "${NEW_VERSION}" {} \;
 
