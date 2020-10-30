@@ -51,6 +51,20 @@ public enum PLYActionError : Swift.Error {
     get
   }
 }
+@objc public enum PLYCancellationReason : Swift.Int {
+  case price = 1
+  case betterApp = 2
+  case noLongerUseful = 3
+  case noUse = 4
+  case technicalIssues = 5
+  case other = 6
+  case unknown = 7
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
 public enum PLYComponentError : Swift.Error {
   case unknownComponentType
   public static func == (a: PLYComponentError, b: PLYComponentError) -> Swift.Bool
@@ -267,6 +281,7 @@ extension Purchasely {
   @objc dynamic public class func productController(for productVendorId: Swift.String, with presentationVendorId: Swift.String? = nil, success: @escaping (UIKit.UIViewController) -> Swift.Void, failure: @escaping (Swift.Error?) -> Swift.Void)
   @objc dynamic public class func subscriptionsController() -> UIKit.UIViewController
   @objc dynamic public class func subscriptionController(for subscription: PLYSubscription) -> UIKit.UIViewController
+  @objc dynamic public class func cancellationSurveyController(for product: PLYProduct?, selected: @escaping ((PLYCancellationReason) -> ())) -> UIKit.UIViewController
   @objc public static func purchase(plan: PLYPlan, success: @escaping PLYVoidClosure, failure: @escaping PLYErrorClosure)
   @objc public static func restoreAllProducts(success: @escaping PLYVoidClosure, failure: @escaping PLYErrorClosure)
 }
@@ -296,6 +311,9 @@ extension PLYActionError : Swift.Hashable {}
 extension PLYAlertMessage : Swift.Equatable {}
 extension PLYAlertMessage : Swift.Hashable {}
 extension PLYAlertMessage : Swift.RawRepresentable {}
+extension PLYCancellationReason : Swift.Equatable {}
+extension PLYCancellationReason : Swift.Hashable {}
+extension PLYCancellationReason : Swift.RawRepresentable {}
 extension PLYComponentError : Swift.Equatable {}
 extension PLYComponentError : Swift.Hashable {}
 extension PLYEnvironment : Swift.Equatable {}

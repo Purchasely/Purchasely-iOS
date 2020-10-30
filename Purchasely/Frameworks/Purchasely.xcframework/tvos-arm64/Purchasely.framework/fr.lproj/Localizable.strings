@@ -11,6 +11,9 @@
 "ply_modal_alert_in_app_deferred_title" = "Un petit moment …";
 "ply_modal_alert_in_app_deferred_content" = "Votre achat n\'a pas encore pu être validé car il vous faut l\'autorisation de vos parents pour terminer l\'achat. Une demande vient de leur être envoyée. Une fois cette validation faite vous pourrez profiter de votre achat. Vous pouvez relancer la demande en ré-appuyant sur le bouton d\'achat";
 "ply_modal_alert_in_app_deferred_button" = "Ok";
+"ply_modal_huawei_not_logged_title" = "Compte Huawei inconnu";
+"ply_modal_huawei_not_logged_description" = "Merci de vous connecter à votre compte Huawei dans l\'application App Gallery";
+"ply_modal_huawei_not_logged_button" = "Ok";
 "ply_modal_change_plan_different_store_title" = "Attention";
 "ply_modal_change_plan_different_store_content" = "Vous disposez déjà d\'un abonnement équivalent souscrit sur %@. Vous devrez procéder manuellement à la résiliation de votre abonnement pour éviter une double facturation. Souhaitez-vous continuer ?";
 "ply_modal_change_plan_different_store_continue_button" = "Continuer";

@@ -51,6 +51,20 @@ public enum PLYActionError : Swift.Error {
     get
   }
 }
+@objc public enum PLYCancellationReason : Swift.Int {
+  case price = 1
+  case betterApp = 2
+  case noLongerUseful = 3
+  case noUse = 4
+  case technicalIssues = 5
+  case other = 6
+  case unknown = 7
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
 public enum PLYComponentError : Swift.Error {
   case unknownComponentType
   public static func == (a: Purchasely.PLYComponentError, b: Purchasely.PLYComponentError) -> Swift.Bool
@@ -267,6 +281,7 @@ extension Purchasely {
   @objc dynamic public class func productController(for productVendorId: Swift.String, with presentationVendorId: Swift.String? = nil, success: @escaping (UIKit.UIViewController) -> Swift.Void, failure: @escaping (Swift.Error?) -> Swift.Void)
   @objc dynamic public class func subscriptionsController() -> UIKit.UIViewController
   @objc dynamic public class func subscriptionController(for subscription: Purchasely.PLYSubscription) -> UIKit.UIViewController
+  @objc dynamic public class func cancellationSurveyController(for product: Purchasely.PLYProduct?, selected: @escaping ((Purchasely.PLYCancellationReason) -> ())) -> UIKit.UIViewController
   @objc public static func purchase(plan: Purchasely.PLYPlan, success: @escaping Purchasely.PLYVoidClosure, failure: @escaping Purchasely.PLYErrorClosure)
   @objc public static func restoreAllProducts(success: @escaping Purchasely.PLYVoidClosure, failure: @escaping Purchasely.PLYErrorClosure)
 }
@@ -296,6 +311,9 @@ extension Purchasely.PLYActionError : Swift.Hashable {}
 extension Purchasely.PLYAlertMessage : Swift.Equatable {}
 extension Purchasely.PLYAlertMessage : Swift.Hashable {}
 extension Purchasely.PLYAlertMessage : Swift.RawRepresentable {}
+extension Purchasely.PLYCancellationReason : Swift.Equatable {}
+extension Purchasely.PLYCancellationReason : Swift.Hashable {}
+extension Purchasely.PLYCancellationReason : Swift.RawRepresentable {}
 extension Purchasely.PLYComponentError : Swift.Equatable {}
 extension Purchasely.PLYComponentError : Swift.Hashable {}
 extension Purchasely.PLYEnvironment : Swift.Equatable {}

@@ -220,6 +220,16 @@ typedef SWIFT_ENUM(NSInteger, PLYAlertMessage, open) {
   PLYAlertMessageUnsubscribeAndroid = 7,
 };
 
+typedef SWIFT_ENUM(NSInteger, PLYCancellationReason, open) {
+  PLYCancellationReasonPrice = 1,
+  PLYCancellationReasonBetterApp = 2,
+  PLYCancellationReasonNoLongerUseful = 3,
+  PLYCancellationReasonNoUse = 4,
+  PLYCancellationReasonTechnicalIssues = 5,
+  PLYCancellationReasonOther = 6,
+  PLYCancellationReasonUnknown = 7,
+};
+
 typedef SWIFT_ENUM(NSInteger, PLYEnvironment, open) {
   PLYEnvironmentProd = 0,
   PLYEnvironmentStaging = 1,
@@ -383,6 +393,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 + (void)productControllerFor:(NSString * _Nonnull)productVendorId with:(NSString * _Nullable)presentationVendorId success:(void (^ _Nonnull)(UIViewController * _Nonnull))success failure:(void (^ _Nonnull)(NSError * _Nullable))failure SWIFT_DEPRECATED_MSG("", "productControllerFor:with:success:failure:");
 + (UIViewController * _Nonnull)subscriptionsController SWIFT_WARN_UNUSED_RESULT;
 + (UIViewController * _Nonnull)subscriptionControllerFor:(PLYSubscription * _Nonnull)subscription SWIFT_WARN_UNUSED_RESULT;
++ (UIViewController * _Nonnull)cancellationSurveyControllerFor:(PLYProduct * _Nullable)product selected:(void (^ _Nonnull)(enum PLYCancellationReason))selected SWIFT_WARN_UNUSED_RESULT;
 /// This method performs a purchase on an plan of a Purchasely product
 /// :param: plan the PLYPlan that you setup in Purchasely admin
 /// :param: success the block called when the purchase was completed from end to end
