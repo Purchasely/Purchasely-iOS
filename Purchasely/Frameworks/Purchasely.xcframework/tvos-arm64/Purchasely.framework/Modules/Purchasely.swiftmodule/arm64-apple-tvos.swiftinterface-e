@@ -216,6 +216,17 @@ extension PLYPlan {
   @objc deinit
   @objc override dynamic public init()
 }
+public typealias PLYProductViewControllerCompletionBlock = (Purchasely.PLYProductViewControllerResult, Purchasely.PLYPlan?) -> Swift.Void
+@objc public enum PLYProductViewControllerResult : Swift.Int {
+  case purchased
+  case cancelled
+  case restored
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
 @objc public class PLYSubscription : ObjectiveC.NSObject, Swift.Decodable {
   @objc public var plan: Purchasely.PLYPlan
   @objc public var subscriptionSource: Purchasely.PLYSubscriptionSource
@@ -276,9 +287,7 @@ extension Purchasely {
   @objc dynamic public class func product(with vendorId: Swift.String, success: @escaping (Purchasely.PLYProduct) -> Swift.Void, failure: @escaping (Swift.Error?) -> Swift.Void)
   @objc dynamic public class func plan(with vendorId: Swift.String, success: @escaping (Purchasely.PLYPlan) -> Swift.Void, failure: @escaping (Swift.Error?) -> Swift.Void)
   @objc dynamic public class func userSubscriptions(success: @escaping ([Purchasely.PLYSubscription]?) -> Swift.Void, failure: @escaping Purchasely.PLYErrorClosure)
-  @objc dynamic public class func productController(for productVendorId: Swift.String, with presentationVendorId: Swift.String?) -> UIKit.UIViewController
-  @available(*, deprecated, renamed: "productController")
-  @objc dynamic public class func productController(for productVendorId: Swift.String, with presentationVendorId: Swift.String? = nil, success: @escaping (UIKit.UIViewController) -> Swift.Void, failure: @escaping (Swift.Error?) -> Swift.Void)
+  @objc dynamic public class func productController(for productVendorId: Swift.String, with presentationVendorId: Swift.String? = nil, completion: Purchasely.PLYProductViewControllerCompletionBlock? = nil) -> UIKit.UIViewController
   @objc dynamic public class func subscriptionsController() -> UIKit.UIViewController
   @objc dynamic public class func subscriptionController(for subscription: Purchasely.PLYSubscription) -> UIKit.UIViewController
   @objc dynamic public class func cancellationSurveyController(for product: Purchasely.PLYProduct?, selected: @escaping ((Purchasely.PLYCancellationReason) -> ())) -> UIKit.UIViewController
@@ -329,6 +338,9 @@ extension Purchasely.PluralType : Swift.Hashable {}
 extension Purchasely.PLYLogger.LogLevel : Swift.Equatable {}
 extension Purchasely.PLYLogger.LogLevel : Swift.Hashable {}
 extension Purchasely.PLYLogger.LogLevel : Swift.RawRepresentable {}
+extension Purchasely.PLYProductViewControllerResult : Swift.Equatable {}
+extension Purchasely.PLYProductViewControllerResult : Swift.Hashable {}
+extension Purchasely.PLYProductViewControllerResult : Swift.RawRepresentable {}
 extension Purchasely.PLYSubscriptionSourceError : Swift.Equatable {}
 extension Purchasely.PLYSubscriptionSourceError : Swift.Hashable {}
 extension Purchasely.PLYSubscriptionSource : Swift.Equatable {}

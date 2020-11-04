@@ -317,6 +317,12 @@ SWIFT_CLASS("_TtC10Purchasely10PLYProduct")
 
 
 
+typedef SWIFT_ENUM(NSInteger, PLYProductViewControllerResult, open) {
+  PLYProductViewControllerResultPurchased = 0,
+  PLYProductViewControllerResultCancelled = 1,
+  PLYProductViewControllerResultRestored = 2,
+};
+
 enum PLYSubscriptionSource : NSInteger;
 
 SWIFT_CLASS("_TtC10Purchasely15PLYSubscription")
@@ -389,8 +395,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 + (void)productWith:(NSString * _Nonnull)vendorId success:(void (^ _Nonnull)(PLYProduct * _Nonnull))success failure:(void (^ _Nonnull)(NSError * _Nullable))failure;
 + (void)planWith:(NSString * _Nonnull)vendorId success:(void (^ _Nonnull)(PLYPlan * _Nonnull))success failure:(void (^ _Nonnull)(NSError * _Nullable))failure;
 + (void)userSubscriptionsWithSuccess:(void (^ _Nonnull)(NSArray<PLYSubscription *> * _Nullable))success failure:(void (^ _Nonnull)(NSError * _Nonnull))failure;
-+ (UIViewController * _Nonnull)productControllerFor:(NSString * _Nonnull)productVendorId with:(NSString * _Nullable)presentationVendorId SWIFT_WARN_UNUSED_RESULT;
-+ (void)productControllerFor:(NSString * _Nonnull)productVendorId with:(NSString * _Nullable)presentationVendorId success:(void (^ _Nonnull)(UIViewController * _Nonnull))success failure:(void (^ _Nonnull)(NSError * _Nullable))failure SWIFT_DEPRECATED_MSG("", "productControllerFor:with:success:failure:");
++ (UIViewController * _Nonnull)productControllerFor:(NSString * _Nonnull)productVendorId with:(NSString * _Nullable)presentationVendorId completion:(void (^ _Nullable)(enum PLYProductViewControllerResult, PLYPlan * _Nullable))completion SWIFT_WARN_UNUSED_RESULT;
 + (UIViewController * _Nonnull)subscriptionsController SWIFT_WARN_UNUSED_RESULT;
 + (UIViewController * _Nonnull)subscriptionControllerFor:(PLYSubscription * _Nonnull)subscription SWIFT_WARN_UNUSED_RESULT;
 + (UIViewController * _Nonnull)cancellationSurveyControllerFor:(PLYProduct * _Nullable)product selected:(void (^ _Nonnull)(enum PLYCancellationReason))selected SWIFT_WARN_UNUSED_RESULT;
