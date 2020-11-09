@@ -47,7 +47,7 @@ find Purchasely/Frameworks/Purchasely.xcframework -name Info.plist -exec plutil 
 
 # Test that we only modified the version
 NUMBER_CHANGES=`diff ${PROJECT_NAME}-new.podspec ${PROJECT_NAME}.podspec|wc -l|tr -d " "`
-if [ ${NUMBER_CHANGES} -ne 4 ]; then
+if [ ${NUMBER_CHANGES} -ne 4 ] && [ ${NUMBER_CHANGES} -ne 0 ]; then
 	logError "[ERROR] Podspec version bump modified more than one occurence, please check \n\
 ---------------------------------------------------------------------------- \n
 	`diff ${PROJECT_NAME}-new.podspec ${PROJECT_NAME}.podspec`"
