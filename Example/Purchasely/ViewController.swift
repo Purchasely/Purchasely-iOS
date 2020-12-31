@@ -15,10 +15,14 @@ class ViewController: UIViewController {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view, typically from a nib.
 
+		NotificationCenter.default.addObserver(self, selector: #selector(reloadContent(_:)), name: .ply_purchasedSubscription, object: nil)
+	}
+
+	override func viewDidAppear(_ animated: Bool) {
+		super.viewDidAppear(animated)
+
 		// The SDK can now pop screens over
 		Purchasely.isReadyToPurchase(true)
-
-		NotificationCenter.default.addObserver(self, selector: #selector(reloadContent(_:)), name: .ply_purchasedSubscription, object: nil)
 	}
 
 	override func didReceiveMemoryWarning() {
@@ -31,14 +35,16 @@ class ViewController: UIViewController {
 
 extension ViewController {
 
+	@IBAction func mySubscriptions(_ sender: Any) {
+		let ctrl = Purchasely.subscriptionsController()
+		present(ctrl, animated: true, completion: nil)
+	}
+
+
 	@IBAction func purchase(_ sender: Any) {
 
-		Purchasely.productController(for: "PURCHASELY_PLUS", success: { [weak self](controller) in
-			self?.present(controller, animated: true, completion: nil)
-			}, failure: { _ in
-				// Replace by our own page
-		})
-
+		let ctrl = Purchasely.productController(for: "PURCHASELY_PLUS")
+		present(ctrl, animated: true, completion: nil)
 	}
 
 	@objc func reloadContent(_ notification: Notification) {

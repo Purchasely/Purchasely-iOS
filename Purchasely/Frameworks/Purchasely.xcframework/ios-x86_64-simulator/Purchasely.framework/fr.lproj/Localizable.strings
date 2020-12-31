@@ -8,7 +8,7 @@
 "ply_modal_alert_in_app_restore_status_success_content" = "Vos achats ont été restaurés";
 "ply_modal_alert_in_app_success_button" = "C\'est parti !";
 "ply_modal_alert_in_app_error_button" = "Ok";
-"ply_modal_alert_in_app_deferred_title" = "Un petit moment …";
+"ply_modal_alert_in_app_deferred_title" = "En attente de validation";
 "ply_modal_alert_in_app_deferred_content" = "Votre achat n\'a pas encore pu être validé car il vous faut l\'autorisation de vos parents pour terminer l\'achat. Une demande vient de leur être envoyée. Une fois cette validation faite vous pourrez profiter de votre achat. Vous pouvez relancer la demande en ré-appuyant sur le bouton d\'achat";
 "ply_modal_alert_in_app_deferred_button" = "Ok";
 "ply_modal_huawei_not_logged_title" = "Compte Huawei inconnu";

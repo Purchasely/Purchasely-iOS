@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.3 (swiftlang-1200.0.29.2 clang-1200.0.30.1)
+// swift-compiler-version: Apple Swift version 5.3.1 (swiftlang-1200.0.41 clang-1200.0.32.8)
 // swift-module-flags: -target x86_64-apple-tvos11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name Purchasely
 import AVFoundation
 import AVKit
@@ -115,6 +115,7 @@ extension PLYError : Foundation.LocalizedError {
   case appInstalled
   case appUpdated
   case appStarted
+  case deeplinkOpened
   case productPageViewed
   case loginTapped
   case purchaseFromStoreTapped
@@ -185,13 +186,14 @@ public func PLYLocalizedPluralString(_ key: Swift.String, pluralType: PluralType
   }
   @objc deinit
 }
-@objc public class PLYPlan : ObjectiveC.NSObject, Swift.Decodable {
+@objc public class PLYPlan : ObjectiveC.NSObject, Swift.Codable {
   @objc public var vendorId: Swift.String
   @objc public var name: Swift.String?
   required public init(from decoder: Swift.Decoder) throws
   @objc override dynamic public func isEqual(_ object: Any?) -> Swift.Bool
   @objc deinit
   @objc override dynamic public init()
+  public func encode(to encoder: Swift.Encoder) throws
 }
 extension PLYPlan {
   @objc dynamic public func localizedFullPrice(language: Swift.String? = nil) -> Swift.String?
@@ -209,7 +211,6 @@ extension PLYPlan {
   public var vendorId: Swift.String
   public var plans: [PLYPlan]
   public var name: Swift.String?
-  public var termsAndConditions: Swift.String?
   public var icon: PLYImage?
   required public init(from decoder: Swift.Decoder) throws
   @objc deinit
@@ -257,6 +258,7 @@ public enum PLYSubscriptionSourceError : Swift.Error {
 @objc public enum PLYUIControllerType : Swift.Int {
   case subscriptionList
   case productPage
+  case cancellationSurvey
   public typealias RawValue = Swift.Int
   public init?(rawValue: Swift.Int)
   public var rawValue: Swift.Int {
@@ -276,6 +278,9 @@ extension Purchasely {
   @objc public static var deviceKey: Swift.String {
     @objc get
   }
+  @objc public static var anonymousUserId: Swift.String? {
+    @objc get
+  }
   @objc dynamic public class func start(withAPIKey apiKey: Swift.String, appUserId: Swift.String? = nil, eventDelegate: PLYEventDelegate? = nil, uiDelegate: PLYUIDelegate? = nil, logLevel: PLYLogger.LogLevel = .error)
   @objc dynamic public class func setEventDelegate(_ eventDelegate: PLYEventDelegate?)
   @objc dynamic public class func setUIDelegate(_ uiDelegate: PLYUIDelegate?)
@@ -290,6 +295,7 @@ extension Purchasely {
   @objc dynamic public class func subscriptionsController() -> UIKit.UIViewController
   @objc dynamic public class func subscriptionController(for subscription: PLYSubscription) -> UIKit.UIViewController
   @objc dynamic public class func cancellationSurveyController(for product: PLYProduct?, selected: @escaping ((PLYCancellationReason) -> ())) -> UIKit.UIViewController
+  @objc dynamic public class func handle(deeplink url: Foundation.URL) -> Swift.Bool
   @objc public static func purchase(plan: PLYPlan, success: @escaping PLYVoidClosure, failure: @escaping PLYErrorClosure)
   @objc public static func restoreAllProducts(success: @escaping PLYVoidClosure, failure: @escaping PLYErrorClosure)
 }

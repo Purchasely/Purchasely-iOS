@@ -8,8 +8,8 @@
 "ply_modal_alert_in_app_restore_status_success_content" = "Sus compras han sido restauradas";
 "ply_modal_alert_in_app_success_button" = "¡Vamos allá!";
 "ply_modal_alert_in_app_error_button" = "De acuerdo";
-"ply_modal_alert_in_app_deferred_title" = "Just a moment …";
-"ply_modal_alert_in_app_deferred_content" = "Your purchase couldn\'t be completed yet and requires a validation from your parent. Once the validation is completed you will be able to enjoy your purchase.";
+"ply_modal_alert_in_app_deferred_title" = "Waiting for approval";
+"ply_modal_alert_in_app_deferred_content" = "Thank you! Your purchase couldn\'t be completed yet and requires an external validation. Once the validation is completed you will be able to enjoy your purchase.";
 "ply_modal_alert_in_app_deferred_button" = "De acuerdo";
 "ply_modal_huawei_not_logged_title" = "ID_15";
 "ply_modal_huawei_not_logged_description" = "ID_16";
