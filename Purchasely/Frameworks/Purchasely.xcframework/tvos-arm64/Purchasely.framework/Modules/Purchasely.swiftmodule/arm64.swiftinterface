@@ -148,6 +148,9 @@ extension PLYError : Foundation.LocalizedError {
     get
   }
 }
+extension NSString {
+  @objc public static func fromPLYEvent(_ event: PLYEvent) -> Swift.String
+}
 public class PLYImage : Swift.Decodable {
   required public init(from decoder: Swift.Decoder) throws
   @objc deinit
@@ -208,10 +211,9 @@ extension PLYPlan {
   @objc dynamic public func localizedIntroductoryDuration(language: Swift.String? = nil) -> Swift.String?
 }
 @objc public class PLYProduct : ObjectiveC.NSObject, Swift.Decodable {
-  public var vendorId: Swift.String
-  public var plans: [PLYPlan]
-  public var name: Swift.String?
-  public var icon: PLYImage?
+  @objc public var vendorId: Swift.String
+  @objc public var plans: [PLYPlan]
+  @objc public var name: Swift.String?
   required public init(from decoder: Swift.Decoder) throws
   @objc deinit
   @objc override dynamic public init()
@@ -278,10 +280,11 @@ extension Purchasely {
   @objc public static var deviceKey: Swift.String {
     @objc get
   }
-  @objc public static var anonymousUserId: Swift.String? {
+  @objc public static var anonymousUserId: Swift.String {
     @objc get
   }
   @objc dynamic public class func start(withAPIKey apiKey: Swift.String, appUserId: Swift.String? = nil, eventDelegate: PLYEventDelegate? = nil, uiDelegate: PLYUIDelegate? = nil, logLevel: PLYLogger.LogLevel = .error)
+  @objc dynamic public class func start(withAPIKey apiKey: Swift.String, eventDelegate: PLYEventDelegate? = nil, uiDelegate: PLYUIDelegate? = nil, logLevel: PLYLogger.LogLevel = .error)
   @objc dynamic public class func setEventDelegate(_ eventDelegate: PLYEventDelegate?)
   @objc dynamic public class func setUIDelegate(_ uiDelegate: PLYUIDelegate?)
   @objc dynamic public class func setAppUserId(_ appUserId: Swift.String?)

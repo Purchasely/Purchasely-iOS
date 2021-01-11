@@ -209,6 +209,11 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #endif
 
 
+enum PLYEvent : NSInteger;
+
+@interface NSString (SWIFT_EXTENSION(Purchasely))
++ (NSString * _Nonnull)fromPLYEvent:(enum PLYEvent)event SWIFT_WARN_UNUSED_RESULT;
+@end
 
 typedef SWIFT_ENUM(NSInteger, PLYAlertMessage, open) {
   PLYAlertMessageCommonError = 0,
@@ -313,6 +318,9 @@ SWIFT_CLASS("_TtC10Purchasely7PLYPlan")
 
 SWIFT_CLASS("_TtC10Purchasely10PLYProduct")
 @interface PLYProduct : NSObject
+@property (nonatomic, copy) NSString * _Nonnull vendorId;
+@property (nonatomic, copy) NSArray<PLYPlan *> * _Nonnull plans;
+@property (nonatomic, copy) NSString * _Nullable name;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -388,9 +396,10 @@ SWIFT_CLASS("_TtC10Purchasely10Purchasely")
 @interface Purchasely (SWIFT_EXTENSION(Purchasely))
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull deviceKey;)
 + (NSString * _Nonnull)deviceKey SWIFT_WARN_UNUSED_RESULT;
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nullable anonymousUserId;)
-+ (NSString * _Nullable)anonymousUserId SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull anonymousUserId;)
++ (NSString * _Nonnull)anonymousUserId SWIFT_WARN_UNUSED_RESULT;
 + (void)startWithAPIKey:(NSString * _Nonnull)apiKey appUserId:(NSString * _Nullable)appUserId eventDelegate:(id <PLYEventDelegate> _Nullable)eventDelegate uiDelegate:(id <PLYUIDelegate> _Nullable)uiDelegate logLevel:(enum LogLevel)logLevel;
++ (void)startWithAPIKey:(NSString * _Nonnull)apiKey eventDelegate:(id <PLYEventDelegate> _Nullable)eventDelegate uiDelegate:(id <PLYUIDelegate> _Nullable)uiDelegate logLevel:(enum LogLevel)logLevel;
 + (void)setEventDelegate:(id <PLYEventDelegate> _Nullable)eventDelegate;
 + (void)setUIDelegate:(id <PLYUIDelegate> _Nullable)uiDelegate;
 + (void)setAppUserId:(NSString * _Nullable)appUserId;
