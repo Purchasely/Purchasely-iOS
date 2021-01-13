@@ -390,12 +390,14 @@ SWIFT_CLASS("_TtC10Purchasely10Purchasely")
 @end
 
 
+@interface Purchasely (SWIFT_EXTENSION(Purchasely))
++ (void)showController:(UIViewController * _Nonnull)controller type:(enum PLYUIControllerType)type;
+@end
+
 
 
 
 @interface Purchasely (SWIFT_EXTENSION(Purchasely))
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull deviceKey;)
-+ (NSString * _Nonnull)deviceKey SWIFT_WARN_UNUSED_RESULT;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull anonymousUserId;)
 + (NSString * _Nonnull)anonymousUserId SWIFT_WARN_UNUSED_RESULT;
 + (void)startWithAPIKey:(NSString * _Nonnull)apiKey appUserId:(NSString * _Nullable)appUserId eventDelegate:(id <PLYEventDelegate> _Nullable)eventDelegate uiDelegate:(id <PLYUIDelegate> _Nullable)uiDelegate logLevel:(enum LogLevel)logLevel;

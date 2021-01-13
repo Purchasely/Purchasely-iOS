@@ -277,9 +277,6 @@ public typealias PLYErrorClosure = (Swift.Error) -> ()
   @objc func eventTriggered(_ event: Purchasely.PLYEvent, properties: [Swift.String : Any]?)
 }
 extension Purchasely {
-  @objc public static var deviceKey: Swift.String {
-    @objc get
-  }
   @objc public static var anonymousUserId: Swift.String {
     @objc get
   }
@@ -307,6 +304,9 @@ extension Purchasely : UserNotifications.UNUserNotificationCenterDelegate {
 extension Purchasely : Purchasely.PLYUIDelegate {
   @objc dynamic public func display(controller: UIKit.UIViewController, type: Purchasely.PLYUIControllerType)
   @objc dynamic public func display(alert: Purchasely.PLYAlertMessage, error: Swift.Error?)
+}
+extension Purchasely {
+  @objc dynamic public class func showController(_ controller: UIKit.UIViewController, type: Purchasely.PLYUIControllerType)
 }
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class Purchasely : ObjectiveC.NSObject {
   @objc deinit
