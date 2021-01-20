@@ -18,9 +18,9 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-Purchasely is the simplest and quickest way to add In App Purchases within your app. No more struggling with all the steps, receipt validation, rejection, …
+Purchasely is the simplest and quickest way to add In App Purchases and Subscriptions within your app. No more struggling with all the steps, receipt validation, rejection, …
 Purchasely handles everything from product presentation to app receipt validation.
-6 lines of code and you are good to go.
+4 lines of code and you are good to go.
                        DESC
 
   s.homepage         = 'https://www.purchasely.io'

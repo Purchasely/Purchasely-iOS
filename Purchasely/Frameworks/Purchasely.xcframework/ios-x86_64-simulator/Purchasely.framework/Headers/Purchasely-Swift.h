@@ -401,10 +401,11 @@ SWIFT_CLASS("_TtC10Purchasely10Purchasely")
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull anonymousUserId;)
 + (NSString * _Nonnull)anonymousUserId SWIFT_WARN_UNUSED_RESULT;
 + (void)startWithAPIKey:(NSString * _Nonnull)apiKey appUserId:(NSString * _Nullable)appUserId eventDelegate:(id <PLYEventDelegate> _Nullable)eventDelegate uiDelegate:(id <PLYUIDelegate> _Nullable)uiDelegate logLevel:(enum LogLevel)logLevel;
-+ (void)startWithAPIKey:(NSString * _Nonnull)apiKey eventDelegate:(id <PLYEventDelegate> _Nullable)eventDelegate uiDelegate:(id <PLYUIDelegate> _Nullable)uiDelegate logLevel:(enum LogLevel)logLevel;
 + (void)setEventDelegate:(id <PLYEventDelegate> _Nullable)eventDelegate;
 + (void)setUIDelegate:(id <PLYUIDelegate> _Nullable)uiDelegate;
-+ (void)setAppUserId:(NSString * _Nullable)appUserId;
++ (void)setAppUserId:(NSString * _Nullable)appUserId SWIFT_UNAVAILABLE_MSG("Call `userLogin(with:)` when you have the userId or `userLogout()` when the user disconnects.");
++ (void)userLoginWith:(NSString * _Nonnull)appUserId;
++ (void)userLogout;
 + (void)isReadyToPurchase:(BOOL)ready;
 + (void)setEnvironment:(enum PLYEnvironment)environment;
 + (void)setLogLevel:(enum LogLevel)logLevel;

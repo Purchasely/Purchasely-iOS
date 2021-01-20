@@ -281,10 +281,12 @@ extension Purchasely {
     @objc get
   }
   @objc dynamic public class func start(withAPIKey apiKey: Swift.String, appUserId: Swift.String? = nil, eventDelegate: PLYEventDelegate? = nil, uiDelegate: PLYUIDelegate? = nil, logLevel: PLYLogger.LogLevel = .error)
-  @objc dynamic public class func start(withAPIKey apiKey: Swift.String, eventDelegate: PLYEventDelegate? = nil, uiDelegate: PLYUIDelegate? = nil, logLevel: PLYLogger.LogLevel = .error)
   @objc dynamic public class func setEventDelegate(_ eventDelegate: PLYEventDelegate?)
   @objc dynamic public class func setUIDelegate(_ uiDelegate: PLYUIDelegate?)
+  @available(*, unavailable, message: "Call `userLogin(with:)` when you have the userId or `userLogout()` when the user disconnects.")
   @objc dynamic public class func setAppUserId(_ appUserId: Swift.String?)
+  @objc dynamic public class func userLogin(with appUserId: Swift.String)
+  @objc dynamic public class func userLogout()
   @objc dynamic public class func isReadyToPurchase(_ ready: Swift.Bool)
   @objc dynamic public class func setEnvironment(_ environment: PLYEnvironment)
   @objc dynamic public class func setLogLevel(_ logLevel: PLYLogger.LogLevel)
