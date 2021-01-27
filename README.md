@@ -42,4 +42,4 @@ Purchasely SAS
 
 ## License
 
-[Custom](https://www.purchasely.io)
+[Custom](https://www.purchasely.com)
