@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/Purchasely-Swift.h</key>
 		<data>
-		jjy05olReM3AG5chkaKytBThiWQ=
+		vB7PSXD99Pi2GZD2cbl0zdFQXaI=
 		</data>
 		<key>Headers/Purchasely-tvOS-umbrella.h</key>
 		<data>
@@ -14,39 +14,39 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		0oUnyP4sBkGUudFfqRft1tLfQ0U=
+		O+wsOpUPi6/DECRENkyJRDV9/x4=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/Project/x86_64-apple-tvos-simulator.swiftsourceinfo</key>
 		<data>
-		AyKl/wV9xEaU0iUNddXNSphoPp4=
+		KQokwDTb2HbR6G4LuJ7HRvW2jfM=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/Project/x86_64.swiftsourceinfo</key>
 		<data>
-		AyKl/wV9xEaU0iUNddXNSphoPp4=
+		KQokwDTb2HbR6G4LuJ7HRvW2jfM=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-tvos-simulator.swiftdoc</key>
 		<data>
-		ZvzYvmLFMIEj1A6HOQqag8tgtPA=
+		XnFpxHmtCVt8733xAtfWNjX2u0U=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-tvos-simulator.swiftinterface</key>
 		<data>
-		PUEaFIIaHOI9IuWHo6+wP5elUaw=
+		LetSiaj8qTChk/X4sbg8/jK8IuY=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-tvos-simulator.swiftmodule</key>
 		<data>
-		Z/0IVoIUgsMz13W6JHMEJjPXGE4=
+		a3fyhzS9mMcBqgY8mcAclPA4mlg=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/x86_64.swiftdoc</key>
 		<data>
-		ZvzYvmLFMIEj1A6HOQqag8tgtPA=
+		XnFpxHmtCVt8733xAtfWNjX2u0U=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/x86_64.swiftinterface</key>
 		<data>
-		PUEaFIIaHOI9IuWHo6+wP5elUaw=
+		LetSiaj8qTChk/X4sbg8/jK8IuY=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		Z/0IVoIUgsMz13W6JHMEJjPXGE4=
+		a3fyhzS9mMcBqgY8mcAclPA4mlg=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -54,39 +54,39 @@
 		</data>
 		<key>PLYCancelSubscriptionTableViewCell.nib</key>
 		<data>
-		xUogpi7CZw9GpRXUOlaeDW3YADA=
+		iDv9xzUs0Tdw4xuq/fl/mFXrSSM=
 		</data>
 		<key>PLYCancellationSurveyViewController.nib</key>
 		<data>
-		ou+2hEaE8ROwtlBDlHJkiDL4kb4=
+		Ez7b+Dq7YeQahdZeh4gituEI548=
 		</data>
 		<key>PLYLoadingTableViewCell.nib</key>
 		<data>
-		4yNpxmi6YoLCIoKEx+w2Y3wlGVw=
+		eEH0OxfBzMUmkbeImKmN9h9zUVo=
 		</data>
 		<key>PLYNoSubscriptionTableViewCell.nib</key>
 		<data>
-		ulR5PF4YVHluChtN3yudQAaNoqg=
+		u2ExVftFInSyY1yCxkZXgskg+L0=
 		</data>
 		<key>PLYPlanTableViewCell.nib</key>
 		<data>
-		9/BAvx+EJs3bSOeDIhjhdjSf2T0=
+		uvQzpm4PZilHkEKu8noj9HPgbvo=
 		</data>
 		<key>PLYSubscriptionTableViewCell.nib</key>
 		<data>
-		seiUCH3nhwa4S623e3mfDO1mEfM=
+		dB+P/m6Afw/6cThp9AbPU+rmkog=
 		</data>
 		<key>PLYSubscriptionViewController.nib</key>
 		<data>
-		LEpV4SF93hVEdOvdvvtNfFUeS+Y=
+		0IaMlRwsL7JxUFdD2MXC+wW8sW0=
 		</data>
 		<key>PLYSubscriptionsViewController.nib</key>
 		<data>
-		ecVFhRqZ7JvpUoGshoZksQRAc4Q=
+		oRq3spa10GngnefO5RIphK44fgs=
 		</data>
 		<key>PLYWebViewViewController.nib</key>
 		<data>
-		XpaqP6nX0EwgOPnkp3LFEsLtgzA=
+		m7kLlE77JWYsO4OYv4923DoSKAY=
 		</data>
 		<key>cs.lproj/Localizable.strings</key>
 		<dict>
@@ -248,7 +248,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			0skpDfQQ75hSirmZt5F5oJo7ifq7kwCy58h66xj0RWU=
+			nL5e/2aWauaPqMdaBltd2oa1gIJYVkhA++7VXmsWFXc=
 			</data>
 		</dict>
 		<key>Headers/Purchasely-tvOS-umbrella.h</key>
@@ -262,56 +262,56 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			l8G8CRzGoRQim5LAn/MSxKxsSN6SCjg2VnUNEBw7neQ=
+			E9SB6DFT2Qrw4r8meBycmWLjwi31HCEqBKwgXz5w4sw=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/Project/x86_64.swiftsourceinfo</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			l8G8CRzGoRQim5LAn/MSxKxsSN6SCjg2VnUNEBw7neQ=
+			E9SB6DFT2Qrw4r8meBycmWLjwi31HCEqBKwgXz5w4sw=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-tvos-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			nDIlNUY9EXHF9CPSjxWUo3jMsHCv1k3/yPa2YUiTgiI=
+			T2+WZx4wYRCwDkmBC/in8QO9jId1oFRLmey+otA6hUI=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-tvos-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			xgI8zqo3JuPDJC9e6rmYC37CFsZm0UC2b3fRSswmINs=
+			UKgESwKym3eq/OMJ07ByBVZcX6Kg8WFUFflHm8Dm+2E=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-tvos-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			m2KK4j3O1l2mr2aBboiZ04NdvJpbju7OeerYczps+hM=
+			0rYr0Cek5LfFLlamIH3JwA+ISh88wjA43UW6S3q+wfU=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/x86_64.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			nDIlNUY9EXHF9CPSjxWUo3jMsHCv1k3/yPa2YUiTgiI=
+			T2+WZx4wYRCwDkmBC/in8QO9jId1oFRLmey+otA6hUI=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/x86_64.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			xgI8zqo3JuPDJC9e6rmYC37CFsZm0UC2b3fRSswmINs=
+			UKgESwKym3eq/OMJ07ByBVZcX6Kg8WFUFflHm8Dm+2E=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/x86_64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			m2KK4j3O1l2mr2aBboiZ04NdvJpbju7OeerYczps+hM=
+			0rYr0Cek5LfFLlamIH3JwA+ISh88wjA43UW6S3q+wfU=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -325,63 +325,63 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			0fsENpfbo9iz/Vee6Fxzuh7X4D4C6lXSKFJOpdRsQvQ=
+			HAIGAxKdx5Ajh8DGBi+nPhsp6ppBv4Km2dVKeIYCm/E=
 			</data>
 		</dict>
 		<key>PLYCancellationSurveyViewController.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			My0QxZ0JX6rvhqFAeBVUg7l0CvJzFj0dQhXblXeMjiY=
+			OiNng+Rc41z4y9GA+BDDhBWNgqvgbUmS33aCLotW8Kg=
 			</data>
 		</dict>
 		<key>PLYLoadingTableViewCell.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			empXy1w5+FAKyRCWx852Hsoao9NIkJjySJ7eIlr9u1c=
+			IEaYQ7K2xSeN2wCwu+GBZQB5PpdkUbD0trsxX6eay7E=
 			</data>
 		</dict>
 		<key>PLYNoSubscriptionTableViewCell.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			3cNnLyGyr19bIqPdgCdClQGFTz5CMBZO6L5pnm2lxsY=
+			Pk3QC8xaiLv7ZVj8LePsuXWByCss3EzxB/gX4GIDiT4=
 			</data>
 		</dict>
 		<key>PLYPlanTableViewCell.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ZTD1F7H8BnKtVRohPTJBcFYTwbHWchXPqSwyxSFPjIQ=
+			8OWkrN93H8xLP7YMR82zicP5N0D6SWiZE5qr6Le6yAM=
 			</data>
 		</dict>
 		<key>PLYSubscriptionTableViewCell.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Zt2IJghXi43grPz+opgU1q1RJzBWWEGe2eR2y/PSBCs=
+			2uDcZHS+eiFYQlOoq3Txo/8X+bK1T8mCrCLeurb52lk=
 			</data>
 		</dict>
 		<key>PLYSubscriptionViewController.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			HDLc35t0/7gJF7zbYuJTD9OWAXlH+z0BTUYitjeuaOE=
+			8ZWnCw5qQ+fEBiQ+M7xaZdCck+r0OKMx0/yJr0Ftbyo=
 			</data>
 		</dict>
 		<key>PLYSubscriptionsViewController.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			4zIj56+QCKU8oiP+mK9n+nwtiJEquNZlsx+aLt8Vnqg=
+			vrtwdLN6osBfQ3GSt56dpQgoXG73ik2kn/BHc/dizMk=
 			</data>
 		</dict>
 		<key>PLYWebViewViewController.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			5dRIC+tm9/zntKdL/bbVLR1jhG91qZnuH/Ah8XpBMiA=
+			xdwsdpLQqUYJ3nhkE4yxqm40eMbWohT1HcJojRrQRzw=
 			</data>
 		</dict>
 		<key>cs.lproj/Localizable.strings</key>

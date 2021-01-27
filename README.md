@@ -12,7 +12,7 @@
 🔔 | Receive user subscription status events with server-to-server notifications (Webhooks) including events like new purchase, renewal, cancellation, billing issue, …
 📊 | Analytics available in our dashboard (conversion rate, MRR, …) and sent by our SDK to the app for dispatching to your custom analytics tracking system
 🕐 | Detailed user activity (viewed product, subscribed, churned, …)
-🗣 | Available in Objective-C and Swift
+🗣 | Available in Objective-C and Swift but also for Android and React Native
 
 ## ✅ Requirements
 

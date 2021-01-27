@@ -40,10 +40,9 @@ extension ViewController {
 		present(ctrl, animated: true, completion: nil)
 	}
 
-
 	@IBAction func purchase(_ sender: Any) {
 
-		let ctrl = Purchasely.productController(for: "PURCHASELY_PLUS")
+		let ctrl = Purchasely.presentationController(with: "CAROUSEL")
 		present(ctrl, animated: true, completion: nil)
 	}
 

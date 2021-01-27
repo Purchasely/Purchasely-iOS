@@ -70,6 +70,6 @@ git tag ${NEW_VERSION}
 git push --tags
 
 # Push the podspec to the repo and update it
-pod trunk push Purchasely.podspec
+pod trunk push Purchasely.podspec --allow-warnings
 
 logSuccess "[SUCCESS] You're good to go !"
