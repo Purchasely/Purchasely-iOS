@@ -296,7 +296,6 @@ SWIFT_CLASS("_TtC10Purchasely7PLYPlan")
 @interface PLYPlan : NSObject
 @property (nonatomic, copy) NSString * _Nonnull vendorId;
 @property (nonatomic, copy) NSString * _Nullable name;
-@property (nonatomic, copy) NSString * _Nullable defaultPresentationVendorId;
 - (BOOL)isEqual:(id _Nullable)object SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
@@ -413,7 +412,8 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 + (void)productWith:(NSString * _Nonnull)vendorId success:(void (^ _Nonnull)(PLYProduct * _Nonnull))success failure:(void (^ _Nonnull)(NSError * _Nullable))failure;
 + (void)planWith:(NSString * _Nonnull)vendorId success:(void (^ _Nonnull)(PLYPlan * _Nonnull))success failure:(void (^ _Nonnull)(NSError * _Nullable))failure;
 + (void)userSubscriptionsWithSuccess:(void (^ _Nonnull)(NSArray<PLYSubscription *> * _Nullable))success failure:(void (^ _Nonnull)(NSError * _Nonnull))failure;
-+ (UIViewController * _Nonnull)productControllerFor:(NSString * _Nonnull)productVendorId with:(NSString * _Nullable)presentationVendorId completion:(void (^ _Nullable)(enum PLYProductViewControllerResult, PLYPlan * _Nullable))completion SWIFT_WARN_UNUSED_RESULT SWIFT_UNAVAILABLE_MSG("The presentations are no longer associated to a product. This will allow you to have multi-product presentations in a very near future. Call `presentationController(with:)`.");
++ (UIViewController * _Nonnull)productControllerFor:(NSString * _Nonnull)productVendorId with:(NSString * _Nullable)presentationVendorId completion:(void (^ _Nullable)(enum PLYProductViewControllerResult, PLYPlan * _Nullable))completion SWIFT_WARN_UNUSED_RESULT;
++ (UIViewController * _Nonnull)planControllerFor:(NSString * _Nonnull)planVendorId with:(NSString * _Nullable)presentationVendorId completion:(void (^ _Nullable)(enum PLYProductViewControllerResult, PLYPlan * _Nullable))completion SWIFT_WARN_UNUSED_RESULT;
 + (UIViewController * _Nonnull)presentationControllerWith:(NSString * _Nullable)presentationVendorId completion:(void (^ _Nullable)(enum PLYProductViewControllerResult, PLYPlan * _Nullable))completion SWIFT_WARN_UNUSED_RESULT;
 + (UIViewController * _Nonnull)subscriptionsController SWIFT_WARN_UNUSED_RESULT;
 + (UIViewController * _Nonnull)subscriptionControllerFor:(PLYSubscription * _Nonnull)subscription SWIFT_WARN_UNUSED_RESULT;

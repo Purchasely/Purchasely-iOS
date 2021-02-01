@@ -192,7 +192,6 @@ public func PLYLocalizedPluralString(_ key: Swift.String, pluralType: Purchasely
 @objc public class PLYPlan : ObjectiveC.NSObject, Swift.Codable {
   @objc public var vendorId: Swift.String
   @objc public var name: Swift.String?
-  @objc public var defaultPresentationVendorId: Swift.String?
   required public init(from decoder: Swift.Decoder) throws
   @objc override dynamic public func isEqual(_ object: Any?) -> Swift.Bool
   @objc deinit
@@ -294,8 +293,8 @@ extension Purchasely {
   @objc dynamic public class func product(with vendorId: Swift.String, success: @escaping (Purchasely.PLYProduct) -> Swift.Void, failure: @escaping (Swift.Error?) -> Swift.Void)
   @objc dynamic public class func plan(with vendorId: Swift.String, success: @escaping (Purchasely.PLYPlan) -> Swift.Void, failure: @escaping (Swift.Error?) -> Swift.Void)
   @objc dynamic public class func userSubscriptions(success: @escaping ([Purchasely.PLYSubscription]?) -> Swift.Void, failure: @escaping Purchasely.PLYErrorClosure)
-  @available(*, unavailable, message: "The presentations are no longer associated to a product. This will allow you to have multi-product presentations in a very near future. Call `presentationController(with:)`.")
   @objc dynamic public class func productController(for productVendorId: Swift.String, with presentationVendorId: Swift.String? = nil, completion: Purchasely.PLYProductViewControllerCompletionBlock? = nil) -> UIKit.UIViewController
+  @objc dynamic public class func planController(for planVendorId: Swift.String, with presentationVendorId: Swift.String? = nil, completion: Purchasely.PLYProductViewControllerCompletionBlock? = nil) -> UIKit.UIViewController
   @objc dynamic public class func presentationController(with presentationVendorId: Swift.String? = nil, completion: Purchasely.PLYProductViewControllerCompletionBlock? = nil) -> UIKit.UIViewController
   @objc dynamic public class func subscriptionsController() -> UIKit.UIViewController
   @objc dynamic public class func subscriptionController(for subscription: Purchasely.PLYSubscription) -> UIKit.UIViewController
