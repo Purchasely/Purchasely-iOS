@@ -34,6 +34,7 @@
 "ply_in_app_already_being_purchased_error" = "該產品已在購買中";
 "ply_in_app_already_being_restored_error" = "購買恢復已在進行中";
 "ply_in_app_restore_status_nothing" = "找不到購買的商品";
+"ply_in_app_psd2_required" = "You need to validate the purchase with your bank.";
 "ply_in_app_validation_failed" = "無法確認收據。";
 "ply_in_app_validation_timed_out" = "The validation of your purchase is taking a little more time than usually. Please come back later.";
 "ply_in_app_restore_status_errors" = "恢復失敗，出現以下錯誤：";
@@ -95,3 +96,4 @@
 "ply_modal_downgrade_button" = "Got it!";
 "ply_webview_qr_or_url" = "Scan the QR Code above or visit:";
 "ply_webview_url" = "Go to the following URL with your Web browser:";
+"ply_untracked_event" = "Event not handled";

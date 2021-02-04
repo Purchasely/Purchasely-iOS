@@ -88,6 +88,7 @@ public enum PLYError : Swift.Error {
   case network(statusCode: Swift.Int?, error: Swift.Error?)
   case productNotFound
   case deferredPayment
+  case psd2Required
   case absentReceipt
   case validationFailed
   case clientInvalid
@@ -104,6 +105,7 @@ public enum PLYError : Swift.Error {
   case restorationFailedWithErrors([Swift.Error])
   case restorationPartial([Swift.String], [Swift.Error])
   case receiptValidationTimedOut
+  case untrackedEvent
   case unknown
 }
 extension PLYError : Foundation.LocalizedError {
@@ -111,7 +113,7 @@ extension PLYError : Foundation.LocalizedError {
     get
   }
 }
-@objc public enum PLYEvent : Swift.Int {
+@objc public enum PLYEvent : Swift.Int, Swift.CaseIterable, Swift.Codable {
   case appInstalled
   case appUpdated
   case appStarted
@@ -145,6 +147,10 @@ extension PLYError : Foundation.LocalizedError {
   public typealias RawValue = Swift.Int
   public init?(rawValue: Swift.Int)
   public var rawValue: Swift.Int {
+    get
+  }
+  public typealias AllCases = [Purchasely.PLYEvent]
+  public static var allCases: [Purchasely.PLYEvent] {
     get
   }
 }

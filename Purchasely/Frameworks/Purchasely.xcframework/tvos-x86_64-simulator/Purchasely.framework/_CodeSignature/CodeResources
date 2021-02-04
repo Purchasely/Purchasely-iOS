@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/Purchasely-Swift.h</key>
 		<data>
-		/k7H1Xd1u+p3r7PcNK2p9H79Ae8=
+		2csWOJVePW9Sj3/ESVrkLp26SDg=
 		</data>
 		<key>Headers/Purchasely-tvOS-umbrella.h</key>
 		<data>
@@ -18,35 +18,35 @@
 		</data>
 		<key>Modules/Purchasely.swiftmodule/Project/x86_64-apple-tvos-simulator.swiftsourceinfo</key>
 		<data>
-		XjUP+YpkZDEiQmuGNkU+2+lrz80=
+		ZR+xOiSMFvbH/xxZa/5yapkieZM=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/Project/x86_64.swiftsourceinfo</key>
 		<data>
-		XjUP+YpkZDEiQmuGNkU+2+lrz80=
+		ZR+xOiSMFvbH/xxZa/5yapkieZM=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-tvos-simulator.swiftdoc</key>
 		<data>
-		XnFpxHmtCVt8733xAtfWNjX2u0U=
+		UbASyKKf7XY0MFpnQv+Ys8NFBBo=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-tvos-simulator.swiftinterface</key>
 		<data>
-		eL59r3C5utOpreIhYwaAU3mkUv8=
+		D9869UlqPRKngNv+qvZ21yUFDb8=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-tvos-simulator.swiftmodule</key>
 		<data>
-		NvGgs7YCaEcb0bNIDt7vqH5/J6Y=
+		7iCXRiuV3d350Vc0ynvI/YiYbXY=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/x86_64.swiftdoc</key>
 		<data>
-		XnFpxHmtCVt8733xAtfWNjX2u0U=
+		UbASyKKf7XY0MFpnQv+Ys8NFBBo=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/x86_64.swiftinterface</key>
 		<data>
-		eL59r3C5utOpreIhYwaAU3mkUv8=
+		D9869UlqPRKngNv+qvZ21yUFDb8=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		NvGgs7YCaEcb0bNIDt7vqH5/J6Y=
+		7iCXRiuV3d350Vc0ynvI/YiYbXY=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -54,45 +54,45 @@
 		</data>
 		<key>PLYCancelSubscriptionTableViewCell.nib</key>
 		<data>
-		tKrqHU+uOkMuvXPIOe5QsGozg6A=
+		W+s/V5b71FhuWYYKqH6TYcmneCk=
 		</data>
 		<key>PLYCancellationSurveyViewController.nib</key>
 		<data>
-		1N8XiiCGvlnCahw1FzSEz6G4b9E=
+		uWq1pL0rMMF3Hfsmd4o5fNiGzrY=
 		</data>
 		<key>PLYLoadingTableViewCell.nib</key>
 		<data>
-		RQPIaqvweMoghQZNQDDIqELc5Ag=
+		/KUsu2FCM2e3lvm4XGRohizutHw=
 		</data>
 		<key>PLYNoSubscriptionTableViewCell.nib</key>
 		<data>
-		j1K0v7XksG+KRBEE6mGYJzOunpE=
+		cn+KkHMAU9YKTvpARTOUTINeXdQ=
 		</data>
 		<key>PLYPlanTableViewCell.nib</key>
 		<data>
-		qHTdgIArcyHRNuujDWROI2d1hBU=
+		XNE96xBBH6uNab5J/2p3SlpxnvU=
 		</data>
 		<key>PLYSubscriptionTableViewCell.nib</key>
 		<data>
-		YDXuGJXuoztvjT/yDMDbhyQll4I=
+		UmIJXuaSofxyeDhSUM+/SSVy8uQ=
 		</data>
 		<key>PLYSubscriptionViewController.nib</key>
 		<data>
-		cigNkkyis7KWh4woYe6xH6Q+qds=
+		19qBP0UNhmqzO/VDxFpq57FKgIQ=
 		</data>
 		<key>PLYSubscriptionsViewController.nib</key>
 		<data>
-		xG4qLz4P0KezDlLQS251dK3SAjU=
+		Anko5NWVj3Ra1ge0esgaWEG3HJU=
 		</data>
 		<key>PLYWebViewViewController.nib</key>
 		<data>
-		O7+xRfKSo69MSzEqA8Ejwdtq58c=
+		pctzN+4Bt6bj4Gn+JbGj2VhBNBU=
 		</data>
 		<key>cs.lproj/Localizable.strings</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			lyHpxt9TgLtMBVm/TX3kgpn44bI=
+			OfSK3arA5gfnmR9DMrnDRp1Wyz8=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -101,7 +101,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			rC+R6fTOZdxE+DlBlCFUL6GVB/o=
+			uKbOjbOIVvBKJekgHAAU5ApuLuo=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -110,7 +110,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			86FbsBYAbItcPPGuFks65f329+o=
+			iJJipXHhBTZbEutjdZjj3c5gWKI=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -119,7 +119,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			onNijvjMZSr03C3fVJgeAkVlXoE=
+			lr/D96TxoGplL9uei5Gu3gec5Ew=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -128,7 +128,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			r+Vm9fildnjRxgYRDiiREACNIz4=
+			qIAzS+DYXn3NzX77YCJ30GT8eKk=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -137,7 +137,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			rIRBKHV2hdp2p9Iw65+6i1uqgHY=
+			O5Em7IlyGJv45suJOUt4vDlmAZA=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -146,7 +146,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			xZ6Pr6spXjmxlHqLLKgMZd0/bkQ=
+			IErW+5ekXKujeQW6432cC6DXmPU=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -155,7 +155,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			u8EV+nzJdYvB32G1CEYQeCcvPxM=
+			O7T1/k72T7npMMAj3DJxooQZ+z8=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -164,7 +164,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			UPDEl1cNHvjmuRf/yNhQ+FAG2jk=
+			yZgvVfAyQWjqoigli2h7gMw0qHg=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -173,7 +173,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			/ipNPXuV6xS3gSb0c0cUFcMYhNw=
+			wwLxZKCpz57/ZAlFXe/EnQ6kbm8=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -182,7 +182,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			2kBWdsxVsqykloKQ/6RJzycB8o0=
+			XIkEASj3zoufjCiQ882buvh9P54=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -191,7 +191,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			gqUVilyJG5ak44HomxrtSXTslUI=
+			khqtFaDEaBnOQVvTdnDsdTXNbTI=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -200,7 +200,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			qZT6tKU9z8La4P/BdyrItehcul4=
+			vaQLb7GAhMcUEMA7V6EksJ3UO28=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -209,7 +209,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			cgdodgMv5qWTznQj8bTL8P94ivM=
+			UcyMaJTuxcdt4wBXH23l4Xe8kBQ=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -218,7 +218,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			mjH7GO5Du+vGFWDTaDKIUwD8tq8=
+			qf2iIV+YJie7FHm8TWHxRv/vvqU=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -227,7 +227,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			U3DYTIOtODEQmZNiaDNIHIxgguo=
+			e/bbacCVRePYCMLbl1YXOeWBiYw=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -236,7 +236,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			cRNyILAG31bryeKylmM7brYAe78=
+			w3qmXXOzMONbonxDqy5YghQO3nM=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -248,7 +248,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			tAqAmekG3l2vj9z1Tf8JCKzATxHPqClMFX64JaUTY1Q=
+			Y9yi8ry8gjqs6fciD2FA5XWVG5jRlcFWct3bKFhx1UQ=
 			</data>
 		</dict>
 		<key>Headers/Purchasely-tvOS-umbrella.h</key>
@@ -262,56 +262,56 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			SfaV7y7+ygfuRjeNZd7wa+zGZQS5Y5OSiOOhTC4NsqI=
+			neH/b+3RK7Z19hQBWNaaUITwZs5tI4Y11skAdUqrA0M=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/Project/x86_64.swiftsourceinfo</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			SfaV7y7+ygfuRjeNZd7wa+zGZQS5Y5OSiOOhTC4NsqI=
+			neH/b+3RK7Z19hQBWNaaUITwZs5tI4Y11skAdUqrA0M=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-tvos-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			T2+WZx4wYRCwDkmBC/in8QO9jId1oFRLmey+otA6hUI=
+			iQqjAzGtKENyiHyUEYE64n5UeYai5yYtIC10vQoyuRU=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-tvos-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			rvCa81UDp/DEGFkIjtkOJGtRvt49HZrT31D1na1sEco=
+			SIulxXd8fvdHsE9N3hLWpa66GYl8pAh/i98cFx7E58w=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-tvos-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			rwdwWlgcnKiRmxaXZVGft59tIo/Nvgp5/olWh7KP2EI=
+			kfRxPU5sYaG9GtXf85bZDXfrk9ZpB6m4sg35xaPOf4A=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/x86_64.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			T2+WZx4wYRCwDkmBC/in8QO9jId1oFRLmey+otA6hUI=
+			iQqjAzGtKENyiHyUEYE64n5UeYai5yYtIC10vQoyuRU=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/x86_64.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			rvCa81UDp/DEGFkIjtkOJGtRvt49HZrT31D1na1sEco=
+			SIulxXd8fvdHsE9N3hLWpa66GYl8pAh/i98cFx7E58w=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/x86_64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			rwdwWlgcnKiRmxaXZVGft59tIo/Nvgp5/olWh7KP2EI=
+			kfRxPU5sYaG9GtXf85bZDXfrk9ZpB6m4sg35xaPOf4A=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -325,70 +325,70 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			2WT7LL/pwij1xLjr7PswHdtaYnXfZAlXGYTowFM8OLE=
+			bdOOXJbipMWHPDiT7obBs/oIJkNstLGUX9EbgXlR8HI=
 			</data>
 		</dict>
 		<key>PLYCancellationSurveyViewController.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			BblNOLNpZM9rSOC2GKua3R1UlDm1csjoNmZ1wTW/Y40=
+			8YPZkKvi0Y6eIQnDeK3bWZVxuxCmYcmR33Onw1bbOx4=
 			</data>
 		</dict>
 		<key>PLYLoadingTableViewCell.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			pnWvy4Tt7ynd6okRk3DTTxeFTbw0pWz03DC2RFcN5bk=
+			x9SGu61UZyV1ATAvkX9locTb3nCIFMPwAwzN3C6V4Z4=
 			</data>
 		</dict>
 		<key>PLYNoSubscriptionTableViewCell.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			B64XuUZYhiSS1u3ewxSRHj9503OH5NdR9nEgsrbohRM=
+			dINPB+hGefIs7mHS8/OT81E8CHY1Z6f9QiXDBWAso78=
 			</data>
 		</dict>
 		<key>PLYPlanTableViewCell.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			nv5e+efNJMLvC/Uq8Ua1tTqC7XLEBH8ofsABDqzqJzU=
+			HlPZiBuQrio8SHU89Z+2L9B83Q4HmJMiizcIIw2lgKI=
 			</data>
 		</dict>
 		<key>PLYSubscriptionTableViewCell.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			RPvXbfnLEA50n6siMQ/diGrFUJzSQjXhT4Jtrqvb80E=
+			cN5prvOpRsxicMnse4eeflb8rMnjvuWJmZqIJCvvQqw=
 			</data>
 		</dict>
 		<key>PLYSubscriptionViewController.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			FwjASCARPc40j59DWBQ0qX+ToGLASnNifP30G9+oBrc=
+			oc4NaFI2FN9YA4QWJ08fw3NOGv1Z5ptXCLgYiDaG6Q8=
 			</data>
 		</dict>
 		<key>PLYSubscriptionsViewController.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			AeGQbYOwfd/OuoERsK8d0ZKJoZLFeI0JR2/mlYnFuEM=
+			KWMEOgaoP9U4foUK/9Coy8WlXLc0BK4IShvG20YQs8g=
 			</data>
 		</dict>
 		<key>PLYWebViewViewController.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			brwdDxXp79kGmL8qamcY9LpR/MIZZb2p6temUwo5p+g=
+			z+wTiZkgEEUxRpp1Shy3VOFuZQsVDEa1Bjd2L/iBBJg=
 			</data>
 		</dict>
 		<key>cs.lproj/Localizable.strings</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			y6LNK72XINrWXB6M4yKIOuu5f0MyQe2dbMigRyLc364=
+			XvHmJp+46kf+tZELuBMVxJmDhjhtq54i1R0vKn+mf1s=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -397,7 +397,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			gX81cPr5J8pIXghokq+Cm22GHuixYi/OPHUU3zKVjm0=
+			u8SNwDwbkr4K//7quF/X8NtxJ4nNsDsLlfI3bQn4SXk=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -406,7 +406,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			pq6hPLorOlKgsBvejF64B5tCc0WIuaiSDxpFikJy3JM=
+			X5ZZdAL+4aGUwUPaniBPdfK+IDFSGN00ICTJjovAGCY=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -415,7 +415,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Xs1kMX9fu0BIb0iKtCot7/dyLvQ2weUJTLDy6SjH3Bo=
+			VGSLwvNHZXjkj4vGMXZ0UPNv2hsCurUkB/8dC13Gml0=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -424,7 +424,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Gp5tTQAJH9pXX2j4ZHQO5o0bTCaIrNmvAJYdQiLRWOI=
+			UdrjBnMuBdL9tV5ZS8wgt60NoR+XXBl/niR01jm/C68=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -433,7 +433,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			xkQFMadGZjkqT4Na1c0+8wvnErbX/24gfPKcn5GWvWI=
+			jx2WfjNn6gyarV3pKzqFKmYWGtsc5KKOAmirgIbVbcc=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -442,7 +442,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			HC9Yt2WSJEmm7f9tnfG2R2RGBFVmI37RO8jlr0ZKbuI=
+			N3KIufsrSu1UoFiVllQB2z4BVHaJgkBBRb0/qgLNlFo=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -451,7 +451,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			v9/Q1IOiVasC/liGfClKe2F/tY0FK/mmo7XNDmMiAqc=
+			VIeGrYhvEmHbr8jjRwV07OLkec2L7MIoHosB5Bo4ck0=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -460,7 +460,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			ju5WWojz9+26rfyXHSIpFo7p8kAWKU56vD8/L/OCdjM=
+			rG1QBrWmATlrkxe9aWkewaAdmrGE8wNWP9E2toALsOk=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -469,7 +469,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			7QhJtp4qFXIAizpvpU3jrM4CvuBuyXsi3AYmZG/B8gc=
+			VDrnPXm9NnJzfjL7+FLIYJG1zFAz5v4efvjbQe59jJI=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -478,7 +478,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			f8ea19Z7/OkDXp++1/Q0BfhQ4R+iaaafRFH9bzqsCUo=
+			FldJ1aX/voNb8qOG1XbLO7aeyWBwbv1p6ujU88U6R4U=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -487,7 +487,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			g17gy4Vbg4YRGmkyeoqkbADtu/LzN6n6NmaAZZ7MqsU=
+			Wrw+YP8vGy5IkmBg/Rnm/v786uxOucw0rwNY9jxqODU=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -496,7 +496,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			L7JFwCmaXZmm2SuGm3dCh3Zjy96RkB+yT7KdrYDsUNY=
+			d/M/xDMKMtIRTUtACpRQTitGY7otFENIpaLOVyvH8+I=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -505,7 +505,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			9LUIThcBngJ1qSODeZR+IDWJRXgZbKmkRmoF7EY4k0g=
+			CoQ1to37ux1DkS34ysvY/9op/A/i7wlqb7xxMFQX05E=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -514,7 +514,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			tXFMbfleOpYm62/nio9UC6Mc9q0Evudo8mcdYHR4Ns8=
+			dBhDrvMKYllPOoyPNWbFtv/pTx5wpLNjRjsLuLaw/K8=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -523,7 +523,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			DUfUoRCV+sjab1Sx6dJq2m/u6io9p8KyrdhUSqhz7Nw=
+			vnCx925tHDvBl2LIwk/E0oFQfUl4tu0UWNdANFR4c6U=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -532,7 +532,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			7WNFBW+mOmZoSgZ+2yb5Tli3bVUF/fyX/NGxD93xLdE=
+			RyTWEtjY+fF/VSAMnSfkMjVPgZo+eWcawMDTgx6axzc=
 			</data>
 			<key>optional</key>
 			<true/>

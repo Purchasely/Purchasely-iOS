@@ -412,21 +412,53 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 + (void)productWith:(NSString * _Nonnull)vendorId success:(void (^ _Nonnull)(PLYProduct * _Nonnull))success failure:(void (^ _Nonnull)(NSError * _Nullable))failure;
 + (void)planWith:(NSString * _Nonnull)vendorId success:(void (^ _Nonnull)(PLYPlan * _Nonnull))success failure:(void (^ _Nonnull)(NSError * _Nullable))failure;
 + (void)userSubscriptionsWithSuccess:(void (^ _Nonnull)(NSArray<PLYSubscription *> * _Nullable))success failure:(void (^ _Nonnull)(NSError * _Nonnull))failure;
+/// This method returns a presentation for a specific product. If no presentationVendorId is set (or an invalid one)
+/// the product default presentation will be displayed. If none has been set it will fallback to the app default presentation.
+/// \param productVendorId the vendorId of the product to show
+///
+/// \param presentationVendorId (optional) the vendorId of a presentation
+///
+/// \param completion the block called after the product controller has been dismissed to give the output of the action (cancel, purchase, restore)
+///
 + (UIViewController * _Nonnull)productControllerFor:(NSString * _Nonnull)productVendorId with:(NSString * _Nullable)presentationVendorId completion:(void (^ _Nullable)(enum PLYProductViewControllerResult, PLYPlan * _Nullable))completion SWIFT_WARN_UNUSED_RESULT;
+/// This method returns a presentation for a specific plan. If no presentationVendorId is set (or an invalid one)
+/// the plan default presentation will be displayed. If none has been set it will fallback to the app default presentation.
+/// \param planVendorId the vendorId of the product to show
+///
+/// \param presentationVendorId (optional) the vendorId of a presentation
+///
+/// \param completion the block called after the product controller has been dismissed to give the output of the action (cancel, purchase, restore)
+///
 + (UIViewController * _Nonnull)planControllerFor:(NSString * _Nonnull)planVendorId with:(NSString * _Nullable)presentationVendorId completion:(void (^ _Nullable)(enum PLYProductViewControllerResult, PLYPlan * _Nullable))completion SWIFT_WARN_UNUSED_RESULT;
+/// This method returns a presentation with a specific vendorId. If no presentationVendorId is set (or an invalid one)
+/// the app default presentation will be displayed.
+/// \param presentationVendorId (optional) the vendorId of a presentation
+///
+/// \param completion the block called after the product controller has been dismissed to give the output of the action (cancel, purchase, restore)
+///
 + (UIViewController * _Nonnull)presentationControllerWith:(NSString * _Nullable)presentationVendorId completion:(void (^ _Nullable)(enum PLYProductViewControllerResult, PLYPlan * _Nullable))completion SWIFT_WARN_UNUSED_RESULT;
 + (UIViewController * _Nonnull)subscriptionsController SWIFT_WARN_UNUSED_RESULT;
 + (UIViewController * _Nonnull)subscriptionControllerFor:(PLYSubscription * _Nonnull)subscription SWIFT_WARN_UNUSED_RESULT;
 + (UIViewController * _Nonnull)cancellationSurveyControllerFor:(PLYProduct * _Nullable)product selected:(void (^ _Nonnull)(enum PLYCancellationReason))selected SWIFT_WARN_UNUSED_RESULT;
+/// This method must be called inside the AppDelegate open url method or SceneDelegate willConnectTo and openURLContexts
+/// Check the documentation: https://docs.purchasely.com/advanced-features/deeplinks-and-automations
+/// The controller will be displayed above the current controller.
+/// \param url the URL of the deeplink to open
+///
 + (BOOL)handleWithDeeplink:(NSURL * _Nonnull)url SWIFT_WARN_UNUSED_RESULT;
-/// This method performs a purchase on an plan of a Purchasely product
-/// :param: plan the PLYPlan that you setup in Purchasely admin
-/// :param: success the block called when the purchase was completed from end to end
-/// :param: failure the block called when any error occured. The error can be displayed to the user using localizedDescription
+/// This method performs a purchase on an plan of a Purchasely product.
+/// \param plan the PLYPlan that you setup in Purchasely admin
+///
+/// \param success the block called when the purchase was completed from end to end
+///
+/// \param failure the block called when any error occured. The error can be displayed to the user using localizedDescription
+///
 + (void)purchaseWithPlan:(PLYPlan * _Nonnull)plan success:(void (^ _Nonnull)(void))success failure:(void (^ _Nonnull)(NSError * _Nonnull))failure;
 /// This method is used to restore prevous purchases. Some might be successful and some in error.
-/// :param: success The closure that is called when at least one item was successfully restored. It might contain an error in case some items weren’t restored successfully.
-/// :param: failure The closure that is called when at no item was restored
+/// \param success The closure that is called when at least one item was successfully restored. It might contain an error in case some items weren’t restored successfully.
+///
+/// \param failure The closure that is called when at no item was restored
+///
 + (void)restoreAllProductsWithSuccess:(void (^ _Nonnull)(void))success failure:(void (^ _Nonnull)(NSError * _Nonnull))failure;
 @end
 

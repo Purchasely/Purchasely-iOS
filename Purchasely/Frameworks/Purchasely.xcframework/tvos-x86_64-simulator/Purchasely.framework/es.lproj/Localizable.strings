@@ -34,6 +34,7 @@
 "ply_in_app_already_being_purchased_error" = "Compra ya en curso para este producto";
 "ply_in_app_already_being_restored_error" = "Una restauración de las compras ya está en curso";
 "ply_in_app_restore_status_nothing" = "No se ha encontrado ninguna compra";
+"ply_in_app_psd2_required" = "You need to validate the purchase with your bank.";
 "ply_in_app_validation_failed" = "Validación del recibo imposible.";
 "ply_in_app_validation_timed_out" = "The validation of your purchase is taking a little more time than usually. Please come back later.";
 "ply_in_app_restore_status_errors" = "La restauración ha fallado por estos motivos:";
@@ -95,3 +96,4 @@
 "ply_modal_downgrade_button" = "Got it!";
 "ply_webview_qr_or_url" = "Scan the QR Code above or visit:";
 "ply_webview_url" = "Go to the following URL with your Web browser:";
+"ply_untracked_event" = "Event not handled";

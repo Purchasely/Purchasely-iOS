@@ -34,6 +34,7 @@
 "ply_in_app_already_being_purchased_error" = "이 제품 구매가 이미 진행 중입니다";
 "ply_in_app_already_being_restored_error" = "구매 내역 복원 작업이 이미 진행 중입니다.";
 "ply_in_app_restore_status_nothing" = "구매 내역을 찾을 수 없습니다";
+"ply_in_app_psd2_required" = "You need to validate the purchase with your bank.";
 "ply_in_app_validation_failed" = "수령을 확인할 수 없습니다.";
 "ply_in_app_validation_timed_out" = "The validation of your purchase is taking a little more time than usually. Please come back later.";
 "ply_in_app_restore_status_errors" = "다음 오류가 발생하여 복원이 실패했습니다:";
@@ -95,3 +96,4 @@
 "ply_modal_downgrade_button" = "Got it!";
 "ply_webview_qr_or_url" = "Scan the QR Code above or visit:";
 "ply_webview_url" = "Go to the following URL with your Web browser:";
+"ply_untracked_event" = "Event not handled";
