@@ -34,7 +34,7 @@
 "ply_in_app_already_being_purchased_error" = "Покупка этого продукта обрабатывается";
 "ply_in_app_already_being_restored_error" = "Выполняется восстановление покупки";
 "ply_in_app_restore_status_nothing" = "Покупки не найдены";
-"ply_in_app_psd2_required" = "You need to validate the purchase with your bank.";
+"ply_in_app_psd2_required" = "Once your payment has been validated with your bank your purchase will be unlocked. If you have any trouble, restore your purchases.";
 "ply_in_app_validation_failed" = "Подтверждение оплаты невозможно.";
 "ply_in_app_validation_timed_out" = "The validation of your purchase is taking a little more time than usually. Please come back later.";
 "ply_in_app_restore_status_errors" = "Восстановление не удалось, ошибки:";

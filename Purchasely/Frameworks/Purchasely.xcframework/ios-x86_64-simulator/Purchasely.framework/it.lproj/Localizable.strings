@@ -34,7 +34,7 @@
 "ply_in_app_already_being_purchased_error" = "Acquisto già in corso per questo prodotto";
 "ply_in_app_already_being_restored_error" = "Ripristino dell\'acquisto già in corso";
 "ply_in_app_restore_status_nothing" = "Nessun acquisto trovato";
-"ply_in_app_psd2_required" = "You need to validate the purchase with your bank.";
+"ply_in_app_psd2_required" = "Once your payment has been validated with your bank your purchase will be unlocked. If you have any trouble, restore your purchases.";
 "ply_in_app_validation_failed" = "Impossibile confermare la ricevuta.";
 "ply_in_app_validation_timed_out" = "The validation of your purchase is taking a little more time than usually. Please come back later.";
 "ply_in_app_restore_status_errors" = "Ripristino non riuscito con i seguenti errori:";

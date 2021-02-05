@@ -34,7 +34,7 @@
 "ply_in_app_already_being_purchased_error" = "Dieses Produkt wird gerade gekauft";
 "ply_in_app_already_being_restored_error" = "Die Wiederherstellung der Einkäufe läuft";
 "ply_in_app_restore_status_nothing" = "Keine Einkäufe gefunden";
-"ply_in_app_psd2_required" = "You need to validate the purchase with your bank.";
+"ply_in_app_psd2_required" = "Once your payment has been validated with your bank your purchase will be unlocked. If you have any trouble, restore your purchases.";
 "ply_in_app_validation_failed" = "Der Beleg kann nicht bestätigt werden.";
 "ply_in_app_validation_timed_out" = "The validation of your purchase is taking a little more time than usually. Please come back later.";
 "ply_in_app_restore_status_errors" = "Wiederherstellung aus folgenden Gründen fehlgeschlagen:";

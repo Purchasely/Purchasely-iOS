@@ -34,7 +34,7 @@
 "ply_in_app_already_being_purchased_error" = "Köpet av den här produkten pågår redan";
 "ply_in_app_already_being_restored_error" = "Köpet håller redan på att återställas";
 "ply_in_app_restore_status_nothing" = "Inga köp hittades";
-"ply_in_app_psd2_required" = "You need to validate the purchase with your bank.";
+"ply_in_app_psd2_required" = "Once your payment has been validated with your bank your purchase will be unlocked. If you have any trouble, restore your purchases.";
 "ply_in_app_validation_failed" = "Det gick inte att bekräfta kvittot.";
 "ply_in_app_validation_timed_out" = "The validation of your purchase is taking a little more time than usually. Please come back later.";
 "ply_in_app_restore_status_errors" = "Återställningen kunde inte genomföras och gav följande fel:";

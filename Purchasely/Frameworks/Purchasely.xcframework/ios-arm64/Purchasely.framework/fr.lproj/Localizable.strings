@@ -34,7 +34,7 @@
 "ply_in_app_already_being_purchased_error" = "Un achat est déjà en cours sur ce produit.";
 "ply_in_app_already_being_restored_error" = "Une restauration des achats est déjà en cours";
 "ply_in_app_restore_status_nothing" = "Aucun achat n’a été trouvé";
-"ply_in_app_psd2_required" = "L\'achat doit être validé avec votre banque.";
+"ply_in_app_psd2_required" = "Votre achat sera débloqué une fois qu\'il aura été validé par votre banque. Si vous avez le moindre problème, restaurez vos achats.";
 "ply_in_app_validation_failed" = "Validation du reçu impossible.";
 "ply_in_app_validation_timed_out" = "L\'achat a été pris en compte mais la validation prend un peu plus de temps que prévu. Revenez un peu plus tard.";
 "ply_in_app_restore_status_errors" = "La restauration a échouée avec les erreurs suivantes :";

@@ -115,32 +115,33 @@ extension PLYError : Foundation.LocalizedError {
 }
 @objc public enum PLYEvent : Swift.Int, Swift.CaseIterable, Swift.Codable {
   case appInstalled
-  case appUpdated
   case appStarted
+  case appUpdated
+  case cancellationReasonPublished
   case deeplinkOpened
-  case presentationViewed
-  case loginTapped
-  case purchaseFromStoreTapped
-  case purchaseTapped
-  case purchaseCancelled
-  case inAppPurchasing
-  case inAppPurchased
-  case inAppRenewed
-  case receiptCreated
-  case receiptValidated
-  case receiptFailed
-  case restoreStarted
-  case inAppRestored
-  case restoreSucceeded
-  case restoreFailed
   case inAppDeferred
   case inAppPurchaseFailed
+  case inAppPurchased
+  case inAppPurchasing
+  case inAppRenewed
+  case inAppRestored
   case linkOpened
-  case subscriptionsListViewed
-  case subscriptionDetailsViewed
+  case loginTapped
+  case presentationViewed
+  case purchaseCancelled
+  case purchaseFromStoreTapped
+  case purchaseTapped
+  case receiptCreated
+  case receiptFailed
+  case receiptValidated
+  case restoreFailed
+  case restoreStarted
+  case restoreSucceeded
+  case productFetchError
   case subscriptionCancelTapped
+  case subscriptionDetailsViewed
   case subscriptionPlanTapped
-  case cancellationReasonPublished
+  case subscriptionsListViewed
   public var name: Swift.String {
     get
   }
