@@ -114,6 +114,7 @@ extension PLYError : Foundation.LocalizedError {
   }
 }
 @objc public enum PLYEvent : Swift.Int, Swift.CaseIterable, Swift.Codable {
+  case appConfigured
   case appInstalled
   case appStarted
   case appUpdated
@@ -127,8 +128,12 @@ extension PLYError : Foundation.LocalizedError {
   case inAppRestored
   case linkOpened
   case loginTapped
+  case planSelected
+  case presentationOpened
+  case presentationSelected
   case presentationViewed
   case purchaseCancelled
+  case purchaseCancelledByApp
   case purchaseFromStoreTapped
   case purchaseTapped
   case receiptCreated
@@ -267,6 +272,7 @@ public enum PLYSubscriptionSourceError : Swift.Error {
 @objc public enum PLYUIControllerType : Swift.Int {
   case subscriptionList
   case productPage
+  case webPage
   case cancellationSurvey
   public typealias RawValue = Swift.Int
   public init?(rawValue: Swift.Int)
@@ -275,9 +281,11 @@ public enum PLYSubscriptionSourceError : Swift.Error {
   }
 }
 @objc public protocol PLYUIDelegate {
-  @objc func display(controller: UIKit.UIViewController, type: Purchasely.PLYUIControllerType)
+  @objc func display(controller: UIKit.UIViewController, type: Purchasely.PLYUIControllerType, from sourceController: UIKit.UIViewController?)
   @objc func display(alert: Purchasely.PLYAlertMessage, error: Swift.Error?)
 }
+public typealias PLYPurchaseConfirmationHandler = ((UIKit.UIViewController, @escaping (Swift.Bool) -> Swift.Void) -> Swift.Void)
+public typealias PLYLoginCompletionHandler = (Swift.Bool) -> Swift.Void
 public typealias PLYVoidClosure = () -> Swift.Void
 public typealias PLYErrorClosure = (Swift.Error) -> ()
 @objc public protocol PLYEventDelegate {
@@ -287,12 +295,14 @@ extension Purchasely {
   @objc public static var anonymousUserId: Swift.String {
     @objc get
   }
-  @objc dynamic public class func start(withAPIKey apiKey: Swift.String, appUserId: Swift.String? = nil, eventDelegate: Purchasely.PLYEventDelegate? = nil, uiDelegate: Purchasely.PLYUIDelegate? = nil, logLevel: Purchasely.PLYLogger.LogLevel = .error)
+  @objc dynamic public class func start(withAPIKey apiKey: Swift.String, appUserId: Swift.String? = nil, observerMode: Swift.Bool = false, eventDelegate: Purchasely.PLYEventDelegate? = nil, uiDelegate: Purchasely.PLYUIDelegate? = nil, confirmPurchaseHandler: Purchasely.PLYPurchaseConfirmationHandler? = nil, logLevel: Purchasely.PLYLogger.LogLevel = .error)
   @objc dynamic public class func setEventDelegate(_ eventDelegate: Purchasely.PLYEventDelegate?)
   @objc dynamic public class func setUIDelegate(_ uiDelegate: Purchasely.PLYUIDelegate?)
+  @objc dynamic public class func setConfimPurchaseHandler(_ confirmPurchaseHandler: Purchasely.PLYPurchaseConfirmationHandler?)
   @available(*, unavailable, message: "Call `userLogin(with:)` when you have the userId or `userLogout()` when the user disconnects.")
   @objc dynamic public class func setAppUserId(_ appUserId: Swift.String?)
   @objc dynamic public class func userLogin(with appUserId: Swift.String)
+  @objc dynamic public class func userLogin(with appUserId: Swift.String, shouldRefresh: Purchasely.PLYLoginCompletionHandler?)
   @objc dynamic public class func userLogout()
   @objc dynamic public class func isReadyToPurchase(_ ready: Swift.Bool)
   @objc dynamic public class func setEnvironment(_ environment: Purchasely.PLYEnvironment)
@@ -306,14 +316,27 @@ extension Purchasely {
   @objc dynamic public class func subscriptionsController() -> UIKit.UIViewController
   @objc dynamic public class func subscriptionController(for subscription: Purchasely.PLYSubscription) -> UIKit.UIViewController
   @objc dynamic public class func cancellationSurveyController(for product: Purchasely.PLYProduct?, selected: @escaping ((Purchasely.PLYCancellationReason) -> ())) -> UIKit.UIViewController
+  @discardableResult
   @objc dynamic public class func handle(deeplink url: Foundation.URL) -> Swift.Bool
   @objc public static func purchase(plan: Purchasely.PLYPlan, success: @escaping Purchasely.PLYVoidClosure, failure: @escaping Purchasely.PLYErrorClosure)
   @objc public static func restoreAllProducts(success: @escaping Purchasely.PLYVoidClosure, failure: @escaping Purchasely.PLYErrorClosure)
+  @objc public enum PLYAttribute : Swift.Int {
+    case amplitudeSessionId
+    case firebaseAppInstanceId
+    case airshipChannelId
+    public typealias RawValue = Swift.Int
+    public init?(rawValue: Swift.Int)
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  @objc dynamic public class func setAttribute(_ attribute: Purchasely.Purchasely.PLYAttribute, value: Swift.String)
+  public class func setAttributes(_ attributes: [Purchasely.Purchasely.PLYAttribute : Swift.String])
 }
 extension Purchasely : UserNotifications.UNUserNotificationCenterDelegate {
 }
 extension Purchasely : Purchasely.PLYUIDelegate {
-  @objc dynamic public func display(controller: UIKit.UIViewController, type: Purchasely.PLYUIControllerType)
+  @objc dynamic public func display(controller: UIKit.UIViewController, type: Purchasely.PLYUIControllerType, from sourceController: UIKit.UIViewController?)
   @objc dynamic public func display(alert: Purchasely.PLYAlertMessage, error: Swift.Error?)
 }
 extension Purchasely {
@@ -334,6 +357,9 @@ extension String {
   public func regexMatchGroup(_ pattern: Swift.String) -> [Swift.String]?
   public func regexMatch(_ pattern: Swift.String) -> Swift.Bool
 }
+extension Purchasely.Purchasely.PLYAttribute : Swift.Equatable {}
+extension Purchasely.Purchasely.PLYAttribute : Swift.Hashable {}
+extension Purchasely.Purchasely.PLYAttribute : Swift.RawRepresentable {}
 extension Purchasely.PLYActionError : Swift.Equatable {}
 extension Purchasely.PLYActionError : Swift.Hashable {}
 extension Purchasely.PLYAlertMessage : Swift.Equatable {}

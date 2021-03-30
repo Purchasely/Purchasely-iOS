@@ -242,34 +242,39 @@ typedef SWIFT_ENUM(NSInteger, PLYEnvironment, open) {
 };
 
 typedef SWIFT_ENUM(NSInteger, PLYEvent, open) {
-  PLYEventAppInstalled = 0,
-  PLYEventAppStarted = 1,
-  PLYEventAppUpdated = 2,
-  PLYEventCancellationReasonPublished = 3,
-  PLYEventDeeplinkOpened = 4,
-  PLYEventInAppDeferred = 5,
-  PLYEventInAppPurchaseFailed = 6,
-  PLYEventInAppPurchased = 7,
-  PLYEventInAppPurchasing = 8,
-  PLYEventInAppRenewed = 9,
-  PLYEventInAppRestored = 10,
-  PLYEventLinkOpened = 11,
-  PLYEventLoginTapped = 12,
-  PLYEventPresentationViewed = 13,
-  PLYEventPurchaseCancelled = 14,
-  PLYEventPurchaseFromStoreTapped = 15,
-  PLYEventPurchaseTapped = 16,
-  PLYEventReceiptCreated = 17,
-  PLYEventReceiptFailed = 18,
-  PLYEventReceiptValidated = 19,
-  PLYEventRestoreFailed = 20,
-  PLYEventRestoreStarted = 21,
-  PLYEventRestoreSucceeded = 22,
-  PLYEventProductFetchError = 23,
-  PLYEventSubscriptionCancelTapped = 24,
-  PLYEventSubscriptionDetailsViewed = 25,
-  PLYEventSubscriptionPlanTapped = 26,
-  PLYEventSubscriptionsListViewed = 27,
+  PLYEventAppConfigured = 0,
+  PLYEventAppInstalled = 1,
+  PLYEventAppStarted = 2,
+  PLYEventAppUpdated = 3,
+  PLYEventCancellationReasonPublished = 4,
+  PLYEventDeeplinkOpened = 5,
+  PLYEventInAppDeferred = 6,
+  PLYEventInAppPurchaseFailed = 7,
+  PLYEventInAppPurchased = 8,
+  PLYEventInAppPurchasing = 9,
+  PLYEventInAppRenewed = 10,
+  PLYEventInAppRestored = 11,
+  PLYEventLinkOpened = 12,
+  PLYEventLoginTapped = 13,
+  PLYEventPlanSelected = 14,
+  PLYEventPresentationOpened = 15,
+  PLYEventPresentationSelected = 16,
+  PLYEventPresentationViewed = 17,
+  PLYEventPurchaseCancelled = 18,
+  PLYEventPurchaseCancelledByApp = 19,
+  PLYEventPurchaseFromStoreTapped = 20,
+  PLYEventPurchaseTapped = 21,
+  PLYEventReceiptCreated = 22,
+  PLYEventReceiptFailed = 23,
+  PLYEventReceiptValidated = 24,
+  PLYEventRestoreFailed = 25,
+  PLYEventRestoreStarted = 26,
+  PLYEventRestoreSucceeded = 27,
+  PLYEventProductFetchError = 28,
+  PLYEventSubscriptionCancelTapped = 29,
+  PLYEventSubscriptionDetailsViewed = 30,
+  PLYEventSubscriptionPlanTapped = 31,
+  PLYEventSubscriptionsListViewed = 32,
 };
 
 
@@ -357,14 +362,15 @@ typedef SWIFT_ENUM(NSInteger, PLYSubscriptionSource, open) {
 typedef SWIFT_ENUM(NSInteger, PLYUIControllerType, open) {
   PLYUIControllerTypeSubscriptionList = 0,
   PLYUIControllerTypeProductPage = 1,
-  PLYUIControllerTypeCancellationSurvey = 2,
+  PLYUIControllerTypeWebPage = 2,
+  PLYUIControllerTypeCancellationSurvey = 3,
 };
 
 @class UIViewController;
 
 SWIFT_PROTOCOL("_TtP10Purchasely13PLYUIDelegate_")
 @protocol PLYUIDelegate
-- (void)displayWithController:(UIViewController * _Nonnull)controller type:(enum PLYUIControllerType)type;
+- (void)displayWithController:(UIViewController * _Nonnull)controller type:(enum PLYUIControllerType)type from:(UIViewController * _Nullable)sourceController;
 - (void)displayWithAlert:(enum PLYAlertMessage)alert error:(NSError * _Nullable)error;
 @end
 
@@ -386,7 +392,7 @@ SWIFT_CLASS("_TtC10Purchasely10Purchasely")
 
 
 @interface Purchasely (SWIFT_EXTENSION(Purchasely)) <PLYUIDelegate>
-- (void)displayWithController:(UIViewController * _Nonnull)controller type:(enum PLYUIControllerType)type;
+- (void)displayWithController:(UIViewController * _Nonnull)controller type:(enum PLYUIControllerType)type from:(UIViewController * _Nullable)sourceController;
 - (void)displayWithAlert:(enum PLYAlertMessage)alert error:(NSError * _Nullable)error;
 @end
 
@@ -397,15 +403,29 @@ SWIFT_CLASS("_TtC10Purchasely10Purchasely")
 
 
 
+enum PLYAttribute : NSInteger;
 
 @interface Purchasely (SWIFT_EXTENSION(Purchasely))
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull anonymousUserId;)
 + (NSString * _Nonnull)anonymousUserId SWIFT_WARN_UNUSED_RESULT;
-+ (void)startWithAPIKey:(NSString * _Nonnull)apiKey appUserId:(NSString * _Nullable)appUserId eventDelegate:(id <PLYEventDelegate> _Nullable)eventDelegate uiDelegate:(id <PLYUIDelegate> _Nullable)uiDelegate logLevel:(enum LogLevel)logLevel;
++ (void)startWithAPIKey:(NSString * _Nonnull)apiKey appUserId:(NSString * _Nullable)appUserId observerMode:(BOOL)observerMode eventDelegate:(id <PLYEventDelegate> _Nullable)eventDelegate uiDelegate:(id <PLYUIDelegate> _Nullable)uiDelegate confirmPurchaseHandler:(void (^ _Nullable)(UIViewController * _Nonnull, void (^ _Nonnull)(BOOL)))confirmPurchaseHandler logLevel:(enum LogLevel)logLevel;
 + (void)setEventDelegate:(id <PLYEventDelegate> _Nullable)eventDelegate;
 + (void)setUIDelegate:(id <PLYUIDelegate> _Nullable)uiDelegate;
+/// This function is used to set a handler that is call between the moment the user taps the
+/// purchase button and the moment we call the store to perform it
+/// The handler gives you:
+/// <ul>
+///   <li>
+///     the source controller to display something above
+///   </li>
+///   <li>
+///     a closure to notify the completion to the SDK that will proceed (or not) to the purchase
+///   </li>
+/// </ul>
++ (void)setConfimPurchaseHandler:(void (^ _Nullable)(UIViewController * _Nonnull, void (^ _Nonnull)(BOOL)))confirmPurchaseHandler;
 + (void)setAppUserId:(NSString * _Nullable)appUserId SWIFT_UNAVAILABLE_MSG("Call `userLogin(with:)` when you have the userId or `userLogout()` when the user disconnects.");
 + (void)userLoginWith:(NSString * _Nonnull)appUserId;
++ (void)userLoginWith:(NSString * _Nonnull)appUserId shouldRefresh:(void (^ _Nullable)(BOOL))shouldRefresh;
 + (void)userLogout;
 + (void)isReadyToPurchase:(BOOL)ready;
 + (void)setEnvironment:(enum PLYEnvironment)environment;
@@ -446,7 +466,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 /// The controller will be displayed above the current controller.
 /// \param url the URL of the deeplink to open
 ///
-+ (BOOL)handleWithDeeplink:(NSURL * _Nonnull)url SWIFT_WARN_UNUSED_RESULT;
++ (BOOL)handleWithDeeplink:(NSURL * _Nonnull)url;
 /// This method performs a purchase on an plan of a Purchasely product.
 /// \param plan the PLYPlan that you setup in Purchasely admin
 ///
@@ -461,7 +481,14 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 /// \param failure The closure that is called when at no item was restored
 ///
 + (void)restoreAllProductsWithSuccess:(void (^ _Nonnull)(void))success failure:(void (^ _Nonnull)(NSError * _Nonnull))failure;
++ (void)setAttribute:(enum PLYAttribute)attribute value:(NSString * _Nonnull)value;
 @end
+
+typedef SWIFT_ENUM(NSInteger, PLYAttribute, open) {
+  PLYAttributeAmplitudeSessionId = 0,
+  PLYAttributeFirebaseAppInstanceId = 1,
+  PLYAttributeAirshipChannelId = 2,
+};
 
 
 
