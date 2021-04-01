@@ -34,7 +34,7 @@
 		</data>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-tvos-simulator.swiftmodule</key>
 		<data>
-		Ec2dnAfJHyGWHOt2qb1ZQEz/E5Y=
+		n5rZjJ5uu8TvrQFFrTJcaNTocL8=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/x86_64.swiftdoc</key>
 		<data>
@@ -46,7 +46,7 @@
 		</data>
 		<key>Modules/Purchasely.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		Ec2dnAfJHyGWHOt2qb1ZQEz/E5Y=
+		n5rZjJ5uu8TvrQFFrTJcaNTocL8=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -54,39 +54,39 @@
 		</data>
 		<key>PLYCancelSubscriptionTableViewCell.nib</key>
 		<data>
-		58dxFv/pmDCcNjnIB0hJPp4sLdQ=
+		Ec9tQfbCTi6Oyj6WVcHTMMJlmZY=
 		</data>
 		<key>PLYCancellationSurveyViewController.nib</key>
 		<data>
-		4yohcaCM6WcHR1TBjORH7xsef+Q=
+		V0/3oF6dA2k2jXD/TGYW1/Zb9S0=
 		</data>
 		<key>PLYLoadingTableViewCell.nib</key>
 		<data>
-		9QezMuE0uJggUxe1ZYM3i0PYNWo=
+		OIoIIlWvsyHyBWrEGs8W0aBPXpg=
 		</data>
 		<key>PLYNoSubscriptionTableViewCell.nib</key>
 		<data>
-		fF97N8mRWcicc4m0c3rHmFlvbng=
+		1IlC+vSxwDMRIjA9DXPo1FLlFbo=
 		</data>
 		<key>PLYPlanTableViewCell.nib</key>
 		<data>
-		VGVXEn2+YqWtl1Pss2tp6kABdY4=
+		dNRLN1BYfS81GHG2vg4WAKm5pFk=
 		</data>
 		<key>PLYSubscriptionTableViewCell.nib</key>
 		<data>
-		/rxK4XQVqolKPqEJ6vgD7EdzRQM=
+		6x29x4aPqc6ILHRUhBSIHiONQOs=
 		</data>
 		<key>PLYSubscriptionViewController.nib</key>
 		<data>
-		eqDNn081RszGo2RQGROHjfdRO2A=
+		hl5XGamlrFKVLzMsST916o4ORm4=
 		</data>
 		<key>PLYSubscriptionsViewController.nib</key>
 		<data>
-		lcKcW443i/jAE5Vnid3dSJi/7jY=
+		oIJL9R16B6mR6veMrOBZKeLljSE=
 		</data>
 		<key>PLYWebViewViewController.nib</key>
 		<data>
-		2vZj+0qBjcEtFNB2lBZycrGHtdk=
+		IfHEM+ppcZY7I8TLPWfy/SGcFHU=
 		</data>
 		<key>cs.lproj/Localizable.strings</key>
 		<dict>
@@ -290,7 +290,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			zVBq8+9xccX9GafkIA+H/eW+PJjSFVw9BUMNRECZXhU=
+			aP+jLR8/2sPONPhgQ19MMwxiuvWzjvH9h+2RspmX1Hw=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/x86_64.swiftdoc</key>
@@ -311,7 +311,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			zVBq8+9xccX9GafkIA+H/eW+PJjSFVw9BUMNRECZXhU=
+			aP+jLR8/2sPONPhgQ19MMwxiuvWzjvH9h+2RspmX1Hw=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -325,63 +325,63 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			lRidFz714kVy7oBWqjJ9IxPtQBCHWXcfcjLBRS/P3bo=
+			QhjH47SX9g9ardbcOSnyxPqdU+bAZtnPBfuIytuxAqw=
 			</data>
 		</dict>
 		<key>PLYCancellationSurveyViewController.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			sm1cirpF4/cnR0Sgas68Du6E3lsLqQpptsbfMa3Kkvk=
+			08pQmvN2tkW2eqRRNJfGwtLQaBBkZQlMyvXdntNxaK4=
 			</data>
 		</dict>
 		<key>PLYLoadingTableViewCell.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			r6orz5QRxNAK7wy7nnEmXWe6ini6pNcJkkgk0IFKXGg=
+			1ErHAbZbExO/ca5OZ5NL4TyXkjBa2PGz6KGZp0bruPU=
 			</data>
 		</dict>
 		<key>PLYNoSubscriptionTableViewCell.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			9B952q4/TrRotyki0bKyhPm7yDJTIyQBs8+RjscLdss=
+			dC5UqO3niQN9ytuIKblBxYnBoBDU02ZIBS9q9MqgH0I=
 			</data>
 		</dict>
 		<key>PLYPlanTableViewCell.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			5/6eMR/eS0jDCZYpQ/klvVtBOLisqdGVp7wpyYZRZ7w=
+			qcBCwee8DUJ5S30vfd+lhLHKAcgAnMHe2MEdEyzSZLI=
 			</data>
 		</dict>
 		<key>PLYSubscriptionTableViewCell.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ICG99kSv6jZBmXHFoVlKTOiHQrbJ460yZifelvw7HSc=
+			Ye82yAXDszzqwImeJoOjwBVhERBpNFx/r9rxntlZScQ=
 			</data>
 		</dict>
 		<key>PLYSubscriptionViewController.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			lmpP37PYh5vcypptj54Ue4Zn+iWHE3fw6AGk+MavDsg=
+			UB57e3IGEiqXGf9MKDca1VtAJWtWM1qOlSbBLsoPsoQ=
 			</data>
 		</dict>
 		<key>PLYSubscriptionsViewController.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			mwgTUBgpBdr/CK+7zQKkL1rEQJUK56j48y3Twc+Z9Ds=
+			kETtq1EYx0sU4AZ8SDmdNs6K23iHNxvSb8o6LcS9X2Y=
 			</data>
 		</dict>
 		<key>PLYWebViewViewController.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			xQ1uewHb/kY9SahAaeAKVbQipnUub4ZT+djhVpjpBK8=
+			kkUx5MTo3u3cB7AwevmCbIbVorIV4DtITfmrnPQDu+Q=
 			</data>
 		</dict>
 		<key>cs.lproj/Localizable.strings</key>
