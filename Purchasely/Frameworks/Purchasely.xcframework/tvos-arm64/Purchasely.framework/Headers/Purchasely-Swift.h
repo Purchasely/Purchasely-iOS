@@ -427,6 +427,18 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 + (void)userLoginWith:(NSString * _Nonnull)appUserId;
 + (void)userLoginWith:(NSString * _Nonnull)appUserId shouldRefresh:(void (^ _Nullable)(BOOL))shouldRefresh;
 + (void)userLogout;
+/// This function is used to present the login controller when the user taps on <code>Login</code> button
+/// of our paywalls
+/// The handler gives you:
+/// <ul>
+///   <li>
+///     the source controller to display something above
+///   </li>
+///   <li>
+///     a closure to tell Purchasely wether it should reload to make the login button disappear or not (user login)
+///   </li>
+/// </ul>
++ (void)setLoginTappedHandler:(void (^ _Nullable)(UIViewController * _Nonnull, void (^ _Nonnull)(BOOL)))loginTappedHandler;
 + (void)isReadyToPurchase:(BOOL)ready;
 + (void)setEnvironment:(enum PLYEnvironment)environment;
 + (void)setLogLevel:(enum LogLevel)logLevel;
