@@ -226,6 +226,12 @@ typedef SWIFT_ENUM(NSInteger, PLYAlertMessage, open) {
   PLYAlertMessageUnsubscribeAndroid = 7,
 };
 
+typedef SWIFT_ENUM(NSInteger, PLYAppTechnology, open) {
+  PLYAppTechnologyNative = 0,
+  PLYAppTechnologyFlutter = 1,
+  PLYAppTechnologyReactNative = 2,
+};
+
 typedef SWIFT_ENUM(NSInteger, PLYCancellationReason, open) {
   PLYCancellationReasonPrice = 1,
   PLYCancellationReasonBetterApp = 2,
@@ -275,6 +281,9 @@ typedef SWIFT_ENUM(NSInteger, PLYEvent, open) {
   PLYEventSubscriptionDetailsViewed = 30,
   PLYEventSubscriptionPlanTapped = 31,
   PLYEventSubscriptionsListViewed = 32,
+  PLYEventSubscriptionsTransferred = 33,
+  PLYEventUserLoggedIn = 34,
+  PLYEventUserLoggedOut = 35,
 };
 
 
@@ -442,6 +451,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 + (void)isReadyToPurchase:(BOOL)ready;
 + (void)setEnvironment:(enum PLYEnvironment)environment;
 + (void)setLogLevel:(enum LogLevel)logLevel;
++ (void)setAppTechnology:(enum PLYAppTechnology)technology;
 + (void)productWith:(NSString * _Nonnull)vendorId success:(void (^ _Nonnull)(PLYProduct * _Nonnull))success failure:(void (^ _Nonnull)(NSError * _Nullable))failure;
 + (void)planWith:(NSString * _Nonnull)vendorId success:(void (^ _Nonnull)(PLYPlan * _Nonnull))success failure:(void (^ _Nonnull)(NSError * _Nullable))failure;
 + (void)userSubscriptionsWithSuccess:(void (^ _Nonnull)(NSArray<PLYSubscription *> * _Nullable))success failure:(void (^ _Nonnull)(NSError * _Nonnull))failure;

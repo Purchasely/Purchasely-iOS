@@ -147,6 +147,9 @@ extension PLYError : Foundation.LocalizedError {
   case subscriptionDetailsViewed
   case subscriptionPlanTapped
   case subscriptionsListViewed
+  case subscriptionsTransferred
+  case userLoggedIn
+  case userLoggedOut
   public var name: Swift.String {
     get
   }
@@ -241,6 +244,16 @@ public typealias PLYProductViewControllerCompletionBlock = (PLYProductViewContro
     get
   }
 }
+@objc public enum PLYAppTechnology : Swift.Int {
+  case native
+  case flutter
+  case reactNative
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
 @objc public class PLYSubscription : ObjectiveC.NSObject, Swift.Decodable {
   @objc public var plan: PLYPlan
   @objc public var subscriptionSource: PLYSubscriptionSource
@@ -309,6 +322,7 @@ extension Purchasely {
   @objc dynamic public class func isReadyToPurchase(_ ready: Swift.Bool)
   @objc dynamic public class func setEnvironment(_ environment: PLYEnvironment)
   @objc dynamic public class func setLogLevel(_ logLevel: PLYLogger.LogLevel)
+  @objc dynamic public class func setAppTechnology(_ technology: PLYAppTechnology)
   @objc dynamic public class func product(with vendorId: Swift.String, success: @escaping (PLYProduct) -> Swift.Void, failure: @escaping (Swift.Error?) -> Swift.Void)
   @objc dynamic public class func plan(with vendorId: Swift.String, success: @escaping (PLYPlan) -> Swift.Void, failure: @escaping (Swift.Error?) -> Swift.Void)
   @objc dynamic public class func userSubscriptions(success: @escaping ([PLYSubscription]?) -> Swift.Void, failure: @escaping PLYErrorClosure)
@@ -388,6 +402,9 @@ extension PLYLogger.LogLevel : Swift.RawRepresentable {}
 extension PLYProductViewControllerResult : Swift.Equatable {}
 extension PLYProductViewControllerResult : Swift.Hashable {}
 extension PLYProductViewControllerResult : Swift.RawRepresentable {}
+extension PLYAppTechnology : Swift.Equatable {}
+extension PLYAppTechnology : Swift.Hashable {}
+extension PLYAppTechnology : Swift.RawRepresentable {}
 extension PLYSubscriptionSourceError : Swift.Equatable {}
 extension PLYSubscriptionSourceError : Swift.Hashable {}
 extension PLYSubscriptionSource : Swift.Equatable {}
