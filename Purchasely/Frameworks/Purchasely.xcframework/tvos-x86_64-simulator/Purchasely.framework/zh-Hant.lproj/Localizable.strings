@@ -68,6 +68,9 @@
 "ply_unsubscribe_google_title" = "取消訂閱項目";
 "ply_unsubscribe_google_content" = "前往 play.google.com。\n  檢查您是否已登入正確的 Google 帳戶。\n  在左側按一下 [我的訂閱內容]。\n  選取您要取消訂閱的項目。\n  按一下 [管理] 下一步 [取消訂閱]。";
 "ply_unsubscribe_google_button" = "確定";
+"ply_unsubscribe_amazon_title" = "Cancel a subscription";
+"ply_unsubscribe_amazon_content" = "Go to amazon.com.\nCheck if you’re signed in to the correct Amazon Account.\nGo to your Account page.\nClick on Other Subscriptions in the Memberships and subscriptions section\nSelect the subscription you want to cancel.\nThen Cancel Subscription.";
+"ply_unsubscribe_amazon_button" = "Ok";
 "ply_unsubscribe_apple_title" = "取消訂閱項目";
 "ply_unsubscribe_apple_content" = "開啟「設定」App。\n  點一下您的姓名。\n  點一下「訂閱項目」。\n  點一下您要管理的訂閱項目。\n  點一下「取消訂閱」。";
 "ply_unsubscribe_apple_button" = "確定";

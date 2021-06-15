@@ -68,6 +68,9 @@
 "ply_unsubscribe_google_title" = "Zrušení předplatného";
 "ply_unsubscribe_google_content" = "Přejděte na adresu play.google.com.\n  Zkontrolujte, zda jste přihlášeni ke správnému účtu Google.\n  Vlevo klikněte na Moje předplatné.\n  Vyberte předplatné, které chcete zrušit.\n  Klikněte na Spravovat a pak Zrušit předplatné.";
 "ply_unsubscribe_google_button" = "OK";
+"ply_unsubscribe_amazon_title" = "Cancel a subscription";
+"ply_unsubscribe_amazon_content" = "Go to amazon.com.\nCheck if you’re signed in to the correct Amazon Account.\nGo to your Account page.\nClick on Other Subscriptions in the Memberships and subscriptions section\nSelect the subscription you want to cancel.\nThen Cancel Subscription.";
+"ply_unsubscribe_amazon_button" = "Ok";
 "ply_unsubscribe_apple_title" = "Zrušení předplatného";
 "ply_unsubscribe_apple_content" = "Otevřete aplikaci Nastavení.\n  Klepněte na své jméno.\n  Klepněte na Předplatná.\n  Klepněte na předplatné, které chcete spravovat.\n  Klepněte na Zrušit předplatné.";
 "ply_unsubscribe_apple_button" = "OK";

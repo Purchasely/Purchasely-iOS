@@ -35,8 +35,9 @@ public enum PLYActionError : Swift.Error {
   case inAppRestorationSuccess
   case inAppRestorationError
   case inAppError
-  case unsubscribeAndroid
+  case unsubscribeGoogle
   case unsubscribeiOS
+  case unsubscribeAmazon
   public var title: Swift.String {
     get
   }
@@ -270,8 +271,10 @@ public enum PLYSubscriptionSourceError : Swift.Error {
   }
 }
 @objc public enum PLYSubscriptionSource : Swift.Int {
-  case appStore
-  case playStore
+  case appleAppStore
+  case googlePlayStore
+  case amazonAppstore
+  case huaweiAppGallery
   case none
   public init?(rawValue: Swift.Int)
   public typealias RawValue = Swift.Int
@@ -316,6 +319,7 @@ extension Purchasely {
   @objc dynamic public class func userLogin(with appUserId: Swift.String, shouldRefresh: Purchasely.PLYLoginCompletionHandler?)
   @objc dynamic public class func userLogout()
   @objc dynamic public class func setLoginTappedHandler(_ loginTappedHandler: Purchasely.PLYLoginTappedHandler?)
+  @objc dynamic public class func setDefaultPresentationResultHandler(_ defaultPresentationResultHandler: Purchasely.PLYProductViewControllerCompletionBlock?)
   @objc dynamic public class func isReadyToPurchase(_ ready: Swift.Bool)
   @objc dynamic public class func setEnvironment(_ environment: Purchasely.PLYEnvironment)
   @objc dynamic public class func setLogLevel(_ logLevel: Purchasely.PLYLogger.LogLevel)

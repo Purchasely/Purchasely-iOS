@@ -223,8 +223,9 @@ typedef SWIFT_ENUM(NSInteger, PLYAlertMessage, open) {
   PLYAlertMessageInAppRestorationSuccess = 4,
   PLYAlertMessageInAppRestorationError = 5,
   PLYAlertMessageInAppError = 6,
-  PLYAlertMessageUnsubscribeAndroid = 7,
+  PLYAlertMessageUnsubscribeGoogle = 7,
   PLYAlertMessageUnsubscribeiOS = 8,
+  PLYAlertMessageUnsubscribeAmazon = 9,
 };
 
 typedef SWIFT_ENUM(NSInteger, PLYAppTechnology, open) {
@@ -366,9 +367,11 @@ SWIFT_CLASS("_TtC10Purchasely15PLYSubscription")
 
 
 typedef SWIFT_ENUM(NSInteger, PLYSubscriptionSource, open) {
-  PLYSubscriptionSourceAppStore = 0,
-  PLYSubscriptionSourcePlayStore = 1,
-  PLYSubscriptionSourceNone = 2,
+  PLYSubscriptionSourceAppleAppStore = 0,
+  PLYSubscriptionSourceGooglePlayStore = 1,
+  PLYSubscriptionSourceAmazonAppstore = 2,
+  PLYSubscriptionSourceHuaweiAppGallery = 3,
+  PLYSubscriptionSourceNone = 4,
 };
 
 typedef SWIFT_ENUM(NSInteger, PLYUIControllerType, open) {
@@ -452,6 +455,16 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 ///   </li>
 /// </ul>
 + (void)setLoginTappedHandler:(void (^ _Nullable)(UIViewController * _Nonnull, void (^ _Nonnull)(BOOL)))loginTappedHandler;
+/// This function sets a handler that is triggered once the purchase controller is dismissed.
+/// It provides the output of the action (cancel, purchase, restore).
+/// You can use it for your tracking or to decide if you want to display soemthing post purchase.
+/// You can override this handler by providing a different completion handler
+/// in the <code>productController(for:with:completion:)</code> method.
+/// This method is particularly helpful to get the result from controllers you didn’t indtanciate yourself
+/// like Promoted In-App Purchases or product controllers displayed by deeplinks.
+/// \param defaultPresentationResultHandler the block called after the product controller has been dismissed to give the output of the action (cancel, purchase, restore)
+///
++ (void)setDefaultPresentationResultHandler:(void (^ _Nullable)(enum PLYProductViewControllerResult, PLYPlan * _Nullable))defaultPresentationResultHandler;
 + (void)isReadyToPurchase:(BOOL)ready;
 + (void)setEnvironment:(enum PLYEnvironment)environment;
 + (void)setLogLevel:(enum LogLevel)logLevel;

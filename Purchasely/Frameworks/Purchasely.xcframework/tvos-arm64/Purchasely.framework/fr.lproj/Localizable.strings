@@ -68,6 +68,9 @@
 "ply_unsubscribe_google_title" = "Annuler un abonnement";
 "ply_unsubscribe_google_content" = "Accédez à play.google.com.\nVérifiez que vous êtes connecté au bon compte Google.\nSur la gauche, cliquez sur Mes abonnements.\nAppuyez sur l\'abonnement à annuler.\nCliquez sur Gérer puis Annuler l\'abonnement.";
 "ply_unsubscribe_google_button" = "Ok";
+"ply_unsubscribe_amazon_title" = "Annuler un abonnement";
+"ply_unsubscribe_amazon_content" = "Accédez à amazon.fr.\nVérifiez que vous êtes connecté au bon compte Amazon.\nAccéder à votre compte.\nCliquez sur Adhésions et abonnements dans la section Abonnements.\nAppuyez sur l\'abonnement à annuler.\nPuis Annuler l\'abonnement.";
+"ply_unsubscribe_amazon_button" = "Ok";
 "ply_unsubscribe_apple_title" = "Annuler un abonnement";
 "ply_unsubscribe_apple_content" = "Ouvrez l’app Réglages.\n  Touchez votre nom.\n  Touchez Abonnements.\n  Touchez l’abonnement à gérer.\n  Touchez Annuler l’abonnement.";
 "ply_unsubscribe_apple_button" = "Ok";

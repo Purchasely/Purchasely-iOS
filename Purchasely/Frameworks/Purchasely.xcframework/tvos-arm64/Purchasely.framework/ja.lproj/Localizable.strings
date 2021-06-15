@@ -68,6 +68,9 @@
 "ply_unsubscribe_google_title" = "定期購入の解約";
 "ply_unsubscribe_google_content" = "play.google.com にアクセスします。\n  正しい Google アカウントにログインしていることを確認します。\n  左側にある [定期購入] をクリックします。\n  解約する定期購入を選択します。\n  [管理] 次に [定期購入を解約] をクリックします。";
 "ply_unsubscribe_google_button" = "OK";
+"ply_unsubscribe_amazon_title" = "Cancel a subscription";
+"ply_unsubscribe_amazon_content" = "Go to amazon.com.\nCheck if you’re signed in to the correct Amazon Account.\nGo to your Account page.\nClick on Other Subscriptions in the Memberships and subscriptions section\nSelect the subscription you want to cancel.\nThen Cancel Subscription.";
+"ply_unsubscribe_amazon_button" = "Ok";
 "ply_unsubscribe_apple_title" = "定期購入の解約";
 "ply_unsubscribe_apple_content" = "設定 App を開きます。\n  自分の名前をタップします。\n  「サブスクリプション」をタップします\n  管理したいサブスクリプションをタップします。\n  「サブスクリプションをキャンセルする」をタップします。";
 "ply_unsubscribe_apple_button" = "OK";

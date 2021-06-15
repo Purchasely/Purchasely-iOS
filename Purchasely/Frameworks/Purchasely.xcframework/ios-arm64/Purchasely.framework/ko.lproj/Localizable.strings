@@ -68,6 +68,9 @@
 "ply_unsubscribe_google_title" = "구독 취소";
 "ply_unsubscribe_google_content" = "play.google.com으로 이동합니다.\n  올바른 Google 계정에 로그인했는지 확인합니다.\n  왼쪽에서 내 구독을 클릭합니다.\n  취소하려는 구독 항목을 선택합니다.\n  관리 다음 구독 취소를 클릭합니다.";
 "ply_unsubscribe_google_button" = "확인";
+"ply_unsubscribe_amazon_title" = "Cancel a subscription";
+"ply_unsubscribe_amazon_content" = "Go to amazon.com.\nCheck if you’re signed in to the correct Amazon Account.\nGo to your Account page.\nClick on Other Subscriptions in the Memberships and subscriptions section\nSelect the subscription you want to cancel.\nThen Cancel Subscription.";
+"ply_unsubscribe_amazon_button" = "Ok";
 "ply_unsubscribe_apple_title" = "구독 취소";
 "ply_unsubscribe_apple_content" = "설정 앱을 엽니다.\n  본인의 이름을 탭합니다.\n  \'구독\'을 탭합니다.\n  관리할 구독을 탭합니다.\n  \'구독 취소\'를 탭합니다.";
 "ply_unsubscribe_apple_button" = "확인";

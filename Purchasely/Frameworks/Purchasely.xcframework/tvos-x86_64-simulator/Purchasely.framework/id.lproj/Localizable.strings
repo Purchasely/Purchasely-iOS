@@ -68,6 +68,9 @@
 "ply_unsubscribe_google_title" = "Membatalkan langganan";
 "ply_unsubscribe_google_content" = "Buka play.google.com.\n  Pastikan Anda sudah login ke Akun Google yang benar.\n  Di sebelah kiri, klik Langganan saya.\n  Pilih langganan yang ingin Anda batalkan.\n  Klik Kelola lalu Batalkan langganan.";
 "ply_unsubscribe_google_button" = "Ok";
+"ply_unsubscribe_amazon_title" = "Cancel a subscription";
+"ply_unsubscribe_amazon_content" = "Go to amazon.com.\nCheck if you’re signed in to the correct Amazon Account.\nGo to your Account page.\nClick on Other Subscriptions in the Memberships and subscriptions section\nSelect the subscription you want to cancel.\nThen Cancel Subscription.";
+"ply_unsubscribe_amazon_button" = "Ok";
 "ply_unsubscribe_apple_title" = "Membatalkan langganan";
 "ply_unsubscribe_apple_content" = "Buka app Pengaturan.\n  Ketuk nama Anda.\n  Ketuk Langganan.\n  Ketuk langganan yang ingin Anda kelola.\n  Ketuk Batalkan Langganan.";
 "ply_unsubscribe_apple_button" = "Ok";
