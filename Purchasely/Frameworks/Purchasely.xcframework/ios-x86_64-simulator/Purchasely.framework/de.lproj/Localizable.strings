@@ -72,7 +72,7 @@
 "ply_unsubscribe_amazon_content" = "Go to amazon.com.\nCheck if you’re signed in to the correct Amazon Account.\nGo to your Account page.\nClick on Other Subscriptions in the Memberships and subscriptions section\nSelect the subscription you want to cancel.\nThen Cancel Subscription.";
 "ply_unsubscribe_amazon_button" = "Ok";
 "ply_unsubscribe_apple_title" = "Abo kündigen";
-"ply_unsubscribe_apple_content" = "Öffne die Einstellungen-App.\n  Tippe auf deinen Namen.\n  Tippe auf"Abonnements".\n  Tippe auf das Abonnement, das du verwalten möchtest.\n  Tippe auf "Abo kündigen".";
+"ply_unsubscribe_apple_content" = "Öffne die Einstellungen-App.\n  Tippe auf deinen Namen.\n  Tippe auf Abonnements.\n  Tippe auf das Abonnement, das du verwalten möchtest.\n  Tippe auf Abo kündigen.";
 "ply_unsubscribe_apple_button" = "OK";
 "ply_subscriptions_title" = "Meine Abonnements";
 "ply_subscriptions_active_group_title" = "Aktiv";
