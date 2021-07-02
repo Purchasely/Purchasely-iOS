@@ -59,6 +59,8 @@
 	</array>
 	<key>CFBundlePackageType</key>
 	<string>XFWK</string>
+	<key>CFBundleShortVersionString</key>
+	<string>2.5.2</string>
 	<key>XCFrameworkFormatVersion</key>
 	<string>1.0</string>
 </dict>
