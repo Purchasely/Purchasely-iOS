@@ -229,9 +229,11 @@ typedef SWIFT_ENUM(NSInteger, PLYAlertMessage, open) {
 };
 
 typedef SWIFT_ENUM(NSInteger, PLYAppTechnology, open) {
-  PLYAppTechnologyNative = 0,
+  PLYAppTechnologyCordova = 0,
   PLYAppTechnologyFlutter = 1,
-  PLYAppTechnologyReactNative = 2,
+  PLYAppTechnologyNative = 2,
+  PLYAppTechnologyMacCatalyst = 3,
+  PLYAppTechnologyReactNative = 4,
 };
 
 typedef SWIFT_ENUM(NSInteger, PLYCancellationReason, open) {

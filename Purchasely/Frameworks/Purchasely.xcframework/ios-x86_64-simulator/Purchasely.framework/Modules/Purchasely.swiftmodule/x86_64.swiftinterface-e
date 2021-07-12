@@ -54,8 +54,10 @@ public enum PLYActionError : Swift.Error {
   }
 }
 @objc public enum PLYAppTechnology : Swift.Int {
-  case native
+  case cordova
   case flutter
+  case native
+  case macCatalyst
   case reactNative
   public init?(rawValue: Swift.Int)
   public typealias RawValue = Swift.Int
@@ -366,7 +368,7 @@ public struct Safe<Base> : Swift.Decodable where Base : Swift.Decodable {
   public let value: Base?
   public init(from decoder: Swift.Decoder)
 }
-@available(iOS 11.0, tvOS 11.0, *)
+@available(macCatalyst 14.0, iOS 11.0, tvOS 11.0, *)
 extension SKProductStorePromotionController {
   public func resetStorePromotionsVisibility(for products: [StoreKit.SKProduct], completed: (() -> Swift.Void)?)
 }
