@@ -471,6 +471,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 + (void)setEnvironment:(enum PLYEnvironment)environment;
 + (void)setLogLevel:(enum LogLevel)logLevel;
 + (void)setAppTechnology:(enum PLYAppTechnology)technology;
++ (void)allProductsWithSuccess:(void (^ _Nonnull)(NSArray<PLYProduct *> * _Nonnull))success failure:(void (^ _Nonnull)(NSError * _Nullable))failure;
 + (void)productWith:(NSString * _Nonnull)vendorId success:(void (^ _Nonnull)(PLYProduct * _Nonnull))success failure:(void (^ _Nonnull)(NSError * _Nullable))failure;
 + (void)planWith:(NSString * _Nonnull)vendorId success:(void (^ _Nonnull)(PLYPlan * _Nonnull))success failure:(void (^ _Nonnull)(NSError * _Nullable))failure;
 + (void)userSubscriptionsWithSuccess:(void (^ _Nonnull)(NSArray<PLYSubscription *> * _Nullable))success failure:(void (^ _Nonnull)(NSError * _Nonnull))failure;

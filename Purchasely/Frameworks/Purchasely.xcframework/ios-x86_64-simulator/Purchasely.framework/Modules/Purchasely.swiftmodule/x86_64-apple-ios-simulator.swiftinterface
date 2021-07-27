@@ -180,6 +180,10 @@ extension PLYError : Foundation.LocalizedError {
 extension NSString {
   @objc public static func fromPLYEvent(_ event: PLYEvent) -> Swift.String
 }
+public class PLYImage : Swift.Decodable {
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
 public enum PLYLabelHighlightsError : Swift.Error {
   case invalidRange
   public static func == (a: PLYLabelHighlightsError, b: PLYLabelHighlightsError) -> Swift.Bool
@@ -302,6 +306,7 @@ public enum PLYSubscriptionSourceError : Swift.Error {
 public typealias PLYLoginTappedHandler = ((UIKit.UIViewController, @escaping (Swift.Bool) -> Swift.Void) -> Swift.Void)
 public typealias PLYPurchaseConfirmationHandler = ((UIKit.UIViewController, @escaping (Swift.Bool) -> Swift.Void) -> Swift.Void)
 public typealias PLYLoginCompletionHandler = (Swift.Bool) -> Swift.Void
+public typealias PLYBoolClosure = (Swift.Bool) -> Swift.Void
 public typealias PLYVoidClosure = () -> Swift.Void
 public typealias PLYErrorClosure = (Swift.Error) -> ()
 @objc public protocol PLYEventDelegate {
@@ -326,6 +331,7 @@ extension Purchasely {
   @objc dynamic public class func setEnvironment(_ environment: PLYEnvironment)
   @objc dynamic public class func setLogLevel(_ logLevel: PLYLogger.LogLevel)
   @objc dynamic public class func setAppTechnology(_ technology: PLYAppTechnology)
+  @objc dynamic public class func allProducts(success: @escaping ([PLYProduct]) -> Swift.Void, failure: @escaping (Swift.Error?) -> Swift.Void)
   @objc dynamic public class func product(with vendorId: Swift.String, success: @escaping (PLYProduct) -> Swift.Void, failure: @escaping (Swift.Error?) -> Swift.Void)
   @objc dynamic public class func plan(with vendorId: Swift.String, success: @escaping (PLYPlan) -> Swift.Void, failure: @escaping (Swift.Error?) -> Swift.Void)
   @objc dynamic public class func userSubscriptions(success: @escaping ([PLYSubscription]?) -> Swift.Void, failure: @escaping PLYErrorClosure)
@@ -375,10 +381,6 @@ extension SKProductStorePromotionController {
 extension String {
   public func regexMatchGroup(_ pattern: Swift.String) -> [Swift.String]?
   public func regexMatch(_ pattern: Swift.String) -> Swift.Bool
-}
-public class PLYImage : Swift.Decodable {
-  required public init(from decoder: Swift.Decoder) throws
-  @objc deinit
 }
 extension PLYAttribute : Swift.Equatable {}
 extension PLYAttribute : Swift.Hashable {}

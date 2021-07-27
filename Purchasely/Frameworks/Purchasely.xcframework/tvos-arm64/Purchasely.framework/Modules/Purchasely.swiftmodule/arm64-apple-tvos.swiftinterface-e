@@ -53,10 +53,6 @@ public enum PLYActionError : Swift.Error {
     get
   }
 }
-public class PLYImage : Swift.Decodable {
-  required public init(from decoder: Swift.Decoder) throws
-  @objc deinit
-}
 @objc public enum PLYAppTechnology : Swift.Int {
   case cordova
   case flutter
@@ -184,6 +180,10 @@ extension PLYError : Foundation.LocalizedError {
 extension NSString {
   @objc public static func fromPLYEvent(_ event: Purchasely.PLYEvent) -> Swift.String
 }
+public class PLYImage : Swift.Decodable {
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
 public enum PLYLabelHighlightsError : Swift.Error {
   case invalidRange
   public static func == (a: Purchasely.PLYLabelHighlightsError, b: Purchasely.PLYLabelHighlightsError) -> Swift.Bool
@@ -306,6 +306,7 @@ public enum PLYSubscriptionSourceError : Swift.Error {
 public typealias PLYLoginTappedHandler = ((UIKit.UIViewController, @escaping (Swift.Bool) -> Swift.Void) -> Swift.Void)
 public typealias PLYPurchaseConfirmationHandler = ((UIKit.UIViewController, @escaping (Swift.Bool) -> Swift.Void) -> Swift.Void)
 public typealias PLYLoginCompletionHandler = (Swift.Bool) -> Swift.Void
+public typealias PLYBoolClosure = (Swift.Bool) -> Swift.Void
 public typealias PLYVoidClosure = () -> Swift.Void
 public typealias PLYErrorClosure = (Swift.Error) -> ()
 @objc public protocol PLYEventDelegate {
@@ -330,6 +331,7 @@ extension Purchasely {
   @objc dynamic public class func setEnvironment(_ environment: Purchasely.PLYEnvironment)
   @objc dynamic public class func setLogLevel(_ logLevel: Purchasely.PLYLogger.LogLevel)
   @objc dynamic public class func setAppTechnology(_ technology: Purchasely.PLYAppTechnology)
+  @objc dynamic public class func allProducts(success: @escaping ([Purchasely.PLYProduct]) -> Swift.Void, failure: @escaping (Swift.Error?) -> Swift.Void)
   @objc dynamic public class func product(with vendorId: Swift.String, success: @escaping (Purchasely.PLYProduct) -> Swift.Void, failure: @escaping (Swift.Error?) -> Swift.Void)
   @objc dynamic public class func plan(with vendorId: Swift.String, success: @escaping (Purchasely.PLYPlan) -> Swift.Void, failure: @escaping (Swift.Error?) -> Swift.Void)
   @objc dynamic public class func userSubscriptions(success: @escaping ([Purchasely.PLYSubscription]?) -> Swift.Void, failure: @escaping Purchasely.PLYErrorClosure)
