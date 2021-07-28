@@ -440,7 +440,8 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 ///     a closure to notify the completion to the SDK that will proceed (or not) to the purchase
 ///   </li>
 /// </ul>
-+ (void)setConfimPurchaseHandler:(void (^ _Nullable)(UIViewController * _Nonnull, void (^ _Nonnull)(BOOL)))confirmPurchaseHandler;
++ (void)setConfimPurchaseHandler:(void (^ _Nullable)(UIViewController * _Nonnull, void (^ _Nonnull)(BOOL)))confirmPurchaseHandler SWIFT_UNAVAILABLE_MSG("Oooops we made a typo here. Call `setConfirmPurchaseHandler(_:)` with the missing `r`. Sorry for the typo 😔.");
++ (void)setConfirmPurchaseHandler:(void (^ _Nullable)(UIViewController * _Nonnull, void (^ _Nonnull)(BOOL)))confirmPurchaseHandler;
 + (void)setAppUserId:(NSString * _Nullable)appUserId SWIFT_UNAVAILABLE_MSG("Call `userLogin(with:)` when you have the userId or `userLogout()` when the user disconnects.");
 + (void)userLoginWith:(NSString * _Nonnull)appUserId;
 + (void)userLoginWith:(NSString * _Nonnull)appUserId shouldRefresh:(void (^ _Nullable)(BOOL))shouldRefresh;
