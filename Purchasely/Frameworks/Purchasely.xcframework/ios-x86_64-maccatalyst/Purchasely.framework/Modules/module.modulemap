@@ -1,0 +1,11 @@
+framework module Purchasely {
+  umbrella header "Purchasely-iOS-umbrella.h"
+
+  export *
+  module * { export * }
+}
+
+module Purchasely.Swift {
+    header "Purchasely-Swift.h"
+    requires objc
+}

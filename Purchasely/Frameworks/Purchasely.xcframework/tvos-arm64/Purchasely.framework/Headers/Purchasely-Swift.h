@@ -325,6 +325,12 @@ SWIFT_CLASS("_TtC10Purchasely7PLYPlan")
 
 
 @interface PLYPlan (SWIFT_EXTENSION(Purchasely))
+- (NSString * _Nullable)priceDifferenceWithComparedTo:(PLYPlan * _Nonnull)plan SWIFT_WARN_UNUSED_RESULT;
+- (NSString * _Nullable)priceDifferenceInPercentageTo:(PLYPlan * _Nonnull)plan SWIFT_WARN_UNUSED_RESULT;
+@end
+
+
+@interface PLYPlan (SWIFT_EXTENSION(Purchasely))
 - (NSString * _Nullable)localizedFullPriceWithLanguage:(NSString * _Nullable)language SWIFT_WARN_UNUSED_RESULT;
 - (NSString * _Nullable)localizedPriceWithLanguage:(NSString * _Nullable)language SWIFT_WARN_UNUSED_RESULT;
 - (NSString * _Nullable)localizedPeriodWithLanguage:(NSString * _Nullable)language SWIFT_WARN_UNUSED_RESULT;

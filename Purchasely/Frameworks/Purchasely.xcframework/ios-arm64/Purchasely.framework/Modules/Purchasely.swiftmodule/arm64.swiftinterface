@@ -239,6 +239,10 @@ extension PLYPlan {
   @objc dynamic public func localizedIntroductoryPeriod(language: Swift.String? = nil) -> Swift.String?
   @objc dynamic public func localizedIntroductoryDuration(language: Swift.String? = nil) -> Swift.String?
 }
+extension PLYPlan {
+  @objc dynamic public func priceDifference(comparedTo plan: PLYPlan) -> Swift.String?
+  @objc dynamic public func priceDifferenceInPercentage(to plan: PLYPlan) -> Swift.String?
+}
 @objc public class PLYProduct : ObjectiveC.NSObject, Swift.Decodable {
   @objc public var vendorId: Swift.String
   @objc public var plans: [PLYPlan]

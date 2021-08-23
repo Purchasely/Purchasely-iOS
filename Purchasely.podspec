@@ -39,8 +39,5 @@ Purchasely handles everything from product presentation to app receipt validatio
   s.ios.frameworks = 'UIKit', 'StoreKit'
   s.tvos.frameworks = 'UIKit', 'TVUIKit', 'StoreKit'
 
-  s.ios.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
-  s.ios.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
-  s.tvos.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=appletvsimulator*]' => 'arm64' }
-  s.tvos.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=appletvsimulator*]' => 'arm64' }
+  s.pod_target_xcconfig = { 'ONLY_ACTIVE_ARCH' => 'YES' }
 end
