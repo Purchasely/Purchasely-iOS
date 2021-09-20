@@ -310,11 +310,13 @@ typedef SWIFT_ENUM(NSInteger, LogLevel, open) {
   LogLevelError = 3,
 };
 
+enum PLYPlanType : NSInteger;
 @class NSNumber;
 
 SWIFT_CLASS("_TtC10Purchasely7PLYPlan")
 @interface PLYPlan : NSObject
 @property (nonatomic, copy) NSString * _Nonnull vendorId;
+@property (nonatomic) enum PLYPlanType type;
 @property (nonatomic, copy) NSString * _Nullable name;
 - (BOOL)isEqual:(id _Nullable)object SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
@@ -322,6 +324,12 @@ SWIFT_CLASS("_TtC10Purchasely7PLYPlan")
 @end
 
 
+
+
+@interface PLYPlan (SWIFT_EXTENSION(Purchasely))
+- (NSString * _Nullable)priceDifferenceWithComparedTo:(PLYPlan * _Nonnull)plan SWIFT_WARN_UNUSED_RESULT;
+- (NSString * _Nullable)priceDifferenceInPercentageTo:(PLYPlan * _Nonnull)plan SWIFT_WARN_UNUSED_RESULT;
+@end
 
 
 @interface PLYPlan (SWIFT_EXTENSION(Purchasely))
@@ -334,6 +342,14 @@ SWIFT_CLASS("_TtC10Purchasely7PLYPlan")
 - (NSString * _Nullable)localizedIntroductoryPeriodWithLanguage:(NSString * _Nullable)language SWIFT_WARN_UNUSED_RESULT;
 - (NSString * _Nullable)localizedIntroductoryDurationWithLanguage:(NSString * _Nullable)language SWIFT_WARN_UNUSED_RESULT;
 @end
+
+typedef SWIFT_ENUM(NSInteger, PLYPlanType, open) {
+  PLYPlanTypeConsumable = 0,
+  PLYPlanTypeNonConsumable = 1,
+  PLYPlanTypeAutoRenewingSubscription = 2,
+  PLYPlanTypeNonRenewingSubscription = 3,
+  PLYPlanTypeUnknown = 4,
+};
 
 
 SWIFT_CLASS("_TtC10Purchasely10PLYProduct")
@@ -426,7 +442,7 @@ enum PLYAttribute : NSInteger;
 @interface Purchasely (SWIFT_EXTENSION(Purchasely))
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull anonymousUserId;)
 + (NSString * _Nonnull)anonymousUserId SWIFT_WARN_UNUSED_RESULT;
-+ (void)startWithAPIKey:(NSString * _Nonnull)apiKey appUserId:(NSString * _Nullable)appUserId observerMode:(BOOL)observerMode eventDelegate:(id <PLYEventDelegate> _Nullable)eventDelegate uiDelegate:(id <PLYUIDelegate> _Nullable)uiDelegate confirmPurchaseHandler:(void (^ _Nullable)(UIViewController * _Nonnull, void (^ _Nonnull)(BOOL)))confirmPurchaseHandler logLevel:(enum LogLevel)logLevel;
++ (void)startWithAPIKey:(NSString * _Nonnull)apiKey appUserId:(NSString * _Nullable)appUserId observerMode:(BOOL)observerMode eventDelegate:(id <PLYEventDelegate> _Nullable)eventDelegate uiDelegate:(id <PLYUIDelegate> _Nullable)uiDelegate confirmPurchaseHandler:(void (^ _Nullable)(UIViewController * _Nonnull, void (^ _Nonnull)(BOOL)))confirmPurchaseHandler logLevel:(enum LogLevel)logLevel initialized:(void (^ _Nullable)(BOOL))initialized;
 + (void)setEventDelegate:(id <PLYEventDelegate> _Nullable)eventDelegate;
 + (void)setUIDelegate:(id <PLYUIDelegate> _Nullable)uiDelegate;
 /// This function is used to set a handler that is call between the moment the user taps the
@@ -478,28 +494,111 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 + (void)userSubscriptionsWithSuccess:(void (^ _Nonnull)(NSArray<PLYSubscription *> * _Nullable))success failure:(void (^ _Nonnull)(NSError * _Nonnull))failure;
 /// This method returns a presentation for a specific product. If no presentationVendorId is set (or an invalid one)
 /// the product default presentation will be displayed. If none has been set it will fallback to the app default presentation.
-/// \param productVendorId the vendorId of the product to show
-///
-/// \param presentationVendorId (optional) the vendorId of a presentation
-///
-/// \param completion the block called after the product controller has been dismissed to give the output of the action (cancel, purchase, restore)
-///
+/// If a <code>contentId</code> is provided, this identifier will be sent to your backend for association purposes.
+/// <ul>
+///   <li>
+///     Parameters:
+///   </li>
+///   <li>
+///     productVendorId: the vendorId of the product to show
+///   </li>
+///   <li>
+///     presentationVendorId: (optional) the vendorId of a presentation
+///   </li>
+///   <li>
+///     contentId: (optional) an identifier that can be used to associate the purchase with your internal item id
+///   </li>
+///   <li>
+///     completion: the block called after the product controller has been dismissed to give the output of the action (cancel, purchase, restore)
+///   </li>
+/// </ul>
++ (UIViewController * _Nonnull)productControllerFor:(NSString * _Nonnull)productVendorId with:(NSString * _Nullable)presentationVendorId contentId:(NSString * _Nullable)contentId completion:(void (^ _Nullable)(enum PLYProductViewControllerResult, PLYPlan * _Nullable))completion SWIFT_WARN_UNUSED_RESULT;
+/// This method returns a presentation for a specific product. If no presentationVendorId is set (or an invalid one)
+/// the product default presentation will be displayed. If none has been set it will fallback to the app default presentation.
+/// <ul>
+///   <li>
+///     Parameters:
+///   </li>
+///   <li>
+///     productVendorId: the vendorId of the product to show
+///   </li>
+///   <li>
+///     presentationVendorId: (optional) the vendorId of a presentation
+///   </li>
+///   <li>
+///     completion: the block called after the product controller has been dismissed to give the output of the action (cancel, purchase, restore)
+///   </li>
+/// </ul>
 + (UIViewController * _Nonnull)productControllerFor:(NSString * _Nonnull)productVendorId with:(NSString * _Nullable)presentationVendorId completion:(void (^ _Nullable)(enum PLYProductViewControllerResult, PLYPlan * _Nullable))completion SWIFT_WARN_UNUSED_RESULT;
 /// This method returns a presentation for a specific plan. If no presentationVendorId is set (or an invalid one)
 /// the plan default presentation will be displayed. If none has been set it will fallback to the app default presentation.
-/// \param planVendorId the vendorId of the product to show
-///
-/// \param presentationVendorId (optional) the vendorId of a presentation
-///
-/// \param completion the block called after the product controller has been dismissed to give the output of the action (cancel, purchase, restore)
-///
+/// If a <code>contentId</code> is provided, this identifier will be sent to your backend for association purposes.
+/// <ul>
+///   <li>
+///     Parameters:
+///   </li>
+///   <li>
+///     planVendorId: the vendorId of the product to show
+///   </li>
+///   <li>
+///     presentationVendorId: (optional) the vendorId of a presentation
+///   </li>
+///   <li>
+///     contentId: (optional) an identifier that can be used to associate the purchase with your internal item id
+///   </li>
+///   <li>
+///     completion: the block called after the product controller has been dismissed to give the output of the action (cancel, purchase, restore)
+///   </li>
+/// </ul>
++ (UIViewController * _Nonnull)planControllerFor:(NSString * _Nonnull)planVendorId with:(NSString * _Nullable)presentationVendorId contentId:(NSString * _Nullable)contentId completion:(void (^ _Nullable)(enum PLYProductViewControllerResult, PLYPlan * _Nullable))completion SWIFT_WARN_UNUSED_RESULT;
+/// This method returns a presentation for a specific plan. If no presentationVendorId is set (or an invalid one)
+/// the plan default presentation will be displayed. If none has been set it will fallback to the app default presentation.
+/// <ul>
+///   <li>
+///     Parameters:
+///   </li>
+///   <li>
+///     planVendorId: the vendorId of the product to show
+///   </li>
+///   <li>
+///     presentationVendorId: (optional) the vendorId of a presentation
+///   </li>
+///   <li>
+///     completion: the block called after the product controller has been dismissed to give the output of the action (cancel, purchase, restore)
+///   </li>
+/// </ul>
 + (UIViewController * _Nonnull)planControllerFor:(NSString * _Nonnull)planVendorId with:(NSString * _Nullable)presentationVendorId completion:(void (^ _Nullable)(enum PLYProductViewControllerResult, PLYPlan * _Nullable))completion SWIFT_WARN_UNUSED_RESULT;
 /// This method returns a presentation with a specific vendorId. If no presentationVendorId is set (or an invalid one)
 /// the app default presentation will be displayed.
-/// \param presentationVendorId (optional) the vendorId of a presentation
-///
-/// \param completion the block called after the product controller has been dismissed to give the output of the action (cancel, purchase, restore)
-///
+/// If a <code>contentId</code> is provided, this identifier will be sent to your backend for association purposes.
+/// <ul>
+///   <li>
+///     Parameters:
+///   </li>
+///   <li>
+///     presentationVendorId: (optional) the vendorId of a presentation
+///   </li>
+///   <li>
+///     contentId: an identifier that can be used to associate the purchase with your internal item id
+///   </li>
+///   <li>
+///     completion: the block called after the product controller has been dismissed to give the output of the action (cancel, purchase, restore)
+///   </li>
+/// </ul>
++ (UIViewController * _Nonnull)presentationControllerWith:(NSString * _Nullable)presentationVendorId contentId:(NSString * _Nullable)contentId completion:(void (^ _Nullable)(enum PLYProductViewControllerResult, PLYPlan * _Nullable))completion SWIFT_WARN_UNUSED_RESULT;
+/// This method returns a presentation with a specific vendorId. If no presentationVendorId is set (or an invalid one)
+/// the app default presentation will be displayed.
+/// <ul>
+///   <li>
+///     Parameters:
+///   </li>
+///   <li>
+///     presentationVendorId: (optional) the vendorId of a presentation
+///   </li>
+///   <li>
+///     completion: the block called after the product controller has been dismissed to give the output of the action (cancel, purchase, restore)
+///   </li>
+/// </ul>
 + (UIViewController * _Nonnull)presentationControllerWith:(NSString * _Nullable)presentationVendorId completion:(void (^ _Nullable)(enum PLYProductViewControllerResult, PLYPlan * _Nullable))completion SWIFT_WARN_UNUSED_RESULT;
 + (UIViewController * _Nonnull)subscriptionsController SWIFT_WARN_UNUSED_RESULT;
 + (UIViewController * _Nonnull)subscriptionControllerFor:(PLYSubscription * _Nonnull)subscription SWIFT_WARN_UNUSED_RESULT;
@@ -507,22 +606,62 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 /// This method must be called inside the AppDelegate open url method or SceneDelegate willConnectTo and openURLContexts
 /// Check the documentation: https://docs.purchasely.com/advanced-features/deeplinks-and-automations
 /// The controller will be displayed above the current controller.
-/// \param url the URL of the deeplink to open
-///
+/// <ul>
+///   <li>
+///     Parameters:
+///   </li>
+///   <li>
+///     url: the URL of the deeplink to open
+///   </li>
+/// </ul>
 + (BOOL)handleWithDeeplink:(NSURL * _Nonnull)url;
+/// This method performs a purchase on an plan of a Purchasely product
+/// <ul>
+///   <li>
+///     Parameters:
+///   </li>
+///   <li>
+///     plan: the PLYPlan that you setup in Purchasely admin
+///   </li>
+///   <li>
+///     success: the block called when the purchase was completed from end to end
+///   </li>
+///   <li>
+///     contentId: (optional) an identifier that can be used to associate the purchase with your internal item id
+///   </li>
+///   <li>
+///     failure: the block called when any error occured. The error can be displayed to the user using localizedDescription
+///   </li>
+/// </ul>
++ (void)purchaseWithPlan:(PLYPlan * _Nonnull)plan contentId:(NSString * _Nullable)contentId success:(void (^ _Nonnull)(void))success failure:(void (^ _Nonnull)(NSError * _Nonnull))failure;
 /// This method performs a purchase on an plan of a Purchasely product.
-/// \param plan the PLYPlan that you setup in Purchasely admin
-///
-/// \param success the block called when the purchase was completed from end to end
-///
-/// \param failure the block called when any error occured. The error can be displayed to the user using localizedDescription
-///
+/// <ul>
+///   <li>
+///     Parameters:
+///   </li>
+///   <li>
+///     plan: the PLYPlan that you setup in Purchasely admin
+///   </li>
+///   <li>
+///     success: the block called when the purchase was completed from end to end
+///   </li>
+///   <li>
+///     failure: the block called when any error occured. The error can be displayed to the user using localizedDescription
+///   </li>
+/// </ul>
 + (void)purchaseWithPlan:(PLYPlan * _Nonnull)plan success:(void (^ _Nonnull)(void))success failure:(void (^ _Nonnull)(NSError * _Nonnull))failure;
 /// This method is used to restore prevous purchases. Some might be successful and some in error.
-/// \param success The closure that is called when at least one item was successfully restored. It might contain an error in case some items weren’t restored successfully.
-///
-/// \param failure The closure that is called when at no item was restored
-///
+/// <ul>
+///   <li>
+///     Parameters:
+///   </li>
+///   <li>
+///     success: The closure that is called when at least one item was successfully restored. It might contain an error in case some items weren’t restored successfully.
+///   </li>
+///   <li>
+///     failure: The closure that is called when at no item was restored
+///   </li>
+/// </ul>
 + (void)restoreAllProductsWithSuccess:(void (^ _Nonnull)(void))success failure:(void (^ _Nonnull)(NSError * _Nonnull))failure;
 + (void)setAttribute:(enum PLYAttribute)attribute value:(NSString * _Nonnull)value;
 @end

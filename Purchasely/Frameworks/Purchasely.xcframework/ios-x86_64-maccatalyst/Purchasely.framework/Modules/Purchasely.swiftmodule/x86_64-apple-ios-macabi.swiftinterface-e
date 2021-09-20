@@ -1,0 +1,449 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.4.2 (swiftlang-1205.0.28.2 clang-1205.0.19.57)
+// swift-module-flags: -target x86_64-apple-ios13.1-macabi -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name Purchasely
+import AVFoundation
+import AVKit
+import CommonCrypto
+import Foundation
+@_exported import Purchasely
+import StoreKit
+import Swift
+import UIKit
+import WebKit
+extension Array {
+  public subscript(safe index: Swift.Int) -> Element? {
+    get
+  }
+}
+public func loc(_ textToTranslate: Swift.String, comment: Swift.String = "", language: Swift.String? = nil) -> Swift.String
+@objc public enum PLYPlanType : Swift.Int, Swift.Codable {
+  case consumable
+  case nonConsumable
+  case autoRenewingSubscription
+  case nonRenewingSubscription
+  case unknown
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+extension NSNotification.Name {
+  public static let ply_purchasedSubscription: Foundation.Notification.Name
+}
+public enum PLYActionError : Swift.Error {
+  case unknownActionType
+  public static func == (a: Purchasely.PLYActionError, b: Purchasely.PLYActionError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@objc public enum PLYAlertMessage : Swift.Int {
+  case commonError
+  case inAppSuccess
+  case inAppDeferred
+  case inAppSuccessUnauthentified
+  case inAppRestorationSuccess
+  case inAppRestorationError
+  case inAppError
+  case unsubscribeGoogle
+  case unsubscribeiOS
+  case unsubscribeAmazon
+  public var title: Swift.String {
+    get
+  }
+  public var content: Swift.String? {
+    get
+  }
+  public var buttonTitle: Swift.String {
+    get
+  }
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public enum PLYAppTechnology : Swift.Int {
+  case cordova
+  case flutter
+  case native
+  case macCatalyst
+  case reactNative
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public enum PLYCancellationReason : Swift.Int {
+  case price = 1
+  case betterApp = 2
+  case noLongerUseful = 3
+  case noUse = 4
+  case technicalIssues = 5
+  case other = 6
+  case unknown = 7
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public enum PLYComponentError : Swift.Error {
+  case unknownComponentType
+  public static func == (a: Purchasely.PLYComponentError, b: Purchasely.PLYComponentError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@objc public enum PLYEnvironment : Swift.Int {
+  case prod
+  case staging
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public enum PLYError : Swift.Error {
+  case application(message: Swift.String?, code: Swift.String?)
+  case parsing
+  case network(statusCode: Swift.Int?, error: Swift.Error?)
+  case productNotFound
+  case deferredPayment
+  case psd2Required
+  case absentReceipt
+  case validationFailed
+  case clientInvalid
+  case paymentCancelled
+  case paymentInvalid
+  case paymentNotAllowed
+  case storeProductNotAvailable
+  case cloudServicePermissionDenied
+  case cloudServiceNetworkConnectionFailed
+  case cloudServiceRevoked
+  case purchaseAlreadyRunning
+  case restorationAlreadyRunning
+  case noProductsToRestore
+  case restorationFailedWithErrors([Swift.Error])
+  case restorationPartial([Swift.String], [Swift.Error])
+  case receiptValidationTimedOut
+  case untrackedEvent
+  case unknown
+}
+extension PLYError : Foundation.LocalizedError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
+@objc public enum PLYEvent : Swift.Int, Swift.CaseIterable, Swift.Codable {
+  case appConfigured
+  case appInstalled
+  case appStarted
+  case appUpdated
+  case cancellationReasonPublished
+  case deeplinkOpened
+  case inAppDeferred
+  case inAppPurchaseFailed
+  case inAppPurchased
+  case inAppPurchasing
+  case inAppRenewed
+  case inAppRestored
+  case linkOpened
+  case loginTapped
+  case planSelected
+  case presentationOpened
+  case presentationSelected
+  case presentationViewed
+  case purchaseCancelled
+  case purchaseCancelledByApp
+  case purchaseFromStoreTapped
+  case purchaseTapped
+  case receiptCreated
+  case receiptFailed
+  case receiptValidated
+  case restoreFailed
+  case restoreStarted
+  case restoreSucceeded
+  case productFetchError
+  case subscriptionCancelTapped
+  case subscriptionDetailsViewed
+  case subscriptionPlanTapped
+  case subscriptionsListViewed
+  case subscriptionsTransferred
+  case userLoggedIn
+  case userLoggedOut
+  public var name: Swift.String {
+    get
+  }
+  public init?(rawValue: Swift.Int)
+  public typealias AllCases = [Purchasely.PLYEvent]
+  public typealias RawValue = Swift.Int
+  public static var allCases: [Purchasely.PLYEvent] {
+    get
+  }
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+extension NSString {
+  @objc public static func fromPLYEvent(_ event: Purchasely.PLYEvent) -> Swift.String
+}
+public class PLYImage : Swift.Decodable {
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+public enum PLYLabelHighlightsError : Swift.Error {
+  case invalidRange
+  public static func == (a: Purchasely.PLYLabelHighlightsError, b: Purchasely.PLYLabelHighlightsError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum PluralType {
+  case none
+  case one
+  case many
+  public static func == (a: Purchasely.PluralType, b: Purchasely.PluralType) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public func PLYLocalizedPluralString(_ key: Swift.String, count: Swift.Int, language: Swift.String?) -> Swift.String
+public func PLYLocalizedPluralString(_ key: Swift.String, pluralType: Purchasely.PluralType, language: Swift.String?) -> Swift.String
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class PLYLogger : ObjectiveC.NSObject {
+  @objc public enum LogLevel : Swift.Int {
+    case debug
+    case info
+    case warn
+    case error
+    public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  @objc deinit
+}
+@objc public class PLYPlan : ObjectiveC.NSObject, Swift.Decodable {
+  @objc public var vendorId: Swift.String
+  @objc public var type: Purchasely.PLYPlanType
+  @objc public var name: Swift.String?
+  required public init(from decoder: Swift.Decoder) throws
+  @objc override dynamic public func isEqual(_ object: Any?) -> Swift.Bool
+  @objc override dynamic public init()
+  @objc deinit
+}
+extension PLYPlan {
+  @objc dynamic public func localizedFullPrice(language: Swift.String? = nil) -> Swift.String?
+  @objc dynamic public func localizedPrice(language: Swift.String? = nil) -> Swift.String?
+  @objc dynamic public func localizedPeriod(language: Swift.String? = nil) -> Swift.String?
+  @objc dynamic public var hasIntroductoryPrice: Swift.Bool {
+    @objc get
+  }
+  @objc dynamic public func localizedFullIntroductoryPrice(language: Swift.String? = nil) -> Swift.String?
+  @objc dynamic public func localizedIntroductoryPrice(language: Swift.String? = nil) -> Swift.String?
+  @objc dynamic public func localizedIntroductoryPeriod(language: Swift.String? = nil) -> Swift.String?
+  @objc dynamic public func localizedIntroductoryDuration(language: Swift.String? = nil) -> Swift.String?
+}
+extension PLYPlan {
+  @objc dynamic public func priceDifference(comparedTo plan: Purchasely.PLYPlan) -> Swift.String?
+  @objc dynamic public func priceDifferenceInPercentage(to plan: Purchasely.PLYPlan) -> Swift.String?
+}
+@objc public class PLYProduct : ObjectiveC.NSObject, Swift.Decodable {
+  @objc public var vendorId: Swift.String
+  @objc public var plans: [Purchasely.PLYPlan]
+  @objc public var name: Swift.String?
+  required public init(from decoder: Swift.Decoder) throws
+  @objc override dynamic public init()
+  @objc deinit
+}
+public typealias PLYProductViewControllerCompletionBlock = (Purchasely.PLYProductViewControllerResult, Purchasely.PLYPlan?) -> Swift.Void
+@objc public enum PLYProductViewControllerResult : Swift.Int {
+  case purchased
+  case cancelled
+  case restored
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers @objc public class PLYSubscription : ObjectiveC.NSObject, Swift.Decodable {
+  @objc public var plan: Purchasely.PLYPlan
+  @objc public var subscriptionSource: Purchasely.PLYSubscriptionSource
+  @objc public var nextRenewalDate: Foundation.Date?
+  @objc public var cancelledDate: Foundation.Date?
+  required public init(from decoder: Swift.Decoder) throws
+  @objc public func unsubscribe()
+  @objc override dynamic public init()
+  @objc deinit
+}
+public enum PLYSubscriptionSourceError : Swift.Error {
+  case invalidStringFormat
+  public static func == (a: Purchasely.PLYSubscriptionSourceError, b: Purchasely.PLYSubscriptionSourceError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@objc public enum PLYSubscriptionSource : Swift.Int {
+  case appleAppStore
+  case googlePlayStore
+  case amazonAppstore
+  case huaweiAppGallery
+  case none
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public enum PLYUIControllerType : Swift.Int {
+  case subscriptionList
+  case productPage
+  case webPage
+  case cancellationSurvey
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public protocol PLYUIDelegate {
+  @objc func display(controller: UIKit.UIViewController, type: Purchasely.PLYUIControllerType, from sourceController: UIKit.UIViewController?)
+  @objc func display(alert: Purchasely.PLYAlertMessage, error: Swift.Error?)
+}
+public typealias PLYLoginTappedHandler = ((UIKit.UIViewController, @escaping (Swift.Bool) -> Swift.Void) -> Swift.Void)
+public typealias PLYPurchaseConfirmationHandler = ((UIKit.UIViewController, @escaping (Swift.Bool) -> Swift.Void) -> Swift.Void)
+public typealias PLYLoginCompletionHandler = (Swift.Bool) -> Swift.Void
+public typealias PLYBoolClosure = (Swift.Bool) -> Swift.Void
+public typealias PLYVoidClosure = () -> Swift.Void
+public typealias PLYErrorClosure = (Swift.Error) -> ()
+@objc public protocol PLYEventDelegate {
+  @objc func eventTriggered(_ event: Purchasely.PLYEvent, properties: [Swift.String : Any]?)
+}
+extension Purchasely {
+  @objc public static var anonymousUserId: Swift.String {
+    @objc get
+  }
+  @objc dynamic public class func start(withAPIKey apiKey: Swift.String, appUserId: Swift.String? = nil, observerMode: Swift.Bool = false, eventDelegate: Purchasely.PLYEventDelegate? = nil, uiDelegate: Purchasely.PLYUIDelegate? = nil, confirmPurchaseHandler: Purchasely.PLYPurchaseConfirmationHandler? = nil, logLevel: Purchasely.PLYLogger.LogLevel = .error, initialized: Purchasely.PLYBoolClosure? = nil)
+  @objc dynamic public class func setEventDelegate(_ eventDelegate: Purchasely.PLYEventDelegate?)
+  @objc dynamic public class func setUIDelegate(_ uiDelegate: Purchasely.PLYUIDelegate?)
+  @available(*, unavailable, message: "Oooops we made a typo here. Call `setConfirmPurchaseHandler(_:)` with the missing `r`. Sorry for the typo 😔.")
+  @objc dynamic public class func setConfimPurchaseHandler(_ confirmPurchaseHandler: Purchasely.PLYPurchaseConfirmationHandler?)
+  @objc dynamic public class func setConfirmPurchaseHandler(_ confirmPurchaseHandler: Purchasely.PLYPurchaseConfirmationHandler?)
+  @available(*, unavailable, message: "Call `userLogin(with:)` when you have the userId or `userLogout()` when the user disconnects.")
+  @objc dynamic public class func setAppUserId(_ appUserId: Swift.String?)
+  @objc dynamic public class func userLogin(with appUserId: Swift.String)
+  @objc dynamic public class func userLogin(with appUserId: Swift.String, shouldRefresh: Purchasely.PLYLoginCompletionHandler?)
+  @objc dynamic public class func userLogout()
+  @objc dynamic public class func setLoginTappedHandler(_ loginTappedHandler: Purchasely.PLYLoginTappedHandler?)
+  @objc dynamic public class func setDefaultPresentationResultHandler(_ defaultPresentationResultHandler: Purchasely.PLYProductViewControllerCompletionBlock?)
+  @objc dynamic public class func isReadyToPurchase(_ ready: Swift.Bool)
+  @objc dynamic public class func setEnvironment(_ environment: Purchasely.PLYEnvironment)
+  @objc dynamic public class func setLogLevel(_ logLevel: Purchasely.PLYLogger.LogLevel)
+  @objc dynamic public class func setAppTechnology(_ technology: Purchasely.PLYAppTechnology)
+  @objc dynamic public class func allProducts(success: @escaping ([Purchasely.PLYProduct]) -> Swift.Void, failure: @escaping (Swift.Error?) -> Swift.Void)
+  @objc dynamic public class func product(with vendorId: Swift.String, success: @escaping (Purchasely.PLYProduct) -> Swift.Void, failure: @escaping (Swift.Error?) -> Swift.Void)
+  @objc dynamic public class func plan(with vendorId: Swift.String, success: @escaping (Purchasely.PLYPlan) -> Swift.Void, failure: @escaping (Swift.Error?) -> Swift.Void)
+  @objc dynamic public class func userSubscriptions(success: @escaping ([Purchasely.PLYSubscription]?) -> Swift.Void, failure: @escaping Purchasely.PLYErrorClosure)
+  @objc dynamic public class func productController(for productVendorId: Swift.String, with presentationVendorId: Swift.String? = nil, contentId: Swift.String? = nil, completion: Purchasely.PLYProductViewControllerCompletionBlock? = nil) -> UIKit.UIViewController
+  @objc dynamic public class func productController(for productVendorId: Swift.String, with presentationVendorId: Swift.String? = nil, completion: Purchasely.PLYProductViewControllerCompletionBlock? = nil) -> UIKit.UIViewController
+  @objc dynamic public class func planController(for planVendorId: Swift.String, with presentationVendorId: Swift.String? = nil, contentId: Swift.String?, completion: Purchasely.PLYProductViewControllerCompletionBlock? = nil) -> UIKit.UIViewController
+  @objc dynamic public class func planController(for planVendorId: Swift.String, with presentationVendorId: Swift.String? = nil, completion: Purchasely.PLYProductViewControllerCompletionBlock? = nil) -> UIKit.UIViewController
+  @objc dynamic public class func presentationController(with presentationVendorId: Swift.String? = nil, contentId: Swift.String?, completion: Purchasely.PLYProductViewControllerCompletionBlock? = nil) -> UIKit.UIViewController
+  @objc dynamic public class func presentationController(with presentationVendorId: Swift.String? = nil, completion: Purchasely.PLYProductViewControllerCompletionBlock? = nil) -> UIKit.UIViewController
+  @objc dynamic public class func subscriptionsController() -> UIKit.UIViewController
+  @objc dynamic public class func subscriptionController(for subscription: Purchasely.PLYSubscription) -> UIKit.UIViewController
+  @objc dynamic public class func cancellationSurveyController(for product: Purchasely.PLYProduct?, selected: @escaping ((Purchasely.PLYCancellationReason) -> ())) -> UIKit.UIViewController
+  @discardableResult
+  @objc dynamic public class func handle(deeplink url: Foundation.URL) -> Swift.Bool
+  @objc public static func purchase(plan: Purchasely.PLYPlan, contentId: Swift.String?, success: @escaping Purchasely.PLYVoidClosure, failure: @escaping Purchasely.PLYErrorClosure)
+  @objc public static func purchase(plan: Purchasely.PLYPlan, success: @escaping Purchasely.PLYVoidClosure, failure: @escaping Purchasely.PLYErrorClosure)
+  @objc public static func restoreAllProducts(success: @escaping Purchasely.PLYVoidClosure, failure: @escaping Purchasely.PLYErrorClosure)
+  @objc public enum PLYAttribute : Swift.Int {
+    case amplitudeSessionId
+    case firebaseAppInstanceId
+    case airshipChannelId
+    public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  @objc dynamic public class func setAttribute(_ attribute: Purchasely.Purchasely.PLYAttribute, value: Swift.String)
+  public class func setAttributes(_ attributes: [Purchasely.Purchasely.PLYAttribute : Swift.String])
+}
+extension Purchasely : UserNotifications.UNUserNotificationCenterDelegate {
+}
+extension Purchasely : Purchasely.PLYUIDelegate {
+  @objc dynamic public func display(controller: UIKit.UIViewController, type: Purchasely.PLYUIControllerType, from sourceController: UIKit.UIViewController?)
+  @objc dynamic public func display(alert: Purchasely.PLYAlertMessage, error: Swift.Error?)
+}
+extension Purchasely {
+  @objc dynamic public class func showController(_ controller: UIKit.UIViewController, type: Purchasely.PLYUIControllerType)
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class Purchasely : ObjectiveC.NSObject {
+  @objc deinit
+}
+public struct Safe<Base> : Swift.Decodable where Base : Swift.Decodable {
+  public let value: Base?
+  public init(from decoder: Swift.Decoder)
+}
+@available(macCatalyst 14.0, iOS 11.0, tvOS 11.0, *)
+extension SKProductStorePromotionController {
+  public func resetStorePromotionsVisibility(for products: [StoreKit.SKProduct], completed: (() -> Swift.Void)?)
+}
+extension String {
+  public func regexMatchGroup(_ pattern: Swift.String) -> [Swift.String]?
+  public func regexMatch(_ pattern: Swift.String) -> Swift.Bool
+}
+extension Purchasely.PLYPlanType : Swift.Equatable {}
+extension Purchasely.PLYPlanType : Swift.Hashable {}
+extension Purchasely.PLYPlanType : Swift.RawRepresentable {}
+extension Purchasely.Purchasely.PLYAttribute : Swift.Equatable {}
+extension Purchasely.Purchasely.PLYAttribute : Swift.Hashable {}
+extension Purchasely.Purchasely.PLYAttribute : Swift.RawRepresentable {}
+extension Purchasely.PLYActionError : Swift.Equatable {}
+extension Purchasely.PLYActionError : Swift.Hashable {}
+extension Purchasely.PLYAlertMessage : Swift.Equatable {}
+extension Purchasely.PLYAlertMessage : Swift.Hashable {}
+extension Purchasely.PLYAlertMessage : Swift.RawRepresentable {}
+extension Purchasely.PLYAppTechnology : Swift.Equatable {}
+extension Purchasely.PLYAppTechnology : Swift.Hashable {}
+extension Purchasely.PLYAppTechnology : Swift.RawRepresentable {}
+extension Purchasely.PLYCancellationReason : Swift.Equatable {}
+extension Purchasely.PLYCancellationReason : Swift.Hashable {}
+extension Purchasely.PLYCancellationReason : Swift.RawRepresentable {}
+extension Purchasely.PLYComponentError : Swift.Equatable {}
+extension Purchasely.PLYComponentError : Swift.Hashable {}
+extension Purchasely.PLYEnvironment : Swift.Equatable {}
+extension Purchasely.PLYEnvironment : Swift.Hashable {}
+extension Purchasely.PLYEnvironment : Swift.RawRepresentable {}
+extension Purchasely.PLYEvent : Swift.Equatable {}
+extension Purchasely.PLYEvent : Swift.Hashable {}
+extension Purchasely.PLYEvent : Swift.RawRepresentable {}
+extension Purchasely.PLYLabelHighlightsError : Swift.Equatable {}
+extension Purchasely.PLYLabelHighlightsError : Swift.Hashable {}
+extension Purchasely.PluralType : Swift.Equatable {}
+extension Purchasely.PluralType : Swift.Hashable {}
+extension Purchasely.PLYLogger.LogLevel : Swift.Equatable {}
+extension Purchasely.PLYLogger.LogLevel : Swift.Hashable {}
+extension Purchasely.PLYLogger.LogLevel : Swift.RawRepresentable {}
+extension Purchasely.PLYProductViewControllerResult : Swift.Equatable {}
+extension Purchasely.PLYProductViewControllerResult : Swift.Hashable {}
+extension Purchasely.PLYProductViewControllerResult : Swift.RawRepresentable {}
+extension Purchasely.PLYSubscriptionSourceError : Swift.Equatable {}
+extension Purchasely.PLYSubscriptionSourceError : Swift.Hashable {}
+extension Purchasely.PLYSubscriptionSource : Swift.Equatable {}
+extension Purchasely.PLYSubscriptionSource : Swift.Hashable {}
+extension Purchasely.PLYSubscriptionSource : Swift.RawRepresentable {}
+extension Purchasely.PLYUIControllerType : Swift.Equatable {}
+extension Purchasely.PLYUIControllerType : Swift.Hashable {}
+extension Purchasely.PLYUIControllerType : Swift.RawRepresentable {}

@@ -10,6 +10,7 @@
 #endif
 #endif
 
+#import "PLYLottieView.h"
 
 FOUNDATION_EXPORT double PurchaselyVersionNumber;
 FOUNDATION_EXPORT const unsigned char PurchaselyVersionString[];
