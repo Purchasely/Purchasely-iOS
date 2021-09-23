@@ -79,6 +79,18 @@ public enum PLYActionError : Swift.Error {
     get
   }
 }
+@objc public enum PLYPlanType : Swift.Int, Swift.Codable {
+  case consumable
+  case nonConsumable
+  case autoRenewingSubscription
+  case nonRenewingSubscription
+  case unknown
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
 public enum PLYComponentError : Swift.Error {
   case unknownComponentType
   public static func == (a: PLYComponentError, b: PLYComponentError) -> Swift.Bool
@@ -218,14 +230,14 @@ public func PLYLocalizedPluralString(_ key: Swift.String, pluralType: PluralType
   }
   @objc deinit
 }
-@objc public class PLYPlan : ObjectiveC.NSObject, Swift.Codable {
+@objc public class PLYPlan : ObjectiveC.NSObject, Swift.Decodable {
   @objc public var vendorId: Swift.String
+  @objc public var type: PLYPlanType
   @objc public var name: Swift.String?
   required public init(from decoder: Swift.Decoder) throws
   @objc override dynamic public func isEqual(_ object: Any?) -> Swift.Bool
   @objc override dynamic public init()
   @objc deinit
-  public func encode(to encoder: Swift.Encoder) throws
 }
 extension PLYPlan {
   @objc dynamic public func localizedFullPrice(language: Swift.String? = nil) -> Swift.String?
@@ -262,7 +274,7 @@ public typealias PLYProductViewControllerCompletionBlock = (PLYProductViewContro
     get
   }
 }
-@objc public class PLYSubscription : ObjectiveC.NSObject, Swift.Decodable {
+@_hasMissingDesignatedInitializers @objc public class PLYSubscription : ObjectiveC.NSObject, Swift.Decodable {
   @objc public var plan: PLYPlan
   @objc public var subscriptionSource: PLYSubscriptionSource
   @objc public var nextRenewalDate: Foundation.Date?
@@ -307,6 +319,7 @@ public enum PLYSubscriptionSourceError : Swift.Error {
   @objc func display(controller: UIKit.UIViewController, type: PLYUIControllerType, from sourceController: UIKit.UIViewController?)
   @objc func display(alert: PLYAlertMessage, error: Swift.Error?)
 }
+public typealias PLYSuccessErrorClosure = (Swift.Bool, Swift.Error?) -> Swift.Void
 public typealias PLYLoginTappedHandler = ((UIKit.UIViewController, @escaping (Swift.Bool) -> Swift.Void) -> Swift.Void)
 public typealias PLYPurchaseConfirmationHandler = ((UIKit.UIViewController, @escaping (Swift.Bool) -> Swift.Void) -> Swift.Void)
 public typealias PLYLoginCompletionHandler = (Swift.Bool) -> Swift.Void
@@ -320,7 +333,7 @@ extension Purchasely {
   @objc public static var anonymousUserId: Swift.String {
     @objc get
   }
-  @objc dynamic public class func start(withAPIKey apiKey: Swift.String, appUserId: Swift.String? = nil, observerMode: Swift.Bool = false, eventDelegate: PLYEventDelegate? = nil, uiDelegate: PLYUIDelegate? = nil, confirmPurchaseHandler: PLYPurchaseConfirmationHandler? = nil, logLevel: PLYLogger.LogLevel = .error)
+  @objc dynamic public class func start(withAPIKey apiKey: Swift.String, appUserId: Swift.String? = nil, observerMode: Swift.Bool = false, eventDelegate: PLYEventDelegate? = nil, uiDelegate: PLYUIDelegate? = nil, confirmPurchaseHandler: PLYPurchaseConfirmationHandler? = nil, logLevel: PLYLogger.LogLevel = .error, initialized: PLYSuccessErrorClosure? = nil)
   @objc dynamic public class func setEventDelegate(_ eventDelegate: PLYEventDelegate?)
   @objc dynamic public class func setUIDelegate(_ uiDelegate: PLYUIDelegate?)
   @available(*, unavailable, message: "Oooops we made a typo here. Call `setConfirmPurchaseHandler(_:)` with the missing `r`. Sorry for the typo 😔.")
@@ -341,14 +354,18 @@ extension Purchasely {
   @objc dynamic public class func product(with vendorId: Swift.String, success: @escaping (PLYProduct) -> Swift.Void, failure: @escaping (Swift.Error?) -> Swift.Void)
   @objc dynamic public class func plan(with vendorId: Swift.String, success: @escaping (PLYPlan) -> Swift.Void, failure: @escaping (Swift.Error?) -> Swift.Void)
   @objc dynamic public class func userSubscriptions(success: @escaping ([PLYSubscription]?) -> Swift.Void, failure: @escaping PLYErrorClosure)
+  @objc dynamic public class func productController(for productVendorId: Swift.String, with presentationVendorId: Swift.String? = nil, contentId: Swift.String? = nil, completion: PLYProductViewControllerCompletionBlock? = nil) -> UIKit.UIViewController
   @objc dynamic public class func productController(for productVendorId: Swift.String, with presentationVendorId: Swift.String? = nil, completion: PLYProductViewControllerCompletionBlock? = nil) -> UIKit.UIViewController
+  @objc dynamic public class func planController(for planVendorId: Swift.String, with presentationVendorId: Swift.String? = nil, contentId: Swift.String?, completion: PLYProductViewControllerCompletionBlock? = nil) -> UIKit.UIViewController
   @objc dynamic public class func planController(for planVendorId: Swift.String, with presentationVendorId: Swift.String? = nil, completion: PLYProductViewControllerCompletionBlock? = nil) -> UIKit.UIViewController
+  @objc dynamic public class func presentationController(with presentationVendorId: Swift.String? = nil, contentId: Swift.String?, completion: PLYProductViewControllerCompletionBlock? = nil) -> UIKit.UIViewController
   @objc dynamic public class func presentationController(with presentationVendorId: Swift.String? = nil, completion: PLYProductViewControllerCompletionBlock? = nil) -> UIKit.UIViewController
   @objc dynamic public class func subscriptionsController() -> UIKit.UIViewController
   @objc dynamic public class func subscriptionController(for subscription: PLYSubscription) -> UIKit.UIViewController
   @objc dynamic public class func cancellationSurveyController(for product: PLYProduct?, selected: @escaping ((PLYCancellationReason) -> ())) -> UIKit.UIViewController
   @discardableResult
   @objc dynamic public class func handle(deeplink url: Foundation.URL) -> Swift.Bool
+  @objc public static func purchase(plan: PLYPlan, contentId: Swift.String?, success: @escaping PLYVoidClosure, failure: @escaping PLYErrorClosure)
   @objc public static func purchase(plan: PLYPlan, success: @escaping PLYVoidClosure, failure: @escaping PLYErrorClosure)
   @objc public static func restoreAllProducts(success: @escaping PLYVoidClosure, failure: @escaping PLYErrorClosure)
   @objc public enum PLYAttribute : Swift.Int {
@@ -402,6 +419,9 @@ extension PLYAppTechnology : Swift.RawRepresentable {}
 extension PLYCancellationReason : Swift.Equatable {}
 extension PLYCancellationReason : Swift.Hashable {}
 extension PLYCancellationReason : Swift.RawRepresentable {}
+extension PLYPlanType : Swift.Equatable {}
+extension PLYPlanType : Swift.Hashable {}
+extension PLYPlanType : Swift.RawRepresentable {}
 extension PLYComponentError : Swift.Equatable {}
 extension PLYComponentError : Swift.Hashable {}
 extension PLYEnvironment : Swift.Equatable {}
