@@ -240,6 +240,21 @@ public func PLYLocalizedPluralString(_ key: Swift.String, pluralType: PluralType
   @objc deinit
 }
 extension PLYPlan {
+  @objc dynamic public var amount: Foundation.NSDecimalNumber? {
+    @objc get
+  }
+  @objc dynamic public var introAmount: Foundation.NSDecimalNumber? {
+    @objc get
+  }
+  @objc dynamic public var period: Swift.String? {
+    @objc get
+  }
+  @objc dynamic public var currencyCode: Swift.String? {
+    @objc get
+  }
+  @objc dynamic public var currencySymbol: Swift.String? {
+    @objc get
+  }
   @objc dynamic public func localizedFullPrice(language: Swift.String? = nil) -> Swift.String?
   @objc dynamic public func localizedPrice(language: Swift.String? = nil) -> Swift.String?
   @objc dynamic public func localizedPeriod(language: Swift.String? = nil) -> Swift.String?

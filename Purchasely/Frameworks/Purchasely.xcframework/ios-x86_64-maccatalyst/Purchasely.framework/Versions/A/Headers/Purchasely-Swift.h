@@ -331,8 +331,14 @@ SWIFT_CLASS("_TtC10Purchasely7PLYPlan")
 - (NSString * _Nullable)priceDifferenceInPercentageTo:(PLYPlan * _Nonnull)plan SWIFT_WARN_UNUSED_RESULT;
 @end
 
+@class NSDecimalNumber;
 
 @interface PLYPlan (SWIFT_EXTENSION(Purchasely))
+@property (nonatomic, readonly, strong) NSDecimalNumber * _Nullable amount;
+@property (nonatomic, readonly, strong) NSDecimalNumber * _Nullable introAmount;
+@property (nonatomic, readonly, copy) NSString * _Nullable period;
+@property (nonatomic, readonly, copy) NSString * _Nullable currencyCode;
+@property (nonatomic, readonly, copy) NSString * _Nullable currencySymbol;
 - (NSString * _Nullable)localizedFullPriceWithLanguage:(NSString * _Nullable)language SWIFT_WARN_UNUSED_RESULT;
 - (NSString * _Nullable)localizedPriceWithLanguage:(NSString * _Nullable)language SWIFT_WARN_UNUSED_RESULT;
 - (NSString * _Nullable)localizedPeriodWithLanguage:(NSString * _Nullable)language SWIFT_WARN_UNUSED_RESULT;
@@ -671,8 +677,6 @@ typedef SWIFT_ENUM(NSInteger, PLYAttribute, open) {
   PLYAttributeFirebaseAppInstanceId = 1,
   PLYAttributeAirshipChannelId = 2,
 };
-
-
 
 
 
