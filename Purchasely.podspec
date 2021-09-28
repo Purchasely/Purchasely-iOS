@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'Purchasely'
-  s.version          = '2.7.2'
+  s.version          = '2.7.3'
   s.summary          = 'The simplest way to add In App Purchase to your apps.'
 
 # This description is used to generate tags and improve search results.
@@ -30,7 +30,7 @@ Purchasely handles everything from product presentation to app receipt validatio
   s.source           = { :git => 'https://github.com/Purchasely/Purchasely-iOS.git', :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/PurchaselyCom'
 
-  s.swift_versions = ['5.0', '5.1', '5.2', '5.3']
+  s.swift_versions = ['5.0', '5.1', '5.2', '5.3', '5.4', '5.5']
   s.ios.deployment_target = '11.0'
   s.tvos.deployment_target = '11.0'
 
