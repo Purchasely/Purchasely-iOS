@@ -6,7 +6,7 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		GE2HFtNBipn7RihQodvMS+BZIpo=
+		UFRKnnLKye2NY5c/jFhrWwNCgyE=
 		</data>
 		<key>Headers/PLYLottieView.h</key>
 		<data>
@@ -26,19 +26,19 @@
 		</data>
 		<key>Modules/Purchasely.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
-		p6QoGL0oUN4xI0l2cFEtEMu+QQs=
+		C9nlVxnA+6uiPNmRvH5bAzp5cM0=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/Project/arm64.swiftsourceinfo</key>
 		<data>
-		p6QoGL0oUN4xI0l2cFEtEMu+QQs=
+		C9nlVxnA+6uiPNmRvH5bAzp5cM0=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
-		EGuTkGcIDr/Ry6LyHXoFRRMmDiU=
+		o4oEABLn7vahVwQkTw/jXeMTVzw=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/Project/x86_64.swiftsourceinfo</key>
 		<data>
-		EGuTkGcIDr/Ry6LyHXoFRRMmDiU=
+		o4oEABLn7vahVwQkTw/jXeMTVzw=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -50,7 +50,7 @@
 		</data>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		qpAn9dqeKjmuKbPmzduWZGGkWPc=
+		RJceIjRjY5Vz40RhOahGxDdgf9w=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/arm64.swiftdoc</key>
 		<data>
@@ -62,7 +62,7 @@
 		</data>
 		<key>Modules/Purchasely.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		qpAn9dqeKjmuKbPmzduWZGGkWPc=
+		RJceIjRjY5Vz40RhOahGxDdgf9w=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -74,7 +74,7 @@
 		</data>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		cxtBlLK2hr1sdubP5s6qvvByllI=
+		DS9RXdqjYW7TxoeRUiKwNPccalo=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/x86_64.swiftdoc</key>
 		<data>
@@ -86,7 +86,7 @@
 		</data>
 		<key>Modules/Purchasely.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		cxtBlLK2hr1sdubP5s6qvvByllI=
+		DS9RXdqjYW7TxoeRUiKwNPccalo=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -305,7 +305,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			rzT5dbSRgo1AoIXvrL/aBWrgdGolf+2USZGIC11Q6FI=
+			9kqrCvk2FqM+dibshuksDzioTuOyFhtGSaFE4MM+h44=
 			</data>
 		</dict>
 		<key>Headers/PLYLottieView.h</key>
@@ -333,28 +333,28 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			bR6elLNTrDL1bi/6yM/QkmrddU4UygYLr+sH8VxJHF0=
+			vZ2bM/OevaoV2zgSl63Qp+/NB7TXx6AJdm19yPvjy0M=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/Project/arm64.swiftsourceinfo</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			bR6elLNTrDL1bi/6yM/QkmrddU4UygYLr+sH8VxJHF0=
+			vZ2bM/OevaoV2zgSl63Qp+/NB7TXx6AJdm19yPvjy0M=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			txKMfO4lC6Eo3+YELXt/b4U1S3YGaHA3uLJP5O9ckiE=
+			z5uBdPbvUDvd3fhaPA6P/0qRVa58qjjwqKqqYE9rrFI=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/Project/x86_64.swiftsourceinfo</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			txKMfO4lC6Eo3+YELXt/b4U1S3YGaHA3uLJP5O9ckiE=
+			z5uBdPbvUDvd3fhaPA6P/0qRVa58qjjwqKqqYE9rrFI=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
@@ -375,7 +375,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			IBGIEyE4nCWMCgEn+KlXPh85fsRqNAPR3DbJ+G4xxOU=
+			TiK/DnADaLHG3XffdxpkqsCGgb8UvDE/5KQY13C7oqk=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/arm64.swiftdoc</key>
@@ -396,7 +396,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			IBGIEyE4nCWMCgEn+KlXPh85fsRqNAPR3DbJ+G4xxOU=
+			TiK/DnADaLHG3XffdxpkqsCGgb8UvDE/5KQY13C7oqk=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -417,7 +417,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			0yod46ucu6DP7TaYW9WTYTVI7juB1BipOmd3TyNuJMs=
+			k/QMO1A50yQogZpwmwnqlCoTPZrLDjnzFUBQOwAruzM=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/x86_64.swiftdoc</key>
@@ -438,7 +438,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			0yod46ucu6DP7TaYW9WTYTVI7juB1BipOmd3TyNuJMs=
+			k/QMO1A50yQogZpwmwnqlCoTPZrLDjnzFUBQOwAruzM=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
