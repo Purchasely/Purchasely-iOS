@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.4.2 (swiftlang-1205.0.28.2 clang-1205.0.19.57)
+// swift-compiler-version: Apple Swift version 5.5 (swiftlang-1300.0.31.1 clang-1300.0.29.1)
 // swift-module-flags: -target arm64-apple-tvos11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name Purchasely
 import AVFoundation
 import AVKit
@@ -10,13 +10,14 @@ import StoreKit
 import Swift
 import TVUIKit
 import UIKit
-extension Array {
+import _Concurrency
+extension Swift.Array {
   public subscript(safe index: Swift.Int) -> Element? {
     get
   }
 }
 public func loc(_ textToTranslate: Swift.String, comment: Swift.String = "", language: Swift.String? = nil) -> Swift.String
-extension NSNotification.Name {
+extension Foundation.NSNotification.Name {
   public static let ply_purchasedSubscription: Foundation.Notification.Name
 }
 public enum PLYActionError : Swift.Error {
@@ -79,18 +80,6 @@ public enum PLYActionError : Swift.Error {
     get
   }
 }
-@objc public enum PLYPlanType : Swift.Int, Swift.Codable {
-  case consumable
-  case nonConsumable
-  case autoRenewingSubscription
-  case nonRenewingSubscription
-  case unknown
-  public init?(rawValue: Swift.Int)
-  public typealias RawValue = Swift.Int
-  public var rawValue: Swift.Int {
-    get
-  }
-}
 public enum PLYComponentError : Swift.Error {
   case unknownComponentType
   public static func == (a: Purchasely.PLYComponentError, b: Purchasely.PLYComponentError) -> Swift.Bool
@@ -134,7 +123,7 @@ public enum PLYError : Swift.Error {
   case untrackedEvent
   case unknown
 }
-extension PLYError : Foundation.LocalizedError {
+extension Purchasely.PLYError : Foundation.LocalizedError {
   public var errorDescription: Swift.String? {
     get
   }
@@ -189,7 +178,7 @@ extension PLYError : Foundation.LocalizedError {
     get
   }
 }
-extension NSString {
+extension Foundation.NSString {
   @objc public static func fromPLYEvent(_ event: Purchasely.PLYEvent) -> Swift.String
 }
 public class PLYImage : Swift.Decodable {
@@ -236,10 +225,9 @@ public func PLYLocalizedPluralString(_ key: Swift.String, pluralType: Purchasely
   @objc public var name: Swift.String?
   required public init(from decoder: Swift.Decoder) throws
   @objc override dynamic public func isEqual(_ object: Any?) -> Swift.Bool
-  @objc override dynamic public init()
   @objc deinit
 }
-extension PLYPlan {
+extension Purchasely.PLYPlan {
   @objc dynamic public var amount: Foundation.NSDecimalNumber? {
     @objc get
   }
@@ -266,16 +254,27 @@ extension PLYPlan {
   @objc dynamic public func localizedIntroductoryPeriod(language: Swift.String? = nil) -> Swift.String?
   @objc dynamic public func localizedIntroductoryDuration(language: Swift.String? = nil) -> Swift.String?
 }
-extension PLYPlan {
+extension Purchasely.PLYPlan {
   @objc dynamic public func priceDifference(comparedTo plan: Purchasely.PLYPlan) -> Swift.String?
   @objc dynamic public func priceDifferenceInPercentage(to plan: Purchasely.PLYPlan) -> Swift.String?
+}
+@objc public enum PLYPlanType : Swift.Int, Swift.Codable {
+  case consumable
+  case nonConsumable
+  case autoRenewingSubscription
+  case nonRenewingSubscription
+  case unknown
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
 }
 @objc public class PLYProduct : ObjectiveC.NSObject, Swift.Decodable {
   @objc public var vendorId: Swift.String
   @objc public var plans: [Purchasely.PLYPlan]
   @objc public var name: Swift.String?
   required public init(from decoder: Swift.Decoder) throws
-  @objc override dynamic public init()
   @objc deinit
 }
 public typealias PLYProductViewControllerCompletionBlock = (Purchasely.PLYProductViewControllerResult, Purchasely.PLYPlan?) -> Swift.Void
@@ -296,7 +295,6 @@ public typealias PLYProductViewControllerCompletionBlock = (Purchasely.PLYProduc
   @objc public var cancelledDate: Foundation.Date?
   required public init(from decoder: Swift.Decoder) throws
   @objc public func unsubscribe()
-  @objc override dynamic public init()
   @objc deinit
 }
 public enum PLYSubscriptionSourceError : Swift.Error {
@@ -341,10 +339,13 @@ public typealias PLYLoginCompletionHandler = (Swift.Bool) -> Swift.Void
 public typealias PLYBoolClosure = (Swift.Bool) -> Swift.Void
 public typealias PLYVoidClosure = () -> Swift.Void
 public typealias PLYErrorClosure = (Swift.Error) -> ()
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class Purchasely : ObjectiveC.NSObject {
+  @objc deinit
+}
 @objc public protocol PLYEventDelegate {
   @objc func eventTriggered(_ event: Purchasely.PLYEvent, properties: [Swift.String : Any]?)
 }
-extension Purchasely {
+extension Purchasely.Purchasely {
   @objc public static var anonymousUserId: Swift.String {
     @objc get
   }
@@ -396,27 +397,24 @@ extension Purchasely {
   @objc dynamic public class func setAttribute(_ attribute: Purchasely.Purchasely.PLYAttribute, value: Swift.String)
   public class func setAttributes(_ attributes: [Purchasely.Purchasely.PLYAttribute : Swift.String])
 }
-extension Purchasely : UserNotifications.UNUserNotificationCenterDelegate {
+extension Purchasely.Purchasely : UserNotifications.UNUserNotificationCenterDelegate {
 }
-extension Purchasely : Purchasely.PLYUIDelegate {
+extension Purchasely.Purchasely : Purchasely.PLYUIDelegate {
   @objc dynamic public func display(controller: UIKit.UIViewController, type: Purchasely.PLYUIControllerType, from sourceController: UIKit.UIViewController?)
   @objc dynamic public func display(alert: Purchasely.PLYAlertMessage, error: Swift.Error?)
 }
-extension Purchasely {
+extension Purchasely.Purchasely {
   @objc dynamic public class func showController(_ controller: UIKit.UIViewController, type: Purchasely.PLYUIControllerType)
-}
-@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class Purchasely : ObjectiveC.NSObject {
-  @objc deinit
 }
 public struct Safe<Base> : Swift.Decodable where Base : Swift.Decodable {
   public let value: Base?
   public init(from decoder: Swift.Decoder)
 }
 @available(macCatalyst 14.0, iOS 11.0, tvOS 11.0, *)
-extension SKProductStorePromotionController {
+extension StoreKit.SKProductStorePromotionController {
   public func resetStorePromotionsVisibility(for products: [StoreKit.SKProduct], completed: (() -> Swift.Void)?)
 }
-extension String {
+extension Swift.String {
   public func regexMatchGroup(_ pattern: Swift.String) -> [Swift.String]?
   public func regexMatch(_ pattern: Swift.String) -> Swift.Bool
 }
@@ -434,9 +432,6 @@ extension Purchasely.PLYAppTechnology : Swift.RawRepresentable {}
 extension Purchasely.PLYCancellationReason : Swift.Equatable {}
 extension Purchasely.PLYCancellationReason : Swift.Hashable {}
 extension Purchasely.PLYCancellationReason : Swift.RawRepresentable {}
-extension Purchasely.PLYPlanType : Swift.Equatable {}
-extension Purchasely.PLYPlanType : Swift.Hashable {}
-extension Purchasely.PLYPlanType : Swift.RawRepresentable {}
 extension Purchasely.PLYComponentError : Swift.Equatable {}
 extension Purchasely.PLYComponentError : Swift.Hashable {}
 extension Purchasely.PLYEnvironment : Swift.Equatable {}
@@ -452,6 +447,9 @@ extension Purchasely.PluralType : Swift.Hashable {}
 extension Purchasely.PLYLogger.LogLevel : Swift.Equatable {}
 extension Purchasely.PLYLogger.LogLevel : Swift.Hashable {}
 extension Purchasely.PLYLogger.LogLevel : Swift.RawRepresentable {}
+extension Purchasely.PLYPlanType : Swift.Equatable {}
+extension Purchasely.PLYPlanType : Swift.Hashable {}
+extension Purchasely.PLYPlanType : Swift.RawRepresentable {}
 extension Purchasely.PLYProductViewControllerResult : Swift.Equatable {}
 extension Purchasely.PLYProductViewControllerResult : Swift.Hashable {}
 extension Purchasely.PLYProductViewControllerResult : Swift.RawRepresentable {}
