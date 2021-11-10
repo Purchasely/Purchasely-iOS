@@ -20,6 +20,7 @@
 "ply_modal_change_plan_different_store_cancel_button" = "Batal";
 "ply_modal_alert_default_error_title" = "Kesalahan";
 "ply_modal_alert_default_error_button" = "Ok";
+"ply_configuration_error" = "Configuration error";
 "ply_in_app_already_subscribed_error" = "Anda sudah menjadi pelanggan layanan online kami!";
 "ply_in_app_no_product_found_error" = "Tidak dapat menemukan produk.";
 "ply_in_app_absent_receipt" = "Tanda terima tidak ditemukan. Coba lagi dengan mengembalikan pembelian.";

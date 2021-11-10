@@ -20,6 +20,7 @@
 "ply_modal_change_plan_different_store_cancel_button" = "Anuluj";
 "ply_modal_alert_default_error_title" = "Błąd";
 "ply_modal_alert_default_error_button" = "Ok";
+"ply_configuration_error" = "Configuration error";
 "ply_in_app_already_subscribed_error" = "Korzystasz już z naszych usług!";
 "ply_in_app_no_product_found_error" = "Nie można znaleźć produktu.";
 "ply_in_app_absent_receipt" = "Nie znaleziono rachunku. Spróbuj ponownie, przywracając zakup.";

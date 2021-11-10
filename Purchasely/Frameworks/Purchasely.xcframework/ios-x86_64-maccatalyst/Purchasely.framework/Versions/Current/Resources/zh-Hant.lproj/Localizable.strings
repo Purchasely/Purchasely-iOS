@@ -20,6 +20,7 @@
 "ply_modal_change_plan_different_store_cancel_button" = "取消";
 "ply_modal_alert_default_error_title" = "錯誤";
 "ply_modal_alert_default_error_button" = "確定";
+"ply_configuration_error" = "Configuration error";
 "ply_in_app_already_subscribed_error" = "您已成功訂閱我們的線上服務！";
 "ply_in_app_no_product_found_error" = "找不到產品。";
 "ply_in_app_absent_receipt" = "找不到收據。透過恢復購買重試。";

@@ -20,6 +20,7 @@
 "ply_modal_change_plan_different_store_cancel_button" = "Ακύρωση";
 "ply_modal_alert_default_error_title" = "Σφάλμα";
 "ply_modal_alert_default_error_button" = "ΟΚ";
+"ply_configuration_error" = "Configuration error";
 "ply_in_app_already_subscribed_error" = "Είστε ήδη πελάτης των online υπηρεσιών μας!";
 "ply_in_app_no_product_found_error" = "Δεν είναι δυνατή η εύρεση αυτού του προϊόντος.";
 "ply_in_app_absent_receipt" = "Η απόδειξη δεν βρέθηκε. Δοκιμάστε ξανά ανακτώντας την αγορά.";

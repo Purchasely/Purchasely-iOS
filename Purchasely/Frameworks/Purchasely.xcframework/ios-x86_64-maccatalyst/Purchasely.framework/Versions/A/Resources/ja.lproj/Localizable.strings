@@ -20,6 +20,7 @@
 "ply_modal_change_plan_different_store_cancel_button" = "取り消す";
 "ply_modal_alert_default_error_title" = "エラー";
 "ply_modal_alert_default_error_button" = "OK";
+"ply_configuration_error" = "Configuration error";
 "ply_in_app_already_subscribed_error" = "オンラインサービスをすでに利用いただいています！";
 "ply_in_app_no_product_found_error" = "商品が見つかりません。";
 "ply_in_app_absent_receipt" = "領収書が見つかりません。購入を復元して、もう一度お試しください。";
