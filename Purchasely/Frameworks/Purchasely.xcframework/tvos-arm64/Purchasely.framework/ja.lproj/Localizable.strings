@@ -39,7 +39,7 @@
 "ply_in_app_validation_failed" = "領収書を認証できません。";
 "ply_in_app_validation_timed_out" = "購入の検証に、通常よりも少し時間がかかっています。しばらくしてもう一度お試しください。";
 "ply_in_app_restore_status_errors" = "次のエラーのために、回復に失敗しました：";
-"ply_in_app_partial_restore_partial_with_errors" = "次のアイテムが回復されました：\n%@\n次のエラーが特定されました： \n%@";
+"ply_in_app_partial_restore_partial_with_errors" = "次のアイテムが回復されました：\n%1$@\n次のエラーが特定されました： \n%2$@";
 "ply_in_app_unknown_error" = "未知のエラー";
 "ply_in_app_parsing_error" = "サーバー応答を処理できませんでした";
 "ply_in_app_login_button" = "既にご登録済みですか? サインインしてください。";

@@ -39,7 +39,7 @@
 "ply_in_app_validation_failed" = "Det gick inte att bekräfta kvittot.";
 "ply_in_app_validation_timed_out" = "Bekräftelsen på ditt köp tar lite längre tid än vanligt. Kom tillbaka senare.";
 "ply_in_app_restore_status_errors" = "Återställningen kunde inte genomföras och gav följande fel:";
-"ply_in_app_partial_restore_partial_with_errors" = "Följande artiklar har återställts: \n%@\nFöljande fel har identifierats \n%@";
+"ply_in_app_partial_restore_partial_with_errors" = "Följande artiklar har återställts: \n%1$@\nFöljande fel har identifierats \n%2$@";
 "ply_in_app_unknown_error" = "Okänt fel";
 "ply_in_app_parsing_error" = "Kan inte hantera serversvaret";
 "ply_in_app_login_button" = "Prenumererar du redan? Logga in.";

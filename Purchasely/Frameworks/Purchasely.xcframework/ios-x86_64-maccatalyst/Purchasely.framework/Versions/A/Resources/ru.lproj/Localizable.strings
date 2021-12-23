@@ -39,7 +39,7 @@
 "ply_in_app_validation_failed" = "Подтверждение оплаты невозможно.";
 "ply_in_app_validation_timed_out" = "Подтверждение вашей покупки займет немного больше времени, чем обычно. Пожалуйста, вернитесь позже.";
 "ply_in_app_restore_status_errors" = "Восстановление не удалось, ошибки:";
-"ply_in_app_partial_restore_partial_with_errors" = "Восстановлены следующие элементы: \n%@\nОбнаружены следующие ошибки \n%@";
+"ply_in_app_partial_restore_partial_with_errors" = "Восстановлены следующие элементы: \n%1$@\nОбнаружены следующие ошибки \n%2$@";
 "ply_in_app_unknown_error" = "Неизвестная ошибка";
 "ply_in_app_parsing_error" = "Невозможно обработать ответ сервера";
 "ply_in_app_login_button" = "Уже подписаны? Войти.";

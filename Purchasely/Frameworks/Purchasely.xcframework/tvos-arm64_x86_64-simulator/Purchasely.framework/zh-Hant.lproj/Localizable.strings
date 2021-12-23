@@ -39,7 +39,7 @@
 "ply_in_app_validation_failed" = "無法確認收據。";
 "ply_in_app_validation_timed_out" = "購買確認可能需要花費一點時間。您可以稍後返回。";
 "ply_in_app_restore_status_errors" = "恢復失敗，出現以下錯誤：";
-"ply_in_app_partial_restore_partial_with_errors" = "以下各件商品已恢復：\n%@\n發現以下錯誤 \n%@";
+"ply_in_app_partial_restore_partial_with_errors" = "以下各件商品已恢復：\n%1$@\n發現以下錯誤 \n%2$@";
 "ply_in_app_unknown_error" = "未知錯誤";
 "ply_in_app_parsing_error" = "無法處理服務器回應";
 "ply_in_app_login_button" = "已是會員？請登錄";

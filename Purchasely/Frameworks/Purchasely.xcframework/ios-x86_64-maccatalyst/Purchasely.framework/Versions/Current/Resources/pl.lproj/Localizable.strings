@@ -39,7 +39,7 @@
 "ply_in_app_validation_failed" = "Nie można potwierdzić rachunku.";
 "ply_in_app_validation_timed_out" = "Potwierdzanie zakupu trwa nieco dłużej niż zwykle. Spróbuj ponownie później.";
 "ply_in_app_restore_status_errors" = "Przywracanie zakończyło się niepowodzeniem i wystąpiły następujące błędy:";
-"ply_in_app_partial_restore_partial_with_errors" = "Przywrócono poniższe elementy: \n%@\nZidentyfikowano poniższe błędy \n%@";
+"ply_in_app_partial_restore_partial_with_errors" = "Przywrócono poniższe elementy: \n%1$@\nZidentyfikowano poniższe błędy \n%2$@";
 "ply_in_app_unknown_error" = "Nieznany błąd";
 "ply_in_app_parsing_error" = "Serwer nie odpowiada";
 "ply_in_app_login_button" = "Masz już konto? Zaloguj się.";

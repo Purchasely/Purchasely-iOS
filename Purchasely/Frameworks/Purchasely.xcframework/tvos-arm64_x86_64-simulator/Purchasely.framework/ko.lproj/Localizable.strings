@@ -39,7 +39,7 @@
 "ply_in_app_validation_failed" = "수령을 확인할 수 없습니다.";
 "ply_in_app_validation_timed_out" = "구매 확인에 평소보다 시간이 조금 더 걸리고 있습니다. 잠시 후 다시 시도하시기 바랍니다.";
 "ply_in_app_restore_status_errors" = "다음 오류가 발생하여 복원이 실패했습니다:";
-"ply_in_app_partial_restore_partial_with_errors" = "다음 아이템이 복원되었습니다: \n%@\n다음 오류가 식별되었습니다 \n%@";
+"ply_in_app_partial_restore_partial_with_errors" = "다음 아이템이 복원되었습니다: \n%1$@\n다음 오류가 식별되었습니다 \n%2$@";
 "ply_in_app_unknown_error" = "알 수 없는 오류";
 "ply_in_app_parsing_error" = "서버 응답을 처리할 수 없습니다";
 "ply_in_app_login_button" = "이미 가입하셨습니까? 로그인하십시오.";

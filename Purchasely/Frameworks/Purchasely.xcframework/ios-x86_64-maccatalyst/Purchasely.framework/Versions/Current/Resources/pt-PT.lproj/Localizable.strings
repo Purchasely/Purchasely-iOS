@@ -39,7 +39,7 @@
 "ply_in_app_validation_failed" = "Validação de recibo impossível.";
 "ply_in_app_validation_timed_out" = "A validação da sua compra está a demorar um pouco mais de tempo do que o habitual. Volte mais tarde.";
 "ply_in_app_restore_status_errors" = "A restauração falhou por estas razões:";
-"ply_in_app_partial_restore_partial_with_errors" = "Os seguintes elementos foram restaurados: \n%@\nOs seguintes erros foram identificados: \n%@";
+"ply_in_app_partial_restore_partial_with_errors" = "Os seguintes elementos foram restaurados: \n%1$@\nOs seguintes erros foram identificados: \n%2$@";
 "ply_in_app_unknown_error" = "Erro desconhecido";
 "ply_in_app_parsing_error" = "Não foi possível interpretar a resposta do servidor";
 "ply_in_app_login_button" = "Já tem uma conta? Entre!";

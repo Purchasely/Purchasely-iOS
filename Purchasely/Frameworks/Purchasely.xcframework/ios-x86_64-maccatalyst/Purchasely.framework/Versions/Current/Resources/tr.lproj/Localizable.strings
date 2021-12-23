@@ -39,7 +39,7 @@
 "ply_in_app_validation_failed" = "Dekontun onaylanması mümkün değil.";
 "ply_in_app_validation_timed_out" = "Satın alımınızın onaylanması normalden daha uzun sürüyor. Lütfen sitemize daha sonra tekrar gelin.";
 "ply_in_app_restore_status_errors" = "Geri alma işlemi aşağıdaki hatalarla vererek başarısız oldu:";
-"ply_in_app_partial_restore_partial_with_errors" = "Aşağıdaki öğeler geri alındı: \n%@\nAşağıdaki hatalar tanımlandı \n%@";
+"ply_in_app_partial_restore_partial_with_errors" = "Aşağıdaki öğeler geri alındı: \n%1$@\nAşağıdaki hatalar tanımlandı \n%2$@";
 "ply_in_app_unknown_error" = "Bilinmeyen hata";
 "ply_in_app_parsing_error" = "Sunucu yanıtı işlenemedi";
 "ply_in_app_login_button" = "Zaten üye misiniz? Oturum açın.";

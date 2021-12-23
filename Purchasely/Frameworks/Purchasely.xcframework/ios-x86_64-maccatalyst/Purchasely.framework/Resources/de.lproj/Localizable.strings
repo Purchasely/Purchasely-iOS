@@ -39,7 +39,7 @@
 "ply_in_app_validation_failed" = "Der Beleg kann nicht bestätigt werden.";
 "ply_in_app_validation_timed_out" = "Die Überprüfung Ihres Kaufs nimmt mehr Zeit als erwartet in Anspruch. Versuchen Sie es später erneut.";
 "ply_in_app_restore_status_errors" = "Wiederherstellung aus folgenden Gründen fehlgeschlagen:";
-"ply_in_app_partial_restore_partial_with_errors" = "Die folgenden Elemente wurden wiederhergestellt: \n%@\nDie folgenden Fehler wurden gefunden \n%@";
+"ply_in_app_partial_restore_partial_with_errors" = "Die folgenden Elemente wurden wiederhergestellt: \n%1$@\nDie folgenden Fehler wurden gefunden \n%2$@";
 "ply_in_app_unknown_error" = "Unbekannter Fehler";
 "ply_in_app_parsing_error" = "Serverantwort konnte nicht verarbeitet werden";
 "ply_in_app_login_button" = "Sind Sie schon angemeldet? Loggen Sie sich ein.";

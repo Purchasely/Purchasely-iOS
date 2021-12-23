@@ -39,7 +39,7 @@
 "ply_in_app_validation_failed" = "无法确认收据。";
 "ply_in_app_validation_timed_out" = "您的购买验证时间与正常情况相比较长。请稍后再返回查看。";
 "ply_in_app_restore_status_errors" = "恢复失败，出现以下错误：";
-"ply_in_app_partial_restore_partial_with_errors" = "以下各件商品已恢复：\n%@\n发现以下错误 \n%@";
+"ply_in_app_partial_restore_partial_with_errors" = "以下各件商品已恢复：\n%1$@\n发现以下错误 \n%2$@";
 "ply_in_app_unknown_error" = "未知错误";
 "ply_in_app_parsing_error" = "无法处理服务器响应";
 "ply_in_app_login_button" = "已是会员？请登录";

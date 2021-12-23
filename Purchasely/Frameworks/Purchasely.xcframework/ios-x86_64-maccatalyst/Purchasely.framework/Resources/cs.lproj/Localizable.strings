@@ -39,7 +39,7 @@
 "ply_in_app_validation_failed" = "Potvrzení přijetí není možné.";
 "ply_in_app_validation_timed_out" = "Ověření vašeho nákupu trvá o něco déle než obvykle. Vraťte se prosím později.";
 "ply_in_app_restore_status_errors" = "Obnovení selhalo s následujícími chybami:";
-"ply_in_app_partial_restore_partial_with_errors" = "Byly obnoveny následující položky: \n%@\nByly zjištěny následující chyby \n%@";
+"ply_in_app_partial_restore_partial_with_errors" = "Byly obnoveny následující položky: \n%1$@\nByly zjištěny následující chyby \n%2$@";
 "ply_in_app_unknown_error" = "Neznámá chyba";
 "ply_in_app_parsing_error" = "Odpověď serveru se nepodařilo zpracovat";
 "ply_in_app_login_button" = "Již máte přihlášení k odběru? Přihlaste se";

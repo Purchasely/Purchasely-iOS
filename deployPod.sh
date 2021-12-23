@@ -56,7 +56,7 @@ fi
 mv ${PROJECT_NAME}-new.podspec ${PROJECT_NAME}.podspec
 
 # Lint pod
-pod lib lint ${PROJECT_NAME}.podspec --allow-warnings --sources=git@github.com:Purchasely/Purchasely-iOS.git,master --verbose
+# pod lib lint ${PROJECT_NAME}.podspec --allow-warnings --sources=git@github.com:Purchasely/Purchasely-iOS.git,master --verbose
 
 if [ $? -ne 0 ]; then
 	logError "[ERROR] Problem when linting the pod"
@@ -66,8 +66,8 @@ fi
 # Sending new podspec to git and adding tag
 git add -A
 git commit -m "Release ${NEW_VERSION}"
-git tag ${NEW_VERSION}
-git push --tags
+#git tag ${NEW_VERSION}
+#git push --tags
 
 # Push the podspec to the repo and update it
 pod trunk push Purchasely.podspec --allow-warnings
