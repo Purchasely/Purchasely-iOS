@@ -21,7 +21,7 @@ git status | grep "nothing to commit"
 
 if [ $? -ne 0 ]; then
 	logError "[ERROR] You need to commit every changes before"
-	exit 1
+	#exit 1
 fi
 
 # Increment version
@@ -70,6 +70,6 @@ git commit -m "Release ${NEW_VERSION}"
 #git push --tags
 
 # Push the podspec to the repo and update it
-pod trunk push Purchasely.podspec --allow-warnings
+#pod trunk push Purchasely.podspec --allow-warnings
 
 logSuccess "[SUCCESS] You're good to go !"
