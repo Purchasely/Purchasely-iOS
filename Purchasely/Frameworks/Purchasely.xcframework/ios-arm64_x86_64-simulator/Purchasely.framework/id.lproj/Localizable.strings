@@ -39,7 +39,7 @@
 "ply_in_app_validation_failed" = "Tidak mungkin menerima konfirmasi.";
 "ply_in_app_validation_timed_out" = "Validasi pembelian Anda membutuhkan waktu lebih lama dari biasanya. Silakan kembali lagi nanti.";
 "ply_in_app_restore_status_errors" = "Restorasi gagal dengan kesalahan berikut ini:";
-"ply_in_app_partial_restore_partial_with_errors" = "Hal-hal berikut ini telah dipulihkan: \n%@\nKesalahan berikut telah teridentifikasi \n%@";
+"ply_in_app_partial_restore_partial_with_errors" = "Hal-hal berikut ini telah dipulihkan: \n%1$@\nKesalahan berikut telah teridentifikasi \n%2$@";
 "ply_in_app_unknown_error" = "Kesalahan tidak diketahui";
 "ply_in_app_parsing_error" = "Tidak dapat menangani respons server";
 "ply_in_app_login_button" = "Sudah berlangganan? Maduk";

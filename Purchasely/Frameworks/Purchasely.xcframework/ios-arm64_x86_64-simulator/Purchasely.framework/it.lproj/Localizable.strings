@@ -39,7 +39,7 @@
 "ply_in_app_validation_failed" = "Impossibile confermare la ricevuta.";
 "ply_in_app_validation_timed_out" = "L\'autorizzazione del tuo acquisto non è ancora avvenuta. Torna più tardi.";
 "ply_in_app_restore_status_errors" = "Ripristino non riuscito con i seguenti errori:";
-"ply_in_app_partial_restore_partial_with_errors" = "Sono stati ripristinati i seguenti elementi: \n%@\nSono stati individuati i seguenti errori: \n%@";
+"ply_in_app_partial_restore_partial_with_errors" = "Sono stati ripristinati i seguenti elementi: \n%1$@\nSono stati individuati i seguenti errori: \n%2$@";
 "ply_in_app_unknown_error" = "Errore sconosciuto";
 "ply_in_app_parsing_error" = "Impossibile gestire la risposta del server";
 "ply_in_app_login_button" = "Hai già effettuato la sottoscrizione? Registrazione.";

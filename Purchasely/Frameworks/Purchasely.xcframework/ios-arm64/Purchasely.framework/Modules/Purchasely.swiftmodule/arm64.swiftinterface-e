@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.5 (swiftlang-1300.0.31.1 clang-1300.0.29.1)
+// swift-compiler-version: Apple Swift version 5.5.1 (swiftlang-1300.0.31.4 clang-1300.0.29.6)
 // swift-module-flags: -target arm64-apple-ios11.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name Purchasely
 import AVFoundation
 import AVKit
@@ -362,6 +362,7 @@ extension Purchasely.Purchasely {
   @objc dynamic public class func userLogout()
   @objc dynamic public class func setLoginTappedHandler(_ loginTappedHandler: Purchasely.PLYLoginTappedHandler?)
   @objc dynamic public class func setDefaultPresentationResultHandler(_ defaultPresentationResultHandler: Purchasely.PLYProductViewControllerCompletionBlock?)
+  @objc dynamic public class func setLanguage(from locale: Foundation.Locale?)
   @objc dynamic public class func isReadyToPurchase(_ ready: Swift.Bool)
   @objc dynamic public class func setEnvironment(_ environment: Purchasely.PLYEnvironment)
   @objc dynamic public class func setLogLevel(_ logLevel: Purchasely.PLYLogger.LogLevel)
@@ -384,10 +385,12 @@ extension Purchasely.Purchasely {
   @objc public static func purchase(plan: Purchasely.PLYPlan, contentId: Swift.String?, success: @escaping Purchasely.PLYVoidClosure, failure: @escaping Purchasely.PLYErrorClosure)
   @objc public static func purchase(plan: Purchasely.PLYPlan, success: @escaping Purchasely.PLYVoidClosure, failure: @escaping Purchasely.PLYErrorClosure)
   @objc public static func restoreAllProducts(success: @escaping Purchasely.PLYVoidClosure, failure: @escaping Purchasely.PLYErrorClosure)
+  @objc public static func silentRestoreAllProducts(success: @escaping Purchasely.PLYVoidClosure, failure: @escaping Purchasely.PLYErrorClosure)
   @objc public enum PLYAttribute : Swift.Int {
     case amplitudeSessionId
     case firebaseAppInstanceId
     case airshipChannelId
+    case batchInstallationId
     public init?(rawValue: Swift.Int)
     public typealias RawValue = Swift.Int
     public var rawValue: Swift.Int {

@@ -39,7 +39,7 @@
 "ply_in_app_validation_failed" = "Validation du reçu impossible.";
 "ply_in_app_validation_timed_out" = "L\'achat a été pris en compte mais la validation prend un peu plus de temps que prévu. Revenez un peu plus tard.";
 "ply_in_app_restore_status_errors" = "La restauration a échouée avec les erreurs suivantes :";
-"ply_in_app_partial_restore_partial_with_errors" = "Les éléments suivants ont été restaurés :\n%@\nLes erreurs suivantes ont été identifiées :\n%@";
+"ply_in_app_partial_restore_partial_with_errors" = "Les éléments suivants ont été restaurés :\n%1$@\nLes erreurs suivantes ont été identifiées :\n%2$@";
 "ply_in_app_unknown_error" = "Erreur inconnue";
 "ply_in_app_parsing_error" = "Impossible d\'interpréter la réponse du serveur.";
 "ply_in_app_login_button" = "Déjà client ? Connectez-vous !";

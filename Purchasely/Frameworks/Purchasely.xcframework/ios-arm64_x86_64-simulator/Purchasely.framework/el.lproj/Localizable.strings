@@ -39,7 +39,7 @@
 "ply_in_app_validation_failed" = "Η επιβεβαίωση λήψης είναι αδύνατη.";
 "ply_in_app_validation_timed_out" = "Η επικύρωση της αγοράς σας θα διαρκέσει περισσότερο χρόνο από ό,τι συνήθως. Επιστρέψτε αργότερα.";
 "ply_in_app_restore_status_errors" = "Η ανάκτηση απέτυχε με τα παρακάτω σφάλματα:";
-"ply_in_app_partial_restore_partial_with_errors" = "Τα παρακάτω στοιχεία ανακτήθηκαν: \n%@\nΤα παρακάτω σφάλματα ταυτοποιήθηκαν \n%@";
+"ply_in_app_partial_restore_partial_with_errors" = "Τα παρακάτω στοιχεία ανακτήθηκαν: \n%1$@\nΤα παρακάτω σφάλματα ταυτοποιήθηκαν \n%2$@";
 "ply_in_app_unknown_error" = "Άγνωστο σφάλμα";
 "ply_in_app_parsing_error" = "Δεν ήταν δυνατός ο χειρισμός της απόκρισης διακομιστή";
 "ply_in_app_login_button" = "Έχετε ήδη εγγραφεί; Εγγραφή.";

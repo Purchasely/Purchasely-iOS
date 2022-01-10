@@ -39,7 +39,7 @@
 "ply_in_app_validation_failed" = "Receipt confirmation impossible.";
 "ply_in_app_validation_timed_out" = "The validation of your purchase is taking a little more time than usual. Please come back later.";
 "ply_in_app_restore_status_errors" = "Restoration failed with the following errors:";
-"ply_in_app_partial_restore_partial_with_errors" = "The following items have been restored: \n%@\nThe following errors have been identified \n%@";
+"ply_in_app_partial_restore_partial_with_errors" = "The following items have been restored: \n%1$@\nThe following errors have been identified \n%2$@";
 "ply_in_app_unknown_error" = "Unknown error";
 "ply_in_app_parsing_error" = "Couldn\'t handle server response";
 "ply_in_app_login_button" = "Already subscribed? Sign in.";
