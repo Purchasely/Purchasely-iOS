@@ -36,13 +36,13 @@ class ViewController: UIViewController {
 extension ViewController {
 
 	@IBAction func mySubscriptions(_ sender: Any) {
-		let ctrl = Purchasely.subscriptionsController()
+		guard let ctrl = Purchasely.subscriptionsController() else { return }
 		present(ctrl, animated: true, completion: nil)
 	}
 
 	@IBAction func purchase(_ sender: Any) {
 
-		let ctrl = Purchasely.presentationController(with: "CAROUSEL")
+		guard let ctrl = Purchasely.presentationController(with: "CAROUSEL") else { return }
 		present(ctrl, animated: true, completion: nil)
 	}
 
