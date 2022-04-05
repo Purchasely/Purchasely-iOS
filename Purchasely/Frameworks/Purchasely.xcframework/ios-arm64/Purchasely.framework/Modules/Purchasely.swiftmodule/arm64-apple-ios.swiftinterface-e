@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)
+// swift-compiler-version: Apple Swift version 5.6 (swiftlang-5.6.0.323.62 clang-1316.0.20.8)
 // swift-module-flags: -target arm64-apple-ios11.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name Purchasely
 import AVFoundation
 import AVKit
@@ -114,6 +114,7 @@ public enum PLYError : Swift.Error {
   case restorationPartial([Swift.String], [Swift.Error])
   case receiptValidationTimedOut
   case untrackedEvent
+  case tooManyRequests(Swift.String?)
   case unknown
 }
 extension Purchasely.PLYError : Foundation.LocalizedError {
@@ -238,6 +239,8 @@ extension Foundation.NSString {
   case selectedPresentation
   case previousSelectedPresentation
   case placementId
+  case abTestId
+  case abTestVariantId
   public var name: Swift.String {
     get
   }
@@ -403,6 +406,8 @@ extension Purchasely.PLYPlan {
   @objc public var contentId: Swift.String?
   @objc public var presentationId: Swift.String?
   @objc public var placementId: Swift.String?
+  @objc public var abTestVariantId: Swift.String?
+  @objc public var abTestId: Swift.String?
   @objc override dynamic public init()
   @objc deinit
 }
@@ -494,6 +499,7 @@ public typealias PLYBoolClosure = (Swift.Bool) -> Swift.Void
 public typealias PLYVoidClosure = () -> Swift.Void
 public typealias PLYErrorClosure = (Swift.Error) -> ()
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class Purchasely : ObjectiveC.NSObject {
+  @objc public var sdkBridgeVersion: Swift.String?
   @objc deinit
 }
 @objc public protocol PLYEventDelegate {
@@ -542,6 +548,9 @@ extension Purchasely.Purchasely {
     case firebaseAppInstanceId
     case airshipChannelId
     case batchInstallationId
+    case adjustId
+    case appsflyerId
+    case oneSignalPlayerId
     public init?(rawValue: Swift.Int)
     public typealias RawValue = Swift.Int
     public var rawValue: Swift.Int {
