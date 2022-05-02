@@ -562,7 +562,6 @@ SWIFT_CLASS("_TtC10Purchasely10Purchasely")
 @interface Purchasely : NSObject
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@property (nonatomic, copy) NSString * _Nullable sdkBridgeVersion;
 @end
 
 
@@ -649,6 +648,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 + (void)setEnvironment:(enum PLYEnvironment)environment;
 + (void)setLogLevel:(enum LogLevel)logLevel;
 + (void)setAppTechnology:(enum PLYAppTechnology)technology;
++ (void)setSdkBridgeVersion:(NSString * _Nullable)sdkBridgeVersion;
 + (void)allProductsWithSuccess:(void (^ _Nonnull)(NSArray<PLYProduct *> * _Nonnull))success failure:(void (^ _Nonnull)(NSError * _Nullable))failure;
 + (void)productWith:(NSString * _Nonnull)vendorId success:(void (^ _Nonnull)(PLYProduct * _Nonnull))success failure:(void (^ _Nonnull)(NSError * _Nullable))failure;
 + (void)planWith:(NSString * _Nonnull)vendorId success:(void (^ _Nonnull)(PLYPlan * _Nonnull))success failure:(void (^ _Nonnull)(NSError * _Nullable))failure;
@@ -882,6 +882,8 @@ typedef SWIFT_ENUM(NSInteger, PLYAttribute, open) {
   PLYAttributeAdjustId = 4,
   PLYAttributeAppsflyerId = 5,
   PLYAttributeOneSignalPlayerId = 6,
+  PLYAttributeMixpanelDistinctId = 7,
+  PLYAttributeClevertapId = 8,
 };
 
 
@@ -1476,7 +1478,6 @@ SWIFT_CLASS("_TtC10Purchasely10Purchasely")
 @interface Purchasely : NSObject
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@property (nonatomic, copy) NSString * _Nullable sdkBridgeVersion;
 @end
 
 
@@ -1563,6 +1564,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 + (void)setEnvironment:(enum PLYEnvironment)environment;
 + (void)setLogLevel:(enum LogLevel)logLevel;
 + (void)setAppTechnology:(enum PLYAppTechnology)technology;
++ (void)setSdkBridgeVersion:(NSString * _Nullable)sdkBridgeVersion;
 + (void)allProductsWithSuccess:(void (^ _Nonnull)(NSArray<PLYProduct *> * _Nonnull))success failure:(void (^ _Nonnull)(NSError * _Nullable))failure;
 + (void)productWith:(NSString * _Nonnull)vendorId success:(void (^ _Nonnull)(PLYProduct * _Nonnull))success failure:(void (^ _Nonnull)(NSError * _Nullable))failure;
 + (void)planWith:(NSString * _Nonnull)vendorId success:(void (^ _Nonnull)(PLYPlan * _Nonnull))success failure:(void (^ _Nonnull)(NSError * _Nullable))failure;
@@ -1796,6 +1798,8 @@ typedef SWIFT_ENUM(NSInteger, PLYAttribute, open) {
   PLYAttributeAdjustId = 4,
   PLYAttributeAppsflyerId = 5,
   PLYAttributeOneSignalPlayerId = 6,
+  PLYAttributeMixpanelDistinctId = 7,
+  PLYAttributeClevertapId = 8,
 };
 
 

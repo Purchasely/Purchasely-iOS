@@ -499,7 +499,6 @@ public typealias PLYBoolClosure = (Swift.Bool) -> Swift.Void
 public typealias PLYVoidClosure = () -> Swift.Void
 public typealias PLYErrorClosure = (Swift.Error) -> ()
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class Purchasely : ObjectiveC.NSObject {
-  @objc public var sdkBridgeVersion: Swift.String?
   @objc deinit
 }
 @objc public protocol PLYEventDelegate {
@@ -522,6 +521,7 @@ extension Purchasely {
   @objc dynamic public class func setEnvironment(_ environment: PLYEnvironment)
   @objc dynamic public class func setLogLevel(_ logLevel: PLYLogger.LogLevel)
   @objc dynamic public class func setAppTechnology(_ technology: PLYAppTechnology)
+  @objc dynamic public class func setSdkBridgeVersion(_ sdkBridgeVersion: Swift.String?)
   @objc dynamic public class func allProducts(success: @escaping ([PLYProduct]) -> Swift.Void, failure: @escaping (Swift.Error?) -> Swift.Void)
   @objc dynamic public class func product(with vendorId: Swift.String, success: @escaping (PLYProduct) -> Swift.Void, failure: @escaping (Swift.Error?) -> Swift.Void)
   @objc dynamic public class func plan(with vendorId: Swift.String, success: @escaping (PLYPlan) -> Swift.Void, failure: @escaping (Swift.Error?) -> Swift.Void)
@@ -551,6 +551,8 @@ extension Purchasely {
     case adjustId
     case appsflyerId
     case oneSignalPlayerId
+    case mixpanelDistinctId
+    case clevertapId
     public init?(rawValue: Swift.Int)
     public typealias RawValue = Swift.Int
     public var rawValue: Swift.Int {
