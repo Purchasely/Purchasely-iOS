@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.5.1 (swiftlang-1300.0.31.4 clang-1300.0.29.6)
+// swift-compiler-version: Apple Swift version 5.6 (swiftlang-5.6.0.323.62 clang-1316.0.20.8)
 // swift-module-flags: -target arm64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name Purchasely
 import AVFoundation
 import AVKit
@@ -114,6 +114,7 @@ public enum PLYError : Swift.Error {
   case restorationPartial([Swift.String], [Swift.Error])
   case receiptValidationTimedOut
   case untrackedEvent
+  case tooManyRequests(Swift.String?)
   case unknown
 }
 extension PLYError : Foundation.LocalizedError {
@@ -237,6 +238,9 @@ extension Foundation.NSString {
   case product
   case selectedPresentation
   case previousSelectedPresentation
+  case placementId
+  case abTestId
+  case abTestVariantId
   public var name: Swift.String {
     get
   }
@@ -401,6 +405,9 @@ extension PLYPlan {
   @objc public var controller: UIKit.UIViewController?
   @objc public var contentId: Swift.String?
   @objc public var presentationId: Swift.String?
+  @objc public var placementId: Swift.String?
+  @objc public var abTestVariantId: Swift.String?
+  @objc public var abTestId: Swift.String?
   @objc override dynamic public init()
   @objc deinit
 }
@@ -438,7 +445,16 @@ public typealias PLYProductViewControllerCompletionBlock = (PLYProductViewContro
     get
   }
 }
+public enum PLYSubscriptionError : Swift.Error {
+  case couldntFindProduct
+  public static func == (a: PLYSubscriptionError, b: PLYSubscriptionError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
 @_hasMissingDesignatedInitializers @objc public class PLYSubscription : ObjectiveC.NSObject, Swift.Decodable {
+  @objc public var product: PLYProduct
   @objc public var plan: PLYPlan
   @objc public var subscriptionSource: PLYSubscriptionSource
   @objc public var nextRenewalDate: Foundation.Date?
@@ -514,6 +530,7 @@ extension Purchasely {
   @objc dynamic public class func setEnvironment(_ environment: PLYEnvironment)
   @objc dynamic public class func setLogLevel(_ logLevel: PLYLogger.LogLevel)
   @objc dynamic public class func setAppTechnology(_ technology: PLYAppTechnology)
+  @objc dynamic public class func setSdkBridgeVersion(_ sdkBridgeVersion: Swift.String?)
   @objc dynamic public class func allProducts(success: @escaping ([PLYProduct]) -> Swift.Void, failure: @escaping (Swift.Error?) -> Swift.Void)
   @objc dynamic public class func product(with vendorId: Swift.String, success: @escaping (PLYProduct) -> Swift.Void, failure: @escaping (Swift.Error?) -> Swift.Void)
   @objc dynamic public class func plan(with vendorId: Swift.String, success: @escaping (PLYPlan) -> Swift.Void, failure: @escaping (Swift.Error?) -> Swift.Void)
@@ -524,6 +541,8 @@ extension Purchasely {
   @objc dynamic public class func planController(for planVendorId: Swift.String, with presentationVendorId: Swift.String? = nil, loaded: PLYPaywallLoadingClosure? = nil, completion: PLYProductViewControllerCompletionBlock? = nil) -> UIKit.UIViewController?
   @objc dynamic public class func presentationController(with presentationVendorId: Swift.String? = nil, contentId: Swift.String?, loaded: PLYPaywallLoadingClosure? = nil, completion: PLYProductViewControllerCompletionBlock? = nil) -> UIKit.UIViewController?
   @objc dynamic public class func presentationController(with presentationVendorId: Swift.String? = nil, loaded: PLYPaywallLoadingClosure? = nil, completion: PLYProductViewControllerCompletionBlock? = nil) -> UIKit.UIViewController?
+  @objc dynamic public class func presentationController(for placementId: Swift.String, contentId: Swift.String?, loaded: PLYPaywallLoadingClosure? = nil, completion: PLYProductViewControllerCompletionBlock? = nil) -> UIKit.UIViewController?
+  @objc dynamic public class func presentationController(for placementId: Swift.String, loaded: PLYPaywallLoadingClosure? = nil, completion: PLYProductViewControllerCompletionBlock? = nil) -> UIKit.UIViewController?
   @objc dynamic public class func subscriptionsController() -> UIKit.UIViewController?
   @objc dynamic public class func subscriptionController(for subscription: PLYSubscription) -> UIKit.UIViewController?
   @objc dynamic public class func cancellationSurveyController(for product: PLYProduct?, selected: @escaping ((PLYCancellationReason) -> ())) -> UIKit.UIViewController
@@ -538,6 +557,11 @@ extension Purchasely {
     case firebaseAppInstanceId
     case airshipChannelId
     case batchInstallationId
+    case adjustId
+    case appsflyerId
+    case oneSignalPlayerId
+    case mixpanelDistinctId
+    case clevertapId
     public init?(rawValue: Swift.Int)
     public typealias RawValue = Swift.Int
     public var rawValue: Swift.Int {
@@ -621,6 +645,8 @@ extension PLYProductViewControllerResult : Swift.RawRepresentable {}
 extension PLYRunningMode : Swift.Equatable {}
 extension PLYRunningMode : Swift.Hashable {}
 extension PLYRunningMode : Swift.RawRepresentable {}
+extension PLYSubscriptionError : Swift.Equatable {}
+extension PLYSubscriptionError : Swift.Hashable {}
 extension PLYSubscriptionSourceError : Swift.Equatable {}
 extension PLYSubscriptionSourceError : Swift.Hashable {}
 extension PLYSubscriptionSource : Swift.Equatable {}
