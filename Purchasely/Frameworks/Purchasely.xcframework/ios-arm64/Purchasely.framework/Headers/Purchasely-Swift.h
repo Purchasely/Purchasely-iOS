@@ -519,6 +519,7 @@ enum PLYSubscriptionSource : NSInteger;
 
 SWIFT_CLASS("_TtC10Purchasely15PLYSubscription")
 @interface PLYSubscription : NSObject
+@property (nonatomic, strong) PLYProduct * _Nonnull product;
 @property (nonatomic, strong) PLYPlan * _Nonnull plan;
 @property (nonatomic) enum PLYSubscriptionSource subscriptionSource;
 @property (nonatomic, copy) NSDate * _Nullable nextRenewalDate;

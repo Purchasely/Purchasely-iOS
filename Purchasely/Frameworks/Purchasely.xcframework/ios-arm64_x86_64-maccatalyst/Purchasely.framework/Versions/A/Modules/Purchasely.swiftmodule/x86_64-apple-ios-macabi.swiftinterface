@@ -445,7 +445,16 @@ public typealias PLYProductViewControllerCompletionBlock = (PLYProductViewContro
     get
   }
 }
+public enum PLYSubscriptionError : Swift.Error {
+  case couldntFindProduct
+  public static func == (a: PLYSubscriptionError, b: PLYSubscriptionError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
 @_hasMissingDesignatedInitializers @objc public class PLYSubscription : ObjectiveC.NSObject, Swift.Decodable {
+  @objc public var product: PLYProduct
   @objc public var plan: PLYPlan
   @objc public var subscriptionSource: PLYSubscriptionSource
   @objc public var nextRenewalDate: Foundation.Date?
@@ -636,6 +645,8 @@ extension PLYProductViewControllerResult : Swift.RawRepresentable {}
 extension PLYRunningMode : Swift.Equatable {}
 extension PLYRunningMode : Swift.Hashable {}
 extension PLYRunningMode : Swift.RawRepresentable {}
+extension PLYSubscriptionError : Swift.Equatable {}
+extension PLYSubscriptionError : Swift.Hashable {}
 extension PLYSubscriptionSourceError : Swift.Equatable {}
 extension PLYSubscriptionSourceError : Swift.Hashable {}
 extension PLYSubscriptionSource : Swift.Equatable {}
