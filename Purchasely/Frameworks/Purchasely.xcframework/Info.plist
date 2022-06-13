@@ -6,7 +6,33 @@
 	<array>
 		<dict>
 			<key>LibraryIdentifier</key>
+<<<<<<< HEAD
 			<string>ios-arm64_x86_64-maccatalyst</string>
+=======
+			<string>tvos-arm64</string>
+>>>>>>> 7d5927ca8a0f23ce43401d6101b7a1b8e6baa759
+			<key>LibraryPath</key>
+			<string>Purchasely.framework</string>
+			<key>SupportedArchitectures</key>
+			<array>
+				<string>arm64</string>
+			</array>
+			<key>SupportedPlatform</key>
+<<<<<<< HEAD
+			<string>ios</string>
+			<key>SupportedPlatformVariant</key>
+			<string>maccatalyst</string>
+		</dict>
+		<dict>
+			<key>LibraryIdentifier</key>
+			<string>ios-arm64</string>
+=======
+			<string>tvos</string>
+		</dict>
+		<dict>
+			<key>LibraryIdentifier</key>
+			<string>tvos-arm64_x86_64-simulator</string>
+>>>>>>> 7d5927ca8a0f23ce43401d6101b7a1b8e6baa759
 			<key>LibraryPath</key>
 			<string>Purchasely.framework</string>
 			<key>SupportedArchitectures</key>
@@ -15,21 +41,13 @@
 				<string>x86_64</string>
 			</array>
 			<key>SupportedPlatform</key>
+<<<<<<< HEAD
 			<string>ios</string>
+=======
+			<string>tvos</string>
 			<key>SupportedPlatformVariant</key>
-			<string>maccatalyst</string>
-		</dict>
-		<dict>
-			<key>LibraryIdentifier</key>
-			<string>ios-arm64</string>
-			<key>LibraryPath</key>
-			<string>Purchasely.framework</string>
-			<key>SupportedArchitectures</key>
-			<array>
-				<string>arm64</string>
-			</array>
-			<key>SupportedPlatform</key>
-			<string>ios</string>
+			<string>simulator</string>
+>>>>>>> 7d5927ca8a0f23ce43401d6101b7a1b8e6baa759
 		</dict>
 		<dict>
 			<key>LibraryIdentifier</key>
@@ -48,7 +66,33 @@
 		</dict>
 		<dict>
 			<key>LibraryIdentifier</key>
+<<<<<<< HEAD
 			<string>tvos-arm64_x86_64-simulator</string>
+=======
+			<string>ios-arm64</string>
+>>>>>>> 7d5927ca8a0f23ce43401d6101b7a1b8e6baa759
+			<key>LibraryPath</key>
+			<string>Purchasely.framework</string>
+			<key>SupportedArchitectures</key>
+			<array>
+				<string>arm64</string>
+			</array>
+			<key>SupportedPlatform</key>
+<<<<<<< HEAD
+			<string>tvos</string>
+			<key>SupportedPlatformVariant</key>
+			<string>simulator</string>
+		</dict>
+		<dict>
+			<key>LibraryIdentifier</key>
+			<string>tvos-arm64</string>
+=======
+			<string>ios</string>
+		</dict>
+		<dict>
+			<key>LibraryIdentifier</key>
+			<string>ios-arm64_x86_64-simulator</string>
+>>>>>>> 7d5927ca8a0f23ce43401d6101b7a1b8e6baa759
 			<key>LibraryPath</key>
 			<string>Purchasely.framework</string>
 			<key>SupportedArchitectures</key>
@@ -57,27 +101,23 @@
 				<string>x86_64</string>
 			</array>
 			<key>SupportedPlatform</key>
+<<<<<<< HEAD
 			<string>tvos</string>
+=======
+			<string>ios</string>
 			<key>SupportedPlatformVariant</key>
 			<string>simulator</string>
-		</dict>
-		<dict>
-			<key>LibraryIdentifier</key>
-			<string>tvos-arm64</string>
-			<key>LibraryPath</key>
-			<string>Purchasely.framework</string>
-			<key>SupportedArchitectures</key>
-			<array>
-				<string>arm64</string>
-			</array>
-			<key>SupportedPlatform</key>
-			<string>tvos</string>
+>>>>>>> 7d5927ca8a0f23ce43401d6101b7a1b8e6baa759
 		</dict>
 	</array>
 	<key>CFBundlePackageType</key>
 	<string>XFWK</string>
 	<key>CFBundleShortVersionString</key>
+<<<<<<< HEAD
 	<string>3.2.2</string>
+=======
+	<string>3.2.1</string>
+>>>>>>> 7d5927ca8a0f23ce43401d6101b7a1b8e6baa759
 	<key>XCFrameworkFormatVersion</key>
 	<string>1.0</string>
 </dict>

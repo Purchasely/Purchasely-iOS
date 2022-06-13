@@ -8,7 +8,11 @@
 
 Pod::Spec.new do |s|
   s.name             = 'Purchasely'
+<<<<<<< HEAD
   s.version          = '3.2.2'
+=======
+  s.version          = '3.2.1'
+>>>>>>> 7d5927ca8a0f23ce43401d6101b7a1b8e6baa759
   s.summary          = 'The simplest way to add In App Purchase to your apps.'
 
 # This description is used to generate tags and improve search results.
