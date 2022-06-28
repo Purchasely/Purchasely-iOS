@@ -14,7 +14,7 @@
 		</data>
 		<key>Headers/Purchasely-Swift.h</key>
 		<data>
-		kwPgl0URDu1LG8xpKPKjgB6MOxU=
+		E/U0eHGWYv9SfsSYMqrSMeV/gLc=
 		</data>
 		<key>Headers/Purchasely-iOS-umbrella.h</key>
 		<data>
@@ -26,35 +26,35 @@
 		</data>
 		<key>Modules/Purchasely.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
-		1ro9W9NsqNiUxy5aE/ilambv3kw=
+		mzRGBOFwAf+DQ7qWHdm2D8huQIQ=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
-		ZTWbo8KAHTZ4tZEy6mVmpSsjtDM=
+		JBAy0dqXEnMalQc8gtCklmVQVO4=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		2I0ZpLWWE7QOLmN+dcMDmzI1/+c=
+		OTDTAPHYL03+sZgS2S/tYZc+SFM=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		TU+FFZWuDTFswohSbQnp4PkFgpU=
+		lChvbEhJJEh6tVxK87OXk3o+1hg=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		08HpNWFjg67BLDiLuhzXzYg3Tug=
+		d0C6TRdXykGfdHLoPBx6e3UEgFc=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		lmtclm1fB6AKbnaSfYcu/3UCIig=
+		RP23qjG1Lowo5wDLi+31fCPIUIE=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		CJ2RQbYTMK0qh0mgbCnCz/I3ckk=
+		703EgHTzAHbVqetcs0XENdAmCgI=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		j9/DB5i9PZkMFRCT+ovuWgpekNA=
+		xP59vxGsL6k6DalShZHDUTKAJH4=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -216,7 +216,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			mLm1JJ5/R9mjrxFvwN6g+fqHfvg=
+			qhE7vSESUzVUrKzGT0tZlbH76qQ=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -287,7 +287,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			FLNFR24ncEXLZI4T9P9+NWvm4/+Vz1b84y8plHyuh5M=
+			NueNMczfFOyIUnOI8hUGOAIp1BoD55bCL6FRj+kuF6Y=
 			</data>
 		</dict>
 		<key>Headers/Purchasely-iOS-umbrella.h</key>
@@ -301,56 +301,56 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			dx+8HgRhuQGV9EZB3vVLfHxUdY34ypao119KsCxABak=
+			7Ku3c5rdh+JkGyWYN4ijkA3ZLlirBqz0ozPgECgOM+E=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			z6/8DFcUIaZrC3y/667odS4mypBhY+vjja01R+j7AuE=
+			Jq50wHiUwIvM32uGldNUhGLAcfR901KpSf+bYyqcw8E=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			eNkoKnpRc0rxd3mWJcBwR6785arqxz1GFiYColEhMQc=
+			RAG7k4gUI4OHVkSWUYsGfaAzoHc8Dmd8v8hmdaFElGc=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			XMQCPfG80TjljXSxZ8eT9di/ZhpaGtMVTHolGWgvLVI=
+			057M7YIJ7GUf37apR0nfN+BdZILiahAajXiwSBAjwXk=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			de/qkJcPe7DZ2ZsWITGb7HWhV7klk7AapQ3WoymOmkc=
+			Ugl78aD3WublBvx59JFZWDcEgoqOu8xQyRGcRHjB01k=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			7dB5131+cs4l+qbFF4uz2MX6JuwWS/YZH3Wst7n4fLo=
+			7mN4899By/vR3P1OxMgswsh6wuemby95HtKLQ5y4oss=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			WvatUEGCUOnJP/84wOIaCnM0/Ktz9xtt9s5ASvjS/zs=
+			QPX+CXvMv00AHP20uJUo971QD8ks3F1TGeNmcNtODa8=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			WxPuL2PcrMeLb0nWJBsINdKJEFdlCOMxybUbCQ3l5qU=
+			9ZxBGzfUCCht6b1tZGwJX3IvUk5ePfUFS5gy7mUtJ60=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -549,7 +549,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			9dqTXAzPu0qZ/GPsyebOZoBE6o84mVJPK0Jji6p6NBg=
+			GXY3U0NqNb6VXEMKdOPDw2RcqDh+OQJFsM1kOiNZgJw=
 			</data>
 			<key>optional</key>
 			<true/>

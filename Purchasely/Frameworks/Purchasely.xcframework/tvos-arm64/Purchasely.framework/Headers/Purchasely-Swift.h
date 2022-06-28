@@ -216,6 +216,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #endif
 
 
+
 enum PLYEvent : NSInteger;
 
 @interface NSString (SWIFT_EXTENSION(Purchasely))
@@ -298,6 +299,7 @@ typedef SWIFT_ENUM(NSInteger, PLYEvent, open) {
   PLYEventSubscriptionsTransferred = 36,
   PLYEventUserLoggedIn = 37,
   PLYEventUserLoggedOut = 38,
+  PLYEventPresentationClosed = 39,
 };
 
 
@@ -395,6 +397,13 @@ typedef SWIFT_ENUM(NSInteger, LogLevel, open) {
   LogLevelError = 3,
 };
 
+
+SWIFT_PROTOCOL("_TtP10Purchasely24PLYPaywallViewController_")
+@protocol PLYPaywallViewController
+/// <code>isLoaded</code> is used to check if current paywall’s data are loaded
+@property (nonatomic, readonly) BOOL isLoaded;
+@end
+
 enum PLYPlanType : NSInteger;
 
 SWIFT_CLASS("_TtC10Purchasely7PLYPlan")
@@ -411,10 +420,24 @@ SWIFT_CLASS("_TtC10Purchasely7PLYPlan")
 
 
 
-
 @interface PLYPlan (SWIFT_EXTENSION(Purchasely))
 - (NSString * _Nullable)priceDifferenceWithComparedTo:(PLYPlan * _Nonnull)plan SWIFT_WARN_UNUSED_RESULT;
 - (NSString * _Nullable)priceDifferenceInPercentageTo:(PLYPlan * _Nonnull)plan SWIFT_WARN_UNUSED_RESULT;
+@end
+
+
+
+@interface PLYPlan (SWIFT_EXTENSION(Purchasely))
+/// This attribute is used to check if current user is eligible for introductory offer for current plan
+/// <ul>
+///   <li>
+///     Bool: true if user is eligible. False if not, or if receipt cannot be decoded.
+///   </li>
+/// </ul>
+///
+/// returns:
+///
+@property (nonatomic, readonly) BOOL isEligibleForIntroOffer;
 @end
 
 @class NSDecimalNumber;
@@ -516,6 +539,9 @@ typedef SWIFT_ENUM(NSInteger, PLYRunningMode, open) {
 
 enum PLYSubscriptionSource : NSInteger;
 @class NSDate;
+enum PLYSubscriptionOfferType : NSInteger;
+enum PLYSubscriptionStatus : NSInteger;
+enum PLYSubscriptionEnvironment : NSInteger;
 
 SWIFT_CLASS("_TtC10Purchasely15PLYSubscription")
 @interface PLYSubscription : NSObject
@@ -524,6 +550,15 @@ SWIFT_CLASS("_TtC10Purchasely15PLYSubscription")
 @property (nonatomic) enum PLYSubscriptionSource subscriptionSource;
 @property (nonatomic, copy) NSDate * _Nullable nextRenewalDate;
 @property (nonatomic, copy) NSDate * _Nullable cancelledDate;
+@property (nonatomic, copy) NSDate * _Nullable originalPurchasedDate;
+@property (nonatomic, copy) NSDate * _Nullable purchasedDate;
+@property (nonatomic) enum PLYSubscriptionOfferType offerType;
+@property (nonatomic) enum PLYSubscriptionStatus status;
+@property (nonatomic) enum PLYSubscriptionEnvironment environment;
+@property (nonatomic, copy) NSString * _Nullable storeCountry;
+@property (nonatomic) BOOL isFamilyShared;
+@property (nonatomic, copy) NSString * _Nullable contentId;
+@property (nonatomic, copy) NSString * _Nullable offerIdentifier;
 - (void)unsubscribe;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
@@ -531,12 +566,37 @@ SWIFT_CLASS("_TtC10Purchasely15PLYSubscription")
 
 
 
+typedef SWIFT_ENUM(NSInteger, PLYSubscriptionEnvironment, open) {
+  PLYSubscriptionEnvironmentSandbox = 0,
+  PLYSubscriptionEnvironmentProduction = 1,
+  PLYSubscriptionEnvironmentUnknown = 2,
+};
+
+typedef SWIFT_ENUM(NSInteger, PLYSubscriptionOfferType, open) {
+  PLYSubscriptionOfferTypeNone = 0,
+  PLYSubscriptionOfferTypeFreeTrial = 1,
+  PLYSubscriptionOfferTypeIntroOffer = 2,
+  PLYSubscriptionOfferTypePromoCode = 3,
+};
+
 typedef SWIFT_ENUM(NSInteger, PLYSubscriptionSource, open) {
   PLYSubscriptionSourceAppleAppStore = 0,
   PLYSubscriptionSourceGooglePlayStore = 1,
   PLYSubscriptionSourceAmazonAppstore = 2,
   PLYSubscriptionSourceHuaweiAppGallery = 3,
   PLYSubscriptionSourceNone = 4,
+};
+
+typedef SWIFT_ENUM(NSInteger, PLYSubscriptionStatus, open) {
+  PLYSubscriptionStatusAutoRenewing = 0,
+  PLYSubscriptionStatusOnHold = 1,
+  PLYSubscriptionStatusInGracePeriod = 2,
+  PLYSubscriptionStatusAutoRenewingCanceled = 3,
+  PLYSubscriptionStatusDeactivated = 4,
+  PLYSubscriptionStatusRevoked = 5,
+  PLYSubscriptionStatusPaused = 6,
+  PLYSubscriptionStatusUnpaid = 7,
+  PLYSubscriptionStatusUnknown = 8,
 };
 
 typedef SWIFT_ENUM(NSInteger, PLYUIControllerType, open) {
@@ -672,7 +732,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 ///     completion: the block called after the product controller has been dismissed to give the output of the action (cancel, purchase, restore)
 ///   </li>
 /// </ul>
-+ (UIViewController * _Nullable)productControllerFor:(NSString * _Nonnull)productVendorId with:(NSString * _Nullable)presentationVendorId contentId:(NSString * _Nullable)contentId loaded:(void (^ _Nullable)(UIViewController * _Nullable, BOOL, NSError * _Nullable))loaded completion:(void (^ _Nullable)(enum PLYProductViewControllerResult, PLYPlan * _Nullable))completion SWIFT_WARN_UNUSED_RESULT;
++ (id <PLYPaywallViewController> _Nullable)productControllerFor:(NSString * _Nonnull)productVendorId with:(NSString * _Nullable)presentationVendorId contentId:(NSString * _Nullable)contentId loaded:(void (^ _Nullable)(id <PLYPaywallViewController> _Nullable, BOOL, NSError * _Nullable))loaded completion:(void (^ _Nullable)(enum PLYProductViewControllerResult, PLYPlan * _Nullable))completion SWIFT_WARN_UNUSED_RESULT;
 /// This method returns a presentation for a specific product. If no presentationVendorId is set (or an invalid one)
 /// the product default presentation will be displayed. If none has been set it will fallback to the app default presentation.
 /// <ul>
@@ -689,7 +749,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 ///     completion: the block called after the product controller has been dismissed to give the output of the action (cancel, purchase, restore)
 ///   </li>
 /// </ul>
-+ (UIViewController * _Nullable)productControllerFor:(NSString * _Nonnull)productVendorId with:(NSString * _Nullable)presentationVendorId loaded:(void (^ _Nullable)(UIViewController * _Nullable, BOOL, NSError * _Nullable))loaded completion:(void (^ _Nullable)(enum PLYProductViewControllerResult, PLYPlan * _Nullable))completion SWIFT_WARN_UNUSED_RESULT;
++ (id <PLYPaywallViewController> _Nullable)productControllerFor:(NSString * _Nonnull)productVendorId with:(NSString * _Nullable)presentationVendorId loaded:(void (^ _Nullable)(id <PLYPaywallViewController> _Nullable, BOOL, NSError * _Nullable))loaded completion:(void (^ _Nullable)(enum PLYProductViewControllerResult, PLYPlan * _Nullable))completion SWIFT_WARN_UNUSED_RESULT;
 /// This method returns a presentation for a specific plan. If no presentationVendorId is set (or an invalid one)
 /// the plan default presentation will be displayed. If none has been set it will fallback to the app default presentation.
 /// If a <code>contentId</code> is provided, this identifier will be sent to your backend for association purposes.
@@ -710,7 +770,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 ///     completion: the block called after the product controller has been dismissed to give the output of the action (cancel, purchase, restore)
 ///   </li>
 /// </ul>
-+ (UIViewController * _Nullable)planControllerFor:(NSString * _Nonnull)planVendorId with:(NSString * _Nullable)presentationVendorId contentId:(NSString * _Nullable)contentId loaded:(void (^ _Nullable)(UIViewController * _Nullable, BOOL, NSError * _Nullable))loaded completion:(void (^ _Nullable)(enum PLYProductViewControllerResult, PLYPlan * _Nullable))completion SWIFT_WARN_UNUSED_RESULT;
++ (id <PLYPaywallViewController> _Nullable)planControllerFor:(NSString * _Nonnull)planVendorId with:(NSString * _Nullable)presentationVendorId contentId:(NSString * _Nullable)contentId loaded:(void (^ _Nullable)(id <PLYPaywallViewController> _Nullable, BOOL, NSError * _Nullable))loaded completion:(void (^ _Nullable)(enum PLYProductViewControllerResult, PLYPlan * _Nullable))completion SWIFT_WARN_UNUSED_RESULT;
 /// This method returns a presentation for a specific plan. If no presentationVendorId is set (or an invalid one)
 /// the plan default presentation will be displayed. If none has been set it will fallback to the app default presentation.
 /// <ul>
@@ -727,7 +787,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 ///     completion: the block called after the product controller has been dismissed to give the output of the action (cancel, purchase, restore)
 ///   </li>
 /// </ul>
-+ (UIViewController * _Nullable)planControllerFor:(NSString * _Nonnull)planVendorId with:(NSString * _Nullable)presentationVendorId loaded:(void (^ _Nullable)(UIViewController * _Nullable, BOOL, NSError * _Nullable))loaded completion:(void (^ _Nullable)(enum PLYProductViewControllerResult, PLYPlan * _Nullable))completion SWIFT_WARN_UNUSED_RESULT;
++ (id <PLYPaywallViewController> _Nullable)planControllerFor:(NSString * _Nonnull)planVendorId with:(NSString * _Nullable)presentationVendorId loaded:(void (^ _Nullable)(id <PLYPaywallViewController> _Nullable, BOOL, NSError * _Nullable))loaded completion:(void (^ _Nullable)(enum PLYProductViewControllerResult, PLYPlan * _Nullable))completion SWIFT_WARN_UNUSED_RESULT;
 /// This method returns a presentation with a specific vendorId. If no presentationVendorId is set (or an invalid one)
 /// the app default presentation will be displayed.
 /// If a <code>contentId</code> is provided, this identifier will be sent to your backend for association purposes.
@@ -745,7 +805,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 ///     completion: the block called after the product controller has been dismissed to give the output of the action (cancel, purchase, restore)
 ///   </li>
 /// </ul>
-+ (UIViewController * _Nullable)presentationControllerWith:(NSString * _Nullable)presentationVendorId contentId:(NSString * _Nullable)contentId loaded:(void (^ _Nullable)(UIViewController * _Nullable, BOOL, NSError * _Nullable))loaded completion:(void (^ _Nullable)(enum PLYProductViewControllerResult, PLYPlan * _Nullable))completion SWIFT_WARN_UNUSED_RESULT;
++ (id <PLYPaywallViewController> _Nullable)presentationControllerWith:(NSString * _Nullable)presentationVendorId contentId:(NSString * _Nullable)contentId loaded:(void (^ _Nullable)(id <PLYPaywallViewController> _Nullable, BOOL, NSError * _Nullable))loaded completion:(void (^ _Nullable)(enum PLYProductViewControllerResult, PLYPlan * _Nullable))completion SWIFT_WARN_UNUSED_RESULT;
 /// This method returns a presentation with a specific vendorId. If no presentationVendorId is set (or an invalid one)
 /// the app default presentation will be displayed.
 /// <ul>
@@ -759,7 +819,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 ///     completion: the block called after the product controller has been dismissed to give the output of the action (cancel, purchase, restore)
 ///   </li>
 /// </ul>
-+ (UIViewController * _Nullable)presentationControllerWith:(NSString * _Nullable)presentationVendorId loaded:(void (^ _Nullable)(UIViewController * _Nullable, BOOL, NSError * _Nullable))loaded completion:(void (^ _Nullable)(enum PLYProductViewControllerResult, PLYPlan * _Nullable))completion SWIFT_WARN_UNUSED_RESULT;
++ (id <PLYPaywallViewController> _Nullable)presentationControllerWith:(NSString * _Nullable)presentationVendorId loaded:(void (^ _Nullable)(id <PLYPaywallViewController> _Nullable, BOOL, NSError * _Nullable))loaded completion:(void (^ _Nullable)(enum PLYProductViewControllerResult, PLYPlan * _Nullable))completion SWIFT_WARN_UNUSED_RESULT;
 /// This method returns a presentation for a specific placement Id.
 /// If a <code>contentId</code> is provided, this identifier will be sent to your backend for association purposes.
 /// <ul>
@@ -776,7 +836,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 ///     completion: the block called after the product controller has been dismissed to give the output of the action (cancel, purchase, restore)
 ///   </li>
 /// </ul>
-+ (UIViewController * _Nullable)presentationControllerFor:(NSString * _Nonnull)placementId contentId:(NSString * _Nullable)contentId loaded:(void (^ _Nullable)(UIViewController * _Nullable, BOOL, NSError * _Nullable))loaded completion:(void (^ _Nullable)(enum PLYProductViewControllerResult, PLYPlan * _Nullable))completion SWIFT_WARN_UNUSED_RESULT;
++ (id <PLYPaywallViewController> _Nullable)presentationControllerFor:(NSString * _Nonnull)placementId contentId:(NSString * _Nullable)contentId loaded:(void (^ _Nullable)(id <PLYPaywallViewController> _Nullable, BOOL, NSError * _Nullable))loaded completion:(void (^ _Nullable)(enum PLYProductViewControllerResult, PLYPlan * _Nullable))completion SWIFT_WARN_UNUSED_RESULT;
 /// This method returns a presentation for a specific placement Id.
 /// <ul>
 ///   <li>
@@ -789,7 +849,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 ///     completion: the block called after the product controller has been dismissed to give the output of the action (cancel, purchase, restore)
 ///   </li>
 /// </ul>
-+ (UIViewController * _Nullable)presentationControllerFor:(NSString * _Nonnull)placementId loaded:(void (^ _Nullable)(UIViewController * _Nullable, BOOL, NSError * _Nullable))loaded completion:(void (^ _Nullable)(enum PLYProductViewControllerResult, PLYPlan * _Nullable))completion SWIFT_WARN_UNUSED_RESULT;
++ (id <PLYPaywallViewController> _Nullable)presentationControllerFor:(NSString * _Nonnull)placementId loaded:(void (^ _Nullable)(id <PLYPaywallViewController> _Nullable, BOOL, NSError * _Nullable))loaded completion:(void (^ _Nullable)(enum PLYProductViewControllerResult, PLYPlan * _Nullable))completion SWIFT_WARN_UNUSED_RESULT;
 + (UIViewController * _Nullable)subscriptionsController SWIFT_WARN_UNUSED_RESULT;
 + (UIViewController * _Nullable)subscriptionControllerFor:(PLYSubscription * _Nonnull)subscription SWIFT_WARN_UNUSED_RESULT;
 + (UIViewController * _Nonnull)cancellationSurveyControllerFor:(PLYProduct * _Nullable)product selected:(void (^ _Nonnull)(enum PLYCancellationReason))selected SWIFT_WARN_UNUSED_RESULT;
@@ -883,7 +943,12 @@ typedef SWIFT_ENUM(NSInteger, PLYAttribute, open) {
   PLYAttributeOneSignalPlayerId = 6,
   PLYAttributeMixpanelDistinctId = 7,
   PLYAttributeClevertapId = 8,
+  PLYAttributeSendinblueUserEmail = 9,
+  PLYAttributeIterableUserEmail = 10,
+  PLYAttributeIterableUserId = 11,
+  PLYAttributeAtInternetIdClient = 12,
 };
+
 
 
 

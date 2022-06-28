@@ -43,7 +43,7 @@
 "ply_in_app_unknown_error" = "Erro desconhecido";
 "ply_in_app_parsing_error" = "Não foi possível interpretar a resposta do servidor";
 "ply_in_app_login_button" = "Já tem uma conta? Entre!";
-"ply_in_app_restore_button" = "Reinicializar compra";
+"ply_in_app_restore_button" = "Restaurar compra";
 "ply_promo_code_button" = "Código promocional?";
 "ply_in_app_period_day_plural_rule_none" = "dia";
 "ply_in_app_period_day_plural_rule_one" = "dia";

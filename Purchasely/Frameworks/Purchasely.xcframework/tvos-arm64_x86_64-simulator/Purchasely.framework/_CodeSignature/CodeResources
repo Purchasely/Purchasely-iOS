@@ -10,7 +10,7 @@
 		</data>
 		<key>Headers/Purchasely-Swift.h</key>
 		<data>
-		f513TNKbXcOMG6+/P9l3VokBvnw=
+		YfkD0LbhubmUCZc4TagKY9sC+/4=
 		</data>
 		<key>Headers/Purchasely-tvOS-umbrella.h</key>
 		<data>
@@ -22,35 +22,35 @@
 		</data>
 		<key>Modules/Purchasely.swiftmodule/Project/arm64-apple-tvos-simulator.swiftsourceinfo</key>
 		<data>
-		T5Gwvh6Rp6ce6Ed2ijAhn+kARK4=
+		ISkMUkPvKLNc38VxsosLFPrbZqA=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/Project/x86_64-apple-tvos-simulator.swiftsourceinfo</key>
 		<data>
-		s91+xARcqTO2hms7kKzKrCC73vY=
+		qzaNSpU1gQPl9MJKU9GZFVEfRRA=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-tvos-simulator.swiftdoc</key>
 		<data>
-		XxAW3ltqHisffvHAPxCLiuo0DLY=
+		d933Hy995eem6hV+AcQLWAWV12s=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-tvos-simulator.swiftinterface</key>
 		<data>
-		vZ9Dkz8ws/KSPUtiNpSsvz/UirQ=
+		j3XhxC/BjXVcepUEpz6UX0kuljc=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-tvos-simulator.swiftmodule</key>
 		<data>
-		V1Oql0aE+8EVv9rncnDdYyEnY/s=
+		W42hdks9SL1dHq5+mTdVSUUsFUw=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-tvos-simulator.swiftdoc</key>
 		<data>
-		EQz61ww8FKkJ4+QyYGzlEEFOE14=
+		Dzf8DzQG+iIleUzh3YjM9yxlzeo=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-tvos-simulator.swiftinterface</key>
 		<data>
-		NlRGajyFLuxRjF9nWo5jzw27ye8=
+		kk4Oxx6kvLfphLptGDz5tk/3sxE=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-tvos-simulator.swiftmodule</key>
 		<data>
-		LkiPDhjUoPvRxR9P5k7pYfIqgi4=
+		BkOwU17790P5kL30vQS2WYYVA5U=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -204,7 +204,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			mLm1JJ5/R9mjrxFvwN6g+fqHfvg=
+			qhE7vSESUzVUrKzGT0tZlbH76qQ=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -268,7 +268,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			MB/q02Tl+6qkDU1Gw/NT2+o1aiuACzbXWHx0oo73bLo=
+			sko31Uhnln0wgl/3oybcoVDjN2m8sARY1vc0xRRfWdA=
 			</data>
 		</dict>
 		<key>Headers/Purchasely-tvOS-umbrella.h</key>
@@ -282,56 +282,56 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			dvLKSWQT3v8e9DaHEPHEXvzME1WUXEMupOPDbxjqyV0=
+			7XOK3DEvFgi/ijL0dd1Csc+sZP5PZ1S9g12uh1u84XU=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/Project/x86_64-apple-tvos-simulator.swiftsourceinfo</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			4pTQfqhfxJb7LlJg01esWfDE6c4XWMTCHm29ZuhUilw=
+			XzcDksZVH7ixYOKccu8zuFUt33s5A5+KFp1iqJgtGtQ=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-tvos-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			u7rgV/1A2uhNAPcg5o6Q9L48oqVHnAr0pVmnhl/DKIw=
+			S4GKP1L6Vmr8kpl+lTNoEXP3qPmsa4Ifkv+ZpZFnPG4=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-tvos-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			coz8aDDE7kWeb5L7xVQGkY3S/LqC0E0TIc/7MObuSQQ=
+			1crmlOzsOopIvkzWdTO8AYJ1zoCuITj3RZZ77zaurig=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-tvos-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ag+H4eKj3dbWvjMoFbBstI87GugVZInMP8lC3etigQQ=
+			MCv9s9YCVaUY+lvfKrLFWIoZCLCMIwbgwdNmUNEdvGM=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-tvos-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			wWyZA1mKShJfzPpBxcC9jcdSwo8/BA7wCD8YObi9zzM=
+			sEshnPhW71h1odLR7bWAYtLNFe5mtSQ0YYMiGsIfD7g=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-tvos-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ui5CC44nyfbTrxH+BwLPlpQw+z5a6CLNpwEAOtW9q6Y=
+			jni3Kn2kreJetZTOaqL95JqqutMqSLxtQ5R/GNcxmGU=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-tvos-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			oGe3p4qbBtS/Muh/5qVJpDFixw0Ark3i0dT0mCwA7/I=
+			e5tljUhsKcEHJNJ///7ejWExPeqZsNPDx3IPLaYifjA=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -516,7 +516,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			9dqTXAzPu0qZ/GPsyebOZoBE6o84mVJPK0Jji6p6NBg=
+			GXY3U0NqNb6VXEMKdOPDw2RcqDh+OQJFsM1kOiNZgJw=
 			</data>
 			<key>optional</key>
 			<true/>
