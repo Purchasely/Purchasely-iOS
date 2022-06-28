@@ -342,9 +342,6 @@ public func PLYLocalizedPluralString(_ key: Swift.String, pluralType: Purchasely
   }
   @objc deinit
 }
-@objc public protocol PLYPaywallViewController : UIKit.UIViewController {
-  @objc var isLoaded: Swift.Bool { get }
-}
 @objc public class PLYPlan : ObjectiveC.NSObject, Swift.Decodable {
   @objc public var vendorId: Swift.String
   @objc public var appleProductId: Swift.String?
@@ -590,7 +587,7 @@ public enum PLYSubscriptionSourceError : Swift.Error {
   @objc func display(alert: Purchasely.PLYAlertMessage, error: Swift.Error?)
 }
 public typealias PLYSuccessErrorClosure = (Swift.Bool, Swift.Error?) -> Swift.Void
-public typealias PLYPaywallLoadingClosure = (Purchasely.PLYPaywallViewController?, Swift.Bool, Swift.Error?) -> Swift.Void
+public typealias PLYPaywallLoadingClosure = (UIKit.UIViewController?, Swift.Bool, Swift.Error?) -> Swift.Void
 public typealias PLYLoginTappedHandler = ((UIKit.UIViewController, @escaping (Swift.Bool) -> Swift.Void) -> Swift.Void)
 public typealias PLYPaywallActionsInterceptor = ((Purchasely.PLYPresentationAction, Purchasely.PLYPresentationActionParameters?, Purchasely.PLYPresentationInfo?, @escaping (Swift.Bool) -> Swift.Void) -> Swift.Void)
 public typealias PLYPurchaseConfirmationHandler = ((UIKit.UIViewController, @escaping (Swift.Bool) -> Swift.Void) -> Swift.Void)
@@ -626,14 +623,14 @@ extension Purchasely.Purchasely {
   @objc dynamic public class func product(with vendorId: Swift.String, success: @escaping (Purchasely.PLYProduct) -> Swift.Void, failure: @escaping (Swift.Error?) -> Swift.Void)
   @objc dynamic public class func plan(with vendorId: Swift.String, success: @escaping (Purchasely.PLYPlan) -> Swift.Void, failure: @escaping (Swift.Error?) -> Swift.Void)
   @objc dynamic public class func userSubscriptions(success: @escaping ([Purchasely.PLYSubscription]?) -> Swift.Void, failure: @escaping Purchasely.PLYErrorClosure)
-  @objc dynamic public class func productController(for productVendorId: Swift.String, with presentationVendorId: Swift.String? = nil, contentId: Swift.String? = nil, loaded: Purchasely.PLYPaywallLoadingClosure? = nil, completion: Purchasely.PLYProductViewControllerCompletionBlock? = nil) -> Purchasely.PLYPaywallViewController?
-  @objc dynamic public class func productController(for productVendorId: Swift.String, with presentationVendorId: Swift.String? = nil, loaded: Purchasely.PLYPaywallLoadingClosure? = nil, completion: Purchasely.PLYProductViewControllerCompletionBlock? = nil) -> Purchasely.PLYPaywallViewController?
-  @objc dynamic public class func planController(for planVendorId: Swift.String, with presentationVendorId: Swift.String? = nil, contentId: Swift.String?, loaded: Purchasely.PLYPaywallLoadingClosure? = nil, completion: Purchasely.PLYProductViewControllerCompletionBlock? = nil) -> Purchasely.PLYPaywallViewController?
-  @objc dynamic public class func planController(for planVendorId: Swift.String, with presentationVendorId: Swift.String? = nil, loaded: Purchasely.PLYPaywallLoadingClosure? = nil, completion: Purchasely.PLYProductViewControllerCompletionBlock? = nil) -> Purchasely.PLYPaywallViewController?
-  @objc dynamic public class func presentationController(with presentationVendorId: Swift.String? = nil, contentId: Swift.String?, loaded: Purchasely.PLYPaywallLoadingClosure? = nil, completion: Purchasely.PLYProductViewControllerCompletionBlock? = nil) -> Purchasely.PLYPaywallViewController?
-  @objc dynamic public class func presentationController(with presentationVendorId: Swift.String? = nil, loaded: Purchasely.PLYPaywallLoadingClosure? = nil, completion: Purchasely.PLYProductViewControllerCompletionBlock? = nil) -> Purchasely.PLYPaywallViewController?
-  @objc dynamic public class func presentationController(for placementId: Swift.String, contentId: Swift.String?, loaded: Purchasely.PLYPaywallLoadingClosure? = nil, completion: Purchasely.PLYProductViewControllerCompletionBlock? = nil) -> Purchasely.PLYPaywallViewController?
-  @objc dynamic public class func presentationController(for placementId: Swift.String, loaded: Purchasely.PLYPaywallLoadingClosure? = nil, completion: Purchasely.PLYProductViewControllerCompletionBlock? = nil) -> Purchasely.PLYPaywallViewController?
+  @objc dynamic public class func productController(for productVendorId: Swift.String, with presentationVendorId: Swift.String? = nil, contentId: Swift.String? = nil, loaded: Purchasely.PLYPaywallLoadingClosure? = nil, completion: Purchasely.PLYProductViewControllerCompletionBlock? = nil) -> UIKit.UIViewController?
+  @objc dynamic public class func productController(for productVendorId: Swift.String, with presentationVendorId: Swift.String? = nil, loaded: Purchasely.PLYPaywallLoadingClosure? = nil, completion: Purchasely.PLYProductViewControllerCompletionBlock? = nil) -> UIKit.UIViewController?
+  @objc dynamic public class func planController(for planVendorId: Swift.String, with presentationVendorId: Swift.String? = nil, contentId: Swift.String?, loaded: Purchasely.PLYPaywallLoadingClosure? = nil, completion: Purchasely.PLYProductViewControllerCompletionBlock? = nil) -> UIKit.UIViewController?
+  @objc dynamic public class func planController(for planVendorId: Swift.String, with presentationVendorId: Swift.String? = nil, loaded: Purchasely.PLYPaywallLoadingClosure? = nil, completion: Purchasely.PLYProductViewControllerCompletionBlock? = nil) -> UIKit.UIViewController?
+  @objc dynamic public class func presentationController(with presentationVendorId: Swift.String? = nil, contentId: Swift.String?, loaded: Purchasely.PLYPaywallLoadingClosure? = nil, completion: Purchasely.PLYProductViewControllerCompletionBlock? = nil) -> UIKit.UIViewController?
+  @objc dynamic public class func presentationController(with presentationVendorId: Swift.String? = nil, loaded: Purchasely.PLYPaywallLoadingClosure? = nil, completion: Purchasely.PLYProductViewControllerCompletionBlock? = nil) -> UIKit.UIViewController?
+  @objc dynamic public class func presentationController(for placementId: Swift.String, contentId: Swift.String?, loaded: Purchasely.PLYPaywallLoadingClosure? = nil, completion: Purchasely.PLYProductViewControllerCompletionBlock? = nil) -> UIKit.UIViewController?
+  @objc dynamic public class func presentationController(for placementId: Swift.String, loaded: Purchasely.PLYPaywallLoadingClosure? = nil, completion: Purchasely.PLYProductViewControllerCompletionBlock? = nil) -> UIKit.UIViewController?
   @objc dynamic public class func subscriptionsController() -> UIKit.UIViewController?
   @objc dynamic public class func subscriptionController(for subscription: Purchasely.PLYSubscription) -> UIKit.UIViewController?
   @objc dynamic public class func cancellationSurveyController(for product: Purchasely.PLYProduct?, selected: @escaping ((Purchasely.PLYCancellationReason) -> ())) -> UIKit.UIViewController
