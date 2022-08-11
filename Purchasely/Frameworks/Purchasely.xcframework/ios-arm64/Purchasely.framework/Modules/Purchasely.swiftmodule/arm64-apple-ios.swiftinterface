@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.6 (swiftlang-5.6.0.323.62 clang-1316.0.20.8)
+// swift-compiler-version: Apple Swift version 5.6.1 (swiftlang-5.6.0.323.66 clang-1316.0.20.12)
 // swift-module-flags: -target arm64-apple-ios11.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name Purchasely
 import AVFoundation
 import AVKit
@@ -191,6 +191,7 @@ extension PLYError : Foundation.LocalizedError {
   case userLoggedIn
   case userLoggedOut
   case presentationClosed
+  case subscriptionContentUsed
   public var name: Swift.String {
     get
   }
@@ -270,6 +271,14 @@ extension Foundation.NSString {
   case placementId
   case abTestId
   case abTestVariantId
+  case contentId
+  case sessionDuration
+  case sessionCount
+  case screenDuration
+  case screenDisplayedAt
+  case screenDisplayedAtMs
+  case appInstalledAt
+  case appInstalledAtMs
   public var name: Swift.String {
     get
   }
@@ -662,6 +671,7 @@ extension Purchasely {
   }
   @objc dynamic public class func setAttribute(_ attribute: PLYAttribute, value: Swift.String)
   public class func setAttributes(_ attributes: [PLYAttribute : Swift.String])
+  @objc dynamic public class func userDidConsumeSubscriptionContent()
   @available(*, unavailable, message: "With Purchasely 3.0.0, 2 parameters of the `start` method changed.\n 1. A more generic approach for interacting with paywall actions named `paywallActionsInterceptor` replaced the `confirmPurchaseHandler`.\n 2. New running modes were added alongside to `observerMode` to offer you more flexibility in Purchasely's use.")
   @objc dynamic public class func start(withAPIKey apiKey: Swift.String, appUserId: Swift.String? = nil, observerMode: Swift.Bool = false, eventDelegate: PLYEventDelegate? = nil, uiDelegate: PLYUIDelegate? = nil, confirmPurchaseHandler: PLYPurchaseConfirmationHandler? = nil, logLevel: PLYLogger.LogLevel = .error, initialized: PLYSuccessErrorClosure? = nil)
   @available(*, unavailable, message: "With Purchasely 3.0.0 `setLoginTappedHandler(_:)` was replaced with a more generic approach for interacting with paywall actions. You should now use the `paywallActionsInterceptor` and intercept the `login` action.")
