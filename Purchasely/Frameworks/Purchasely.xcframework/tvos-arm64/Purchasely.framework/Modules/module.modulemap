@@ -6,6 +6,6 @@ framework module Purchasely {
 }
 
 module Purchasely.Swift {
-    header "Purchasely-Swift.h"
-    requires objc
+  header "Purchasely-Swift.h"
+  requires objc
 }
