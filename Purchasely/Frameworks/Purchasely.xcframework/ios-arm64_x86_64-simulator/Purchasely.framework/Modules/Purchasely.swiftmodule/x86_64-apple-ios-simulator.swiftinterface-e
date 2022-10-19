@@ -1,7 +1,6 @@
 // swift-interface-format-version: 1.0
 // swift-compiler-version: Apple Swift version 5.7 (swiftlang-5.7.0.127.4 clang-1400.0.29.50)
 // swift-module-flags: -target x86_64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name Purchasely
-// swift-module-flags-ignorable: -enable-bare-slash-regex
 import AVFoundation
 import AVKit
 import CommonCrypto
@@ -12,7 +11,6 @@ import Swift
 import UIKit
 import WebKit
 import _Concurrency
-import _StringProcessing
 extension Swift.Array {
   public subscript(safe index: Swift.Int) -> Element? {
     get
