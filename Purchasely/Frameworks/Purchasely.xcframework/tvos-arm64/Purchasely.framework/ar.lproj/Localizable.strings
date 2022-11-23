@@ -55,6 +55,8 @@
 "ply_in_app_period_month_plural_rule_none" = "شهر";
 "ply_in_app_period_month_plural_rule_one" = "شهر";
 "ply_in_app_period_month_plural_rule_many" = "%d شهور";
+"ply_in_app_period_month_plural_rule_three" = "الربع";
+"ply_in_app_period_month_plural_rule_six" = "فصل";
 "ply_in_app_period_year_plural_rule_none" = "سنة";
 "ply_in_app_period_year_plural_rule_one" = "سنة";
 "ply_in_app_period_year_plural_rule_many" = "%d سنوات";
@@ -64,6 +66,8 @@
 "ply_in_app_period_week_duration_plural_rule_many" = "%d أسابيع";
 "ply_in_app_period_month_duration_plural_rule_one" = "1 شهر";
 "ply_in_app_period_month_duration_plural_rule_many" = "%d شهور";
+"ply_in_app_period_month_duration_plural_rule_three" = "الربع";
+"ply_in_app_period_month_duration_plural_rule_six" = "فصل";
 "ply_in_app_period_year_duration_plural_rule_one" = "1 سنة";
 "ply_in_app_period_year_duration_plural_rule_many" = "%d سنوات";
 "ply_price_free" = "مجاناً";

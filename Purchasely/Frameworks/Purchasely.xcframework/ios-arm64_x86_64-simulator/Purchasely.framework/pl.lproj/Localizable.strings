@@ -55,6 +55,8 @@
 "ply_in_app_period_month_plural_rule_none" = "miesięcy";
 "ply_in_app_period_month_plural_rule_one" = "miesiąc";
 "ply_in_app_period_month_plural_rule_many" = "%d mies.";
+"ply_in_app_period_month_plural_rule_three" = "kwartał";
+"ply_in_app_period_month_plural_rule_six" = "semestr";
 "ply_in_app_period_year_plural_rule_none" = "rok";
 "ply_in_app_period_year_plural_rule_one" = "rok";
 "ply_in_app_period_year_plural_rule_many" = "%d lat(a)";
@@ -64,6 +66,8 @@
 "ply_in_app_period_week_duration_plural_rule_many" = "%d tygodni(e)";
 "ply_in_app_period_month_duration_plural_rule_one" = "1 miesiąc";
 "ply_in_app_period_month_duration_plural_rule_many" = "%d mies.";
+"ply_in_app_period_month_duration_plural_rule_three" = "1 kwartał";
+"ply_in_app_period_month_duration_plural_rule_six" = "1 semestr";
 "ply_in_app_period_year_duration_plural_rule_one" = "1 rok";
 "ply_in_app_period_year_duration_plural_rule_many" = "%d lat(a)";
 "ply_price_free" = "bezpłatnie";

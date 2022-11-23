@@ -55,6 +55,8 @@
 "ply_in_app_period_month_plural_rule_none" = "月";
 "ply_in_app_period_month_plural_rule_one" = "月";
 "ply_in_app_period_month_plural_rule_many" = "%d 月";
+"ply_in_app_period_month_plural_rule_three" = "季度";
+"ply_in_app_period_month_plural_rule_six" = "半年";
 "ply_in_app_period_year_plural_rule_none" = "年";
 "ply_in_app_period_year_plural_rule_one" = "年";
 "ply_in_app_period_year_plural_rule_many" = "%d 年";
@@ -64,6 +66,8 @@
 "ply_in_app_period_week_duration_plural_rule_many" = "%d 周";
 "ply_in_app_period_month_duration_plural_rule_one" = "1月";
 "ply_in_app_period_month_duration_plural_rule_many" = "%d 月";
+"ply_in_app_period_month_duration_plural_rule_three" = "1三个月";
+"ply_in_app_period_month_duration_plural_rule_six" = "1学期";
 "ply_in_app_period_year_duration_plural_rule_one" = "1年";
 "ply_in_app_period_year_duration_plural_rule_many" = "%d 年";
 "ply_price_free" = "免费";

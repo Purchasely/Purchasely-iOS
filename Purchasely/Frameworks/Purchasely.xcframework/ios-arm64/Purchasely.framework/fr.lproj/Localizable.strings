@@ -55,6 +55,8 @@
 "ply_in_app_period_month_plural_rule_none" = "mois";
 "ply_in_app_period_month_plural_rule_one" = "mois";
 "ply_in_app_period_month_plural_rule_many" = "%d mois";
+"ply_in_app_period_month_plural_rule_three" = "trimestre";
+"ply_in_app_period_month_plural_rule_six" = "semestre";
 "ply_in_app_period_year_plural_rule_none" = "an";
 "ply_in_app_period_year_plural_rule_one" = "an";
 "ply_in_app_period_year_plural_rule_many" = "%d ans";
@@ -64,6 +66,8 @@
 "ply_in_app_period_week_duration_plural_rule_many" = "%d semaines";
 "ply_in_app_period_month_duration_plural_rule_one" = "1 mois";
 "ply_in_app_period_month_duration_plural_rule_many" = "%d mois";
+"ply_in_app_period_month_duration_plural_rule_three" = "1 trimestre";
+"ply_in_app_period_month_duration_plural_rule_six" = "1 semestre";
 "ply_in_app_period_year_duration_plural_rule_one" = "1 an";
 "ply_in_app_period_year_duration_plural_rule_many" = "%d ans";
 "ply_price_free" = "gratuit";
@@ -71,7 +75,7 @@
 "ply_unsubscribe_google_content" = "Accédez à play.google.com. Vérifiez que vous êtes connecté au bon compte Google. Sur la gauche, cliquez sur Mes abonnements. Appuyez sur l\'abonnement à annuler. Cliquez sur Gérer puis Annuler l\'abonnement.";
 "ply_unsubscribe_google_button" = "Ok";
 "ply_unsubscribe_amazon_title" = "Annuler un abonnement";
-"ply_unsubscribe_amazon_content" = "Accédez à amazon.fr. Vérifiez que vous êtes connecté au bon compte Amazon. Accéder à votre compte. Cliquez sur Adhésions et abonnements dans la section Abonnements. Appuyez sur l\'abonnement à annuler. Puis Annuler l\'abonnement.";
+"ply_unsubscribe_amazon_content" = "Go to amazon.com. Check if you’re signed in to the correct Amazon Account. Go to your Account page. Click on Other Subscriptions in the Memberships and subscriptions section Select the subscription you want to cancel. Then Cancel Subscription.";
 "ply_unsubscribe_amazon_button" = "Ok";
 "ply_unsubscribe_apple_title" = "Annuler un abonnement";
 "ply_unsubscribe_apple_content" = "Ouvrez l’app Réglages.   Touchez votre nom.   Touchez Abonnements.   Touchez l’abonnement à gérer.   Touchez Annuler l’abonnement.";

@@ -55,6 +55,8 @@
 "ply_in_app_period_month_plural_rule_none" = "месяцев";
 "ply_in_app_period_month_plural_rule_one" = "месяц";
 "ply_in_app_period_month_plural_rule_many" = "%d месяцев";
+"ply_in_app_period_month_plural_rule_three" = "четверть";
+"ply_in_app_period_month_plural_rule_six" = "семестр";
 "ply_in_app_period_year_plural_rule_none" = "лет";
 "ply_in_app_period_year_plural_rule_one" = "год";
 "ply_in_app_period_year_plural_rule_many" = "%d лет";
@@ -64,6 +66,8 @@
 "ply_in_app_period_week_duration_plural_rule_many" = "%d недель";
 "ply_in_app_period_month_duration_plural_rule_one" = "1 месяц";
 "ply_in_app_period_month_duration_plural_rule_many" = "%d месяцев";
+"ply_in_app_period_month_duration_plural_rule_three" = "1 четверть";
+"ply_in_app_period_month_duration_plural_rule_six" = "1 семестр";
 "ply_in_app_period_year_duration_plural_rule_one" = "1 год";
 "ply_in_app_period_year_duration_plural_rule_many" = "%d лет";
 "ply_price_free" = "бесплатно";

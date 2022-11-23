@@ -55,6 +55,8 @@
 "ply_in_app_period_month_plural_rule_none" = "ay";
 "ply_in_app_period_month_plural_rule_one" = "ay";
 "ply_in_app_period_month_plural_rule_many" = "%d ay";
+"ply_in_app_period_month_plural_rule_three" = "3 ay";
+"ply_in_app_period_month_plural_rule_six" = "6 ay";
 "ply_in_app_period_year_plural_rule_none" = "yıl";
 "ply_in_app_period_year_plural_rule_one" = "yıl";
 "ply_in_app_period_year_plural_rule_many" = "%d yıl";
@@ -64,6 +66,8 @@
 "ply_in_app_period_week_duration_plural_rule_many" = "%d hafta";
 "ply_in_app_period_month_duration_plural_rule_one" = "1 ay";
 "ply_in_app_period_month_duration_plural_rule_many" = "%d ay";
+"ply_in_app_period_month_duration_plural_rule_three" = "1 çeyrek";
+"ply_in_app_period_month_duration_plural_rule_six" = "1 yarıyıl";
 "ply_in_app_period_year_duration_plural_rule_one" = "1 yıl";
 "ply_in_app_period_year_duration_plural_rule_many" = "%d yıl";
 "ply_price_free" = "ücretsiz";

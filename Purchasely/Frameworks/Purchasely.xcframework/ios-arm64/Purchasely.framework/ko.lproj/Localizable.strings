@@ -55,6 +55,8 @@
 "ply_in_app_period_month_plural_rule_none" = "개월";
 "ply_in_app_period_month_plural_rule_one" = "개월";
 "ply_in_app_period_month_plural_rule_many" = "%d개월";
+"ply_in_app_period_month_plural_rule_three" = "삼개월";
+"ply_in_app_period_month_plural_rule_six" = "육개월";
 "ply_in_app_period_year_plural_rule_none" = "년";
 "ply_in_app_period_year_plural_rule_one" = "년";
 "ply_in_app_period_year_plural_rule_many" = "%d년";
@@ -64,6 +66,8 @@
 "ply_in_app_period_week_duration_plural_rule_many" = "%d주";
 "ply_in_app_period_month_duration_plural_rule_one" = "1개월";
 "ply_in_app_period_month_duration_plural_rule_many" = "%d개월";
+"ply_in_app_period_month_duration_plural_rule_three" = "1삼 분기";
+"ply_in_app_period_month_duration_plural_rule_six" = "1학기";
 "ply_in_app_period_year_duration_plural_rule_one" = "1년";
 "ply_in_app_period_year_duration_plural_rule_many" = "%d년";
 "ply_price_free" = "무료";
