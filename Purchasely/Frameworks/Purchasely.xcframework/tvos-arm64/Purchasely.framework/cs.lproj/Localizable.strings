@@ -66,8 +66,8 @@
 "ply_in_app_period_week_duration_plural_rule_many" = "%d týdny/týdnů";
 "ply_in_app_period_month_duration_plural_rule_one" = "1 měsíc";
 "ply_in_app_period_month_duration_plural_rule_many" = "%d měsíce/měsíců";
-"ply_in_app_period_month_duration_plural_rule_three" = "1 čtvrťák";
-"ply_in_app_period_month_duration_plural_rule_six" = "1 semestr";
+"ply_in_app_period_month_duration_plural_rule_three" = "%d měsíce/měsíců";
+"ply_in_app_period_month_duration_plural_rule_six" = "%d měsíce/měsíců";
 "ply_in_app_period_year_duration_plural_rule_one" = "1 rok";
 "ply_in_app_period_year_duration_plural_rule_many" = "%d roky/let";
 "ply_price_free" = "zdarma";

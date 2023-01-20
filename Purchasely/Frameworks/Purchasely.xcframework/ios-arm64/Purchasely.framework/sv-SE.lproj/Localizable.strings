@@ -66,8 +66,8 @@
 "ply_in_app_period_week_duration_plural_rule_many" = "%d veckor";
 "ply_in_app_period_month_duration_plural_rule_one" = "1 månad";
 "ply_in_app_period_month_duration_plural_rule_many" = "%d månader";
-"ply_in_app_period_month_duration_plural_rule_three" = "1 fjärdedel";
-"ply_in_app_period_month_duration_plural_rule_six" = "1 termin";
+"ply_in_app_period_month_duration_plural_rule_three" = "%d månader";
+"ply_in_app_period_month_duration_plural_rule_six" = "%d månader";
 "ply_in_app_period_year_duration_plural_rule_one" = "1 år";
 "ply_in_app_period_year_duration_plural_rule_many" = "%d år";
 "ply_price_free" = "gratis";

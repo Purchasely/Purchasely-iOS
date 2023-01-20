@@ -66,8 +66,8 @@
 "ply_in_app_period_week_duration_plural_rule_many" = "%d semanas";
 "ply_in_app_period_month_duration_plural_rule_one" = "1 mes";
 "ply_in_app_period_month_duration_plural_rule_many" = "%d meses";
-"ply_in_app_period_month_duration_plural_rule_three" = "1 trimestre";
-"ply_in_app_period_month_duration_plural_rule_six" = "1 semestre";
+"ply_in_app_period_month_duration_plural_rule_three" = "%d meses";
+"ply_in_app_period_month_duration_plural_rule_six" = "%d meses";
 "ply_in_app_period_year_duration_plural_rule_one" = "1 año";
 "ply_in_app_period_year_duration_plural_rule_many" = "%d años";
 "ply_price_free" = "gratis";

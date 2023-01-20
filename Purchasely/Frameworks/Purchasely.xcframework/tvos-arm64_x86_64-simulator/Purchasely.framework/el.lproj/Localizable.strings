@@ -66,8 +66,8 @@
 "ply_in_app_period_week_duration_plural_rule_many" = "%d εβδομάδες";
 "ply_in_app_period_month_duration_plural_rule_one" = "1 μήνας";
 "ply_in_app_period_month_duration_plural_rule_many" = "%d μήνες";
-"ply_in_app_period_month_duration_plural_rule_three" = "1 τρίμηνο";
-"ply_in_app_period_month_duration_plural_rule_six" = "1 εξάμηνο";
+"ply_in_app_period_month_duration_plural_rule_three" = "%d μήνες";
+"ply_in_app_period_month_duration_plural_rule_six" = "%d μήνες";
 "ply_in_app_period_year_duration_plural_rule_one" = "1 έτος";
 "ply_in_app_period_year_duration_plural_rule_many" = "%d έτη";
 "ply_price_free" = "δωρεάν";

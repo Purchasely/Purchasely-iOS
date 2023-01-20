@@ -66,8 +66,8 @@
 "ply_in_app_period_week_duration_plural_rule_many" = "%d minggu";
 "ply_in_app_period_month_duration_plural_rule_one" = "1 bulan";
 "ply_in_app_period_month_duration_plural_rule_many" = "%d bulan";
-"ply_in_app_period_month_duration_plural_rule_three" = "1 seperempat";
-"ply_in_app_period_month_duration_plural_rule_six" = "1 semester";
+"ply_in_app_period_month_duration_plural_rule_three" = "%d bulan";
+"ply_in_app_period_month_duration_plural_rule_six" = "%d bulan";
 "ply_in_app_period_year_duration_plural_rule_one" = "1 tahun";
 "ply_in_app_period_year_duration_plural_rule_many" = "%d tahun";
 "ply_price_free" = "gratis";

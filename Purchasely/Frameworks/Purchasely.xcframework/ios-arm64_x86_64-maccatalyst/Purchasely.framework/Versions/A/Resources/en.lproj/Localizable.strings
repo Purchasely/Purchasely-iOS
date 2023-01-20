@@ -66,8 +66,8 @@
 "ply_in_app_period_week_duration_plural_rule_many" = "%d weeks";
 "ply_in_app_period_month_duration_plural_rule_one" = "1 month";
 "ply_in_app_period_month_duration_plural_rule_many" = "%d months";
-"ply_in_app_period_month_duration_plural_rule_three" = "1 quarter";
-"ply_in_app_period_month_duration_plural_rule_six" = "1 semester";
+"ply_in_app_period_month_duration_plural_rule_three" = "%d months";
+"ply_in_app_period_month_duration_plural_rule_six" = "%d months";
 "ply_in_app_period_year_duration_plural_rule_one" = "1 year";
 "ply_in_app_period_year_duration_plural_rule_many" = "%d years";
 "ply_price_free" = "free";

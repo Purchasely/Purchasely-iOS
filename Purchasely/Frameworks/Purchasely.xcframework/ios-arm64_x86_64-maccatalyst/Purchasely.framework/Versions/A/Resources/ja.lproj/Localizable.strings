@@ -66,8 +66,8 @@
 "ply_in_app_period_week_duration_plural_rule_many" = "%d週間";
 "ply_in_app_period_month_duration_plural_rule_one" = "1か月";
 "ply_in_app_period_month_duration_plural_rule_many" = "%dか月";
-"ply_in_app_period_month_duration_plural_rule_three" = "1三半期";
-"ply_in_app_period_month_duration_plural_rule_six" = "1学期";
+"ply_in_app_period_month_duration_plural_rule_three" = "%dか月";
+"ply_in_app_period_month_duration_plural_rule_six" = "%dか月";
 "ply_in_app_period_year_duration_plural_rule_one" = "1年";
 "ply_in_app_period_year_duration_plural_rule_many" = "%d年";
 "ply_price_free" = "自由な";

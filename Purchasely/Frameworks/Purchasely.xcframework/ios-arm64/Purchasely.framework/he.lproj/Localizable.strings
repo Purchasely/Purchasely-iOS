@@ -66,8 +66,8 @@
 "ply_in_app_period_week_duration_plural_rule_many" = "%d שבועות";
 "ply_in_app_period_month_duration_plural_rule_one" = "חודש 1";
 "ply_in_app_period_month_duration_plural_rule_many" = "%d חודשים";
-"ply_in_app_period_month_duration_plural_rule_three" = "רבעון";
-"ply_in_app_period_month_duration_plural_rule_six" = "סמסטר";
+"ply_in_app_period_month_duration_plural_rule_three" = "%d חודשים";
+"ply_in_app_period_month_duration_plural_rule_six" = "%d חודשים";
 "ply_in_app_period_year_duration_plural_rule_one" = "שנה 1";
 "ply_in_app_period_year_duration_plural_rule_many" = "%d שנים";
 "ply_price_free" = "חינם";
