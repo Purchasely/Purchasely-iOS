@@ -36,15 +36,27 @@ class ViewController: UIViewController {
 extension ViewController {
 
 	@IBAction func mySubscriptions(_ sender: Any) {
-		let ctrl = Purchasely.subscriptionsController()
-		present(ctrl, animated: true, completion: nil)
+        if let ctrl = Purchasely.subscriptionsController() {
+            present(ctrl, animated: true, completion: nil)
+        }
 	}
 
 	@IBAction func purchase(_ sender: Any) {
 
-		let ctrl = Purchasely.presentationController(with: "CAROUSEL")
-		present(ctrl, animated: true, completion: nil)
+        if let ctrl = Purchasely.presentationController(with: "CAROUSEL") {
+            present(ctrl, animated: true, completion: nil)
+        }
 	}
+    
+    @IBAction func purchaseAsync(_ sender: Any) {
+
+        Purchasely.fetchPresentation(with:"CAROUSEL", fetchCompletion: { [weak self] presentation, error in
+            guard let `self` = self else { return }
+            if let ctrl = presentation?.controller {
+                self.present(ctrl, animated: true, completion: nil)
+            }
+        }, completion: nil)
+    }
 
 	@objc func reloadContent(_ notification: Notification) {
 		// Reload content when purchased
