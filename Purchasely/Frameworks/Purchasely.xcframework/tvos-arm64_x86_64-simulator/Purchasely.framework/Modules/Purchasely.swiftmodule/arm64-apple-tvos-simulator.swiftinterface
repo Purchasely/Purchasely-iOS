@@ -461,19 +461,19 @@ extension PLYPlan {
   }
 }
 @_hasMissingDesignatedInitializers @objc public class PLYPresentation : ObjectiveC.NSObject {
-  final public let id: Swift.String?
-  final public let language: Swift.String
-  final public let placementId: Swift.String?
-  final public let audienceId: Swift.String?
-  final public let abTestId: Swift.String?
-  final public let abTestVariantId: Swift.String?
-  final public let type: PLYPresentationType
-  final public let controller: PLYPresentationViewController?
-  final public let plans: [Swift.String]
+  @objc final public let id: Swift.String?
+  @objc final public let language: Swift.String
+  @objc final public let placementId: Swift.String?
+  @objc final public let audienceId: Swift.String?
+  @objc final public let abTestId: Swift.String?
+  @objc final public let abTestVariantId: Swift.String?
+  @objc final public let type: PLYPresentationType
+  @objc final public let controller: PLYPresentationViewController?
+  @objc final public let plans: [Swift.String]
   @objc deinit
 }
-public enum PLYPresentationType : Swift.Int {
-  case normal
+@objc public enum PLYPresentationType : Swift.Int {
+  case normal = 0
   case fallback
   case deactivated
   case client
@@ -735,7 +735,7 @@ extension Purchasely {
   #endif
   #if compiler(>=5.3) && $AsyncAwait
   @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
-  public static func syncPurchase(for productId: Swift.String) async throws
+  @objc public static func syncPurchase(for productId: Swift.String) async throws
   #endif
   @objc public static func restoreAllProducts(success: @escaping PLYVoidClosure, failure: @escaping PLYErrorClosure)
   @objc public static func silentRestoreAllProducts(success: @escaping PLYVoidClosure, failure: @escaping PLYErrorClosure)
@@ -774,6 +774,7 @@ extension Purchasely {
     case branchUserDeveloperIdentity
     case customerioUserEmail
     case customerioUserId
+    case moengageUniqueId
     public init?(rawValue: Swift.Int)
     public typealias RawValue = Swift.Int
     public var rawValue: Swift.Int {
@@ -810,8 +811,8 @@ extension StoreKit.SKProductStorePromotionController {
   public func resetStorePromotionsVisibility(for products: [StoreKit.SKProduct], completed: (() -> Swift.Void)?)
 }
 @objc public class StorekitSettings : ObjectiveC.NSObject {
-  public init(shouldUseStorekit2IfAvailable: Swift.Bool, simulateAskToBuy: Swift.Bool = false)
-  public static let `default`: StorekitSettings
+  @objc public init(shouldUseStorekit2IfAvailable: Swift.Bool, simulateAskToBuy: Swift.Bool = false)
+  @objc public static let `default`: StorekitSettings
   @objc deinit
 }
 extension Swift.String {

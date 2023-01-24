@@ -542,9 +542,20 @@ typedef SWIFT_ENUM(NSInteger, PLYPlanType, open) {
   PLYPlanTypeUnknown = 4,
 };
 
+enum PLYPresentationType : NSInteger;
+@class PLYPresentationViewController;
 
 SWIFT_CLASS("_TtC10Purchasely15PLYPresentation")
 @interface PLYPresentation : NSObject
+@property (nonatomic, readonly, copy) NSString * _Nullable id;
+@property (nonatomic, readonly, copy) NSString * _Nonnull language;
+@property (nonatomic, readonly, copy) NSString * _Nullable placementId;
+@property (nonatomic, readonly, copy) NSString * _Nullable audienceId;
+@property (nonatomic, readonly, copy) NSString * _Nullable abTestId;
+@property (nonatomic, readonly, copy) NSString * _Nullable abTestVariantId;
+@property (nonatomic, readonly) enum PLYPresentationType type;
+@property (nonatomic, readonly, strong) PLYPresentationViewController * _Nullable controller;
+@property (nonatomic, readonly, copy) NSArray<NSString *> * _Nonnull plans;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -590,6 +601,13 @@ SWIFT_CLASS("_TtC10Purchasely19PLYPresentationInfo")
 @property (nonatomic, copy) NSString * _Nullable abTestId;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
+
+typedef SWIFT_ENUM(NSInteger, PLYPresentationType, open) {
+  PLYPresentationTypeNormal = 0,
+  PLYPresentationTypeFallback = 1,
+  PLYPresentationTypeDeactivated = 2,
+  PLYPresentationTypeClient = 3,
+};
 
 @class NSBundle;
 @class NSCoder;
@@ -1088,6 +1106,23 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 ///   </li>
 /// </ul>
 + (void)purchaseWithPlan:(PLYPlan * _Nonnull)plan success:(void (^ _Nonnull)(void))success failure:(void (^ _Nonnull)(NSError * _Nonnull))failure;
+/// <em>Mode: Observer, PaywallObserver</em>
+/// This method <em>must</em> be called right after a purchase is made using an SDK that is using StoreKit2, but you don’t have direct access to <em>Product.PurchaseResult</em>, in order for our back-end to synchronize this transaction for the current user.
+/// <ul>
+///   <li>
+///     Parameters:
+///   </li>
+///   <li>
+///     productId: Apple’s ProductId for the item purchased
+///   </li>
+///   <li>
+///     an error is thrown if transaction cannot be verified by Apple, or if an error occurs when synchronizing with our back-end.
+///   </li>
+/// </ul>
+///
+/// throws:
+///
++ (void)syncPurchaseFor:(NSString * _Nonnull)productId completionHandler:(void (^ _Nonnull)(NSError * _Nullable))completionHandler SWIFT_AVAILABILITY(watchos,introduced=8.0) SWIFT_AVAILABILITY(tvos,introduced=15.0) SWIFT_AVAILABILITY(macos,introduced=12.0) SWIFT_AVAILABILITY(ios,introduced=15.0);
 /// This method is used to restore previous purchases. Some might be successful and some in error.
 /// <ul>
 ///   <li>
@@ -1156,6 +1191,7 @@ typedef SWIFT_ENUM(NSInteger, PLYAttribute, open) {
   PLYAttributeBranchUserDeveloperIdentity = 16,
   PLYAttributeCustomerioUserEmail = 17,
   PLYAttributeCustomerioUserId = 18,
+  PLYAttributeMoengageUniqueId = 19,
 };
 
 
@@ -1169,6 +1205,9 @@ typedef SWIFT_ENUM(NSInteger, PLYAttribute, open) {
 
 SWIFT_CLASS("_TtC10Purchasely16StorekitSettings")
 @interface StorekitSettings : NSObject
+- (nonnull instancetype)initWithShouldUseStorekit2IfAvailable:(BOOL)shouldUseStorekit2IfAvailable simulateAskToBuy:(BOOL)simulateAskToBuy OBJC_DESIGNATED_INITIALIZER;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong, getter=default) StorekitSettings * _Nonnull default_;)
++ (StorekitSettings * _Nonnull)default SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -1742,9 +1781,20 @@ typedef SWIFT_ENUM(NSInteger, PLYPlanType, open) {
   PLYPlanTypeUnknown = 4,
 };
 
+enum PLYPresentationType : NSInteger;
+@class PLYPresentationViewController;
 
 SWIFT_CLASS("_TtC10Purchasely15PLYPresentation")
 @interface PLYPresentation : NSObject
+@property (nonatomic, readonly, copy) NSString * _Nullable id;
+@property (nonatomic, readonly, copy) NSString * _Nonnull language;
+@property (nonatomic, readonly, copy) NSString * _Nullable placementId;
+@property (nonatomic, readonly, copy) NSString * _Nullable audienceId;
+@property (nonatomic, readonly, copy) NSString * _Nullable abTestId;
+@property (nonatomic, readonly, copy) NSString * _Nullable abTestVariantId;
+@property (nonatomic, readonly) enum PLYPresentationType type;
+@property (nonatomic, readonly, strong) PLYPresentationViewController * _Nullable controller;
+@property (nonatomic, readonly, copy) NSArray<NSString *> * _Nonnull plans;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -1790,6 +1840,13 @@ SWIFT_CLASS("_TtC10Purchasely19PLYPresentationInfo")
 @property (nonatomic, copy) NSString * _Nullable abTestId;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
+
+typedef SWIFT_ENUM(NSInteger, PLYPresentationType, open) {
+  PLYPresentationTypeNormal = 0,
+  PLYPresentationTypeFallback = 1,
+  PLYPresentationTypeDeactivated = 2,
+  PLYPresentationTypeClient = 3,
+};
 
 @class NSBundle;
 @class NSCoder;
@@ -2288,6 +2345,23 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 ///   </li>
 /// </ul>
 + (void)purchaseWithPlan:(PLYPlan * _Nonnull)plan success:(void (^ _Nonnull)(void))success failure:(void (^ _Nonnull)(NSError * _Nonnull))failure;
+/// <em>Mode: Observer, PaywallObserver</em>
+/// This method <em>must</em> be called right after a purchase is made using an SDK that is using StoreKit2, but you don’t have direct access to <em>Product.PurchaseResult</em>, in order for our back-end to synchronize this transaction for the current user.
+/// <ul>
+///   <li>
+///     Parameters:
+///   </li>
+///   <li>
+///     productId: Apple’s ProductId for the item purchased
+///   </li>
+///   <li>
+///     an error is thrown if transaction cannot be verified by Apple, or if an error occurs when synchronizing with our back-end.
+///   </li>
+/// </ul>
+///
+/// throws:
+///
++ (void)syncPurchaseFor:(NSString * _Nonnull)productId completionHandler:(void (^ _Nonnull)(NSError * _Nullable))completionHandler SWIFT_AVAILABILITY(watchos,introduced=8.0) SWIFT_AVAILABILITY(tvos,introduced=15.0) SWIFT_AVAILABILITY(macos,introduced=12.0) SWIFT_AVAILABILITY(ios,introduced=15.0);
 /// This method is used to restore previous purchases. Some might be successful and some in error.
 /// <ul>
 ///   <li>
@@ -2356,6 +2430,7 @@ typedef SWIFT_ENUM(NSInteger, PLYAttribute, open) {
   PLYAttributeBranchUserDeveloperIdentity = 16,
   PLYAttributeCustomerioUserEmail = 17,
   PLYAttributeCustomerioUserId = 18,
+  PLYAttributeMoengageUniqueId = 19,
 };
 
 
@@ -2369,6 +2444,9 @@ typedef SWIFT_ENUM(NSInteger, PLYAttribute, open) {
 
 SWIFT_CLASS("_TtC10Purchasely16StorekitSettings")
 @interface StorekitSettings : NSObject
+- (nonnull instancetype)initWithShouldUseStorekit2IfAvailable:(BOOL)shouldUseStorekit2IfAvailable simulateAskToBuy:(BOOL)simulateAskToBuy OBJC_DESIGNATED_INITIALIZER;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong, getter=default) StorekitSettings * _Nonnull default_;)
++ (StorekitSettings * _Nonnull)default SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
