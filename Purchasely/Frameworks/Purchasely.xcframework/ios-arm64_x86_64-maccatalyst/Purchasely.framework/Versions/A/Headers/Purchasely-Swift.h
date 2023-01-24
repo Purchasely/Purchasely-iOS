@@ -489,8 +489,17 @@ SWIFT_CLASS("_TtC10Purchasely7PLYPlan")
 @end
 
 
+
+
 @interface PLYPlan (SWIFT_EXTENSION(Purchasely))
-/// This method is used to check if current user is eligible for introductory offer for current plan
+- (NSString * _Nullable)priceDifferenceWithComparedTo:(PLYPlan * _Nonnull)plan SWIFT_WARN_UNUSED_RESULT;
+- (NSString * _Nullable)priceDifferenceInPercentageTo:(PLYPlan * _Nonnull)plan SWIFT_WARN_UNUSED_RESULT;
+@end
+
+
+
+@interface PLYPlan (SWIFT_EXTENSION(Purchasely))
+/// This attribute is used to check if current user is eligible for introductory offer for current plan
 /// <ul>
 ///   <li>
 ///     Bool: true if user is eligible. False if not, or if receipt cannot be decoded.
@@ -499,17 +508,8 @@ SWIFT_CLASS("_TtC10Purchasely7PLYPlan")
 ///
 /// returns:
 ///
-- (void)isEligibleForIntroOfferWithCompletion:(void (^ _Nonnull)(BOOL))completion;
+@property (nonatomic, readonly) BOOL isUserEligibleForIntroductoryOffer;
 @end
-
-
-
-
-@interface PLYPlan (SWIFT_EXTENSION(Purchasely))
-- (NSString * _Nullable)priceDifferenceWithComparedTo:(PLYPlan * _Nonnull)plan SWIFT_WARN_UNUSED_RESULT;
-- (NSString * _Nullable)priceDifferenceInPercentageTo:(PLYPlan * _Nonnull)plan SWIFT_WARN_UNUSED_RESULT;
-@end
-
 
 @class NSDecimalNumber;
 
@@ -1731,8 +1731,17 @@ SWIFT_CLASS("_TtC10Purchasely7PLYPlan")
 @end
 
 
+
+
 @interface PLYPlan (SWIFT_EXTENSION(Purchasely))
-/// This method is used to check if current user is eligible for introductory offer for current plan
+- (NSString * _Nullable)priceDifferenceWithComparedTo:(PLYPlan * _Nonnull)plan SWIFT_WARN_UNUSED_RESULT;
+- (NSString * _Nullable)priceDifferenceInPercentageTo:(PLYPlan * _Nonnull)plan SWIFT_WARN_UNUSED_RESULT;
+@end
+
+
+
+@interface PLYPlan (SWIFT_EXTENSION(Purchasely))
+/// This attribute is used to check if current user is eligible for introductory offer for current plan
 /// <ul>
 ///   <li>
 ///     Bool: true if user is eligible. False if not, or if receipt cannot be decoded.
@@ -1741,17 +1750,8 @@ SWIFT_CLASS("_TtC10Purchasely7PLYPlan")
 ///
 /// returns:
 ///
-- (void)isEligibleForIntroOfferWithCompletion:(void (^ _Nonnull)(BOOL))completion;
+@property (nonatomic, readonly) BOOL isUserEligibleForIntroductoryOffer;
 @end
-
-
-
-
-@interface PLYPlan (SWIFT_EXTENSION(Purchasely))
-- (NSString * _Nullable)priceDifferenceWithComparedTo:(PLYPlan * _Nonnull)plan SWIFT_WARN_UNUSED_RESULT;
-- (NSString * _Nullable)priceDifferenceInPercentageTo:(PLYPlan * _Nonnull)plan SWIFT_WARN_UNUSED_RESULT;
-@end
-
 
 @class NSDecimalNumber;
 

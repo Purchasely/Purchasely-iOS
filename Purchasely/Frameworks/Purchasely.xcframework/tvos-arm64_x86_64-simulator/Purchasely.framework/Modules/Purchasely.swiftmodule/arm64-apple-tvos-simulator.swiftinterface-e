@@ -443,7 +443,9 @@ extension Purchasely.PLYPlan {
   @objc dynamic public func priceDifferenceInPercentage(to plan: Purchasely.PLYPlan) -> Swift.String?
 }
 extension Purchasely.PLYPlan {
-  @objc dynamic public func isEligibleForIntroOffer(completion: @escaping ((Swift.Bool) -> Swift.Void))
+  @objc dynamic public var isUserEligibleForIntroductoryOffer: Swift.Bool {
+    @objc get
+  }
 }
 @objc public enum PLYPlanType : Swift.Int, Swift.Codable {
   case consumable
