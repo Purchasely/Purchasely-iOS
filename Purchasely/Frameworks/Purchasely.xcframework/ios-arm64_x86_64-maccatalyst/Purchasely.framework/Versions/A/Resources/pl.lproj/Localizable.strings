@@ -43,7 +43,7 @@
 "ply_in_app_unknown_error" = "Nieznany błąd";
 "ply_in_app_parsing_error" = "Serwer nie odpowiada";
 "ply_in_app_login_button" = "Masz już konto? Zaloguj się.";
-"ply_in_app_restore_button" = "Zwrot pieniędzy za zakup";
+"ply_in_app_restore_button" = "Przywróć zakupy";
 "ply_in_app_error_pending" = "Your payment is being processed.  Your purchase will be validated automatically when your payment has been made.";
 "ply_promo_code_button" = "Masz kod rabatowy?";
 "ply_in_app_period_day_plural_rule_none" = "dzień";

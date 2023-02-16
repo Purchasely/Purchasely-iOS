@@ -745,7 +745,7 @@ extension Purchasely {
   @objc public static func syncPurchase(for productId: Swift.String) async throws
   #endif
   @objc public static func restoreAllProducts(success: @escaping PLYVoidClosure, failure: @escaping PLYErrorClosure)
-  @objc public static func silentRestoreAllProducts(success: @escaping PLYVoidClosure, failure: @escaping PLYErrorClosure)
+  @objc public static func synchronize(success: @escaping PLYVoidClosure, failure: @escaping PLYErrorClosure)
   @objc public static var userAttributesAvailable: [Swift.String : Swift.String] {
     @objc get
   }
@@ -799,6 +799,8 @@ extension Purchasely {
   @objc dynamic public class func setConfirmPurchaseHandler(_ confirmPurchaseHandler: PLYPurchaseConfirmationHandler?)
   @available(*, unavailable, message: "Call `userLogin(with:)` when you have the userId or `userLogout()` when the user disconnects.")
   @objc dynamic public class func setAppUserId(_ appUserId: Swift.String?)
+  @available(*, unavailable, message: "`silentRestoreAllProducts(success:failure:)` has been renamed to `synchronize(success:failure:)`")
+  @objc public static func silentRestoreAllProducts(success: @escaping PLYVoidClosure, failure: @escaping PLYErrorClosure)
 }
 extension Purchasely : UserNotifications.UNUserNotificationCenterDelegate {
 }

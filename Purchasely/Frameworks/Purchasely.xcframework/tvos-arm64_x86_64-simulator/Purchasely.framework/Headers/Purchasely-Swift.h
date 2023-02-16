@@ -742,6 +742,7 @@ SWIFT_CLASS("_TtC10Purchasely10Purchasely")
 
 
 
+
 @interface Purchasely (SWIFT_EXTENSION(Purchasely)) <PLYUIDelegate>
 - (void)displayWithController:(UIViewController * _Nonnull)controller type:(enum PLYUIControllerType)type from:(UIViewController * _Nullable)sourceController;
 - (void)displayWithAlert:(enum PLYAlertMessage)alert error:(NSError * _Nullable)error;
@@ -1136,19 +1137,19 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 ///   </li>
 /// </ul>
 + (void)restoreAllProductsWithSuccess:(void (^ _Nonnull)(void))success failure:(void (^ _Nonnull)(NSError * _Nonnull))failure;
-/// This method is used to restore previous purchases. Some might be successful and some in error.
+/// This method is used to synchronize previous purchases with our backend. Some might be successful and some in error.
 /// <ul>
 ///   <li>
 ///     Parameters:
 ///   </li>
 ///   <li>
-///     success: The closure that is called when at least one item was successfully restored. It might contain an error in case some items weren’t restored successfully.
+///     success: The closure that is called when at least one item was successfully synchronized. It might contain an error in case some items weren’t restored successfully.
 ///   </li>
 ///   <li>
-///     failure: The closure that is called when no item was restored
+///     failure: The closure that is called when no item was synchronized
 ///   </li>
 /// </ul>
-+ (void)silentRestoreAllProductsWithSuccess:(void (^ _Nonnull)(void))success failure:(void (^ _Nonnull)(NSError * _Nonnull))failure;
++ (void)synchronizeWithSuccess:(void (^ _Nonnull)(void))success failure:(void (^ _Nonnull)(NSError * _Nonnull))failure;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSDictionary<NSString *, NSString *> * _Nonnull userAttributesAvailable;)
 + (NSDictionary<NSString *, NSString *> * _Nonnull)userAttributesAvailable SWIFT_WARN_UNUSED_RESULT;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSDictionary<NSString *, id> * _Nonnull userAttributes;)
@@ -1169,6 +1170,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSDictionary<N
 + (void)setLoginTappedHandler:(void (^ _Nullable)(UIViewController * _Nonnull, void (^ _Nonnull)(BOOL)))loginTappedHandler SWIFT_UNAVAILABLE_MSG("With Purchasely 3.0.0 `setLoginTappedHandler(_:)` was replaced with a more generic approach for interacting with paywall actions. You should now use the `paywallActionsInterceptor` and intercept the `login` action.");
 + (void)setConfirmPurchaseHandler:(void (^ _Nullable)(UIViewController * _Nonnull, void (^ _Nonnull)(BOOL)))confirmPurchaseHandler SWIFT_UNAVAILABLE_MSG("With Purchasely 3.0.0 `setConfirmPurchaseHandler(_:)` was replaced with a more generic approach for interacting with paywall actions. You should now use the `paywallActionsInterceptor` and intercept the `purchase` action.");
 + (void)setAppUserId:(NSString * _Nullable)appUserId SWIFT_UNAVAILABLE_MSG("Call `userLogin(with:)` when you have the userId or `userLogout()` when the user disconnects.");
++ (void)silentRestoreAllProductsWithSuccess:(void (^ _Nonnull)(void))success failure:(void (^ _Nonnull)(NSError * _Nonnull))failure SWIFT_UNAVAILABLE_MSG("`silentRestoreAllProducts(success:failure:)` has been renamed to `synchronize(success:failure:)`");
 @end
 
 typedef SWIFT_ENUM(NSInteger, PLYAttribute, open) {
@@ -1981,6 +1983,7 @@ SWIFT_CLASS("_TtC10Purchasely10Purchasely")
 
 
 
+
 @interface Purchasely (SWIFT_EXTENSION(Purchasely)) <PLYUIDelegate>
 - (void)displayWithController:(UIViewController * _Nonnull)controller type:(enum PLYUIControllerType)type from:(UIViewController * _Nullable)sourceController;
 - (void)displayWithAlert:(enum PLYAlertMessage)alert error:(NSError * _Nullable)error;
@@ -2375,19 +2378,19 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 ///   </li>
 /// </ul>
 + (void)restoreAllProductsWithSuccess:(void (^ _Nonnull)(void))success failure:(void (^ _Nonnull)(NSError * _Nonnull))failure;
-/// This method is used to restore previous purchases. Some might be successful and some in error.
+/// This method is used to synchronize previous purchases with our backend. Some might be successful and some in error.
 /// <ul>
 ///   <li>
 ///     Parameters:
 ///   </li>
 ///   <li>
-///     success: The closure that is called when at least one item was successfully restored. It might contain an error in case some items weren’t restored successfully.
+///     success: The closure that is called when at least one item was successfully synchronized. It might contain an error in case some items weren’t restored successfully.
 ///   </li>
 ///   <li>
-///     failure: The closure that is called when no item was restored
+///     failure: The closure that is called when no item was synchronized
 ///   </li>
 /// </ul>
-+ (void)silentRestoreAllProductsWithSuccess:(void (^ _Nonnull)(void))success failure:(void (^ _Nonnull)(NSError * _Nonnull))failure;
++ (void)synchronizeWithSuccess:(void (^ _Nonnull)(void))success failure:(void (^ _Nonnull)(NSError * _Nonnull))failure;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSDictionary<NSString *, NSString *> * _Nonnull userAttributesAvailable;)
 + (NSDictionary<NSString *, NSString *> * _Nonnull)userAttributesAvailable SWIFT_WARN_UNUSED_RESULT;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSDictionary<NSString *, id> * _Nonnull userAttributes;)
@@ -2408,6 +2411,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSDictionary<N
 + (void)setLoginTappedHandler:(void (^ _Nullable)(UIViewController * _Nonnull, void (^ _Nonnull)(BOOL)))loginTappedHandler SWIFT_UNAVAILABLE_MSG("With Purchasely 3.0.0 `setLoginTappedHandler(_:)` was replaced with a more generic approach for interacting with paywall actions. You should now use the `paywallActionsInterceptor` and intercept the `login` action.");
 + (void)setConfirmPurchaseHandler:(void (^ _Nullable)(UIViewController * _Nonnull, void (^ _Nonnull)(BOOL)))confirmPurchaseHandler SWIFT_UNAVAILABLE_MSG("With Purchasely 3.0.0 `setConfirmPurchaseHandler(_:)` was replaced with a more generic approach for interacting with paywall actions. You should now use the `paywallActionsInterceptor` and intercept the `purchase` action.");
 + (void)setAppUserId:(NSString * _Nullable)appUserId SWIFT_UNAVAILABLE_MSG("Call `userLogin(with:)` when you have the userId or `userLogout()` when the user disconnects.");
++ (void)silentRestoreAllProductsWithSuccess:(void (^ _Nonnull)(void))success failure:(void (^ _Nonnull)(NSError * _Nonnull))failure SWIFT_UNAVAILABLE_MSG("`silentRestoreAllProducts(success:failure:)` has been renamed to `synchronize(success:failure:)`");
 @end
 
 typedef SWIFT_ENUM(NSInteger, PLYAttribute, open) {
