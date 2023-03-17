@@ -727,6 +727,7 @@ extension Purchasely.Purchasely {
   @objc dynamic public class func fetchPresentation(with presentationVendorId: Swift.String?, fetchCompletion: Purchasely.PLYPresentationFetchCompletionBlock? = nil, completion: Purchasely.PLYProductViewControllerCompletionBlock? = nil)
   @objc dynamic public class func fetchPresentation(for placementId: Swift.String, fetchCompletion: Purchasely.PLYPresentationFetchCompletionBlock? = nil, completion: Purchasely.PLYProductViewControllerCompletionBlock? = nil)
   @objc dynamic public class func fetchPresentation(for placementId: Swift.String, contentId: Swift.String?, fetchCompletion: Purchasely.PLYPresentationFetchCompletionBlock? = nil, completion: Purchasely.PLYProductViewControllerCompletionBlock? = nil)
+  @objc dynamic public class func closeDisplayedPresentation()
   @objc dynamic public class func clientPresentationOpened(with presentation: Purchasely.PLYPresentation?)
   @objc dynamic public class func clientPresentationClosed(with presentation: Purchasely.PLYPresentation?)
   @objc dynamic public class func subscriptionsController() -> UIKit.UIViewController?

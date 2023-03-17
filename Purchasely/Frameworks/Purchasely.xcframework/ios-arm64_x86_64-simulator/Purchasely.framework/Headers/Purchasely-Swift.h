@@ -1041,6 +1041,8 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 ///   </li>
 /// </ul>
 + (void)fetchPresentationFor:(NSString * _Nonnull)placementId contentId:(NSString * _Nullable)contentId fetchCompletion:(void (^ _Nullable)(PLYPresentation * _Nullable, NSError * _Nullable))fetchCompletion completion:(void (^ _Nullable)(enum PLYProductViewControllerResult, PLYPlan * _Nullable))completion;
+/// This method closes the current paywall displayed
++ (void)closeDisplayedPresentation;
 /// This method is used to notify Purchasely that a client paywall has been opened.
 /// <ul>
 ///   <li>
@@ -2285,6 +2287,8 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 ///   </li>
 /// </ul>
 + (void)fetchPresentationFor:(NSString * _Nonnull)placementId contentId:(NSString * _Nullable)contentId fetchCompletion:(void (^ _Nullable)(PLYPresentation * _Nullable, NSError * _Nullable))fetchCompletion completion:(void (^ _Nullable)(enum PLYProductViewControllerResult, PLYPlan * _Nullable))completion;
+/// This method closes the current paywall displayed
++ (void)closeDisplayedPresentation;
 /// This method is used to notify Purchasely that a client paywall has been opened.
 /// <ul>
 ///   <li>
