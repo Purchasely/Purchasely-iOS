@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.7.2 (swiftlang-5.7.2.135.5 clang-1400.0.29.51)
+// swift-compiler-version: Apple Swift version 5.8 (swiftlang-5.8.0.124.2 clang-1403.0.22.11.100)
 // swift-module-flags: -target arm64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name Purchasely
 import AVFoundation
 import AVKit
@@ -139,7 +139,7 @@ public enum PLYComponentError : Swift.Error {
 public enum PLYError : Swift.Error {
   case application(message: Swift.String?, code: Swift.String?)
   case parsing
-  case network(statusCode: Swift.Int?, error: Swift.Error?)
+  case network(statusCode: Swift.Int?, error: (any Swift.Error)?)
   case request
   case configuration
   case productNotFound
@@ -158,8 +158,8 @@ public enum PLYError : Swift.Error {
   case purchaseAlreadyRunning
   case restorationAlreadyRunning
   case noProductsToRestore
-  case restorationFailedWithErrors([Swift.Error])
-  case restorationPartial([Swift.String], [Swift.Error])
+  case restorationFailedWithErrors([any Swift.Error])
+  case restorationPartial([Swift.String], [any Swift.Error])
   case receiptValidationTimedOut
   case untrackedEvent
   case tooManyRequests(Swift.String?)
@@ -343,7 +343,7 @@ extension Foundation.NSString {
   }
 }
 public class PLYImage : Swift.Decodable {
-  required public init(from decoder: Swift.Decoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
   @objc deinit
 }
 public enum PLYLabelHighlightsError : Swift.Error {
@@ -396,7 +396,7 @@ public func PLYLocalizedPluralString(_ key: Swift.String, pluralType: Purchasely
   @objc public var appleProductId: Swift.String?
   @objc public var type: Purchasely.PLYPlanType
   @objc public var name: Swift.String?
-  required public init(from decoder: Swift.Decoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
   @objc override dynamic public func isEqual(_ object: Any?) -> Swift.Bool
   @objc deinit
 }
@@ -540,11 +540,11 @@ extension Purchasely.PLYPresentationViewController {
   @objc public var vendorId: Swift.String
   @objc public var plans: [Purchasely.PLYPlan]
   @objc public var name: Swift.String?
-  required public init(from decoder: Swift.Decoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
   @objc deinit
 }
 public typealias PLYProductViewControllerCompletionBlock = (Purchasely.PLYProductViewControllerResult, Purchasely.PLYPlan?) -> Swift.Void
-public typealias PLYPresentationFetchCompletionBlock = (Purchasely.PLYPresentation?, Swift.Error?) -> Swift.Void
+public typealias PLYPresentationFetchCompletionBlock = (Purchasely.PLYPresentation?, (any Swift.Error)?) -> Swift.Void
 @objc public enum PLYProductViewControllerResult : Swift.Int {
   case purchased
   case cancelled
@@ -593,7 +593,7 @@ public enum PLYSubscriptionError : Swift.Error {
   @objc public var isFamilyShared: Swift.Bool
   @objc public var contentId: Swift.String?
   @objc public var offerIdentifier: Swift.String?
-  required public init(from decoder: Swift.Decoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
   @objc public func unsubscribe()
   @objc deinit
 }
@@ -675,17 +675,17 @@ public enum PLYSubscriptionSourceError : Swift.Error {
 }
 @objc public protocol PLYUIDelegate {
   @objc func display(controller: UIKit.UIViewController, type: Purchasely.PLYUIControllerType, from sourceController: UIKit.UIViewController?)
-  @objc func display(alert: Purchasely.PLYAlertMessage, error: Swift.Error?)
+  @objc func display(alert: Purchasely.PLYAlertMessage, error: (any Swift.Error)?)
 }
-public typealias PLYSuccessErrorClosure = (Swift.Bool, Swift.Error?) -> Swift.Void
-public typealias PLYPaywallLoadingClosure = (Purchasely.PLYPresentationViewController?, Swift.Bool, Swift.Error?) -> Swift.Void
+public typealias PLYSuccessErrorClosure = (Swift.Bool, (any Swift.Error)?) -> Swift.Void
+public typealias PLYPaywallLoadingClosure = (Purchasely.PLYPresentationViewController?, Swift.Bool, (any Swift.Error)?) -> Swift.Void
 public typealias PLYLoginTappedHandler = ((UIKit.UIViewController, @escaping (Swift.Bool) -> Swift.Void) -> Swift.Void)
 public typealias PLYPaywallActionsInterceptor = ((Purchasely.PLYPresentationAction, Purchasely.PLYPresentationActionParameters?, Purchasely.PLYPresentationInfo?, @escaping (Swift.Bool) -> Swift.Void) -> Swift.Void)
 public typealias PLYPurchaseConfirmationHandler = ((UIKit.UIViewController, @escaping (Swift.Bool) -> Swift.Void) -> Swift.Void)
 public typealias PLYLoginCompletionHandler = (Swift.Bool) -> Swift.Void
 public typealias PLYBoolClosure = (Swift.Bool) -> Swift.Void
 public typealias PLYVoidClosure = () -> Swift.Void
-public typealias PLYErrorClosure = (Swift.Error) -> ()
+public typealias PLYErrorClosure = (any Swift.Error) -> ()
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class Purchasely : ObjectiveC.NSObject {
   @objc deinit
 }
@@ -696,9 +696,9 @@ extension Purchasely.Purchasely {
   @objc public static var anonymousUserId: Swift.String {
     @objc get
   }
-  @objc dynamic public class func start(withAPIKey apiKey: Swift.String, appUserId: Swift.String? = nil, runningMode: Purchasely.PLYRunningMode = .full, eventDelegate: Purchasely.PLYEventDelegate? = nil, uiDelegate: Purchasely.PLYUIDelegate? = nil, paywallActionsInterceptor: Purchasely.PLYPaywallActionsInterceptor? = nil, storekitSettings: Purchasely.StorekitSettings = StorekitSettings.default, logLevel: Purchasely.PLYLogger.LogLevel = .error, initialized: Purchasely.PLYSuccessErrorClosure? = nil)
-  @objc dynamic public class func setEventDelegate(_ eventDelegate: Purchasely.PLYEventDelegate?)
-  @objc dynamic public class func setUIDelegate(_ uiDelegate: Purchasely.PLYUIDelegate?)
+  @objc dynamic public class func start(withAPIKey apiKey: Swift.String, appUserId: Swift.String? = nil, runningMode: Purchasely.PLYRunningMode = .full, eventDelegate: (any Purchasely.PLYEventDelegate)? = nil, uiDelegate: (any Purchasely.PLYUIDelegate)? = nil, paywallActionsInterceptor: Purchasely.PLYPaywallActionsInterceptor? = nil, storekitSettings: Purchasely.StorekitSettings = StorekitSettings.default, logLevel: Purchasely.PLYLogger.LogLevel = .error, initialized: Purchasely.PLYSuccessErrorClosure? = nil)
+  @objc dynamic public class func setEventDelegate(_ eventDelegate: (any Purchasely.PLYEventDelegate)?)
+  @objc dynamic public class func setUIDelegate(_ uiDelegate: (any Purchasely.PLYUIDelegate)?)
   @objc dynamic public class func setPaywallActionsInterceptor(_ paywallActionsInterceptor: Purchasely.PLYPaywallActionsInterceptor?)
   @objc dynamic public class func userLogin(with appUserId: Swift.String)
   @objc dynamic public class func userLogin(with appUserId: Swift.String, shouldRefresh: Purchasely.PLYLoginCompletionHandler?)
@@ -710,10 +710,10 @@ extension Purchasely.Purchasely {
   @objc dynamic public class func setLogLevel(_ logLevel: Purchasely.PLYLogger.LogLevel)
   @objc dynamic public class func setAppTechnology(_ technology: Purchasely.PLYAppTechnology)
   @objc dynamic public class func setSdkBridgeVersion(_ sdkBridgeVersion: Swift.String?)
-  @objc dynamic public class func addLogger(_ logger: Purchasely.PLYLogging)
-  @objc dynamic public class func allProducts(success: @escaping ([Purchasely.PLYProduct]) -> Swift.Void, failure: @escaping (Swift.Error?) -> Swift.Void)
-  @objc dynamic public class func product(with vendorId: Swift.String, success: @escaping (Purchasely.PLYProduct) -> Swift.Void, failure: @escaping (Swift.Error?) -> Swift.Void)
-  @objc dynamic public class func plan(with vendorId: Swift.String, success: @escaping (Purchasely.PLYPlan) -> Swift.Void, failure: @escaping (Swift.Error?) -> Swift.Void)
+  @objc dynamic public class func addLogger(_ logger: any Purchasely.PLYLogging)
+  @objc dynamic public class func allProducts(success: @escaping ([Purchasely.PLYProduct]) -> Swift.Void, failure: @escaping ((any Swift.Error)?) -> Swift.Void)
+  @objc dynamic public class func product(with vendorId: Swift.String, success: @escaping (Purchasely.PLYProduct) -> Swift.Void, failure: @escaping ((any Swift.Error)?) -> Swift.Void)
+  @objc dynamic public class func plan(with vendorId: Swift.String, success: @escaping (Purchasely.PLYPlan) -> Swift.Void, failure: @escaping ((any Swift.Error)?) -> Swift.Void)
   @objc dynamic public class func userSubscriptions(success: @escaping ([Purchasely.PLYSubscription]?) -> Swift.Void, failure: @escaping Purchasely.PLYErrorClosure)
   @objc dynamic public class func productController(for productVendorId: Swift.String, with presentationVendorId: Swift.String? = nil, contentId: Swift.String? = nil, loaded: Purchasely.PLYPaywallLoadingClosure? = nil, completion: Purchasely.PLYProductViewControllerCompletionBlock? = nil) -> Purchasely.PLYPresentationViewController?
   @objc dynamic public class func productController(for productVendorId: Swift.String, with presentationVendorId: Swift.String? = nil, loaded: Purchasely.PLYPaywallLoadingClosure? = nil, completion: Purchasely.PLYProductViewControllerCompletionBlock? = nil) -> Purchasely.PLYPresentationViewController?
@@ -793,7 +793,7 @@ extension Purchasely.Purchasely {
   public class func setAttributes(_ attributes: [Purchasely.Purchasely.PLYAttribute : Swift.String])
   @objc dynamic public class func userDidConsumeSubscriptionContent()
   @available(*, unavailable, message: "With Purchasely 3.0.0, 2 parameters of the `start` method changed.\n 1. A more generic approach for interacting with paywall actions named `paywallActionsInterceptor` replaced the `confirmPurchaseHandler`.\n 2. New running modes were added alongside to `observerMode` to offer you more flexibility in Purchasely's use.")
-  @objc dynamic public class func start(withAPIKey apiKey: Swift.String, appUserId: Swift.String? = nil, observerMode: Swift.Bool = false, eventDelegate: Purchasely.PLYEventDelegate? = nil, uiDelegate: Purchasely.PLYUIDelegate? = nil, confirmPurchaseHandler: Purchasely.PLYPurchaseConfirmationHandler? = nil, logLevel: Purchasely.PLYLogger.LogLevel = .error, initialized: Purchasely.PLYSuccessErrorClosure? = nil)
+  @objc dynamic public class func start(withAPIKey apiKey: Swift.String, appUserId: Swift.String? = nil, observerMode: Swift.Bool = false, eventDelegate: (any Purchasely.PLYEventDelegate)? = nil, uiDelegate: (any Purchasely.PLYUIDelegate)? = nil, confirmPurchaseHandler: Purchasely.PLYPurchaseConfirmationHandler? = nil, logLevel: Purchasely.PLYLogger.LogLevel = .error, initialized: Purchasely.PLYSuccessErrorClosure? = nil)
   @available(*, unavailable, message: "With Purchasely 3.0.0 `setLoginTappedHandler(_:)` was replaced with a more generic approach for interacting with paywall actions. You should now use the `paywallActionsInterceptor` and intercept the `login` action.")
   @objc dynamic public class func setLoginTappedHandler(_ loginTappedHandler: Purchasely.PLYLoginTappedHandler?)
   @available(*, unavailable, message: "With Purchasely 3.0.0 `setConfirmPurchaseHandler(_:)` was replaced with a more generic approach for interacting with paywall actions. You should now use the `paywallActionsInterceptor` and intercept the `purchase` action.")
@@ -807,14 +807,14 @@ extension Purchasely.Purchasely : UserNotifications.UNUserNotificationCenterDele
 }
 extension Purchasely.Purchasely : Purchasely.PLYUIDelegate {
   @objc dynamic public func display(controller: UIKit.UIViewController, type: Purchasely.PLYUIControllerType, from sourceController: UIKit.UIViewController?)
-  @objc dynamic public func display(alert: Purchasely.PLYAlertMessage, error: Swift.Error?)
+  @objc dynamic public func display(alert: Purchasely.PLYAlertMessage, error: (any Swift.Error)?)
 }
 extension Purchasely.Purchasely {
   @objc dynamic public class func showController(_ controller: UIKit.UIViewController, type: Purchasely.PLYUIControllerType)
 }
 public struct Safe<Base> : Swift.Decodable where Base : Swift.Decodable {
   public let value: Base?
-  public init(from decoder: Swift.Decoder)
+  public init(from decoder: any Swift.Decoder)
 }
 @available(macCatalyst 14.0, iOS 11.0, tvOS 11.0, *)
 extension StoreKit.SKProductStorePromotionController {
