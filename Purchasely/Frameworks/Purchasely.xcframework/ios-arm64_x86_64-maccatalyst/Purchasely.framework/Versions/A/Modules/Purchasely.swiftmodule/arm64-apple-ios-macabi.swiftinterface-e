@@ -770,6 +770,7 @@ extension Purchasely.Purchasely {
     case amplitudeDeviceId
     case firebaseAppInstanceId
     case airshipChannelId
+    case airshipUserId
     case batchInstallationId
     case adjustId
     case appsflyerId

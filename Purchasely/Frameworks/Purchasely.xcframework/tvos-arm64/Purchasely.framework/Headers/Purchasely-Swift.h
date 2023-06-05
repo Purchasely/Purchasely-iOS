@@ -521,11 +521,11 @@ SWIFT_CLASS("_TtC10Purchasely7PLYPlan")
 
 
 
+
 @interface PLYPlan (SWIFT_EXTENSION(Purchasely))
 - (NSString * _Nullable)priceDifferenceWithComparedTo:(PLYPlan * _Nonnull)plan SWIFT_WARN_UNUSED_RESULT;
 - (NSString * _Nullable)priceDifferenceInPercentageTo:(PLYPlan * _Nonnull)plan SWIFT_WARN_UNUSED_RESULT;
 @end
-
 
 
 @interface PLYPlan (SWIFT_EXTENSION(Purchasely))
@@ -780,10 +780,10 @@ SWIFT_CLASS("_TtC10Purchasely10Purchasely")
 
 
 
+
 @interface Purchasely (SWIFT_EXTENSION(Purchasely))
 + (void)showController:(UIViewController * _Nonnull)controller type:(enum PLYUIControllerType)type;
 @end
-
 
 
 
@@ -1211,21 +1211,22 @@ typedef SWIFT_ENUM(NSInteger, PLYAttribute, open) {
   PLYAttributeAmplitudeDeviceId = 2,
   PLYAttributeFirebaseAppInstanceId = 3,
   PLYAttributeAirshipChannelId = 4,
-  PLYAttributeBatchInstallationId = 5,
-  PLYAttributeAdjustId = 6,
-  PLYAttributeAppsflyerId = 7,
-  PLYAttributeOneSignalPlayerId = 8,
-  PLYAttributeMixpanelDistinctId = 9,
-  PLYAttributeClevertapId = 10,
-  PLYAttributeSendinblueUserEmail = 11,
-  PLYAttributeIterableUserEmail = 12,
-  PLYAttributeIterableUserId = 13,
-  PLYAttributeAtInternetIdClient = 14,
-  PLYAttributeMParticleUserId = 15,
-  PLYAttributeBranchUserDeveloperIdentity = 16,
-  PLYAttributeCustomerioUserEmail = 17,
-  PLYAttributeCustomerioUserId = 18,
-  PLYAttributeMoengageUniqueId = 19,
+  PLYAttributeAirshipUserId = 5,
+  PLYAttributeBatchInstallationId = 6,
+  PLYAttributeAdjustId = 7,
+  PLYAttributeAppsflyerId = 8,
+  PLYAttributeOneSignalPlayerId = 9,
+  PLYAttributeMixpanelDistinctId = 10,
+  PLYAttributeClevertapId = 11,
+  PLYAttributeSendinblueUserEmail = 12,
+  PLYAttributeIterableUserEmail = 13,
+  PLYAttributeIterableUserId = 14,
+  PLYAttributeAtInternetIdClient = 15,
+  PLYAttributeMParticleUserId = 16,
+  PLYAttributeBranchUserDeveloperIdentity = 17,
+  PLYAttributeCustomerioUserEmail = 18,
+  PLYAttributeCustomerioUserId = 19,
+  PLYAttributeMoengageUniqueId = 20,
 };
 
 
@@ -1245,6 +1246,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong, getter=defau
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
+
 
 
 
