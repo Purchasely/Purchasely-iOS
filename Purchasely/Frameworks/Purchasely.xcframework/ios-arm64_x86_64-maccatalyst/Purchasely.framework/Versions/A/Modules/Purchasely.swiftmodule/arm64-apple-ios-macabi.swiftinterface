@@ -50,6 +50,10 @@ public enum LocalReceiptError : Swift.Error {
 extension Foundation.NSNotification.Name {
   public static let ply_purchasedSubscription: Foundation.Notification.Name
 }
+@_hasMissingDesignatedInitializers public class PlansEligibilityManager {
+  public static var shared: PlansEligibilityManager
+  @objc deinit
+}
 @objc public enum PLYAlertMessage : Swift.Int {
   case commonError
   case inAppSuccess

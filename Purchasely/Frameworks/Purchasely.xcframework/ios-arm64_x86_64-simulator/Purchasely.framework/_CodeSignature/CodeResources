@@ -26,19 +26,19 @@
 		</data>
 		<key>Modules/Purchasely.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
-		uf3LIuIwnzlLZHIYKkIB2LQZUk4=
+		mGQmHz2fpEgoSiJrQftmxyaol08=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
-		YyJIeiDa9Vrf6UJASThxnuRXugw=
+		qwq1G308L2RR7xFY4TnrSv4ZcyA=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		qLBSHSzg2FOITZaKibTDBwl6C3k=
+		VKNAxRDdQ7jKdLJOhm/bxJENImo=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		4RsalfrBpTb8En+aQM6StSJAF1A=
+		lT24iJWBPnZX2nldKNe6O0knmbM=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -46,19 +46,19 @@
 		</data>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		4RsalfrBpTb8En+aQM6StSJAF1A=
+		lT24iJWBPnZX2nldKNe6O0knmbM=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		OyF4mAOHXjh0ZNZIIxE1uRxZNYs=
+		vw9nLSKZ9j4YnMCLko3HOoIJJes=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		qLBSHSzg2FOITZaKibTDBwl6C3k=
+		VKNAxRDdQ7jKdLJOhm/bxJENImo=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		B9RjSGCOFJ6f2cZMoes+YNGXSq0=
+		wosq3HvaDHByXJuyjRq4Y5WJa/Q=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -66,11 +66,11 @@
 		</data>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		B9RjSGCOFJ6f2cZMoes+YNGXSq0=
+		wosq3HvaDHByXJuyjRq4Y5WJa/Q=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		blYw+Xr1riGPn3L4T/Di07Gttaw=
+		lN9a9jWTClNHb4nsQ+ZDP3LXRgA=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -344,28 +344,28 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			VB7kYKO9/BUpyjvsyD3qxgxjSBOKhGxcnmW72A5U7VA=
+			/+V2AvvOR0Rj6Gt80QDEf4PyKCCHzUmbON+ocK25StU=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			RbyM/z9n5IB3Ar3t6A5S1urjh/FVl3iTJLRQ7Ni6XTc=
+			5nXhGv0047PyJ3qk4PrIQPE1jwqNXIGMeKTQ9BxOR1Q=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			PMyC72tXt5ZuXylbYSFXRQoC/VtQxPvXQi+j6/cj6Ck=
+			DXuDdccXkVFfwEvrueFpIrUhLhiF0EY6c/WDO5o7OJ8=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			PvHUchEsg4hPnLLV3Vdh5FRLXumoDB9LqeyzqCNyf+g=
+			4NjuGTnhneEktQrAeDPyBPfQpPcw+PBDB6YX+/+QkGI=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
@@ -379,28 +379,28 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			PvHUchEsg4hPnLLV3Vdh5FRLXumoDB9LqeyzqCNyf+g=
+			4NjuGTnhneEktQrAeDPyBPfQpPcw+PBDB6YX+/+QkGI=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			5c7sORTyriTZy9PunhVOgPD1SNZYZ0vAyxt/oAEnDb8=
+			ZcsQsCefQavBUk/zb5PluCGS6dQPIZ961Gg75l9AsRE=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			PMyC72tXt5ZuXylbYSFXRQoC/VtQxPvXQi+j6/cj6Ck=
+			DXuDdccXkVFfwEvrueFpIrUhLhiF0EY6c/WDO5o7OJ8=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			agwYKeMSp9X3v1lKdQjG3XUHQ/4oZCkJbygjyPtkCoQ=
+			Przn+Jt2j03uqR9jc21Htym4rhXSDbb3V9dseFHsXIw=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -414,14 +414,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			agwYKeMSp9X3v1lKdQjG3XUHQ/4oZCkJbygjyPtkCoQ=
+			Przn+Jt2j03uqR9jc21Htym4rhXSDbb3V9dseFHsXIw=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			tZpkPj4tyEturkGPlUmkEtkuB0BJpSI9LImGwrT7JKg=
+			P/A8WxLVlPp5gXYObbDqKhc7UmmpoCTCQg/pG8fk7CY=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
