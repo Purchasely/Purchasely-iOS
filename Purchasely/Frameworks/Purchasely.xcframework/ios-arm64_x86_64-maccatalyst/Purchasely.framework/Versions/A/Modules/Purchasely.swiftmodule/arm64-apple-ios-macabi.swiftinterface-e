@@ -314,6 +314,7 @@ extension Foundation.NSString {
   case paywallrequestDurationInMs
   case storeKitVersion
   case presentationType
+  case promoOffer
   public var name: Swift.String {
     get
   }
@@ -397,11 +398,22 @@ public func PLYLocalizedPluralString(_ key: Swift.String, pluralType: Purchasely
   final public let date: Foundation.Date
   @objc deinit
 }
+@objc public class PLYOfferSignature : ObjectiveC.NSObject, Swift.Decodable {
+  @objc public var planVendorId: Swift.String
+  @objc public var identifier: Swift.String
+  @objc public var signature: Swift.String
+  @objc public var nonce: Foundation.UUID
+  @objc public var keyIdentifier: Swift.String
+  @objc public var timestamp: Swift.Double
+  required public init(from decoder: any Swift.Decoder) throws
+  @objc deinit
+}
 @objc public class PLYPlan : ObjectiveC.NSObject, Swift.Decodable {
   @objc public var vendorId: Swift.String
   @objc public var appleProductId: Swift.String?
   @objc public var type: Purchasely.PLYPlanType
   @objc public var name: Swift.String?
+  @objc public var promoOffers: [Purchasely.PLYPromoOffer]
   required public init(from decoder: any Swift.Decoder) throws
   @objc override dynamic public func isEqual(_ object: Any?) -> Swift.Bool
   @objc deinit
@@ -434,6 +446,9 @@ extension Purchasely.PLYPlan {
   @objc dynamic public var hasIntroductoryPrice: Swift.Bool {
     @objc get
   }
+  @objc dynamic public var hasPromoOffers: Swift.Bool {
+    @objc get
+  }
   @objc dynamic public var hasFreeTrial: Swift.Bool {
     @objc get
   }
@@ -449,9 +464,7 @@ extension Purchasely.PLYPlan {
   @objc dynamic public func priceDifferenceInPercentage(to plan: Purchasely.PLYPlan) -> Swift.String?
 }
 extension Purchasely.PLYPlan {
-  @objc dynamic public var isUserEligibleForIntroductoryOffer: Swift.Bool {
-    @objc get
-  }
+  @objc dynamic public func isUserEligibleForIntroductoryOffer(completion: @escaping (Swift.Bool) -> ())
 }
 @objc public enum PLYPlanType : Swift.Int, Swift.Codable {
   case consumable
@@ -510,6 +523,7 @@ extension Purchasely.PLYPlan {
   @objc public var title: Swift.String?
   @objc public var plan: Purchasely.PLYPlan?
   @objc public var presentation: Swift.String?
+  @objc public var promoOfferVendorId: Swift.String?
   @objc override dynamic public init()
   @objc deinit
 }
@@ -560,6 +574,12 @@ public typealias PLYPresentationFetchCompletionBlock = (Purchasely.PLYPresentati
   public var rawValue: Swift.Int {
     get
   }
+}
+@_hasMissingDesignatedInitializers @objc public class PLYPromoOffer : ObjectiveC.NSObject, Swift.Decodable {
+  @objc public var vendorId: Swift.String
+  @objc public var identifier: Swift.String
+  required public init(from decoder: any Swift.Decoder) throws
+  @objc deinit
 }
 @objc public enum PLYRunningMode : Swift.Int, Swift.CaseIterable {
   case transactionOnly
@@ -691,6 +711,7 @@ public typealias PLYPurchaseConfirmationHandler = ((UIKit.UIViewController, @esc
 public typealias PLYLoginCompletionHandler = (Swift.Bool) -> Swift.Void
 public typealias PLYBoolClosure = (Swift.Bool) -> Swift.Void
 public typealias PLYVoidClosure = () -> Swift.Void
+public typealias PLYOfferSignatureClosure = (Purchasely.PLYOfferSignature) -> Swift.Void
 public typealias PLYErrorClosure = (any Swift.Error) -> ()
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class Purchasely : ObjectiveC.NSObject {
   @objc deinit
@@ -702,7 +723,7 @@ extension Purchasely.Purchasely {
   @objc public static var anonymousUserId: Swift.String {
     @objc get
   }
-  @objc dynamic public class func start(withAPIKey apiKey: Swift.String, appUserId: Swift.String? = nil, runningMode: Purchasely.PLYRunningMode = .full, eventDelegate: (any Purchasely.PLYEventDelegate)? = nil, uiDelegate: (any Purchasely.PLYUIDelegate)? = nil, paywallActionsInterceptor: Purchasely.PLYPaywallActionsInterceptor? = nil, storekitSettings: Purchasely.StorekitSettings = StorekitSettings.default, logLevel: Purchasely.PLYLogger.LogLevel = .error, initialized: Purchasely.PLYSuccessErrorClosure? = nil)
+  @objc dynamic public class func start(withAPIKey apiKey: Swift.String, appUserId: Swift.String? = nil, runningMode: Purchasely.PLYRunningMode = .full, paywallActionsInterceptor: Purchasely.PLYPaywallActionsInterceptor? = nil, storekitSettings: Purchasely.StorekitSettings = StorekitSettings.default, logLevel: Purchasely.PLYLogger.LogLevel = .error, initialized: Purchasely.PLYSuccessErrorClosure? = nil)
   @objc dynamic public class func setEventDelegate(_ eventDelegate: (any Purchasely.PLYEventDelegate)?)
   @objc dynamic public class func setUIDelegate(_ uiDelegate: (any Purchasely.PLYUIDelegate)?)
   @objc dynamic public class func setPaywallActionsInterceptor(_ paywallActionsInterceptor: Purchasely.PLYPaywallActionsInterceptor?)
@@ -711,7 +732,7 @@ extension Purchasely.Purchasely {
   @objc dynamic public class func userLogout()
   @objc dynamic public class func setDefaultPresentationResultHandler(_ defaultPresentationResultHandler: Purchasely.PLYProductViewControllerCompletionBlock?)
   @objc dynamic public class func setLanguage(from locale: Foundation.Locale?)
-  @objc dynamic public class func isReadyToPurchase(_ ready: Swift.Bool)
+  @objc dynamic public class func readyToOpenDeeplink(_ ready: Swift.Bool)
   @objc dynamic public class func setEnvironment(_ environment: Purchasely.PLYEnvironment)
   @objc dynamic public class func setLogLevel(_ logLevel: Purchasely.PLYLogger.LogLevel)
   @objc dynamic public class func setAppTechnology(_ technology: Purchasely.PLYAppTechnology)
@@ -740,7 +761,7 @@ extension Purchasely.Purchasely {
   @objc dynamic public class func subscriptionController(for subscription: Purchasely.PLYSubscription) -> UIKit.UIViewController?
   @objc dynamic public class func cancellationSurveyController(for product: Purchasely.PLYProduct?, selected: @escaping ((Purchasely.PLYCancellationReason) -> ())) -> UIKit.UIViewController
   @discardableResult
-  @objc dynamic public class func handle(deeplink url: Foundation.URL) -> Swift.Bool
+  @objc dynamic public class func isDeeplinkHandled(deeplink url: Foundation.URL) -> Swift.Bool
   @objc public static func purchase(plan: Purchasely.PLYPlan, contentId: Swift.String?, success: @escaping Purchasely.PLYVoidClosure, failure: @escaping Purchasely.PLYErrorClosure)
   @objc public static func purchase(plan: Purchasely.PLYPlan, success: @escaping Purchasely.PLYVoidClosure, failure: @escaping Purchasely.PLYErrorClosure)
   #if compiler(>=5.3) && $AsyncAwait
@@ -799,16 +820,6 @@ extension Purchasely.Purchasely {
   @objc dynamic public class func setAttribute(_ attribute: Purchasely.Purchasely.PLYAttribute, value: Swift.String)
   public class func setAttributes(_ attributes: [Purchasely.Purchasely.PLYAttribute : Swift.String])
   @objc dynamic public class func userDidConsumeSubscriptionContent()
-  @available(*, unavailable, message: "With Purchasely 3.0.0, 2 parameters of the `start` method changed.\n 1. A more generic approach for interacting with paywall actions named `paywallActionsInterceptor` replaced the `confirmPurchaseHandler`.\n 2. New running modes were added alongside to `observerMode` to offer you more flexibility in Purchasely's use.")
-  @objc dynamic public class func start(withAPIKey apiKey: Swift.String, appUserId: Swift.String? = nil, observerMode: Swift.Bool = false, eventDelegate: (any Purchasely.PLYEventDelegate)? = nil, uiDelegate: (any Purchasely.PLYUIDelegate)? = nil, confirmPurchaseHandler: Purchasely.PLYPurchaseConfirmationHandler? = nil, logLevel: Purchasely.PLYLogger.LogLevel = .error, initialized: Purchasely.PLYSuccessErrorClosure? = nil)
-  @available(*, unavailable, message: "With Purchasely 3.0.0 `setLoginTappedHandler(_:)` was replaced with a more generic approach for interacting with paywall actions. You should now use the `paywallActionsInterceptor` and intercept the `login` action.")
-  @objc dynamic public class func setLoginTappedHandler(_ loginTappedHandler: Purchasely.PLYLoginTappedHandler?)
-  @available(*, unavailable, message: "With Purchasely 3.0.0 `setConfirmPurchaseHandler(_:)` was replaced with a more generic approach for interacting with paywall actions. You should now use the `paywallActionsInterceptor` and intercept the `purchase` action.")
-  @objc dynamic public class func setConfirmPurchaseHandler(_ confirmPurchaseHandler: Purchasely.PLYPurchaseConfirmationHandler?)
-  @available(*, unavailable, message: "Call `userLogin(with:)` when you have the userId or `userLogout()` when the user disconnects.")
-  @objc dynamic public class func setAppUserId(_ appUserId: Swift.String?)
-  @available(*, unavailable, message: "`silentRestoreAllProducts(success:failure:)` has been renamed to `synchronize(success:failure:)`")
-  @objc public static func silentRestoreAllProducts(success: @escaping Purchasely.PLYVoidClosure, failure: @escaping Purchasely.PLYErrorClosure)
 }
 extension Purchasely.Purchasely : UserNotifications.UNUserNotificationCenterDelegate {
 }
