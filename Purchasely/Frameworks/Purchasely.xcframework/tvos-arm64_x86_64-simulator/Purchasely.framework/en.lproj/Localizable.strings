@@ -106,3 +106,6 @@
 "ply_webview_qr_or_url" = "Scan the QR Code above or visit:";
 "ply_webview_url" = "Go to the following URL with your Web browser:";
 "ply_untracked_event" = "Event not handled";
+"ply_in_app_offer_ineligible_error" = "You are not eligible for this promotional offer.";
+"ply_in_app_purchase_not_allowed_error" = "You are not allowed to purchase this product.";
+"ply_in_app_offer_invalid_error" = "Purchase with promotional offer failed.";
