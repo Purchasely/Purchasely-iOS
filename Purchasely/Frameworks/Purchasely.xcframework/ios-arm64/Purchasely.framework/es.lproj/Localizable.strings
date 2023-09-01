@@ -106,3 +106,6 @@
 "ply_webview_qr_or_url" = "Escanee el código QR anterior o visite:";
 "ply_webview_url" = "Visite la URL siguiente con su navegador web:";
 "ply_untracked_event" = "Evento no gestionado";
+"ply_in_app_offer_ineligible_error" = "You are not eligible for this promotional offer.";
+"ply_in_app_purchase_not_allowed_error" = "You are not allowed to purchase this product.";
+"ply_in_app_offer_invalid_error" = "Purchase with promotional offer failed.";

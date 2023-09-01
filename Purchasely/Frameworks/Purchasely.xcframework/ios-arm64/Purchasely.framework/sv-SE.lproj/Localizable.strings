@@ -106,3 +106,6 @@
 "ply_webview_qr_or_url" = "Skanna QR-koden ovan eller gå till:";
 "ply_webview_url" = "Gå till följande URL med din webbläsare:";
 "ply_untracked_event" = "Evenemang ej hanterat";
+"ply_in_app_offer_ineligible_error" = "You are not eligible for this promotional offer.";
+"ply_in_app_purchase_not_allowed_error" = "You are not allowed to purchase this product.";
+"ply_in_app_offer_invalid_error" = "Purchase with promotional offer failed.";

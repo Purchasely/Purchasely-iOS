@@ -838,6 +838,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 + (void)userLoginWith:(NSString * _Nonnull)appUserId;
 + (void)userLoginWith:(NSString * _Nonnull)appUserId shouldRefresh:(void (^ _Nullable)(BOOL))shouldRefresh;
 + (void)userLogout;
++ (BOOL)isAnonymous SWIFT_WARN_UNUSED_RESULT;
 /// This function sets a handler that is triggered once the purchase controller is dismissed.
 /// It provides the output of the action (cancel, purchase, restore).
 /// You can use it for your tracking or to decide if you want to display something post purchase.
@@ -2116,6 +2117,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 + (void)userLoginWith:(NSString * _Nonnull)appUserId;
 + (void)userLoginWith:(NSString * _Nonnull)appUserId shouldRefresh:(void (^ _Nullable)(BOOL))shouldRefresh;
 + (void)userLogout;
++ (BOOL)isAnonymous SWIFT_WARN_UNUSED_RESULT;
 /// This function sets a handler that is triggered once the purchase controller is dismissed.
 /// It provides the output of the action (cancel, purchase, restore).
 /// You can use it for your tracking or to decide if you want to display something post purchase.

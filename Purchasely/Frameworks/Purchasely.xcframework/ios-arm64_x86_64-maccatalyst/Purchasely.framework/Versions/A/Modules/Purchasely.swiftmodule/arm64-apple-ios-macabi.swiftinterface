@@ -709,6 +709,7 @@ extension Purchasely {
   @objc dynamic public class func userLogin(with appUserId: Swift.String)
   @objc dynamic public class func userLogin(with appUserId: Swift.String, shouldRefresh: PLYLoginCompletionHandler?)
   @objc dynamic public class func userLogout()
+  @objc dynamic public class func isAnonymous() -> Swift.Bool
   @objc dynamic public class func setDefaultPresentationResultHandler(_ defaultPresentationResultHandler: PLYProductViewControllerCompletionBlock?)
   @objc dynamic public class func setLanguage(from locale: Foundation.Locale?)
   @objc dynamic public class func isReadyToPurchase(_ ready: Swift.Bool)
