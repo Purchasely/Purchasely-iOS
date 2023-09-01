@@ -171,6 +171,13 @@ public enum PLYError : Swift.Error {
   case unverifiedTransaction(Swift.String)
   case storekit2NotAvailable
   case unknown
+  case ineligibleForOffer
+  case purchaseNotAllowed
+  case invalidQuantity
+  case invalidOfferIdentifier
+  case invalidOfferPrice
+  case invalidOfferSignature
+  case missingOfferParameters
 }
 extension PLYError : Foundation.LocalizedError {
   public var errorDescription: Swift.String? {
@@ -520,8 +527,8 @@ extension PLYPlan {
   @objc public var url: Foundation.URL?
   @objc public var title: Swift.String?
   @objc public var plan: PLYPlan?
+  @objc public var promoOffer: PLYPromoOffer?
   @objc public var presentation: Swift.String?
-  @objc public var promoOfferVendorId: Swift.String?
   @objc override dynamic public init()
   @objc deinit
 }
@@ -575,7 +582,7 @@ public typealias PLYPresentationFetchCompletionBlock = (PLYPresentation?, (any S
 }
 @_hasMissingDesignatedInitializers @objc public class PLYPromoOffer : ObjectiveC.NSObject, Swift.Decodable {
   @objc public var vendorId: Swift.String
-  @objc public var identifier: Swift.String
+  @objc public var storeOfferId: Swift.String
   required public init(from decoder: any Swift.Decoder) throws
   @objc deinit
 }
@@ -721,13 +728,14 @@ extension Purchasely {
   @objc public static var anonymousUserId: Swift.String {
     @objc get
   }
-  @objc dynamic public class func start(withAPIKey apiKey: Swift.String, appUserId: Swift.String? = nil, runningMode: PLYRunningMode = .full, paywallActionsInterceptor: PLYPaywallActionsInterceptor? = nil, storekitSettings: StorekitSettings = StorekitSettings.default, logLevel: PLYLogger.LogLevel = .error, initialized: PLYSuccessErrorClosure? = nil)
+  @objc dynamic public class func start(withAPIKey apiKey: Swift.String, appUserId: Swift.String? = nil, runningMode: PLYRunningMode = .full, paywallActionsInterceptor: PLYPaywallActionsInterceptor? = nil, storekitSettings: StorekitSettings = .storeKit2, logLevel: PLYLogger.LogLevel = .error, initialized: PLYSuccessErrorClosure? = nil)
   @objc dynamic public class func setEventDelegate(_ eventDelegate: (any PLYEventDelegate)?)
   @objc dynamic public class func setUIDelegate(_ uiDelegate: (any PLYUIDelegate)?)
   @objc dynamic public class func setPaywallActionsInterceptor(_ paywallActionsInterceptor: PLYPaywallActionsInterceptor?)
   @objc dynamic public class func userLogin(with appUserId: Swift.String)
   @objc dynamic public class func userLogin(with appUserId: Swift.String, shouldRefresh: PLYLoginCompletionHandler?)
   @objc dynamic public class func userLogout()
+  @objc dynamic public class func isAnonymous() -> Swift.Bool
   @objc dynamic public class func setDefaultPresentationResultHandler(_ defaultPresentationResultHandler: PLYProductViewControllerCompletionBlock?)
   @objc dynamic public class func setLanguage(from locale: Foundation.Locale?)
   @objc dynamic public class func readyToOpenDeeplink(_ ready: Swift.Bool)
@@ -760,8 +768,14 @@ extension Purchasely {
   @objc dynamic public class func cancellationSurveyController(for product: PLYProduct?, selected: @escaping ((PLYCancellationReason) -> ())) -> UIKit.UIViewController
   @discardableResult
   @objc dynamic public class func isDeeplinkHandled(deeplink url: Foundation.URL) -> Swift.Bool
+  @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
+  @objc dynamic public class func signPromotionalOffer(plan: PLYPlan, promoOffer: PLYPromoOffer, success: @escaping PLYOfferSignatureClosure, failure: @escaping PLYErrorClosure)
+  @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
+  @objc dynamic public class func signPromotionalOffer(storeProductId: Swift.String, storeOfferId: Swift.String, success: @escaping PLYOfferSignatureClosure, failure: @escaping PLYErrorClosure)
   @objc public static func purchase(plan: PLYPlan, contentId: Swift.String?, success: @escaping PLYVoidClosure, failure: @escaping PLYErrorClosure)
   @objc public static func purchase(plan: PLYPlan, success: @escaping PLYVoidClosure, failure: @escaping PLYErrorClosure)
+  @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
+  @objc public static func purchaseWithPromotionalOffer(plan: PLYPlan, contentId: Swift.String?, storeOfferId: Swift.String, success: @escaping PLYVoidClosure, failure: @escaping PLYErrorClosure)
   #if compiler(>=5.3) && $AsyncAwait
   @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
   public static func syncPurchase(with purchaseResult: StoreKit.Product.PurchaseResult) async throws
@@ -788,7 +802,6 @@ extension Purchasely {
   @objc public static func clearUserAttributes()
   @objc public static func clearUserAttribute(forKey key: Swift.String)
   @objc public enum PLYAttribute : Swift.Int {
-    case amplitudeSessionId
     case amplitudeUserId
     case amplitudeDeviceId
     case firebaseAppInstanceId
@@ -809,6 +822,7 @@ extension Purchasely {
     case customerioUserEmail
     case customerioUserId
     case moengageUniqueId
+    case oneSignalExternalId
     public init?(rawValue: Swift.Int)
     public typealias RawValue = Swift.Int
     public var rawValue: Swift.Int {
@@ -838,7 +852,8 @@ extension StoreKit.SKProductStorePromotionController {
 }
 @objc public class StorekitSettings : ObjectiveC.NSObject {
   @objc public init(shouldUseStorekit2IfAvailable: Swift.Bool, simulateAskToBuy: Swift.Bool = false)
-  @objc public static let `default`: StorekitSettings
+  @objc public static let storeKit1: StorekitSettings
+  @objc public static let storeKit2: StorekitSettings
   @objc deinit
 }
 extension Swift.String {

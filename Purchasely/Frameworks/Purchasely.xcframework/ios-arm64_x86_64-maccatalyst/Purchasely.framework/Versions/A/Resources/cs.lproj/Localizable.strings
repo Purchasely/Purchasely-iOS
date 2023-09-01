@@ -106,3 +106,6 @@
 "ply_webview_qr_or_url" = "Naskenujte QR kód výše nebo navštivte:";
 "ply_webview_url" = "Ve webovém prohlížeči přejděte na následující adresu URL:";
 "ply_untracked_event" = "Událost nebyla zpracována";
+"ply_in_app_offer_ineligible_error" = "You are not eligible for this promotional offer.";
+"ply_in_app_purchase_not_allowed_error" = "You are not allowed to purchase this product.";
+"ply_in_app_offer_invalid_error" = "Purchase with promotional offer failed.";
