@@ -539,11 +539,11 @@ SWIFT_CLASS("_TtC10Purchasely7PLYPlan")
 
 
 
+
 @interface PLYPlan (SWIFT_EXTENSION(Purchasely))
 - (NSString * _Nullable)priceDifferenceWithComparedTo:(PLYPlan * _Nonnull)plan SWIFT_WARN_UNUSED_RESULT;
 - (NSString * _Nullable)priceDifferenceInPercentageTo:(PLYPlan * _Nonnull)plan SWIFT_WARN_UNUSED_RESULT;
 @end
-
 
 
 @interface PLYPlan (SWIFT_EXTENSION(Purchasely))
@@ -593,6 +593,8 @@ typedef SWIFT_ENUM(NSInteger, PLYPlanType, open) {
 
 enum PLYPresentationType : NSInteger;
 @class PLYPresentationViewController;
+@class PLYPresentationPlan;
+@class PLYPresentationMetadata;
 
 SWIFT_CLASS("_TtC10Purchasely15PLYPresentation")
 @interface PLYPresentation : NSObject
@@ -604,7 +606,8 @@ SWIFT_CLASS("_TtC10Purchasely15PLYPresentation")
 @property (nonatomic, readonly, copy) NSString * _Nullable abTestVariantId;
 @property (nonatomic, readonly) enum PLYPresentationType type;
 @property (nonatomic, readonly, strong) PLYPresentationViewController * _Nullable controller;
-@property (nonatomic, readonly, copy) NSArray<NSString *> * _Nonnull plans;
+@property (nonatomic, readonly, copy) NSArray<PLYPresentationPlan *> * _Nonnull plans;
+@property (nonatomic, readonly, strong) PLYPresentationMetadata * _Nullable metadata;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -651,6 +654,21 @@ SWIFT_CLASS("_TtC10Purchasely19PLYPresentationInfo")
 @property (nonatomic, copy) NSString * _Nullable abTestId;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
+
+
+SWIFT_CLASS("_TtC10Purchasely23PLYPresentationMetadata")
+@interface PLYPresentationMetadata : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+SWIFT_CLASS("_TtC10Purchasely19PLYPresentationPlan")
+@interface PLYPresentationPlan : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
 
 typedef SWIFT_ENUM(NSInteger, PLYPresentationType, open) {
   PLYPresentationTypeNormal = 0,

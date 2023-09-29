@@ -495,7 +495,8 @@ extension Purchasely.PLYPlan {
   @objc final public let abTestVariantId: Swift.String?
   @objc final public let type: Purchasely.PLYPresentationType
   @objc final public let controller: Purchasely.PLYPresentationViewController?
-  @objc final public let plans: [Swift.String]
+  @objc final public let plans: [Purchasely.PLYPresentationPlan]
+  @objc final public let metadata: Purchasely.PLYPresentationMetadata?
   @objc deinit
 }
 @objc public enum PLYPresentationType : Swift.Int {
@@ -541,6 +542,16 @@ extension Purchasely.PLYPlan {
   @objc public var abTestVariantId: Swift.String?
   @objc public var abTestId: Swift.String?
   @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_hasMissingDesignatedInitializers public class PLYPresentationMetadata : ObjectiveC.NSObject {
+  @objc deinit
+}
+@objc public class PLYPresentationPlan : ObjectiveC.NSObject, Swift.Decodable {
+  final public let planVendorId: Swift.String?
+  final public let storeProductId: Swift.String?
+  final public let offerId: Swift.String?
+  required public init(from decoder: any Swift.Decoder) throws
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class PLYPresentationViewController : UIKit.UIViewController {
