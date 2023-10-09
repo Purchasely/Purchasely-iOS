@@ -547,6 +547,8 @@ extension Purchasely.PLYPlan {
   @objc deinit
 }
 @objc @_hasMissingDesignatedInitializers public class PLYPresentationMetadata : ObjectiveC.NSObject {
+  public func getKeys() -> [Swift.String]
+  public func getRawMetadata() -> [Swift.String : Any?]
   @objc deinit
 }
 @objc public class PLYPresentationPlan : ObjectiveC.NSObject, Swift.Decodable {
