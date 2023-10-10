@@ -546,9 +546,10 @@ extension PLYPlan {
   @objc override dynamic public init()
   @objc deinit
 }
-@objc @_hasMissingDesignatedInitializers public class PLYPresentationMetadata : ObjectiveC.NSObject {
-  public func getKeys() -> [Swift.String]
-  public func getRawMetadata() -> [Swift.String : Any?]
+@_hasMissingDesignatedInitializers @objc public class PLYPresentationMetadata : ObjectiveC.NSObject {
+  @objc public func getString(with key: Swift.String, completion: @escaping (Swift.String?) -> ())
+  @objc public func getKeys() -> [Swift.String]
+  @objc public func getRawMetadata() -> [Swift.String : Any]
   @objc deinit
 }
 @objc public class PLYPresentationPlan : ObjectiveC.NSObject, Swift.Decodable {

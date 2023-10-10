@@ -658,6 +658,9 @@ SWIFT_CLASS("_TtC10Purchasely19PLYPresentationInfo")
 
 SWIFT_CLASS("_TtC10Purchasely23PLYPresentationMetadata")
 @interface PLYPresentationMetadata : NSObject
+- (void)getStringWith:(NSString * _Nonnull)key completion:(void (^ _Nonnull)(NSString * _Nullable))completion;
+- (NSArray<NSString *> * _Nonnull)getKeys SWIFT_WARN_UNUSED_RESULT;
+- (NSDictionary<NSString *, id> * _Nonnull)getRawMetadata SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
