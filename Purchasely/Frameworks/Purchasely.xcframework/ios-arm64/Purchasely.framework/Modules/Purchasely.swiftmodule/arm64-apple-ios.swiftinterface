@@ -551,9 +551,9 @@ extension PLYPlan {
   @objc deinit
 }
 @objc public class PLYPresentationPlan : ObjectiveC.NSObject, Swift.Decodable {
-  final public let planVendorId: Swift.String?
-  final public let storeProductId: Swift.String?
-  final public let offerId: Swift.String?
+  @objc final public let planVendorId: Swift.String?
+  @objc final public let storeProductId: Swift.String?
+  @objc final public let offerId: Swift.String?
   required public init(from decoder: any Swift.Decoder) throws
   @objc deinit
 }
