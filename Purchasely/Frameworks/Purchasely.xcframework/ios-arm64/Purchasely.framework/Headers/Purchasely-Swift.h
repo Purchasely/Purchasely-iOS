@@ -668,6 +668,9 @@ SWIFT_CLASS("_TtC10Purchasely23PLYPresentationMetadata")
 
 SWIFT_CLASS("_TtC10Purchasely19PLYPresentationPlan")
 @interface PLYPresentationPlan : NSObject
+@property (nonatomic, readonly, copy) NSString * _Nullable planVendorId;
+@property (nonatomic, readonly, copy) NSString * _Nullable storeProductId;
+@property (nonatomic, readonly, copy) NSString * _Nullable offerId;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
