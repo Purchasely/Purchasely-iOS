@@ -311,6 +311,7 @@ typedef SWIFT_ENUM(NSInteger, PLYAppTechnology, open) {
   PLYAppTechnologyNative = 2,
   PLYAppTechnologyMacCatalyst = 3,
   PLYAppTechnologyReactNative = 4,
+  PLYAppTechnologyUnity = 5,
 };
 
 typedef SWIFT_ENUM(NSInteger, PLYCancellationReason, open) {
@@ -539,11 +540,11 @@ SWIFT_CLASS("_TtC10Purchasely7PLYPlan")
 
 
 
-
 @interface PLYPlan (SWIFT_EXTENSION(Purchasely))
 - (NSString * _Nullable)priceDifferenceWithComparedTo:(PLYPlan * _Nonnull)plan SWIFT_WARN_UNUSED_RESULT;
 - (NSString * _Nullable)priceDifferenceInPercentageTo:(PLYPlan * _Nonnull)plan SWIFT_WARN_UNUSED_RESULT;
 @end
+
 
 
 @interface PLYPlan (SWIFT_EXTENSION(Purchasely))
@@ -652,6 +653,10 @@ SWIFT_CLASS("_TtC10Purchasely19PLYPresentationInfo")
 @property (nonatomic, copy) NSString * _Nullable abTestVariantId;
 /// <code>abTestId</code> parameter represents current A/B test Id
 @property (nonatomic, copy) NSString * _Nullable abTestId;
+/// <code>presentationVendorId</code> parameter represents current Purchasely paywall presentation id
+@property (nonatomic, copy) NSString * _Nullable presentationVendorId;
+/// <code>placementVendorId</code> parameter represents current Purchasely placement id
+@property (nonatomic, copy) NSString * _Nullable placementVendorId;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -691,6 +696,7 @@ SWIFT_CLASS("_TtC10Purchasely29PLYPresentationViewController")
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
+
 
 
 
@@ -768,6 +774,7 @@ typedef SWIFT_ENUM(NSInteger, PLYSubscriptionOfferType, open) {
   PLYSubscriptionOfferTypeFreeTrial = 1,
   PLYSubscriptionOfferTypeIntroOffer = 2,
   PLYSubscriptionOfferTypePromoCode = 3,
+  PLYSubscriptionOfferTypePromotionalOffer = 4,
 };
 
 typedef SWIFT_ENUM(NSInteger, PLYSubscriptionSource, open) {
@@ -834,10 +841,12 @@ SWIFT_CLASS("_TtC10Purchasely10Purchasely")
 
 
 
+
+
+
 @interface Purchasely (SWIFT_EXTENSION(Purchasely))
 + (void)showController:(UIViewController * _Nonnull)controller type:(enum PLYUIControllerType)type;
 @end
-
 
 
 
@@ -911,7 +920,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 + (void)allProductsWithSuccess:(void (^ _Nonnull)(NSArray<PLYProduct *> * _Nonnull))success failure:(void (^ _Nonnull)(NSError * _Nullable))failure;
 + (void)productWith:(NSString * _Nonnull)vendorId success:(void (^ _Nonnull)(PLYProduct * _Nonnull))success failure:(void (^ _Nonnull)(NSError * _Nullable))failure;
 + (void)planWith:(NSString * _Nonnull)vendorId success:(void (^ _Nonnull)(PLYPlan * _Nonnull))success failure:(void (^ _Nonnull)(NSError * _Nullable))failure;
-+ (void)userSubscriptionsWithSuccess:(void (^ _Nonnull)(NSArray<PLYSubscription *> * _Nullable))success failure:(void (^ _Nonnull)(NSError * _Nonnull))failure;
++ (void)userSubscriptions:(BOOL)invalidateCache success:(void (^ _Nonnull)(NSArray<PLYSubscription *> * _Nullable))success failure:(void (^ _Nonnull)(NSError * _Nonnull))failure;
 /// This method returns a presentation for a specific product. If no presentationVendorId is set (or an invalid one)
 /// the product default presentation will be displayed. If none has been set it will fallback to the app default presentation.
 /// If a <code>contentId</code> is provided, this identifier will be sent to your backend for association purposes.
@@ -1322,21 +1331,28 @@ typedef SWIFT_ENUM(NSInteger, PLYAttribute, open) {
   PLYAttributeAirshipChannelId = 3,
   PLYAttributeAirshipUserId = 4,
   PLYAttributeBatchInstallationId = 5,
-  PLYAttributeAdjustId = 6,
-  PLYAttributeAppsflyerId = 7,
-  PLYAttributeOneSignalPlayerId = 8,
-  PLYAttributeMixpanelDistinctId = 9,
-  PLYAttributeClevertapId = 10,
-  PLYAttributeSendinblueUserEmail = 11,
-  PLYAttributeIterableUserEmail = 12,
-  PLYAttributeIterableUserId = 13,
-  PLYAttributeAtInternetIdClient = 14,
-  PLYAttributeMParticleUserId = 15,
-  PLYAttributeBranchUserDeveloperIdentity = 16,
-  PLYAttributeCustomerioUserEmail = 17,
-  PLYAttributeCustomerioUserId = 18,
-  PLYAttributeMoengageUniqueId = 19,
-  PLYAttributeOneSignalExternalId = 20,
+  PLYAttributeBatchCustomUserId = 6,
+  PLYAttributeAdjustId = 7,
+  PLYAttributeAppsflyerId = 8,
+  PLYAttributeOneSignalPlayerId = 9,
+  PLYAttributeMixpanelDistinctId = 10,
+  PLYAttributeClevertapId = 11,
+  PLYAttributeSendinblueUserEmail = 12,
+  PLYAttributeIterableUserEmail = 13,
+  PLYAttributeIterableUserId = 14,
+  PLYAttributeAtInternetIdClient = 15,
+  PLYAttributeMParticleUserId = 16,
+  PLYAttributeBranchUserDeveloperIdentity = 17,
+  PLYAttributeCustomerioUserEmail = 18,
+  PLYAttributeCustomerioUserId = 19,
+  PLYAttributeMoengageUniqueId = 20,
+  PLYAttributeOneSignalExternalId = 21,
+};
+
+typedef SWIFT_ENUM(NSInteger, PLYThemeMode, open) {
+  PLYThemeModeLight = 0,
+  PLYThemeModeDark = 1,
+  PLYThemeModeSystem = 2,
 };
 
 

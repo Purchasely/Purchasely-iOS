@@ -22,6 +22,7 @@
 - (void)configureWithURL:(NSURL * _Nonnull)url;
 
 @property(nonatomic, retain) NSObject<LottieBridgeProtocol>  * _Nullable bridge;
+@property(nonatomic, retain) UIView  * _Nullable lottieView;
 
 @end
 

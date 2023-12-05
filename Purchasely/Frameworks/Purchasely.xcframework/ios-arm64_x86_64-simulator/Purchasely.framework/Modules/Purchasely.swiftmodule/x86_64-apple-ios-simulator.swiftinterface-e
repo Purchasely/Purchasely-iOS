@@ -8,9 +8,11 @@ import Foundation
 @_exported import Purchasely
 import StoreKit
 import Swift
+import SwiftUI
 import UIKit
 import WebKit
 import _Concurrency
+import _StoreKit_SwiftUI
 extension Swift.Array {
   public subscript(safe index: Swift.Int) -> Element? {
     get
@@ -84,6 +86,7 @@ extension Foundation.NSNotification.Name {
   case native
   case macCatalyst
   case reactNative
+  case unity
   public init?(rawValue: Swift.Int)
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
@@ -354,8 +357,9 @@ extension Foundation.NSString {
     get
   }
 }
-public class PLYImage : Swift.Decodable {
+public class PLYImage : Swift.Decodable, Swift.Encodable {
   required public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
   @objc deinit
 }
 public enum PLYLabelHighlightsError : Swift.Error {
@@ -413,13 +417,14 @@ public func PLYLocalizedPluralString(_ key: Swift.String, pluralType: Purchasely
   required public init(from decoder: any Swift.Decoder) throws
   @objc deinit
 }
-@objc public class PLYPlan : ObjectiveC.NSObject, Swift.Decodable {
+@objc public class PLYPlan : ObjectiveC.NSObject, Swift.Decodable, Swift.Encodable {
   @objc public var vendorId: Swift.String
   @objc public var appleProductId: Swift.String?
   @objc public var type: Purchasely.PLYPlanType
   @objc public var name: Swift.String?
   @objc public var promoOffers: [Purchasely.PLYPromoOffer]
   required public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
   @objc override dynamic public func isEqual(_ object: Any?) -> Swift.Bool
   @objc deinit
 }
@@ -541,6 +546,8 @@ extension Purchasely.PLYPlan {
   @objc public var audienceId: Swift.String?
   @objc public var abTestVariantId: Swift.String?
   @objc public var abTestId: Swift.String?
+  @objc public var presentationVendorId: Swift.String?
+  @objc public var placementVendorId: Swift.String?
   @objc override dynamic public init()
   @objc deinit
 }
@@ -556,6 +563,14 @@ extension Purchasely.PLYPlan {
   @objc final public let offerId: Swift.String?
   required public init(from decoder: any Swift.Decoder) throws
   @objc deinit
+}
+@available(iOS 13.0, tvOS 13.0, macOS 12.0, watchOS 8.0, *)
+public struct PLYPresentationView : SwiftUI.UIViewControllerRepresentable {
+  public typealias UIViewControllerType = Purchasely.PLYPresentationViewController
+  @_Concurrency.MainActor(unsafe) public func makeUIViewController(context: Purchasely.PLYPresentationView.Context) -> Purchasely.PLYPresentationViewController
+  @_Concurrency.MainActor(unsafe) public func updateUIViewController(_ uiViewController: Purchasely.PLYPresentationViewController, context: Purchasely.PLYPresentationView.Context)
+  public typealias Body = Swift.Never
+  public typealias Coordinator = Swift.Void
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class PLYPresentationViewController : UIKit.UIViewController {
   @_Concurrency.MainActor(unsafe) public var isReady: Swift.Bool {
@@ -575,11 +590,18 @@ extension Purchasely.PLYPresentationViewController {
     @objc get
   }
 }
-@objc public class PLYProduct : ObjectiveC.NSObject, Swift.Decodable {
+@available(iOS 13.0, tvOS 13.0, macOS 12.0, watchOS 8.0, *)
+extension Purchasely.PLYPresentationViewController {
+  @_Concurrency.MainActor(unsafe) public var PresentationView: Purchasely.PLYPresentationView {
+    get
+  }
+}
+@objc public class PLYProduct : ObjectiveC.NSObject, Swift.Decodable, Swift.Encodable {
   @objc public var vendorId: Swift.String
   @objc public var plans: [Purchasely.PLYPlan]
   @objc public var name: Swift.String?
   required public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
   @objc deinit
 }
 public typealias PLYProductViewControllerCompletionBlock = (Purchasely.PLYProductViewControllerResult, Purchasely.PLYPlan?) -> Swift.Void
@@ -594,10 +616,11 @@ public typealias PLYPresentationFetchCompletionBlock = (Purchasely.PLYPresentati
     get
   }
 }
-@_hasMissingDesignatedInitializers @objc public class PLYPromoOffer : ObjectiveC.NSObject, Swift.Decodable {
+@_hasMissingDesignatedInitializers @objc public class PLYPromoOffer : ObjectiveC.NSObject, Swift.Decodable, Swift.Encodable {
   @objc public var vendorId: Swift.String
   @objc public var storeOfferId: Swift.String
   required public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
   @objc deinit
 }
 @objc public enum PLYRunningMode : Swift.Int, Swift.CaseIterable {
@@ -623,7 +646,7 @@ public enum PLYSubscriptionError : Swift.Error {
     get
   }
 }
-@_hasMissingDesignatedInitializers @objc public class PLYSubscription : ObjectiveC.NSObject, Swift.Decodable {
+@_hasMissingDesignatedInitializers @objc public class PLYSubscription : ObjectiveC.NSObject, Swift.Decodable, Swift.Encodable {
   @objc public var product: Purchasely.PLYProduct
   @objc public var plan: Purchasely.PLYPlan
   @objc public var subscriptionSource: Purchasely.PLYSubscriptionSource
@@ -639,6 +662,7 @@ public enum PLYSubscriptionError : Swift.Error {
   @objc public var contentId: Swift.String?
   @objc public var offerIdentifier: Swift.String?
   required public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
   @objc public func unsubscribe()
   @objc deinit
 }
@@ -665,6 +689,7 @@ public enum PLYSubscriptionOfferTypeError : Swift.Error {
   case freeTrial
   case introOffer
   case promoCode
+  case promotionalOffer
   public init?(rawValue: Swift.Int)
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
@@ -742,7 +767,7 @@ extension Purchasely.Purchasely {
   @objc public static var anonymousUserId: Swift.String {
     @objc get
   }
-  @objc dynamic public class func start(withAPIKey apiKey: Swift.String, appUserId: Swift.String? = nil, runningMode: Purchasely.PLYRunningMode = .full, paywallActionsInterceptor: Purchasely.PLYPaywallActionsInterceptor? = nil, storekitSettings: Purchasely.StorekitSettings = .storeKit2, logLevel: Purchasely.PLYLogger.LogLevel = .error, initialized: Purchasely.PLYSuccessErrorClosure? = nil)
+  @objc dynamic public class func start(withAPIKey apiKey: Swift.String, appUserId: Swift.String? = nil, runningMode: Purchasely.PLYRunningMode = .full, paywallActionsInterceptor: Purchasely.PLYPaywallActionsInterceptor? = nil, storekitSettings: Purchasely.StorekitSettings, logLevel: Purchasely.PLYLogger.LogLevel = .error, initialized: Purchasely.PLYSuccessErrorClosure? = nil)
   @objc dynamic public class func setEventDelegate(_ eventDelegate: (any Purchasely.PLYEventDelegate)?)
   @objc dynamic public class func setUIDelegate(_ uiDelegate: (any Purchasely.PLYUIDelegate)?)
   @objc dynamic public class func setPaywallActionsInterceptor(_ paywallActionsInterceptor: Purchasely.PLYPaywallActionsInterceptor?)
@@ -761,7 +786,7 @@ extension Purchasely.Purchasely {
   @objc dynamic public class func allProducts(success: @escaping ([Purchasely.PLYProduct]) -> Swift.Void, failure: @escaping ((any Swift.Error)?) -> Swift.Void)
   @objc dynamic public class func product(with vendorId: Swift.String, success: @escaping (Purchasely.PLYProduct) -> Swift.Void, failure: @escaping ((any Swift.Error)?) -> Swift.Void)
   @objc dynamic public class func plan(with vendorId: Swift.String, success: @escaping (Purchasely.PLYPlan) -> Swift.Void, failure: @escaping ((any Swift.Error)?) -> Swift.Void)
-  @objc dynamic public class func userSubscriptions(success: @escaping ([Purchasely.PLYSubscription]?) -> Swift.Void, failure: @escaping Purchasely.PLYErrorClosure)
+  @objc dynamic public class func userSubscriptions(_ invalidateCache: Swift.Bool = false, success: @escaping ([Purchasely.PLYSubscription]?) -> Swift.Void, failure: @escaping Purchasely.PLYErrorClosure)
   @objc dynamic public class func productController(for productVendorId: Swift.String, with presentationVendorId: Swift.String? = nil, contentId: Swift.String? = nil, loaded: Purchasely.PLYPaywallLoadingClosure? = nil, completion: Purchasely.PLYProductViewControllerCompletionBlock? = nil) -> Purchasely.PLYPresentationViewController?
   @objc dynamic public class func productController(for productVendorId: Swift.String, with presentationVendorId: Swift.String? = nil, loaded: Purchasely.PLYPaywallLoadingClosure? = nil, completion: Purchasely.PLYProductViewControllerCompletionBlock? = nil) -> Purchasely.PLYPresentationViewController?
   @objc dynamic public class func planController(for planVendorId: Swift.String, with presentationVendorId: Swift.String? = nil, contentId: Swift.String?, loaded: Purchasely.PLYPaywallLoadingClosure? = nil, completion: Purchasely.PLYProductViewControllerCompletionBlock? = nil) -> Purchasely.PLYPresentationViewController?
@@ -780,6 +805,23 @@ extension Purchasely.Purchasely {
   @objc dynamic public class func subscriptionsController() -> UIKit.UIViewController?
   @objc dynamic public class func subscriptionController(for subscription: Purchasely.PLYSubscription) -> UIKit.UIViewController?
   @objc dynamic public class func cancellationSurveyController(for product: Purchasely.PLYProduct?, selected: @escaping ((Purchasely.PLYCancellationReason) -> ())) -> UIKit.UIViewController
+  public class func setEventDelegate(_ callback: @escaping (Purchasely.PLYEvent, [Swift.String : Any]?) -> ())
+  @available(iOS 13.0, tvOS 13.0, macOS 12.0, watchOS 8.0, *)
+  public class func productView(for productVendorId: Swift.String, with presentationVendorId: Swift.String? = nil, contentId: Swift.String? = nil, loaded: Purchasely.PLYPaywallLoadingClosure? = nil, completion: Purchasely.PLYProductViewControllerCompletionBlock? = nil) -> Purchasely.PLYPresentationView?
+  @available(iOS 13.0, tvOS 13.0, macOS 12.0, watchOS 8.0, *)
+  public class func productView(for productVendorId: Swift.String, with presentationVendorId: Swift.String? = nil, loaded: Purchasely.PLYPaywallLoadingClosure? = nil, completion: Purchasely.PLYProductViewControllerCompletionBlock? = nil) -> Purchasely.PLYPresentationView?
+  @available(iOS 13.0, tvOS 13.0, macOS 12.0, watchOS 8.0, *)
+  public class func planView(for planVendorId: Swift.String, with presentationVendorId: Swift.String? = nil, contentId: Swift.String?, loaded: Purchasely.PLYPaywallLoadingClosure? = nil, completion: Purchasely.PLYProductViewControllerCompletionBlock? = nil) -> Purchasely.PLYPresentationView?
+  @available(iOS 13.0, tvOS 13.0, macOS 12.0, watchOS 8.0, *)
+  public class func planView(for planVendorId: Swift.String, with presentationVendorId: Swift.String? = nil, loaded: Purchasely.PLYPaywallLoadingClosure? = nil, completion: Purchasely.PLYProductViewControllerCompletionBlock? = nil) -> Purchasely.PLYPresentationView?
+  @available(iOS 13.0, tvOS 13.0, macOS 12.0, watchOS 8.0, *)
+  public class func presentationView(with presentationVendorId: Swift.String? = nil, contentId: Swift.String?, loaded: Purchasely.PLYPaywallLoadingClosure? = nil, completion: Purchasely.PLYProductViewControllerCompletionBlock? = nil) -> Purchasely.PLYPresentationView?
+  @available(iOS 13.0, tvOS 13.0, macOS 12.0, watchOS 8.0, *)
+  public class func presentationView(with presentationVendorId: Swift.String? = nil, loaded: Purchasely.PLYPaywallLoadingClosure? = nil, completion: Purchasely.PLYProductViewControllerCompletionBlock? = nil) -> Purchasely.PLYPresentationView?
+  @available(iOS 13.0, tvOS 13.0, macOS 12.0, watchOS 8.0, *)
+  public class func presentationView(for placementId: Swift.String, contentId: Swift.String?, loaded: Purchasely.PLYPaywallLoadingClosure? = nil, completion: Purchasely.PLYProductViewControllerCompletionBlock? = nil) -> Purchasely.PLYPresentationView?
+  @available(iOS 13.0, tvOS 13.0, macOS 12.0, watchOS 8.0, *)
+  public class func presentationView(for placementId: Swift.String, loaded: Purchasely.PLYPaywallLoadingClosure? = nil, completion: Purchasely.PLYProductViewControllerCompletionBlock? = nil) -> Purchasely.PLYPresentationView?
   @discardableResult
   @objc dynamic public class func isDeeplinkHandled(deeplink url: Foundation.URL) -> Swift.Bool
   @available(iOS 12.2, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
@@ -822,6 +864,7 @@ extension Purchasely.Purchasely {
     case airshipChannelId
     case airshipUserId
     case batchInstallationId
+    case batchCustomUserId
     case adjustId
     case appsflyerId
     case oneSignalPlayerId
@@ -845,6 +888,17 @@ extension Purchasely.Purchasely {
   }
   @objc dynamic public class func setAttribute(_ attribute: Purchasely.Purchasely.PLYAttribute, value: Swift.String)
   public class func setAttributes(_ attributes: [Purchasely.Purchasely.PLYAttribute : Swift.String])
+  @objc public enum PLYThemeMode : Swift.Int {
+    case light
+    case dark
+    case system
+    public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  public class func setThemeMode(_ mode: Purchasely.Purchasely.PLYThemeMode)
   @objc dynamic public class func userDidConsumeSubscriptionContent()
 }
 extension Purchasely.Purchasely : UserNotifications.UNUserNotificationCenterDelegate {
@@ -948,3 +1002,6 @@ extension Purchasely.PLYSubscriptionStatus : Swift.RawRepresentable {}
 extension Purchasely.PLYUIControllerType : Swift.Equatable {}
 extension Purchasely.PLYUIControllerType : Swift.Hashable {}
 extension Purchasely.PLYUIControllerType : Swift.RawRepresentable {}
+extension Purchasely.Purchasely.PLYThemeMode : Swift.Equatable {}
+extension Purchasely.Purchasely.PLYThemeMode : Swift.Hashable {}
+extension Purchasely.Purchasely.PLYThemeMode : Swift.RawRepresentable {}
