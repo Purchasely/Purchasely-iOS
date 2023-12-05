@@ -858,6 +858,7 @@ SWIFT_CLASS("_TtC10Purchasely10Purchasely")
 @class StorekitSettings;
 @class NSLocale;
 enum PLYAttribute : NSInteger;
+enum PLYThemeMode : NSInteger;
 
 @interface Purchasely (SWIFT_EXTENSION(Purchasely))
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull anonymousUserId;)
@@ -1324,6 +1325,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSDictionary<N
 + (void)clearUserAttributes;
 + (void)clearUserAttributeForKey:(NSString * _Nonnull)key;
 + (void)setAttribute:(enum PLYAttribute)attribute value:(NSString * _Nonnull)value;
++ (void)setThemeMode:(enum PLYThemeMode)mode;
 /// This method is used to trigger an event telling Purchasely that a content has been consumed through a subscription.
 + (void)userDidConsumeSubscriptionContent;
 @end

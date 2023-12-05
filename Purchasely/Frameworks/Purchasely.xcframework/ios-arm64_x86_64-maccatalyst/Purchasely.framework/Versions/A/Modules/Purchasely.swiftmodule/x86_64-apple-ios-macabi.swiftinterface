@@ -900,7 +900,7 @@ extension Purchasely {
       get
     }
   }
-  public class func setThemeMode(_ mode: PLYThemeMode)
+  @objc dynamic public class func setThemeMode(_ mode: PLYThemeMode)
   @objc dynamic public class func userDidConsumeSubscriptionContent()
 }
 extension Purchasely : UserNotifications.UNUserNotificationCenterDelegate {
