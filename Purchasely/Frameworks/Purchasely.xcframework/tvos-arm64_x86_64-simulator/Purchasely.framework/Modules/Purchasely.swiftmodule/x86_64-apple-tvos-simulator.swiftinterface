@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.8.1 (swiftlang-5.8.0.124.5 clang-1403.0.22.11.100)
+// swift-compiler-version: Apple Swift version 5.9 (swiftlang-5.9.0.128.108 clang-1500.0.40.1)
 // swift-module-flags: -target x86_64-apple-tvos11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name Purchasely
 import AVFoundation
 import AVKit
@@ -13,6 +13,7 @@ import TVUIKit
 import UIKit
 import _Concurrency
 import _StoreKit_SwiftUI
+import _SwiftConcurrencyShims
 extension Swift.Array {
   public subscript(safe index: Swift.Int) -> Element? {
     get
@@ -502,6 +503,7 @@ extension PLYPlan {
   @objc final public let controller: PLYPresentationViewController?
   @objc final public let plans: [PLYPresentationPlan]
   @objc final public let metadata: PLYPresentationMetadata?
+  @objc final public let backgroundColor: UIKit.UIColor?
   @objc deinit
 }
 @objc public enum PLYPresentationType : Swift.Int {
@@ -845,13 +847,10 @@ extension Purchasely {
   @objc public static func clearUserAttributes()
   @objc public static func clearUserAttribute(forKey key: Swift.String)
   @objc public enum PLYAttribute : Swift.Int {
-    case amplitudeUserId
-    case amplitudeDeviceId
     case firebaseAppInstanceId
     case airshipChannelId
     case airshipUserId
     case batchInstallationId
-    case batchCustomUserId
     case adjustId
     case appsflyerId
     case oneSignalPlayerId
@@ -862,11 +861,14 @@ extension Purchasely {
     case iterableUserId
     case atInternetIdClient
     case mParticleUserId
-    case branchUserDeveloperIdentity
-    case customerioUserEmail
     case customerioUserId
+    case customerioUserEmail
+    case branchUserDeveloperIdentity
+    case amplitudeUserId
+    case amplitudeDeviceId
     case moengageUniqueId
     case oneSignalExternalId
+    case batchCustomUserId
     public init?(rawValue: Swift.Int)
     public typealias RawValue = Swift.Int
     public var rawValue: Swift.Int {
