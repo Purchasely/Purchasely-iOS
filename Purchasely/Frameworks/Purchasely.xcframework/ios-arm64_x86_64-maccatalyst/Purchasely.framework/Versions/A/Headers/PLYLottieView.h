@@ -8,6 +8,8 @@
 #ifndef PLYLottieView_h
 #define PLYLottieView_h
 
+#import <UIKit/UIKit.h>
+
 @protocol LottieBridgeProtocol <NSObject>
 - (UIView * _Nullable) view;
 - (void)loop:(BOOL)loop;
