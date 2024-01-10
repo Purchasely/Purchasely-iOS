@@ -38,6 +38,14 @@ extension Swift.Array {
     return tag & 0x20 != 0
 }
 public func loc(_ textToTranslate: Swift.String, comment: Swift.String = "", language: Swift.String? = nil) -> Swift.String
+@available(iOS 13.0, tvOS 13.0, macOS 12.0, watchOS 8.0, *)
+public struct PLYPresentationView : SwiftUI.UIViewControllerRepresentable {
+  public typealias UIViewControllerType = Purchasely.PLYPresentationViewController
+  @_Concurrency.MainActor(unsafe) public func makeUIViewController(context: Purchasely.PLYPresentationView.Context) -> Purchasely.PLYPresentationViewController
+  @_Concurrency.MainActor(unsafe) public func updateUIViewController(_ uiViewController: Purchasely.PLYPresentationViewController, context: Purchasely.PLYPresentationView.Context)
+  public typealias Body = Swift.Never
+  public typealias Coordinator = Swift.Void
+}
 public enum LocalReceiptError : Swift.Error {
   case initializationFailed
   case receiptRefreshingInProgress
@@ -916,14 +924,6 @@ extension StoreKit.SKProductStorePromotionController {
 extension Swift.String {
   public func regexMatchGroup(_ pattern: Swift.String) -> [Swift.String]?
   public func regexMatch(_ pattern: Swift.String) -> Swift.Bool
-}
-@available(iOS 13.0, tvOS 13.0, macOS 12.0, watchOS 8.0, *)
-public struct PLYPresentationView : SwiftUI.UIViewControllerRepresentable {
-  public typealias UIViewControllerType = Purchasely.PLYPresentationViewController
-  @_Concurrency.MainActor(unsafe) public func makeUIViewController(context: Purchasely.PLYPresentationView.Context) -> Purchasely.PLYPresentationViewController
-  @_Concurrency.MainActor(unsafe) public func updateUIViewController(_ uiViewController: Purchasely.PLYPresentationViewController, context: Purchasely.PLYPresentationView.Context)
-  public typealias Body = Swift.Never
-  public typealias Coordinator = Swift.Void
 }
 extension Purchasely.Purchasely.PLYAttribute : Swift.Equatable {}
 extension Purchasely.Purchasely.PLYAttribute : Swift.Hashable {}
