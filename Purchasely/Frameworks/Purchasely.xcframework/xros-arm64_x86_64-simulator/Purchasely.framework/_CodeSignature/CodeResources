@@ -26,15 +26,15 @@
 		</data>
 		<key>Modules/Purchasely.swiftmodule/Project/arm64-apple-xros-simulator.swiftsourceinfo</key>
 		<data>
-		TQg7A4Xg3P5rHmSWxKRops6uU/Y=
+		2yGlUDhjfvEoPhfKZehF3QRZK5s=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/Project/x86_64-apple-xros-simulator.swiftsourceinfo</key>
 		<data>
-		g+GODB+gIPURD11pmHGLDrWpdPo=
+		PvlSaSAC/2NBB1ZJkX3Ddb3fjRE=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-xros-simulator.abi.json</key>
 		<data>
-		pqBQQFyRaqFoIsBWGXJ4i5thMYg=
+		sxhOqvGDY52JOxsiG91EiHkB6VQ=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-xros-simulator.private.swiftinterface</key>
 		<data>
@@ -54,7 +54,7 @@
 		</data>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-xros-simulator.abi.json</key>
 		<data>
-		pqBQQFyRaqFoIsBWGXJ4i5thMYg=
+		sxhOqvGDY52JOxsiG91EiHkB6VQ=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-xros-simulator.private.swiftinterface</key>
 		<data>
@@ -90,7 +90,7 @@
 		</data>
 		<key>PLYLoadingTableViewCell.nib</key>
 		<data>
-		BW2u98l9M0nzvUDvXyN69D6qC+k=
+		fbGh8ZShnmvLxrjoKGwwnGIBUGE=
 		</data>
 		<key>PLYNoSubscriptionTableViewCell.nib</key>
 		<data>
@@ -102,7 +102,7 @@
 		</data>
 		<key>PLYProductViewController.nib</key>
 		<data>
-		vFJ83+Me2ICMaJ3dZPOsyXyHzms=
+		LEAK32ShB+Dc9aqs3Op1wRYY/yM=
 		</data>
 		<key>PLYSubscriptionTableViewCell.nib</key>
 		<data>
@@ -344,21 +344,21 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			CQnVr/bU0dcBrcuOhpelWdruMM3QCgcR+WCSfuCf1Nw=
+			J4mTC+KikPINmsW0fnB5hFLds+//gU036r8RmME3+t0=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/Project/x86_64-apple-xros-simulator.swiftsourceinfo</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			5u5A1EjEhJ5KqGRkmgS8gMK8aMrtAwPu6rMP1xlZras=
+			LDd5RsEar6UR4PfXzoKNWriacEFGjGHItq01JtfdhOY=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-xros-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			YjOrIvm7ig8gSa1KgaK6XVG/C7GkPZxbEcRYRzPvo28=
+			7bB8tPYGFdwTxfwR9B1uQ4HMLYiP/8i3iTCyDNKyd6c=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-xros-simulator.private.swiftinterface</key>
@@ -393,7 +393,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			YjOrIvm7ig8gSa1KgaK6XVG/C7GkPZxbEcRYRzPvo28=
+			7bB8tPYGFdwTxfwR9B1uQ4HMLYiP/8i3iTCyDNKyd6c=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-xros-simulator.private.swiftinterface</key>
@@ -456,7 +456,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			uXfec5sxAd4kufe5il78aEcy14W4PpKveow+lFj018g=
+			Bb96Vnak8nMT4Zt+IYiog9q81ahGJfotyrKkYghMzms=
 			</data>
 		</dict>
 		<key>PLYNoSubscriptionTableViewCell.nib</key>
@@ -477,7 +477,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			zqKqEhzqb1YJFNygCNuAa+FU+7VOHxetEETrsY15I4c=
+			fQCmury+e5yMQ/4+m0Xz7BxzvWGLsXZukaxgyeuAOJE=
 			</data>
 		</dict>
 		<key>PLYSubscriptionTableViewCell.nib</key>
