@@ -34960,6 +34960,16 @@
       },
       {
         "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "Purchasely",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
         "name": "Foundation",
         "printedName": "Foundation",
         "declKind": "Import",
@@ -45450,92 +45460,106 @@
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/specific\/uikit\/View\/UI\/PLYComponentView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 7073,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/specific\/uikit\/View\/UI\/PLYComponentView.swift",
       "kind": "IntegerLiteral",
-      "offset": 6979,
+      "offset": 7510,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/specific\/uikit\/View\/UI\/PLYComponentView.swift",
       "kind": "IntegerLiteral",
-      "offset": 7003,
+      "offset": 7856,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/specific\/uikit\/View\/UI\/PLYComponentView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 7880,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/specific\/uikit\/View\/UI\/PLYComponentView.swift",
       "kind": "FloatLiteral",
-      "offset": 7113,
+      "offset": 7990,
       "length": 3,
       "value": "2.0"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/specific\/uikit\/View\/UI\/PLYComponentView.swift",
       "kind": "BooleanLiteral",
-      "offset": 9108,
+      "offset": 9985,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/specific\/uikit\/View\/UI\/PLYComponentView.swift",
       "kind": "BooleanLiteral",
-      "offset": 9211,
+      "offset": 10088,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/specific\/uikit\/View\/UI\/PLYComponentView.swift",
       "kind": "BooleanLiteral",
-      "offset": 9389,
+      "offset": 10266,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/specific\/uikit\/View\/UI\/PLYComponentView.swift",
       "kind": "BooleanLiteral",
-      "offset": 9465,
+      "offset": 10342,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/specific\/uikit\/View\/UI\/PLYComponentView.swift",
       "kind": "BooleanLiteral",
-      "offset": 9561,
+      "offset": 10438,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/specific\/uikit\/View\/UI\/PLYComponentView.swift",
       "kind": "BooleanLiteral",
-      "offset": 9637,
+      "offset": 10514,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/specific\/uikit\/View\/UI\/PLYComponentView.swift",
       "kind": "BooleanLiteral",
-      "offset": 10016,
+      "offset": 10893,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/specific\/uikit\/View\/UI\/PLYComponentView.swift",
       "kind": "BooleanLiteral",
-      "offset": 10096,
+      "offset": 10973,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/specific\/uikit\/View\/UI\/PLYComponentView.swift",
       "kind": "BooleanLiteral",
-      "offset": 10194,
+      "offset": 11071,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/specific\/uikit\/View\/UI\/PLYComponentView.swift",
       "kind": "BooleanLiteral",
-      "offset": 10276,
+      "offset": 11153,
       "length": 5,
       "value": "false"
     },

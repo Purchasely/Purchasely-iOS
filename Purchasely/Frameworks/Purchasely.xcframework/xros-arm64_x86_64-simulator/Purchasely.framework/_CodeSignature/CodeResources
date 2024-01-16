@@ -14,7 +14,7 @@
 		</data>
 		<key>Headers/Purchasely-Swift.h</key>
 		<data>
-		9K/HvDthiRoRREHPsTQ+nxh3Z5E=
+		/f3UuAyjBjxzYs7JF1aUT5GkUOw=
 		</data>
 		<key>Headers/Purchasely-visionOS-umbrella.h</key>
 		<data>
@@ -26,15 +26,15 @@
 		</data>
 		<key>Modules/Purchasely.swiftmodule/Project/arm64-apple-xros-simulator.swiftsourceinfo</key>
 		<data>
-		FYiOLZBcYXaSFbezlz0SPDrXQZ4=
+		csq/53dSzDyugqtDQpP21N6rtjo=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/Project/x86_64-apple-xros-simulator.swiftsourceinfo</key>
 		<data>
-		n1u+fPaRkZgDB9ygOcEShDrrNCk=
+		gtbYR9bq7tR8iPl3FlASPvQe4+0=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-xros-simulator.abi.json</key>
 		<data>
-		WafWybL3s+IPFIcPPRcsFoiIpL4=
+		Tm/HU/I0SZ3XnDGKMRUTPvixO8o=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-xros-simulator.private.swiftinterface</key>
 		<data>
@@ -50,11 +50,11 @@
 		</data>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-xros-simulator.swiftmodule</key>
 		<data>
-		BqFr/Cc/yfLD+M30otvSRVD/vMg=
+		SsfqFkKdnqcwiAFXBW+sADe6vn8=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-xros-simulator.abi.json</key>
 		<data>
-		WafWybL3s+IPFIcPPRcsFoiIpL4=
+		Tm/HU/I0SZ3XnDGKMRUTPvixO8o=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-xros-simulator.private.swiftinterface</key>
 		<data>
@@ -70,7 +70,7 @@
 		</data>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-xros-simulator.swiftmodule</key>
 		<data>
-		NX9iUSOosktKk+cAnqECYAaWVz8=
+		faRHTdzDkVlL5euGlgN/hVlOWdw=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -90,7 +90,7 @@
 		</data>
 		<key>PLYLoadingTableViewCell.nib</key>
 		<data>
-		z6aSLqrOT3m4oTrneSpMBytGQ3k=
+		aJPKSBkxCtA4HCDYeihPDbjPC6c=
 		</data>
 		<key>PLYNoSubscriptionTableViewCell.nib</key>
 		<data>
@@ -102,7 +102,7 @@
 		</data>
 		<key>PLYProductViewController.nib</key>
 		<data>
-		C/gXCoFuO8cS4mv5QXMbBHE0ktM=
+		mv5J1npGWZycgTtdVN5fl0T1IkM=
 		</data>
 		<key>PLYSubscriptionTableViewCell.nib</key>
 		<data>
@@ -330,7 +330,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			GxXaPepPqPHD9t1BE3F6Np1l0K37bWLbKEahCUina14=
+			tiReLLtGzMQepdvuGtSg3BSwdmOMPO63wqD1x62PfJo=
 			</data>
 		</dict>
 		<key>Headers/Purchasely-visionOS-umbrella.h</key>
@@ -344,21 +344,21 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			dhcFwXN8bkKEcWcr9DD4VcuSGpwAFqyqOEaBYvmJXwo=
+			12aTMokw9gjBIyRwIo5na3ld2mv/VbYIFfE3FHat86Q=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/Project/x86_64-apple-xros-simulator.swiftsourceinfo</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			XCeEP8xBMb88+0XOFYHJ07tlV+02nwZ7p0Cb9D5WHPM=
+			NLY/afZ8gkv0Jv+C9U4zRfwaBXh47/SMy0ZVY0gHxF0=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-xros-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Vx4u9GH1Tmm2Ek46igfnzVjOfLrQdc6AW6FSQJ5ib78=
+			/y3q1beRG+bM8UsuwrM/Mfo6SPS1RZnro3nPexPqRaU=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-xros-simulator.private.swiftinterface</key>
@@ -386,14 +386,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			8nK1O76DxdoSgNJXhaW4vlWJZv+GeZKJLy1aqOeqTN0=
+			yvwWmYgaBGrx8vhS+bJunfAzcLEHB2JUGL7CoKpzZRk=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-xros-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Vx4u9GH1Tmm2Ek46igfnzVjOfLrQdc6AW6FSQJ5ib78=
+			/y3q1beRG+bM8UsuwrM/Mfo6SPS1RZnro3nPexPqRaU=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-xros-simulator.private.swiftinterface</key>
@@ -421,7 +421,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			MKG28ZEen4kXQKFCfH9pQ7AQmh2PHJBkXXR9A3bFP2c=
+			QjDwkbLuFKZzKWPfwwxpFG2r1cHWc1WNTfyOolQCcVo=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -456,7 +456,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			cPkono6/kBpCl3a840ha+c9Lro4ddAhhd350vpA+Sc0=
+			xn+bCm+kq9gHn7gjVI63Ezd6InmENAVLNFBQP4Wl878=
 			</data>
 		</dict>
 		<key>PLYNoSubscriptionTableViewCell.nib</key>
@@ -477,7 +477,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			zv/bWB9jhaWeleMEmZ9DImIUMs19upn5vKmned+Fv6A=
+			2zp2/y26r9slcpx+yrZXI1mXjMQKSLjff+Q222o7xU4=
 			</data>
 		</dict>
 		<key>PLYSubscriptionTableViewCell.nib</key>

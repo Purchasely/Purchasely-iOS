@@ -865,10 +865,10 @@ SWIFT_CLASS("_TtC10Purchasely10Purchasely")
 
 
 
+
 @interface Purchasely (SWIFT_EXTENSION(Purchasely))
 + (void)showController:(UIViewController * _Nonnull)controller type:(enum PLYUIControllerType)type;
 @end
-
 
 
 
@@ -1402,6 +1402,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) StorekitSett
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
+
 
 
 
