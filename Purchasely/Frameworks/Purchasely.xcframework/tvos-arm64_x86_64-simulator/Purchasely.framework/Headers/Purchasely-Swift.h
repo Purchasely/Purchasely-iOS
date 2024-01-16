@@ -1206,7 +1206,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 ///     failure: the block called when any error occured. The error can be displayed to the user using localizedDescription
 ///   </li>
 /// </ul>
-+ (void)signPromotionalOfferWithPlan:(PLYPlan * _Nonnull)plan promoOffer:(PLYPromoOffer * _Nonnull)promoOffer success:(void (^ _Nonnull)(PLYOfferSignature * _Nonnull))success failure:(void (^ _Nonnull)(NSError * _Nonnull))failure SWIFT_AVAILABILITY(watchos,introduced=8.0) SWIFT_AVAILABILITY(tvos,introduced=15.0) SWIFT_AVAILABILITY(macos,introduced=12.0) SWIFT_AVAILABILITY(ios,introduced=12.2);
++ (void)signPromotionalOfferWithPlan:(PLYPlan * _Nonnull)plan promoOffer:(PLYPromoOffer * _Nonnull)promoOffer success:(void (^ _Nonnull)(PLYOfferSignature * _Nonnull))success failure:(void (^ _Nonnull)(NSError * _Nonnull))failure SWIFT_AVAILABILITY(visionos,introduced=1.0) SWIFT_AVAILABILITY(watchos,introduced=8.0) SWIFT_AVAILABILITY(tvos,introduced=15.0) SWIFT_AVAILABILITY(macos,introduced=12.0) SWIFT_AVAILABILITY(ios,introduced=12.2);
 /// This method performs a Promotional Offer signature with StoreKit 2
 /// <ul>
 ///   <li>
@@ -1225,7 +1225,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 ///     failure: the block called when any error occured. The error can be displayed to the user using localizedDescription
 ///   </li>
 /// </ul>
-+ (void)signPromotionalOfferWithStoreProductId:(NSString * _Nonnull)storeProductId storeOfferId:(NSString * _Nonnull)storeOfferId success:(void (^ _Nonnull)(PLYOfferSignature * _Nonnull))success failure:(void (^ _Nonnull)(NSError * _Nonnull))failure SWIFT_AVAILABILITY(watchos,introduced=8.0) SWIFT_AVAILABILITY(tvos,introduced=15.0) SWIFT_AVAILABILITY(macos,introduced=12.0) SWIFT_AVAILABILITY(ios,introduced=12.2);
++ (void)signPromotionalOfferWithStoreProductId:(NSString * _Nonnull)storeProductId storeOfferId:(NSString * _Nonnull)storeOfferId success:(void (^ _Nonnull)(PLYOfferSignature * _Nonnull))success failure:(void (^ _Nonnull)(NSError * _Nonnull))failure SWIFT_AVAILABILITY(visionos,introduced=1.0) SWIFT_AVAILABILITY(watchos,introduced=8.0) SWIFT_AVAILABILITY(tvos,introduced=15.0) SWIFT_AVAILABILITY(macos,introduced=12.0) SWIFT_AVAILABILITY(ios,introduced=12.2);
 /// This method performs a purchase on an plan of a Purchasely product
 /// <ul>
 ///   <li>
@@ -1282,7 +1282,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 ///     failure: the block called when any error occured. The error can be displayed to the user using localizedDescription
 ///   </li>
 /// </ul>
-+ (void)purchaseWithPromotionalOfferWithPlan:(PLYPlan * _Nonnull)plan contentId:(NSString * _Nullable)contentId storeOfferId:(NSString * _Nonnull)storeOfferId success:(void (^ _Nonnull)(void))success failure:(void (^ _Nonnull)(NSError * _Nonnull))failure SWIFT_AVAILABILITY(watchos,introduced=8.0) SWIFT_AVAILABILITY(tvos,introduced=15.0) SWIFT_AVAILABILITY(macos,introduced=12.0) SWIFT_AVAILABILITY(ios,introduced=12.2);
++ (void)purchaseWithPromotionalOfferWithPlan:(PLYPlan * _Nonnull)plan contentId:(NSString * _Nullable)contentId storeOfferId:(NSString * _Nonnull)storeOfferId success:(void (^ _Nonnull)(void))success failure:(void (^ _Nonnull)(NSError * _Nonnull))failure SWIFT_AVAILABILITY(visionos,introduced=1.0) SWIFT_AVAILABILITY(watchos,introduced=8.0) SWIFT_AVAILABILITY(tvos,introduced=15.0) SWIFT_AVAILABILITY(macos,introduced=12.0) SWIFT_AVAILABILITY(ios,introduced=12.2);
 /// <em>Mode: Observer, PaywallObserver</em>
 /// This method <em>must</em> be called right after a purchase is made using an SDK that is using StoreKit2, but you don’t have direct access to <em>Product.PurchaseResult</em>, in order for our back-end to synchronize this transaction for the current user.
 /// <ul>
@@ -1299,7 +1299,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 ///
 /// throws:
 ///
-+ (void)syncPurchaseFor:(NSString * _Nonnull)productId completionHandler:(void (^ _Nonnull)(NSError * _Nullable))completionHandler SWIFT_AVAILABILITY(watchos,introduced=8.0) SWIFT_AVAILABILITY(tvos,introduced=15.0) SWIFT_AVAILABILITY(macos,introduced=12.0) SWIFT_AVAILABILITY(ios,introduced=15.0);
++ (void)syncPurchaseFor:(NSString * _Nonnull)productId completionHandler:(void (^ _Nonnull)(NSError * _Nullable))completionHandler SWIFT_AVAILABILITY(visionos,introduced=1.0) SWIFT_AVAILABILITY(watchos,introduced=8.0) SWIFT_AVAILABILITY(tvos,introduced=15.0) SWIFT_AVAILABILITY(macos,introduced=12.0) SWIFT_AVAILABILITY(ios,introduced=15.0);
 /// This method is used to restore previous purchases. Some might be successful and some in error.
 /// <ul>
 ///   <li>
@@ -2633,7 +2633,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 ///     failure: the block called when any error occured. The error can be displayed to the user using localizedDescription
 ///   </li>
 /// </ul>
-+ (void)signPromotionalOfferWithPlan:(PLYPlan * _Nonnull)plan promoOffer:(PLYPromoOffer * _Nonnull)promoOffer success:(void (^ _Nonnull)(PLYOfferSignature * _Nonnull))success failure:(void (^ _Nonnull)(NSError * _Nonnull))failure SWIFT_AVAILABILITY(watchos,introduced=8.0) SWIFT_AVAILABILITY(tvos,introduced=15.0) SWIFT_AVAILABILITY(macos,introduced=12.0) SWIFT_AVAILABILITY(ios,introduced=12.2);
++ (void)signPromotionalOfferWithPlan:(PLYPlan * _Nonnull)plan promoOffer:(PLYPromoOffer * _Nonnull)promoOffer success:(void (^ _Nonnull)(PLYOfferSignature * _Nonnull))success failure:(void (^ _Nonnull)(NSError * _Nonnull))failure SWIFT_AVAILABILITY(visionos,introduced=1.0) SWIFT_AVAILABILITY(watchos,introduced=8.0) SWIFT_AVAILABILITY(tvos,introduced=15.0) SWIFT_AVAILABILITY(macos,introduced=12.0) SWIFT_AVAILABILITY(ios,introduced=12.2);
 /// This method performs a Promotional Offer signature with StoreKit 2
 /// <ul>
 ///   <li>
@@ -2652,7 +2652,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 ///     failure: the block called when any error occured. The error can be displayed to the user using localizedDescription
 ///   </li>
 /// </ul>
-+ (void)signPromotionalOfferWithStoreProductId:(NSString * _Nonnull)storeProductId storeOfferId:(NSString * _Nonnull)storeOfferId success:(void (^ _Nonnull)(PLYOfferSignature * _Nonnull))success failure:(void (^ _Nonnull)(NSError * _Nonnull))failure SWIFT_AVAILABILITY(watchos,introduced=8.0) SWIFT_AVAILABILITY(tvos,introduced=15.0) SWIFT_AVAILABILITY(macos,introduced=12.0) SWIFT_AVAILABILITY(ios,introduced=12.2);
++ (void)signPromotionalOfferWithStoreProductId:(NSString * _Nonnull)storeProductId storeOfferId:(NSString * _Nonnull)storeOfferId success:(void (^ _Nonnull)(PLYOfferSignature * _Nonnull))success failure:(void (^ _Nonnull)(NSError * _Nonnull))failure SWIFT_AVAILABILITY(visionos,introduced=1.0) SWIFT_AVAILABILITY(watchos,introduced=8.0) SWIFT_AVAILABILITY(tvos,introduced=15.0) SWIFT_AVAILABILITY(macos,introduced=12.0) SWIFT_AVAILABILITY(ios,introduced=12.2);
 /// This method performs a purchase on an plan of a Purchasely product
 /// <ul>
 ///   <li>
@@ -2709,7 +2709,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 ///     failure: the block called when any error occured. The error can be displayed to the user using localizedDescription
 ///   </li>
 /// </ul>
-+ (void)purchaseWithPromotionalOfferWithPlan:(PLYPlan * _Nonnull)plan contentId:(NSString * _Nullable)contentId storeOfferId:(NSString * _Nonnull)storeOfferId success:(void (^ _Nonnull)(void))success failure:(void (^ _Nonnull)(NSError * _Nonnull))failure SWIFT_AVAILABILITY(watchos,introduced=8.0) SWIFT_AVAILABILITY(tvos,introduced=15.0) SWIFT_AVAILABILITY(macos,introduced=12.0) SWIFT_AVAILABILITY(ios,introduced=12.2);
++ (void)purchaseWithPromotionalOfferWithPlan:(PLYPlan * _Nonnull)plan contentId:(NSString * _Nullable)contentId storeOfferId:(NSString * _Nonnull)storeOfferId success:(void (^ _Nonnull)(void))success failure:(void (^ _Nonnull)(NSError * _Nonnull))failure SWIFT_AVAILABILITY(visionos,introduced=1.0) SWIFT_AVAILABILITY(watchos,introduced=8.0) SWIFT_AVAILABILITY(tvos,introduced=15.0) SWIFT_AVAILABILITY(macos,introduced=12.0) SWIFT_AVAILABILITY(ios,introduced=12.2);
 /// <em>Mode: Observer, PaywallObserver</em>
 /// This method <em>must</em> be called right after a purchase is made using an SDK that is using StoreKit2, but you don’t have direct access to <em>Product.PurchaseResult</em>, in order for our back-end to synchronize this transaction for the current user.
 /// <ul>
@@ -2726,7 +2726,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 ///
 /// throws:
 ///
-+ (void)syncPurchaseFor:(NSString * _Nonnull)productId completionHandler:(void (^ _Nonnull)(NSError * _Nullable))completionHandler SWIFT_AVAILABILITY(watchos,introduced=8.0) SWIFT_AVAILABILITY(tvos,introduced=15.0) SWIFT_AVAILABILITY(macos,introduced=12.0) SWIFT_AVAILABILITY(ios,introduced=15.0);
++ (void)syncPurchaseFor:(NSString * _Nonnull)productId completionHandler:(void (^ _Nonnull)(NSError * _Nullable))completionHandler SWIFT_AVAILABILITY(visionos,introduced=1.0) SWIFT_AVAILABILITY(watchos,introduced=8.0) SWIFT_AVAILABILITY(tvos,introduced=15.0) SWIFT_AVAILABILITY(macos,introduced=12.0) SWIFT_AVAILABILITY(ios,introduced=15.0);
 /// This method is used to restore previous purchases. Some might be successful and some in error.
 /// <ul>
 ///   <li>

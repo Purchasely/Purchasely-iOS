@@ -38,14 +38,6 @@ extension Swift.Array {
     return tag & 0x20 != 0
 }
 public func loc(_ textToTranslate: Swift.String, comment: Swift.String = "", language: Swift.String? = nil) -> Swift.String
-@available(iOS 13.0, tvOS 13.0, macOS 12.0, watchOS 8.0, *)
-public struct PLYPresentationView : SwiftUI.UIViewControllerRepresentable {
-  public typealias UIViewControllerType = PLYPresentationViewController
-  @_Concurrency.MainActor(unsafe) public func makeUIViewController(context: PLYPresentationView.Context) -> PLYPresentationViewController
-  @_Concurrency.MainActor(unsafe) public func updateUIViewController(_ uiViewController: PLYPresentationViewController, context: PLYPresentationView.Context)
-  public typealias Body = Swift.Never
-  public typealias Coordinator = Swift.Void
-}
 public enum LocalReceiptError : Swift.Error {
   case initializationFailed
   case receiptRefreshingInProgress
@@ -574,6 +566,14 @@ extension PLYPlan {
   required public init(from decoder: any Swift.Decoder) throws
   @objc deinit
 }
+@available(iOS 13.0, tvOS 13.0, macOS 12.0, watchOS 8.0, visionOS 1.0, *)
+public struct PLYPresentationView : SwiftUI.UIViewControllerRepresentable {
+  public typealias UIViewControllerType = PLYPresentationViewController
+  @_Concurrency.MainActor(unsafe) public func makeUIViewController(context: PLYPresentationView.Context) -> PLYPresentationViewController
+  @_Concurrency.MainActor(unsafe) public func updateUIViewController(_ uiViewController: PLYPresentationViewController, context: PLYPresentationView.Context)
+  public typealias Body = Swift.Never
+  public typealias Coordinator = Swift.Void
+}
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class PLYPresentationViewController : UIKit.UIViewController {
   @_Concurrency.MainActor(unsafe) public var isReady: Swift.Bool {
     get
@@ -588,7 +588,7 @@ extension PLYPlan {
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
-@available(iOS 13.0, tvOS 13.0, macOS 12.0, watchOS 8.0, *)
+@available(iOS 13.0, tvOS 13.0, macOS 12.0, watchOS 8.0, visionOS 1.0, *)
 extension PLYPresentationViewController {
   @_Concurrency.MainActor(unsafe) public var PresentationView: PLYPresentationView {
     get
@@ -804,38 +804,38 @@ extension Purchasely {
   @objc dynamic public class func subscriptionController(for subscription: PLYSubscription) -> UIKit.UIViewController?
   @objc dynamic public class func cancellationSurveyController(for product: PLYProduct?, selected: @escaping ((PLYCancellationReason) -> ())) -> UIKit.UIViewController
   public class func setEventDelegate(_ callback: @escaping (PLYEvent, [Swift.String : Any]?) -> ())
-  @available(iOS 13.0, tvOS 13.0, macOS 12.0, watchOS 8.0, *)
+  @available(iOS 13.0, tvOS 13.0, macOS 12.0, watchOS 8.0, visionOS 1.0, *)
   public class func productView(for productVendorId: Swift.String, with presentationVendorId: Swift.String? = nil, contentId: Swift.String? = nil, loaded: PLYPaywallLoadingClosure? = nil, completion: PLYProductViewControllerCompletionBlock? = nil) -> PLYPresentationView?
-  @available(iOS 13.0, tvOS 13.0, macOS 12.0, watchOS 8.0, *)
+  @available(iOS 13.0, tvOS 13.0, macOS 12.0, watchOS 8.0, visionOS 1.0, *)
   public class func productView(for productVendorId: Swift.String, with presentationVendorId: Swift.String? = nil, loaded: PLYPaywallLoadingClosure? = nil, completion: PLYProductViewControllerCompletionBlock? = nil) -> PLYPresentationView?
-  @available(iOS 13.0, tvOS 13.0, macOS 12.0, watchOS 8.0, *)
+  @available(iOS 13.0, tvOS 13.0, macOS 12.0, watchOS 8.0, visionOS 1.0, *)
   public class func planView(for planVendorId: Swift.String, with presentationVendorId: Swift.String? = nil, contentId: Swift.String?, loaded: PLYPaywallLoadingClosure? = nil, completion: PLYProductViewControllerCompletionBlock? = nil) -> PLYPresentationView?
-  @available(iOS 13.0, tvOS 13.0, macOS 12.0, watchOS 8.0, *)
+  @available(iOS 13.0, tvOS 13.0, macOS 12.0, watchOS 8.0, visionOS 1.0, *)
   public class func planView(for planVendorId: Swift.String, with presentationVendorId: Swift.String? = nil, loaded: PLYPaywallLoadingClosure? = nil, completion: PLYProductViewControllerCompletionBlock? = nil) -> PLYPresentationView?
-  @available(iOS 13.0, tvOS 13.0, macOS 12.0, watchOS 8.0, *)
+  @available(iOS 13.0, tvOS 13.0, macOS 12.0, watchOS 8.0, visionOS 1.0, *)
   public class func presentationView(with presentationVendorId: Swift.String? = nil, contentId: Swift.String?, loaded: PLYPaywallLoadingClosure? = nil, completion: PLYProductViewControllerCompletionBlock? = nil) -> PLYPresentationView?
-  @available(iOS 13.0, tvOS 13.0, macOS 12.0, watchOS 8.0, *)
+  @available(iOS 13.0, tvOS 13.0, macOS 12.0, watchOS 8.0, visionOS 1.0, *)
   public class func presentationView(with presentationVendorId: Swift.String? = nil, loaded: PLYPaywallLoadingClosure? = nil, completion: PLYProductViewControllerCompletionBlock? = nil) -> PLYPresentationView?
-  @available(iOS 13.0, tvOS 13.0, macOS 12.0, watchOS 8.0, *)
+  @available(iOS 13.0, tvOS 13.0, macOS 12.0, watchOS 8.0, visionOS 1.0, *)
   public class func presentationView(for placementId: Swift.String, contentId: Swift.String?, loaded: PLYPaywallLoadingClosure? = nil, completion: PLYProductViewControllerCompletionBlock? = nil) -> PLYPresentationView?
-  @available(iOS 13.0, tvOS 13.0, macOS 12.0, watchOS 8.0, *)
+  @available(iOS 13.0, tvOS 13.0, macOS 12.0, watchOS 8.0, visionOS 1.0, *)
   public class func presentationView(for placementId: Swift.String, loaded: PLYPaywallLoadingClosure? = nil, completion: PLYProductViewControllerCompletionBlock? = nil) -> PLYPresentationView?
   @discardableResult
   @objc dynamic public class func isDeeplinkHandled(deeplink url: Foundation.URL) -> Swift.Bool
-  @available(iOS 12.2, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
+  @available(iOS 12.2, macOS 12.0, tvOS 15.0, watchOS 8.0, visionOS 1.0, *)
   @objc dynamic public class func signPromotionalOffer(plan: PLYPlan, promoOffer: PLYPromoOffer, success: @escaping PLYOfferSignatureClosure, failure: @escaping PLYErrorClosure)
-  @available(iOS 12.2, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
+  @available(iOS 12.2, macOS 12.0, tvOS 15.0, watchOS 8.0, visionOS 1.0, *)
   @objc dynamic public class func signPromotionalOffer(storeProductId: Swift.String, storeOfferId: Swift.String, success: @escaping PLYOfferSignatureClosure, failure: @escaping PLYErrorClosure)
   @objc public static func purchase(plan: PLYPlan, contentId: Swift.String?, success: @escaping PLYVoidClosure, failure: @escaping PLYErrorClosure)
   @objc public static func purchase(plan: PLYPlan, success: @escaping PLYVoidClosure, failure: @escaping PLYErrorClosure)
-  @available(iOS 12.2, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
+  @available(iOS 12.2, macOS 12.0, tvOS 15.0, watchOS 8.0, visionOS 1.0, *)
   @objc public static func purchaseWithPromotionalOffer(plan: PLYPlan, contentId: Swift.String?, storeOfferId: Swift.String, success: @escaping PLYVoidClosure, failure: @escaping PLYErrorClosure)
   #if compiler(>=5.3) && $AsyncAwait
-  @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
+  @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, visionOS 1.0, *)
   public static func syncPurchase(with purchaseResult: StoreKit.Product.PurchaseResult) async throws
   #endif
   #if compiler(>=5.3) && $AsyncAwait
-  @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
+  @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, visionOS 1.0, *)
   @objc public static func syncPurchase(for productId: Swift.String) async throws
   #endif
   @objc public static func restoreAllProducts(success: @escaping PLYVoidClosure, failure: @escaping PLYErrorClosure)
@@ -912,7 +912,7 @@ public struct Safe<Base> : Swift.Decodable where Base : Swift.Decodable {
   public let value: Base?
   public init(from decoder: any Swift.Decoder)
 }
-@available(macCatalyst 14.0, iOS 11.0, tvOS 11.0, *)
+@available(macCatalyst 14.0, iOS 11.0, tvOS 11.0, visionOS 1.0, *)
 @available(visionOS, unavailable)
 extension StoreKit.SKProductStorePromotionController {
   public func resetStorePromotionsVisibility(for products: [StoreKit.SKProduct], completed: (() -> Swift.Void)?)
