@@ -20,7 +20,7 @@
 
 ## 🏁 Documentation
 
-A complete documentation is available on our website [https://docs.purchasely.com](https://docs.purchasely.com/quick-start/sdk-installation/quick-start)
+A complete documentation is available on our website [https://docs.purchasely.com](https://docs.purchasely.com/quick-start-1/sdk-installation/ios-sdk)
 
 
 ## 🤕 Troubleshooting
