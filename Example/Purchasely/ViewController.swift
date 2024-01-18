@@ -22,7 +22,7 @@ class ViewController: UIViewController {
 		super.viewDidAppear(animated)
 
 		// The SDK can now pop screens over
-		Purchasely.isReadyToPurchase(true)
+		Purchasely.readyToOpenDeeplink(true)
 	}
 
 	override func didReceiveMemoryWarning() {

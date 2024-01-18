@@ -20,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 		Purchasely.start(withAPIKey: "afa96c76-1d8e-4e3c-a48f-204a3cd93a15",
 						 appUserId: "DEMO_USER",
+                         storekitSettings: .storeKit2,
 						 logLevel: .debug)
 
         return true
@@ -48,7 +49,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 	func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
-		return Purchasely.handle(deeplink: url)
+		return Purchasely.isDeeplinkHandled(deeplink: url)
 	}
 
 }
