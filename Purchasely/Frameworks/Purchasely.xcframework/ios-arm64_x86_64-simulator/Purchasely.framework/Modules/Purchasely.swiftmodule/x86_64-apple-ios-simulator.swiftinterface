@@ -747,8 +747,8 @@ public enum PLYSubscriptionSourceError : Swift.Error {
   }
 }
 @objc public protocol PLYUIDelegate {
-  @objc func display(controller: UIKit.UIViewController, type: PLYUIControllerType, from sourceController: UIKit.UIViewController?)
-  @objc func display(alert: PLYAlertMessage, error: (any Swift.Error)?)
+  @objc optional func display(controller: UIKit.UIViewController, type: PLYUIControllerType, from sourceController: UIKit.UIViewController?)
+  @objc optional func display(alert: PLYAlertMessage, error: (any Swift.Error)?)
 }
 public typealias PLYSuccessErrorClosure = (Swift.Bool, (any Swift.Error)?) -> Swift.Void
 public typealias PLYPaywallLoadingClosure = (PLYPresentationViewController?, Swift.Bool, (any Swift.Error)?) -> Swift.Void
@@ -845,9 +845,6 @@ extension Purchasely {
   #endif
   @objc public static func restoreAllProducts(success: @escaping PLYVoidClosure, failure: @escaping PLYErrorClosure)
   @objc public static func synchronize(success: @escaping PLYVoidClosure, failure: @escaping PLYErrorClosure)
-  @objc public static var userAttributesAvailable: [Swift.String : Swift.String] {
-    @objc get
-  }
   @objc public static var userAttributes: [Swift.String : Any] {
     @objc get
   }
@@ -857,6 +854,8 @@ extension Purchasely {
   @objc public static func setUserAttribute(withDoubleValue value: Swift.Double, forKey key: Swift.String)
   @objc public static func setUserAttribute(withDateValue value: Foundation.Date, forKey key: Swift.String)
   @objc public static func setUserAttribute(withBoolValue value: Swift.Bool, forKey key: Swift.String)
+  @objc public static func incrementUserAttribute(withKey key: Swift.String, value: Swift.Int = 1)
+  @objc public static func decrementUserAttribute(withKey key: Swift.String, value: Swift.Int = 1)
   @objc public static func setUserAttributes(_ attributes: [Swift.String : Any])
   @objc public static func clearUserAttributes()
   @objc public static func clearUserAttribute(forKey key: Swift.String)

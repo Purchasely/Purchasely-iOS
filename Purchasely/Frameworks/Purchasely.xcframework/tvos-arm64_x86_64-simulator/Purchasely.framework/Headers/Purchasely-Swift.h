@@ -826,6 +826,7 @@ typedef SWIFT_ENUM(NSInteger, PLYUIControllerType, open) {
 
 SWIFT_PROTOCOL("_TtP10Purchasely13PLYUIDelegate_")
 @protocol PLYUIDelegate
+@optional
 - (void)displayWithController:(UIViewController * _Nonnull)controller type:(enum PLYUIControllerType)type from:(UIViewController * _Nullable)sourceController;
 - (void)displayWithAlert:(enum PLYAlertMessage)alert error:(NSError * _Nullable)error;
 @end
@@ -1326,8 +1327,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 ///   </li>
 /// </ul>
 + (void)synchronizeWithSuccess:(void (^ _Nonnull)(void))success failure:(void (^ _Nonnull)(NSError * _Nonnull))failure;
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSDictionary<NSString *, NSString *> * _Nonnull userAttributesAvailable;)
-+ (NSDictionary<NSString *, NSString *> * _Nonnull)userAttributesAvailable SWIFT_WARN_UNUSED_RESULT;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSDictionary<NSString *, id> * _Nonnull userAttributes;)
 + (NSDictionary<NSString *, id> * _Nonnull)userAttributes SWIFT_WARN_UNUSED_RESULT;
 + (id _Nullable)getUserAttributeFor:(NSString * _Nonnull)key SWIFT_WARN_UNUSED_RESULT;
@@ -1336,6 +1335,8 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSDictionary<N
 + (void)setUserAttributeWithDoubleValue:(double)value forKey:(NSString * _Nonnull)key;
 + (void)setUserAttributeWithDateValue:(NSDate * _Nonnull)value forKey:(NSString * _Nonnull)key;
 + (void)setUserAttributeWithBoolValue:(BOOL)value forKey:(NSString * _Nonnull)key;
++ (void)incrementUserAttributeWithKey:(NSString * _Nonnull)key value:(NSInteger)value;
++ (void)decrementUserAttributeWithKey:(NSString * _Nonnull)key value:(NSInteger)value;
 + (void)setUserAttributes:(NSDictionary<NSString *, id> * _Nonnull)attributes;
 + (void)clearUserAttributes;
 + (void)clearUserAttributeForKey:(NSString * _Nonnull)key;
@@ -1398,6 +1399,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) StorekitSett
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
+
 
 
 
@@ -2253,6 +2255,7 @@ typedef SWIFT_ENUM(NSInteger, PLYUIControllerType, open) {
 
 SWIFT_PROTOCOL("_TtP10Purchasely13PLYUIDelegate_")
 @protocol PLYUIDelegate
+@optional
 - (void)displayWithController:(UIViewController * _Nonnull)controller type:(enum PLYUIControllerType)type from:(UIViewController * _Nullable)sourceController;
 - (void)displayWithAlert:(enum PLYAlertMessage)alert error:(NSError * _Nullable)error;
 @end
@@ -2753,8 +2756,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 ///   </li>
 /// </ul>
 + (void)synchronizeWithSuccess:(void (^ _Nonnull)(void))success failure:(void (^ _Nonnull)(NSError * _Nonnull))failure;
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSDictionary<NSString *, NSString *> * _Nonnull userAttributesAvailable;)
-+ (NSDictionary<NSString *, NSString *> * _Nonnull)userAttributesAvailable SWIFT_WARN_UNUSED_RESULT;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSDictionary<NSString *, id> * _Nonnull userAttributes;)
 + (NSDictionary<NSString *, id> * _Nonnull)userAttributes SWIFT_WARN_UNUSED_RESULT;
 + (id _Nullable)getUserAttributeFor:(NSString * _Nonnull)key SWIFT_WARN_UNUSED_RESULT;
@@ -2763,6 +2764,8 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSDictionary<N
 + (void)setUserAttributeWithDoubleValue:(double)value forKey:(NSString * _Nonnull)key;
 + (void)setUserAttributeWithDateValue:(NSDate * _Nonnull)value forKey:(NSString * _Nonnull)key;
 + (void)setUserAttributeWithBoolValue:(BOOL)value forKey:(NSString * _Nonnull)key;
++ (void)incrementUserAttributeWithKey:(NSString * _Nonnull)key value:(NSInteger)value;
++ (void)decrementUserAttributeWithKey:(NSString * _Nonnull)key value:(NSInteger)value;
 + (void)setUserAttributes:(NSDictionary<NSString *, id> * _Nonnull)attributes;
 + (void)clearUserAttributes;
 + (void)clearUserAttributeForKey:(NSString * _Nonnull)key;
@@ -2825,6 +2828,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) StorekitSett
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
+
 
 
 

@@ -38,14 +38,6 @@ extension Swift.Array {
     return tag & 0x20 != 0
 }
 public func loc(_ textToTranslate: Swift.String, comment: Swift.String = "", language: Swift.String? = nil) -> Swift.String
-@available(iOS 13.0, tvOS 13.0, macOS 12.0, watchOS 8.0, *)
-public struct PLYPresentationView : SwiftUI.UIViewControllerRepresentable {
-  public typealias UIViewControllerType = Purchasely.PLYPresentationViewController
-  @_Concurrency.MainActor(unsafe) public func makeUIViewController(context: Purchasely.PLYPresentationView.Context) -> Purchasely.PLYPresentationViewController
-  @_Concurrency.MainActor(unsafe) public func updateUIViewController(_ uiViewController: Purchasely.PLYPresentationViewController, context: Purchasely.PLYPresentationView.Context)
-  public typealias Body = Swift.Never
-  public typealias Coordinator = Swift.Void
-}
 public enum LocalReceiptError : Swift.Error {
   case initializationFailed
   case receiptRefreshingInProgress
@@ -574,6 +566,14 @@ extension Purchasely.PLYPlan {
   required public init(from decoder: any Swift.Decoder) throws
   @objc deinit
 }
+@available(iOS 13.0, tvOS 13.0, macOS 12.0, watchOS 8.0, *)
+public struct PLYPresentationView : SwiftUI.UIViewControllerRepresentable {
+  public typealias UIViewControllerType = Purchasely.PLYPresentationViewController
+  @_Concurrency.MainActor(unsafe) public func makeUIViewController(context: Purchasely.PLYPresentationView.Context) -> Purchasely.PLYPresentationViewController
+  @_Concurrency.MainActor(unsafe) public func updateUIViewController(_ uiViewController: Purchasely.PLYPresentationViewController, context: Purchasely.PLYPresentationView.Context)
+  public typealias Body = Swift.Never
+  public typealias Coordinator = Swift.Void
+}
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class PLYPresentationViewController : UIKit.UIViewController {
   @_Concurrency.MainActor(unsafe) public var isReady: Swift.Bool {
     get
@@ -741,8 +741,8 @@ public enum PLYSubscriptionSourceError : Swift.Error {
   }
 }
 @objc public protocol PLYUIDelegate {
-  @objc func display(controller: UIKit.UIViewController, type: Purchasely.PLYUIControllerType, from sourceController: UIKit.UIViewController?)
-  @objc func display(alert: Purchasely.PLYAlertMessage, error: (any Swift.Error)?)
+  @objc optional func display(controller: UIKit.UIViewController, type: Purchasely.PLYUIControllerType, from sourceController: UIKit.UIViewController?)
+  @objc optional func display(alert: Purchasely.PLYAlertMessage, error: (any Swift.Error)?)
 }
 public typealias PLYSuccessErrorClosure = (Swift.Bool, (any Swift.Error)?) -> Swift.Void
 public typealias PLYPaywallLoadingClosure = (Purchasely.PLYPresentationViewController?, Swift.Bool, (any Swift.Error)?) -> Swift.Void
@@ -839,9 +839,6 @@ extension Purchasely.Purchasely {
   #endif
   @objc public static func restoreAllProducts(success: @escaping Purchasely.PLYVoidClosure, failure: @escaping Purchasely.PLYErrorClosure)
   @objc public static func synchronize(success: @escaping Purchasely.PLYVoidClosure, failure: @escaping Purchasely.PLYErrorClosure)
-  @objc public static var userAttributesAvailable: [Swift.String : Swift.String] {
-    @objc get
-  }
   @objc public static var userAttributes: [Swift.String : Any] {
     @objc get
   }
@@ -851,6 +848,8 @@ extension Purchasely.Purchasely {
   @objc public static func setUserAttribute(withDoubleValue value: Swift.Double, forKey key: Swift.String)
   @objc public static func setUserAttribute(withDateValue value: Foundation.Date, forKey key: Swift.String)
   @objc public static func setUserAttribute(withBoolValue value: Swift.Bool, forKey key: Swift.String)
+  @objc public static func incrementUserAttribute(withKey key: Swift.String, value: Swift.Int = 1)
+  @objc public static func decrementUserAttribute(withKey key: Swift.String, value: Swift.Int = 1)
   @objc public static func setUserAttributes(_ attributes: [Swift.String : Any])
   @objc public static func clearUserAttributes()
   @objc public static func clearUserAttribute(forKey key: Swift.String)
