@@ -18,19 +18,19 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		o2aL2wRsed4vi66Fpf1ityZspLc=
+		lVL+fbp9Wtx1y46IN3lw/IFCvB8=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/Project/arm64-apple-tvos-simulator.swiftsourceinfo</key>
 		<data>
-		p/1L089psuK+wjBmVmy78Kk9jZg=
+		1qLDAdMesIT0z8UazeEO58UZ6M8=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/Project/x86_64-apple-tvos-simulator.swiftsourceinfo</key>
 		<data>
-		Y7SHkCutq8S5vux2iSicErXErng=
+		1hokB0nlVwBMjnZVLYB43cR++bE=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-tvos-simulator.abi.json</key>
 		<data>
-		CGL+ouxE0JPi8Qh1DjKDd/GCMeY=
+		aAtrECsTs+C8e3Kd7W6FHZ3QGAA=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-tvos-simulator.private.swiftinterface</key>
 		<data>
@@ -50,7 +50,7 @@
 		</data>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-tvos-simulator.abi.json</key>
 		<data>
-		CGL+ouxE0JPi8Qh1DjKDd/GCMeY=
+		aAtrECsTs+C8e3Kd7W6FHZ3QGAA=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-tvos-simulator.private.swiftinterface</key>
 		<data>
@@ -325,21 +325,21 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			qEnfwNDk1m4voA9HH8gykfZ9ztwJKlVli8M5kDhT95s=
+			0YK07g5ht1t9CEle0WNXXCPve8mVlAHIgqeyUWnpslM=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/Project/x86_64-apple-tvos-simulator.swiftsourceinfo</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			zpj1qKJkzS36kbmPqLJbhuy9ed5ZTTBeti+72k4AXLI=
+			NIkSQs9nDxxCaIwi2FgL+n8V2TLDprh3XE8ZRKxSew8=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-tvos-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Z3lbl+YNCwA/GXyEhiHNOxSaWjH4Ldw+hQQ3BXLBM7M=
+			PQxv82C/CaxE6gV0ZnOoJVdBRE0HNL+GISXkgtV1bAo=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-tvos-simulator.private.swiftinterface</key>
@@ -374,7 +374,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Z3lbl+YNCwA/GXyEhiHNOxSaWjH4Ldw+hQQ3BXLBM7M=
+			PQxv82C/CaxE6gV0ZnOoJVdBRE0HNL+GISXkgtV1bAo=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-tvos-simulator.private.swiftinterface</key>

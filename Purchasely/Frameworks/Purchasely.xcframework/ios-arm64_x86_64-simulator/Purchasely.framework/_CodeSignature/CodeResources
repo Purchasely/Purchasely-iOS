@@ -22,19 +22,19 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		+cfz8am54yzjACMDDDDWC2d/uoI=
+		rMVR+hCo3KI0kyVMOdQeIbh4RIs=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
-		k4Yo1Eqoi42MN+WW9T62l/nzlBM=
+		L9YA8J887JWWVaQpiBKc91gbMtI=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
-		mMvOaO99qaRpwgoLQV3NyO9CQOc=
+		44u4WVFzExiv7rXj4Nf7lfTmIvc=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		qQ+vKTkeHgnw1lHxXNucVUBDtFs=
+		B4zsI2nCoEMA/RoQhrq5l8npIjo=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -54,7 +54,7 @@
 		</data>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		qQ+vKTkeHgnw1lHxXNucVUBDtFs=
+		B4zsI2nCoEMA/RoQhrq5l8npIjo=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -344,21 +344,21 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			so9n4K9fXVgtaWac2x+bAPdgqzgTIGmO1HaV+OzCwgk=
+			b49hwoc6stJK/tgJDMLhF61jsOt1Hvg7GwOcwRtZ3qU=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			26B+uFLBq7LvUl82HxGXsu/rd1M5hOMjM34flVaCwFE=
+			RUePUm17iYqRxNK+LI2SiEWwqTOA8Oq7PTIiAdawjrA=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			0UVk3/MDVeKRpt895/Djjy63Ws2ms2pwxerp719bst8=
+			JchqWkc+K35Ke3ViYTTfkfiVi8kp4WRK16oSCtiIVn4=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
@@ -393,7 +393,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			0UVk3/MDVeKRpt895/Djjy63Ws2ms2pwxerp719bst8=
+			JchqWkc+K35Ke3ViYTTfkfiVi8kp4WRK16oSCtiIVn4=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
