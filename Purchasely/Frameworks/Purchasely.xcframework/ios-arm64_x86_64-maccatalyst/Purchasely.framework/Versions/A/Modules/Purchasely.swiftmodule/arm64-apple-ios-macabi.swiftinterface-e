@@ -56,7 +56,7 @@ extension Foundation.NSNotification.Name {
   public static let ply_purchasedSubscription: Foundation.Notification.Name
 }
 @_hasMissingDesignatedInitializers public class PlansEligibilityManager {
-  public static var shared: Purchasely.PlansEligibilityManager
+  public static let shared: Purchasely.PlansEligibilityManager
   @objc deinit
 }
 @objc public enum PLYAlertMessage : Swift.Int {
