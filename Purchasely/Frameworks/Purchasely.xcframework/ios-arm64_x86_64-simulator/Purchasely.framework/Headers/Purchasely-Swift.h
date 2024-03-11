@@ -867,10 +867,10 @@ SWIFT_CLASS("_TtC10Purchasely10Purchasely")
 
 
 
-
 @interface Purchasely (SWIFT_EXTENSION(Purchasely))
 + (void)showController:(UIViewController * _Nonnull)controller type:(enum PLYUIControllerType)type;
 @end
+
 
 
 
@@ -2301,10 +2301,10 @@ SWIFT_CLASS("_TtC10Purchasely10Purchasely")
 
 
 
-
 @interface Purchasely (SWIFT_EXTENSION(Purchasely))
 + (void)showController:(UIViewController * _Nonnull)controller type:(enum PLYUIControllerType)type;
 @end
+
 
 
 
