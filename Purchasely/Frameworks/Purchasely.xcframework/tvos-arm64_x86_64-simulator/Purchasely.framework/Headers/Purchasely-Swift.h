@@ -853,11 +853,11 @@ SWIFT_CLASS("_TtC10Purchasely10Purchasely")
 
 
 
-
 @interface Purchasely (SWIFT_EXTENSION(Purchasely)) <PLYUIDelegate>
 - (void)displayWithController:(UIViewController * _Nonnull)controller type:(enum PLYUIControllerType)type from:(UIViewController * _Nullable)sourceController;
 - (void)displayWithAlert:(enum PLYAlertMessage)alert error:(NSError * _Nullable)error;
 @end
+
 
 
 
@@ -2282,11 +2282,11 @@ SWIFT_CLASS("_TtC10Purchasely10Purchasely")
 
 
 
-
 @interface Purchasely (SWIFT_EXTENSION(Purchasely)) <PLYUIDelegate>
 - (void)displayWithController:(UIViewController * _Nonnull)controller type:(enum PLYUIControllerType)type from:(UIViewController * _Nullable)sourceController;
 - (void)displayWithAlert:(enum PLYAlertMessage)alert error:(NSError * _Nullable)error;
 @end
+
 
 
 
