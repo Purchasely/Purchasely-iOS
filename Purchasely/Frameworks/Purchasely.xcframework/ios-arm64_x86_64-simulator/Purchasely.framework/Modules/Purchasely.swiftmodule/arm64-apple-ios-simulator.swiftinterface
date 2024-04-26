@@ -771,6 +771,7 @@ extension Purchasely {
     @objc get
   }
   @objc dynamic public class func start(withAPIKey apiKey: Swift.String, appUserId: Swift.String? = nil, runningMode: PLYRunningMode = .full, paywallActionsInterceptor: PLYPaywallActionsInterceptor? = nil, storekitSettings: StorekitSettings, logLevel: PLYLogger.LogLevel = .error, initialized: PLYSuccessErrorClosure? = nil)
+  @objc dynamic public class func getSDKVersion() -> Swift.String?
   @objc dynamic public class func setEventDelegate(_ eventDelegate: (any PLYEventDelegate)?)
   @objc dynamic public class func setUIDelegate(_ uiDelegate: (any PLYUIDelegate)?)
   @objc dynamic public class func setPaywallActionsInterceptor(_ paywallActionsInterceptor: PLYPaywallActionsInterceptor?)

@@ -35,6 +35,7 @@ Purchasely handles everything from product presentation to app receipt validatio
   s.tvos.deployment_target = '11.0'
 
   s.vendored_frameworks = ['Purchasely/Frameworks/Purchasely.xcframework']
+  s.resource_bundles = {'Purchasely' => ['Purchasely/PrivacyInfo.xcprivacy']}
 
   s.ios.frameworks = 'UIKit', 'StoreKit'
   s.tvos.frameworks = 'UIKit', 'TVUIKit', 'StoreKit'
