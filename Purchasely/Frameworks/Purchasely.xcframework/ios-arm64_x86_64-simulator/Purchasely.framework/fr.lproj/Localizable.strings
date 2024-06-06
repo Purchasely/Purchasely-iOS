@@ -21,6 +21,9 @@
 "ply_modal_alert_default_error_title" = "Erreur";
 "ply_modal_alert_default_error_button" = "Ok";
 "ply_configuration_error" = "Erreur de configuration";
+"ply_google_developer_error" = "Erreur de configuration de l\'application";
+"ply_google_default_error" = "La validation du paiement a échoué, merci de ré-essayer";
+"ply_google_billing_not_available" = "Les paiements ne sont pas disponible pour votre appareil ou compte Google. Vérifier que le Play Store est à jour et que votre compte a une méthode de paiement.";
 "ply_in_app_already_subscribed_error" = "Vous êtes déjà client de notre offre numérique !";
 "ply_in_app_no_product_found_error" = "Impossible de trouver le produit.";
 "ply_in_app_absent_receipt" = "Reçu non trouvé. Restaurez vos achats et réessayez.";

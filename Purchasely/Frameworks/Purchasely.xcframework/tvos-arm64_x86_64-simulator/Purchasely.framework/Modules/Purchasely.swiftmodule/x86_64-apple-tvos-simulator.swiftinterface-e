@@ -324,6 +324,7 @@ extension Foundation.NSString {
   case storeKitVersion
   case presentationType
   case promoOffer
+  case orientation
   public var name: Swift.String {
     get
   }
@@ -358,7 +359,8 @@ extension Foundation.NSString {
     get
   }
 }
-public class PLYImage : Swift.Decodable, Swift.Encodable {
+public class PLYImage : Swift.Decodable, Swift.Encodable, Swift.Equatable {
+  public static func == (lhs: Purchasely.PLYImage, rhs: Purchasely.PLYImage) -> Swift.Bool
   required public init(from decoder: any Swift.Decoder) throws
   public func encode(to encoder: any Swift.Encoder) throws
   @objc deinit
@@ -519,6 +521,7 @@ extension Purchasely.PLYPlan {
 }
 @objc public enum PLYPresentationAction : Swift.Int {
   case close
+  case closeAll
   case login
   case navigate
   case purchase
@@ -740,6 +743,7 @@ public enum PLYSubscriptionSourceError : Swift.Error {
     get
   }
 }
+@available(*, deprecated, message: "Please migrate to PLYUIHandler.")
 @objc public protocol PLYUIDelegate {
   @objc optional func display(controller: UIKit.UIViewController, type: Purchasely.PLYUIControllerType, from sourceController: UIKit.UIViewController?)
   @objc optional func display(alert: Purchasely.PLYAlertMessage, error: (any Swift.Error)?)
@@ -767,7 +771,7 @@ extension Purchasely.Purchasely {
   @objc dynamic public class func start(withAPIKey apiKey: Swift.String, appUserId: Swift.String? = nil, runningMode: Purchasely.PLYRunningMode = .full, paywallActionsInterceptor: Purchasely.PLYPaywallActionsInterceptor? = nil, storekitSettings: Purchasely.StorekitSettings, logLevel: Purchasely.PLYLogger.LogLevel = .error, initialized: Purchasely.PLYSuccessErrorClosure? = nil)
   @objc dynamic public class func getSDKVersion() -> Swift.String?
   @objc dynamic public class func setEventDelegate(_ eventDelegate: (any Purchasely.PLYEventDelegate)?)
-  @objc dynamic public class func setUIDelegate(_ uiDelegate: (any Purchasely.PLYUIDelegate)?)
+  @objc dynamic public class func setUIHandler(_ uiHandler: (any Purchasely.PLYUIHandler)?)
   @objc dynamic public class func setPaywallActionsInterceptor(_ paywallActionsInterceptor: Purchasely.PLYPaywallActionsInterceptor?)
   @objc dynamic public class func userLogin(with appUserId: Swift.String)
   @objc dynamic public class func userLogin(with appUserId: Swift.String, shouldRefresh: Purchasely.PLYLoginCompletionHandler?)
@@ -784,6 +788,7 @@ extension Purchasely.Purchasely {
   @objc dynamic public class func allProducts(success: @escaping ([Purchasely.PLYProduct]) -> Swift.Void, failure: @escaping ((any Swift.Error)?) -> Swift.Void)
   @objc dynamic public class func product(with vendorId: Swift.String, success: @escaping (Purchasely.PLYProduct) -> Swift.Void, failure: @escaping ((any Swift.Error)?) -> Swift.Void)
   @objc dynamic public class func plan(with vendorId: Swift.String, success: @escaping (Purchasely.PLYPlan) -> Swift.Void, failure: @escaping ((any Swift.Error)?) -> Swift.Void)
+  @objc dynamic public class func userSubscriptionsHistory(_ invalidateCache: Swift.Bool = false, success: @escaping ([Purchasely.PLYSubscription]?) -> Swift.Void, failure: @escaping Purchasely.PLYErrorClosure)
   @objc dynamic public class func userSubscriptions(_ invalidateCache: Swift.Bool = false, success: @escaping ([Purchasely.PLYSubscription]?) -> Swift.Void, failure: @escaping Purchasely.PLYErrorClosure)
   @objc dynamic public class func productController(for productVendorId: Swift.String, with presentationVendorId: Swift.String? = nil, contentId: Swift.String? = nil, loaded: Purchasely.PLYPaywallLoadingClosure? = nil, completion: Purchasely.PLYProductViewControllerCompletionBlock? = nil) -> Purchasely.PLYPresentationViewController?
   @objc dynamic public class func productController(for productVendorId: Swift.String, with presentationVendorId: Swift.String? = nil, loaded: Purchasely.PLYPaywallLoadingClosure? = nil, completion: Purchasely.PLYProductViewControllerCompletionBlock? = nil) -> Purchasely.PLYPresentationViewController?
@@ -840,6 +845,8 @@ extension Purchasely.Purchasely {
   #endif
   @objc public static func restoreAllProducts(success: @escaping Purchasely.PLYVoidClosure, failure: @escaping Purchasely.PLYErrorClosure)
   @objc public static func synchronize(success: @escaping Purchasely.PLYVoidClosure, failure: @escaping Purchasely.PLYErrorClosure)
+  @objc public static func getBuiltInAttributes() -> [Swift.String : Any]
+  @objc public static func getBuiltInAttribute(with key: Swift.String) -> Any?
   @objc public static var userAttributes: [Swift.String : Any] {
     @objc get
   }
@@ -897,15 +904,17 @@ extension Purchasely.Purchasely {
   }
   @objc dynamic public class func setThemeMode(_ mode: Purchasely.Purchasely.PLYThemeMode)
   @objc dynamic public class func userDidConsumeSubscriptionContent()
+  @available(*, deprecated, message: "Please migrate to setUIHandler.")
+  @objc dynamic public class func setUIDelegate(_ uiDelegate: (any Purchasely.PLYUIDelegate)?)
 }
 extension Purchasely.Purchasely : UserNotifications.UNUserNotificationCenterDelegate {
 }
-extension Purchasely.Purchasely : Purchasely.PLYUIDelegate {
-  @objc dynamic public func display(controller: UIKit.UIViewController, type: Purchasely.PLYUIControllerType, from sourceController: UIKit.UIViewController?)
-  @objc dynamic public func display(alert: Purchasely.PLYAlertMessage, error: (any Swift.Error)?)
+@objc public protocol PLYUIHandler {
+  @objc optional func display(presentation: Purchasely.PLYPresentation, from sourceController: UIKit.UIViewController?, proceed: @escaping () -> ())
+  @objc optional func display(alert: Purchasely.PLYAlertMessage, with error: (any Swift.Error)?, proceed: @escaping () -> ())
 }
 extension Purchasely.Purchasely {
-  @objc dynamic public class func showController(_ controller: UIKit.UIViewController, type: Purchasely.PLYUIControllerType)
+  @objc dynamic public class func showController(_ controller: UIKit.UIViewController, type: Purchasely.PLYUIControllerType, from sourceViewController: UIKit.UIViewController? = nil)
 }
 public struct Safe<Base> : Swift.Decodable where Base : Swift.Decodable {
   public let value: Base?
