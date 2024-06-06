@@ -21,6 +21,9 @@
 "ply_modal_alert_default_error_title" = "Error";
 "ply_modal_alert_default_error_button" = "Aceptar";
 "ply_configuration_error" = "Configuration error";
+"ply_google_developer_error" = "Error with application configuration";
+"ply_google_default_error" = "Payment validation failed, please try again";
+"ply_google_billing_not_available" = "In-app Purchase is not available with your device or Google account. Make sure Play Store is up to date and a paiment method is configured for your account";
 "ply_in_app_already_subscribed_error" = "Ya es usted cliente de nuestros servicios en línea.";
 "ply_in_app_no_product_found_error" = "No se ha encontrado el producto.";
 "ply_in_app_absent_receipt" = "Recibo no encontrado. Inténtelo de nuevo restaurando la compra.";

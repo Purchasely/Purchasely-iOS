@@ -21,6 +21,9 @@
 "ply_modal_alert_default_error_title" = "خطأ";
 "ply_modal_alert_default_error_button" = "نعم";
 "ply_configuration_error" = "Configuration error";
+"ply_google_developer_error" = "Error with application configuration";
+"ply_google_default_error" = "Payment validation failed, please try again";
+"ply_google_billing_not_available" = "In-app Purchase is not available with your device or Google account. Make sure Play Store is up to date and a paiment method is configured for your account";
 "ply_in_app_already_subscribed_error" = "!أنت بالفعل عميل لخدماتنا عبر الإنترنت";
 "ply_in_app_no_product_found_error" = ".تعذر العثور على المنتج";
 "ply_in_app_absent_receipt" = ".الإيصال غير موجود. استعد مشترياتك للمحاولة مرة أخرى";
@@ -44,7 +47,7 @@
 "ply_in_app_parsing_error" = "تعذر معالجة استجابة الخادم";
 "ply_in_app_login_button" = ".مشترك بالفعل؟ تسجيل الدخول";
 "ply_in_app_restore_button" = "استعادة مشترياتك";
-"ply_in_app_error_pending" = "ID_48";
+"ply_in_app_error_pending" = "ID_51";
 "ply_promo_code_button" = "الرمز الترويجي؟";
 "ply_in_app_period_day_plural_rule_none" = "يوم";
 "ply_in_app_period_day_plural_rule_one" = "يوم";

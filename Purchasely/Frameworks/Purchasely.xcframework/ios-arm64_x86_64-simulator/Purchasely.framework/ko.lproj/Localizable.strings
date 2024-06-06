@@ -21,6 +21,9 @@
 "ply_modal_alert_default_error_title" = "오류";
 "ply_modal_alert_default_error_button" = "확인";
 "ply_configuration_error" = "Configuration error";
+"ply_google_developer_error" = "Error with application configuration";
+"ply_google_default_error" = "Payment validation failed, please try again";
+"ply_google_billing_not_available" = "In-app Purchase is not available with your device or Google account. Make sure Play Store is up to date and a paiment method is configured for your account";
 "ply_in_app_already_subscribed_error" = "귀하는 이미 당사 온라인 서비스의 고객이십니다!";
 "ply_in_app_no_product_found_error" = "제품을 찾을 수 없습니다.";
 "ply_in_app_absent_receipt" = "영수증을 찾을 수 없습니다 구매 내역을 복원하여 다시 시도하십시오.";

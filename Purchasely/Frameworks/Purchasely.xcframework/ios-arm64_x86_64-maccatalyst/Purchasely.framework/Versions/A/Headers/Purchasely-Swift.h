@@ -481,6 +481,7 @@ typedef SWIFT_ENUM(NSInteger, PLYEventProperty, open) {
   PLYEventPropertyStoreKitVersion = 70,
   PLYEventPropertyPresentationType = 71,
   PLYEventPropertyPromoOffer = 72,
+  PLYEventPropertyOrientation = 73,
 };
 
 typedef SWIFT_ENUM(NSInteger, PLYEventType, open) {
@@ -559,11 +560,11 @@ SWIFT_CLASS("_TtC10Purchasely7PLYPlan")
 
 
 
-
 @interface PLYPlan (SWIFT_EXTENSION(Purchasely))
 - (NSString * _Nullable)priceDifferenceWithComparedTo:(PLYPlan * _Nonnull)plan SWIFT_WARN_UNUSED_RESULT;
 - (NSString * _Nullable)priceDifferenceInPercentageTo:(PLYPlan * _Nonnull)plan SWIFT_WARN_UNUSED_RESULT;
 @end
+
 
 
 @interface PLYPlan (SWIFT_EXTENSION(Purchasely))
@@ -636,12 +637,13 @@ SWIFT_CLASS("_TtC10Purchasely15PLYPresentation")
 
 typedef SWIFT_ENUM(NSInteger, PLYPresentationAction, open) {
   PLYPresentationActionClose = 0,
-  PLYPresentationActionLogin = 1,
-  PLYPresentationActionNavigate = 2,
-  PLYPresentationActionPurchase = 3,
-  PLYPresentationActionRestore = 4,
-  PLYPresentationActionOpenPresentation = 5,
-  PLYPresentationActionPromoCode = 6,
+  PLYPresentationActionCloseAll = 1,
+  PLYPresentationActionLogin = 2,
+  PLYPresentationActionNavigate = 3,
+  PLYPresentationActionPurchase = 4,
+  PLYPresentationActionRestore = 5,
+  PLYPresentationActionOpenPresentation = 6,
+  PLYPresentationActionPromoCode = 7,
 };
 
 @class NSURL;
@@ -830,11 +832,19 @@ typedef SWIFT_ENUM(NSInteger, PLYUIControllerType, open) {
 };
 
 
-SWIFT_PROTOCOL("_TtP10Purchasely13PLYUIDelegate_")
+SWIFT_PROTOCOL("_TtP10Purchasely13PLYUIDelegate_") SWIFT_DEPRECATED_MSG("Please migrate to PLYUIHandler.")
 @protocol PLYUIDelegate
 @optional
 - (void)displayWithController:(UIViewController * _Nonnull)controller type:(enum PLYUIControllerType)type from:(UIViewController * _Nullable)sourceController;
 - (void)displayWithAlert:(enum PLYAlertMessage)alert error:(NSError * _Nullable)error;
+@end
+
+
+SWIFT_PROTOCOL("_TtP10Purchasely12PLYUIHandler_")
+@protocol PLYUIHandler
+@optional
+- (void)displayWithPresentation:(PLYPresentation * _Nonnull)presentation from:(UIViewController * _Nullable)sourceController proceed:(void (^ _Nonnull)(void))proceed;
+- (void)displayWithAlert:(enum PLYAlertMessage)alert with:(NSError * _Nullable)error proceed:(void (^ _Nonnull)(void))proceed;
 @end
 
 
@@ -859,10 +869,7 @@ SWIFT_CLASS("_TtC10Purchasely10Purchasely")
 
 
 
-@interface Purchasely (SWIFT_EXTENSION(Purchasely)) <PLYUIDelegate>
-- (void)displayWithController:(UIViewController * _Nonnull)controller type:(enum PLYUIControllerType)type from:(UIViewController * _Nullable)sourceController;
-- (void)displayWithAlert:(enum PLYAlertMessage)alert error:(NSError * _Nullable)error;
-@end
+
 
 
 
@@ -870,9 +877,8 @@ SWIFT_CLASS("_TtC10Purchasely10Purchasely")
 
 
 @interface Purchasely (SWIFT_EXTENSION(Purchasely))
-+ (void)showController:(UIViewController * _Nonnull)controller type:(enum PLYUIControllerType)type;
++ (void)showController:(UIViewController * _Nonnull)controller type:(enum PLYUIControllerType)type from:(UIViewController * _Nullable)sourceViewController;
 @end
-
 
 
 
@@ -890,7 +896,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 + (void)startWithAPIKey:(NSString * _Nonnull)apiKey appUserId:(NSString * _Nullable)appUserId runningMode:(enum PLYRunningMode)runningMode paywallActionsInterceptor:(void (^ _Nullable)(enum PLYPresentationAction, PLYPresentationActionParameters * _Nullable, PLYPresentationInfo * _Nullable, void (^ _Nonnull)(BOOL)))paywallActionsInterceptor storekitSettings:(StorekitSettings * _Nonnull)storekitSettings logLevel:(enum LogLevel)logLevel initialized:(void (^ _Nullable)(BOOL, NSError * _Nullable))initialized;
 + (NSString * _Nullable)getSDKVersion SWIFT_WARN_UNUSED_RESULT;
 + (void)setEventDelegate:(id <PLYEventDelegate> _Nullable)eventDelegate;
-+ (void)setUIDelegate:(id <PLYUIDelegate> _Nullable)uiDelegate;
++ (void)setUIHandler:(id <PLYUIHandler> _Nullable)uiHandler;
 /// This function is used to set a handler that is called when a user
 /// makes an action in a paywall to give a chance to the app to intercept it
 /// and act or let Purchasely deal with it (or both).
@@ -948,6 +954,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 + (void)allProductsWithSuccess:(void (^ _Nonnull)(NSArray<PLYProduct *> * _Nonnull))success failure:(void (^ _Nonnull)(NSError * _Nullable))failure;
 + (void)productWith:(NSString * _Nonnull)vendorId success:(void (^ _Nonnull)(PLYProduct * _Nonnull))success failure:(void (^ _Nonnull)(NSError * _Nullable))failure;
 + (void)planWith:(NSString * _Nonnull)vendorId success:(void (^ _Nonnull)(PLYPlan * _Nonnull))success failure:(void (^ _Nonnull)(NSError * _Nullable))failure;
++ (void)userSubscriptionsHistory:(BOOL)invalidateCache success:(void (^ _Nonnull)(NSArray<PLYSubscription *> * _Nullable))success failure:(void (^ _Nonnull)(NSError * _Nonnull))failure;
 + (void)userSubscriptions:(BOOL)invalidateCache success:(void (^ _Nonnull)(NSArray<PLYSubscription *> * _Nullable))success failure:(void (^ _Nonnull)(NSError * _Nonnull))failure;
 /// This method returns a presentation for a specific product. If no presentationVendorId is set (or an invalid one)
 /// the product default presentation will be displayed. If none has been set it will fallback to the app default presentation.
@@ -1107,7 +1114,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 ///   </li>
 /// </ul>
 + (void)fetchPresentationWith:(NSString * _Nullable)presentationVendorId contentId:(NSString * _Nullable)contentId fetchCompletion:(void (^ _Nullable)(PLYPresentation * _Nullable, NSError * _Nullable))fetchCompletion completion:(void (^ _Nullable)(enum PLYProductViewControllerResult, PLYPlan * _Nullable))completion;
-/// This method loads a presentation for a specific placement Id.
+/// This method loads a presentation for a specific presentation Id.
 /// <ul>
 ///   <li>
 ///     Parameters:
@@ -1334,6 +1341,8 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 ///   </li>
 /// </ul>
 + (void)synchronizeWithSuccess:(void (^ _Nonnull)(void))success failure:(void (^ _Nonnull)(NSError * _Nonnull))failure;
++ (NSDictionary<NSString *, id> * _Nonnull)getBuiltInAttributes SWIFT_WARN_UNUSED_RESULT;
++ (id _Nullable)getBuiltInAttributeWith:(NSString * _Nonnull)key SWIFT_WARN_UNUSED_RESULT;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSDictionary<NSString *, id> * _Nonnull userAttributes;)
 + (NSDictionary<NSString *, id> * _Nonnull)userAttributes SWIFT_WARN_UNUSED_RESULT;
 + (id _Nullable)getUserAttributeFor:(NSString * _Nonnull)key SWIFT_WARN_UNUSED_RESULT;
@@ -1351,6 +1360,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSDictionary<N
 + (void)setThemeMode:(enum PLYThemeMode)mode;
 /// This method is used to trigger an event telling Purchasely that a content has been consumed through a subscription.
 + (void)userDidConsumeSubscriptionContent;
++ (void)setUIDelegate:(id <PLYUIDelegate> _Nullable)uiDelegate SWIFT_DEPRECATED_MSG("Please migrate to setUIHandler.");
 @end
 
 /// WARNING: Add new attribute to the end and always check the list is in the same order than Android
@@ -1918,6 +1928,7 @@ typedef SWIFT_ENUM(NSInteger, PLYEventProperty, open) {
   PLYEventPropertyStoreKitVersion = 70,
   PLYEventPropertyPresentationType = 71,
   PLYEventPropertyPromoOffer = 72,
+  PLYEventPropertyOrientation = 73,
 };
 
 typedef SWIFT_ENUM(NSInteger, PLYEventType, open) {
@@ -1996,11 +2007,11 @@ SWIFT_CLASS("_TtC10Purchasely7PLYPlan")
 
 
 
-
 @interface PLYPlan (SWIFT_EXTENSION(Purchasely))
 - (NSString * _Nullable)priceDifferenceWithComparedTo:(PLYPlan * _Nonnull)plan SWIFT_WARN_UNUSED_RESULT;
 - (NSString * _Nullable)priceDifferenceInPercentageTo:(PLYPlan * _Nonnull)plan SWIFT_WARN_UNUSED_RESULT;
 @end
+
 
 
 @interface PLYPlan (SWIFT_EXTENSION(Purchasely))
@@ -2073,12 +2084,13 @@ SWIFT_CLASS("_TtC10Purchasely15PLYPresentation")
 
 typedef SWIFT_ENUM(NSInteger, PLYPresentationAction, open) {
   PLYPresentationActionClose = 0,
-  PLYPresentationActionLogin = 1,
-  PLYPresentationActionNavigate = 2,
-  PLYPresentationActionPurchase = 3,
-  PLYPresentationActionRestore = 4,
-  PLYPresentationActionOpenPresentation = 5,
-  PLYPresentationActionPromoCode = 6,
+  PLYPresentationActionCloseAll = 1,
+  PLYPresentationActionLogin = 2,
+  PLYPresentationActionNavigate = 3,
+  PLYPresentationActionPurchase = 4,
+  PLYPresentationActionRestore = 5,
+  PLYPresentationActionOpenPresentation = 6,
+  PLYPresentationActionPromoCode = 7,
 };
 
 @class NSURL;
@@ -2267,11 +2279,19 @@ typedef SWIFT_ENUM(NSInteger, PLYUIControllerType, open) {
 };
 
 
-SWIFT_PROTOCOL("_TtP10Purchasely13PLYUIDelegate_")
+SWIFT_PROTOCOL("_TtP10Purchasely13PLYUIDelegate_") SWIFT_DEPRECATED_MSG("Please migrate to PLYUIHandler.")
 @protocol PLYUIDelegate
 @optional
 - (void)displayWithController:(UIViewController * _Nonnull)controller type:(enum PLYUIControllerType)type from:(UIViewController * _Nullable)sourceController;
 - (void)displayWithAlert:(enum PLYAlertMessage)alert error:(NSError * _Nullable)error;
+@end
+
+
+SWIFT_PROTOCOL("_TtP10Purchasely12PLYUIHandler_")
+@protocol PLYUIHandler
+@optional
+- (void)displayWithPresentation:(PLYPresentation * _Nonnull)presentation from:(UIViewController * _Nullable)sourceController proceed:(void (^ _Nonnull)(void))proceed;
+- (void)displayWithAlert:(enum PLYAlertMessage)alert with:(NSError * _Nullable)error proceed:(void (^ _Nonnull)(void))proceed;
 @end
 
 
@@ -2296,10 +2316,7 @@ SWIFT_CLASS("_TtC10Purchasely10Purchasely")
 
 
 
-@interface Purchasely (SWIFT_EXTENSION(Purchasely)) <PLYUIDelegate>
-- (void)displayWithController:(UIViewController * _Nonnull)controller type:(enum PLYUIControllerType)type from:(UIViewController * _Nullable)sourceController;
-- (void)displayWithAlert:(enum PLYAlertMessage)alert error:(NSError * _Nullable)error;
-@end
+
 
 
 
@@ -2307,9 +2324,8 @@ SWIFT_CLASS("_TtC10Purchasely10Purchasely")
 
 
 @interface Purchasely (SWIFT_EXTENSION(Purchasely))
-+ (void)showController:(UIViewController * _Nonnull)controller type:(enum PLYUIControllerType)type;
++ (void)showController:(UIViewController * _Nonnull)controller type:(enum PLYUIControllerType)type from:(UIViewController * _Nullable)sourceViewController;
 @end
-
 
 
 
@@ -2327,7 +2343,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 + (void)startWithAPIKey:(NSString * _Nonnull)apiKey appUserId:(NSString * _Nullable)appUserId runningMode:(enum PLYRunningMode)runningMode paywallActionsInterceptor:(void (^ _Nullable)(enum PLYPresentationAction, PLYPresentationActionParameters * _Nullable, PLYPresentationInfo * _Nullable, void (^ _Nonnull)(BOOL)))paywallActionsInterceptor storekitSettings:(StorekitSettings * _Nonnull)storekitSettings logLevel:(enum LogLevel)logLevel initialized:(void (^ _Nullable)(BOOL, NSError * _Nullable))initialized;
 + (NSString * _Nullable)getSDKVersion SWIFT_WARN_UNUSED_RESULT;
 + (void)setEventDelegate:(id <PLYEventDelegate> _Nullable)eventDelegate;
-+ (void)setUIDelegate:(id <PLYUIDelegate> _Nullable)uiDelegate;
++ (void)setUIHandler:(id <PLYUIHandler> _Nullable)uiHandler;
 /// This function is used to set a handler that is called when a user
 /// makes an action in a paywall to give a chance to the app to intercept it
 /// and act or let Purchasely deal with it (or both).
@@ -2385,6 +2401,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 + (void)allProductsWithSuccess:(void (^ _Nonnull)(NSArray<PLYProduct *> * _Nonnull))success failure:(void (^ _Nonnull)(NSError * _Nullable))failure;
 + (void)productWith:(NSString * _Nonnull)vendorId success:(void (^ _Nonnull)(PLYProduct * _Nonnull))success failure:(void (^ _Nonnull)(NSError * _Nullable))failure;
 + (void)planWith:(NSString * _Nonnull)vendorId success:(void (^ _Nonnull)(PLYPlan * _Nonnull))success failure:(void (^ _Nonnull)(NSError * _Nullable))failure;
++ (void)userSubscriptionsHistory:(BOOL)invalidateCache success:(void (^ _Nonnull)(NSArray<PLYSubscription *> * _Nullable))success failure:(void (^ _Nonnull)(NSError * _Nonnull))failure;
 + (void)userSubscriptions:(BOOL)invalidateCache success:(void (^ _Nonnull)(NSArray<PLYSubscription *> * _Nullable))success failure:(void (^ _Nonnull)(NSError * _Nonnull))failure;
 /// This method returns a presentation for a specific product. If no presentationVendorId is set (or an invalid one)
 /// the product default presentation will be displayed. If none has been set it will fallback to the app default presentation.
@@ -2544,7 +2561,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 ///   </li>
 /// </ul>
 + (void)fetchPresentationWith:(NSString * _Nullable)presentationVendorId contentId:(NSString * _Nullable)contentId fetchCompletion:(void (^ _Nullable)(PLYPresentation * _Nullable, NSError * _Nullable))fetchCompletion completion:(void (^ _Nullable)(enum PLYProductViewControllerResult, PLYPlan * _Nullable))completion;
-/// This method loads a presentation for a specific placement Id.
+/// This method loads a presentation for a specific presentation Id.
 /// <ul>
 ///   <li>
 ///     Parameters:
@@ -2771,6 +2788,8 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 ///   </li>
 /// </ul>
 + (void)synchronizeWithSuccess:(void (^ _Nonnull)(void))success failure:(void (^ _Nonnull)(NSError * _Nonnull))failure;
++ (NSDictionary<NSString *, id> * _Nonnull)getBuiltInAttributes SWIFT_WARN_UNUSED_RESULT;
++ (id _Nullable)getBuiltInAttributeWith:(NSString * _Nonnull)key SWIFT_WARN_UNUSED_RESULT;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSDictionary<NSString *, id> * _Nonnull userAttributes;)
 + (NSDictionary<NSString *, id> * _Nonnull)userAttributes SWIFT_WARN_UNUSED_RESULT;
 + (id _Nullable)getUserAttributeFor:(NSString * _Nonnull)key SWIFT_WARN_UNUSED_RESULT;
@@ -2788,6 +2807,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSDictionary<N
 + (void)setThemeMode:(enum PLYThemeMode)mode;
 /// This method is used to trigger an event telling Purchasely that a content has been consumed through a subscription.
 + (void)userDidConsumeSubscriptionContent;
++ (void)setUIDelegate:(id <PLYUIDelegate> _Nullable)uiDelegate SWIFT_DEPRECATED_MSG("Please migrate to setUIHandler.");
 @end
 
 /// WARNING: Add new attribute to the end and always check the list is in the same order than Android
