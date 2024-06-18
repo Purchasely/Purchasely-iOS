@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.9.2 (swiftlang-5.9.2.2.56 clang-1500.1.0.2.5)
+// swift-compiler-version: Apple Swift version 5.10 (swiftlang-5.10.0.13 clang-1500.3.9.4)
 // swift-module-flags: -target arm64-apple-ios11.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name Purchasely
 import AVFoundation
 import AVKit
@@ -400,6 +400,7 @@ public func PLYLocalizedPluralString(_ key: Swift.String, pluralType: Purchasely
       get
     }
   }
+  @objc public class func log(message: Swift.String, level: Purchasely.PLYLogger.LogLevel = .debug)
   @objc deinit
 }
 @objc public protocol PLYLogging {
@@ -667,6 +668,10 @@ public enum PLYSubscriptionError : Swift.Error {
   @objc public var isFamilyShared: Swift.Bool
   @objc public var contentId: Swift.String?
   @objc public var offerIdentifier: Swift.String?
+  @objc public var cumulatedRevenuesInUsd: Swift.Float
+  @objc public var subscriptionDurationInDays: Swift.Int
+  @objc public var subscriptionDurationInWeeks: Swift.Int
+  @objc public var subscriptionDurationInMonths: Swift.Int
   required public init(from decoder: any Swift.Decoder) throws
   public func encode(to encoder: any Swift.Encoder) throws
   @objc public func unsubscribe()
