@@ -495,11 +495,13 @@ typedef SWIFT_ENUM(NSInteger, PLYEventType, open) {
   PLYEventTypePhoneSettings = 9,
 };
 
+enum LogLevel : NSInteger;
 
 SWIFT_CLASS("_TtC10Purchasely9PLYLogger")
 @interface PLYLogger : NSObject
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
++ (void)logWithMessage:(NSString * _Nonnull)message level:(enum LogLevel)level;
 @end
 
 typedef SWIFT_ENUM(NSInteger, LogLevel, open) {
@@ -781,6 +783,10 @@ SWIFT_CLASS("_TtC10Purchasely15PLYSubscription")
 @property (nonatomic) BOOL isFamilyShared;
 @property (nonatomic, copy) NSString * _Nullable contentId;
 @property (nonatomic, copy) NSString * _Nullable offerIdentifier;
+@property (nonatomic) float cumulatedRevenuesInUsd;
+@property (nonatomic) NSInteger subscriptionDurationInDays;
+@property (nonatomic) NSInteger subscriptionDurationInWeeks;
+@property (nonatomic) NSInteger subscriptionDurationInMonths;
 - (void)unsubscribe;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
