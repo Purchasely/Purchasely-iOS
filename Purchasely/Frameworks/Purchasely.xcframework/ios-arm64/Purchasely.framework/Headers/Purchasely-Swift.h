@@ -303,6 +303,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #if defined(__OBJC__)
 
 
+
 enum PLYEvent : NSInteger;
 
 @interface NSString (SWIFT_EXTENSION(Purchasely))
@@ -411,75 +412,78 @@ typedef SWIFT_ENUM(NSInteger, PLYEventProperty, open) {
   PLYEventPropertyEventName = 2,
   PLYEventPropertyEventCreatedAtMs = 3,
   PLYEventPropertyEventCreated = 4,
-  PLYEventPropertyDisplayedPresentation = 5,
-  PLYEventPropertyIsFallbackPresentation = 6,
-  PLYEventPropertyUserId = 7,
-  PLYEventPropertyAnonymousUserId = 8,
-  PLYEventPropertyPurchasablePlans = 9,
-  PLYEventPropertyDeeplinkIdentifier = 10,
-  PLYEventPropertySourceIdentifier = 11,
-  PLYEventPropertySelectedPlan = 12,
-  PLYEventPropertyPlan = 13,
-  PLYEventPropertyPreviousSelectedPlan = 14,
-  PLYEventPropertyLinkIdentifier = 15,
-  PLYEventPropertyCarousels = 16,
-  PLYEventPropertyDevice = 17,
-  PLYEventPropertyOsVersion = 18,
-  PLYEventPropertyType = 19,
-  PLYEventPropertyErrorMessage = 20,
-  PLYEventPropertyLanguage = 21,
-  PLYEventPropertyPlanType = 22,
-  PLYEventPropertyPurchaselyPlanId = 23,
-  PLYEventPropertyStore = 24,
-  PLYEventPropertyStoreCountry = 25,
-  PLYEventPropertyStoreProductId = 26,
-  PLYEventPropertyPriceInCustomerCurrency = 27,
-  PLYEventPropertyCustomerCurrency = 28,
-  PLYEventPropertyPeriod = 29,
-  PLYEventPropertyDuration = 30,
-  PLYEventPropertyIntroPriceInCustomerCurrency = 31,
-  PLYEventPropertyIntroPeriod = 32,
-  PLYEventPropertyIntroDuration = 33,
-  PLYEventPropertyFreePeriod = 34,
-  PLYEventPropertyFreeDuration = 35,
-  PLYEventPropertyHasFreeTrial = 36,
-  PLYEventPropertyPromotionalOfferPriceInCustomerCurrency = 37,
-  PLYEventPropertyPromotionalOfferPeriod = 38,
-  PLYEventPropertyPromotionalOfferDuration = 39,
-  PLYEventPropertyDiscountReferent = 40,
-  PLYEventPropertyDiscountPercentageComparisonToReferent = 41,
-  PLYEventPropertyDiscountPriceComparisonToReferent = 42,
-  PLYEventPropertyIsDefault = 43,
-  PLYEventPropertySelectedSlide = 44,
-  PLYEventPropertyNumberOfSlides = 45,
-  PLYEventPropertyIsCarouselAutoPlaying = 46,
-  PLYEventPropertyDefaultSlide = 47,
-  PLYEventPropertyPreviousSlide = 48,
-  PLYEventPropertySelectedProduct = 49,
-  PLYEventPropertyPlanChangeType = 50,
-  PLYEventPropertyCancellationReasonId = 51,
-  PLYEventPropertyCancellationReason = 52,
-  PLYEventPropertyRunningSubscriptions = 53,
-  PLYEventPropertyProduct = 54,
-  PLYEventPropertySelectedPresentation = 55,
-  PLYEventPropertyPreviousSelectedPresentation = 56,
-  PLYEventPropertyPlacementId = 57,
-  PLYEventPropertyAudienceId = 58,
-  PLYEventPropertyAbTestId = 59,
-  PLYEventPropertyAbTestVariantId = 60,
-  PLYEventPropertyContentId = 61,
-  PLYEventPropertySessionDuration = 62,
-  PLYEventPropertySessionCount = 63,
-  PLYEventPropertyScreenDuration = 64,
-  PLYEventPropertyScreenDisplayedAt = 65,
-  PLYEventPropertyScreenDisplayedAtMs = 66,
-  PLYEventPropertyAppInstalledAt = 67,
-  PLYEventPropertyAppInstalledAtMs = 68,
-  PLYEventPropertyPaywallrequestDurationInMs = 69,
-  PLYEventPropertyStoreKitVersion = 70,
-  PLYEventPropertyPresentationType = 71,
-  PLYEventPropertyPromoOffer = 72,
-  PLYEventPropertyOrientation = 73,
+  PLYEventPropertyEventCreatedAtMsOriginal = 5,
+  PLYEventPropertyEventCreatedOriginal = 6,
+  PLYEventPropertyDisplayedPresentation = 7,
+  PLYEventPropertyIsFallbackPresentation = 8,
+  PLYEventPropertyUserId = 9,
+  PLYEventPropertyAnonymousUserId = 10,
+  PLYEventPropertyPurchasablePlans = 11,
+  PLYEventPropertyDeeplinkIdentifier = 12,
+  PLYEventPropertySourceIdentifier = 13,
+  PLYEventPropertySelectedPlan = 14,
+  PLYEventPropertyPlan = 15,
+  PLYEventPropertyPreviousSelectedPlan = 16,
+  PLYEventPropertyLinkIdentifier = 17,
+  PLYEventPropertyCarousels = 18,
+  PLYEventPropertyDevice = 19,
+  PLYEventPropertyOsVersion = 20,
+  PLYEventPropertyType = 21,
+  PLYEventPropertyErrorMessage = 22,
+  PLYEventPropertyLanguage = 23,
+  PLYEventPropertyPlanType = 24,
+  PLYEventPropertyPurchaselyPlanId = 25,
+  PLYEventPropertyStore = 26,
+  PLYEventPropertyStoreCountry = 27,
+  PLYEventPropertyStoreProductId = 28,
+  PLYEventPropertyPriceInCustomerCurrency = 29,
+  PLYEventPropertyCustomerCurrency = 30,
+  PLYEventPropertyPeriod = 31,
+  PLYEventPropertyDuration = 32,
+  PLYEventPropertyIntroPriceInCustomerCurrency = 33,
+  PLYEventPropertyIntroPeriod = 34,
+  PLYEventPropertyIntroDuration = 35,
+  PLYEventPropertyFreePeriod = 36,
+  PLYEventPropertyFreeDuration = 37,
+  PLYEventPropertyHasFreeTrial = 38,
+  PLYEventPropertyPromotionalOfferPriceInCustomerCurrency = 39,
+  PLYEventPropertyPromotionalOfferPeriod = 40,
+  PLYEventPropertyPromotionalOfferDuration = 41,
+  PLYEventPropertyDiscountReferent = 42,
+  PLYEventPropertyDiscountPercentageComparisonToReferent = 43,
+  PLYEventPropertyDiscountPriceComparisonToReferent = 44,
+  PLYEventPropertyIsDefault = 45,
+  PLYEventPropertySelectedSlide = 46,
+  PLYEventPropertyNumberOfSlides = 47,
+  PLYEventPropertyIsCarouselAutoPlaying = 48,
+  PLYEventPropertyDefaultSlide = 49,
+  PLYEventPropertyPreviousSlide = 50,
+  PLYEventPropertySelectedProduct = 51,
+  PLYEventPropertyPlanChangeType = 52,
+  PLYEventPropertyCancellationReasonId = 53,
+  PLYEventPropertyCancellationReason = 54,
+  PLYEventPropertyRunningSubscriptions = 55,
+  PLYEventPropertyProduct = 56,
+  PLYEventPropertySelectedPresentation = 57,
+  PLYEventPropertyPreviousSelectedPresentation = 58,
+  PLYEventPropertyPlacementId = 59,
+  PLYEventPropertyAudienceId = 60,
+  PLYEventPropertyAbTestId = 61,
+  PLYEventPropertyAbTestVariantId = 62,
+  PLYEventPropertyContentId = 63,
+  PLYEventPropertySessionDuration = 64,
+  PLYEventPropertySessionCount = 65,
+  PLYEventPropertyScreenDuration = 66,
+  PLYEventPropertyScreenDisplayedAt = 67,
+  PLYEventPropertyScreenDisplayedAtMs = 68,
+  PLYEventPropertyAppInstalledAt = 69,
+  PLYEventPropertyAppInstalledAtMs = 70,
+  PLYEventPropertyPaywallrequestDurationInMs = 71,
+  PLYEventPropertyStoreKitVersion = 72,
+  PLYEventPropertyPresentationType = 73,
+  PLYEventPropertyPromoOffer = 74,
+  PLYEventPropertyOrientation = 75,
+  PLYEventPropertySessionId = 76,
 };
 
 typedef SWIFT_ENUM(NSInteger, PLYEventType, open) {
@@ -560,11 +564,11 @@ SWIFT_CLASS("_TtC10Purchasely7PLYPlan")
 
 
 
+
 @interface PLYPlan (SWIFT_EXTENSION(Purchasely))
 - (NSString * _Nullable)priceDifferenceWithComparedTo:(PLYPlan * _Nonnull)plan SWIFT_WARN_UNUSED_RESULT;
 - (NSString * _Nullable)priceDifferenceInPercentageTo:(PLYPlan * _Nonnull)plan SWIFT_WARN_UNUSED_RESULT;
 @end
-
 
 
 @interface PLYPlan (SWIFT_EXTENSION(Purchasely))
@@ -643,7 +647,8 @@ typedef SWIFT_ENUM(NSInteger, PLYPresentationAction, open) {
   PLYPresentationActionPurchase = 4,
   PLYPresentationActionRestore = 5,
   PLYPresentationActionOpenPresentation = 6,
-  PLYPresentationActionPromoCode = 7,
+  PLYPresentationActionOpenPlacement = 7,
+  PLYPresentationActionPromoCode = 8,
 };
 
 @class NSURL;
@@ -1393,6 +1398,7 @@ typedef SWIFT_ENUM(NSInteger, PLYAttribute, open) {
   PLYAttributeMoengageUniqueId = 19,
   PLYAttributeOneSignalExternalId = 20,
   PLYAttributeBatchCustomUserId = 21,
+  PLYAttributeOneSignalUserId = 22,
 };
 
 typedef SWIFT_ENUM(NSInteger, PLYThemeMode, open) {
@@ -1420,6 +1426,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) StorekitSett
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
+
 
 
 

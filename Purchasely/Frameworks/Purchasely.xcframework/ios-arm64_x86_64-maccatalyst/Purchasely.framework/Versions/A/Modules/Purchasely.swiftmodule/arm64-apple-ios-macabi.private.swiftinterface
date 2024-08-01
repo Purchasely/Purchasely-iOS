@@ -259,6 +259,8 @@ extension Foundation.NSString {
   case eventName
   case eventCreatedAtMs
   case eventCreated
+  case eventCreatedAtMsOriginal
+  case eventCreatedOriginal
   case displayedPresentation
   case isFallbackPresentation
   case userId
@@ -328,6 +330,7 @@ extension Foundation.NSString {
   case presentationType
   case promoOffer
   case orientation
+  case sessionId
   public var name: Swift.String {
     get
   }
@@ -531,6 +534,7 @@ extension PLYPlan {
   case purchase
   case restore
   case openPresentation
+  case openPlacement
   case promoCode
   public init?(rawValue: Swift.Int)
   public typealias RawValue = Swift.Int
@@ -897,6 +901,7 @@ extension Purchasely {
     case moengageUniqueId
     case oneSignalExternalId
     case batchCustomUserId
+    case oneSignalUserId
     public init?(rawValue: Swift.Int)
     public typealias RawValue = Swift.Int
     public var rawValue: Swift.Int {
