@@ -47529,28 +47529,35 @@
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/UI\/PLYTagHelper.swift",
       "kind": "Array",
-      "offset": 535,
-      "length": 485,
-      "value": "[\"INTRO_PRICE\", \"TRIAL_PRICE\", \"INTRO_AMOUNT\", \"TRIAL_AMOUNT\", \"INTRO_PERIOD\", \"TRIAL_PERIOD\", \"INTRO_DURATION\", \"TRIAL_DURATION\", \"INTRO_DAYS_DURATION\", \"TRIAL_DAYS_DURATION\", \"INTRO_WEEKS_DURATION\", \"TRIAL_WEEKS_DURATION\", \"INTRO_QUARTERS_DURATION\", \"TRIAL_QUARTERS_DURATION\", \"INTRO_MONTHS_DURATION\", \"TRIAL_MONTHS_DURATION\", \"INTRO_YEARS_DURATION\", \"TRIAL_YEARS_DURATION\", \"INTRO_PRICE_COMPARISON\", \"TRIAL_PRICE_COMPARISON\", \"INTRO_DISCOUNT_PERCENTAGE\", \"TRIAL_DISCOUNT_PERCENTAGE\"]"
+      "offset": 600,
+      "length": 603,
+      "value": "[\"INTRO_PRICE\", \"TRIAL_PRICE\", \"INTRO_AMOUNT\", \"TRIAL_AMOUNT\", \"INTRO_PERIOD\", \"TRIAL_PERIOD\", \"INTRO_DURATION\", \"TRIAL_DURATION\", \"INTRO_DAYS_DURATION\", \"TRIAL_DAYS_DURATION\", \"INTRO_WEEKS_DURATION\", \"TRIAL_WEEKS_DURATION\", \"INTRO_QUARTERS_DURATION\", \"TRIAL_QUARTERS_DURATION\", \"INTRO_MONTHS_DURATION\", \"TRIAL_MONTHS_DURATION\", \"INTRO_YEARS_DURATION\", \"TRIAL_YEARS_DURATION\", \"INTRO_PRICE_COMPARISON\", \"TRIAL_PRICE_COMPARISON\", \"INTRO_DISCOUNT_PERCENTAGE\", \"TRIAL_DISCOUNT_PERCENTAGE\", \"INTRO_DAILY_AMOUNT\", \"INTRO_WEEKLY_AMOUNT\", \"INTRO_QUARTERLY_AMOUNT\", \"INTRO_MONTHLY_AMOUNT\", \"INTRO_YEARLY_AMOUNT\"]"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/UI\/PLYTagHelper.swift",
       "kind": "Array",
-      "offset": 1072,
+      "offset": 1250,
+      "length": 369,
+      "value": "[\"OFFER_DURATION\", \"OFFER_PRICE\", \"OFFER_AMOUNT\", \"OFFER_PERIOD\", \"OFFER_DAYS_DURATION\", \"OFFER_WEEKS_DURATION\", \"OFFER_MONTHS_DURATION\", \"OFFER_QUARTERS_DURATION\", \"OFFER_YEARS_DURATION\", \"OFFER_PRICE_COMPARISON\", \"OFFER_DISCOUNT_PERCENTAGE\", \"OFFER_DAILY_AMOUNT\", \"OFFER_WEEKLY_AMOUNT\", \"OFFER_QUARTERLY_AMOUNT\", \"OFFER_MONTHLY_AMOUNT\", \"OFFER_YEARLY_AMOUNT\"]"
+    },
+    {
+      "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/UI\/PLYTagHelper.swift",
+      "kind": "Array",
+      "offset": 1671,
       "length": 88,
       "value": "[\"PRICE_COMPARISON\", \"PERCENTAGE_COMPARISON\", \"DISCOUNT_PERCENTAGE\", \"RAISE_PERCENTAGE\"]"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/UI\/PLYTagHelper.swift",
       "kind": "Array",
-      "offset": 1207,
+      "offset": 1806,
       "length": 99,
       "value": "[\"COUNTDOWN.SECONDS\", \"COUNTDOWN.MINUTES\", \"COUNTDOWN.HOURS\", \"COUNTDOWN.DAYS\", \"COUNTDOWN.MONTHS\"]"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/UI\/PLYTagHelper.swift",
       "kind": "BooleanLiteral",
-      "offset": 32795,
+      "offset": 38047,
       "length": 5,
       "value": "false"
     },
@@ -47748,7 +47755,7 @@
       "kind": "StringLiteral",
       "offset": 2555,
       "length": 7,
-      "value": "\"4.5.0\""
+      "value": "\"4.5.1\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
