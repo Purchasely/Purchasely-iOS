@@ -40179,224 +40179,224 @@
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Services\/Purchasely\/API.swift",
       "kind": "StringLiteral",
-      "offset": 10198,
+      "offset": 10114,
       "length": 6,
       "value": "\"\/app\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Services\/Purchasely\/API.swift",
       "kind": "StringLiteral",
-      "offset": 10234,
+      "offset": 10150,
       "length": 16,
       "value": "\"\/configuration\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Services\/Purchasely\/API.swift",
       "kind": "StringLiteral",
-      "offset": 10278,
+      "offset": 10194,
       "length": 21,
       "value": "\"\/appstore\/purchases\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Services\/Purchasely\/API.swift",
       "kind": "StringLiteral",
-      "offset": 10323,
+      "offset": 10239,
       "length": 29,
       "value": "\"\/appstore\/purchases\/restore\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Services\/Purchasely\/API.swift",
       "kind": "StringLiteral",
-      "offset": 10380,
+      "offset": 10296,
       "length": 33,
       "value": "\"\/appstore\/purchases\/synchronize\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Services\/Purchasely\/API.swift",
       "kind": "StringLiteral",
-      "offset": 10437,
+      "offset": 10353,
       "length": 29,
       "value": "\"\/appstore\/purchases\/observe\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Services\/Purchasely\/API.swift",
       "kind": "StringLiteral",
-      "offset": 10490,
+      "offset": 10406,
       "length": 11,
       "value": "\"\/receipts\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Services\/Purchasely\/API.swift",
       "kind": "StringLiteral",
-      "offset": 10524,
+      "offset": 10440,
       "length": 9,
       "value": "\"\/events\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Services\/Purchasely\/API.swift",
       "kind": "StringLiteral",
-      "offset": 10563,
+      "offset": 10479,
       "length": 17,
       "value": "\"\/user_purchases\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Services\/Purchasely\/API.swift",
       "kind": "StringLiteral",
-      "offset": 10614,
+      "offset": 10530,
       "length": 22,
       "value": "\"\/paab\/user_purchases\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Services\/Purchasely\/API.swift",
       "kind": "StringLiteral",
-      "offset": 10661,
+      "offset": 10577,
       "length": 18,
       "value": "\"\/users\/transfers\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Services\/Purchasely\/API.swift",
       "kind": "StringLiteral",
-      "offset": 10710,
+      "offset": 10626,
       "length": 23,
       "value": "\"\/users\/is_transferred\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Services\/Purchasely\/API.swift",
       "kind": "StringLiteral",
-      "offset": 10763,
+      "offset": 10679,
       "length": 16,
       "value": "\"\/presentations\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Services\/Purchasely\/API.swift",
       "kind": "StringLiteral",
-      "offset": 10803,
+      "offset": 10719,
       "length": 24,
       "value": "\"\/presentations_preview\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Services\/Purchasely\/API.swift",
       "kind": "StringLiteral",
-      "offset": 10855,
+      "offset": 10771,
       "length": 24,
       "value": "\"\/appstore\/promo_offers\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Services\/Purchasely\/API.swift",
       "kind": "StringLiteral",
-      "offset": 10897,
+      "offset": 10813,
       "length": 11,
       "value": "\"\/sdk_logs\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Services\/Purchasely\/API.swift",
       "kind": "StringLiteral",
-      "offset": 10198,
+      "offset": 10114,
       "length": 6,
       "value": "\"\/app\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Services\/Purchasely\/API.swift",
       "kind": "StringLiteral",
-      "offset": 10234,
+      "offset": 10150,
       "length": 16,
       "value": "\"\/configuration\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Services\/Purchasely\/API.swift",
       "kind": "StringLiteral",
-      "offset": 10278,
+      "offset": 10194,
       "length": 21,
       "value": "\"\/appstore\/purchases\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Services\/Purchasely\/API.swift",
       "kind": "StringLiteral",
-      "offset": 10323,
+      "offset": 10239,
       "length": 29,
       "value": "\"\/appstore\/purchases\/restore\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Services\/Purchasely\/API.swift",
       "kind": "StringLiteral",
-      "offset": 10380,
+      "offset": 10296,
       "length": 33,
       "value": "\"\/appstore\/purchases\/synchronize\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Services\/Purchasely\/API.swift",
       "kind": "StringLiteral",
-      "offset": 10437,
+      "offset": 10353,
       "length": 29,
       "value": "\"\/appstore\/purchases\/observe\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Services\/Purchasely\/API.swift",
       "kind": "StringLiteral",
-      "offset": 10490,
+      "offset": 10406,
       "length": 11,
       "value": "\"\/receipts\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Services\/Purchasely\/API.swift",
       "kind": "StringLiteral",
-      "offset": 10524,
+      "offset": 10440,
       "length": 9,
       "value": "\"\/events\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Services\/Purchasely\/API.swift",
       "kind": "StringLiteral",
-      "offset": 10563,
+      "offset": 10479,
       "length": 17,
       "value": "\"\/user_purchases\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Services\/Purchasely\/API.swift",
       "kind": "StringLiteral",
-      "offset": 10614,
+      "offset": 10530,
       "length": 22,
       "value": "\"\/paab\/user_purchases\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Services\/Purchasely\/API.swift",
       "kind": "StringLiteral",
-      "offset": 10661,
+      "offset": 10577,
       "length": 18,
       "value": "\"\/users\/transfers\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Services\/Purchasely\/API.swift",
       "kind": "StringLiteral",
-      "offset": 10710,
+      "offset": 10626,
       "length": 23,
       "value": "\"\/users\/is_transferred\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Services\/Purchasely\/API.swift",
       "kind": "StringLiteral",
-      "offset": 10763,
+      "offset": 10679,
       "length": 16,
       "value": "\"\/presentations\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Services\/Purchasely\/API.swift",
       "kind": "StringLiteral",
-      "offset": 10803,
+      "offset": 10719,
       "length": 24,
       "value": "\"\/presentations_preview\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Services\/Purchasely\/API.swift",
       "kind": "StringLiteral",
-      "offset": 10855,
+      "offset": 10771,
       "length": 24,
       "value": "\"\/appstore\/promo_offers\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Services\/Purchasely\/API.swift",
       "kind": "StringLiteral",
-      "offset": 10897,
+      "offset": 10813,
       "length": 11,
       "value": "\"\/sdk_logs\""
     },
@@ -47755,7 +47755,7 @@
       "kind": "StringLiteral",
       "offset": 2555,
       "length": 7,
-      "value": "\"4.5.1\""
+      "value": "\"4.5.2\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
