@@ -398,6 +398,8 @@ typedef SWIFT_ENUM(NSInteger, PLYEvent, open) {
   PLYEventUserLoggedOut = 39,
   PLYEventPresentationClosed = 40,
   PLYEventSubscriptionContentUsed = 41,
+  PLYEventOptionsSelected = 42,
+  PLYEventOptionsValidated = 43,
 };
 
 
@@ -484,6 +486,9 @@ typedef SWIFT_ENUM(NSInteger, PLYEventProperty, open) {
   PLYEventPropertyPromoOffer = 74,
   PLYEventPropertyOrientation = 75,
   PLYEventPropertySessionId = 76,
+  PLYEventPropertySelectedOptionId = 77,
+  PLYEventPropertySelectedOptions = 78,
+  PLYEventPropertyDisplayedOptions = 79,
 };
 
 typedef SWIFT_ENUM(NSInteger, PLYEventType, open) {
@@ -649,6 +654,7 @@ typedef SWIFT_ENUM(NSInteger, PLYPresentationAction, open) {
   PLYPresentationActionOpenPresentation = 6,
   PLYPresentationActionOpenPlacement = 7,
   PLYPresentationActionPromoCode = 8,
+  PLYPresentationActionSelectOption = 9,
 };
 
 @class NSURL;
@@ -839,14 +845,6 @@ typedef SWIFT_ENUM(NSInteger, PLYUIControllerType, open) {
   PLYUIControllerTypeWebPage = 2,
   PLYUIControllerTypeCancellationSurvey = 3,
 };
-
-
-SWIFT_PROTOCOL("_TtP10Purchasely13PLYUIDelegate_") SWIFT_DEPRECATED_MSG("Please migrate to PLYUIHandler.")
-@protocol PLYUIDelegate
-@optional
-- (void)displayWithController:(UIViewController * _Nonnull)controller type:(enum PLYUIControllerType)type from:(UIViewController * _Nullable)sourceController;
-- (void)displayWithAlert:(enum PLYAlertMessage)alert error:(NSError * _Nullable)error;
-@end
 
 
 SWIFT_PROTOCOL("_TtP10Purchasely12PLYUIHandler_")
@@ -1360,6 +1358,10 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSDictionary<N
 + (void)setUserAttributeWithDoubleValue:(double)value forKey:(NSString * _Nonnull)key;
 + (void)setUserAttributeWithDateValue:(NSDate * _Nonnull)value forKey:(NSString * _Nonnull)key;
 + (void)setUserAttributeWithBoolValue:(BOOL)value forKey:(NSString * _Nonnull)key;
++ (void)setUserAttributeWithBoolArray:(NSArray<NSNumber *> * _Nonnull)value forKey:(NSString * _Nonnull)key;
++ (void)setUserAttributeWithIntArray:(NSArray<NSNumber *> * _Nonnull)value forKey:(NSString * _Nonnull)key;
++ (void)setUserAttributeWithStringArray:(NSArray<NSString *> * _Nonnull)value forKey:(NSString * _Nonnull)key;
++ (void)setUserAttributeWithDoubleArray:(NSArray<NSNumber *> * _Nonnull)value forKey:(NSString * _Nonnull)key;
 + (void)incrementUserAttributeWithKey:(NSString * _Nonnull)key value:(NSInteger)value;
 + (void)decrementUserAttributeWithKey:(NSString * _Nonnull)key value:(NSInteger)value;
 + (void)setUserAttributes:(NSDictionary<NSString *, id> * _Nonnull)attributes;
@@ -1369,7 +1371,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSDictionary<N
 + (void)setThemeMode:(enum PLYThemeMode)mode;
 /// This method is used to trigger an event telling Purchasely that a content has been consumed through a subscription.
 + (void)userDidConsumeSubscriptionContent;
-+ (void)setUIDelegate:(id <PLYUIDelegate> _Nullable)uiDelegate SWIFT_DEPRECATED_MSG("Please migrate to setUIHandler.");
 @end
 
 /// WARNING: Add new attribute to the end and always check the list is in the same order than Android
@@ -1856,6 +1857,8 @@ typedef SWIFT_ENUM(NSInteger, PLYEvent, open) {
   PLYEventUserLoggedOut = 39,
   PLYEventPresentationClosed = 40,
   PLYEventSubscriptionContentUsed = 41,
+  PLYEventOptionsSelected = 42,
+  PLYEventOptionsValidated = 43,
 };
 
 
@@ -1942,6 +1945,9 @@ typedef SWIFT_ENUM(NSInteger, PLYEventProperty, open) {
   PLYEventPropertyPromoOffer = 74,
   PLYEventPropertyOrientation = 75,
   PLYEventPropertySessionId = 76,
+  PLYEventPropertySelectedOptionId = 77,
+  PLYEventPropertySelectedOptions = 78,
+  PLYEventPropertyDisplayedOptions = 79,
 };
 
 typedef SWIFT_ENUM(NSInteger, PLYEventType, open) {
@@ -2107,6 +2113,7 @@ typedef SWIFT_ENUM(NSInteger, PLYPresentationAction, open) {
   PLYPresentationActionOpenPresentation = 6,
   PLYPresentationActionOpenPlacement = 7,
   PLYPresentationActionPromoCode = 8,
+  PLYPresentationActionSelectOption = 9,
 };
 
 @class NSURL;
@@ -2297,14 +2304,6 @@ typedef SWIFT_ENUM(NSInteger, PLYUIControllerType, open) {
   PLYUIControllerTypeWebPage = 2,
   PLYUIControllerTypeCancellationSurvey = 3,
 };
-
-
-SWIFT_PROTOCOL("_TtP10Purchasely13PLYUIDelegate_") SWIFT_DEPRECATED_MSG("Please migrate to PLYUIHandler.")
-@protocol PLYUIDelegate
-@optional
-- (void)displayWithController:(UIViewController * _Nonnull)controller type:(enum PLYUIControllerType)type from:(UIViewController * _Nullable)sourceController;
-- (void)displayWithAlert:(enum PLYAlertMessage)alert error:(NSError * _Nullable)error;
-@end
 
 
 SWIFT_PROTOCOL("_TtP10Purchasely12PLYUIHandler_")
@@ -2818,6 +2817,10 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSDictionary<N
 + (void)setUserAttributeWithDoubleValue:(double)value forKey:(NSString * _Nonnull)key;
 + (void)setUserAttributeWithDateValue:(NSDate * _Nonnull)value forKey:(NSString * _Nonnull)key;
 + (void)setUserAttributeWithBoolValue:(BOOL)value forKey:(NSString * _Nonnull)key;
++ (void)setUserAttributeWithBoolArray:(NSArray<NSNumber *> * _Nonnull)value forKey:(NSString * _Nonnull)key;
++ (void)setUserAttributeWithIntArray:(NSArray<NSNumber *> * _Nonnull)value forKey:(NSString * _Nonnull)key;
++ (void)setUserAttributeWithStringArray:(NSArray<NSString *> * _Nonnull)value forKey:(NSString * _Nonnull)key;
++ (void)setUserAttributeWithDoubleArray:(NSArray<NSNumber *> * _Nonnull)value forKey:(NSString * _Nonnull)key;
 + (void)incrementUserAttributeWithKey:(NSString * _Nonnull)key value:(NSInteger)value;
 + (void)decrementUserAttributeWithKey:(NSString * _Nonnull)key value:(NSInteger)value;
 + (void)setUserAttributes:(NSDictionary<NSString *, id> * _Nonnull)attributes;
@@ -2827,7 +2830,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSDictionary<N
 + (void)setThemeMode:(enum PLYThemeMode)mode;
 /// This method is used to trigger an event telling Purchasely that a content has been consumed through a subscription.
 + (void)userDidConsumeSubscriptionContent;
-+ (void)setUIDelegate:(id <PLYUIDelegate> _Nullable)uiDelegate SWIFT_DEPRECATED_MSG("Please migrate to setUIHandler.");
 @end
 
 /// WARNING: Add new attribute to the end and always check the list is in the same order than Android

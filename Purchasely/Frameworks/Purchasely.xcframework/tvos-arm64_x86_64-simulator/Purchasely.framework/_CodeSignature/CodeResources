@@ -10,7 +10,7 @@
 		</data>
 		<key>Headers/Purchasely-Swift.h</key>
 		<data>
-		oI38rO84lL/7WpVj7sSXHCicg7s=
+		pWK76TLjNr5/5mHH3s69qA8V2Xs=
 		</data>
 		<key>Headers/Purchasely-tvOS-umbrella.h</key>
 		<data>
@@ -22,11 +22,11 @@
 		</data>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-tvos-simulator.abi.json</key>
 		<data>
-		+Aps8DERNu0v2ia74U0xJx6aw+8=
+		h2SiXYUmg/y26Yfs8RgdC82wNZY=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-tvos-simulator.private.swiftinterface</key>
 		<data>
-		tTvyutJbPZJ55ET267zpl2SNjEI=
+		x5GDfEcE0KKLM0PwS+sy5B8ixno=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-tvos-simulator.swiftdoc</key>
 		<data>
@@ -34,19 +34,19 @@
 		</data>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-tvos-simulator.swiftinterface</key>
 		<data>
-		tTvyutJbPZJ55ET267zpl2SNjEI=
+		x5GDfEcE0KKLM0PwS+sy5B8ixno=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-tvos-simulator.swiftmodule</key>
 		<data>
-		5G62soejJ1hm7/jB6S7a30xoA+0=
+		OXJxZ92pcD3EavZYdG867hn5I0w=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-tvos-simulator.abi.json</key>
 		<data>
-		+Aps8DERNu0v2ia74U0xJx6aw+8=
+		h2SiXYUmg/y26Yfs8RgdC82wNZY=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-tvos-simulator.private.swiftinterface</key>
 		<data>
-		F21wxItKtQKXCtBeYtLlxxlWFuw=
+		rVQU3y3+bsZ01VaVATJwSW2F9Bk=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-tvos-simulator.swiftdoc</key>
 		<data>
@@ -54,11 +54,11 @@
 		</data>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-tvos-simulator.swiftinterface</key>
 		<data>
-		F21wxItKtQKXCtBeYtLlxxlWFuw=
+		rVQU3y3+bsZ01VaVATJwSW2F9Bk=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-tvos-simulator.swiftmodule</key>
 		<data>
-		/q96xkO0zpcnLh9fPFyMXDSJd20=
+		5VDug3wXMuodYNKthoNXL/y/JGY=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -311,7 +311,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			GjZEAqOtkWx8n0zlk9/nSzEjy0YBAs/YDCEo4wQqEkk=
+			Sa/N2MeWGf5FOMVnpMSwapx5wkZTlHoLi2F5HnBBY8A=
 			</data>
 		</dict>
 		<key>Headers/Purchasely-tvOS-umbrella.h</key>
@@ -325,14 +325,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			thvIMbUQRfTRGVBU42BB4mckBQQFXKiftRHZU5PvvOo=
+			EKr7I5UbMZbBy1Km2CV3RKoW3w9TW5JxxD0b3SebZXE=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-tvos-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			nA43cqyXzBnIaWaERzNpTB/mUv9qedTHc60HKhAQaG4=
+			la1RZ3IX218kLa4Nt1EPmEyIrwYmlOqyhORLE0sbAOQ=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-tvos-simulator.swiftdoc</key>
@@ -346,28 +346,28 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			nA43cqyXzBnIaWaERzNpTB/mUv9qedTHc60HKhAQaG4=
+			la1RZ3IX218kLa4Nt1EPmEyIrwYmlOqyhORLE0sbAOQ=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-tvos-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			oKZs/pkD3Q5OQKibqLWU8COaffPgKAdhmMGN1FGtHH0=
+			+uMp2q8+BRt+Wnoecgs1Pf4Qv6hPVw9FDz6c7ZY4AtA=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-tvos-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			thvIMbUQRfTRGVBU42BB4mckBQQFXKiftRHZU5PvvOo=
+			EKr7I5UbMZbBy1Km2CV3RKoW3w9TW5JxxD0b3SebZXE=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-tvos-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			TYgvPfAZCFRglLOrzVK8o6Siq+XvJ5ZeGbn2IajycQ4=
+			uXqfcA65uP1/3mUdNbMgIRNvN2EIruolTHz++lU3F2g=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-tvos-simulator.swiftdoc</key>
@@ -381,14 +381,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			TYgvPfAZCFRglLOrzVK8o6Siq+XvJ5ZeGbn2IajycQ4=
+			uXqfcA65uP1/3mUdNbMgIRNvN2EIruolTHz++lU3F2g=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-tvos-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Ik+2dX3BBPnfZMda5bz9ljNkC/yB/ldiJe/0ldXkjbQ=
+			56IB6EXHrPy5ljp8/lmL6Aszi1q1jkDWkrLp86pPv6k=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
