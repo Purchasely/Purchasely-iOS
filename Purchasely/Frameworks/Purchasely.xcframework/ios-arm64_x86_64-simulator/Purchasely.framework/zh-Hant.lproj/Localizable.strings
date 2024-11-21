@@ -20,10 +20,10 @@
 "ply_modal_change_plan_different_store_cancel_button" = "取消";
 "ply_modal_alert_default_error_title" = "錯誤";
 "ply_modal_alert_default_error_button" = "確定";
-"ply_configuration_error" = "Configuration error";
-"ply_google_developer_error" = "Error with application configuration";
-"ply_google_default_error" = "Payment validation failed, please try again";
-"ply_google_billing_not_available" = "In-app Purchase is not available with your device or Google account. Make sure Play Store is up to date and a paiment method is configured for your account";
+"ply_configuration_error" = "配置錯誤";
+"ply_google_developer_error" = "應用程式配置錯誤";
+"ply_google_default_error" = "支付驗證失敗，請重試";
+"ply_google_billing_not_available" = "您的裝置或 Google 帳戶無法使用應用程式內購。請確保 Play 商店已更新，並為您的帳戶設定了付款方式。";
 "ply_in_app_already_subscribed_error" = "您已成功訂閱我們的線上服務！";
 "ply_in_app_no_product_found_error" = "找不到產品。";
 "ply_in_app_absent_receipt" = "找不到收據。透過恢復購買重試。";
@@ -77,9 +77,9 @@
 "ply_unsubscribe_google_title" = "取消訂閱項目";
 "ply_unsubscribe_google_content" = "前往 play.google.com。   檢查您是否已登入正確的 Google 帳戶。   在左側按一下 [我的訂閱內容]。   選取您要取消訂閱的項目。   按一下 [管理] 下一步 [取消訂閱]。";
 "ply_unsubscribe_google_button" = "確定";
-"ply_unsubscribe_amazon_title" = "Cancel a subscription";
-"ply_unsubscribe_amazon_content" = "Go to amazon.com. Check if you’re signed in to the correct Amazon Account. Go to your Account page. Click on Other Subscriptions in the Memberships and subscriptions section Select the subscription you want to cancel. Then Cancel Subscription.";
-"ply_unsubscribe_amazon_button" = "Ok";
+"ply_unsubscribe_amazon_title" = "取消訂閱項目";
+"ply_unsubscribe_amazon_content" = "前往 amazon.com。確認您已登入正確的 Amazon 帳戶。進入您的帳戶頁面。在「會員與訂閱」部分點擊「其他訂閱」。選擇您想取消的訂閱，然後點擊「取消訂閱」。     ";
+"ply_unsubscribe_amazon_button" = "確定";
 "ply_unsubscribe_apple_title" = "取消訂閱項目";
 "ply_unsubscribe_apple_content" = "開啟「設定」App。   點一下您的姓名。   點一下「訂閱項目」。   點一下您要管理的訂閱項目。   點一下「取消訂閱」。";
 "ply_unsubscribe_apple_button" = "確定";
@@ -109,6 +109,6 @@
 "ply_webview_qr_or_url" = "掃描上方二維碼或瀏覽：";
 "ply_webview_url" = "使用瀏覽器訪問以下網址：";
 "ply_untracked_event" = "事件未處理";
-"ply_in_app_offer_ineligible_error" = "You are not eligible for this promotional offer.";
-"ply_in_app_purchase_not_allowed_error" = "You are not allowed to purchase this product.";
-"ply_in_app_offer_invalid_error" = "Purchase with promotional offer failed.";
+"ply_in_app_offer_ineligible_error" = "您不符合此促銷優惠的條件。";
+"ply_in_app_purchase_not_allowed_error" = "您無權購買此產品。";
+"ply_in_app_offer_invalid_error" = "使用促銷優惠的購買失敗。";

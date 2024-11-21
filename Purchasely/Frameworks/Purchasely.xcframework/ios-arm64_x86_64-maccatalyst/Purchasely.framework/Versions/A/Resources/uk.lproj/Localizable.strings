@@ -21,9 +21,9 @@
 "ply_modal_alert_default_error_title" = "Помилка";
 "ply_modal_alert_default_error_button" = "Добре";
 "ply_configuration_error" = "Помилка налаштування";
-"ply_google_developer_error" = "Error with application configuration";
-"ply_google_default_error" = "Payment validation failed, please try again";
-"ply_google_billing_not_available" = "In-app Purchase is not available with your device or Google account. Make sure Play Store is up to date and a paiment method is configured for your account";
+"ply_google_developer_error" = "Помилка в конфігурації додатка";
+"ply_google_default_error" = "Перевірка оплати не вдалася, будь ласка, спробуйте ще раз";
+"ply_google_billing_not_available" = "Покупки в додатках недоступні на вашому пристрої або у вашому обліковому записі Google. Переконайтеся, що Play Маркет оновлений і для вашого облікового запису налаштовано спосіб оплати.";
 "ply_in_app_already_subscribed_error" = "Ви вже придбали наші онлайн-сервіси!";
 "ply_in_app_no_product_found_error" = "Не вдається знайти продукт.";
 "ply_in_app_absent_receipt" = "Квитанцію не знайдено. Відновіть свої покупки, щоб спробувати ще раз.";
@@ -109,6 +109,6 @@
 "ply_webview_qr_or_url" = "Відкануйте QR-код вище або відвідайте:";
 "ply_webview_url" = "Перейдіть до наступної URL адреси за допомогою веб-браузера:";
 "ply_untracked_event" = "Подія не опрацьовуваєтся";
-"ply_in_app_offer_ineligible_error" = "You are not eligible for this promotional offer.";
-"ply_in_app_purchase_not_allowed_error" = "You are not allowed to purchase this product.";
-"ply_in_app_offer_invalid_error" = "Purchase with promotional offer failed.";
+"ply_in_app_offer_ineligible_error" = "Ви не маєте права на цю промоційну пропозицію.";
+"ply_in_app_purchase_not_allowed_error" = "Вам заборонено купувати цей продукт.";
+"ply_in_app_offer_invalid_error" = "Покупка за промоційною пропозицією не вдалася.";
