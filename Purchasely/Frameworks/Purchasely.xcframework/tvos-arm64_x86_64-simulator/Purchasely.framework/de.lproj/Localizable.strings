@@ -20,10 +20,10 @@
 "ply_modal_change_plan_different_store_cancel_button" = "Kündigen";
 "ply_modal_alert_default_error_title" = "Fehler";
 "ply_modal_alert_default_error_button" = "OK";
-"ply_configuration_error" = "Configuration error";
-"ply_google_developer_error" = "Error with application configuration";
-"ply_google_default_error" = "Payment validation failed, please try again";
-"ply_google_billing_not_available" = "In-app Purchase is not available with your device or Google account. Make sure Play Store is up to date and a paiment method is configured for your account";
+"ply_configuration_error" = "Konfigurationsfehler";
+"ply_google_developer_error" = "Fehler in der Anwendungskonfiguration";
+"ply_google_default_error" = "Zahlungsvalidierung fehlgeschlagen, bitte versuchen Sie es erneut";
+"ply_google_billing_not_available" = "In-App-Käufe sind auf Ihrem Gerät oder Google-Konto nicht verfügbar. Stellen Sie sicher, dass der Play Store auf dem neuesten Stand ist und eine Zahlungsmethode für Ihr Konto konfiguriert ist.";
 "ply_in_app_already_subscribed_error" = "Sie sind bereits Kunde unserer Online-Services.";
 "ply_in_app_no_product_found_error" = "Das Produkt kann nicht gefunden werden.";
 "ply_in_app_absent_receipt" = "Beleg nicht gefunden Versuchen Sie es erneut, indem Sie den Einkauf wiederherstellen.";
@@ -77,8 +77,8 @@
 "ply_unsubscribe_google_title" = "Abo kündigen";
 "ply_unsubscribe_google_content" = "Rufen Sie play.google.com auf. Prüfen Sie, ob Sie im richtigen Google-Konto angemeldet sind. Klicken Sie links auf Meine Abos. Wählen Sie das Abo aus, das Sie kündigen möchten. Klicken Sie auf Verwalten und dann Abo kündigen.";
 "ply_unsubscribe_google_button" = "OK";
-"ply_unsubscribe_amazon_title" = "Cancel a subscription";
-"ply_unsubscribe_amazon_content" = "Go to amazon.com. Check if you’re signed in to the correct Amazon Account. Go to your Account page. Click on Other Subscriptions in the Memberships and subscriptions section Select the subscription you want to cancel. Then Cancel Subscription.";
+"ply_unsubscribe_amazon_title" = "Abo kündigen";
+"ply_unsubscribe_amazon_content" = "Gehe zu amazon.com. Überprüfen Sie, ob Sie im richtigen Amazon-Konto angemeldet sind. Gehen Sie zu Ihrer Kontoseite. Klicken Sie im Bereich "Mitgliedschaften und Abonnements" auf "Andere Abonnements". Wählen Sie das Abonnement aus, das Sie kündigen möchten, und klicken Sie dann auf "Abonnement kündigen".";
 "ply_unsubscribe_amazon_button" = "Ok";
 "ply_unsubscribe_apple_title" = "Abo kündigen";
 "ply_unsubscribe_apple_content" = "Öffne die Einstellungen-App.   Tippe auf deinen Namen.   Tippe auf Abonnements.   Tippe auf das Abonnement, das du verwalten möchtest.   Tippe auf Abo kündigen.";
@@ -109,6 +109,6 @@
 "ply_webview_qr_or_url" = "Scannen Sie den QR-Code oben oder besuchen Sie folgende Seite:";
 "ply_webview_url" = "Öffnen Sie die folgende URL in Ihrem Webbrowser:";
 "ply_untracked_event" = "Ereignis nicht verarbeitet";
-"ply_in_app_offer_ineligible_error" = "You are not eligible for this promotional offer.";
-"ply_in_app_purchase_not_allowed_error" = "You are not allowed to purchase this product.";
-"ply_in_app_offer_invalid_error" = "Purchase with promotional offer failed.";
+"ply_in_app_offer_ineligible_error" = "Sie sind nicht berechtigt für dieses Aktionsangebot.";
+"ply_in_app_purchase_not_allowed_error" = "Sie dürfen dieses Produkt nicht kaufen.";
+"ply_in_app_offer_invalid_error" = "Der Kauf mit dem Aktionsangebot ist fehlgeschlagen.";

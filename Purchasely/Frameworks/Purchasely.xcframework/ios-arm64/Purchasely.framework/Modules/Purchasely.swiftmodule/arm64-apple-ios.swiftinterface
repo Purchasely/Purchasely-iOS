@@ -1,6 +1,6 @@
 // swift-interface-format-version: 1.0
 // swift-compiler-version: Apple Swift version 6.0.2 effective-5.10 (swiftlang-6.0.2.1.2 clang-1600.0.26.4)
-// swift-module-flags: -target arm64-apple-ios11.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name Purchasely
+// swift-module-flags: -target arm64-apple-ios12.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name Purchasely
 // swift-module-flags-ignorable: -no-verify-emitted-module-interface
 import AVFoundation
 import AVKit
@@ -233,6 +233,8 @@ extension PLYError : Foundation.LocalizedError {
   case userLoggedOut
   case presentationClosed
   case subscriptionContentUsed
+  case optionsSelected
+  case optionsValidated
   public var name: Swift.String {
     get
   }
@@ -330,6 +332,9 @@ extension Foundation.NSString {
   case promoOffer
   case orientation
   case sessionId
+  case selectedOptionId
+  case selectedOptions
+  case displayedOptions
   public var name: Swift.String {
     get
   }
@@ -535,6 +540,7 @@ extension PLYPlan {
   case openPresentation
   case openPlacement
   case promoCode
+  case selectOption
   public init?(rawValue: Swift.Int)
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
@@ -573,6 +579,8 @@ extension PLYPlan {
   @objc final public let planVendorId: Swift.String?
   @objc final public let storeProductId: Swift.String?
   @objc final public let offerId: Swift.String?
+  @objc final public let offerVendorId: Swift.String?
+  @objc final public let `default`: Swift.Bool
   required public init(from decoder: any Swift.Decoder) throws
   @objc deinit
 }
@@ -761,11 +769,6 @@ public enum PLYSubscriptionSourceError : Swift.Error {
     get
   }
 }
-@available(*, deprecated, message: "Please migrate to PLYUIHandler.")
-@objc public protocol PLYUIDelegate {
-  @objc optional func display(controller: UIKit.UIViewController, type: PLYUIControllerType, from sourceController: UIKit.UIViewController?)
-  @objc optional func display(alert: PLYAlertMessage, error: (any Swift.Error)?)
-}
 public typealias PLYSuccessErrorClosure = (Swift.Bool, (any Swift.Error)?) -> Swift.Void
 public typealias PLYPaywallLoadingClosure = (PLYPresentationViewController?, Swift.Bool, (any Swift.Error)?) -> Swift.Void
 public typealias PLYLoginTappedHandler = ((UIKit.UIViewController, @escaping (Swift.Bool) -> Swift.Void) -> Swift.Void)
@@ -870,6 +873,10 @@ extension Purchasely {
   @objc public static func setUserAttribute(withDoubleValue value: Swift.Double, forKey key: Swift.String)
   @objc public static func setUserAttribute(withDateValue value: Foundation.Date, forKey key: Swift.String)
   @objc public static func setUserAttribute(withBoolValue value: Swift.Bool, forKey key: Swift.String)
+  @objc public static func setUserAttribute(withBoolArray value: [Swift.Bool], forKey key: Swift.String)
+  @objc public static func setUserAttribute(withIntArray value: [Swift.Int], forKey key: Swift.String)
+  @objc public static func setUserAttribute(withStringArray value: [Swift.String], forKey key: Swift.String)
+  @objc public static func setUserAttribute(withDoubleArray value: [Swift.Double], forKey key: Swift.String)
   @objc public static func incrementUserAttribute(withKey key: Swift.String, value: Swift.Int = 1)
   @objc public static func decrementUserAttribute(withKey key: Swift.String, value: Swift.Int = 1)
   @objc public static func setUserAttributes(_ attributes: [Swift.String : Any])
@@ -919,8 +926,6 @@ extension Purchasely {
   }
   @objc dynamic public class func setThemeMode(_ mode: PLYThemeMode)
   @objc dynamic public class func userDidConsumeSubscriptionContent()
-  @available(*, deprecated, message: "Please migrate to setUIHandler.")
-  @objc dynamic public class func setUIDelegate(_ uiDelegate: (any PLYUIDelegate)?)
 }
 extension Purchasely : UserNotifications.UNUserNotificationCenterDelegate {
 }

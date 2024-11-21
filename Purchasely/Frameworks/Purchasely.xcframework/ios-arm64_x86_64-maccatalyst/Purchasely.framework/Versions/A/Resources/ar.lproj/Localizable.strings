@@ -20,10 +20,10 @@
 "ply_modal_change_plan_different_store_cancel_button" = "إلغاء";
 "ply_modal_alert_default_error_title" = "خطأ";
 "ply_modal_alert_default_error_button" = "نعم";
-"ply_configuration_error" = "Configuration error";
-"ply_google_developer_error" = "Error with application configuration";
-"ply_google_default_error" = "Payment validation failed, please try again";
-"ply_google_billing_not_available" = "In-app Purchase is not available with your device or Google account. Make sure Play Store is up to date and a paiment method is configured for your account";
+"ply_configuration_error" = "خلل في الإعدادات";
+"ply_google_developer_error" = "خلل في إعدادات التطبيق";
+"ply_google_default_error" = "فشل في التحقق من الدفع، يرجى المحاولة مرة أخرى";
+"ply_google_billing_not_available" = "الشراء داخل التطبيق غير متاح على جهازك أو حسابك في Google. تأكد من أن متجر Play محدث وأن طريقة دفع مُعدة لحسابك.";
 "ply_in_app_already_subscribed_error" = "!أنت بالفعل عميل لخدماتنا عبر الإنترنت";
 "ply_in_app_no_product_found_error" = ".تعذر العثور على المنتج";
 "ply_in_app_absent_receipt" = ".الإيصال غير موجود. استعد مشترياتك للمحاولة مرة أخرى";
@@ -77,9 +77,9 @@
 "ply_unsubscribe_google_title" = "إلغاء الاشتراك";
 "ply_unsubscribe_google_content" = "play.google.com انتقل إلى الصحيح. Google تحقق مما إذا كنت قد سجلت الدخول إلى حساب على اليسار ، انقر على اشتراكاتي حدد الاشتراك الذي تريد إلغاءه انقر فوق إدارة ثم إلغاء الاشتراك";
 "ply_unsubscribe_google_button" = "نعم";
-"ply_unsubscribe_amazon_title" = "Cancel a subscription";
-"ply_unsubscribe_amazon_content" = "Go to amazon.com. Check if you’re signed in to the correct Amazon Account. Go to your Account page. Click on Other Subscriptions in the Memberships and subscriptions section Select the subscription you want to cancel. Then Cancel Subscription.";
-"ply_unsubscribe_amazon_button" = "Ok";
+"ply_unsubscribe_amazon_title" = "إلغاء الاشتراك";
+"ply_unsubscribe_amazon_content" = "افتح موقع amazon.com وتحقق من أنك مسجل الدخول باستخدام حساب أمازون الصحيح. انتقل إلى صفحة حسابك. في قسم "العضويات والاشتراكات"، اضغط على "اشتراكات أخرى". حدد الاشتراك الذي تريد إلغاؤه، ثم اختر "إلغاء الاشتراك".";
+"ply_unsubscribe_amazon_button" = "نعم";
 "ply_unsubscribe_apple_title" = "إلغاء الاشتراك";
 "ply_unsubscribe_apple_content" = ".افتح إعدادات التطبيق   .اضغط على اسمك   .اضغط الاشتراكات   .اضغط على الاشتراك الذي تريد إدارته   .اضغط على إلغاء الاشتراك";
 "ply_unsubscribe_apple_button" = "نعم";
@@ -109,6 +109,6 @@
 "ply_webview_qr_or_url" = ":أعلاه أو قم بزيارة QR امسح رمز";
 "ply_webview_url" = ":التالي باستخدام متصفح الويب الخاص بك URL انتقل إلى عنوان";
 "ply_untracked_event" = "لم يتم التعامل مع الحدث";
-"ply_in_app_offer_ineligible_error" = "You are not eligible for this promotional offer.";
-"ply_in_app_purchase_not_allowed_error" = "You are not allowed to purchase this product.";
-"ply_in_app_offer_invalid_error" = "Purchase with promotional offer failed.";
+"ply_in_app_offer_ineligible_error" = "أنت غير مؤهل للحصول على هذا العرض الترويجي.";
+"ply_in_app_purchase_not_allowed_error" = "غير مسموح لك بشراء هذا المنتج.";
+"ply_in_app_offer_invalid_error" = "فشل الشراء باستخدام العرض الترويجي.";

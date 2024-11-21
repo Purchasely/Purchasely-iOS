@@ -20,10 +20,10 @@
 "ply_modal_change_plan_different_store_cancel_button" = "Annulla";
 "ply_modal_alert_default_error_title" = "Errore";
 "ply_modal_alert_default_error_button" = "OK";
-"ply_configuration_error" = "Configuration error";
-"ply_google_developer_error" = "Error with application configuration";
-"ply_google_default_error" = "Payment validation failed, please try again";
-"ply_google_billing_not_available" = "In-app Purchase is not available with your device or Google account. Make sure Play Store is up to date and a paiment method is configured for your account";
+"ply_configuration_error" = "Errore di configurazione";
+"ply_google_developer_error" = "Errore nella configurazione dell\'applicazione";
+"ply_google_default_error" = "La convalida del pagamento non è riuscita, riprova";
+"ply_google_billing_not_available" = "Gli acquisti in-app non sono disponibili con il tuo dispositivo o account Google. Assicurati che il Play Store sia aggiornato e che sia configurato un metodo di pagamento per il tuo account.";
 "ply_in_app_already_subscribed_error" = "Sei già cliente dei nostri servizi online!";
 "ply_in_app_no_product_found_error" = "Impossibile trovare il prodotto.";
 "ply_in_app_absent_receipt" = "Ricevuta non trovata. Riprova ripristinando l\'acquisto.";
@@ -77,8 +77,8 @@
 "ply_unsubscribe_google_title" = "Annullare un abbonamento";
 "ply_unsubscribe_google_content" = "Visita il sito play.google.com. Controlla di aver eseguito l\'accesso all\'Account Google corretto. A sinistra, fai clic su I miei abbonamenti. Seleziona l\'abbonamento che vuoi annullare. Fai clic su Gestisci quindi Annulla abbonamento.";
 "ply_unsubscribe_google_button" = "OK";
-"ply_unsubscribe_amazon_title" = "Cancel a subscription";
-"ply_unsubscribe_amazon_content" = "Go to amazon.com. Check if you’re signed in to the correct Amazon Account. Go to your Account page. Click on Other Subscriptions in the Memberships and subscriptions section Select the subscription you want to cancel. Then Cancel Subscription.";
+"ply_unsubscribe_amazon_title" = "Annullare un abbonamento";
+"ply_unsubscribe_amazon_content" = "Vai su amazon.com. Controlla di aver effettuato l\'accesso al tuo account Amazon corretto. Vai alla pagina del tuo account. Clicca su "Altri abbonamenti" nella sezione "Iscrizioni e abbonamenti". Seleziona l\'abbonamento che desideri annullare, quindi clicca su "Annulla abbonamento".";
 "ply_unsubscribe_amazon_button" = "Ok";
 "ply_unsubscribe_apple_title" = "Annullare un abbonamento";
 "ply_unsubscribe_apple_content" = "Apri l\'app Impostazioni.   Tocca il tuo nome.   Tocca Abbonamenti.   Tocca l\'abbonamento che desideri gestire.   Tocca Annulla abbonamento.";
@@ -109,6 +109,6 @@
 "ply_webview_qr_or_url" = "Esegui la scansione del codice QR in alto, oppure visita:";
 "ply_webview_url" = "Visita il seguente URL con il tuo browser web:";
 "ply_untracked_event" = "Evento non gestito";
-"ply_in_app_offer_ineligible_error" = "You are not eligible for this promotional offer.";
-"ply_in_app_purchase_not_allowed_error" = "You are not allowed to purchase this product.";
-"ply_in_app_offer_invalid_error" = "Purchase with promotional offer failed.";
+"ply_in_app_offer_ineligible_error" = "Non sei idoneo per questa offerta promozionale.";
+"ply_in_app_purchase_not_allowed_error" = "Non ti è consentito acquistare questo prodotto.";
+"ply_in_app_offer_invalid_error" = "L\'acquisto con l\'offerta promozionale non è riuscito.";

@@ -21,9 +21,9 @@
 "ply_modal_alert_default_error_title" = "Fout";
 "ply_modal_alert_default_error_button" = "Ok";
 "ply_configuration_error" = "Configuratiefout";
-"ply_google_developer_error" = "Error with application configuration";
-"ply_google_default_error" = "Payment validation failed, please try again";
-"ply_google_billing_not_available" = "In-app Purchase is not available with your device or Google account. Make sure Play Store is up to date and a paiment method is configured for your account";
+"ply_google_developer_error" = "Fout in de configuratie van de applicatie";
+"ply_google_default_error" = "Betalingsverificatie mislukt, probeer het opnieuw";
+"ply_google_billing_not_available" = " In-app aankopen zijn niet beschikbaar met je apparaat of Google-account. Zorg ervoor dat de Play Store up-to-date is en dat er een betaalmethode is ingesteld voor je account.";
 "ply_in_app_already_subscribed_error" = "Je bent al klant van onze online diensten!";
 "ply_in_app_no_product_found_error" = "Kan het product niet vinden.";
 "ply_in_app_absent_receipt" = "Betaalbewijs niet gevonden. Herstel je aankopen om het opnieuw te proberen.";
@@ -109,6 +109,6 @@
 "ply_webview_qr_or_url" = "Scan de QR-code hierboven of bezoek:";
 "ply_webview_url" = "Ga naar de volgende URL via je webbrowser:";
 "ply_untracked_event" = "Gebeurtenis niet verwerkt";
-"ply_in_app_offer_ineligible_error" = "You are not eligible for this promotional offer.";
-"ply_in_app_purchase_not_allowed_error" = "You are not allowed to purchase this product.";
-"ply_in_app_offer_invalid_error" = "Purchase with promotional offer failed.";
+"ply_in_app_offer_ineligible_error" = "U komt niet in aanmerking voor deze promotionele aanbieding.";
+"ply_in_app_purchase_not_allowed_error" = "U mag dit product niet kopen.";
+"ply_in_app_offer_invalid_error" = "Aankoop met promotionele aanbieding mislukt.";

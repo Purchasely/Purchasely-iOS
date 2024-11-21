@@ -20,10 +20,10 @@
 "ply_modal_change_plan_different_store_cancel_button" = "İptal";
 "ply_modal_alert_default_error_title" = "Hata";
 "ply_modal_alert_default_error_button" = "Tamam";
-"ply_configuration_error" = "Configuration error";
-"ply_google_developer_error" = "Error with application configuration";
-"ply_google_default_error" = "Payment validation failed, please try again";
-"ply_google_billing_not_available" = "In-app Purchase is not available with your device or Google account. Make sure Play Store is up to date and a paiment method is configured for your account";
+"ply_configuration_error" = "Yapılandırma hatası";
+"ply_google_developer_error" = "Uygulama yapılandırmasında hata";
+"ply_google_default_error" = "Ödeme doğrulaması başarısız oldu, lütfen tekrar deneyin";
+"ply_google_billing_not_available" = "Uygulama içi satın alma, cihazınızda veya Google hesabınızda mevcut değil. Play Store\'un güncel olduğundan ve hesabınıza bir ödeme yöntemi eklenmiş olduğundan emin olun.";
 "ply_in_app_already_subscribed_error" = "Zaten çevrimiçi hizmetlerimizin müşterisisiniz.";
 "ply_in_app_no_product_found_error" = "Ürün bulunamadı.";
 "ply_in_app_absent_receipt" = "Dekont bulunamadı. Alışverişi geri alarak yeniden deneyin.";
@@ -77,9 +77,9 @@
 "ply_unsubscribe_google_title" = "Aboneliği iptal etme";
 "ply_unsubscribe_google_content" = "play.google.com adresine gidin.   Doğru Google Hesabı\'nda oturum açıp açmadığınızı kontrol edin.   Sol tarafta Aboneliklerim\'i tıklayın.   İptal etmek istediğiniz aboneliği seçin.   Yönet ve sonra Aboneliği İptal Et\'i tıklayın.";
 "ply_unsubscribe_google_button" = "Tamam";
-"ply_unsubscribe_amazon_title" = "Cancel a subscription";
-"ply_unsubscribe_amazon_content" = "Go to amazon.com. Check if you’re signed in to the correct Amazon Account. Go to your Account page. Click on Other Subscriptions in the Memberships and subscriptions section Select the subscription you want to cancel. Then Cancel Subscription.";
-"ply_unsubscribe_amazon_button" = "Ok";
+"ply_unsubscribe_amazon_title" = "Aboneliği iptal etme";
+"ply_unsubscribe_amazon_content" = "Amazon.com’a gidin. Doğru Amazon hesabına giriş yaptığınızdan emin olun. Hesap sayfanıza gidin. “Üyelikler ve abonelikler” bölümünde “Diğer Abonelikler” seçeneğine tıklayın. İptal etmek istediğiniz aboneliği seçin ve ardından “Aboneliği İptal Et” seçeneğine tıklayın.";
+"ply_unsubscribe_amazon_button" = "Tamam";
 "ply_unsubscribe_apple_title" = "Aboneliği iptal etme";
 "ply_unsubscribe_apple_content" = "Ayarlar uygulamasını açın.   Adınıza dokunun.   Abonelikler\'e dokunun.   Yönetmek istediğiniz aboneliğe dokunun.   Aboneliği İptal Et\'e dokunun.";
 "ply_unsubscribe_apple_button" = "Tamam";
@@ -109,6 +109,6 @@
 "ply_webview_qr_or_url" = "Yukarıdaki QR kodu tarayın veya şu adresi ziyaret edin:";
 "ply_webview_url" = "İnternet tarayıcınızda şu URL’ye gidin:";
 "ply_untracked_event" = "Olay işlenemedi";
-"ply_in_app_offer_ineligible_error" = "You are not eligible for this promotional offer.";
-"ply_in_app_purchase_not_allowed_error" = "You are not allowed to purchase this product.";
-"ply_in_app_offer_invalid_error" = "Purchase with promotional offer failed.";
+"ply_in_app_offer_ineligible_error" = "Bu promosyon teklifine uygun değilsiniz.";
+"ply_in_app_purchase_not_allowed_error" = "Bu ürünü satın alma izniniz yok.";
+"ply_in_app_offer_invalid_error" = "Promosyonlu teklif ile satın alma başarısız oldu.";

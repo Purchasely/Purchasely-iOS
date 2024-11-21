@@ -20,10 +20,10 @@
 "ply_modal_change_plan_different_store_cancel_button" = "Anuluj";
 "ply_modal_alert_default_error_title" = "Błąd";
 "ply_modal_alert_default_error_button" = "Ok";
-"ply_configuration_error" = "Configuration error";
-"ply_google_developer_error" = "Error with application configuration";
-"ply_google_default_error" = "Payment validation failed, please try again";
-"ply_google_billing_not_available" = "In-app Purchase is not available with your device or Google account. Make sure Play Store is up to date and a paiment method is configured for your account";
+"ply_configuration_error" = "Błąd konfiguracji";
+"ply_google_developer_error" = "Błąd w konfiguracji aplikacji";
+"ply_google_default_error" = "Walidacja płatności nie powiodła się, spróbuj ponownie";
+"ply_google_billing_not_available" = "Zakupy w aplikacji są niedostępne na Twoim urządzeniu lub koncie Google. Upewnij się, że Sklep Play jest aktualny i że dla Twojego konta skonfigurowano metodę płatności.";
 "ply_in_app_already_subscribed_error" = "Korzystasz już z naszych usług!";
 "ply_in_app_no_product_found_error" = "Nie można znaleźć produktu.";
 "ply_in_app_absent_receipt" = "Nie znaleziono rachunku. Spróbuj ponownie, przywracając zakup.";
@@ -77,8 +77,8 @@
 "ply_unsubscribe_google_title" = "Anulowanie subskrypcji";
 "ply_unsubscribe_google_content" = "Wejdź na play.google.com.   Sprawdź, czy używasz odpowiedniego konta Google.   Po lewej kliknij Moje subskrypcje.   Wybierz subskrypcję, którą chcesz anulować.   Kliknij Zarządzaj a potem Anuluj subskrypcję.";
 "ply_unsubscribe_google_button" = "Ok";
-"ply_unsubscribe_amazon_title" = "Cancel a subscription";
-"ply_unsubscribe_amazon_content" = "Go to amazon.com. Check if you’re signed in to the correct Amazon Account. Go to your Account page. Click on Other Subscriptions in the Memberships and subscriptions section Select the subscription you want to cancel. Then Cancel Subscription.";
+"ply_unsubscribe_amazon_title" = "Anulowanie subskrypcji";
+"ply_unsubscribe_amazon_content" = "Przejdź na stronę amazon.com. Sprawdź, czy jesteś zalogowany na poprawne konto Amazon. Przejdź do strony swojego konta. Kliknij „Inne subskrypcje” w sekcji „Członkostwa i subskrypcje”. Wybierz subskrypcję, którą chcesz anulować, a następnie kliknij „Anuluj subskrypcję”.";
 "ply_unsubscribe_amazon_button" = "Ok";
 "ply_unsubscribe_apple_title" = "Anulowanie subskrypcji";
 "ply_unsubscribe_apple_content" = "Otwórz aplikację Ustawienia.   Stuknij swoje imię i nazwisko.   Stuknij pozycję Subskrypcje.   Stuknij subskrypcję, którą chcesz zarządzać.   Stuknij opcję Anuluj subskrypcję.";
@@ -109,6 +109,6 @@
 "ply_webview_qr_or_url" = "Zeskanuj powyższy kod QR lub wejdź na stronę:";
 "ply_webview_url" = "Przejdź do następującego adresu URL w przeglądarce internetowej:";
 "ply_untracked_event" = "Nieobsługiwane zdarzenie";
-"ply_in_app_offer_ineligible_error" = "You are not eligible for this promotional offer.";
-"ply_in_app_purchase_not_allowed_error" = "You are not allowed to purchase this product.";
-"ply_in_app_offer_invalid_error" = "Purchase with promotional offer failed.";
+"ply_in_app_offer_ineligible_error" = "Nie kwalifikujesz się do tej oferty promocyjnej.";
+"ply_in_app_purchase_not_allowed_error" = "Nie masz pozwolenia na zakup tego produktu.";
+"ply_in_app_offer_invalid_error" = "Zakup z ofertą promocyjną nie powiódł się.";

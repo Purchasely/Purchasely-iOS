@@ -20,10 +20,10 @@
 "ply_modal_change_plan_different_store_cancel_button" = "Ακύρωση";
 "ply_modal_alert_default_error_title" = "Σφάλμα";
 "ply_modal_alert_default_error_button" = "ΟΚ";
-"ply_configuration_error" = "Configuration error";
-"ply_google_developer_error" = "Error with application configuration";
-"ply_google_default_error" = "Payment validation failed, please try again";
-"ply_google_billing_not_available" = "In-app Purchase is not available with your device or Google account. Make sure Play Store is up to date and a paiment method is configured for your account";
+"ply_configuration_error" = "Σφάλμα διαμόρφωσηςΣφάλμα διαμόρφωσης";
+"ply_google_developer_error" = " Σφάλμα στη διαμόρφωση της εφαρμογής";
+"ply_google_default_error" = "Η επικύρωση πληρωμής απέτυχε, δοκιμάστε ξανά";
+"ply_google_billing_not_available" = "Οι αγορές εντός εφαρμογής δεν είναι διαθέσιμες στη συσκευή σας ή στον λογαριασμό σας Google. Βεβαιωθείτε ότι το Play Store είναι ενημερωμένο και έχει ρυθμιστεί μια μέθοδος πληρωμής για τον λογαριασμό σας.";
 "ply_in_app_already_subscribed_error" = "Είστε ήδη πελάτης των online υπηρεσιών μας!";
 "ply_in_app_no_product_found_error" = "Δεν είναι δυνατή η εύρεση αυτού του προϊόντος.";
 "ply_in_app_absent_receipt" = "Η απόδειξη δεν βρέθηκε. Δοκιμάστε ξανά ανακτώντας την αγορά.";
@@ -77,8 +77,8 @@
 "ply_unsubscribe_google_title" = "Ακύρωση συνδρομής";
 "ply_unsubscribe_google_content" = "Μεταβείτε στη διεύθυνση play.google.com.   Ελέγξτε εάν έχετε συνδεθεί στον σωστό Λογαριασμό Google.   Στα αριστερά, κάντε κλικ στην επιλογή Οι συνδρομές μου.   Επιλέξτε τη συνδρομή που θέλετε να ακυρώσετε.   Κάντε κλικ στη Διαχείριση και μετά Ακύρωση συνδρομής.";
 "ply_unsubscribe_google_button" = "Οκ";
-"ply_unsubscribe_amazon_title" = "Cancel a subscription";
-"ply_unsubscribe_amazon_content" = "Go to amazon.com. Check if you’re signed in to the correct Amazon Account. Go to your Account page. Click on Other Subscriptions in the Memberships and subscriptions section Select the subscription you want to cancel. Then Cancel Subscription.";
+"ply_unsubscribe_amazon_title" = "Ακύρωση συνδρομής";
+"ply_unsubscribe_amazon_content" = "Μεταβείτε στο amazon.com. Βεβαιωθείτε ότι έχετε συνδεθεί στον σωστό λογαριασμό Amazon. Μεταβείτε στη σελίδα του λογαριασμού σας. Κάντε κλικ στην επιλογή «Άλλες συνδρομές» στην ενότητα «Μέλη και συνδρομές». Επιλέξτε τη συνδρομή που θέλετε να ακυρώσετε και μετά κάντε κλικ στην επιλογή «Ακύρωση συνδρομής».";
 "ply_unsubscribe_amazon_button" = "Ok";
 "ply_unsubscribe_apple_title" = "Ακύρωση συνδρομής";
 "ply_unsubscribe_apple_content" = "Ανοίξτε την εφαρμογή Ρυθμίσεις.   Πατήστε το όνομά σας.   Πατήστε «Συνδρομές».   Πατήστε τη συνδρομή που θέλετε να διαχειριστείτε.   Πατήστε «Ακύρωση συνδρομής».";
@@ -109,6 +109,6 @@
 "ply_webview_qr_or_url" = "Σαρώστε τον κωδικό QR σας παραπάνω ή επισκεφθείτε:";
 "ply_webview_url" = "Μεταβείτε στην ακόλουθη διεύθυνση URL με το πρόγραμμα περιήγησής σας:";
 "ply_untracked_event" = "Δεν έγινε χειρισμός του συμβάντος";
-"ply_in_app_offer_ineligible_error" = "You are not eligible for this promotional offer.";
-"ply_in_app_purchase_not_allowed_error" = "You are not allowed to purchase this product.";
-"ply_in_app_offer_invalid_error" = "Purchase with promotional offer failed.";
+"ply_in_app_offer_ineligible_error" = "Δεν πληροίτε τις προϋποθέσεις για αυτήν την προσφορά προώθησης. ";
+"ply_in_app_purchase_not_allowed_error" = "Δεν σας επιτρέπεται να αγοράσετε αυτό το προϊόν.";
+"ply_in_app_offer_invalid_error" = "Η αγορά με την προωθητική προσφορά απέτυχε.";

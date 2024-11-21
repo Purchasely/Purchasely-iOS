@@ -20,10 +20,10 @@
 "ply_modal_change_plan_different_store_cancel_button" = "Cancelar";
 "ply_modal_alert_default_error_title" = "Error";
 "ply_modal_alert_default_error_button" = "Aceptar";
-"ply_configuration_error" = "Configuration error";
-"ply_google_developer_error" = "Error with application configuration";
-"ply_google_default_error" = "Payment validation failed, please try again";
-"ply_google_billing_not_available" = "In-app Purchase is not available with your device or Google account. Make sure Play Store is up to date and a paiment method is configured for your account";
+"ply_configuration_error" = "Error de configuración";
+"ply_google_developer_error" = "Error en la configuración de la aplicación";
+"ply_google_default_error" = "La validación del pago falló, por favor inténtalo de nuevo";
+"ply_google_billing_not_available" = "La compra en la aplicación no está disponible en tu dispositivo o cuenta de Google. Asegúrate de que Play Store esté actualizado y que haya un método de pago configurado para tu cuenta.";
 "ply_in_app_already_subscribed_error" = "Ya es usted cliente de nuestros servicios en línea.";
 "ply_in_app_no_product_found_error" = "No se ha encontrado el producto.";
 "ply_in_app_absent_receipt" = "Recibo no encontrado. Inténtelo de nuevo restaurando la compra.";
@@ -77,9 +77,9 @@
 "ply_unsubscribe_google_title" = "Cancelar una suscripción";
 "ply_unsubscribe_google_content" = "Ve a la página play.google.com. Comprueba que has iniciado sesión en la cuenta de Google correcta. A la izquierda, haz clic en Mis suscripciones. Selecciona la suscripción que quieres cancelar. Haz clic en Gestionar y luego Cancelar suscripción.";
 "ply_unsubscribe_google_button" = "De acuerdo";
-"ply_unsubscribe_amazon_title" = "Cancel a subscription";
-"ply_unsubscribe_amazon_content" = "Go to amazon.com. Check if you’re signed in to the correct Amazon Account. Go to your Account page. Click on Other Subscriptions in the Memberships and subscriptions section Select the subscription you want to cancel. Then Cancel Subscription.";
-"ply_unsubscribe_amazon_button" = "Ok";
+"ply_unsubscribe_amazon_title" = "Cancelar una suscripción";
+"ply_unsubscribe_amazon_content" = "Ve a amazon.com. Verifica que hayas iniciado sesión en la cuenta de Amazon correcta. Ve a la página de tu cuenta. Haz clic en "Otras suscripciones" en la sección de "Membresías y suscripciones". Selecciona la suscripción que deseas cancelar y luego haz clic en "Cancelar suscripción".";
+"ply_unsubscribe_amazon_button" = "De acuerdo";
 "ply_unsubscribe_apple_title" = "Cancelar una suscripción";
 "ply_unsubscribe_apple_content" = "Abre la app Ajustes.   Pulsa tu nombre.   Pulsa Suscripciones.   Pulsa la suscripción que deseas gestionar.   Pulsa Cancelar suscripción.";
 "ply_unsubscribe_apple_button" = "De acuerdo";
@@ -109,6 +109,6 @@
 "ply_webview_qr_or_url" = "Escanee el código QR anterior o visite:";
 "ply_webview_url" = "Visite la URL siguiente con su navegador web:";
 "ply_untracked_event" = "Evento no gestionado";
-"ply_in_app_offer_ineligible_error" = "You are not eligible for this promotional offer.";
-"ply_in_app_purchase_not_allowed_error" = "You are not allowed to purchase this product.";
-"ply_in_app_offer_invalid_error" = "Purchase with promotional offer failed.";
+"ply_in_app_offer_ineligible_error" = "No eres elegible para esta oferta promocional.";
+"ply_in_app_purchase_not_allowed_error" = "No tienes permiso para comprar este producto.";
+"ply_in_app_offer_invalid_error" = "La compra con la oferta promocional falló.";

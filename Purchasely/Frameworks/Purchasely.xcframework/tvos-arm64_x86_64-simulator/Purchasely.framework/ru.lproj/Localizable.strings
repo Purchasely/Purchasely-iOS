@@ -20,10 +20,10 @@
 "ply_modal_change_plan_different_store_cancel_button" = "Отменить";
 "ply_modal_alert_default_error_title" = "Ошибка";
 "ply_modal_alert_default_error_button" = "ОК";
-"ply_configuration_error" = "Configuration error";
-"ply_google_developer_error" = "Error with application configuration";
-"ply_google_default_error" = "Payment validation failed, please try again";
-"ply_google_billing_not_available" = "In-app Purchase is not available with your device or Google account. Make sure Play Store is up to date and a paiment method is configured for your account";
+"ply_configuration_error" = "Ошибка конфигурации";
+"ply_google_developer_error" = "Ошибка в конфигурации приложения";
+"ply_google_default_error" = "Проверка платежа не удалась, пожалуйста, попробуйте еще раз";
+"ply_google_billing_not_available" = "Покупки внутри приложения недоступны на вашем устройстве или в учетной записи Google. Убедитесь, что Play Маркет обновлен и для вашей учетной записи настроен способ оплаты.";
 "ply_in_app_already_subscribed_error" = "Вы уже являетесь пользователем наших онлайн-услуг!";
 "ply_in_app_no_product_found_error" = "Не удается найти продукт.";
 "ply_in_app_absent_receipt" = "Оплата не найдена. Повторите попытку, восстановив покупку.";
@@ -77,8 +77,8 @@
 "ply_unsubscribe_google_title" = "Как отменить подписку";
 "ply_unsubscribe_google_content" = "Откройте сайт play.google.com.   Убедитесь, что вы вошли в правильный аккаунт Google.   Слева на экране нажмите Мои подписки.   Найдите подписку, которую нужно отменить.   Выберите Настроить затем Отменить подписку.";
 "ply_unsubscribe_google_button" = "Ok";
-"ply_unsubscribe_amazon_title" = "Cancel a subscription";
-"ply_unsubscribe_amazon_content" = "Go to amazon.com. Check if you’re signed in to the correct Amazon Account. Go to your Account page. Click on Other Subscriptions in the Memberships and subscriptions section Select the subscription you want to cancel. Then Cancel Subscription.";
+"ply_unsubscribe_amazon_title" = "Как отменить подписку";
+"ply_unsubscribe_amazon_content" = "Перейдите на amazon.com. Убедитесь, что вы вошли в правильный аккаунт Amazon. Перейдите на страницу вашего аккаунта. В разделе «Членства и подписки» нажмите на «Другие подписки». Выберите подписку, которую хотите отменить, и нажмите «Отменить подписку».";
 "ply_unsubscribe_amazon_button" = "Ok";
 "ply_unsubscribe_apple_title" = "Как отменить подписку";
 "ply_unsubscribe_apple_content" = "Откройте приложение «Настройки».   Нажмите свое имя.   Нажмите «Подписки».   Выберите подписку для управления.   Нажмите «Отменить подписку».";
@@ -109,6 +109,6 @@
 "ply_webview_qr_or_url" = "Отсканируйте QR-код выше или зайдите на:";
 "ply_webview_url" = "Перейдите по следующей ссылке в своем браузере:";
 "ply_untracked_event" = "Событие не обработано";
-"ply_in_app_offer_ineligible_error" = "You are not eligible for this promotional offer.";
-"ply_in_app_purchase_not_allowed_error" = "You are not allowed to purchase this product.";
-"ply_in_app_offer_invalid_error" = "Purchase with promotional offer failed.";
+"ply_in_app_offer_ineligible_error" = "Вы не имеете права на это промо-предложение.";
+"ply_in_app_purchase_not_allowed_error" = "Вам не разрешено покупать этот продукт.";
+"ply_in_app_offer_invalid_error" = "Покупка с промоакцией не удалась.";

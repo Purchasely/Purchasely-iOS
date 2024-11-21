@@ -20,10 +20,10 @@
 "ply_modal_change_plan_different_store_cancel_button" = "取消";
 "ply_modal_alert_default_error_title" = "错误";
 "ply_modal_alert_default_error_button" = "确定";
-"ply_configuration_error" = "Configuration error";
-"ply_google_developer_error" = "Error with application configuration";
-"ply_google_default_error" = "Payment validation failed, please try again";
-"ply_google_billing_not_available" = "In-app Purchase is not available with your device or Google account. Make sure Play Store is up to date and a paiment method is configured for your account";
+"ply_configuration_error" = "配置错误";
+"ply_google_developer_error" = "应用配置错误";
+"ply_google_default_error" = "支付验证失败，请重试";
+"ply_google_billing_not_available" = "您的设备或 Google 帐户无法使用应用内购买。请确保 Play 商店已更新，并为您的帐户配置了付款方式。";
 "ply_in_app_already_subscribed_error" = "您已经是我们线上服务的用户！";
 "ply_in_app_no_product_found_error" = "找不到产品。";
 "ply_in_app_absent_receipt" = "找不到收据。通过恢复购买重试。";
@@ -77,9 +77,9 @@
 "ply_unsubscribe_google_title" = "取消订阅";
 "ply_unsubscribe_google_content" = "访问 play.google.com。   检查是否登录了正确的 Google 帐号。   点击左侧的我的订阅。   选择要取消的订阅。   依次点击管理 接着点击 取消订阅。";
 "ply_unsubscribe_google_button" = "确定";
-"ply_unsubscribe_amazon_title" = "Cancel a subscription";
-"ply_unsubscribe_amazon_content" = "Go to amazon.com. Check if you’re signed in to the correct Amazon Account. Go to your Account page. Click on Other Subscriptions in the Memberships and subscriptions section Select the subscription you want to cancel. Then Cancel Subscription.";
-"ply_unsubscribe_amazon_button" = "Ok";
+"ply_unsubscribe_amazon_title" = "取消订阅";
+"ply_unsubscribe_amazon_content" = "前往 amazon.com。确保已登录正确的 Amazon 帐户。进入您的账户页面。在“会员与订阅”部分点击“其他订阅”。选择您想取消的订阅，然后点击“取消订阅”。  ";
+"ply_unsubscribe_amazon_button" = "确定";
 "ply_unsubscribe_apple_title" = "取消订阅";
 "ply_unsubscribe_apple_content" = "打开“设置”App。    轻点您的姓名。   轻点“订阅”。   轻点您想要管理的订阅。   轻点“取消订阅”。";
 "ply_unsubscribe_apple_button" = "确定";
@@ -109,6 +109,6 @@
 "ply_webview_qr_or_url" = "扫描上方二维码或访问：";
 "ply_webview_url" = "使用网页浏览器访问下方链接：";
 "ply_untracked_event" = "未处理事项";
-"ply_in_app_offer_ineligible_error" = "You are not eligible for this promotional offer.";
-"ply_in_app_purchase_not_allowed_error" = "You are not allowed to purchase this product.";
-"ply_in_app_offer_invalid_error" = "Purchase with promotional offer failed.";
+"ply_in_app_offer_ineligible_error" = "您不符合此促销优惠的条件。";
+"ply_in_app_purchase_not_allowed_error" = " 您无权购买此产品。";
+"ply_in_app_offer_invalid_error" = " 使用促销优惠的购买失败。";
