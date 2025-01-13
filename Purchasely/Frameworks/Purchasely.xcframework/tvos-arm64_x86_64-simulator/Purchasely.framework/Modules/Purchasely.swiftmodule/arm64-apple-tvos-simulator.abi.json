@@ -44000,6 +44000,20 @@
       "value": "\"spacer_size\""
     },
     {
+      "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/UI\/PLYHStackComponent.swift",
+      "kind": "StringLiteral",
+      "offset": 927,
+      "length": 14,
+      "value": "\"fill_equally\""
+    },
+    {
+      "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/UI\/PLYHStackComponent.swift",
+      "kind": "StringLiteral",
+      "offset": 970,
+      "length": 22,
+      "value": "\"fill_proportionnally\""
+    },
+    {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/UI\/PLYImage.swift",
       "kind": "StringLiteral",
       "offset": 1130,
@@ -45953,6 +45967,20 @@
       "value": "\"dark_video_selected_url\""
     },
     {
+      "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/UI\/PLYVStackComponent.swift",
+      "kind": "StringLiteral",
+      "offset": 904,
+      "length": 14,
+      "value": "\"fill_equally\""
+    },
+    {
+      "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/UI\/PLYVStackComponent.swift",
+      "kind": "StringLiteral",
+      "offset": 950,
+      "length": 22,
+      "value": "\"fill_proportionnally\""
+    },
+    {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Manager\/ProductRepository.swift",
       "kind": "BooleanLiteral",
       "offset": 1831,
@@ -45971,7 +45999,7 @@
       "kind": "StringLiteral",
       "offset": 2555,
       "length": 7,
-      "value": "\"5.0.0\""
+      "value": "\"5.0.1\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
