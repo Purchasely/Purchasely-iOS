@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 6.0.2 effective-5.10 (swiftlang-6.0.2.1.2 clang-1600.0.26.4)
+// swift-compiler-version: Apple Swift version 6.0.3 effective-5.10 (swiftlang-6.0.3.1.10 clang-1600.0.30.1)
 // swift-module-flags: -target x86_64-apple-ios12.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name Purchasely
 // swift-module-flags-ignorable: -no-verify-emitted-module-interface
 import AVFoundation
@@ -769,6 +769,27 @@ public enum PLYSubscriptionSourceError : Swift.Error {
     get
   }
 }
+@objc public enum PLYUserAttributeType : Swift.Int {
+  case string = 0
+  case bool
+  case int
+  case double
+  case date
+  case stringArray
+  case intArray
+  case doubleArray
+  case boolArray
+  case unknown
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public protocol PLYUserAttributeDelegate {
+  @objc optional func onUserAttributeSet(key: Swift.String, type: Purchasely.PLYUserAttributeType, value: Any?)
+  @objc optional func onUserAttributeRemoved(key: Swift.String)
+}
 public typealias PLYSuccessErrorClosure = (Swift.Bool, (any Swift.Error)?) -> Swift.Void
 public typealias PLYPaywallLoadingClosure = (Purchasely.PLYPresentationViewController?, Swift.Bool, (any Swift.Error)?) -> Swift.Void
 public typealias PLYLoginTappedHandler = ((UIKit.UIViewController, @escaping (Swift.Bool) -> Swift.Void) -> Swift.Void)
@@ -793,6 +814,7 @@ extension Purchasely.Purchasely {
   @objc dynamic public class func getSDKVersion() -> Swift.String?
   @objc dynamic public class func setEventDelegate(_ eventDelegate: (any Purchasely.PLYEventDelegate)?)
   @objc dynamic public class func setUIHandler(_ uiHandler: (any Purchasely.PLYUIHandler)?)
+  @objc dynamic public class func setUserAttributeListener(_ userAttributeListener: any Purchasely.PLYUserAttributeDelegate)
   @objc dynamic public class func setPaywallActionsInterceptor(_ paywallActionsInterceptor: Purchasely.PLYPaywallActionsInterceptor?)
   @objc dynamic public class func userLogin(with appUserId: Swift.String)
   @objc dynamic public class func userLogin(with appUserId: Swift.String, shouldRefresh: Purchasely.PLYLoginCompletionHandler?)
@@ -1030,6 +1052,9 @@ extension Purchasely.PLYSubscriptionStatus : Swift.RawRepresentable {}
 extension Purchasely.PLYUIControllerType : Swift.Equatable {}
 extension Purchasely.PLYUIControllerType : Swift.Hashable {}
 extension Purchasely.PLYUIControllerType : Swift.RawRepresentable {}
+extension Purchasely.PLYUserAttributeType : Swift.Equatable {}
+extension Purchasely.PLYUserAttributeType : Swift.Hashable {}
+extension Purchasely.PLYUserAttributeType : Swift.RawRepresentable {}
 extension Purchasely.Purchasely.PLYThemeMode : Swift.Equatable {}
 extension Purchasely.Purchasely.PLYThemeMode : Swift.Hashable {}
 extension Purchasely.Purchasely.PLYThemeMode : Swift.RawRepresentable {}
