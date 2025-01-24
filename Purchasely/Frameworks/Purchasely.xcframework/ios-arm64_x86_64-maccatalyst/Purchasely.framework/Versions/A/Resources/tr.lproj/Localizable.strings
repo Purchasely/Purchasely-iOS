@@ -112,3 +112,4 @@
 "ply_in_app_offer_ineligible_error" = "Bu promosyon teklifine uygun değilsiniz.";
 "ply_in_app_purchase_not_allowed_error" = "Bu ürünü satın alma izniniz yok.";
 "ply_in_app_offer_invalid_error" = "Promosyonlu teklif ile satın alma başarısız oldu.";
+"ply_google_feature_not_supported" = "Bu özellik, Google Play\'in bu sürümü için desteklenmiyor";

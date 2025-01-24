@@ -78,7 +78,7 @@
 "ply_unsubscribe_google_content" = "Buka play.google.com.   Pastikan Anda sudah login ke Akun Google yang benar.   Di sebelah kiri, klik Langganan saya.   Pilih langganan yang ingin Anda batalkan.   Klik Kelola lalu Batalkan langganan.";
 "ply_unsubscribe_google_button" = "Ok";
 "ply_unsubscribe_amazon_title" = "Membatalkan langganan";
-"ply_unsubscribe_amazon_content" = "Buka amazon.com. Pastikan Anda sudah masuk ke akun Amazon yang benar. Buka halaman Akun Anda. Klik "Langganan Lainnya" di bagian "Keanggotaan dan Langganan". Pilih langganan yang ingin Anda batalkan, lalu klik "Batalkan Langganan".  ";
+"ply_unsubscribe_amazon_content" = "Buka amazon.com. Pastikan Anda sudah masuk ke akun Amazon yang benar. Buka halaman Akun Anda. Klik \"Langganan Lainnya\" di bagian \"Keanggotaan dan Langganan\". Pilih langganan yang ingin Anda batalkan, lalu klik \"Batalkan Langganan\".  ";
 "ply_unsubscribe_amazon_button" = "Ok";
 "ply_unsubscribe_apple_title" = "Membatalkan langganan";
 "ply_unsubscribe_apple_content" = "Buka app Pengaturan.   Ketuk nama Anda.   Ketuk Langganan.   Ketuk langganan yang ingin Anda kelola.   Ketuk Batalkan Langganan.";
@@ -112,3 +112,4 @@
 "ply_in_app_offer_ineligible_error" = "Anda tidak memenuhi syarat untuk penawaran promosi ini.";
 "ply_in_app_purchase_not_allowed_error" = "Anda tidak diizinkan membeli produk ini.";
 "ply_in_app_offer_invalid_error" = "Pembelian dengan penawaran promosi gagal.";
+"ply_google_feature_not_supported" = "Fitur tidak didukung untuk versi Google Play ini";

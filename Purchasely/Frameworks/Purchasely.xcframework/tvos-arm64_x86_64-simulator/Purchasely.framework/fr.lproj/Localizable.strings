@@ -47,7 +47,7 @@
 "ply_in_app_parsing_error" = "Impossible d\'interpréter la réponse du serveur.";
 "ply_in_app_login_button" = "Déjà client ? Connectez-vous !";
 "ply_in_app_restore_button" = "Restaurez vos achats";
-"ply_in_app_error_pending" = "Votre paiment est en cours de traitement.  Votre achat sera validé automatiquement lorsque le paiement sera effectué.";
+"ply_in_app_error_pending" = "Votre paiement est en cours de traitement.  Votre achat sera validé automatiquement lorsque le paiement sera effectué.";
 "ply_promo_code_button" = "Code promo ?";
 "ply_in_app_period_day_plural_rule_none" = "jour";
 "ply_in_app_period_day_plural_rule_one" = "jour";
@@ -112,3 +112,4 @@
 "ply_in_app_offer_ineligible_error" = "Vous n’êtes pas eligible pour cette offre promotionnelle.";
 "ply_in_app_purchase_not_allowed_error" = "Vous ne pouvez pas effectué d’achat pour ce produit.";
 "ply_in_app_offer_invalid_error" = "L’achat avec l’offre promotionnelle a échoué.";
+"ply_google_feature_not_supported" = "Cette fonctionnalité n\'est pas prise en charge pour cette version de Google Play";
