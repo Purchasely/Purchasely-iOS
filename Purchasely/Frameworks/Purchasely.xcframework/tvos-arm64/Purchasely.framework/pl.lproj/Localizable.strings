@@ -112,3 +112,4 @@
 "ply_in_app_offer_ineligible_error" = "Nie kwalifikujesz się do tej oferty promocyjnej.";
 "ply_in_app_purchase_not_allowed_error" = "Nie masz pozwolenia na zakup tego produktu.";
 "ply_in_app_offer_invalid_error" = "Zakup z ofertą promocyjną nie powiódł się.";
+"ply_google_feature_not_supported" = "Funkcja nie jest obsługiwana w tej wersji Sklepu Google Play";

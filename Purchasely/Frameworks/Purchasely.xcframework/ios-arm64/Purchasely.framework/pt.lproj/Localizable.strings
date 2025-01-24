@@ -78,7 +78,7 @@
 "ply_unsubscribe_google_content" = "Aceda a play.google.com.   Verifique se tem sessão iniciada na Conta Google correta.   No lado esquerdo, clique em As minhas subscrições.   Selecione a subscrição que pretende cancelar.   Clique em Gerir e, em seguida, Cancelar subscrição.";
 "ply_unsubscribe_google_button" = "Pronto";
 "ply_unsubscribe_amazon_title" = "Cancelar uma subscrição";
-"ply_unsubscribe_amazon_content" = "Acesse amazon.com. Verifique se você está conectado à conta Amazon correta. Vá para a página da sua conta. Clique em "Outras assinaturas" na seção "Membros e assinaturas". Selecione a assinatura que deseja cancelar e clique em "Cancelar assinatura".";
+"ply_unsubscribe_amazon_content" = "Acesse amazon.com. Verifique se você está conectado à conta Amazon correta. Vá para a página da sua conta. Clique em \"Outras assinaturas\" na seção \"Membros e assinaturas\". Selecione a assinatura que deseja cancelar e clique em \"Cancelar assinatura\".";
 "ply_unsubscribe_amazon_button" = "Pronto";
 "ply_unsubscribe_apple_title" = "Cancelar uma subscrição";
 "ply_unsubscribe_apple_content" = "Abra a app Definições.   Toque no seu nome.   Toque em Assinaturas.   Toque na assinatura que pretende gerir.   Toque em Cancelar assinatura.";
@@ -112,3 +112,4 @@
 "ply_in_app_offer_ineligible_error" = "Você não é elegível para esta oferta promocional.";
 "ply_in_app_purchase_not_allowed_error" = "Você não tem permissão para comprar este produto.";
 "ply_in_app_offer_invalid_error" = "A compra com a oferta promocional falhou.";
+"ply_google_feature_not_supported" = "O recurso não é compatível com esta versão do Google Play";

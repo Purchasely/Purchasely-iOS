@@ -78,7 +78,7 @@
 "ply_unsubscribe_google_content" = "play.google.com으로 이동합니다.   올바른 Google 계정에 로그인했는지 확인합니다.   왼쪽에서 내 구독을 클릭합니다.   취소하려는 구독 항목을 선택합니다.   관리 다음 구독 취소를 클릭합니다.";
 "ply_unsubscribe_google_button" = "확인";
 "ply_unsubscribe_amazon_title" = "구독 취소";
-"ply_unsubscribe_amazon_content" = "amazon.com으로 이동하세요. 올바른 Amazon 계정으로 로그인했는지 확인하세요. 계정 페이지로 이동하세요. "멤버십 및 구독" 섹션에서 "기타 구독"을 클릭하세요. 취소하려는 구독을 선택한 다음 "구독 취소"를 클릭하세요.  ";
+"ply_unsubscribe_amazon_content" = "amazon.com으로 이동하세요. 올바른 Amazon 계정으로 로그인했는지 확인하세요. 계정 페이지로 이동하세요. \"멤버십 및 구독\" 섹션에서 \"기타 구독\"을 클릭하세요. 취소하려는 구독을 선택한 다음 \"구독 취소\"를 클릭하세요.  ";
 "ply_unsubscribe_amazon_button" = "확인";
 "ply_unsubscribe_apple_title" = "구독 취소";
 "ply_unsubscribe_apple_content" = "설정 앱을 엽니다.   본인의 이름을 탭합니다.   \'구독\'을 탭합니다.   관리할 구독을 탭합니다.   \'구독 취소\'를 탭합니다.";
@@ -112,3 +112,4 @@
 "ply_in_app_offer_ineligible_error" = "이 프로모션 혜택을 받을 자격이 없습니다.";
 "ply_in_app_purchase_not_allowed_error" = "이 제품을 구매할 수 없습니다.";
 "ply_in_app_offer_invalid_error" = "프로모션 혜택으로 구매에 실패했습니다.";
+"ply_google_feature_not_supported" = "이 기능은 Google Play의 이 버전에서 지원되지 않습니다";

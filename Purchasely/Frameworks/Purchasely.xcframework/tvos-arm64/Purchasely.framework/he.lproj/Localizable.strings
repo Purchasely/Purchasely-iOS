@@ -112,3 +112,4 @@
 "ply_in_app_offer_ineligible_error" = "אינך זכאי להצעה מבצעית זו.";
 "ply_in_app_purchase_not_allowed_error" = "אין לך הרשאה לרכוש מוצר זה.";
 "ply_in_app_offer_invalid_error" = "הרכישה עם ההצעה המבצעית נכשלה.";
+"ply_google_feature_not_supported" = "התכונה אינה נתמכת בגרסה זו של Google Play";

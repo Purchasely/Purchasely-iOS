@@ -112,3 +112,4 @@
 "ply_in_app_offer_ineligible_error" = "Você não é elegível para esta oferta promocional.";
 "ply_in_app_purchase_not_allowed_error" = "Você não tem permissão para comprar este produto.";
 "ply_in_app_offer_invalid_error" = "A compra com a oferta promocional falhou.";
+"ply_google_feature_not_supported" = "O recurso não é compatível com esta versão do Google Play";

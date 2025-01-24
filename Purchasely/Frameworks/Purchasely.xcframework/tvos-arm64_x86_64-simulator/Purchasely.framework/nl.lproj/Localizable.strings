@@ -112,3 +112,4 @@
 "ply_in_app_offer_ineligible_error" = "U komt niet in aanmerking voor deze promotionele aanbieding.";
 "ply_in_app_purchase_not_allowed_error" = "U mag dit product niet kopen.";
 "ply_in_app_offer_invalid_error" = "Aankoop met promotionele aanbieding mislukt.";
+"ply_google_feature_not_supported" = "Deze functie wordt niet ondersteund in deze versie van Google Play";

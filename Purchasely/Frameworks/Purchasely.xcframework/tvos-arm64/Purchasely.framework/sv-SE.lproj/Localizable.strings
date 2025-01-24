@@ -78,7 +78,7 @@
 "ply_unsubscribe_google_content" = "Besök play.google.com.   Kontrollera att du är inloggad på rätt Google-konto.   Klicka på Mina prenumerationer uppe till vänster.   Välj den prenumeration du vill säga upp.   Klicka på Hantera följt av Säg upp prenumerationen.";
 "ply_unsubscribe_google_button" = "Ok";
 "ply_unsubscribe_amazon_title" = "Säga upp en prenumeration";
-"ply_unsubscribe_amazon_content" = "Gå till amazon.com. Kontrollera att du är inloggad på rätt Amazon-konto. Gå till din kontosida. Klicka på "Andra prenumerationer" i avsnittet "Medlemskap och prenumerationer". Välj prenumerationen du vill avsluta och klicka sedan på "Avsluta prenumeration".";
+"ply_unsubscribe_amazon_content" = "Gå till amazon.com. Kontrollera att du är inloggad på rätt Amazon-konto. Gå till din kontosida. Klicka på \"Andra prenumerationer\" i avsnittet \"Medlemskap och prenumerationer\". Välj prenumerationen du vill avsluta och klicka sedan på \"Avsluta prenumeration\".";
 "ply_unsubscribe_amazon_button" = "Ok";
 "ply_unsubscribe_apple_title" = "Säga upp en prenumeration";
 "ply_unsubscribe_apple_content" = "Öppna appen Inställningar.    Tryck på ditt namn.   Tryck på prenumerationer.   Tryck på den prenumeration du vill hantera.   Tryck på Avbryt prenumeration.";
@@ -112,3 +112,4 @@
 "ply_in_app_offer_ineligible_error" = "Du är inte berättigad till detta erbjudande.";
 "ply_in_app_purchase_not_allowed_error" = "Du har inte tillåtelse att köpa den här produkten.";
 "ply_in_app_offer_invalid_error" = "Köpet med det kampanjerbjudandet misslyckades.";
+"ply_google_feature_not_supported" = "Funktionen stöds inte i denna version av Google Play";

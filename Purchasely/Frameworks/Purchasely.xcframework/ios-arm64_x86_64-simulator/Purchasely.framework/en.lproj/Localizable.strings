@@ -23,7 +23,7 @@
 "ply_configuration_error" = "Configuration error";
 "ply_google_developer_error" = "Error with application configuration";
 "ply_google_default_error" = "Payment validation failed, please try again";
-"ply_google_billing_not_available" = "In-app Purchase is not available with your device or Google account. Make sure Play Store is up to date and a paiment method is configured for your account";
+"ply_google_billing_not_available" = "In-app Purchase is not available with your device or Google account. Make sure Play Store is up to date and a payment method is configured for your account";
 "ply_in_app_already_subscribed_error" = "You\'re already a customer of our online services!";
 "ply_in_app_no_product_found_error" = "Unable to find the product.";
 "ply_in_app_absent_receipt" = "Receipt not found. Restore your purchases to try again.";
@@ -112,3 +112,4 @@
 "ply_in_app_offer_ineligible_error" = "You are not eligible for this promotional offer.";
 "ply_in_app_purchase_not_allowed_error" = "You are not allowed to purchase this product.";
 "ply_in_app_offer_invalid_error" = "Purchase with promotional offer failed.";
+"ply_google_feature_not_supported" = "Feature is not supported for this version of Google Play";
