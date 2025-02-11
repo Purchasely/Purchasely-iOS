@@ -535,7 +535,6 @@ extension PLYPlan {
 }
 @objc public enum PLYPresentationAction : Swift.Int {
   case close
-  case closeAll
   case login
   case navigate
   case purchase
@@ -543,7 +542,6 @@ extension PLYPlan {
   case openPresentation
   case openPlacement
   case promoCode
-  case selectOption
   public init?(rawValue: Swift.Int)
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
