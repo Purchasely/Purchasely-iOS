@@ -653,15 +653,13 @@ SWIFT_CLASS("_TtC10Purchasely15PLYPresentation")
 
 typedef SWIFT_ENUM(NSInteger, PLYPresentationAction, open) {
   PLYPresentationActionClose = 0,
-  PLYPresentationActionCloseAll = 1,
-  PLYPresentationActionLogin = 2,
-  PLYPresentationActionNavigate = 3,
-  PLYPresentationActionPurchase = 4,
-  PLYPresentationActionRestore = 5,
-  PLYPresentationActionOpenPresentation = 6,
-  PLYPresentationActionOpenPlacement = 7,
-  PLYPresentationActionPromoCode = 8,
-  PLYPresentationActionSelectOption = 9,
+  PLYPresentationActionLogin = 1,
+  PLYPresentationActionNavigate = 2,
+  PLYPresentationActionPurchase = 3,
+  PLYPresentationActionRestore = 4,
+  PLYPresentationActionOpenPresentation = 5,
+  PLYPresentationActionOpenPlacement = 6,
+  PLYPresentationActionPromoCode = 7,
 };
 
 @class NSURL;
@@ -2150,15 +2148,13 @@ SWIFT_CLASS("_TtC10Purchasely15PLYPresentation")
 
 typedef SWIFT_ENUM(NSInteger, PLYPresentationAction, open) {
   PLYPresentationActionClose = 0,
-  PLYPresentationActionCloseAll = 1,
-  PLYPresentationActionLogin = 2,
-  PLYPresentationActionNavigate = 3,
-  PLYPresentationActionPurchase = 4,
-  PLYPresentationActionRestore = 5,
-  PLYPresentationActionOpenPresentation = 6,
-  PLYPresentationActionOpenPlacement = 7,
-  PLYPresentationActionPromoCode = 8,
-  PLYPresentationActionSelectOption = 9,
+  PLYPresentationActionLogin = 1,
+  PLYPresentationActionNavigate = 2,
+  PLYPresentationActionPurchase = 3,
+  PLYPresentationActionRestore = 4,
+  PLYPresentationActionOpenPresentation = 5,
+  PLYPresentationActionOpenPlacement = 6,
+  PLYPresentationActionPromoCode = 7,
 };
 
 @class NSURL;
