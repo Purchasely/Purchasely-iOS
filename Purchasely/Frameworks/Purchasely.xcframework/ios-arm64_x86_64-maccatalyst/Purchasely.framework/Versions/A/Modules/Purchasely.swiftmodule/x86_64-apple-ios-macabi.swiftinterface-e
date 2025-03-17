@@ -337,6 +337,7 @@ extension Foundation.NSString {
   case selectedOptionId
   case selectedOptions
   case displayedOptions
+  case campaignId
   public var name: Swift.String {
     get
   }
@@ -514,6 +515,7 @@ extension Purchasely.PLYPlan {
   @objc final public let audienceId: Swift.String?
   @objc final public let abTestId: Swift.String?
   @objc final public let abTestVariantId: Swift.String?
+  @objc final public let campaignId: Swift.String?
   @objc final public let type: Purchasely.PLYPresentationType
   @objc final public let controller: Purchasely.PLYPresentationViewController?
   @objc final public let plans: [Purchasely.PLYPresentationPlan]
@@ -567,6 +569,7 @@ extension Purchasely.PLYPlan {
   @objc public var abTestId: Swift.String?
   @objc public var presentationVendorId: Swift.String?
   @objc public var placementVendorId: Swift.String?
+  @objc public var campaignId: Swift.String?
   @objc override dynamic public init()
   @objc deinit
 }
@@ -629,6 +632,7 @@ extension Purchasely.PLYPresentationViewController {
 }
 public typealias PLYProductViewControllerCompletionBlock = (Purchasely.PLYProductViewControllerResult, Purchasely.PLYPlan?) -> Swift.Void
 public typealias PLYPresentationFetchCompletionBlock = (Purchasely.PLYPresentation?, (any Swift.Error)?) -> Swift.Void
+public typealias PLYPresentationLoadedCompletionBlock = () -> Swift.Void
 @objc public enum PLYProductViewControllerResult : Swift.Int {
   case purchased
   case cancelled
@@ -780,6 +784,7 @@ public enum PLYSubscriptionSourceError : Swift.Error {
   case intArray
   case doubleArray
   case boolArray
+  case dictionary
   case unknown
   public init?(rawValue: Swift.Int)
   public typealias RawValue = Swift.Int
@@ -827,7 +832,7 @@ extension Purchasely.Purchasely {
   @objc dynamic public class func setPaywallActionsInterceptor(_ paywallActionsInterceptor: Purchasely.PLYPaywallActionsInterceptor?)
   @objc dynamic public class func userLogin(with appUserId: Swift.String)
   @objc dynamic public class func userLogin(with appUserId: Swift.String, shouldRefresh: Purchasely.PLYLoginCompletionHandler?)
-  @objc dynamic public class func userLogout()
+  @objc dynamic public class func userLogout(_ clearUserAttributes: Swift.Bool = true)
   @objc dynamic public class func isAnonymous() -> Swift.Bool
   @objc dynamic public class func setDefaultPresentationResultHandler(_ defaultPresentationResultHandler: Purchasely.PLYProductViewControllerCompletionBlock?)
   @objc dynamic public class func setLanguage(from locale: Foundation.Locale?)
@@ -850,10 +855,10 @@ extension Purchasely.Purchasely {
   @objc dynamic public class func presentationController(with presentationVendorId: Swift.String? = nil, loaded: Purchasely.PLYPaywallLoadingClosure? = nil, completion: Purchasely.PLYProductViewControllerCompletionBlock? = nil) -> Purchasely.PLYPresentationViewController?
   @objc dynamic public class func presentationController(for placementId: Swift.String, contentId: Swift.String?, loaded: Purchasely.PLYPaywallLoadingClosure? = nil, completion: Purchasely.PLYProductViewControllerCompletionBlock? = nil) -> Purchasely.PLYPresentationViewController?
   @objc dynamic public class func presentationController(for placementId: Swift.String, loaded: Purchasely.PLYPaywallLoadingClosure? = nil, completion: Purchasely.PLYProductViewControllerCompletionBlock? = nil) -> UIKit.UIViewController?
-  @objc dynamic public class func fetchPresentation(with presentationVendorId: Swift.String?, contentId: Swift.String?, fetchCompletion: Purchasely.PLYPresentationFetchCompletionBlock? = nil, completion: Purchasely.PLYProductViewControllerCompletionBlock? = nil)
-  @objc dynamic public class func fetchPresentation(with presentationVendorId: Swift.String?, fetchCompletion: Purchasely.PLYPresentationFetchCompletionBlock? = nil, completion: Purchasely.PLYProductViewControllerCompletionBlock? = nil)
-  @objc dynamic public class func fetchPresentation(for placementId: Swift.String, fetchCompletion: Purchasely.PLYPresentationFetchCompletionBlock? = nil, completion: Purchasely.PLYProductViewControllerCompletionBlock? = nil)
-  @objc dynamic public class func fetchPresentation(for placementId: Swift.String, contentId: Swift.String?, fetchCompletion: Purchasely.PLYPresentationFetchCompletionBlock? = nil, completion: Purchasely.PLYProductViewControllerCompletionBlock? = nil)
+  @objc dynamic public class func fetchPresentation(with presentationVendorId: Swift.String?, contentId: Swift.String?, fetchCompletion: Purchasely.PLYPresentationFetchCompletionBlock? = nil, completion: Purchasely.PLYProductViewControllerCompletionBlock? = nil, loadedCompletion: Purchasely.PLYPresentationLoadedCompletionBlock? = nil)
+  @objc dynamic public class func fetchPresentation(with presentationVendorId: Swift.String?, fetchCompletion: Purchasely.PLYPresentationFetchCompletionBlock? = nil, completion: Purchasely.PLYProductViewControllerCompletionBlock? = nil, loadedCompletion: Purchasely.PLYPresentationLoadedCompletionBlock? = nil)
+  @objc dynamic public class func fetchPresentation(for placementId: Swift.String, fetchCompletion: Purchasely.PLYPresentationFetchCompletionBlock? = nil, completion: Purchasely.PLYProductViewControllerCompletionBlock? = nil, loadedCompletion: Purchasely.PLYPresentationLoadedCompletionBlock? = nil)
+  @objc dynamic public class func fetchPresentation(for placementId: Swift.String, contentId: Swift.String?, fetchCompletion: Purchasely.PLYPresentationFetchCompletionBlock? = nil, completion: Purchasely.PLYProductViewControllerCompletionBlock? = nil, loadedCompletion: Purchasely.PLYPresentationLoadedCompletionBlock? = nil)
   @objc dynamic public class func closeDisplayedPresentation()
   @objc dynamic public class func clientPresentationOpened(with presentation: Purchasely.PLYPresentation?)
   @objc dynamic public class func clientPresentationClosed(with presentation: Purchasely.PLYPresentation?)
@@ -913,6 +918,7 @@ extension Purchasely.Purchasely {
   @objc public static func setUserAttributes(_ attributes: [Swift.String : Any])
   @objc public static func clearUserAttributes()
   @objc public static func clearUserAttribute(forKey key: Swift.String)
+  @objc public static func clearBuiltInAttributes()
   @objc public enum PLYAttribute : Swift.Int {
     case firebaseAppInstanceId
     case airshipChannelId

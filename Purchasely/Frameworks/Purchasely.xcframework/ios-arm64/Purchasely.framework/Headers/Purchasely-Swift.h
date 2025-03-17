@@ -493,6 +493,7 @@ typedef SWIFT_ENUM(NSInteger, PLYEventProperty, open) {
   PLYEventPropertySelectedOptionId = 77,
   PLYEventPropertySelectedOptions = 78,
   PLYEventPropertyDisplayedOptions = 79,
+  PLYEventPropertyCampaignId = 80,
 };
 
 typedef SWIFT_ENUM(NSInteger, PLYEventType, open) {
@@ -573,11 +574,11 @@ SWIFT_CLASS("_TtC10Purchasely7PLYPlan")
 
 
 
-
 @interface PLYPlan (SWIFT_EXTENSION(Purchasely))
 - (NSString * _Nullable)priceDifferenceWithComparedTo:(PLYPlan * _Nonnull)plan SWIFT_WARN_UNUSED_RESULT;
 - (NSString * _Nullable)priceDifferenceInPercentageTo:(PLYPlan * _Nonnull)plan SWIFT_WARN_UNUSED_RESULT;
 @end
+
 
 
 @interface PLYPlan (SWIFT_EXTENSION(Purchasely))
@@ -639,6 +640,7 @@ SWIFT_CLASS("_TtC10Purchasely15PLYPresentation")
 @property (nonatomic, readonly, copy) NSString * _Nullable audienceId;
 @property (nonatomic, readonly, copy) NSString * _Nullable abTestId;
 @property (nonatomic, readonly, copy) NSString * _Nullable abTestVariantId;
+@property (nonatomic, readonly, copy) NSString * _Nullable campaignId;
 @property (nonatomic, readonly) enum PLYPresentationType type;
 @property (nonatomic, readonly, strong) PLYPresentationViewController * _Nullable controller;
 @property (nonatomic, readonly, copy) NSArray<PLYPresentationPlan *> * _Nonnull plans;
@@ -694,6 +696,7 @@ SWIFT_CLASS("_TtC10Purchasely19PLYPresentationInfo")
 @property (nonatomic, copy) NSString * _Nullable presentationVendorId;
 /// <code>placementVendorId</code> parameter represents current Purchasely placement id
 @property (nonatomic, copy) NSString * _Nullable placementVendorId;
+@property (nonatomic, copy) NSString * _Nullable campaignId;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -884,7 +887,8 @@ typedef SWIFT_ENUM(NSInteger, PLYUserAttributeType, open) {
   PLYUserAttributeTypeIntArray = 6,
   PLYUserAttributeTypeDoubleArray = 7,
   PLYUserAttributeTypeBoolArray = 8,
-  PLYUserAttributeTypeUnknown = 9,
+  PLYUserAttributeTypeDictionary = 9,
+  PLYUserAttributeTypeUnknown = 10,
 };
 
 
@@ -918,6 +922,7 @@ SWIFT_CLASS("_TtC10Purchasely10Purchasely")
 @interface Purchasely (SWIFT_EXTENSION(Purchasely))
 + (void)showController:(UIViewController * _Nonnull)controller type:(enum PLYUIControllerType)type from:(UIViewController * _Nullable)sourceViewController;
 @end
+
 
 
 
@@ -971,7 +976,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 + (void)setPaywallActionsInterceptor:(void (^ _Nullable)(enum PLYPresentationAction, PLYPresentationActionParameters * _Nullable, PLYPresentationInfo * _Nullable, void (^ _Nonnull)(BOOL)))paywallActionsInterceptor;
 + (void)userLoginWith:(NSString * _Nonnull)appUserId;
 + (void)userLoginWith:(NSString * _Nonnull)appUserId shouldRefresh:(void (^ _Nullable)(BOOL))shouldRefresh;
-+ (void)userLogout;
++ (void)userLogout:(BOOL)clearUserAttributes;
 + (BOOL)isAnonymous SWIFT_WARN_UNUSED_RESULT;
 /// This function sets a handler that is triggered once the purchase controller is dismissed.
 /// It provides the output of the action (cancel, purchase, restore).
@@ -1154,7 +1159,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 ///     completion: the block called after the product controller has been dismissed to give the output of the action (cancel, purchase, restore)
 ///   </li>
 /// </ul>
-+ (void)fetchPresentationWith:(NSString * _Nullable)presentationVendorId contentId:(NSString * _Nullable)contentId fetchCompletion:(void (^ _Nullable)(PLYPresentation * _Nullable, NSError * _Nullable))fetchCompletion completion:(void (^ _Nullable)(enum PLYProductViewControllerResult, PLYPlan * _Nullable))completion;
++ (void)fetchPresentationWith:(NSString * _Nullable)presentationVendorId contentId:(NSString * _Nullable)contentId fetchCompletion:(void (^ _Nullable)(PLYPresentation * _Nullable, NSError * _Nullable))fetchCompletion completion:(void (^ _Nullable)(enum PLYProductViewControllerResult, PLYPlan * _Nullable))completion loadedCompletion:(void (^ _Nullable)(void))loadedCompletion;
 /// This method loads a presentation for a specific presentation Id.
 /// <ul>
 ///   <li>
@@ -1170,7 +1175,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 ///     completion: the block called after the product controller has been dismissed to give the output of the action (cancel, purchase, restore)
 ///   </li>
 /// </ul>
-+ (void)fetchPresentationWith:(NSString * _Nullable)presentationVendorId fetchCompletion:(void (^ _Nullable)(PLYPresentation * _Nullable, NSError * _Nullable))fetchCompletion completion:(void (^ _Nullable)(enum PLYProductViewControllerResult, PLYPlan * _Nullable))completion;
++ (void)fetchPresentationWith:(NSString * _Nullable)presentationVendorId fetchCompletion:(void (^ _Nullable)(PLYPresentation * _Nullable, NSError * _Nullable))fetchCompletion completion:(void (^ _Nullable)(enum PLYProductViewControllerResult, PLYPlan * _Nullable))completion loadedCompletion:(void (^ _Nullable)(void))loadedCompletion;
 /// This method loads a presentation for a specific placement Id.
 /// <ul>
 ///   <li>
@@ -1186,7 +1191,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 ///     completion: the block called after the product controller has been dismissed to give the output of the action (cancel, purchase, restore)
 ///   </li>
 /// </ul>
-+ (void)fetchPresentationFor:(NSString * _Nonnull)placementId fetchCompletion:(void (^ _Nullable)(PLYPresentation * _Nullable, NSError * _Nullable))fetchCompletion completion:(void (^ _Nullable)(enum PLYProductViewControllerResult, PLYPlan * _Nullable))completion;
++ (void)fetchPresentationFor:(NSString * _Nonnull)placementId fetchCompletion:(void (^ _Nullable)(PLYPresentation * _Nullable, NSError * _Nullable))fetchCompletion completion:(void (^ _Nullable)(enum PLYProductViewControllerResult, PLYPlan * _Nullable))completion loadedCompletion:(void (^ _Nullable)(void))loadedCompletion;
 /// This method loads a presentation for a specific placement Id.
 /// If a <code>contentId</code> is provided, this identifier will be sent to your backend for association purposes.
 /// <ul>
@@ -1206,7 +1211,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 ///     completion: the block called after the product controller has been dismissed to give the output of the action (cancel, purchase, restore)
 ///   </li>
 /// </ul>
-+ (void)fetchPresentationFor:(NSString * _Nonnull)placementId contentId:(NSString * _Nullable)contentId fetchCompletion:(void (^ _Nullable)(PLYPresentation * _Nullable, NSError * _Nullable))fetchCompletion completion:(void (^ _Nullable)(enum PLYProductViewControllerResult, PLYPlan * _Nullable))completion;
++ (void)fetchPresentationFor:(NSString * _Nonnull)placementId contentId:(NSString * _Nullable)contentId fetchCompletion:(void (^ _Nullable)(PLYPresentation * _Nullable, NSError * _Nullable))fetchCompletion completion:(void (^ _Nullable)(enum PLYProductViewControllerResult, PLYPlan * _Nullable))completion loadedCompletion:(void (^ _Nullable)(void))loadedCompletion;
 /// This method closes the current paywall displayed
 + (void)closeDisplayedPresentation;
 /// This method is used to notify Purchasely that a client paywall has been opened.
@@ -1401,6 +1406,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSDictionary<N
 + (void)setUserAttributes:(NSDictionary<NSString *, id> * _Nonnull)attributes;
 + (void)clearUserAttributes;
 + (void)clearUserAttributeForKey:(NSString * _Nonnull)key;
++ (void)clearBuiltInAttributes;
 + (void)setAttribute:(enum PLYAttribute)attribute value:(NSString * _Nonnull)value;
 + (void)setThemeMode:(enum PLYThemeMode)mode;
 /// This method is used to trigger an event telling Purchasely that a content has been consumed through a subscription.
