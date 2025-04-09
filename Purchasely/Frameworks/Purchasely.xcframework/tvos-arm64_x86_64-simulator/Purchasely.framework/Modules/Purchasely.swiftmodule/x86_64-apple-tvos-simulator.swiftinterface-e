@@ -564,8 +564,6 @@ extension Purchasely.PLYPlan {
   @objc public var audienceId: Swift.String?
   @objc public var abTestVariantId: Swift.String?
   @objc public var abTestId: Swift.String?
-  @objc public var presentationVendorId: Swift.String?
-  @objc public var placementVendorId: Swift.String?
   @objc public var campaignId: Swift.String?
   @objc override dynamic public init()
   @objc deinit

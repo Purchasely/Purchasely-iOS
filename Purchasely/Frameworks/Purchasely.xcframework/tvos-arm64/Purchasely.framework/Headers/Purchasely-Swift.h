@@ -692,10 +692,7 @@ SWIFT_CLASS("_TtC10Purchasely19PLYPresentationInfo")
 @property (nonatomic, copy) NSString * _Nullable abTestVariantId;
 /// <code>abTestId</code> parameter represents current A/B test Id
 @property (nonatomic, copy) NSString * _Nullable abTestId;
-/// <code>presentationVendorId</code> parameter represents current Purchasely paywall presentation id
-@property (nonatomic, copy) NSString * _Nullable presentationVendorId;
-/// <code>placementVendorId</code> parameter represents current Purchasely placement id
-@property (nonatomic, copy) NSString * _Nullable placementVendorId;
+/// <code>campaignId</code> parameter represents campaign Id
 @property (nonatomic, copy) NSString * _Nullable campaignId;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
