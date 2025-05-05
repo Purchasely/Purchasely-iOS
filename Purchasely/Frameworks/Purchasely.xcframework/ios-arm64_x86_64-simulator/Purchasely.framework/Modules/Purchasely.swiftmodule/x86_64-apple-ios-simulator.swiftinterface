@@ -52,6 +52,7 @@ public enum LocalReceiptError : Swift.Error {
 }
 extension Foundation.NSNotification.Name {
   public static let ply_purchasedSubscription: Foundation.Notification.Name
+  public static let ply_eligibilityUpdated: Foundation.Notification.Name
 }
 @_hasMissingDesignatedInitializers public class PlansEligibilityManager {
   public static let shared: PlansEligibilityManager
@@ -96,6 +97,80 @@ extension Foundation.NSNotification.Name {
     get
   }
 }
+public enum PLYFrequencyCapUnit : Swift.String, Swift.Decodable {
+  case appSessions
+  case seconds
+  case minutes
+  case days
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum PLYImpressionCapUnit : Swift.String, Swift.Decodable {
+  case displays
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public struct PLYFrequencyCap : Swift.Decodable {
+  public var unit: PLYFrequencyCapUnit?
+  public var value: Swift.Int?
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct PLYImpressionCap : Swift.Decodable {
+  public var unit: PLYImpressionCapUnit?
+  public var value: Swift.Int?
+  public init(from decoder: any Swift.Decoder) throws
+}
+public enum PLYCampaignStatus : Swift.String, Swift.Decodable {
+  case draft, running, deactivated
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum PLYExposureWindowUnit : Swift.String, Swift.Decodable {
+  case seconds, minutes, days
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum PLYExposureWindowInit : Swift.String, Swift.Decodable {
+  case firstDisplay
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public struct PLYExposureWindow : Swift.Decodable {
+  public let unit: PLYExposureWindowUnit?
+  public let value: Swift.Int?
+  public init(from decoder: any Swift.Decoder) throws
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class PLYCampaign : ObjectiveC.NSObject, Swift.Decodable, Swift.Identifiable {
+  public var id: Swift.String?
+  public var publicId: Swift.String?
+  public var startsAt: Foundation.Date?
+  public var endsAt: Foundation.Date?
+  public var frequencyCap: PLYFrequencyCap?
+  public var impressionCap: PLYImpressionCap?
+  public var exposureWindow: PLYExposureWindow?
+  required public init(from decoder: any Swift.Decoder) throws
+  public typealias ID = Swift.String?
+  @objc deinit
+}
+@objc public class PLYCampaignTrigger : ObjectiveC.NSObject, Swift.Decodable {
+  required public init(from decoder: any Swift.Decoder) throws
+  @objc deinit
+}
 @objc public enum PLYCancellationReason : Swift.Int {
   case price = 1
   case betterApp = 2
@@ -117,6 +192,31 @@ public enum PLYComponentError : Swift.Error {
   public var hashValue: Swift.Int {
     get
   }
+}
+@_hasMissingDesignatedInitializers public class PLYConfig : Swift.Decodable {
+  public var receiptPollingFrequency: Swift.Int
+  public var receiptPollingMaxRetry: Swift.Int
+  public var displayPoweredByPurchasely: Swift.Bool
+  public var promoCodesEnabled: Swift.Bool
+  public var trackedEvents: [PLYEvent]
+  public var highPriorityEvents: [PLYEvent]
+  public var requestLimitationThreshold: Swift.Double
+  public var regionalizedLanguages: [Swift.String]
+  public var autoImport: Swift.Bool
+  public var autoImportRetryTime: Swift.Double
+  public var autoImportRetryCount: Swift.Int
+  public var storeKit2Configured: Swift.Bool
+  public var userSubscriptionAutoFetchActivated: Swift.Bool
+  public var userSubscriptionsCacheTTL: Swift.Int
+  public var eventsBatchFrequencyInSeconds: Swift.Int
+  public var eventsBatchMaxSize: Swift.Int
+  public var eventsTimeDriftToleranceInMinutes: Swift.Int?
+  public var campaigns: [PLYCampaign]
+  public var triggers: [PLYCampaignTrigger]
+  public var maxNumberOfOffering: Swift.Int
+  public var userAttributesTrackedEvents: [Swift.String]
+  required public init(from decoder: any Swift.Decoder) throws
+  @objc deinit
 }
 @objc public enum PLYCustomPropertyDataType : Swift.Int, Swift.CaseIterable, Swift.Codable {
   case int
@@ -421,6 +521,23 @@ public func PLYLocalizedPluralString(_ key: Swift.String, pluralType: PluralType
   final public let logLevel: Swift.String
   final public let date: Foundation.Date
   @objc deinit
+}
+@objc @objcMembers public class PLYOffering : ObjectiveC.NSObject, Swift.Codable {
+  @objc final public let reference: Swift.String
+  @objc final public let planId: Swift.String
+  @objc final public let offerId: Swift.String?
+  @objc public init(reference: Swift.String, planId: Swift.String, offerId: Swift.String?)
+  required public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+  @objc override dynamic public func isEqual(_ object: Any?) -> Swift.Bool
+  @objc override dynamic public var hash: Swift.Int {
+    @objc get
+  }
+  @objc(toJsonStringFromArray:) public static func toJsonString(from array: Foundation.NSArray) -> Swift.String?
+  @objc deinit
+}
+extension Swift.Array where Element == PLYOffering {
+  public func toJsonString() -> Swift.String?
 }
 @objc public class PLYOfferSignature : ObjectiveC.NSObject, Swift.Decodable {
   @objc public var planVendorId: Swift.String
@@ -822,7 +939,6 @@ extension Purchasely {
   }
   @objc dynamic public class func start(withAPIKey apiKey: Swift.String, appUserId: Swift.String? = nil, runningMode: PLYRunningMode = .full, paywallActionsInterceptor: PLYPaywallActionsInterceptor? = nil, storekitSettings: StorekitSettings, logLevel: PLYLogger.LogLevel = .error, initialized: PLYSuccessErrorClosure? = nil)
   @objc dynamic public class func getSDKVersion() -> Swift.String?
-  @objc dynamic public class func setEventDelegate(_ eventDelegate: (any PLYEventDelegate)?)
   @objc dynamic public class func setUIHandler(_ uiHandler: (any PLYUIHandler)?)
   @objc dynamic public class func setUserAttributeDelegate(_ userAttributeDelegate: any PLYUserAttributeDelegate)
   @objc dynamic public class func setPaywallActionsInterceptor(_ paywallActionsInterceptor: PLYPaywallActionsInterceptor?)
@@ -841,6 +957,7 @@ extension Purchasely {
   @objc dynamic public class func allProducts(success: @escaping ([PLYProduct]) -> Swift.Void, failure: @escaping ((any Swift.Error)?) -> Swift.Void)
   @objc dynamic public class func product(with vendorId: Swift.String, success: @escaping (PLYProduct) -> Swift.Void, failure: @escaping ((any Swift.Error)?) -> Swift.Void)
   @objc dynamic public class func plan(with vendorId: Swift.String, success: @escaping (PLYPlan) -> Swift.Void, failure: @escaping ((any Swift.Error)?) -> Swift.Void)
+  @objc dynamic public class func plan(for sku: Swift.String, success: @escaping (PLYPlan) -> Swift.Void, failure: @escaping ((any Swift.Error)?) -> Swift.Void)
   @objc dynamic public class func userSubscriptionsHistory(_ invalidateCache: Swift.Bool = false, success: @escaping ([PLYSubscription]?) -> Swift.Void, failure: @escaping PLYErrorClosure)
   @objc dynamic public class func userSubscriptions(_ invalidateCache: Swift.Bool = false, success: @escaping ([PLYSubscription]?) -> Swift.Void, failure: @escaping PLYErrorClosure)
   @objc dynamic public class func productController(for productVendorId: Swift.String, with presentationVendorId: Swift.String? = nil, contentId: Swift.String? = nil, loaded: PLYPaywallLoadingClosure? = nil, completion: PLYProductViewControllerCompletionBlock? = nil) -> PLYPresentationViewController?
@@ -861,7 +978,7 @@ extension Purchasely {
   @objc dynamic public class func subscriptionsController() -> UIKit.UIViewController?
   @objc dynamic public class func subscriptionController(for subscription: PLYSubscription) -> UIKit.UIViewController?
   @objc dynamic public class func cancellationSurveyController(for product: PLYProduct?, selected: @escaping ((PLYCancellationReason) -> ())) -> UIKit.UIViewController
-  public class func setEventDelegate(_ callback: @escaping (PLYEvent, [Swift.String : Any]?) -> ())
+  @objc dynamic public class func setEventDelegate(_ callback: @escaping (PLYEvent, [Swift.String : Any]?) -> ())
   @available(iOS 13.0, tvOS 13.0, macOS 12.0, watchOS 8.0, *)
   public class func productView(for productVendorId: Swift.String, with presentationVendorId: Swift.String? = nil, contentId: Swift.String? = nil, loaded: PLYPaywallLoadingClosure? = nil, completion: PLYProductViewControllerCompletionBlock? = nil) -> PLYPresentationView?
   @available(iOS 13.0, tvOS 13.0, macOS 12.0, watchOS 8.0, *)
@@ -915,6 +1032,11 @@ extension Purchasely {
   @objc public static func clearUserAttributes()
   @objc public static func clearUserAttribute(forKey key: Swift.String)
   @objc public static func clearBuiltInAttributes()
+  @objc public static func setDynamicOffering(reference: Swift.String, planVendorId: Swift.String, offerVendorId: Swift.String? = nil, completion: @escaping (Swift.Bool) -> ())
+  @objc public static func getDynamicOfferings() -> [PLYOffering]
+  @objc public static func getDynamicOfferings(completion: @escaping ([PLYOffering]) -> ())
+  @objc public static func removeDynamicOffering(reference: Swift.String)
+  @objc public static func clearDynamicOfferings()
   @objc public enum PLYAttribute : Swift.Int {
     case firebaseAppInstanceId
     case airshipChannelId
@@ -998,6 +1120,21 @@ extension PLYAlertMessage : Swift.RawRepresentable {}
 extension PLYAppTechnology : Swift.Equatable {}
 extension PLYAppTechnology : Swift.Hashable {}
 extension PLYAppTechnology : Swift.RawRepresentable {}
+extension PLYFrequencyCapUnit : Swift.Equatable {}
+extension PLYFrequencyCapUnit : Swift.Hashable {}
+extension PLYFrequencyCapUnit : Swift.RawRepresentable {}
+extension PLYImpressionCapUnit : Swift.Equatable {}
+extension PLYImpressionCapUnit : Swift.Hashable {}
+extension PLYImpressionCapUnit : Swift.RawRepresentable {}
+extension PLYCampaignStatus : Swift.Equatable {}
+extension PLYCampaignStatus : Swift.Hashable {}
+extension PLYCampaignStatus : Swift.RawRepresentable {}
+extension PLYExposureWindowUnit : Swift.Equatable {}
+extension PLYExposureWindowUnit : Swift.Hashable {}
+extension PLYExposureWindowUnit : Swift.RawRepresentable {}
+extension PLYExposureWindowInit : Swift.Equatable {}
+extension PLYExposureWindowInit : Swift.Hashable {}
+extension PLYExposureWindowInit : Swift.RawRepresentable {}
 extension PLYCancellationReason : Swift.Equatable {}
 extension PLYCancellationReason : Swift.Hashable {}
 extension PLYCancellationReason : Swift.RawRepresentable {}
