@@ -98,5 +98,7 @@
 	"5.0.2": "https://github.com/Purchasely/Purchasely-iOS/releases/download/5.0.2/Purchasely-tvos.framework.zip",
 	"5.0.3": "https://github.com/Purchasely/Purchasely-iOS/releases/download/5.0.3/Purchasely-tvos.framework.zip",
 	"5.1.0": "https://github.com/Purchasely/Purchasely-iOS/releases/download/5.1.0/Purchasely-tvos.framework.zip",
-	"5.1.1": "https://github.com/Purchasely/Purchasely-iOS/releases/download/5.1.1/Purchasely-tvos.framework.zip"
+	"5.1.1": "https://github.com/Purchasely/Purchasely-iOS/releases/download/5.1.1/Purchasely-tvos.framework.zip",
+	"5.2.0-rc.1": "https://github.com/Purchasely/Purchasely-iOS/releases/download/5.2.0-rc.1/Purchasely-tvos.framework.zip",
+	"5.2.0": "https://github.com/Purchasely/Purchasely-iOS/releases/download/5.2.0/Purchasely-tvos.framework.zip"
 }

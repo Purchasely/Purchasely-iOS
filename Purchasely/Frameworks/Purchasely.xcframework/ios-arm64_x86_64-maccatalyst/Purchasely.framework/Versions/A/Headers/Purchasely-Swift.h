@@ -338,6 +338,22 @@ typedef SWIFT_ENUM(NSInteger, PLYAppTechnology, open) {
   PLYAppTechnologyUnity = 5,
 };
 
+
+SWIFT_CLASS("_TtC10Purchasely11PLYCampaign")
+@interface PLYCampaign : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+
+SWIFT_CLASS("_TtC10Purchasely18PLYCampaignTrigger")
+@interface PLYCampaignTrigger : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
 typedef SWIFT_ENUM(NSInteger, PLYCancellationReason, open) {
   PLYCancellationReasonPrice = 1,
   PLYCancellationReasonBetterApp = 2,
@@ -558,6 +574,21 @@ SWIFT_CLASS("_TtC10Purchasely17PLYOfferSignature")
 @end
 
 
+@class NSArray;
+
+SWIFT_CLASS("_TtC10Purchasely11PLYOffering")
+@interface PLYOffering : NSObject
+@property (nonatomic, readonly, copy) NSString * _Nonnull reference;
+@property (nonatomic, readonly, copy) NSString * _Nonnull planId;
+@property (nonatomic, readonly, copy) NSString * _Nullable offerId;
+- (nonnull instancetype)initWithReference:(NSString * _Nonnull)reference planId:(NSString * _Nonnull)planId offerId:(NSString * _Nullable)offerId OBJC_DESIGNATED_INITIALIZER;
+- (BOOL)isEqual:(id _Nullable)object SWIFT_WARN_UNUSED_RESULT;
+@property (nonatomic, readonly) NSUInteger hash;
++ (NSString * _Nullable)toJsonStringFromArray:(NSArray * _Nonnull)array SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
 enum PLYPlanType : NSInteger;
 @class PLYPromoOffer;
 
@@ -572,6 +603,7 @@ SWIFT_CLASS("_TtC10Purchasely7PLYPlan")
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
+
 
 
 
@@ -919,10 +951,10 @@ SWIFT_CLASS("_TtC10Purchasely10Purchasely")
 
 
 
-
 @interface Purchasely (SWIFT_EXTENSION(Purchasely))
 + (void)showController:(UIViewController * _Nonnull)controller type:(enum PLYUIControllerType)type from:(UIViewController * _Nullable)sourceViewController;
 @end
+
 
 
 
@@ -939,7 +971,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 /// This must be called in <code>didFinishLaunchingWithOptions</code> to handle the receipts sent on startup
 + (void)startWithAPIKey:(NSString * _Nonnull)apiKey appUserId:(NSString * _Nullable)appUserId runningMode:(enum PLYRunningMode)runningMode paywallActionsInterceptor:(void (^ _Nullable)(enum PLYPresentationAction, PLYPresentationActionParameters * _Nullable, PLYPresentationInfo * _Nullable, void (^ _Nonnull)(BOOL)))paywallActionsInterceptor storekitSettings:(StorekitSettings * _Nonnull)storekitSettings logLevel:(enum LogLevel)logLevel initialized:(void (^ _Nullable)(BOOL, NSError * _Nullable))initialized;
 + (NSString * _Nullable)getSDKVersion SWIFT_WARN_UNUSED_RESULT;
-+ (void)setEventDelegate:(id <PLYEventDelegate> _Nullable)eventDelegate;
 + (void)setUIHandler:(id <PLYUIHandler> _Nullable)uiHandler;
 + (void)setUserAttributeDelegate:(id <PLYUserAttributeDelegate> _Nonnull)userAttributeDelegate;
 /// This function is used to set a handler that is called when a user
@@ -998,7 +1029,26 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 + (void)addLogger:(id <PLYLogging> _Nonnull)logger;
 + (void)allProductsWithSuccess:(void (^ _Nonnull)(NSArray<PLYProduct *> * _Nonnull))success failure:(void (^ _Nonnull)(NSError * _Nullable))failure;
 + (void)productWith:(NSString * _Nonnull)vendorId success:(void (^ _Nonnull)(PLYProduct * _Nonnull))success failure:(void (^ _Nonnull)(NSError * _Nullable))failure;
+/// Fetches plan details asynchronously using your custom vendor identifier.
+/// This method retrieves the specific <code>PLYPlan</code> object associated with the unique vendor ID you provide.
+/// The result is delivered via the corresponding success or failure callback.
+/// \param vendorId Your custom identifier for the desired plan (defined in your backend or configuration).
+///
+/// \param success The closure invoked upon successful retrieval of the plan. It receives the <code>PLYPlan</code> object.
+///
+/// \param failure The closure invoked if an error occurs during retrieval (e.g., plan not found for the given vendorId, network error). It receives an optional <code>Error</code> object describing the issue.
+///
 + (void)planWith:(NSString * _Nonnull)vendorId success:(void (^ _Nonnull)(PLYPlan * _Nonnull))success failure:(void (^ _Nonnull)(NSError * _Nullable))failure;
+/// Fetches plan details asynchronously using the App Store Product ID (SKU).
+/// This method retrieves the specific <code>PLYPlan</code> object associated with the provided App Store Product ID (often referred to as SKU).
+/// The result is delivered via the corresponding success or failure callback.
+/// \param sku The App Store Product ID (SKU) for the desired plan.
+///
+/// \param success The closure invoked upon successful retrieval of the plan. It receives the <code>PLYPlan</code> object.
+///
+/// \param failure The closure invoked if an error occurs during retrieval (e.g., plan not found for the given SKU, network error). It receives an optional <code>Error</code> object describing the issue.
+///
++ (void)planFor:(NSString * _Nonnull)sku success:(void (^ _Nonnull)(PLYPlan * _Nonnull))success failure:(void (^ _Nonnull)(NSError * _Nullable))failure;
 + (void)userSubscriptionsHistory:(BOOL)invalidateCache success:(void (^ _Nonnull)(NSArray<PLYSubscription *> * _Nullable))success failure:(void (^ _Nonnull)(NSError * _Nonnull))failure;
 + (void)userSubscriptions:(BOOL)invalidateCache success:(void (^ _Nonnull)(NSArray<PLYSubscription *> * _Nullable))success failure:(void (^ _Nonnull)(NSError * _Nonnull))failure;
 /// This method returns a presentation for a specific product. If no presentationVendorId is set (or an invalid one)
@@ -1236,6 +1286,21 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 + (UIViewController * _Nullable)subscriptionsController SWIFT_WARN_UNUSED_RESULT;
 + (UIViewController * _Nullable)subscriptionControllerFor:(PLYSubscription * _Nonnull)subscription SWIFT_WARN_UNUSED_RESULT;
 + (UIViewController * _Nonnull)cancellationSurveyControllerFor:(PLYProduct * _Nullable)product selected:(void (^ _Nonnull)(enum PLYCancellationReason))selected SWIFT_WARN_UNUSED_RESULT;
+/// Sets a delegate callback to receive all events tracked by the SDK. This allows integrators to observe and react to events happening within the SDK.
+/// <ul>
+///   <li>
+///     Parameters:
+///   </li>
+///   <li>
+///     event: The <code>PLYEvent</code> that was tracked. This enum provides information about the type of event.
+///   </li>
+///   <li>
+///     parameters: An optional dictionary containing additional parameters associated with the event. This can provide more context about the event.
+///   </li>
+/// </ul>
+/// \param callback A closure that will be called whenever an event is tracked.
+///
++ (void)setEventDelegate:(void (^ _Nonnull)(enum PLYEvent, NSDictionary<NSString *, id> * _Nullable))callback;
 /// This method must be called inside the AppDelegate open url method or SceneDelegate willConnectTo and openURLContexts
 /// Check the documentation: https://docs.purchasely.com/advanced-features/deeplinks-and-automations
 /// The controller will be displayed above the current controller.
@@ -1386,27 +1451,198 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 ///   </li>
 /// </ul>
 + (void)synchronizeWithSuccess:(void (^ _Nonnull)(void))success failure:(void (^ _Nonnull)(NSError * _Nonnull))failure;
+/// Retrieves all currently collected built-in attributes.
+///
+/// returns:
+/// A dictionary containing the built-in attributes, where the keys are the attribute names (String) and the values are the corresponding attribute values (Any).
 + (NSDictionary<NSString *, id> * _Nonnull)getBuiltInAttributes SWIFT_WARN_UNUSED_RESULT;
+/// Retrieves a specific built-in attribute by its key.
+/// \param key The key of the built-in attribute to retrieve.
+///
+///
+/// returns:
+/// The value of the built-in attribute associated with the given key, or nil if the attribute does not exist.
 + (id _Nullable)getBuiltInAttributeWith:(NSString * _Nonnull)key SWIFT_WARN_UNUSED_RESULT;
+/// A dictionary of all user attributes currently stored.
+/// Use this to inspect all attributes previously set for the user (e.g., name, age, is_premium).
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSDictionary<NSString *, id> * _Nonnull userAttributes;)
 + (NSDictionary<NSString *, id> * _Nonnull)userAttributes SWIFT_WARN_UNUSED_RESULT;
+/// Retrieves a specific user attribute value by its key.
+/// Example: <code>getUserAttribute(for: "age")</code>
+/// \param key The key of the user attribute you want to retrieve.
+///
+///
+/// returns:
+/// The attribute value if found, otherwise <code>nil</code>.
 + (id _Nullable)getUserAttributeFor:(NSString * _Nonnull)key SWIFT_WARN_UNUSED_RESULT;
+/// Sets a string-type user attribute.
+/// Example: <code>setUserAttribute(withStringValue: "Gold", forKey: "subscription_tier")</code>
+/// \param value The string value to associate with the key.
+///
+/// \param key The key under which the attribute is stored.
+///
 + (void)setUserAttributeWithStringValue:(NSString * _Nonnull)value forKey:(NSString * _Nonnull)key;
+/// Sets an integer-type user attribute.
+/// Example: <code>setUserAttribute(withIntValue: 28, forKey: "age")</code>
+/// \param value The integer value to store.
+///
+/// \param key The key under which to save the attribute.
+///
 + (void)setUserAttributeWithIntValue:(NSInteger)value forKey:(NSString * _Nonnull)key;
+/// Sets a double-type user attribute.
+/// Example: <code>setUserAttribute(withDoubleValue: 99.99, forKey: "total_spent")</code>
+/// \param value The double value to store.
+///
+/// \param key The key under which to save the attribute.
+///
 + (void)setUserAttributeWithDoubleValue:(double)value forKey:(NSString * _Nonnull)key;
+/// Sets a date-type user attribute.
+/// Example: <code>setUserAttribute(withDateValue: Date(), forKey: "signup_date")</code>
+/// \param value The <code>Date</code> to store.
+///
+/// \param key The key under which to save the attribute.
+///
 + (void)setUserAttributeWithDateValue:(NSDate * _Nonnull)value forKey:(NSString * _Nonnull)key;
+/// Sets a boolean-type user attribute.
+/// Example: <code>setUserAttribute(withBoolValue: true, forKey: "is_premium")</code>
+/// \param value The boolean value to store.
+///
+/// \param key The key under which to save the attribute.
+///
 + (void)setUserAttributeWithBoolValue:(BOOL)value forKey:(NSString * _Nonnull)key;
+/// Sets a user attribute with an array of boolean values for the given key.
+/// <ul>
+///   <li>
+///     Parameters:
+///   </li>
+///   <li>
+///     value: An array of boolean values to set for the attribute.
+///   </li>
+///   <li>
+///     key: The key associated with the user attribute. This key will be used to identify and retrieve the attribute.
+///   </li>
+/// </ul>
 + (void)setUserAttributeWithBoolArray:(NSArray<NSNumber *> * _Nonnull)value forKey:(NSString * _Nonnull)key;
+/// Sets a user attribute with an array of integer values for the given key.
+/// <ul>
+///   <li>
+///     Parameters:
+///   </li>
+///   <li>
+///     value: An array of integer values to set for the attribute.
+///   </li>
+///   <li>
+///     key: The key associated with the user attribute. This key will be used to identify and retrieve the attribute.
+///   </li>
+/// </ul>
 + (void)setUserAttributeWithIntArray:(NSArray<NSNumber *> * _Nonnull)value forKey:(NSString * _Nonnull)key;
+/// Sets a user attribute with an array of string values for the given key.
+/// <ul>
+///   <li>
+///     Parameters:
+///   </li>
+///   <li>
+///     value: An array of string values to set for the attribute.
+///   </li>
+///   <li>
+///     key: The key associated with the user attribute. This key will be used to identify and retrieve the attribute.
+///   </li>
+/// </ul>
 + (void)setUserAttributeWithStringArray:(NSArray<NSString *> * _Nonnull)value forKey:(NSString * _Nonnull)key;
+/// Sets a user attribute with an array of double values for the given key.
+/// <ul>
+///   <li>
+///     Parameters:
+///   </li>
+///   <li>
+///     value: An array of double values to set for the attribute.
+///   </li>
+///   <li>
+///     key: The key associated with the user attribute. This key will be used to identify and retrieve the attribute.
+///   </li>
+/// </ul>
 + (void)setUserAttributeWithDoubleArray:(NSArray<NSNumber *> * _Nonnull)value forKey:(NSString * _Nonnull)key;
+/// Increments a numerical user attribute by a specified value. If the attribute does not exist, it will be created with the initial increment value.
+/// <ul>
+///   <li>
+///     Parameters:
+///   </li>
+///   <li>
+///     key: The key of the numerical user attribute to increment.
+///   </li>
+///   <li>
+///     value: The value to increment the attribute by. Defaults to 1.
+///   </li>
+/// </ul>
 + (void)incrementUserAttributeWithKey:(NSString * _Nonnull)key value:(NSInteger)value;
+/// Decrements a numerical user attribute by a specified value. If the attribute does not exist, it will be created with the initial negative decrement value.
+/// <ul>
+///   <li>
+///     Parameters:
+///   </li>
+///   <li>
+///     key: The key of the numerical user attribute to decrement.
+///   </li>
+///   <li>
+///     value: The value to decrement the attribute by. Defaults to 1.
+///   </li>
+/// </ul>
 + (void)decrementUserAttributeWithKey:(NSString * _Nonnull)key value:(NSInteger)value;
+/// Sets multiple user attributes at once using a dictionary.
+/// <ul>
+///   <li>
+///     Parameters:
+///   </li>
+///   <li>
+///     attributes: A dictionary where the keys are the attribute names (String) and the values are the corresponding attribute values (Any). Supported value types are Bool, Int, Double, String, and arrays of these types.
+///   </li>
+/// </ul>
 + (void)setUserAttributes:(NSDictionary<NSString *, id> * _Nonnull)attributes;
+/// Clears all user-defined attributes. This will remove all custom attributes that have been set.
 + (void)clearUserAttributes;
+/// Clears a specific user attribute based on its key.
+/// <ul>
+///   <li>
+///     Parameters:
+///   </li>
+///   <li>
+///     key: The key of the user attribute to remove.
+///   </li>
+/// </ul>
 + (void)clearUserAttributeForKey:(NSString * _Nonnull)key;
+/// Clears all built-in attributes managed by the SDK.
 + (void)clearBuiltInAttributes;
+/// Adds a dynamic offering that will override the default ones displayed in the paywall.
+/// Use this when you want to force a specific plan (and optionally offer) to be shown in a specific context.
+/// \param reference A unique key to identify this dynamic offering (e.g., screen identifier).
+///
+/// \param planVendorId The plan to display in the offering.
+///
+/// \param offerVendorId (Optional) The specific offer to highlight. If nil, default logic applies.
+///
+/// \param completion Called with <code>true</code> if the dynamic offering was successfully added.
+///
++ (void)setDynamicOfferingWithReference:(NSString * _Nonnull)reference planVendorId:(NSString * _Nonnull)planVendorId offerVendorId:(NSString * _Nullable)offerVendorId completion:(void (^ _Nonnull)(BOOL))completion;
+/// Retrieves the list of currently active dynamic offerings (synchronous version).
+/// Use this to inspect what dynamic offerings are currently registered in memory.
++ (NSArray<PLYOffering *> * _Nonnull)getDynamicOfferings SWIFT_WARN_UNUSED_RESULT;
+/// Retrieves the list of currently active dynamic offerings asynchronously.
+/// Useful when needing to load the offerings from disk or async sources.
+/// \param completion Closure called with the current dynamic offerings.
+///
++ (void)getDynamicOfferingsWithCompletion:(void (^ _Nonnull)(NSArray<PLYOffering *> * _Nonnull))completion;
+/// Removes a specific dynamic offering by its reference key.
+/// Use this to stop overriding the default offering for a specific context.
+/// \param reference The unique reference used when the offering was added.
+///
++ (void)removeDynamicOfferingWithReference:(NSString * _Nonnull)reference;
+/// Removes all dynamic offerings from memory and storage.
+/// Call this to reset the offering logic and go back to the default configuration.
++ (void)clearDynamicOfferings;
 + (void)setAttribute:(enum PLYAttribute)attribute value:(NSString * _Nonnull)value;
+/// Sets the theme mode for the SDK’s UI elements. This setting will influence the visual appearance of any SDK-provided UI.
+/// \param mode The desired theme mode to apply.
+///
 + (void)setThemeMode:(enum PLYThemeMode)mode;
 /// This method is used to trigger an event telling Purchasely that a content has been consumed through a subscription.
 + (void)userDidConsumeSubscriptionContent;
@@ -1441,6 +1677,18 @@ typedef SWIFT_ENUM(NSInteger, PLYAttribute, open) {
   PLYAttributeOneSignalUserId = 22,
 };
 
+/// Represents the available theme modes for the SDK’s UI elements.
+/// <ul>
+///   <li>
+///     light: Use a light color scheme.
+///   </li>
+///   <li>
+///     dark: Use a dark color scheme.
+///   </li>
+///   <li>
+///     system: Follow the system’s current appearance setting (light or dark mode).
+///   </li>
+/// </ul>
 typedef SWIFT_ENUM(NSInteger, PLYThemeMode, open) {
   PLYThemeModeLight = 0,
   PLYThemeModeDark = 1,
@@ -1836,6 +2084,22 @@ typedef SWIFT_ENUM(NSInteger, PLYAppTechnology, open) {
   PLYAppTechnologyUnity = 5,
 };
 
+
+SWIFT_CLASS("_TtC10Purchasely11PLYCampaign")
+@interface PLYCampaign : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+
+SWIFT_CLASS("_TtC10Purchasely18PLYCampaignTrigger")
+@interface PLYCampaignTrigger : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
 typedef SWIFT_ENUM(NSInteger, PLYCancellationReason, open) {
   PLYCancellationReasonPrice = 1,
   PLYCancellationReasonBetterApp = 2,
@@ -2056,6 +2320,21 @@ SWIFT_CLASS("_TtC10Purchasely17PLYOfferSignature")
 @end
 
 
+@class NSArray;
+
+SWIFT_CLASS("_TtC10Purchasely11PLYOffering")
+@interface PLYOffering : NSObject
+@property (nonatomic, readonly, copy) NSString * _Nonnull reference;
+@property (nonatomic, readonly, copy) NSString * _Nonnull planId;
+@property (nonatomic, readonly, copy) NSString * _Nullable offerId;
+- (nonnull instancetype)initWithReference:(NSString * _Nonnull)reference planId:(NSString * _Nonnull)planId offerId:(NSString * _Nullable)offerId OBJC_DESIGNATED_INITIALIZER;
+- (BOOL)isEqual:(id _Nullable)object SWIFT_WARN_UNUSED_RESULT;
+@property (nonatomic, readonly) NSUInteger hash;
++ (NSString * _Nullable)toJsonStringFromArray:(NSArray * _Nonnull)array SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
 enum PLYPlanType : NSInteger;
 @class PLYPromoOffer;
 
@@ -2070,6 +2349,7 @@ SWIFT_CLASS("_TtC10Purchasely7PLYPlan")
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
+
 
 
 
@@ -2417,10 +2697,10 @@ SWIFT_CLASS("_TtC10Purchasely10Purchasely")
 
 
 
-
 @interface Purchasely (SWIFT_EXTENSION(Purchasely))
 + (void)showController:(UIViewController * _Nonnull)controller type:(enum PLYUIControllerType)type from:(UIViewController * _Nullable)sourceViewController;
 @end
+
 
 
 
@@ -2437,7 +2717,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 /// This must be called in <code>didFinishLaunchingWithOptions</code> to handle the receipts sent on startup
 + (void)startWithAPIKey:(NSString * _Nonnull)apiKey appUserId:(NSString * _Nullable)appUserId runningMode:(enum PLYRunningMode)runningMode paywallActionsInterceptor:(void (^ _Nullable)(enum PLYPresentationAction, PLYPresentationActionParameters * _Nullable, PLYPresentationInfo * _Nullable, void (^ _Nonnull)(BOOL)))paywallActionsInterceptor storekitSettings:(StorekitSettings * _Nonnull)storekitSettings logLevel:(enum LogLevel)logLevel initialized:(void (^ _Nullable)(BOOL, NSError * _Nullable))initialized;
 + (NSString * _Nullable)getSDKVersion SWIFT_WARN_UNUSED_RESULT;
-+ (void)setEventDelegate:(id <PLYEventDelegate> _Nullable)eventDelegate;
 + (void)setUIHandler:(id <PLYUIHandler> _Nullable)uiHandler;
 + (void)setUserAttributeDelegate:(id <PLYUserAttributeDelegate> _Nonnull)userAttributeDelegate;
 /// This function is used to set a handler that is called when a user
@@ -2496,7 +2775,26 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 + (void)addLogger:(id <PLYLogging> _Nonnull)logger;
 + (void)allProductsWithSuccess:(void (^ _Nonnull)(NSArray<PLYProduct *> * _Nonnull))success failure:(void (^ _Nonnull)(NSError * _Nullable))failure;
 + (void)productWith:(NSString * _Nonnull)vendorId success:(void (^ _Nonnull)(PLYProduct * _Nonnull))success failure:(void (^ _Nonnull)(NSError * _Nullable))failure;
+/// Fetches plan details asynchronously using your custom vendor identifier.
+/// This method retrieves the specific <code>PLYPlan</code> object associated with the unique vendor ID you provide.
+/// The result is delivered via the corresponding success or failure callback.
+/// \param vendorId Your custom identifier for the desired plan (defined in your backend or configuration).
+///
+/// \param success The closure invoked upon successful retrieval of the plan. It receives the <code>PLYPlan</code> object.
+///
+/// \param failure The closure invoked if an error occurs during retrieval (e.g., plan not found for the given vendorId, network error). It receives an optional <code>Error</code> object describing the issue.
+///
 + (void)planWith:(NSString * _Nonnull)vendorId success:(void (^ _Nonnull)(PLYPlan * _Nonnull))success failure:(void (^ _Nonnull)(NSError * _Nullable))failure;
+/// Fetches plan details asynchronously using the App Store Product ID (SKU).
+/// This method retrieves the specific <code>PLYPlan</code> object associated with the provided App Store Product ID (often referred to as SKU).
+/// The result is delivered via the corresponding success or failure callback.
+/// \param sku The App Store Product ID (SKU) for the desired plan.
+///
+/// \param success The closure invoked upon successful retrieval of the plan. It receives the <code>PLYPlan</code> object.
+///
+/// \param failure The closure invoked if an error occurs during retrieval (e.g., plan not found for the given SKU, network error). It receives an optional <code>Error</code> object describing the issue.
+///
++ (void)planFor:(NSString * _Nonnull)sku success:(void (^ _Nonnull)(PLYPlan * _Nonnull))success failure:(void (^ _Nonnull)(NSError * _Nullable))failure;
 + (void)userSubscriptionsHistory:(BOOL)invalidateCache success:(void (^ _Nonnull)(NSArray<PLYSubscription *> * _Nullable))success failure:(void (^ _Nonnull)(NSError * _Nonnull))failure;
 + (void)userSubscriptions:(BOOL)invalidateCache success:(void (^ _Nonnull)(NSArray<PLYSubscription *> * _Nullable))success failure:(void (^ _Nonnull)(NSError * _Nonnull))failure;
 /// This method returns a presentation for a specific product. If no presentationVendorId is set (or an invalid one)
@@ -2734,6 +3032,21 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 + (UIViewController * _Nullable)subscriptionsController SWIFT_WARN_UNUSED_RESULT;
 + (UIViewController * _Nullable)subscriptionControllerFor:(PLYSubscription * _Nonnull)subscription SWIFT_WARN_UNUSED_RESULT;
 + (UIViewController * _Nonnull)cancellationSurveyControllerFor:(PLYProduct * _Nullable)product selected:(void (^ _Nonnull)(enum PLYCancellationReason))selected SWIFT_WARN_UNUSED_RESULT;
+/// Sets a delegate callback to receive all events tracked by the SDK. This allows integrators to observe and react to events happening within the SDK.
+/// <ul>
+///   <li>
+///     Parameters:
+///   </li>
+///   <li>
+///     event: The <code>PLYEvent</code> that was tracked. This enum provides information about the type of event.
+///   </li>
+///   <li>
+///     parameters: An optional dictionary containing additional parameters associated with the event. This can provide more context about the event.
+///   </li>
+/// </ul>
+/// \param callback A closure that will be called whenever an event is tracked.
+///
++ (void)setEventDelegate:(void (^ _Nonnull)(enum PLYEvent, NSDictionary<NSString *, id> * _Nullable))callback;
 /// This method must be called inside the AppDelegate open url method or SceneDelegate willConnectTo and openURLContexts
 /// Check the documentation: https://docs.purchasely.com/advanced-features/deeplinks-and-automations
 /// The controller will be displayed above the current controller.
@@ -2884,27 +3197,198 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 ///   </li>
 /// </ul>
 + (void)synchronizeWithSuccess:(void (^ _Nonnull)(void))success failure:(void (^ _Nonnull)(NSError * _Nonnull))failure;
+/// Retrieves all currently collected built-in attributes.
+///
+/// returns:
+/// A dictionary containing the built-in attributes, where the keys are the attribute names (String) and the values are the corresponding attribute values (Any).
 + (NSDictionary<NSString *, id> * _Nonnull)getBuiltInAttributes SWIFT_WARN_UNUSED_RESULT;
+/// Retrieves a specific built-in attribute by its key.
+/// \param key The key of the built-in attribute to retrieve.
+///
+///
+/// returns:
+/// The value of the built-in attribute associated with the given key, or nil if the attribute does not exist.
 + (id _Nullable)getBuiltInAttributeWith:(NSString * _Nonnull)key SWIFT_WARN_UNUSED_RESULT;
+/// A dictionary of all user attributes currently stored.
+/// Use this to inspect all attributes previously set for the user (e.g., name, age, is_premium).
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSDictionary<NSString *, id> * _Nonnull userAttributes;)
 + (NSDictionary<NSString *, id> * _Nonnull)userAttributes SWIFT_WARN_UNUSED_RESULT;
+/// Retrieves a specific user attribute value by its key.
+/// Example: <code>getUserAttribute(for: "age")</code>
+/// \param key The key of the user attribute you want to retrieve.
+///
+///
+/// returns:
+/// The attribute value if found, otherwise <code>nil</code>.
 + (id _Nullable)getUserAttributeFor:(NSString * _Nonnull)key SWIFT_WARN_UNUSED_RESULT;
+/// Sets a string-type user attribute.
+/// Example: <code>setUserAttribute(withStringValue: "Gold", forKey: "subscription_tier")</code>
+/// \param value The string value to associate with the key.
+///
+/// \param key The key under which the attribute is stored.
+///
 + (void)setUserAttributeWithStringValue:(NSString * _Nonnull)value forKey:(NSString * _Nonnull)key;
+/// Sets an integer-type user attribute.
+/// Example: <code>setUserAttribute(withIntValue: 28, forKey: "age")</code>
+/// \param value The integer value to store.
+///
+/// \param key The key under which to save the attribute.
+///
 + (void)setUserAttributeWithIntValue:(NSInteger)value forKey:(NSString * _Nonnull)key;
+/// Sets a double-type user attribute.
+/// Example: <code>setUserAttribute(withDoubleValue: 99.99, forKey: "total_spent")</code>
+/// \param value The double value to store.
+///
+/// \param key The key under which to save the attribute.
+///
 + (void)setUserAttributeWithDoubleValue:(double)value forKey:(NSString * _Nonnull)key;
+/// Sets a date-type user attribute.
+/// Example: <code>setUserAttribute(withDateValue: Date(), forKey: "signup_date")</code>
+/// \param value The <code>Date</code> to store.
+///
+/// \param key The key under which to save the attribute.
+///
 + (void)setUserAttributeWithDateValue:(NSDate * _Nonnull)value forKey:(NSString * _Nonnull)key;
+/// Sets a boolean-type user attribute.
+/// Example: <code>setUserAttribute(withBoolValue: true, forKey: "is_premium")</code>
+/// \param value The boolean value to store.
+///
+/// \param key The key under which to save the attribute.
+///
 + (void)setUserAttributeWithBoolValue:(BOOL)value forKey:(NSString * _Nonnull)key;
+/// Sets a user attribute with an array of boolean values for the given key.
+/// <ul>
+///   <li>
+///     Parameters:
+///   </li>
+///   <li>
+///     value: An array of boolean values to set for the attribute.
+///   </li>
+///   <li>
+///     key: The key associated with the user attribute. This key will be used to identify and retrieve the attribute.
+///   </li>
+/// </ul>
 + (void)setUserAttributeWithBoolArray:(NSArray<NSNumber *> * _Nonnull)value forKey:(NSString * _Nonnull)key;
+/// Sets a user attribute with an array of integer values for the given key.
+/// <ul>
+///   <li>
+///     Parameters:
+///   </li>
+///   <li>
+///     value: An array of integer values to set for the attribute.
+///   </li>
+///   <li>
+///     key: The key associated with the user attribute. This key will be used to identify and retrieve the attribute.
+///   </li>
+/// </ul>
 + (void)setUserAttributeWithIntArray:(NSArray<NSNumber *> * _Nonnull)value forKey:(NSString * _Nonnull)key;
+/// Sets a user attribute with an array of string values for the given key.
+/// <ul>
+///   <li>
+///     Parameters:
+///   </li>
+///   <li>
+///     value: An array of string values to set for the attribute.
+///   </li>
+///   <li>
+///     key: The key associated with the user attribute. This key will be used to identify and retrieve the attribute.
+///   </li>
+/// </ul>
 + (void)setUserAttributeWithStringArray:(NSArray<NSString *> * _Nonnull)value forKey:(NSString * _Nonnull)key;
+/// Sets a user attribute with an array of double values for the given key.
+/// <ul>
+///   <li>
+///     Parameters:
+///   </li>
+///   <li>
+///     value: An array of double values to set for the attribute.
+///   </li>
+///   <li>
+///     key: The key associated with the user attribute. This key will be used to identify and retrieve the attribute.
+///   </li>
+/// </ul>
 + (void)setUserAttributeWithDoubleArray:(NSArray<NSNumber *> * _Nonnull)value forKey:(NSString * _Nonnull)key;
+/// Increments a numerical user attribute by a specified value. If the attribute does not exist, it will be created with the initial increment value.
+/// <ul>
+///   <li>
+///     Parameters:
+///   </li>
+///   <li>
+///     key: The key of the numerical user attribute to increment.
+///   </li>
+///   <li>
+///     value: The value to increment the attribute by. Defaults to 1.
+///   </li>
+/// </ul>
 + (void)incrementUserAttributeWithKey:(NSString * _Nonnull)key value:(NSInteger)value;
+/// Decrements a numerical user attribute by a specified value. If the attribute does not exist, it will be created with the initial negative decrement value.
+/// <ul>
+///   <li>
+///     Parameters:
+///   </li>
+///   <li>
+///     key: The key of the numerical user attribute to decrement.
+///   </li>
+///   <li>
+///     value: The value to decrement the attribute by. Defaults to 1.
+///   </li>
+/// </ul>
 + (void)decrementUserAttributeWithKey:(NSString * _Nonnull)key value:(NSInteger)value;
+/// Sets multiple user attributes at once using a dictionary.
+/// <ul>
+///   <li>
+///     Parameters:
+///   </li>
+///   <li>
+///     attributes: A dictionary where the keys are the attribute names (String) and the values are the corresponding attribute values (Any). Supported value types are Bool, Int, Double, String, and arrays of these types.
+///   </li>
+/// </ul>
 + (void)setUserAttributes:(NSDictionary<NSString *, id> * _Nonnull)attributes;
+/// Clears all user-defined attributes. This will remove all custom attributes that have been set.
 + (void)clearUserAttributes;
+/// Clears a specific user attribute based on its key.
+/// <ul>
+///   <li>
+///     Parameters:
+///   </li>
+///   <li>
+///     key: The key of the user attribute to remove.
+///   </li>
+/// </ul>
 + (void)clearUserAttributeForKey:(NSString * _Nonnull)key;
+/// Clears all built-in attributes managed by the SDK.
 + (void)clearBuiltInAttributes;
+/// Adds a dynamic offering that will override the default ones displayed in the paywall.
+/// Use this when you want to force a specific plan (and optionally offer) to be shown in a specific context.
+/// \param reference A unique key to identify this dynamic offering (e.g., screen identifier).
+///
+/// \param planVendorId The plan to display in the offering.
+///
+/// \param offerVendorId (Optional) The specific offer to highlight. If nil, default logic applies.
+///
+/// \param completion Called with <code>true</code> if the dynamic offering was successfully added.
+///
++ (void)setDynamicOfferingWithReference:(NSString * _Nonnull)reference planVendorId:(NSString * _Nonnull)planVendorId offerVendorId:(NSString * _Nullable)offerVendorId completion:(void (^ _Nonnull)(BOOL))completion;
+/// Retrieves the list of currently active dynamic offerings (synchronous version).
+/// Use this to inspect what dynamic offerings are currently registered in memory.
++ (NSArray<PLYOffering *> * _Nonnull)getDynamicOfferings SWIFT_WARN_UNUSED_RESULT;
+/// Retrieves the list of currently active dynamic offerings asynchronously.
+/// Useful when needing to load the offerings from disk or async sources.
+/// \param completion Closure called with the current dynamic offerings.
+///
++ (void)getDynamicOfferingsWithCompletion:(void (^ _Nonnull)(NSArray<PLYOffering *> * _Nonnull))completion;
+/// Removes a specific dynamic offering by its reference key.
+/// Use this to stop overriding the default offering for a specific context.
+/// \param reference The unique reference used when the offering was added.
+///
++ (void)removeDynamicOfferingWithReference:(NSString * _Nonnull)reference;
+/// Removes all dynamic offerings from memory and storage.
+/// Call this to reset the offering logic and go back to the default configuration.
++ (void)clearDynamicOfferings;
 + (void)setAttribute:(enum PLYAttribute)attribute value:(NSString * _Nonnull)value;
+/// Sets the theme mode for the SDK’s UI elements. This setting will influence the visual appearance of any SDK-provided UI.
+/// \param mode The desired theme mode to apply.
+///
 + (void)setThemeMode:(enum PLYThemeMode)mode;
 /// This method is used to trigger an event telling Purchasely that a content has been consumed through a subscription.
 + (void)userDidConsumeSubscriptionContent;
@@ -2939,6 +3423,18 @@ typedef SWIFT_ENUM(NSInteger, PLYAttribute, open) {
   PLYAttributeOneSignalUserId = 22,
 };
 
+/// Represents the available theme modes for the SDK’s UI elements.
+/// <ul>
+///   <li>
+///     light: Use a light color scheme.
+///   </li>
+///   <li>
+///     dark: Use a dark color scheme.
+///   </li>
+///   <li>
+///     system: Follow the system’s current appearance setting (light or dark mode).
+///   </li>
+/// </ul>
 typedef SWIFT_ENUM(NSInteger, PLYThemeMode, open) {
   PLYThemeModeLight = 0,
   PLYThemeModeDark = 1,
