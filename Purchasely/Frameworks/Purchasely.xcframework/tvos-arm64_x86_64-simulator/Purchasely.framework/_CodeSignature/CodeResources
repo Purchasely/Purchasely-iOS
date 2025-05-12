@@ -10,7 +10,7 @@
 		</data>
 		<key>Headers/Purchasely-Swift.h</key>
 		<data>
-		kGxPs6Pn/b9Y6bLXQYn+lkk9B04=
+		zqfXHz5fcOJQJzvpUk+1E3UkgDg=
 		</data>
 		<key>Headers/Purchasely-tvOS-umbrella.h</key>
 		<data>
@@ -22,11 +22,11 @@
 		</data>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-tvos-simulator.abi.json</key>
 		<data>
-		rWeZ0MyGxFUBxH25lR1TOI80Y/g=
+		bM+5XZihnuxkHGH8NKmfWiJdWek=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-tvos-simulator.private.swiftinterface</key>
 		<data>
-		JC0uIRTQCYSZWT0f+exRMhOX+D8=
+		04wImXMMCWG63wMtHjy7Tp217nY=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-tvos-simulator.swiftdoc</key>
 		<data>
@@ -34,19 +34,19 @@
 		</data>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-tvos-simulator.swiftinterface</key>
 		<data>
-		JC0uIRTQCYSZWT0f+exRMhOX+D8=
+		04wImXMMCWG63wMtHjy7Tp217nY=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-tvos-simulator.swiftmodule</key>
 		<data>
-		/fIcaBAGKQuob37n33nwCC/MJ4I=
+		7w3foPy4XAxmGtSAmgn+9vFqtxg=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-tvos-simulator.abi.json</key>
 		<data>
-		rWeZ0MyGxFUBxH25lR1TOI80Y/g=
+		bM+5XZihnuxkHGH8NKmfWiJdWek=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-tvos-simulator.private.swiftinterface</key>
 		<data>
-		gZHyBAoL2CQto235jF1KlOyQJtI=
+		K6j4g6CKEVbHtahemiLLC5KYSf8=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-tvos-simulator.swiftdoc</key>
 		<data>
@@ -54,11 +54,11 @@
 		</data>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-tvos-simulator.swiftinterface</key>
 		<data>
-		gZHyBAoL2CQto235jF1KlOyQJtI=
+		K6j4g6CKEVbHtahemiLLC5KYSf8=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-tvos-simulator.swiftmodule</key>
 		<data>
-		qtkoGeMHOiYrU4iNgzwcqNddIhQ=
+		NEHFvwNTDRR9JvTweJKfkVf7cpg=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -365,7 +365,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			78HWeoMeFxCcsnP8mwYw7vjLIRG7pDm9ZD4UdjdTSYI=
+			+0WlweIg47brsQ9hZ95jQ5KkwA7BUj3XPGx2h27Bm7I=
 			</data>
 		</dict>
 		<key>Headers/Purchasely-tvOS-umbrella.h</key>
@@ -379,14 +379,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			mODTEtG8enh35jy2iEYqKlgT14LUTKMAhAWB8iGz4WY=
+			H7BsEtw6Q7MRqMlyiCpRWAhPR3qh1h4eEfVyQl94QME=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-tvos-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			bCc+OjMYqggInW5u0qxzDSc/IlILSBUUs9k5qcOk9gg=
+			fc4JTFIX9jZnZyBC2BgD7wbvE59+Q84ZvlDeF4wgkn8=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-tvos-simulator.swiftdoc</key>
@@ -400,28 +400,28 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			bCc+OjMYqggInW5u0qxzDSc/IlILSBUUs9k5qcOk9gg=
+			fc4JTFIX9jZnZyBC2BgD7wbvE59+Q84ZvlDeF4wgkn8=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-tvos-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			/5o2IcuPZMruPsP3+/5fa+1L/J+jstRSYc6v6+vNW1c=
+			o61jkqBqO527G/EDGRaQW7zyHSRAmVh8LrMWAqTcasw=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-tvos-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			mODTEtG8enh35jy2iEYqKlgT14LUTKMAhAWB8iGz4WY=
+			H7BsEtw6Q7MRqMlyiCpRWAhPR3qh1h4eEfVyQl94QME=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-tvos-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ZTEJxeFJbNYKnjWBkvBq0uzzhoJvk8U2WodbCf2DD3k=
+			eHnK7RKbEu2cczsAAX1/v1cgB3VvkQHIzBOnwv92Fyo=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-tvos-simulator.swiftdoc</key>
@@ -435,14 +435,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			ZTEJxeFJbNYKnjWBkvBq0uzzhoJvk8U2WodbCf2DD3k=
+			eHnK7RKbEu2cczsAAX1/v1cgB3VvkQHIzBOnwv92Fyo=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-tvos-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			nKyJ53oBsRTWUG3gqcNrHbhdl/RmEjnnuK+Lch/v75s=
+			L0tIaVY0ytW1anPcB1iW9WrmKyfNNbEdOjunZ7snZcw=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

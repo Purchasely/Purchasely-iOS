@@ -525,20 +525,20 @@ typedef SWIFT_ENUM(NSInteger, PLYEventType, open) {
   PLYEventTypePhoneSettings = 9,
 };
 
-enum LogLevel : NSInteger;
+enum PLYLogLevel : NSInteger;
 
 SWIFT_CLASS("_TtC10Purchasely9PLYLogger")
 @interface PLYLogger : NSObject
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-+ (void)logWithMessage:(NSString * _Nonnull)message level:(enum LogLevel)level;
++ (void)logWithMessage:(NSString * _Nonnull)message level:(enum PLYLogLevel)level;
 @end
 
-typedef SWIFT_ENUM(NSInteger, LogLevel, open) {
-  LogLevelDebug = 0,
-  LogLevelInfo = 1,
-  LogLevelWarn = 2,
-  LogLevelError = 3,
+typedef SWIFT_ENUM(NSInteger, PLYLogLevel, open) {
+  PLYLogLevelDebug = 0,
+  PLYLogLevelInfo = 1,
+  PLYLogLevelWarn = 2,
+  PLYLogLevelError = 3,
 };
 
 
@@ -963,7 +963,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 + (NSString * _Nonnull)anonymousUserId SWIFT_WARN_UNUSED_RESULT;
 /// Sets the SDK to point to a client
 /// This must be called in <code>didFinishLaunchingWithOptions</code> to handle the receipts sent on startup
-+ (void)startWithAPIKey:(NSString * _Nonnull)apiKey appUserId:(NSString * _Nullable)appUserId runningMode:(enum PLYRunningMode)runningMode paywallActionsInterceptor:(void (^ _Nullable)(enum PLYPresentationAction, PLYPresentationActionParameters * _Nullable, PLYPresentationInfo * _Nullable, void (^ _Nonnull)(BOOL)))paywallActionsInterceptor storekitSettings:(StorekitSettings * _Nonnull)storekitSettings logLevel:(enum LogLevel)logLevel initialized:(void (^ _Nullable)(BOOL, NSError * _Nullable))initialized;
++ (void)startWithAPIKey:(NSString * _Nonnull)apiKey appUserId:(NSString * _Nullable)appUserId runningMode:(enum PLYRunningMode)runningMode paywallActionsInterceptor:(void (^ _Nullable)(enum PLYPresentationAction, PLYPresentationActionParameters * _Nullable, PLYPresentationInfo * _Nullable, void (^ _Nonnull)(BOOL)))paywallActionsInterceptor storekitSettings:(StorekitSettings * _Nonnull)storekitSettings logLevel:(enum PLYLogLevel)logLevel initialized:(void (^ _Nullable)(BOOL, NSError * _Nullable))initialized;
 + (NSString * _Nullable)getSDKVersion SWIFT_WARN_UNUSED_RESULT;
 + (void)setUIHandler:(id <PLYUIHandler> _Nullable)uiHandler;
 + (void)setUserAttributeDelegate:(id <PLYUserAttributeDelegate> _Nonnull)userAttributeDelegate;
@@ -1017,7 +1017,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 + (void)setLanguageFrom:(NSLocale * _Nullable)locale;
 + (void)readyToOpenDeeplink:(BOOL)ready;
 + (void)setEnvironment:(enum PLYEnvironment)environment;
-+ (void)setLogLevel:(enum LogLevel)logLevel;
++ (void)setLogLevel:(enum PLYLogLevel)logLevel;
 + (void)setAppTechnology:(enum PLYAppTechnology)technology;
 + (void)setSdkBridgeVersion:(NSString * _Nullable)sdkBridgeVersion;
 + (void)addLogger:(id <PLYLogging> _Nonnull)logger;
@@ -2264,20 +2264,20 @@ typedef SWIFT_ENUM(NSInteger, PLYEventType, open) {
   PLYEventTypePhoneSettings = 9,
 };
 
-enum LogLevel : NSInteger;
+enum PLYLogLevel : NSInteger;
 
 SWIFT_CLASS("_TtC10Purchasely9PLYLogger")
 @interface PLYLogger : NSObject
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-+ (void)logWithMessage:(NSString * _Nonnull)message level:(enum LogLevel)level;
++ (void)logWithMessage:(NSString * _Nonnull)message level:(enum PLYLogLevel)level;
 @end
 
-typedef SWIFT_ENUM(NSInteger, LogLevel, open) {
-  LogLevelDebug = 0,
-  LogLevelInfo = 1,
-  LogLevelWarn = 2,
-  LogLevelError = 3,
+typedef SWIFT_ENUM(NSInteger, PLYLogLevel, open) {
+  PLYLogLevelDebug = 0,
+  PLYLogLevelInfo = 1,
+  PLYLogLevelWarn = 2,
+  PLYLogLevelError = 3,
 };
 
 
@@ -2702,7 +2702,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 + (NSString * _Nonnull)anonymousUserId SWIFT_WARN_UNUSED_RESULT;
 /// Sets the SDK to point to a client
 /// This must be called in <code>didFinishLaunchingWithOptions</code> to handle the receipts sent on startup
-+ (void)startWithAPIKey:(NSString * _Nonnull)apiKey appUserId:(NSString * _Nullable)appUserId runningMode:(enum PLYRunningMode)runningMode paywallActionsInterceptor:(void (^ _Nullable)(enum PLYPresentationAction, PLYPresentationActionParameters * _Nullable, PLYPresentationInfo * _Nullable, void (^ _Nonnull)(BOOL)))paywallActionsInterceptor storekitSettings:(StorekitSettings * _Nonnull)storekitSettings logLevel:(enum LogLevel)logLevel initialized:(void (^ _Nullable)(BOOL, NSError * _Nullable))initialized;
++ (void)startWithAPIKey:(NSString * _Nonnull)apiKey appUserId:(NSString * _Nullable)appUserId runningMode:(enum PLYRunningMode)runningMode paywallActionsInterceptor:(void (^ _Nullable)(enum PLYPresentationAction, PLYPresentationActionParameters * _Nullable, PLYPresentationInfo * _Nullable, void (^ _Nonnull)(BOOL)))paywallActionsInterceptor storekitSettings:(StorekitSettings * _Nonnull)storekitSettings logLevel:(enum PLYLogLevel)logLevel initialized:(void (^ _Nullable)(BOOL, NSError * _Nullable))initialized;
 + (NSString * _Nullable)getSDKVersion SWIFT_WARN_UNUSED_RESULT;
 + (void)setUIHandler:(id <PLYUIHandler> _Nullable)uiHandler;
 + (void)setUserAttributeDelegate:(id <PLYUserAttributeDelegate> _Nonnull)userAttributeDelegate;
@@ -2756,7 +2756,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 + (void)setLanguageFrom:(NSLocale * _Nullable)locale;
 + (void)readyToOpenDeeplink:(BOOL)ready;
 + (void)setEnvironment:(enum PLYEnvironment)environment;
-+ (void)setLogLevel:(enum LogLevel)logLevel;
++ (void)setLogLevel:(enum PLYLogLevel)logLevel;
 + (void)setAppTechnology:(enum PLYAppTechnology)technology;
 + (void)setSdkBridgeVersion:(NSString * _Nullable)sdkBridgeVersion;
 + (void)addLogger:(id <PLYLogging> _Nonnull)logger;
