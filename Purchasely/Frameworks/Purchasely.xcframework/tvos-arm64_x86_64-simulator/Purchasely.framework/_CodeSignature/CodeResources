@@ -10,7 +10,7 @@
 		</data>
 		<key>Headers/Purchasely-Swift.h</key>
 		<data>
-		kGxPs6Pn/b9Y6bLXQYn+lkk9B04=
+		qCvix9jJwAm4sXObeS+zeLDY1Cc=
 		</data>
 		<key>Headers/Purchasely-tvOS-umbrella.h</key>
 		<data>
@@ -18,47 +18,47 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		+s/wm4Vg4bDa7d309UD1Kxk2fpk=
+		/+ZFr8nX9AlhvEkAOXsUPs/EH3I=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-tvos-simulator.abi.json</key>
 		<data>
-		rWeZ0MyGxFUBxH25lR1TOI80Y/g=
+		87Xp2RRFwCJQw/I4TmlHMynVMN0=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-tvos-simulator.private.swiftinterface</key>
 		<data>
-		JC0uIRTQCYSZWT0f+exRMhOX+D8=
+		9588sESas+msYdEnkoWW6y83TsU=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-tvos-simulator.swiftdoc</key>
 		<data>
-		d4lG1GgnCbCmSwbneZY/itYF0l0=
+		5SdUZ4iHkiNfx65WgZ2PLzIkWjM=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-tvos-simulator.swiftinterface</key>
 		<data>
-		JC0uIRTQCYSZWT0f+exRMhOX+D8=
+		9588sESas+msYdEnkoWW6y83TsU=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-tvos-simulator.swiftmodule</key>
 		<data>
-		/fIcaBAGKQuob37n33nwCC/MJ4I=
+		co0f1FKakkZEST/esymNuhH+8xE=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-tvos-simulator.abi.json</key>
 		<data>
-		rWeZ0MyGxFUBxH25lR1TOI80Y/g=
+		87Xp2RRFwCJQw/I4TmlHMynVMN0=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-tvos-simulator.private.swiftinterface</key>
 		<data>
-		gZHyBAoL2CQto235jF1KlOyQJtI=
+		fl7Rr6kfQeouV8d32xcfATKOF1k=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-tvos-simulator.swiftdoc</key>
 		<data>
-		2McWd9aDg1K6lG1nmiSZaa5AeuM=
+		tnLjJQvLnMctKay+0z3mOBtA8ao=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-tvos-simulator.swiftinterface</key>
 		<data>
-		gZHyBAoL2CQto235jF1KlOyQJtI=
+		fl7Rr6kfQeouV8d32xcfATKOF1k=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-tvos-simulator.swiftmodule</key>
 		<data>
-		qtkoGeMHOiYrU4iNgzwcqNddIhQ=
+		Rqkm95Ez75RHEu3JaspR8mnzJL8=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -102,7 +102,7 @@
 		</data>
 		<key>Purchasely.bundle/Info.plist</key>
 		<data>
-		hijqYftQYBppOP0dZ8U86zEPTB8=
+		MgXgFt58m8mHmxl9Mxe68wKSOKA=
 		</data>
 		<key>Purchasely.bundle/PrivacyInfo.xcprivacy</key>
 		<data>
@@ -365,7 +365,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			78HWeoMeFxCcsnP8mwYw7vjLIRG7pDm9ZD4UdjdTSYI=
+			zNrzxZnRRZWDKD5C8zpXu0z2s9FyTPaN9E7jqhvdzHc=
 			</data>
 		</dict>
 		<key>Headers/Purchasely-tvOS-umbrella.h</key>
@@ -379,70 +379,70 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			mODTEtG8enh35jy2iEYqKlgT14LUTKMAhAWB8iGz4WY=
+			HNaNHbq3CGehzZ61nypsBOL4SjhrsnX2nn6bm9APuwA=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-tvos-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			bCc+OjMYqggInW5u0qxzDSc/IlILSBUUs9k5qcOk9gg=
+			I4mEklRELWqCjR/xfLI/CIqb+/qIJH2L3JJjRdp1wSc=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-tvos-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Sbf99/Q//jqy+5RcqCZfncpYnXuIMaVVcIgo5q5CNyI=
+			LHsi6ofDsKjBIAHXiEJ44ZV5h1JuvaQTYb51NhzFlFk=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-tvos-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			bCc+OjMYqggInW5u0qxzDSc/IlILSBUUs9k5qcOk9gg=
+			I4mEklRELWqCjR/xfLI/CIqb+/qIJH2L3JJjRdp1wSc=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-tvos-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			/5o2IcuPZMruPsP3+/5fa+1L/J+jstRSYc6v6+vNW1c=
+			wriVbVyV/J81Ya+aPtJUiJuKa+TFw82D8uFIMJuU69E=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-tvos-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			mODTEtG8enh35jy2iEYqKlgT14LUTKMAhAWB8iGz4WY=
+			HNaNHbq3CGehzZ61nypsBOL4SjhrsnX2nn6bm9APuwA=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-tvos-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ZTEJxeFJbNYKnjWBkvBq0uzzhoJvk8U2WodbCf2DD3k=
+			HLvYlSpNKAmvbcvN+5L1THjw7szmMBhgz7+vJ7LdDkY=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-tvos-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Hxj8o7Osuil+zI6iBTr9InZe9nkJCD/+bHtAJzigm9U=
+			PUp8DXIhdfs3JnlM5WyVKKAKJY563Qb9Y5ArzrLNc60=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-tvos-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ZTEJxeFJbNYKnjWBkvBq0uzzhoJvk8U2WodbCf2DD3k=
+			HLvYlSpNKAmvbcvN+5L1THjw7szmMBhgz7+vJ7LdDkY=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-tvos-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			nKyJ53oBsRTWUG3gqcNrHbhdl/RmEjnnuK+Lch/v75s=
+			hhHff3cw/SScb4y50s4hkBxQtGDZPPWURaa3Mh4iDts=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -519,7 +519,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			0WNPSnSAvGaFYb4K9uRlSK8abD1uZMV12dJukp8YAI4=
+			7HTREtj2A8fQ53SjFQDYc23PnJ5Nmfr321HZPbtzHyw=
 			</data>
 		</dict>
 		<key>Purchasely.bundle/PrivacyInfo.xcprivacy</key>

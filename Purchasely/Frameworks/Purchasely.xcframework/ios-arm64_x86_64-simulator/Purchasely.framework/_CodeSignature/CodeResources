@@ -6,7 +6,7 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		IDAQyzuE9TkbYpofpWjI2ZVHZlk=
+		y4TvxI76E/SGLEpAUbSeoeiuF9k=
 		</data>
 		<key>Headers/PLYLottieView.h</key>
 		<data>
@@ -14,7 +14,7 @@
 		</data>
 		<key>Headers/Purchasely-Swift.h</key>
 		<data>
-		61I222WGlchOHERyS9VmlosRlHY=
+		GTBTP4RG4HM0ohQfg0pV6HNXoEk=
 		</data>
 		<key>Headers/Purchasely-iOS-umbrella.h</key>
 		<data>
@@ -22,47 +22,47 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		hFykm5MNxJLdW+5uguRGAuEcvFI=
+		G18W0ySZwJVXoUeqRCTGey03TVI=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		UYT8UMCfhSKYKR66fcHr0vGFYN0=
+		lx1tfu7rUv+d6kzKgTdcAFFDGTM=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		MsjuQuOfYIoDLInMqyR2QASvLqo=
+		Rz7uOEduyirsHzzY/hFXgJmkXOA=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		Hy1gURKZ8EdJNsPyZHoYw4AmtLQ=
+		jH1NQE/EuhWGuKJ1jZjnYFj7gtg=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		MsjuQuOfYIoDLInMqyR2QASvLqo=
+		Rz7uOEduyirsHzzY/hFXgJmkXOA=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		ZcTuplFTax1NVE9q2e2EgPDl1Ko=
+		GdayxLxu6+YXebV3nvWOzF2IlIM=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		UYT8UMCfhSKYKR66fcHr0vGFYN0=
+		lx1tfu7rUv+d6kzKgTdcAFFDGTM=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		GKSTmVPd0wCxRN4bCeXI6CsAMzg=
+		P7a743D/Qwfz24vCNOLEuZr/U/U=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		UdkgnpZDmaW+bDLi/NSjJdYZMXE=
+		OeeOqbYXWCW5bjr2OPWR8sQXhjA=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		GKSTmVPd0wCxRN4bCeXI6CsAMzg=
+		P7a743D/Qwfz24vCNOLEuZr/U/U=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		n8lTPiZGFOf4EMmoU4M/BojlTxw=
+		0NSXx5Y/FZ7x6dhsZhYNM+zW4TA=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -114,7 +114,7 @@
 		</data>
 		<key>Purchasely.bundle/Info.plist</key>
 		<data>
-		m5f1wNQdO/J16CH81xfNCiQj+bQ=
+		irw0G1CxAgdJMvALq6LnRva3O4Q=
 		</data>
 		<key>Purchasely.bundle/PrivacyInfo.xcprivacy</key>
 		<data>
@@ -370,7 +370,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			HEEupsrLyyjKzOastMgbV8zBzHF2DdW+fjuc9KJP/70=
+			7W1JY9El0ixcf0V5ZQbYGrirgcUa7qs7dn3OjxsWU5M=
 			</data>
 		</dict>
 		<key>Headers/PLYLottieView.h</key>
@@ -384,7 +384,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Y2HD8i5QoaqFe4o0eY+L0HEs5qVO7GcUWs+aggl0y/s=
+			PSQNH5m5ojA0Mg4qZnXW28S+7tlfKl6Xv43wnRgQPPU=
 			</data>
 		</dict>
 		<key>Headers/Purchasely-iOS-umbrella.h</key>
@@ -398,70 +398,70 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			dtAq2bb/EpVfMFYpKZbl24Mi2iFX5pJMl4esaenWDmY=
+			wE+4ySAE0aTVLq91czJSyQI8+fD+bS7zO608zb9KYtg=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			gtDFbgVCNH9pgHG7ei/TQLDb1gxjsGgsRczrpmgXc5E=
+			ftSBqkhECQMEI02SjMAFH2SZ8ujWC2n6BqTH25OUNXk=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			B2+HrxaoNRFWV79N6LrMTMeyhhthJ3N0yaFnZo61E6k=
+			7YfiBIDcING3se5g/rAeGW+/aic8+Xkx6PiVgDCIEt8=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			gtDFbgVCNH9pgHG7ei/TQLDb1gxjsGgsRczrpmgXc5E=
+			ftSBqkhECQMEI02SjMAFH2SZ8ujWC2n6BqTH25OUNXk=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			wztgC6Fq59y1wlCA1NCwpbWNA/Nx61bOIrT5AUPlw50=
+			tes3yJ0akwto2jI5lw6LiifUJKt344YljuoaVBZfE5I=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			dtAq2bb/EpVfMFYpKZbl24Mi2iFX5pJMl4esaenWDmY=
+			wE+4ySAE0aTVLq91czJSyQI8+fD+bS7zO608zb9KYtg=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			9yIcDfPUg7PwIy30u/ogFdq4qh30vdkX/AMvcLvXBRM=
+			mTRZljO4EMqyw2VPKe13H5zyn//X9ath3QnSp/F5l0Y=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			sbEghvUm2p8Kcbb3RlxGcUabLKIe62yJIZDl+fBdkvU=
+			zUF9FdPicYWWRrB1gh4Id8S1GQK4xgA3Ni+YUx4x2+E=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			9yIcDfPUg7PwIy30u/ogFdq4qh30vdkX/AMvcLvXBRM=
+			mTRZljO4EMqyw2VPKe13H5zyn//X9ath3QnSp/F5l0Y=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			/2zP7qeYnnPPU4YxMD5fvAACJ4k5/fSt0enVc0OYSJM=
+			+L4kHCHuIAz1o36Pj9g3sjNdA/EOVkqVxOIU/kw6Pno=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -552,7 +552,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			loDaHLpEAhum2tElllVZ7ZwoYnkRU5ld16rnW1HW9Zc=
+			+hGULYCazL3mB9nhFBNrDm3aj5bQ+TcM3EQi+TF5LTQ=
 			</data>
 		</dict>
 		<key>Purchasely.bundle/PrivacyInfo.xcprivacy</key>
