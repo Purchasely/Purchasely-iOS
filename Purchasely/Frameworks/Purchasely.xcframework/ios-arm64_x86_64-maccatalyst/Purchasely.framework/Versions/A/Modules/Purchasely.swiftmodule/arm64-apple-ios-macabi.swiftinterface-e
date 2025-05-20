@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 6.0.3 effective-5.10 (swiftlang-6.0.3.1.10 clang-1600.0.30.1)
-// swift-module-flags: -target arm64-apple-ios13.1-macabi -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name Purchasely
-// swift-module-flags-ignorable: -no-verify-emitted-module-interface
+// swift-compiler-version: Apple Swift version 6.1 effective-5.10 (swiftlang-6.1.0.110.21 clang-1700.0.13.3)
+// swift-module-flags: -target arm64-apple-ios13.1-macabi -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name Purchasely
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1
 import AVFoundation
 import AVKit
 import AppKit
@@ -286,6 +286,7 @@ public enum PLYError : Swift.Error {
   case invalidOfferPrice
   case invalidOfferSignature
   case missingOfferParameters
+  case productsTimeout
 }
 extension Purchasely.PLYError : Foundation.LocalizedError {
   public var errorDescription: Swift.String? {
@@ -921,9 +922,9 @@ public enum PLYSubscriptionSourceError : Swift.Error {
 }
 public typealias PLYSuccessErrorClosure = (Swift.Bool, (any Swift.Error)?) -> Swift.Void
 public typealias PLYPaywallLoadingClosure = (Purchasely.PLYPresentationViewController?, Swift.Bool, (any Swift.Error)?) -> Swift.Void
-public typealias PLYLoginTappedHandler = ((UIKit.UIViewController, @escaping (Swift.Bool) -> Swift.Void) -> Swift.Void)
-public typealias PLYPaywallActionsInterceptor = ((Purchasely.PLYPresentationAction, Purchasely.PLYPresentationActionParameters?, Purchasely.PLYPresentationInfo?, @escaping (Swift.Bool) -> Swift.Void) -> Swift.Void)
-public typealias PLYPurchaseConfirmationHandler = ((UIKit.UIViewController, @escaping (Swift.Bool) -> Swift.Void) -> Swift.Void)
+public typealias PLYLoginTappedHandler = (UIKit.UIViewController, @escaping (Swift.Bool) -> Swift.Void) -> Swift.Void
+public typealias PLYPaywallActionsInterceptor = (Purchasely.PLYPresentationAction, Purchasely.PLYPresentationActionParameters?, Purchasely.PLYPresentationInfo?, @escaping (Swift.Bool) -> Swift.Void) -> Swift.Void
+public typealias PLYPurchaseConfirmationHandler = (UIKit.UIViewController, @escaping (Swift.Bool) -> Swift.Void) -> Swift.Void
 public typealias PLYLoginCompletionHandler = (Swift.Bool) -> Swift.Void
 public typealias PLYBoolClosure = (Swift.Bool) -> Swift.Void
 public typealias PLYVoidClosure = () -> Swift.Void
@@ -979,7 +980,7 @@ extension Purchasely.Purchasely {
   @objc dynamic public class func clientPresentationClosed(with presentation: Purchasely.PLYPresentation?)
   @objc dynamic public class func subscriptionsController() -> UIKit.UIViewController?
   @objc dynamic public class func subscriptionController(for subscription: Purchasely.PLYSubscription) -> UIKit.UIViewController?
-  @objc dynamic public class func cancellationSurveyController(for product: Purchasely.PLYProduct?, selected: @escaping ((Purchasely.PLYCancellationReason) -> ())) -> UIKit.UIViewController
+  @objc dynamic public class func cancellationSurveyController(for product: Purchasely.PLYProduct?, selected: @escaping (Purchasely.PLYCancellationReason) -> ()) -> UIKit.UIViewController
   @objc dynamic public class func setEventDelegate(_ callback: @escaping (Purchasely.PLYEvent, [Swift.String : Any]?) -> ())
   @available(iOS 13.0, tvOS 13.0, macOS 12.0, watchOS 8.0, *)
   public class func productView(for productVendorId: Swift.String, with presentationVendorId: Swift.String? = nil, contentId: Swift.String? = nil, loaded: Purchasely.PLYPaywallLoadingClosure? = nil, completion: Purchasely.PLYProductViewControllerCompletionBlock? = nil) -> Purchasely.PLYPresentationView?
@@ -1110,6 +1111,7 @@ extension StoreKit.SKProductStorePromotionController {
 extension Swift.String {
   public func regexMatchGroup(_ pattern: Swift.String) -> [Swift.String]?
   public func regexMatch(_ pattern: Swift.String) -> Swift.Bool
+  public func isNULL() -> Swift.Bool
 }
 extension Purchasely.Purchasely.PLYAttribute : Swift.Equatable {}
 extension Purchasely.Purchasely.PLYAttribute : Swift.Hashable {}
