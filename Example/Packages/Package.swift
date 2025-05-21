@@ -28,7 +28,8 @@ let package = Package(
                 .product(name: "OHHTTPStubs", package: "OHHTTPStubs")
             ],
             resources: [
-                .process("Assets.xcassets")
+                .process("Assets.xcassets"),
+                .process("Resources")
             ]
         )
     ]
