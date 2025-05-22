@@ -123,11 +123,9 @@ struct DynamicOfferingsView: View {
                     .frame(maxWidth: .infinity)
             }
             
-        }.background(Color.white)
-            .cornerRadius(12)
-            .shadow(color: .gray.opacity(0.5), radius: 3, x: 1, y: 1)
-            .padding(.horizontal, 15)
-            .padding(.top, 15)
+        }
+        .card()
+        .padding(.top, 15)
     }
     
     @ViewBuilder

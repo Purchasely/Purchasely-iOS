@@ -68,7 +68,7 @@ fileprivate extension SettingsView {
                     Pickers()
                 }
             }
-            .padding(.horizontal, 20)
+            .padding(.horizontal, 12)
             .padding(.top, 10)
         }
         
@@ -86,8 +86,7 @@ fileprivate extension SettingsView {
             viewModel.clear()
         })
     }
-    
-    @ViewBuilder
+
     func IdsTextFields() -> some View {
         VStack(spacing: 16) {
             TextField("User ID", text: $viewModel.userId)
@@ -126,13 +125,10 @@ fileprivate extension SettingsView {
                 }
             
             
-        }.background(Color.white)
-            .cornerRadius(12)
-            .shadow(color: .gray.opacity(0.5), radius: 3, x: 1, y: 1)
-            .padding(.horizontal, 5)
+        }
+        .unpaddedCard()
     }
-    
-    @ViewBuilder
+
     func Toggles() -> some View {
         VStack(spacing: 24) {
             HStack {
@@ -186,23 +182,18 @@ fileprivate extension SettingsView {
             }.padding(.horizontal)
                 .padding(.bottom, 25)
             
-        }.background(Color.white)
-            .cornerRadius(12)
-            .shadow(color: .gray.opacity(0.5), radius: 3, x: 1, y: 1)
-            .padding(.horizontal, 5)
+        }
+        .unpaddedCard()
     }
     
-    @ViewBuilder
     func UrlTextFields() -> some View {
         VStack(spacing: 16) {
             TextField("Api Key", text: $viewModel.apiKey)
                 .textFieldStyle(CustomTextFieldStyle())
                 .padding(.horizontal)
-                .padding(.top, 16)
-        }.background(Color.white)
-            .cornerRadius(12)
-            .shadow(color: .gray.opacity(0.5), radius: 3, x: 1, y: 1)
-            .padding(.horizontal, 5)
+                .padding(.vertical, 16)
+        }
+        .unpaddedCard()
     }
     
     @ViewBuilder
@@ -216,11 +207,10 @@ fileprivate extension SettingsView {
                 .accentColor(.main)
                 .padding(.vertical)
         }.frame(minHeight: 85)
-            .cornerRadius(12)
-            .padding(.horizontal, 5)
             .listRowSeparator(.hidden)
             .listStyle(.inset)
-            .shadow(color: .gray.opacity(0.5), radius: 3, x: 1, y: 1)
+            .scrollDisabled(true)
+            .unpaddedCard()
         
         List {
             Picker("Display mode", selection: $viewModel.selectedDisplayMode) {
@@ -231,11 +221,10 @@ fileprivate extension SettingsView {
                 .accentColor(.main)
                 .padding(.vertical)
         }.frame(minHeight: 85)
-            .cornerRadius(12)
-            .padding(.horizontal, 5)
             .listRowSeparator(.hidden)
             .listStyle(.inset)
-            .shadow(color: .gray.opacity(0.5), radius: 3, x: 1, y: 1)
+            .scrollDisabled(true)
+            .unpaddedCard()
             .padding(.bottom, 18)
     }
 }
