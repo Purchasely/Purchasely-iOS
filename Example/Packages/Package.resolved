@@ -1,0 +1,33 @@
+{
+  "originHash" : "ed13123fe980d7557273d7e725878f14d68ca6ac1916a1f1780741772e21cb6d",
+  "pins" : [
+    {
+      "identity" : "lottie-spm",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/airbnb/lottie-spm.git",
+      "state" : {
+        "revision" : "8c6edf4f0fa84fe9c058600a4295eb0c01661c69",
+        "version" : "4.5.1"
+      }
+    },
+    {
+      "identity" : "ohhttpstubs",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/AliSoftware/OHHTTPStubs.git",
+      "state" : {
+        "revision" : "12f19662426d0434d6c330c6974d53e2eb10ecd9",
+        "version" : "9.1.0"
+      }
+    },
+    {
+      "identity" : "purchasely-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Purchasely/Purchasely-iOS",
+      "state" : {
+        "revision" : "a369bd1e06c9b01cae92c1bb6a2a7ea4800a3c62",
+        "version" : "5.2.1"
+      }
+    }
+  ],
+  "version" : 3
+}
