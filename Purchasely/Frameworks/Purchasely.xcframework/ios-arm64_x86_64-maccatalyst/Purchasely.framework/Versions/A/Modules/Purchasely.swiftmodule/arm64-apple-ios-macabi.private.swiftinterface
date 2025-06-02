@@ -981,7 +981,9 @@ extension Purchasely {
   @objc dynamic public class func subscriptionsController() -> UIKit.UIViewController?
   @objc dynamic public class func subscriptionController(for subscription: PLYSubscription) -> UIKit.UIViewController?
   @objc dynamic public class func cancellationSurveyController(for product: PLYProduct?, selected: @escaping (PLYCancellationReason) -> ()) -> UIKit.UIViewController
-  @objc dynamic public class func setEventDelegate(_ callback: @escaping (PLYEvent, [Swift.String : Any]?) -> ())
+  @objc dynamic public class func setEventCallback(_ callback: @escaping (PLYEvent, [Swift.String : Any]?) -> ())
+  @objc dynamic public class func setEventDelegate(_ delegate: any PLYEventDelegate)
+  @objc dynamic public class func removeEventDelegate()
   @available(iOS 13.0, tvOS 13.0, macOS 12.0, watchOS 8.0, *)
   public class func productView(for productVendorId: Swift.String, with presentationVendorId: Swift.String? = nil, contentId: Swift.String? = nil, loaded: PLYPaywallLoadingClosure? = nil, completion: PLYProductViewControllerCompletionBlock? = nil) -> PLYPresentationView?
   @available(iOS 13.0, tvOS 13.0, macOS 12.0, watchOS 8.0, *)

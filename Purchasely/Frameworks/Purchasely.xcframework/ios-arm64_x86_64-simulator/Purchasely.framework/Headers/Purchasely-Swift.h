@@ -1235,7 +1235,9 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 /// </ul>
 /// \param callback A closure that will be called whenever an event is tracked.
 ///
-+ (void)setEventDelegate:(void (^ _Nonnull)(enum PLYEvent, NSDictionary<NSString *, id> * _Nullable))callback;
++ (void)setEventCallback:(void (^ _Nonnull)(enum PLYEvent, NSDictionary<NSString *, id> * _Nullable))callback;
++ (void)setEventDelegate:(id <PLYEventDelegate> _Nonnull)delegate;
++ (void)removeEventDelegate;
 /// This method must be called inside the AppDelegate open url method or SceneDelegate willConnectTo and openURLContexts
 /// Check the documentation: https://docs.purchasely.com/advanced-features/deeplinks-and-automations
 /// The controller will be displayed above the current controller.
@@ -2886,7 +2888,9 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 /// </ul>
 /// \param callback A closure that will be called whenever an event is tracked.
 ///
-+ (void)setEventDelegate:(void (^ _Nonnull)(enum PLYEvent, NSDictionary<NSString *, id> * _Nullable))callback;
++ (void)setEventCallback:(void (^ _Nonnull)(enum PLYEvent, NSDictionary<NSString *, id> * _Nullable))callback;
++ (void)setEventDelegate:(id <PLYEventDelegate> _Nonnull)delegate;
++ (void)removeEventDelegate;
 /// This method must be called inside the AppDelegate open url method or SceneDelegate willConnectTo and openURLContexts
 /// Check the documentation: https://docs.purchasely.com/advanced-features/deeplinks-and-automations
 /// The controller will be displayed above the current controller.
