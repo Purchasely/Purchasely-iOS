@@ -364,6 +364,21 @@ typedef SWIFT_ENUM(NSInteger, PLYCustomPropertyDataType, open) {
   PLYCustomPropertyDataTypeBool = 4,
 };
 
+/// Enumerates the possible transition types for a presentation.
+/// This enum is compatible with Objective-C (as an Int-based enum)
+/// and conforms to Codable in Swift, using specific string values for encoding/decoding.
+typedef SWIFT_ENUM(NSInteger, PLYDisplayMode, open) {
+/// Full-screen transition.
+  PLYDisplayModeFullScreen = 0,
+/// “Push” transition to a full screen.
+  PLYDisplayModeModal = 1,
+/// “Drawer” type transition.
+  PLYDisplayModeDrawer = 2,
+/// “Pop-in” type transition.
+  PLYDisplayModePopin = 3,
+  PLYDisplayModePush = 4,
+};
+
 typedef SWIFT_ENUM(NSInteger, PLYEnvironment, open) {
   PLYEnvironmentProd = 0,
   PLYEnvironmentStaging = 1,
@@ -503,6 +518,12 @@ typedef SWIFT_ENUM(NSInteger, PLYEventProperty, open) {
   PLYEventPropertySelectedOptions = 78,
   PLYEventPropertyDisplayedOptions = 79,
   PLYEventPropertyCampaignId = 80,
+  PLYEventPropertyFlowId = 81,
+  PLYEventPropertyFlowStepId = 82,
+  PLYEventPropertyFlowVersion = 83,
+  PLYEventPropertyFromActionId = 84,
+  PLYEventPropertyFromStepId = 85,
+  PLYEventPropertyDisplayMode = 86,
 };
 
 typedef SWIFT_ENUM(NSInteger, PLYEventType, open) {
@@ -641,6 +662,7 @@ enum PLYPresentationType : NSInteger;
 @class PLYPresentationPlan;
 @class PLYPresentationMetadata;
 @class UIColor;
+@class UIViewController;
 SWIFT_CLASS("_TtC10Purchasely15PLYPresentation")
 @interface PLYPresentation : NSObject
 @property (nonatomic, readonly, copy) NSString * _Nullable id;
@@ -656,6 +678,8 @@ SWIFT_CLASS("_TtC10Purchasely15PLYPresentation")
 @property (nonatomic, readonly, strong) PLYPresentationMetadata * _Nullable metadata;
 @property (nonatomic, readonly, strong) UIColor * _Nullable backgroundColor;
 @property (nonatomic, readonly) NSInteger height;
+@property (nonatomic, readonly) enum PLYDisplayMode displayMode;
+- (void)displayFrom:(UIViewController * _Nullable)sourceViewController;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -682,7 +706,6 @@ SWIFT_CLASS("_TtC10Purchasely31PLYPresentationActionParameters")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class UIViewController;
 SWIFT_CLASS("_TtC10Purchasely19PLYPresentationInfo")
 @interface PLYPresentationInfo : NSObject
 /// <code>controller</code> parameter represents current paywall controller displayed, <code>nil</code> if purchase was made manually.
@@ -1235,9 +1258,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 /// </ul>
 /// \param callback A closure that will be called whenever an event is tracked.
 ///
-+ (void)setEventCallback:(void (^ _Nonnull)(enum PLYEvent, NSDictionary<NSString *, id> * _Nullable))callback;
-+ (void)setEventDelegate:(id <PLYEventDelegate> _Nonnull)delegate;
-+ (void)removeEventDelegate;
++ (void)setEventDelegate:(void (^ _Nonnull)(enum PLYEvent, NSDictionary<NSString *, id> * _Nullable))callback;
 /// This method must be called inside the AppDelegate open url method or SceneDelegate willConnectTo and openURLContexts
 /// Check the documentation: https://docs.purchasely.com/advanced-features/deeplinks-and-automations
 /// The controller will be displayed above the current controller.

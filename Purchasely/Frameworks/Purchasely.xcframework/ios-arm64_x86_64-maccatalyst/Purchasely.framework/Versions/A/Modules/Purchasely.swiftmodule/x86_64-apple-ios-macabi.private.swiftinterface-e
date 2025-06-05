@@ -439,6 +439,12 @@ extension Foundation.NSString {
   case selectedOptions
   case displayedOptions
   case campaignId
+  case flowId
+  case flowStepId
+  case flowVersion
+  case fromActionId
+  case fromStepId
+  case displayMode
   public var name: Swift.String {
     get
   }
@@ -640,6 +646,8 @@ extension Purchasely.PLYPlan {
   @objc final public let metadata: Purchasely.PLYPresentationMetadata?
   @objc final public let backgroundColor: UIKit.UIColor?
   @objc final public let height: Swift.Int
+  @objc final public let displayMode: Purchasely.PLYDisplayMode
+  @objc public func display(from sourceViewController: UIKit.UIViewController?)
   @objc deinit
 }
 @objc public enum PLYPresentationType : Swift.Int {
@@ -879,6 +887,22 @@ public enum PLYSubscriptionSourceError : Swift.Error {
     get
   }
 }
+@objc public enum PLYDisplayMode : Swift.Int, Swift.Equatable {
+  case fullScreen
+  case modal
+  case drawer
+  case popin
+  case push
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+extension Purchasely.PLYDisplayMode : Swift.Codable {
+  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+}
 @objc public enum PLYUIControllerType : Swift.Int {
   case subscriptionList
   case productPage
@@ -981,9 +1005,7 @@ extension Purchasely.Purchasely {
   @objc dynamic public class func subscriptionsController() -> UIKit.UIViewController?
   @objc dynamic public class func subscriptionController(for subscription: Purchasely.PLYSubscription) -> UIKit.UIViewController?
   @objc dynamic public class func cancellationSurveyController(for product: Purchasely.PLYProduct?, selected: @escaping (Purchasely.PLYCancellationReason) -> ()) -> UIKit.UIViewController
-  @objc dynamic public class func setEventCallback(_ callback: @escaping (Purchasely.PLYEvent, [Swift.String : Any]?) -> ())
-  @objc dynamic public class func setEventDelegate(_ delegate: any Purchasely.PLYEventDelegate)
-  @objc dynamic public class func removeEventDelegate()
+  @objc dynamic public class func setEventDelegate(_ callback: @escaping (Purchasely.PLYEvent, [Swift.String : Any]?) -> ())
   @available(iOS 13.0, tvOS 13.0, macOS 12.0, watchOS 8.0, *)
   public class func productView(for productVendorId: Swift.String, with presentationVendorId: Swift.String? = nil, contentId: Swift.String? = nil, loaded: Purchasely.PLYPaywallLoadingClosure? = nil, completion: Purchasely.PLYProductViewControllerCompletionBlock? = nil) -> Purchasely.PLYPresentationView?
   @available(iOS 13.0, tvOS 13.0, macOS 12.0, watchOS 8.0, *)
@@ -1203,6 +1225,8 @@ extension Purchasely.PLYSubscriptionSource : Swift.RawRepresentable {}
 extension Purchasely.PLYSubscriptionStatus : Swift.Equatable {}
 extension Purchasely.PLYSubscriptionStatus : Swift.Hashable {}
 extension Purchasely.PLYSubscriptionStatus : Swift.RawRepresentable {}
+extension Purchasely.PLYDisplayMode : Swift.Hashable {}
+extension Purchasely.PLYDisplayMode : Swift.RawRepresentable {}
 extension Purchasely.PLYUIControllerType : Swift.Equatable {}
 extension Purchasely.PLYUIControllerType : Swift.Hashable {}
 extension Purchasely.PLYUIControllerType : Swift.RawRepresentable {}

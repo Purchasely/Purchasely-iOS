@@ -436,6 +436,12 @@ extension Foundation.NSString {
   case selectedOptions
   case displayedOptions
   case campaignId
+  case flowId
+  case flowStepId
+  case flowVersion
+  case fromActionId
+  case fromStepId
+  case displayMode
   public var name: Swift.String {
     get
   }
@@ -637,6 +643,8 @@ extension PLYPlan {
   @objc final public let metadata: PLYPresentationMetadata?
   @objc final public let backgroundColor: UIKit.UIColor?
   @objc final public let height: Swift.Int
+  @objc final public let displayMode: PLYDisplayMode
+  @objc public func display(from sourceViewController: UIKit.UIViewController?)
   @objc deinit
 }
 @objc public enum PLYPresentationType : Swift.Int {
@@ -871,6 +879,22 @@ public enum PLYSubscriptionSourceError : Swift.Error {
     get
   }
 }
+@objc public enum PLYDisplayMode : Swift.Int, Swift.Equatable {
+  case fullScreen
+  case modal
+  case drawer
+  case popin
+  case push
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+extension PLYDisplayMode : Swift.Codable {
+  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+}
 @objc public enum PLYUIControllerType : Swift.Int {
   case subscriptionList
   case productPage
@@ -973,9 +997,7 @@ extension Purchasely {
   @objc dynamic public class func subscriptionsController() -> UIKit.UIViewController?
   @objc dynamic public class func subscriptionController(for subscription: PLYSubscription) -> UIKit.UIViewController?
   @objc dynamic public class func cancellationSurveyController(for product: PLYProduct?, selected: @escaping (PLYCancellationReason) -> ()) -> UIKit.UIViewController
-  @objc dynamic public class func setEventCallback(_ callback: @escaping (PLYEvent, [Swift.String : Any]?) -> ())
-  @objc dynamic public class func setEventDelegate(_ delegate: any PLYEventDelegate)
-  @objc dynamic public class func removeEventDelegate()
+  @objc dynamic public class func setEventDelegate(_ callback: @escaping (PLYEvent, [Swift.String : Any]?) -> ())
   @available(iOS 13.0, tvOS 13.0, macOS 12.0, watchOS 8.0, *)
   public class func productView(for productVendorId: Swift.String, with presentationVendorId: Swift.String? = nil, contentId: Swift.String? = nil, loaded: PLYPaywallLoadingClosure? = nil, completion: PLYProductViewControllerCompletionBlock? = nil) -> PLYPresentationView?
   @available(iOS 13.0, tvOS 13.0, macOS 12.0, watchOS 8.0, *)
@@ -1195,6 +1217,8 @@ extension PLYSubscriptionSource : Swift.RawRepresentable {}
 extension PLYSubscriptionStatus : Swift.Equatable {}
 extension PLYSubscriptionStatus : Swift.Hashable {}
 extension PLYSubscriptionStatus : Swift.RawRepresentable {}
+extension PLYDisplayMode : Swift.Hashable {}
+extension PLYDisplayMode : Swift.RawRepresentable {}
 extension PLYUIControllerType : Swift.Equatable {}
 extension PLYUIControllerType : Swift.Hashable {}
 extension PLYUIControllerType : Swift.RawRepresentable {}
