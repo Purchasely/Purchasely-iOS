@@ -9,7 +9,9 @@ import SwiftUI
 
 @main
 public struct PurchaselySampleV2App: App {
-    public init() { }
+    public init() {
+        UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).backgroundColor = .white
+    }
     
     public var body: some Scene {
         WindowGroup {

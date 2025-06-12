@@ -5,6 +5,7 @@
 //  Created by Florian Huet on 22/12/2023.
 //
 
+import Combine
 import Foundation
 import Purchasely
 
@@ -15,6 +16,8 @@ struct SamplePlanObject: Identifiable {
     var vendorId: String
     var appleProductId: String
     var offers: [String]
+    
+    var plyPlan: PLYPlan
 }
 
 struct SampleProductObject: Identifiable, Hashable {
@@ -34,11 +37,22 @@ struct SampleProductObject: Identifiable, Hashable {
 
 class ProductsViewModel: ObservableObject {
     
-    @Published var plyProducts: [SampleProductObject] = []
+    @Published private var plyProducts: [SampleProductObject] = []
     @Published var plyPlansStringList: [String] = []
     @Published var offersForPlan: [String] = []
-    
+    @Published var searchQuery: String = ""
+
+    @Published var searchResults: [SampleProductObject] = []
+
     init() {
+        $plyProducts
+            .combineLatest($searchQuery.map(\.localizedLowercase)) { (products: [SampleProductObject], query: String) -> [SampleProductObject] in
+                if query.isEmpty {
+                    return products
+                }
+                return products.compactMap(match(query: query))
+            }
+            .assign(to: &$searchResults)
         loadProducts()
     }
     
@@ -50,8 +64,11 @@ class ProductsViewModel: ObservableObject {
                 SamplePlanObject(name: $0.name ?? "",
                                  vendorId: $0.vendorId,
                                  appleProductId: $0.appleProductId ?? "",
-                                 offers: $0.promoOffers.map { $0.vendorId }) })
+                                 offers: $0.promoOffers.map { $0.vendorId },
+                                 plyPlan: $0) }
+                .sorted(by: { $0.name < $1.name }))
             }
+            .sorted(by: { $0.name < $1.name })
             
             for product in self.plyProducts {
                 for plan in product.plans {
@@ -74,5 +91,32 @@ class ProductsViewModel: ObservableObject {
             }
         }
         offersForPlan = []
+    }
+}
+
+fileprivate func match(query: String) -> (_ product: SampleProductObject) -> SampleProductObject? {
+    return { product in
+        if product.name.lowercased().contains(query) || product.vendorId.lowercased().contains(query) {
+            return product
+        }
+
+        let filteredPlans = product.plans.filter(match(query: query))
+        
+        guard !filteredPlans.isEmpty else { return nil }
+
+        return SampleProductObject(
+            id: product.id,
+            vendorId: product.vendorId,
+            name: product.name,
+            plans: filteredPlans
+        )
+    }
+}
+
+fileprivate func match(query: String) -> (_ plan: SamplePlanObject) -> Bool {
+    return { plan in
+        plan.name.contains(query) ||
+        plan.vendorId.contains(query) ||
+        plan.appleProductId.contains(query)
     }
 }
