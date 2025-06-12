@@ -50,9 +50,7 @@ class ProductsViewModel: ObservableObject {
                 if query.isEmpty {
                     return products
                 }
-                let lowercasedQuery = query.lowercased()
-
-                return products.compactMap(match(query: lowercasedQuery))
+                return products.compactMap(match(query: query))
             }
             .assign(to: &$searchResults)
         loadProducts()
