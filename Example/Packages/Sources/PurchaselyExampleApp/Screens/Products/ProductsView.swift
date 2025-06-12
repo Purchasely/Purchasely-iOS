@@ -27,12 +27,9 @@ struct ProductsView: View {
                 .frame(maxHeight: 1)
                 .navigationBarTitle("Products and Plans", displayMode: .inline)
             
-            VStack {
-                ProductListView()
-            }
-            .padding(.top, 16)
-            .background(Color.white)
-            .searchable(text: $viewModel.searchQuery, prompt: "Products and Plans")
+            ProductListView()
+                .background(Color.white)
+                .searchable(text: $viewModel.searchQuery, prompt: "Products and Plans")
             
         }.frame(maxWidth: .infinity,
                 maxHeight: .infinity,
