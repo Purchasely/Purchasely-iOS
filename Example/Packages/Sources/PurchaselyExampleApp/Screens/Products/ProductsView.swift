@@ -15,8 +15,7 @@ class ProductTest {
 }
 
 struct ProductsView: View {
-    
-    @State private var searchText = ""
+
     @StateObject var viewModel = ProductsViewModel()
     
     var body: some View {
@@ -33,6 +32,7 @@ struct ProductsView: View {
             }
             .padding(.top, 16)
             .background(Color.white)
+            .searchable(text: $viewModel.searchQuery, prompt: "Products and Plans")
             
         }.frame(maxWidth: .infinity,
                 maxHeight: .infinity,
@@ -42,42 +42,25 @@ struct ProductsView: View {
 }
 
 extension ProductsView {
-    
-    @ViewBuilder
+
     func ProductListView() -> some View {
         List {
-            ForEach(viewModel.plyProducts, id: \.vendorId) { plyProduct in
+            ForEach(viewModel.searchResults, id: \.vendorId) { plyProduct in
                 Section(content: {
                     PlansView(plyProduct)
                 }, header: {
                     ProductTitleView(plyProduct)
                 })
             }
-        }.listRowSpacing(10)
-            .scrollContentBackground(.hidden)
-    }
-    
-    @ViewBuilder
-    func PlansView(_ plyProduct: SampleProductObject) -> some View {
-        ForEach(plyProduct.plans) { plan in
-            VStack(alignment: .leading) {
-                Text(plan.vendorId)
-                    .bold()
-                Text(plan.name)
-                Text(plan.appleProductId)
-                Button {
-                    UIPasteboard.general.string = plan.vendorId
-                } label: {
-                    Image(systemName: "doc.on.doc")
-                        .foregroundColor(.white)
-                        .padding(.trailing)
-                }
-            }
-            .listRowBackground(Color.mainLight)
         }
+        .listRowSpacing(10)
+        .scrollContentBackground(.hidden)
     }
     
-    @ViewBuilder
+    func PlansView(_ plyProduct: SampleProductObject) -> some View {
+        ForEach(plyProduct.plans, content: PlanView.init(plan:))
+    }
+    
     func ProductTitleView(_ plyProduct: SampleProductObject) -> some View {
         HStack {
             VStack(alignment: .leading) {
@@ -87,8 +70,8 @@ extension ProductsView {
                 
                 Text(plyProduct.vendorId)
                     .font(.body)
-            }.padding(.trailing, 16)
-            
+            }
+            Spacer()
             ZStack {
                 Capsule()
                     .frame(width: 80, height: 30)
@@ -99,6 +82,77 @@ extension ProductsView {
             }
         }
         .padding(.bottom, 26)
+    }
+}
+
+struct PlanView: View {
+    @State var isExpanded: Bool = false
+
+    let plan: SamplePlanObject
+    
+    init(plan: SamplePlanObject) {
+        self.plan = plan
+    }
+
+    var body: some View {
+        VStack(alignment: .leading) {
+            HStack {
+                Text(plan.name)
+                    .font(.headline)
+                Spacer()
+                Button {
+                    UIPasteboard.general.string = plan.vendorId
+                } label: {
+                    Image(systemName: "doc.on.doc")
+                        .foregroundColor(.white)
+                        .frame(width: 35, height: 35)
+                }
+                .buttonStyle(.plain)
+            }
+            HStack {
+                VStack(alignment: .leading) {
+                    Text(plan.vendorId)
+                    Text(plan.appleProductId)
+                }
+                .foregroundStyle(.secondary)
+                .fontWeight(.semibold)
+                Spacer()
+                Button(action: {
+                    isExpanded.toggle()
+                }, label: {
+                    Image(systemName: isExpanded ? "chevron.up" : "chevron.down")
+                        .frame(width: 35, height: 35)
+                })
+                .buttonStyle(.plain)
+                .font(.body)
+            }
+            if isExpanded {
+                Spacer()
+                    .frame(height: 20)
+                labelWithValue("localized price", with: plan.plyPlan.localizedPrice())
+                labelWithValue("localized full price", with: plan.plyPlan.localizedFullPrice())
+                labelWithValue("localized intro. price", with: plan.plyPlan.localizedIntroductoryPrice())
+                labelWithValue("localized full intro. price", with: plan.plyPlan.localizedFullIntroductoryPrice())
+                Divider()
+                labelWithValue("intro. period", with: plan.plyPlan.introductoryPeriod())
+                labelWithValue("localized period", with: plan.plyPlan.localizedPeriod())
+                labelWithValue("localized intro. period", with: plan.plyPlan.localizedIntroductoryPeriod())
+                Divider()
+                labelWithValue("duration", with: plan.plyPlan.duration)
+                labelWithValue("intro. duration", with: plan.plyPlan.introductoryDuration())
+                labelWithValue("localized intro. duration", with: plan.plyPlan.localizedIntroductoryDuration())
+                Divider()
+                labelWithValue("amount", with: plan.plyPlan.amount)
+                labelWithValue("currency code", with: plan.plyPlan.currencyCode)
+                labelWithValue("currency symbol", with: plan.plyPlan.currencySymbol)
+            }
+        }
+        .font(.subheadline)
+        .listRowBackground(Color.mainLight)
+    }
+    
+    func labelWithValue<T: CustomStringConvertible>(_ string: String, with value: T?) -> Text {
+        Text("\(string): \(value?.description ?? "nil")")
     }
 }
 
