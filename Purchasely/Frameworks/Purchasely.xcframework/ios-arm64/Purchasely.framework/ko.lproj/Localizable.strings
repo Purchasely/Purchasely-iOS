@@ -113,3 +113,10 @@
 "ply_in_app_purchase_not_allowed_error" = "이 제품을 구매할 수 없습니다.";
 "ply_in_app_offer_invalid_error" = "프로모션 혜택으로 구매에 실패했습니다.";
 "ply_google_feature_not_supported" = "이 기능은 Google Play의 이 버전에서 지원되지 않습니다";
+"ply_web_checkout_pending_payment_title" = "ID_117";
+"ply_web_checkout_pending_payment_body" = "ID_118";
+"ply_web_checkout_pending_payment_cancel_button" = "ID_119";
+"ply_web_checkout_pending_payment_open_browser_button" = "ID_120";
+"ply_web_checkout_failure_title" = "ID_121";
+"ply_web_checkout_failure_body" = "ID_122";
+"ply_web_checkout_failure_action" = "ID_123";

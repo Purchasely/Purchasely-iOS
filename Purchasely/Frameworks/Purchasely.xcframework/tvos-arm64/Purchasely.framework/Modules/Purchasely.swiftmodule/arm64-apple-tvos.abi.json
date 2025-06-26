@@ -1073,6 +1073,269 @@
         ]
       },
       {
+        "kind": "TypeDecl",
+        "name": "PLYWebCheckoutProvider",
+        "printedName": "PLYWebCheckoutProvider",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "stripe",
+            "printedName": "stripe",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Purchasely.PLYWebCheckoutProvider.Type) -> Purchasely.PLYWebCheckoutProvider",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "PLYWebCheckoutProvider",
+                    "printedName": "Purchasely.PLYWebCheckoutProvider",
+                    "usr": "c:@M@Purchasely@E@PLYWebCheckoutProvider"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "Purchasely.PLYWebCheckoutProvider.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "PLYWebCheckoutProvider",
+                        "printedName": "Purchasely.PLYWebCheckoutProvider",
+                        "usr": "c:@M@Purchasely@E@PLYWebCheckoutProvider"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "c:@M@Purchasely@E@PLYWebCheckoutProvider@PLYWebCheckoutProviderStripe",
+            "mangledName": "$s10Purchasely22PLYWebCheckoutProviderO6stripeyA2CmF",
+            "moduleName": "Purchasely",
+            "declAttributes": [
+              "ObjC"
+            ],
+            "fixedbinaryorder": 0
+          },
+          {
+            "kind": "Var",
+            "name": "other",
+            "printedName": "other",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Purchasely.PLYWebCheckoutProvider.Type) -> Purchasely.PLYWebCheckoutProvider",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "PLYWebCheckoutProvider",
+                    "printedName": "Purchasely.PLYWebCheckoutProvider",
+                    "usr": "c:@M@Purchasely@E@PLYWebCheckoutProvider"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "Purchasely.PLYWebCheckoutProvider.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "PLYWebCheckoutProvider",
+                        "printedName": "Purchasely.PLYWebCheckoutProvider",
+                        "usr": "c:@M@Purchasely@E@PLYWebCheckoutProvider"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "c:@M@Purchasely@E@PLYWebCheckoutProvider@PLYWebCheckoutProviderOther",
+            "mangledName": "$s10Purchasely22PLYWebCheckoutProviderO5otheryA2CmF",
+            "moduleName": "Purchasely",
+            "declAttributes": [
+              "ObjC"
+            ],
+            "fixedbinaryorder": 1
+          },
+          {
+            "kind": "Var",
+            "name": "none",
+            "printedName": "none",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Purchasely.PLYWebCheckoutProvider.Type) -> Purchasely.PLYWebCheckoutProvider",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "PLYWebCheckoutProvider",
+                    "printedName": "Purchasely.PLYWebCheckoutProvider",
+                    "usr": "c:@M@Purchasely@E@PLYWebCheckoutProvider"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "Purchasely.PLYWebCheckoutProvider.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "PLYWebCheckoutProvider",
+                        "printedName": "Purchasely.PLYWebCheckoutProvider",
+                        "usr": "c:@M@Purchasely@E@PLYWebCheckoutProvider"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "c:@M@Purchasely@E@PLYWebCheckoutProvider@PLYWebCheckoutProviderNone",
+            "mangledName": "$s10Purchasely22PLYWebCheckoutProviderO4noneyA2CmF",
+            "moduleName": "Purchasely",
+            "declAttributes": [
+              "ObjC"
+            ],
+            "fixedbinaryorder": 2
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(rawValue:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Purchasely.PLYWebCheckoutProvider?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "PLYWebCheckoutProvider",
+                    "printedName": "Purchasely.PLYWebCheckoutProvider",
+                    "usr": "c:@M@Purchasely@E@PLYWebCheckoutProvider"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:10Purchasely22PLYWebCheckoutProviderO8rawValueACSgSi_tcfc",
+            "mangledName": "$s10Purchasely22PLYWebCheckoutProviderO8rawValueACSgSi_tcfc",
+            "moduleName": "Purchasely",
+            "implicit": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Var",
+            "name": "rawValue",
+            "printedName": "rawValue",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:10Purchasely22PLYWebCheckoutProviderO8rawValueSivp",
+            "mangledName": "$s10Purchasely22PLYWebCheckoutProviderO8rawValueSivp",
+            "moduleName": "Purchasely",
+            "implicit": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10Purchasely22PLYWebCheckoutProviderO8rawValueSivg",
+                "mangledName": "$s10Purchasely22PLYWebCheckoutProviderO8rawValueSivg",
+                "moduleName": "Purchasely",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "c:@M@Purchasely@E@PLYWebCheckoutProvider",
+        "mangledName": "$s10Purchasely22PLYWebCheckoutProviderO",
+        "moduleName": "Purchasely",
+        "declAttributes": [
+          "AccessControl",
+          "ObjC"
+        ],
+        "enumRawTypeName": "Int",
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "RawRepresentable",
+            "printedName": "RawRepresentable",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "RawValue",
+                "printedName": "RawValue",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:SY",
+            "mangledName": "$sSY"
+          }
+        ]
+      },
+      {
         "kind": "Import",
         "name": "UIKit",
         "printedName": "UIKit",
@@ -1516,6 +1779,47 @@
           },
           {
             "kind": "Var",
+            "name": "webCheckoutReceiptPollingFailure",
+            "printedName": "webCheckoutReceiptPollingFailure",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Purchasely.PLYAlertMessage.Type) -> Purchasely.PLYAlertMessage",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "PLYAlertMessage",
+                    "printedName": "Purchasely.PLYAlertMessage",
+                    "usr": "c:@M@Purchasely@E@PLYAlertMessage"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "Purchasely.PLYAlertMessage.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "PLYAlertMessage",
+                        "printedName": "Purchasely.PLYAlertMessage",
+                        "usr": "c:@M@Purchasely@E@PLYAlertMessage"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "c:@M@Purchasely@E@PLYAlertMessage@PLYAlertMessageWebCheckoutReceiptPollingFailure",
+            "mangledName": "$s10Purchasely15PLYAlertMessageO32webCheckoutReceiptPollingFailureyA2CmF",
+            "moduleName": "Purchasely",
+            "declAttributes": [
+              "ObjC"
+            ],
+            "fixedbinaryorder": 10
+          },
+          {
+            "kind": "Var",
             "name": "title",
             "printedName": "title",
             "children": [
@@ -1794,6 +2098,34 @@
         "declAttributes": [
           "RawDocComment"
         ]
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "Purchasely"
+      },
+      {
+        "kind": "Import",
+        "name": "SwiftUI",
+        "printedName": "SwiftUI",
+        "declKind": "Import",
+        "moduleName": "Purchasely"
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "Purchasely"
+      },
+      {
+        "kind": "Import",
+        "name": "SwiftUI",
+        "printedName": "SwiftUI",
+        "declKind": "Import",
+        "moduleName": "Purchasely"
       },
       {
         "kind": "Import",
@@ -7952,6 +8284,176 @@
             ]
           },
           {
+            "kind": "Var",
+            "name": "webCheckoutReceiptStatusPollingFrequency",
+            "printedName": "webCheckoutReceiptStatusPollingFrequency",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:10Purchasely9PLYConfigC40webCheckoutReceiptStatusPollingFrequencySivp",
+            "mangledName": "$s10Purchasely9PLYConfigC40webCheckoutReceiptStatusPollingFrequencySivp",
+            "moduleName": "Purchasely",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10Purchasely9PLYConfigC40webCheckoutReceiptStatusPollingFrequencySivg",
+                "mangledName": "$s10Purchasely9PLYConfigC40webCheckoutReceiptStatusPollingFrequencySivg",
+                "moduleName": "Purchasely",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10Purchasely9PLYConfigC40webCheckoutReceiptStatusPollingFrequencySivs",
+                "mangledName": "$s10Purchasely9PLYConfigC40webCheckoutReceiptStatusPollingFrequencySivs",
+                "moduleName": "Purchasely",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10Purchasely9PLYConfigC40webCheckoutReceiptStatusPollingFrequencySivM",
+                "mangledName": "$s10Purchasely9PLYConfigC40webCheckoutReceiptStatusPollingFrequencySivM",
+                "moduleName": "Purchasely",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "webCheckoutReceiptValidationTimeout",
+            "printedName": "webCheckoutReceiptValidationTimeout",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:10Purchasely9PLYConfigC35webCheckoutReceiptValidationTimeoutSivp",
+            "mangledName": "$s10Purchasely9PLYConfigC35webCheckoutReceiptValidationTimeoutSivp",
+            "moduleName": "Purchasely",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10Purchasely9PLYConfigC35webCheckoutReceiptValidationTimeoutSivg",
+                "mangledName": "$s10Purchasely9PLYConfigC35webCheckoutReceiptValidationTimeoutSivg",
+                "moduleName": "Purchasely",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10Purchasely9PLYConfigC35webCheckoutReceiptValidationTimeoutSivs",
+                "mangledName": "$s10Purchasely9PLYConfigC35webCheckoutReceiptValidationTimeoutSivs",
+                "moduleName": "Purchasely",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10Purchasely9PLYConfigC35webCheckoutReceiptValidationTimeoutSivM",
+                "mangledName": "$s10Purchasely9PLYConfigC35webCheckoutReceiptValidationTimeoutSivM",
+                "moduleName": "Purchasely",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
             "kind": "Constructor",
             "name": "init",
             "printedName": "init(from:)",
@@ -12333,6 +12835,170 @@
           },
           {
             "kind": "Var",
+            "name": "webCheckoutError",
+            "printedName": "webCheckoutError",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Purchasely.PLYEvent.Type) -> Purchasely.PLYEvent",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "PLYEvent",
+                    "printedName": "Purchasely.PLYEvent",
+                    "usr": "c:@M@Purchasely@E@PLYEvent"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "Purchasely.PLYEvent.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "PLYEvent",
+                        "printedName": "Purchasely.PLYEvent",
+                        "usr": "c:@M@Purchasely@E@PLYEvent"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "c:@M@Purchasely@E@PLYEvent@PLYEventWebCheckoutError",
+            "mangledName": "$s10Purchasely8PLYEventO16webCheckoutErroryA2CmF",
+            "moduleName": "Purchasely",
+            "declAttributes": [
+              "ObjC"
+            ],
+            "fixedbinaryorder": 44
+          },
+          {
+            "kind": "Var",
+            "name": "webCheckoutOpenedInWebBrowser",
+            "printedName": "webCheckoutOpenedInWebBrowser",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Purchasely.PLYEvent.Type) -> Purchasely.PLYEvent",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "PLYEvent",
+                    "printedName": "Purchasely.PLYEvent",
+                    "usr": "c:@M@Purchasely@E@PLYEvent"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "Purchasely.PLYEvent.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "PLYEvent",
+                        "printedName": "Purchasely.PLYEvent",
+                        "usr": "c:@M@Purchasely@E@PLYEvent"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "c:@M@Purchasely@E@PLYEvent@PLYEventWebCheckoutOpenedInWebBrowser",
+            "mangledName": "$s10Purchasely8PLYEventO29webCheckoutOpenedInWebBrowseryA2CmF",
+            "moduleName": "Purchasely",
+            "declAttributes": [
+              "ObjC"
+            ],
+            "fixedbinaryorder": 45
+          },
+          {
+            "kind": "Var",
+            "name": "webCheckoutTapped",
+            "printedName": "webCheckoutTapped",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Purchasely.PLYEvent.Type) -> Purchasely.PLYEvent",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "PLYEvent",
+                    "printedName": "Purchasely.PLYEvent",
+                    "usr": "c:@M@Purchasely@E@PLYEvent"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "Purchasely.PLYEvent.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "PLYEvent",
+                        "printedName": "Purchasely.PLYEvent",
+                        "usr": "c:@M@Purchasely@E@PLYEvent"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "c:@M@Purchasely@E@PLYEvent@PLYEventWebCheckoutTapped",
+            "mangledName": "$s10Purchasely8PLYEventO17webCheckoutTappedyA2CmF",
+            "moduleName": "Purchasely",
+            "declAttributes": [
+              "ObjC"
+            ],
+            "fixedbinaryorder": 46
+          },
+          {
+            "kind": "Var",
+            "name": "webCheckoutTimedOut",
+            "printedName": "webCheckoutTimedOut",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Purchasely.PLYEvent.Type) -> Purchasely.PLYEvent",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "PLYEvent",
+                    "printedName": "Purchasely.PLYEvent",
+                    "usr": "c:@M@Purchasely@E@PLYEvent"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "Purchasely.PLYEvent.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "PLYEvent",
+                        "printedName": "Purchasely.PLYEvent",
+                        "usr": "c:@M@Purchasely@E@PLYEvent"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "c:@M@Purchasely@E@PLYEvent@PLYEventWebCheckoutTimedOut",
+            "mangledName": "$s10Purchasely8PLYEventO19webCheckoutTimedOutyA2CmF",
+            "moduleName": "Purchasely",
+            "declAttributes": [
+              "ObjC"
+            ],
+            "fixedbinaryorder": 47
+          },
+          {
+            "kind": "Var",
             "name": "name",
             "printedName": "name",
             "children": [
@@ -12749,6 +13415,47 @@
           },
           {
             "kind": "Var",
+            "name": "errorCode",
+            "printedName": "errorCode",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Purchasely.PLYEventProperty.Type) -> Purchasely.PLYEventProperty",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "PLYEventProperty",
+                    "printedName": "Purchasely.PLYEventProperty",
+                    "usr": "c:@M@Purchasely@E@PLYEventProperty"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "Purchasely.PLYEventProperty.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "PLYEventProperty",
+                        "printedName": "Purchasely.PLYEventProperty",
+                        "usr": "c:@M@Purchasely@E@PLYEventProperty"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "c:@M@Purchasely@E@PLYEventProperty@PLYEventPropertyErrorCode",
+            "mangledName": "$s10Purchasely16PLYEventPropertyO9errorCodeyA2CmF",
+            "moduleName": "Purchasely",
+            "declAttributes": [
+              "ObjC"
+            ],
+            "fixedbinaryorder": 2
+          },
+          {
+            "kind": "Var",
             "name": "eventName",
             "printedName": "eventName",
             "children": [
@@ -12786,7 +13493,7 @@
             "declAttributes": [
               "ObjC"
             ],
-            "fixedbinaryorder": 2
+            "fixedbinaryorder": 3
           },
           {
             "kind": "Var",
@@ -12827,7 +13534,7 @@
             "declAttributes": [
               "ObjC"
             ],
-            "fixedbinaryorder": 3
+            "fixedbinaryorder": 4
           },
           {
             "kind": "Var",
@@ -12868,7 +13575,7 @@
             "declAttributes": [
               "ObjC"
             ],
-            "fixedbinaryorder": 4
+            "fixedbinaryorder": 5
           },
           {
             "kind": "Var",
@@ -12909,7 +13616,7 @@
             "declAttributes": [
               "ObjC"
             ],
-            "fixedbinaryorder": 5
+            "fixedbinaryorder": 6
           },
           {
             "kind": "Var",
@@ -12950,7 +13657,7 @@
             "declAttributes": [
               "ObjC"
             ],
-            "fixedbinaryorder": 6
+            "fixedbinaryorder": 7
           },
           {
             "kind": "Var",
@@ -12991,7 +13698,7 @@
             "declAttributes": [
               "ObjC"
             ],
-            "fixedbinaryorder": 7
+            "fixedbinaryorder": 8
           },
           {
             "kind": "Var",
@@ -13032,7 +13739,7 @@
             "declAttributes": [
               "ObjC"
             ],
-            "fixedbinaryorder": 8
+            "fixedbinaryorder": 9
           },
           {
             "kind": "Var",
@@ -13073,7 +13780,7 @@
             "declAttributes": [
               "ObjC"
             ],
-            "fixedbinaryorder": 9
+            "fixedbinaryorder": 10
           },
           {
             "kind": "Var",
@@ -13114,7 +13821,7 @@
             "declAttributes": [
               "ObjC"
             ],
-            "fixedbinaryorder": 10
+            "fixedbinaryorder": 11
           },
           {
             "kind": "Var",
@@ -13155,7 +13862,7 @@
             "declAttributes": [
               "ObjC"
             ],
-            "fixedbinaryorder": 11
+            "fixedbinaryorder": 12
           },
           {
             "kind": "Var",
@@ -13196,7 +13903,7 @@
             "declAttributes": [
               "ObjC"
             ],
-            "fixedbinaryorder": 12
+            "fixedbinaryorder": 13
           },
           {
             "kind": "Var",
@@ -13237,7 +13944,7 @@
             "declAttributes": [
               "ObjC"
             ],
-            "fixedbinaryorder": 13
+            "fixedbinaryorder": 14
           },
           {
             "kind": "Var",
@@ -13278,7 +13985,7 @@
             "declAttributes": [
               "ObjC"
             ],
-            "fixedbinaryorder": 14
+            "fixedbinaryorder": 15
           },
           {
             "kind": "Var",
@@ -13319,7 +14026,7 @@
             "declAttributes": [
               "ObjC"
             ],
-            "fixedbinaryorder": 15
+            "fixedbinaryorder": 16
           },
           {
             "kind": "Var",
@@ -13360,7 +14067,7 @@
             "declAttributes": [
               "ObjC"
             ],
-            "fixedbinaryorder": 16
+            "fixedbinaryorder": 17
           },
           {
             "kind": "Var",
@@ -13401,7 +14108,7 @@
             "declAttributes": [
               "ObjC"
             ],
-            "fixedbinaryorder": 17
+            "fixedbinaryorder": 18
           },
           {
             "kind": "Var",
@@ -13442,7 +14149,7 @@
             "declAttributes": [
               "ObjC"
             ],
-            "fixedbinaryorder": 18
+            "fixedbinaryorder": 19
           },
           {
             "kind": "Var",
@@ -13483,7 +14190,7 @@
             "declAttributes": [
               "ObjC"
             ],
-            "fixedbinaryorder": 19
+            "fixedbinaryorder": 20
           },
           {
             "kind": "Var",
@@ -13524,7 +14231,7 @@
             "declAttributes": [
               "ObjC"
             ],
-            "fixedbinaryorder": 20
+            "fixedbinaryorder": 21
           },
           {
             "kind": "Var",
@@ -13565,7 +14272,7 @@
             "declAttributes": [
               "ObjC"
             ],
-            "fixedbinaryorder": 21
+            "fixedbinaryorder": 22
           },
           {
             "kind": "Var",
@@ -13606,7 +14313,7 @@
             "declAttributes": [
               "ObjC"
             ],
-            "fixedbinaryorder": 22
+            "fixedbinaryorder": 23
           },
           {
             "kind": "Var",
@@ -13647,7 +14354,7 @@
             "declAttributes": [
               "ObjC"
             ],
-            "fixedbinaryorder": 23
+            "fixedbinaryorder": 24
           },
           {
             "kind": "Var",
@@ -13688,7 +14395,7 @@
             "declAttributes": [
               "ObjC"
             ],
-            "fixedbinaryorder": 24
+            "fixedbinaryorder": 25
           },
           {
             "kind": "Var",
@@ -13729,7 +14436,7 @@
             "declAttributes": [
               "ObjC"
             ],
-            "fixedbinaryorder": 25
+            "fixedbinaryorder": 26
           },
           {
             "kind": "Var",
@@ -13770,7 +14477,7 @@
             "declAttributes": [
               "ObjC"
             ],
-            "fixedbinaryorder": 26
+            "fixedbinaryorder": 27
           },
           {
             "kind": "Var",
@@ -13811,7 +14518,7 @@
             "declAttributes": [
               "ObjC"
             ],
-            "fixedbinaryorder": 27
+            "fixedbinaryorder": 28
           },
           {
             "kind": "Var",
@@ -13852,7 +14559,7 @@
             "declAttributes": [
               "ObjC"
             ],
-            "fixedbinaryorder": 28
+            "fixedbinaryorder": 29
           },
           {
             "kind": "Var",
@@ -13893,7 +14600,7 @@
             "declAttributes": [
               "ObjC"
             ],
-            "fixedbinaryorder": 29
+            "fixedbinaryorder": 30
           },
           {
             "kind": "Var",
@@ -13934,7 +14641,7 @@
             "declAttributes": [
               "ObjC"
             ],
-            "fixedbinaryorder": 30
+            "fixedbinaryorder": 31
           },
           {
             "kind": "Var",
@@ -13975,7 +14682,7 @@
             "declAttributes": [
               "ObjC"
             ],
-            "fixedbinaryorder": 31
+            "fixedbinaryorder": 32
           },
           {
             "kind": "Var",
@@ -14016,7 +14723,7 @@
             "declAttributes": [
               "ObjC"
             ],
-            "fixedbinaryorder": 32
+            "fixedbinaryorder": 33
           },
           {
             "kind": "Var",
@@ -14057,7 +14764,7 @@
             "declAttributes": [
               "ObjC"
             ],
-            "fixedbinaryorder": 33
+            "fixedbinaryorder": 34
           },
           {
             "kind": "Var",
@@ -14098,7 +14805,7 @@
             "declAttributes": [
               "ObjC"
             ],
-            "fixedbinaryorder": 34
+            "fixedbinaryorder": 35
           },
           {
             "kind": "Var",
@@ -14139,7 +14846,7 @@
             "declAttributes": [
               "ObjC"
             ],
-            "fixedbinaryorder": 35
+            "fixedbinaryorder": 36
           },
           {
             "kind": "Var",
@@ -14180,7 +14887,7 @@
             "declAttributes": [
               "ObjC"
             ],
-            "fixedbinaryorder": 36
+            "fixedbinaryorder": 37
           },
           {
             "kind": "Var",
@@ -14221,7 +14928,7 @@
             "declAttributes": [
               "ObjC"
             ],
-            "fixedbinaryorder": 37
+            "fixedbinaryorder": 38
           },
           {
             "kind": "Var",
@@ -14262,7 +14969,7 @@
             "declAttributes": [
               "ObjC"
             ],
-            "fixedbinaryorder": 38
+            "fixedbinaryorder": 39
           },
           {
             "kind": "Var",
@@ -14303,7 +15010,7 @@
             "declAttributes": [
               "ObjC"
             ],
-            "fixedbinaryorder": 39
+            "fixedbinaryorder": 40
           },
           {
             "kind": "Var",
@@ -14344,7 +15051,7 @@
             "declAttributes": [
               "ObjC"
             ],
-            "fixedbinaryorder": 40
+            "fixedbinaryorder": 41
           },
           {
             "kind": "Var",
@@ -14385,7 +15092,7 @@
             "declAttributes": [
               "ObjC"
             ],
-            "fixedbinaryorder": 41
+            "fixedbinaryorder": 42
           },
           {
             "kind": "Var",
@@ -14426,7 +15133,7 @@
             "declAttributes": [
               "ObjC"
             ],
-            "fixedbinaryorder": 42
+            "fixedbinaryorder": 43
           },
           {
             "kind": "Var",
@@ -14467,7 +15174,7 @@
             "declAttributes": [
               "ObjC"
             ],
-            "fixedbinaryorder": 43
+            "fixedbinaryorder": 44
           },
           {
             "kind": "Var",
@@ -14508,7 +15215,7 @@
             "declAttributes": [
               "ObjC"
             ],
-            "fixedbinaryorder": 44
+            "fixedbinaryorder": 45
           },
           {
             "kind": "Var",
@@ -14549,7 +15256,7 @@
             "declAttributes": [
               "ObjC"
             ],
-            "fixedbinaryorder": 45
+            "fixedbinaryorder": 46
           },
           {
             "kind": "Var",
@@ -14590,7 +15297,7 @@
             "declAttributes": [
               "ObjC"
             ],
-            "fixedbinaryorder": 46
+            "fixedbinaryorder": 47
           },
           {
             "kind": "Var",
@@ -14631,7 +15338,7 @@
             "declAttributes": [
               "ObjC"
             ],
-            "fixedbinaryorder": 47
+            "fixedbinaryorder": 48
           },
           {
             "kind": "Var",
@@ -14672,7 +15379,7 @@
             "declAttributes": [
               "ObjC"
             ],
-            "fixedbinaryorder": 48
+            "fixedbinaryorder": 49
           },
           {
             "kind": "Var",
@@ -14713,7 +15420,7 @@
             "declAttributes": [
               "ObjC"
             ],
-            "fixedbinaryorder": 49
+            "fixedbinaryorder": 50
           },
           {
             "kind": "Var",
@@ -14754,7 +15461,7 @@
             "declAttributes": [
               "ObjC"
             ],
-            "fixedbinaryorder": 50
+            "fixedbinaryorder": 51
           },
           {
             "kind": "Var",
@@ -14795,7 +15502,7 @@
             "declAttributes": [
               "ObjC"
             ],
-            "fixedbinaryorder": 51
+            "fixedbinaryorder": 52
           },
           {
             "kind": "Var",
@@ -14836,7 +15543,7 @@
             "declAttributes": [
               "ObjC"
             ],
-            "fixedbinaryorder": 52
+            "fixedbinaryorder": 53
           },
           {
             "kind": "Var",
@@ -14877,7 +15584,7 @@
             "declAttributes": [
               "ObjC"
             ],
-            "fixedbinaryorder": 53
+            "fixedbinaryorder": 54
           },
           {
             "kind": "Var",
@@ -14918,7 +15625,7 @@
             "declAttributes": [
               "ObjC"
             ],
-            "fixedbinaryorder": 54
+            "fixedbinaryorder": 55
           },
           {
             "kind": "Var",
@@ -14959,7 +15666,7 @@
             "declAttributes": [
               "ObjC"
             ],
-            "fixedbinaryorder": 55
+            "fixedbinaryorder": 56
           },
           {
             "kind": "Var",
@@ -15000,7 +15707,7 @@
             "declAttributes": [
               "ObjC"
             ],
-            "fixedbinaryorder": 56
+            "fixedbinaryorder": 57
           },
           {
             "kind": "Var",
@@ -15041,7 +15748,7 @@
             "declAttributes": [
               "ObjC"
             ],
-            "fixedbinaryorder": 57
+            "fixedbinaryorder": 58
           },
           {
             "kind": "Var",
@@ -15082,7 +15789,7 @@
             "declAttributes": [
               "ObjC"
             ],
-            "fixedbinaryorder": 58
+            "fixedbinaryorder": 59
           },
           {
             "kind": "Var",
@@ -15123,7 +15830,7 @@
             "declAttributes": [
               "ObjC"
             ],
-            "fixedbinaryorder": 59
+            "fixedbinaryorder": 60
           },
           {
             "kind": "Var",
@@ -15164,7 +15871,7 @@
             "declAttributes": [
               "ObjC"
             ],
-            "fixedbinaryorder": 60
+            "fixedbinaryorder": 61
           },
           {
             "kind": "Var",
@@ -15205,7 +15912,7 @@
             "declAttributes": [
               "ObjC"
             ],
-            "fixedbinaryorder": 61
+            "fixedbinaryorder": 62
           },
           {
             "kind": "Var",
@@ -15246,7 +15953,7 @@
             "declAttributes": [
               "ObjC"
             ],
-            "fixedbinaryorder": 62
+            "fixedbinaryorder": 63
           },
           {
             "kind": "Var",
@@ -15287,7 +15994,7 @@
             "declAttributes": [
               "ObjC"
             ],
-            "fixedbinaryorder": 63
+            "fixedbinaryorder": 64
           },
           {
             "kind": "Var",
@@ -15328,7 +16035,7 @@
             "declAttributes": [
               "ObjC"
             ],
-            "fixedbinaryorder": 64
+            "fixedbinaryorder": 65
           },
           {
             "kind": "Var",
@@ -15369,7 +16076,7 @@
             "declAttributes": [
               "ObjC"
             ],
-            "fixedbinaryorder": 65
+            "fixedbinaryorder": 66
           },
           {
             "kind": "Var",
@@ -15410,7 +16117,7 @@
             "declAttributes": [
               "ObjC"
             ],
-            "fixedbinaryorder": 66
+            "fixedbinaryorder": 67
           },
           {
             "kind": "Var",
@@ -15451,7 +16158,7 @@
             "declAttributes": [
               "ObjC"
             ],
-            "fixedbinaryorder": 67
+            "fixedbinaryorder": 68
           },
           {
             "kind": "Var",
@@ -15492,7 +16199,7 @@
             "declAttributes": [
               "ObjC"
             ],
-            "fixedbinaryorder": 68
+            "fixedbinaryorder": 69
           },
           {
             "kind": "Var",
@@ -15533,7 +16240,7 @@
             "declAttributes": [
               "ObjC"
             ],
-            "fixedbinaryorder": 69
+            "fixedbinaryorder": 70
           },
           {
             "kind": "Var",
@@ -15574,7 +16281,7 @@
             "declAttributes": [
               "ObjC"
             ],
-            "fixedbinaryorder": 70
+            "fixedbinaryorder": 71
           },
           {
             "kind": "Var",
@@ -15615,7 +16322,7 @@
             "declAttributes": [
               "ObjC"
             ],
-            "fixedbinaryorder": 71
+            "fixedbinaryorder": 72
           },
           {
             "kind": "Var",
@@ -15656,7 +16363,7 @@
             "declAttributes": [
               "ObjC"
             ],
-            "fixedbinaryorder": 72
+            "fixedbinaryorder": 73
           },
           {
             "kind": "Var",
@@ -15697,7 +16404,7 @@
             "declAttributes": [
               "ObjC"
             ],
-            "fixedbinaryorder": 73
+            "fixedbinaryorder": 74
           },
           {
             "kind": "Var",
@@ -15738,7 +16445,7 @@
             "declAttributes": [
               "ObjC"
             ],
-            "fixedbinaryorder": 74
+            "fixedbinaryorder": 75
           },
           {
             "kind": "Var",
@@ -15779,7 +16486,7 @@
             "declAttributes": [
               "ObjC"
             ],
-            "fixedbinaryorder": 75
+            "fixedbinaryorder": 76
           },
           {
             "kind": "Var",
@@ -15820,7 +16527,7 @@
             "declAttributes": [
               "ObjC"
             ],
-            "fixedbinaryorder": 76
+            "fixedbinaryorder": 77
           },
           {
             "kind": "Var",
@@ -15861,7 +16568,7 @@
             "declAttributes": [
               "ObjC"
             ],
-            "fixedbinaryorder": 77
+            "fixedbinaryorder": 78
           },
           {
             "kind": "Var",
@@ -15902,7 +16609,7 @@
             "declAttributes": [
               "ObjC"
             ],
-            "fixedbinaryorder": 78
+            "fixedbinaryorder": 79
           },
           {
             "kind": "Var",
@@ -15943,7 +16650,7 @@
             "declAttributes": [
               "ObjC"
             ],
-            "fixedbinaryorder": 79
+            "fixedbinaryorder": 80
           },
           {
             "kind": "Var",
@@ -15984,7 +16691,7 @@
             "declAttributes": [
               "ObjC"
             ],
-            "fixedbinaryorder": 80
+            "fixedbinaryorder": 81
           },
           {
             "kind": "Var",
@@ -16025,7 +16732,7 @@
             "declAttributes": [
               "ObjC"
             ],
-            "fixedbinaryorder": 81
+            "fixedbinaryorder": 82
           },
           {
             "kind": "Var",
@@ -16066,7 +16773,7 @@
             "declAttributes": [
               "ObjC"
             ],
-            "fixedbinaryorder": 82
+            "fixedbinaryorder": 83
           },
           {
             "kind": "Var",
@@ -16107,7 +16814,7 @@
             "declAttributes": [
               "ObjC"
             ],
-            "fixedbinaryorder": 83
+            "fixedbinaryorder": 84
           },
           {
             "kind": "Var",
@@ -16148,7 +16855,7 @@
             "declAttributes": [
               "ObjC"
             ],
-            "fixedbinaryorder": 84
+            "fixedbinaryorder": 85
           },
           {
             "kind": "Var",
@@ -16189,7 +16896,7 @@
             "declAttributes": [
               "ObjC"
             ],
-            "fixedbinaryorder": 85
+            "fixedbinaryorder": 86
           },
           {
             "kind": "Var",
@@ -16230,7 +16937,89 @@
             "declAttributes": [
               "ObjC"
             ],
-            "fixedbinaryorder": 86
+            "fixedbinaryorder": 87
+          },
+          {
+            "kind": "Var",
+            "name": "flowSessionId",
+            "printedName": "flowSessionId",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Purchasely.PLYEventProperty.Type) -> Purchasely.PLYEventProperty",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "PLYEventProperty",
+                    "printedName": "Purchasely.PLYEventProperty",
+                    "usr": "c:@M@Purchasely@E@PLYEventProperty"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "Purchasely.PLYEventProperty.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "PLYEventProperty",
+                        "printedName": "Purchasely.PLYEventProperty",
+                        "usr": "c:@M@Purchasely@E@PLYEventProperty"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "c:@M@Purchasely@E@PLYEventProperty@PLYEventPropertyFlowSessionId",
+            "mangledName": "$s10Purchasely16PLYEventPropertyO13flowSessionIdyA2CmF",
+            "moduleName": "Purchasely",
+            "declAttributes": [
+              "ObjC"
+            ],
+            "fixedbinaryorder": 88
+          },
+          {
+            "kind": "Var",
+            "name": "webCheckoutProvider",
+            "printedName": "webCheckoutProvider",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Purchasely.PLYEventProperty.Type) -> Purchasely.PLYEventProperty",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "PLYEventProperty",
+                    "printedName": "Purchasely.PLYEventProperty",
+                    "usr": "c:@M@Purchasely@E@PLYEventProperty"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "Purchasely.PLYEventProperty.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "PLYEventProperty",
+                        "printedName": "Purchasely.PLYEventProperty",
+                        "usr": "c:@M@Purchasely@E@PLYEventProperty"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "c:@M@Purchasely@E@PLYEventProperty@PLYEventPropertyWebCheckoutProvider",
+            "mangledName": "$s10Purchasely16PLYEventPropertyO19webCheckoutProvideryA2CmF",
+            "moduleName": "Purchasely",
+            "declAttributes": [
+              "ObjC"
+            ],
+            "fixedbinaryorder": 89
           },
           {
             "kind": "Var",
@@ -18911,6 +19700,255 @@
         "moduleName": "Purchasely",
         "declAttributes": [
           "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "PLYNotificationObject",
+        "printedName": "PLYNotificationObject",
+        "children": [
+          {
+            "kind": "TypeDecl",
+            "name": "PurchasedSubscription",
+            "printedName": "PurchasedSubscription",
+            "children": [
+              {
+                "kind": "Var",
+                "name": "subscription",
+                "printedName": "subscription",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "PLYSubscription",
+                    "printedName": "Purchasely.PLYSubscription",
+                    "usr": "c:@M@Purchasely@objc(cs)PLYSubscription"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:10Purchasely21PLYNotificationObjectC21PurchasedSubscriptionC12subscriptionAA15PLYSubscriptionCvp",
+                "mangledName": "$s10Purchasely21PLYNotificationObjectC21PurchasedSubscriptionC12subscriptionAA15PLYSubscriptionCvp",
+                "moduleName": "Purchasely",
+                "declAttributes": [
+                  "Final",
+                  "HasStorage",
+                  "AccessControl",
+                  "ObjC"
+                ],
+                "isLet": true,
+                "hasStorage": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "PLYSubscription",
+                        "printedName": "Purchasely.PLYSubscription",
+                        "usr": "c:@M@Purchasely@objc(cs)PLYSubscription"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:10Purchasely21PLYNotificationObjectC21PurchasedSubscriptionC12subscriptionAA15PLYSubscriptionCvg",
+                    "mangledName": "$s10Purchasely21PLYNotificationObjectC21PurchasedSubscriptionC12subscriptionAA15PLYSubscriptionCvg",
+                    "moduleName": "Purchasely",
+                    "implicit": true,
+                    "declAttributes": [
+                      "Final",
+                      "ObjC"
+                    ],
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
+                "kind": "Constructor",
+                "name": "init",
+                "printedName": "init()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "PurchasedSubscription",
+                    "printedName": "Purchasely.PLYNotificationObject.PurchasedSubscription",
+                    "usr": "s:10Purchasely21PLYNotificationObjectC21PurchasedSubscriptionC"
+                  }
+                ],
+                "declKind": "Constructor",
+                "usr": "s:10Purchasely21PLYNotificationObjectC21PurchasedSubscriptionCAEycfc",
+                "mangledName": "$s10Purchasely21PLYNotificationObjectC21PurchasedSubscriptionCAEycfc",
+                "moduleName": "Purchasely",
+                "overriding": true,
+                "implicit": true,
+                "objc_name": "init",
+                "declAttributes": [
+                  "Dynamic",
+                  "ObjC",
+                  "Override"
+                ],
+                "init_kind": "Designated"
+              }
+            ],
+            "declKind": "Class",
+            "usr": "s:10Purchasely21PLYNotificationObjectC21PurchasedSubscriptionC",
+            "mangledName": "$s10Purchasely21PLYNotificationObjectC21PurchasedSubscriptionC",
+            "moduleName": "Purchasely",
+            "declAttributes": [
+              "AccessControl",
+              "Final",
+              "ObjC"
+            ],
+            "superclassUsr": "c:objc(cs)NSObject",
+            "hasMissingDesignatedInitializers": true,
+            "superclassNames": [
+              "ObjectiveC.NSObject"
+            ],
+            "conformances": [
+              {
+                "kind": "Conformance",
+                "name": "Copyable",
+                "printedName": "Copyable",
+                "usr": "s:s8CopyableP",
+                "mangledName": "$ss8CopyableP"
+              },
+              {
+                "kind": "Conformance",
+                "name": "Escapable",
+                "printedName": "Escapable",
+                "usr": "s:s9EscapableP",
+                "mangledName": "$ss9EscapableP"
+              },
+              {
+                "kind": "Conformance",
+                "name": "Equatable",
+                "printedName": "Equatable",
+                "usr": "s:SQ",
+                "mangledName": "$sSQ"
+              },
+              {
+                "kind": "Conformance",
+                "name": "Hashable",
+                "printedName": "Hashable",
+                "usr": "s:SH",
+                "mangledName": "$sSH"
+              },
+              {
+                "kind": "Conformance",
+                "name": "CVarArg",
+                "printedName": "CVarArg",
+                "usr": "s:s7CVarArgP",
+                "mangledName": "$ss7CVarArgP"
+              },
+              {
+                "kind": "Conformance",
+                "name": "_KeyValueCodingAndObservingPublishing",
+                "printedName": "_KeyValueCodingAndObservingPublishing",
+                "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+                "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+              },
+              {
+                "kind": "Conformance",
+                "name": "_KeyValueCodingAndObserving",
+                "printedName": "_KeyValueCodingAndObserving",
+                "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+                "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+              },
+              {
+                "kind": "Conformance",
+                "name": "CustomStringConvertible",
+                "printedName": "CustomStringConvertible",
+                "usr": "s:s23CustomStringConvertibleP",
+                "mangledName": "$ss23CustomStringConvertibleP"
+              },
+              {
+                "kind": "Conformance",
+                "name": "CustomDebugStringConvertible",
+                "printedName": "CustomDebugStringConvertible",
+                "usr": "s:s28CustomDebugStringConvertibleP",
+                "mangledName": "$ss28CustomDebugStringConvertibleP"
+              }
+            ]
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:@M@Purchasely@objc(cs)PLYNotificationObject",
+        "mangledName": "$s10Purchasely21PLYNotificationObjectC",
+        "moduleName": "Purchasely",
+        "declAttributes": [
+          "AccessControl",
+          "Final",
+          "ObjC"
+        ],
+        "superclassUsr": "c:objc(cs)NSObject",
+        "hasMissingDesignatedInitializers": true,
+        "inheritsConvenienceInitializers": true,
+        "superclassNames": [
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          }
         ]
       },
       {
@@ -24216,6 +25254,47 @@
             "fixedbinaryorder": 7
           },
           {
+            "kind": "Var",
+            "name": "webCheckout",
+            "printedName": "webCheckout",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Purchasely.PLYPresentationAction.Type) -> Purchasely.PLYPresentationAction",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "PLYPresentationAction",
+                    "printedName": "Purchasely.PLYPresentationAction",
+                    "usr": "c:@M@Purchasely@E@PLYPresentationAction"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "Purchasely.PLYPresentationAction.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "PLYPresentationAction",
+                        "printedName": "Purchasely.PLYPresentationAction",
+                        "usr": "c:@M@Purchasely@E@PLYPresentationAction"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "c:@M@Purchasely@E@PLYPresentationAction@PLYPresentationActionWebCheckout",
+            "mangledName": "$s10Purchasely21PLYPresentationActionO11webCheckoutyA2CmF",
+            "moduleName": "Purchasely",
+            "declAttributes": [
+              "ObjC"
+            ],
+            "fixedbinaryorder": 8
+          },
+          {
             "kind": "Constructor",
             "name": "init",
             "printedName": "init(rawValue:)",
@@ -24365,6 +25444,123 @@
         "name": "PLYPresentationActionParameters",
         "printedName": "PLYPresentationActionParameters",
         "children": [
+          {
+            "kind": "Var",
+            "name": "clientReferenceId",
+            "printedName": "clientReferenceId",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@Purchasely@objc(cs)PLYPresentationActionParameters(py)clientReferenceId",
+            "mangledName": "$s10Purchasely31PLYPresentationActionParametersC17clientReferenceIdSSSgvp",
+            "moduleName": "Purchasely",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@Purchasely@objc(cs)PLYPresentationActionParameters(im)clientReferenceId",
+                "mangledName": "$s10Purchasely31PLYPresentationActionParametersC17clientReferenceIdSSSgvg",
+                "moduleName": "Purchasely",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@Purchasely@objc(cs)PLYPresentationActionParameters(im)setClientReferenceId:",
+                "mangledName": "$s10Purchasely31PLYPresentationActionParametersC17clientReferenceIdSSSgvs",
+                "moduleName": "Purchasely",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10Purchasely31PLYPresentationActionParametersC17clientReferenceIdSSSgvM",
+                "mangledName": "$s10Purchasely31PLYPresentationActionParametersC17clientReferenceIdSSSgvM",
+                "moduleName": "Purchasely",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
           {
             "kind": "Var",
             "name": "url",
@@ -24944,6 +26140,216 @@
                 "declKind": "Accessor",
                 "usr": "s:10Purchasely31PLYPresentationActionParametersC12presentationSSSgvM",
                 "mangledName": "$s10Purchasely31PLYPresentationActionParametersC12presentationSSSgvM",
+                "moduleName": "Purchasely",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "queryParameterKey",
+            "printedName": "queryParameterKey",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@Purchasely@objc(cs)PLYPresentationActionParameters(py)queryParameterKey",
+            "mangledName": "$s10Purchasely31PLYPresentationActionParametersC17queryParameterKeySSSgvp",
+            "moduleName": "Purchasely",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@Purchasely@objc(cs)PLYPresentationActionParameters(im)queryParameterKey",
+                "mangledName": "$s10Purchasely31PLYPresentationActionParametersC17queryParameterKeySSSgvg",
+                "moduleName": "Purchasely",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@Purchasely@objc(cs)PLYPresentationActionParameters(im)setQueryParameterKey:",
+                "mangledName": "$s10Purchasely31PLYPresentationActionParametersC17queryParameterKeySSSgvs",
+                "moduleName": "Purchasely",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10Purchasely31PLYPresentationActionParametersC17queryParameterKeySSSgvM",
+                "mangledName": "$s10Purchasely31PLYPresentationActionParametersC17queryParameterKeySSSgvM",
+                "moduleName": "Purchasely",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "webCheckoutProvider",
+            "printedName": "webCheckoutProvider",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "PLYWebCheckoutProvider",
+                "printedName": "Purchasely.PLYWebCheckoutProvider",
+                "usr": "c:@M@Purchasely@E@PLYWebCheckoutProvider"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@Purchasely@objc(cs)PLYPresentationActionParameters(py)webCheckoutProvider",
+            "mangledName": "$s10Purchasely31PLYPresentationActionParametersC19webCheckoutProviderAA06PLYWebfG0Ovp",
+            "moduleName": "Purchasely",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "PLYWebCheckoutProvider",
+                    "printedName": "Purchasely.PLYWebCheckoutProvider",
+                    "usr": "c:@M@Purchasely@E@PLYWebCheckoutProvider"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@Purchasely@objc(cs)PLYPresentationActionParameters(im)webCheckoutProvider",
+                "mangledName": "$s10Purchasely31PLYPresentationActionParametersC19webCheckoutProviderAA06PLYWebfG0Ovg",
+                "moduleName": "Purchasely",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "PLYWebCheckoutProvider",
+                    "printedName": "Purchasely.PLYWebCheckoutProvider",
+                    "usr": "c:@M@Purchasely@E@PLYWebCheckoutProvider"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@Purchasely@objc(cs)PLYPresentationActionParameters(im)setWebCheckoutProvider:",
+                "mangledName": "$s10Purchasely31PLYPresentationActionParametersC19webCheckoutProviderAA06PLYWebfG0Ovs",
+                "moduleName": "Purchasely",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10Purchasely31PLYPresentationActionParametersC19webCheckoutProviderAA06PLYWebfG0OvM",
+                "mangledName": "$s10Purchasely31PLYPresentationActionParametersC19webCheckoutProviderAA06PLYWebfG0OvM",
                 "moduleName": "Purchasely",
                 "implicit": true,
                 "accessorKind": "_modify"
@@ -31240,6 +32646,240 @@
             ]
           },
           {
+            "kind": "Var",
+            "name": "stripePurchaseId",
+            "printedName": "stripePurchaseId",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@Purchasely@objc(cs)PLYSubscription(py)stripePurchaseId",
+            "mangledName": "$s10Purchasely15PLYSubscriptionC16stripePurchaseIdSSSgvp",
+            "moduleName": "Purchasely",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@Purchasely@objc(cs)PLYSubscription(im)stripePurchaseId",
+                "mangledName": "$s10Purchasely15PLYSubscriptionC16stripePurchaseIdSSSgvg",
+                "moduleName": "Purchasely",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@Purchasely@objc(cs)PLYSubscription(im)setStripePurchaseId:",
+                "mangledName": "$s10Purchasely15PLYSubscriptionC16stripePurchaseIdSSSgvs",
+                "moduleName": "Purchasely",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10Purchasely15PLYSubscriptionC16stripePurchaseIdSSSgvM",
+                "mangledName": "$s10Purchasely15PLYSubscriptionC16stripePurchaseIdSSSgvM",
+                "moduleName": "Purchasely",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "stripeCheckoutSessionId",
+            "printedName": "stripeCheckoutSessionId",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@Purchasely@objc(cs)PLYSubscription(py)stripeCheckoutSessionId",
+            "mangledName": "$s10Purchasely15PLYSubscriptionC23stripeCheckoutSessionIdSSSgvp",
+            "moduleName": "Purchasely",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@Purchasely@objc(cs)PLYSubscription(im)stripeCheckoutSessionId",
+                "mangledName": "$s10Purchasely15PLYSubscriptionC23stripeCheckoutSessionIdSSSgvg",
+                "moduleName": "Purchasely",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@Purchasely@objc(cs)PLYSubscription(im)setStripeCheckoutSessionId:",
+                "mangledName": "$s10Purchasely15PLYSubscriptionC23stripeCheckoutSessionIdSSSgvs",
+                "moduleName": "Purchasely",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10Purchasely15PLYSubscriptionC23stripeCheckoutSessionIdSSSgvM",
+                "mangledName": "$s10Purchasely15PLYSubscriptionC23stripeCheckoutSessionIdSSSgvM",
+                "moduleName": "Purchasely",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
             "kind": "Constructor",
             "name": "init",
             "printedName": "init(from:)",
@@ -35172,6 +36812,13 @@
       },
       {
         "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "Purchasely"
+      },
+      {
+        "kind": "Import",
         "name": "UIKit",
         "printedName": "UIKit",
         "declKind": "Import",
@@ -38964,8 +40611,8 @@
           },
           {
             "kind": "Function",
-            "name": "setEventDelegate",
-            "printedName": "setEventDelegate(_:)",
+            "name": "setEventCallback",
+            "printedName": "setEventCallback(_:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -39026,8 +40673,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "c:@CM@Purchasely@objc(cs)Purchasely(cm)setEventDelegate:",
-            "mangledName": "$s10PurchaselyAAC16setEventDelegateyyyAA8PLYEventO_SDySSypGSgtcFZ",
+            "usr": "c:@CM@Purchasely@objc(cs)Purchasely(cm)setEventCallback:",
+            "mangledName": "$s10PurchaselyAAC16setEventCallbackyyyAA8PLYEventO_SDySSypGSgtcFZ",
             "moduleName": "Purchasely",
             "static": true,
             "declAttributes": [
@@ -39035,6 +40682,60 @@
               "AccessControl",
               "ObjC",
               "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "setEventDelegate",
+            "printedName": "setEventDelegate(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "PLYEventDelegate",
+                "printedName": "any Purchasely.PLYEventDelegate",
+                "usr": "c:@M@Purchasely@objc(pl)PLYEventDelegate"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@CM@Purchasely@objc(cs)Purchasely(cm)setEventDelegate:",
+            "mangledName": "$s10PurchaselyAAC16setEventDelegateyyAA08PLYEventD0_pFZ",
+            "moduleName": "Purchasely",
+            "static": true,
+            "declAttributes": [
+              "Dynamic",
+              "AccessControl",
+              "ObjC"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "removeEventDelegate",
+            "printedName": "removeEventDelegate()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@CM@Purchasely@objc(cs)Purchasely(cm)removeEventDelegate",
+            "mangledName": "$s10PurchaselyAAC19removeEventDelegateyyFZ",
+            "moduleName": "Purchasely",
+            "static": true,
+            "declAttributes": [
+              "Dynamic",
+              "AccessControl",
+              "ObjC"
             ],
             "isFromExtension": true,
             "funcSelfKind": "NonMutating"
@@ -49428,121 +51129,128 @@
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Services\/Purchasely\/API.swift",
       "kind": "StringLiteral",
-      "offset": 11531,
+      "offset": 12058,
       "length": 6,
       "value": "\"\/app\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Services\/Purchasely\/API.swift",
       "kind": "StringLiteral",
-      "offset": 11567,
+      "offset": 12094,
       "length": 16,
       "value": "\"\/configuration\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Services\/Purchasely\/API.swift",
       "kind": "StringLiteral",
-      "offset": 11611,
+      "offset": 12138,
       "length": 21,
       "value": "\"\/appstore\/purchases\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Services\/Purchasely\/API.swift",
       "kind": "StringLiteral",
-      "offset": 11656,
+      "offset": 12183,
       "length": 29,
       "value": "\"\/appstore\/purchases\/restore\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Services\/Purchasely\/API.swift",
       "kind": "StringLiteral",
-      "offset": 11713,
+      "offset": 12240,
       "length": 33,
       "value": "\"\/appstore\/purchases\/synchronize\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Services\/Purchasely\/API.swift",
       "kind": "StringLiteral",
-      "offset": 11770,
+      "offset": 12297,
       "length": 29,
       "value": "\"\/appstore\/purchases\/observe\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Services\/Purchasely\/API.swift",
       "kind": "StringLiteral",
-      "offset": 11823,
+      "offset": 12350,
       "length": 11,
       "value": "\"\/receipts\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Services\/Purchasely\/API.swift",
       "kind": "StringLiteral",
-      "offset": 11857,
+      "offset": 12384,
       "length": 9,
       "value": "\"\/events\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Services\/Purchasely\/API.swift",
       "kind": "StringLiteral",
-      "offset": 11896,
+      "offset": 12423,
       "length": 17,
       "value": "\"\/user_purchases\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Services\/Purchasely\/API.swift",
       "kind": "StringLiteral",
-      "offset": 11947,
+      "offset": 12474,
       "length": 22,
       "value": "\"\/paab\/user_purchases\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Services\/Purchasely\/API.swift",
       "kind": "StringLiteral",
-      "offset": 11994,
+      "offset": 12521,
       "length": 18,
       "value": "\"\/users\/transfers\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Services\/Purchasely\/API.swift",
       "kind": "StringLiteral",
-      "offset": 12043,
+      "offset": 12570,
       "length": 23,
       "value": "\"\/users\/is_transferred\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Services\/Purchasely\/API.swift",
       "kind": "StringLiteral",
-      "offset": 12096,
+      "offset": 12623,
       "length": 16,
       "value": "\"\/presentations\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Services\/Purchasely\/API.swift",
       "kind": "StringLiteral",
-      "offset": 12136,
+      "offset": 12663,
       "length": 24,
       "value": "\"\/presentations_preview\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Services\/Purchasely\/API.swift",
       "kind": "StringLiteral",
-      "offset": 12188,
+      "offset": 12715,
       "length": 24,
       "value": "\"\/appstore\/promo_offers\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Services\/Purchasely\/API.swift",
       "kind": "StringLiteral",
-      "offset": 12230,
+      "offset": 12757,
       "length": 11,
       "value": "\"\/sdk_logs\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Services\/Purchasely\/API.swift",
       "kind": "StringLiteral",
-      "offset": 12263,
+      "offset": 12790,
       "length": 8,
       "value": "\"\/flows\""
+    },
+    {
+      "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Services\/Purchasely\/API.swift",
+      "kind": "StringLiteral",
+      "offset": 12837,
+      "length": 28,
+      "value": "\"\/web_checkout\/%@\/purchases\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Local\/ASN1\/ASN1+KeyedDecodingContainer.swift",
@@ -50014,6 +51722,13 @@
       "value": "true"
     },
     {
+      "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Utils\/CancellationFlag.swift",
+      "kind": "BooleanLiteral",
+      "offset": 146,
+      "length": 5,
+      "value": "false"
+    },
+    {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Manager\/ConfigurationManager.swift",
       "kind": "Array",
       "offset": 667,
@@ -50148,17 +51863,24 @@
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Manager\/FlowsManager.swift",
-      "kind": "Array",
-      "offset": 543,
-      "length": 2,
+      "kind": "Dictionary",
+      "offset": 1382,
+      "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Manager\/FlowsManager.swift",
       "kind": "Array",
-      "offset": 582,
+      "offset": 1422,
       "length": 2,
       "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Manager\/FlowsManager.swift",
+      "kind": "BooleanLiteral",
+      "offset": 7014,
+      "length": 5,
+      "value": "false"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Local\/ASN1\/Foundation+ASN1Coder.swift",
@@ -50365,94 +52087,136 @@
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/UI\/PLYAction.swift",
+      "kind": "IntegerLiteral",
+      "offset": 655,
+      "length": 5,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/UI\/PLYAction.swift",
+      "kind": "IntegerLiteral",
+      "offset": 670,
+      "length": 4,
+      "value": "2"
+    },
+    {
+      "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/UI\/PLYAction.swift",
       "kind": "StringLiteral",
-      "offset": 7335,
+      "offset": 1072,
+      "length": 8,
+      "value": "\"stripe\""
+    },
+    {
+      "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/UI\/PLYAction.swift",
+      "kind": "StringLiteral",
+      "offset": 1102,
+      "length": 7,
+      "value": "\"other\""
+    },
+    {
+      "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/UI\/PLYAction.swift",
+      "kind": "StringLiteral",
+      "offset": 9382,
       "length": 6,
       "value": "\"type\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/UI\/PLYAction.swift",
       "kind": "StringLiteral",
-      "offset": 7355,
+      "offset": 9402,
       "length": 5,
       "value": "\"url\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/UI\/PLYAction.swift",
       "kind": "StringLiteral",
-      "offset": 7376,
+      "offset": 9423,
       "length": 7,
       "value": "\"title\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/UI\/PLYAction.swift",
       "kind": "StringLiteral",
-      "offset": 7406,
+      "offset": 9453,
       "length": 16,
       "value": "\"plan_vendor_id\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/UI\/PLYAction.swift",
       "kind": "StringLiteral",
-      "offset": 7457,
+      "offset": 9504,
       "length": 23,
       "value": "\"promo_offer_vendor_id\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/UI\/PLYAction.swift",
       "kind": "StringLiteral",
-      "offset": 7511,
+      "offset": 9558,
       "length": 24,
       "value": "\"presentation_vendor_id\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/UI\/PLYAction.swift",
       "kind": "StringLiteral",
-      "offset": 7569,
+      "offset": 9616,
       "length": 21,
       "value": "\"placement_vendor_id\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/UI\/PLYAction.swift",
       "kind": "StringLiteral",
-      "offset": 7612,
+      "offset": 9659,
       "length": 17,
       "value": "\"open_in_browser\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/UI\/PLYAction.swift",
       "kind": "StringLiteral",
-      "offset": 7652,
+      "offset": 9699,
       "length": 8,
       "value": "\"select\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/UI\/PLYAction.swift",
       "kind": "StringLiteral",
-      "offset": 7689,
+      "offset": 9736,
       "length": 16,
       "value": "\"open_flow_step\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/UI\/PLYAction.swift",
       "kind": "StringLiteral",
-      "offset": 7730,
+      "offset": 9777,
       "length": 11,
       "value": "\"action_id\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/UI\/PLYAction.swift",
       "kind": "StringLiteral",
-      "offset": 7769,
+      "offset": 9816,
       "length": 13,
       "value": "\"conditional\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/UI\/PLYAction.swift",
       "kind": "StringLiteral",
-      "offset": 7809,
+      "offset": 9856,
       "length": 12,
       "value": "\"transition\""
+    },
+    {
+      "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/UI\/PLYAction.swift",
+      "kind": "StringLiteral",
+      "offset": 9902,
+      "length": 17,
+      "value": "\"query_parameter\""
+    },
+    {
+      "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/UI\/PLYAction.swift",
+      "kind": "StringLiteral",
+      "offset": 9955,
+      "length": 10,
+      "value": "\"provider\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYAlertMessage.swift",
@@ -50516,6 +52280,321 @@
       "offset": 378,
       "length": 17,
       "value": "9"
+    },
+    {
+      "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYAlertMessage.swift",
+      "kind": "IntegerLiteral",
+      "offset": 405,
+      "length": 32,
+      "value": "10"
+    },
+    {
+      "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/specific\/uikit\/View\/UI\/PLYAlertWithActivityIndicatorView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 156,
+      "length": 2,
+      "value": "44"
+    },
+    {
+      "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/specific\/uikit\/View\/UI\/PLYAlertWithActivityIndicatorView.swift",
+      "kind": "FloatLiteral",
+      "offset": 225,
+      "length": 3,
+      "value": "0.0"
+    },
+    {
+      "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/specific\/uikit\/View\/UI\/PLYAlertWithActivityIndicatorView.swift",
+      "kind": "FloatLiteral",
+      "offset": 237,
+      "length": 5,
+      "value": "0.298"
+    },
+    {
+      "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/specific\/uikit\/View\/UI\/PLYAlertWithActivityIndicatorView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 287,
+      "length": 2,
+      "value": "14"
+    },
+    {
+      "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/specific\/uikit\/View\/UI\/PLYAlertWithActivityIndicatorView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 347,
+      "length": 2,
+      "value": "20"
+    },
+    {
+      "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/specific\/uikit\/View\/UI\/PLYAlertWithActivityIndicatorView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 357,
+      "length": 2,
+      "value": "18"
+    },
+    {
+      "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/specific\/uikit\/View\/UI\/PLYAlertWithActivityIndicatorView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 369,
+      "length": 2,
+      "value": "20"
+    },
+    {
+      "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/specific\/uikit\/View\/UI\/PLYAlertWithActivityIndicatorView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 380,
+      "length": 2,
+      "value": "18"
+    },
+    {
+      "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/specific\/uikit\/View\/UI\/PLYAlertWithActivityIndicatorView.swift",
+      "kind": "FloatLiteral",
+      "offset": 437,
+      "length": 3,
+      "value": "0.3"
+    },
+    {
+      "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/specific\/uikit\/View\/UI\/PLYAlertWithActivityIndicatorView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 981,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/specific\/uikit\/View\/UI\/PLYAlertWithActivityIndicatorView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1091,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/specific\/uikit\/View\/UI\/PLYAlertWithActivityIndicatorView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1459,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/specific\/uikit\/View\/UI\/PLYAlertWithActivityIndicatorView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1602,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/specific\/uikit\/View\/UI\/PLYAlertWithActivityIndicatorView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1950,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/specific\/uikit\/View\/UI\/PLYAlertWithActivityIndicatorView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 2093,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/specific\/uikit\/View\/UI\/PLYAlertWithActivityIndicatorView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2188,
+      "length": 1,
+      "value": "8"
+    },
+    {
+      "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/specific\/uikit\/View\/UI\/PLYAlertWithActivityIndicatorView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 2495,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/specific\/uikit\/View\/UI\/PLYAlertWithActivityIndicatorView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 2638,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/specific\/uikit\/View\/UI\/PLYAlertWithActivityIndicatorView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 2866,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/specific\/uikit\/View\/UI\/PLYAlertWithActivityIndicatorView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2978,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/specific\/uikit\/View\/UI\/PLYAlertWithActivityIndicatorView.swift",
+      "kind": "StringLiteral",
+      "offset": 3047,
+      "length": 40,
+      "value": "\"ply_web_checkout_pending_payment_title\""
+    },
+    {
+      "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/specific\/uikit\/View\/UI\/PLYAlertWithActivityIndicatorView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 3267,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/specific\/uikit\/View\/UI\/PLYAlertWithActivityIndicatorView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 3382,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/specific\/uikit\/View\/UI\/PLYAlertWithActivityIndicatorView.swift",
+      "kind": "StringLiteral",
+      "offset": 3596,
+      "length": 39,
+      "value": "\"ply_web_checkout_pending_payment_body\""
+    },
+    {
+      "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/specific\/uikit\/View\/UI\/PLYAlertWithActivityIndicatorView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 4044,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/specific\/uikit\/View\/UI\/PLYAlertWithActivityIndicatorView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 4104,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/specific\/uikit\/View\/UI\/PLYAlertWithActivityIndicatorView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 4336,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/specific\/uikit\/View\/UI\/PLYAlertWithActivityIndicatorView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 4725,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/specific\/uikit\/View\/UI\/PLYAlertWithActivityIndicatorView.swift",
+      "kind": "StringLiteral",
+      "offset": 4913,
+      "length": 54,
+      "value": "\"ply_web_checkout_pending_payment_open_browser_button\""
+    },
+    {
+      "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/specific\/uikit\/View\/UI\/PLYAlertWithActivityIndicatorView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 5234,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/specific\/uikit\/View\/UI\/PLYAlertWithActivityIndicatorView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 5621,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/specific\/uikit\/View\/UI\/PLYAlertWithActivityIndicatorView.swift",
+      "kind": "StringLiteral",
+      "offset": 5706,
+      "length": 48,
+      "value": "\"ply_web_checkout_pending_payment_cancel_button\""
+    },
+    {
+      "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/specific\/uikit\/Controller\/PLYAlertWithActivityIndicatorViewController.swift",
+      "kind": "FloatLiteral",
+      "offset": 186,
+      "length": 3,
+      "value": "0.3"
+    },
+    {
+      "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/specific\/uikit\/Controller\/PLYAlertWithActivityIndicatorViewController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 261,
+      "length": 1,
+      "value": "3"
+    },
+    {
+      "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/specific\/uikit\/Controller\/PLYAlertWithActivityIndicatorViewController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 476,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/specific\/uikit\/Controller\/PLYAlertWithActivityIndicatorViewController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 574,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/specific\/uikit\/Controller\/PLYAlertWithActivityIndicatorViewController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 600,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/specific\/uikit\/Controller\/PLYAlertWithActivityIndicatorViewController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 783,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/specific\/uikit\/Controller\/PLYAlertWithActivityIndicatorViewController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 847,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/specific\/uikit\/Controller\/PLYAlertWithActivityIndicatorViewController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 883,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/specific\/uikit\/Controller\/PLYAlertWithActivityIndicatorViewController.swift",
+      "kind": "FloatLiteral",
+      "offset": 936,
+      "length": 3,
+      "value": "1.2"
+    },
+    {
+      "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/specific\/uikit\/Controller\/PLYAlertWithActivityIndicatorViewController.swift",
+      "kind": "FloatLiteral",
+      "offset": 944,
+      "length": 3,
+      "value": "1.2"
+    },
+    {
+      "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/specific\/uikit\/Controller\/PLYAlertWithActivityIndicatorViewController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1028,
+      "length": 1,
+      "value": "2"
+    },
+    {
+      "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/specific\/uikit\/Controller\/PLYAlertWithActivityIndicatorViewController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1054,
+      "length": 1,
+      "value": "2"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/UI\/PLYAlignment.swift",
@@ -50896,151 +52975,179 @@
       "value": "\"default\""
     },
     {
+      "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/specific\/uikit\/View\/UI\/PLYComponentView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1274,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/specific\/uikit\/View\/UI\/PLYComponentView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1333,
+      "length": 1,
+      "value": "0"
+    },
+    {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYConfig.swift",
       "kind": "StringLiteral",
-      "offset": 5125,
+      "offset": 5654,
       "length": 34,
       "value": "\"receipt_status_polling_frequency\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYConfig.swift",
       "kind": "StringLiteral",
-      "offset": 5192,
+      "offset": 5721,
       "length": 28,
       "value": "\"receipt_validation_timeout\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYConfig.swift",
       "kind": "StringLiteral",
-      "offset": 5257,
+      "offset": 5786,
       "length": 33,
       "value": "\"powered_by_purchasely_displayed\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYConfig.swift",
       "kind": "StringLiteral",
-      "offset": 5318,
+      "offset": 5847,
       "length": 21,
       "value": "\"promo_codes_enabled\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYConfig.swift",
       "kind": "StringLiteral",
-      "offset": 5363,
+      "offset": 5892,
       "length": 16,
       "value": "\"tracked_events\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYConfig.swift",
       "kind": "StringLiteral",
-      "offset": 5414,
+      "offset": 5943,
       "length": 22,
       "value": "\"high_priority_events\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYConfig.swift",
       "kind": "StringLiteral",
-      "offset": 5479,
+      "offset": 6008,
       "length": 30,
       "value": "\"request_limitation_threshold\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYConfig.swift",
       "kind": "StringLiteral",
-      "offset": 5547,
+      "offset": 6076,
       "length": 24,
       "value": "\"regionalised_languages\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYConfig.swift",
       "kind": "StringLiteral",
-      "offset": 5598,
+      "offset": 6127,
       "length": 13,
       "value": "\"auto_import\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYConfig.swift",
       "kind": "StringLiteral",
-      "offset": 5647,
+      "offset": 6176,
       "length": 45,
       "value": "\"auto_import_retry_time_threshold_in_seconds\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYConfig.swift",
       "kind": "StringLiteral",
-      "offset": 5729,
+      "offset": 6258,
       "length": 35,
       "value": "\"auto_import_retry_count_threshold\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYConfig.swift",
       "kind": "StringLiteral",
-      "offset": 5800,
+      "offset": 6329,
       "length": 24,
       "value": "\"store_kit_2_configured\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYConfig.swift",
       "kind": "StringLiteral",
-      "offset": 5875,
+      "offset": 6404,
       "length": 40,
       "value": "\"user_subscription_auto_fetch_activated\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYConfig.swift",
       "kind": "StringLiteral",
-      "offset": 5957,
+      "offset": 6486,
       "length": 30,
       "value": "\"user_subscriptions_cache_ttl\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYConfig.swift",
       "kind": "StringLiteral",
-      "offset": 6033,
+      "offset": 6562,
       "length": 35,
       "value": "\"events_batch_frequency_in_seconds\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYConfig.swift",
       "kind": "StringLiteral",
-      "offset": 6103,
+      "offset": 6632,
       "length": 23,
       "value": "\"events_batch_max_size\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYConfig.swift",
       "kind": "StringLiteral",
-      "offset": 6176,
+      "offset": 6705,
       "length": 40,
       "value": "\"events_time_drift_tolerance_in_minutes\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYConfig.swift",
       "kind": "StringLiteral",
-      "offset": 6242,
+      "offset": 6771,
       "length": 11,
       "value": "\"campaigns\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYConfig.swift",
       "kind": "StringLiteral",
-      "offset": 6278,
+      "offset": 6807,
       "length": 10,
       "value": "\"triggers\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYConfig.swift",
       "kind": "StringLiteral",
-      "offset": 6324,
+      "offset": 6853,
       "length": 24,
       "value": "\"max_number_of_offering\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYConfig.swift",
       "kind": "StringLiteral",
-      "offset": 6392,
+      "offset": 6921,
       "length": 32,
       "value": "\"user_attributes_tracked_events\""
+    },
+    {
+      "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYConfig.swift",
+      "kind": "StringLiteral",
+      "offset": 7010,
+      "length": 47,
+      "value": "\"web_checkout_receipt_status_polling_frequency\""
+    },
+    {
+      "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYConfig.swift",
+      "kind": "StringLiteral",
+      "offset": 7109,
+      "length": 41,
+      "value": "\"web_checkout_receipt_validation_timeout\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYCustomProperty.swift",
@@ -51400,6 +53507,34 @@
       "value": "43"
     },
     {
+      "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYEvent.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1251,
+      "length": 16,
+      "value": "44"
+    },
+    {
+      "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYEvent.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1277,
+      "length": 29,
+      "value": "45"
+    },
+    {
+      "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYEvent.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1316,
+      "length": 17,
+      "value": "46"
+    },
+    {
+      "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYEvent.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1343,
+      "length": 19,
+      "value": "47"
+    },
+    {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYEventProperty.swift",
       "kind": "IntegerLiteral",
       "offset": 201,
@@ -51417,589 +53552,610 @@
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYEventProperty.swift",
       "kind": "IntegerLiteral",
       "offset": 240,
-      "length": 16,
+      "length": 9,
       "value": "3"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYEventProperty.swift",
       "kind": "IntegerLiteral",
-      "offset": 266,
-      "length": 12,
+      "offset": 259,
+      "length": 16,
       "value": "4"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYEventProperty.swift",
       "kind": "IntegerLiteral",
-      "offset": 288,
-      "length": 24,
+      "offset": 285,
+      "length": 12,
       "value": "5"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYEventProperty.swift",
       "kind": "IntegerLiteral",
-      "offset": 322,
-      "length": 20,
+      "offset": 307,
+      "length": 24,
       "value": "6"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYEventProperty.swift",
       "kind": "IntegerLiteral",
-      "offset": 352,
-      "length": 21,
+      "offset": 341,
+      "length": 20,
       "value": "7"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYEventProperty.swift",
       "kind": "IntegerLiteral",
-      "offset": 383,
-      "length": 22,
+      "offset": 371,
+      "length": 21,
       "value": "8"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYEventProperty.swift",
       "kind": "IntegerLiteral",
-      "offset": 415,
-      "length": 6,
+      "offset": 402,
+      "length": 22,
       "value": "9"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYEventProperty.swift",
       "kind": "IntegerLiteral",
-      "offset": 431,
-      "length": 15,
+      "offset": 434,
+      "length": 6,
       "value": "10"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYEventProperty.swift",
       "kind": "IntegerLiteral",
-      "offset": 456,
-      "length": 16,
+      "offset": 450,
+      "length": 15,
       "value": "11"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYEventProperty.swift",
       "kind": "IntegerLiteral",
-      "offset": 482,
-      "length": 18,
+      "offset": 475,
+      "length": 16,
       "value": "12"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYEventProperty.swift",
       "kind": "IntegerLiteral",
-      "offset": 510,
-      "length": 16,
+      "offset": 501,
+      "length": 18,
       "value": "13"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYEventProperty.swift",
       "kind": "IntegerLiteral",
-      "offset": 536,
-      "length": 12,
+      "offset": 529,
+      "length": 16,
       "value": "14"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYEventProperty.swift",
       "kind": "IntegerLiteral",
-      "offset": 558,
-      "length": 4,
+      "offset": 555,
+      "length": 12,
       "value": "15"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYEventProperty.swift",
       "kind": "IntegerLiteral",
-      "offset": 572,
-      "length": 20,
+      "offset": 577,
+      "length": 4,
       "value": "16"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYEventProperty.swift",
       "kind": "IntegerLiteral",
-      "offset": 602,
-      "length": 14,
+      "offset": 591,
+      "length": 20,
       "value": "17"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYEventProperty.swift",
       "kind": "IntegerLiteral",
-      "offset": 626,
-      "length": 9,
+      "offset": 621,
+      "length": 14,
       "value": "18"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYEventProperty.swift",
       "kind": "IntegerLiteral",
       "offset": 645,
-      "length": 6,
+      "length": 9,
       "value": "19"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYEventProperty.swift",
       "kind": "IntegerLiteral",
-      "offset": 661,
-      "length": 9,
+      "offset": 664,
+      "length": 6,
       "value": "20"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYEventProperty.swift",
       "kind": "IntegerLiteral",
       "offset": 680,
-      "length": 4,
+      "length": 9,
       "value": "21"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYEventProperty.swift",
       "kind": "IntegerLiteral",
-      "offset": 694,
-      "length": 12,
+      "offset": 699,
+      "length": 4,
       "value": "22"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYEventProperty.swift",
       "kind": "IntegerLiteral",
-      "offset": 716,
-      "length": 8,
+      "offset": 713,
+      "length": 12,
       "value": "23"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYEventProperty.swift",
       "kind": "IntegerLiteral",
-      "offset": 734,
+      "offset": 735,
       "length": 8,
       "value": "24"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYEventProperty.swift",
       "kind": "IntegerLiteral",
-      "offset": 752,
-      "length": 16,
+      "offset": 753,
+      "length": 8,
       "value": "25"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYEventProperty.swift",
       "kind": "IntegerLiteral",
-      "offset": 778,
-      "length": 5,
+      "offset": 771,
+      "length": 16,
       "value": "26"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYEventProperty.swift",
       "kind": "IntegerLiteral",
-      "offset": 793,
-      "length": 12,
+      "offset": 797,
+      "length": 5,
       "value": "27"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYEventProperty.swift",
       "kind": "IntegerLiteral",
-      "offset": 815,
-      "length": 14,
+      "offset": 812,
+      "length": 12,
       "value": "28"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYEventProperty.swift",
       "kind": "IntegerLiteral",
-      "offset": 839,
-      "length": 23,
+      "offset": 834,
+      "length": 14,
       "value": "29"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYEventProperty.swift",
       "kind": "IntegerLiteral",
-      "offset": 872,
-      "length": 16,
+      "offset": 858,
+      "length": 23,
       "value": "30"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYEventProperty.swift",
       "kind": "IntegerLiteral",
-      "offset": 898,
-      "length": 6,
+      "offset": 891,
+      "length": 16,
       "value": "31"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYEventProperty.swift",
       "kind": "IntegerLiteral",
-      "offset": 914,
-      "length": 8,
+      "offset": 917,
+      "length": 6,
       "value": "32"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYEventProperty.swift",
       "kind": "IntegerLiteral",
-      "offset": 932,
-      "length": 28,
+      "offset": 933,
+      "length": 8,
       "value": "33"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYEventProperty.swift",
       "kind": "IntegerLiteral",
-      "offset": 970,
-      "length": 11,
+      "offset": 951,
+      "length": 28,
       "value": "34"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYEventProperty.swift",
       "kind": "IntegerLiteral",
-      "offset": 991,
-      "length": 13,
+      "offset": 989,
+      "length": 11,
       "value": "35"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYEventProperty.swift",
       "kind": "IntegerLiteral",
-      "offset": 1014,
-      "length": 10,
+      "offset": 1010,
+      "length": 13,
       "value": "36"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYEventProperty.swift",
       "kind": "IntegerLiteral",
-      "offset": 1034,
-      "length": 12,
+      "offset": 1033,
+      "length": 10,
       "value": "37"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYEventProperty.swift",
       "kind": "IntegerLiteral",
-      "offset": 1056,
+      "offset": 1053,
       "length": 12,
       "value": "38"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYEventProperty.swift",
       "kind": "IntegerLiteral",
-      "offset": 1078,
-      "length": 39,
+      "offset": 1075,
+      "length": 12,
       "value": "39"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYEventProperty.swift",
       "kind": "IntegerLiteral",
-      "offset": 1127,
-      "length": 22,
+      "offset": 1097,
+      "length": 39,
       "value": "40"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYEventProperty.swift",
       "kind": "IntegerLiteral",
-      "offset": 1159,
-      "length": 24,
+      "offset": 1146,
+      "length": 22,
       "value": "41"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYEventProperty.swift",
       "kind": "IntegerLiteral",
-      "offset": 1193,
-      "length": 16,
+      "offset": 1178,
+      "length": 24,
       "value": "42"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYEventProperty.swift",
       "kind": "IntegerLiteral",
-      "offset": 1219,
-      "length": 38,
+      "offset": 1212,
+      "length": 16,
       "value": "43"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYEventProperty.swift",
       "kind": "IntegerLiteral",
-      "offset": 1267,
-      "length": 33,
+      "offset": 1238,
+      "length": 38,
       "value": "44"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYEventProperty.swift",
       "kind": "IntegerLiteral",
-      "offset": 1310,
-      "length": 9,
+      "offset": 1286,
+      "length": 33,
       "value": "45"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYEventProperty.swift",
       "kind": "IntegerLiteral",
       "offset": 1329,
-      "length": 13,
+      "length": 9,
       "value": "46"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYEventProperty.swift",
       "kind": "IntegerLiteral",
-      "offset": 1352,
-      "length": 14,
+      "offset": 1348,
+      "length": 13,
       "value": "47"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYEventProperty.swift",
       "kind": "IntegerLiteral",
-      "offset": 1376,
-      "length": 21,
+      "offset": 1371,
+      "length": 14,
       "value": "48"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYEventProperty.swift",
       "kind": "IntegerLiteral",
-      "offset": 1407,
-      "length": 12,
+      "offset": 1395,
+      "length": 21,
       "value": "49"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYEventProperty.swift",
       "kind": "IntegerLiteral",
-      "offset": 1429,
-      "length": 13,
+      "offset": 1426,
+      "length": 12,
       "value": "50"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYEventProperty.swift",
       "kind": "IntegerLiteral",
-      "offset": 1452,
-      "length": 15,
+      "offset": 1448,
+      "length": 13,
       "value": "51"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYEventProperty.swift",
       "kind": "IntegerLiteral",
-      "offset": 1477,
-      "length": 14,
+      "offset": 1471,
+      "length": 15,
       "value": "52"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYEventProperty.swift",
       "kind": "IntegerLiteral",
-      "offset": 1501,
-      "length": 20,
+      "offset": 1496,
+      "length": 14,
       "value": "53"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYEventProperty.swift",
       "kind": "IntegerLiteral",
-      "offset": 1531,
-      "length": 18,
+      "offset": 1520,
+      "length": 20,
       "value": "54"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYEventProperty.swift",
       "kind": "IntegerLiteral",
-      "offset": 1559,
-      "length": 20,
+      "offset": 1550,
+      "length": 18,
       "value": "55"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYEventProperty.swift",
       "kind": "IntegerLiteral",
-      "offset": 1589,
-      "length": 7,
+      "offset": 1578,
+      "length": 20,
       "value": "56"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYEventProperty.swift",
       "kind": "IntegerLiteral",
-      "offset": 1606,
-      "length": 20,
+      "offset": 1608,
+      "length": 7,
       "value": "57"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYEventProperty.swift",
       "kind": "IntegerLiteral",
-      "offset": 1636,
-      "length": 28,
+      "offset": 1625,
+      "length": 20,
       "value": "58"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYEventProperty.swift",
       "kind": "IntegerLiteral",
-      "offset": 1674,
-      "length": 11,
+      "offset": 1655,
+      "length": 28,
       "value": "59"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYEventProperty.swift",
       "kind": "IntegerLiteral",
-      "offset": 1695,
-      "length": 10,
+      "offset": 1693,
+      "length": 11,
       "value": "60"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYEventProperty.swift",
       "kind": "IntegerLiteral",
-      "offset": 1715,
-      "length": 8,
+      "offset": 1714,
+      "length": 10,
       "value": "61"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYEventProperty.swift",
       "kind": "IntegerLiteral",
-      "offset": 1733,
-      "length": 15,
+      "offset": 1734,
+      "length": 8,
       "value": "62"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYEventProperty.swift",
       "kind": "IntegerLiteral",
-      "offset": 1758,
-      "length": 9,
+      "offset": 1752,
+      "length": 15,
       "value": "63"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYEventProperty.swift",
       "kind": "IntegerLiteral",
       "offset": 1777,
-      "length": 15,
+      "length": 9,
       "value": "64"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYEventProperty.swift",
       "kind": "IntegerLiteral",
-      "offset": 1802,
-      "length": 12,
+      "offset": 1796,
+      "length": 15,
       "value": "65"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYEventProperty.swift",
       "kind": "IntegerLiteral",
-      "offset": 1824,
-      "length": 14,
+      "offset": 1821,
+      "length": 12,
       "value": "66"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYEventProperty.swift",
       "kind": "IntegerLiteral",
-      "offset": 1848,
-      "length": 17,
+      "offset": 1843,
+      "length": 14,
       "value": "67"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYEventProperty.swift",
       "kind": "IntegerLiteral",
-      "offset": 1875,
-      "length": 19,
+      "offset": 1867,
+      "length": 17,
       "value": "68"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYEventProperty.swift",
       "kind": "IntegerLiteral",
-      "offset": 1904,
-      "length": 14,
+      "offset": 1894,
+      "length": 19,
       "value": "69"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYEventProperty.swift",
       "kind": "IntegerLiteral",
-      "offset": 1928,
-      "length": 16,
+      "offset": 1923,
+      "length": 14,
       "value": "70"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYEventProperty.swift",
       "kind": "IntegerLiteral",
-      "offset": 1954,
-      "length": 26,
+      "offset": 1947,
+      "length": 16,
       "value": "71"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYEventProperty.swift",
       "kind": "IntegerLiteral",
-      "offset": 1990,
-      "length": 15,
+      "offset": 1973,
+      "length": 26,
       "value": "72"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYEventProperty.swift",
       "kind": "IntegerLiteral",
-      "offset": 2015,
-      "length": 16,
+      "offset": 2009,
+      "length": 15,
       "value": "73"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYEventProperty.swift",
       "kind": "IntegerLiteral",
-      "offset": 2041,
-      "length": 10,
+      "offset": 2034,
+      "length": 16,
       "value": "74"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYEventProperty.swift",
       "kind": "IntegerLiteral",
-      "offset": 2061,
-      "length": 11,
+      "offset": 2060,
+      "length": 10,
       "value": "75"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYEventProperty.swift",
       "kind": "IntegerLiteral",
-      "offset": 2082,
-      "length": 9,
+      "offset": 2080,
+      "length": 11,
       "value": "76"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYEventProperty.swift",
       "kind": "IntegerLiteral",
       "offset": 2101,
-      "length": 16,
+      "length": 9,
       "value": "77"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYEventProperty.swift",
       "kind": "IntegerLiteral",
-      "offset": 2127,
-      "length": 15,
+      "offset": 2120,
+      "length": 16,
       "value": "78"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYEventProperty.swift",
       "kind": "IntegerLiteral",
-      "offset": 2152,
-      "length": 16,
+      "offset": 2146,
+      "length": 15,
       "value": "79"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYEventProperty.swift",
       "kind": "IntegerLiteral",
-      "offset": 2178,
-      "length": 10,
+      "offset": 2171,
+      "length": 16,
       "value": "80"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYEventProperty.swift",
       "kind": "IntegerLiteral",
-      "offset": 2198,
-      "length": 6,
+      "offset": 2197,
+      "length": 10,
       "value": "81"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYEventProperty.swift",
       "kind": "IntegerLiteral",
-      "offset": 2214,
-      "length": 10,
+      "offset": 2217,
+      "length": 6,
       "value": "82"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYEventProperty.swift",
       "kind": "IntegerLiteral",
-      "offset": 2234,
-      "length": 11,
+      "offset": 2233,
+      "length": 10,
       "value": "83"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYEventProperty.swift",
       "kind": "IntegerLiteral",
-      "offset": 2255,
-      "length": 12,
+      "offset": 2253,
+      "length": 11,
       "value": "84"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYEventProperty.swift",
       "kind": "IntegerLiteral",
-      "offset": 2277,
-      "length": 10,
+      "offset": 2274,
+      "length": 12,
       "value": "85"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYEventProperty.swift",
       "kind": "IntegerLiteral",
-      "offset": 2297,
-      "length": 11,
+      "offset": 2296,
+      "length": 10,
       "value": "86"
+    },
+    {
+      "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYEventProperty.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2316,
+      "length": 11,
+      "value": "87"
+    },
+    {
+      "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYEventProperty.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2337,
+      "length": 13,
+      "value": "88"
+    },
+    {
+      "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYEventProperty.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2360,
+      "length": 19,
+      "value": "89"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYEventType.swift",
@@ -52095,28 +54251,28 @@
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/UI\/PLYGenericComponent.swift",
       "kind": "StringLiteral",
-      "offset": 7424,
+      "offset": 7566,
       "length": 8,
       "value": "\"on_tap\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/UI\/PLYGenericComponent.swift",
       "kind": "StringLiteral",
-      "offset": 7475,
+      "offset": 7617,
       "length": 23,
       "value": "\"tile_selected_actions\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/UI\/PLYGenericComponent.swift",
       "kind": "StringLiteral",
-      "offset": 7554,
+      "offset": 7696,
       "length": 10,
       "value": "\"selected\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/UI\/PLYGenericComponent.swift",
       "kind": "StringLiteral",
-      "offset": 7587,
+      "offset": 7729,
       "length": 16,
       "value": "\"expand_to_fill\""
     },
@@ -52228,49 +54384,49 @@
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/UI\/PLYImageComponent.swift",
       "kind": "StringLiteral",
-      "offset": 4467,
+      "offset": 4551,
       "length": 14,
       "value": "\"content_mode\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/UI\/PLYImageComponent.swift",
       "kind": "StringLiteral",
-      "offset": 4500,
+      "offset": 4584,
       "length": 11,
       "value": "\"image_url\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/UI\/PLYImageComponent.swift",
       "kind": "StringLiteral",
-      "offset": 4527,
+      "offset": 4611,
       "length": 7,
       "value": "\"sizes\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/UI\/PLYImageComponent.swift",
       "kind": "StringLiteral",
-      "offset": 4557,
+      "offset": 4641,
       "length": 16,
       "value": "\"dark_image_url\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/UI\/PLYImageComponent.swift",
       "kind": "StringLiteral",
-      "offset": 4593,
+      "offset": 4677,
       "length": 12,
       "value": "\"dark_sizes\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/UI\/PLYImageComponent.swift",
       "kind": "StringLiteral",
-      "offset": 4638,
+      "offset": 4722,
       "length": 20,
       "value": "\"image_selected_url\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/UI\/PLYImageComponent.swift",
       "kind": "StringLiteral",
-      "offset": 4695,
+      "offset": 4779,
       "length": 25,
       "value": "\"dark_image_selected_url\""
     },
@@ -52886,56 +55042,56 @@
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/specific\/uikit\/View\/PLYPopoverView.swift",
       "kind": "FloatLiteral",
-      "offset": 1202,
+      "offset": 567,
       "length": 3,
       "value": "0.8"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/specific\/uikit\/View\/PLYPopoverView.swift",
       "kind": "IntegerLiteral",
-      "offset": 1283,
+      "offset": 648,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/specific\/uikit\/View\/PLYPopoverView.swift",
       "kind": "FloatLiteral",
-      "offset": 1365,
+      "offset": 733,
       "length": 3,
       "value": "0.5"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/specific\/uikit\/View\/PLYPopoverView.swift",
       "kind": "BooleanLiteral",
-      "offset": 6520,
+      "offset": 5881,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/UI\/PLYPresentation.swift",
       "kind": "IntegerLiteral",
-      "offset": 3140,
+      "offset": 3413,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/UI\/PLYPresentation.swift",
       "kind": "IntegerLiteral",
-      "offset": 3151,
+      "offset": 3424,
       "length": 8,
       "value": "1"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/UI\/PLYPresentation.swift",
       "kind": "IntegerLiteral",
-      "offset": 3169,
+      "offset": 3442,
       "length": 11,
       "value": "2"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/UI\/PLYPresentation.swift",
       "kind": "IntegerLiteral",
-      "offset": 3190,
+      "offset": 3463,
       "length": 6,
       "value": "3"
     },
@@ -52987,6 +55143,13 @@
       "offset": 288,
       "length": 9,
       "value": "7"
+    },
+    {
+      "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYPresentationAction.swift",
+      "kind": "IntegerLiteral",
+      "offset": 307,
+      "length": 11,
+      "value": "8"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/UI\/PLYPresentationMetadata.swift",
@@ -53146,6 +55309,27 @@
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/specific\/uikit\/Controller\/PLYProductViewController.swift",
       "kind": "BooleanLiteral",
       "offset": 4407,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/specific\/uikit\/Controller\/PLYProductViewController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 14926,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/specific\/uikit\/Controller\/PLYProductViewController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 15308,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/specific\/uikit\/Controller\/PLYProductViewController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 22307,
       "length": 5,
       "value": "false"
     },
@@ -53418,56 +55602,56 @@
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Services\/Purchasely\/API\/PLYServices.swift",
       "kind": "BooleanLiteral",
-      "offset": 1217,
+      "offset": 1268,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Services\/Purchasely\/API\/PLYServices.swift",
       "kind": "StringLiteral",
-      "offset": 8548,
+      "offset": 8599,
       "length": 22,
       "value": "\"active_subscriptions\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Services\/Purchasely\/API\/PLYServices.swift",
       "kind": "StringLiteral",
-      "offset": 8605,
+      "offset": 8656,
       "length": 17,
       "value": "\"non_consumables\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Services\/Purchasely\/API\/PLYServices.swift",
       "kind": "StringLiteral",
-      "offset": 8663,
+      "offset": 8714,
       "length": 23,
       "value": "\"expired_subscriptions\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Services\/Purchasely\/API\/PLYServices.swift",
       "kind": "BooleanLiteral",
-      "offset": 10466,
+      "offset": 10517,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Services\/Purchasely\/API\/PLYServices.swift",
       "kind": "BooleanLiteral",
-      "offset": 12359,
+      "offset": 12410,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Services\/Purchasely\/API\/PLYServices.swift",
       "kind": "BooleanLiteral",
-      "offset": 17809,
+      "offset": 17860,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Services\/Purchasely\/API\/PLYServices.swift",
       "kind": "BooleanLiteral",
-      "offset": 20174,
+      "offset": 20225,
       "length": 5,
       "value": "false"
     },
@@ -53586,121 +55770,135 @@
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYSubscription.swift",
       "kind": "StringLiteral",
-      "offset": 7722,
+      "offset": 8580,
       "length": 4,
       "value": "\"id\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYSubscription.swift",
       "kind": "StringLiteral",
-      "offset": 7767,
+      "offset": 8625,
       "length": 12,
       "value": "\"store_type\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYSubscription.swift",
       "kind": "StringLiteral",
-      "offset": 7805,
+      "offset": 8663,
       "length": 17,
       "value": "\"next_renewal_at\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYSubscription.swift",
       "kind": "StringLiteral",
-      "offset": 7846,
+      "offset": 8704,
       "length": 14,
       "value": "\"cancelled_at\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYSubscription.swift",
       "kind": "StringLiteral",
-      "offset": 7898,
+      "offset": 8756,
       "length": 23,
       "value": "\"original_purchased_at\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYSubscription.swift",
       "kind": "StringLiteral",
-      "offset": 7951,
+      "offset": 8809,
       "length": 14,
       "value": "\"purchased_at\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYSubscription.swift",
       "kind": "StringLiteral",
-      "offset": 7991,
+      "offset": 8849,
       "length": 12,
       "value": "\"offer_type\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYSubscription.swift",
       "kind": "StringLiteral",
-      "offset": 8031,
+      "offset": 8889,
       "length": 13,
       "value": "\"environment\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYSubscription.swift",
       "kind": "StringLiteral",
-      "offset": 8073,
+      "offset": 8931,
       "length": 15,
       "value": "\"store_country\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYSubscription.swift",
       "kind": "StringLiteral",
-      "offset": 8119,
+      "offset": 8977,
       "length": 18,
       "value": "\"is_family_shared\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYSubscription.swift",
       "kind": "StringLiteral",
-      "offset": 8172,
+      "offset": 9030,
       "length": 21,
       "value": "\"subscription_status\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYSubscription.swift",
       "kind": "StringLiteral",
-      "offset": 8219,
+      "offset": 9077,
       "length": 12,
       "value": "\"content_id\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYSubscription.swift",
       "kind": "StringLiteral",
-      "offset": 8263,
+      "offset": 9121,
       "length": 18,
       "value": "\"offer_identifier\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYSubscription.swift",
       "kind": "StringLiteral",
-      "offset": 8320,
+      "offset": 9178,
       "length": 27,
       "value": "\"cumulated_revenues_in_usd\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYSubscription.swift",
       "kind": "StringLiteral",
-      "offset": 8390,
+      "offset": 9248,
       "length": 31,
       "value": "\"subscription_duration_in_days\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYSubscription.swift",
       "kind": "StringLiteral",
-      "offset": 8465,
+      "offset": 9323,
       "length": 32,
       "value": "\"subscription_duration_in_weeks\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYSubscription.swift",
       "kind": "StringLiteral",
-      "offset": 8542,
+      "offset": 9400,
       "length": 33,
       "value": "\"subscription_duration_in_months\""
+    },
+    {
+      "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYSubscription.swift",
+      "kind": "StringLiteral",
+      "offset": 9466,
+      "length": 20,
+      "value": "\"stripe_purchase_id\""
+    },
+    {
+      "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYSubscription.swift",
+      "kind": "StringLiteral",
+      "offset": 9526,
+      "length": 28,
+      "value": "\"stripe_checkout_session_id\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYSubscriptionEnvironment.swift",
@@ -53740,128 +55938,142 @@
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYSubscriptionLight.swift",
       "kind": "StringLiteral",
-      "offset": 5137,
+      "offset": 5732,
       "length": 4,
       "value": "\"id\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYSubscriptionLight.swift",
       "kind": "StringLiteral",
-      "offset": 5158,
+      "offset": 5753,
       "length": 9,
       "value": "\"plan_id\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYSubscriptionLight.swift",
       "kind": "StringLiteral",
-      "offset": 5196,
+      "offset": 5791,
       "length": 12,
       "value": "\"store_type\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYSubscriptionLight.swift",
       "kind": "StringLiteral",
-      "offset": 5234,
+      "offset": 5829,
       "length": 17,
       "value": "\"next_renewal_at\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYSubscriptionLight.swift",
       "kind": "StringLiteral",
-      "offset": 5275,
+      "offset": 5870,
       "length": 14,
       "value": "\"cancelled_at\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYSubscriptionLight.swift",
       "kind": "StringLiteral",
-      "offset": 5327,
+      "offset": 5922,
       "length": 23,
       "value": "\"original_purchased_at\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYSubscriptionLight.swift",
       "kind": "StringLiteral",
-      "offset": 5380,
+      "offset": 5975,
       "length": 14,
       "value": "\"purchased_at\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYSubscriptionLight.swift",
       "kind": "StringLiteral",
-      "offset": 5420,
+      "offset": 6015,
       "length": 12,
       "value": "\"offer_type\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYSubscriptionLight.swift",
       "kind": "StringLiteral",
-      "offset": 5460,
+      "offset": 6055,
       "length": 13,
       "value": "\"environment\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYSubscriptionLight.swift",
       "kind": "StringLiteral",
-      "offset": 5502,
+      "offset": 6097,
       "length": 15,
       "value": "\"store_country\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYSubscriptionLight.swift",
       "kind": "StringLiteral",
-      "offset": 5548,
+      "offset": 6143,
       "length": 18,
       "value": "\"is_family_shared\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYSubscriptionLight.swift",
       "kind": "StringLiteral",
-      "offset": 5601,
+      "offset": 6196,
       "length": 21,
       "value": "\"subscription_status\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYSubscriptionLight.swift",
       "kind": "StringLiteral",
-      "offset": 5648,
+      "offset": 6243,
       "length": 12,
       "value": "\"content_id\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYSubscriptionLight.swift",
       "kind": "StringLiteral",
-      "offset": 5692,
+      "offset": 6287,
       "length": 18,
       "value": "\"offer_identifier\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYSubscriptionLight.swift",
       "kind": "StringLiteral",
-      "offset": 5749,
+      "offset": 6344,
       "length": 27,
       "value": "\"cumulated_revenues_in_usd\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYSubscriptionLight.swift",
       "kind": "StringLiteral",
-      "offset": 5819,
+      "offset": 6414,
       "length": 31,
       "value": "\"subscription_duration_in_days\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYSubscriptionLight.swift",
       "kind": "StringLiteral",
-      "offset": 5894,
+      "offset": 6489,
       "length": 32,
       "value": "\"subscription_duration_in_weeks\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYSubscriptionLight.swift",
       "kind": "StringLiteral",
-      "offset": 5971,
+      "offset": 6566,
       "length": 33,
       "value": "\"subscription_duration_in_months\""
+    },
+    {
+      "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYSubscriptionLight.swift",
+      "kind": "StringLiteral",
+      "offset": 6632,
+      "length": 20,
+      "value": "\"stripe_purchase_id\""
+    },
+    {
+      "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYSubscriptionLight.swift",
+      "kind": "StringLiteral",
+      "offset": 6692,
+      "length": 28,
+      "value": "\"stripe_checkout_session_id\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYSubscriptionOfferType.swift",
@@ -54328,7 +56540,7 @@
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Utils\/PLYUtils.swift",
       "kind": "StringLiteral",
-      "offset": 975,
+      "offset": 1030,
       "length": 2,
       "value": "\"\""
     },
@@ -54410,6 +56622,69 @@
       "value": "\"fill_proportionnally\""
     },
     {
+      "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYWebCheckoutReceipt.swift",
+      "kind": "StringLiteral",
+      "offset": 124,
+      "length": 12,
+      "value": "\"ab_test_id\""
+    },
+    {
+      "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYWebCheckoutReceipt.swift",
+      "kind": "StringLiteral",
+      "offset": 168,
+      "length": 20,
+      "value": "\"ab_test_variant_id\""
+    },
+    {
+      "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYWebCheckoutReceipt.swift",
+      "kind": "StringLiteral",
+      "offset": 216,
+      "length": 14,
+      "value": "\"placement_id\""
+    },
+    {
+      "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYWebCheckoutReceipt.swift",
+      "kind": "StringLiteral",
+      "offset": 261,
+      "length": 17,
+      "value": "\"presentation_id\""
+    },
+    {
+      "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYWebCheckoutReceipt.swift",
+      "kind": "StringLiteral",
+      "offset": 305,
+      "length": 13,
+      "value": "\"campaign_id\""
+    },
+    {
+      "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYWebCheckoutReceipt.swift",
+      "kind": "StringLiteral",
+      "offset": 341,
+      "length": 9,
+      "value": "\"flow_id\""
+    },
+    {
+      "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYWebCheckoutReceipt.swift",
+      "kind": "StringLiteral",
+      "offset": 376,
+      "length": 12,
+      "value": "\"content_id\""
+    },
+    {
+      "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Manager\/PLYWindowManager.swift",
+      "kind": "BooleanLiteral",
+      "offset": 421,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Manager\/PLYWindowManager.swift",
+      "kind": "BooleanLiteral",
+      "offset": 455,
+      "length": 5,
+      "value": "false"
+    },
+    {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Manager\/ProductRepository.swift",
       "kind": "BooleanLiteral",
       "offset": 1831,
@@ -54428,7 +56703,7 @@
       "kind": "StringLiteral",
       "offset": 2725,
       "length": 14,
-      "value": "\"5.3.0-beta.1\""
+      "value": "\"5.3.0.beta.3\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
@@ -54454,182 +56729,182 @@
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "IntegerLiteral",
-      "offset": 65576,
+      "offset": 65802,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "IntegerLiteral",
-      "offset": 66115,
+      "offset": 66341,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "IntegerLiteral",
-      "offset": 71336,
+      "offset": 71562,
       "length": 16,
       "value": "1"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "IntegerLiteral",
-      "offset": 71366,
+      "offset": 71592,
       "length": 13,
       "value": "2"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "IntegerLiteral",
-      "offset": 71393,
+      "offset": 71619,
       "length": 19,
       "value": "3"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "IntegerLiteral",
-      "offset": 71426,
+      "offset": 71652,
       "length": 8,
       "value": "4"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "IntegerLiteral",
-      "offset": 71448,
+      "offset": 71674,
       "length": 11,
       "value": "5"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "IntegerLiteral",
-      "offset": 71473,
+      "offset": 71699,
       "length": 17,
       "value": "6"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "IntegerLiteral",
-      "offset": 71504,
+      "offset": 71730,
       "length": 18,
       "value": "7"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "IntegerLiteral",
-      "offset": 71536,
+      "offset": 71762,
       "length": 11,
       "value": "8"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "IntegerLiteral",
-      "offset": 71561,
+      "offset": 71787,
       "length": 19,
       "value": "9"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "IntegerLiteral",
-      "offset": 71594,
+      "offset": 71820,
       "length": 17,
       "value": "10"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "IntegerLiteral",
-      "offset": 71625,
+      "offset": 71851,
       "length": 14,
       "value": "11"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "IntegerLiteral",
-      "offset": 71653,
+      "offset": 71879,
       "length": 18,
       "value": "12"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "IntegerLiteral",
-      "offset": 71685,
+      "offset": 71911,
       "length": 15,
       "value": "13"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "IntegerLiteral",
-      "offset": 71714,
+      "offset": 71940,
       "length": 16,
       "value": "14"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "IntegerLiteral",
-      "offset": 71744,
+      "offset": 71970,
       "length": 19,
       "value": "15"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "IntegerLiteral",
-      "offset": 71777,
+      "offset": 72003,
       "length": 27,
       "value": "16"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "IntegerLiteral",
-      "offset": 71818,
+      "offset": 72044,
       "length": 15,
       "value": "17"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "IntegerLiteral",
-      "offset": 71847,
+      "offset": 72073,
       "length": 17,
       "value": "18"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "IntegerLiteral",
-      "offset": 71878,
+      "offset": 72104,
       "length": 16,
       "value": "19"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "IntegerLiteral",
-      "offset": 71908,
+      "offset": 72134,
       "length": 19,
       "value": "20"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "IntegerLiteral",
-      "offset": 71941,
+      "offset": 72167,
       "length": 17,
       "value": "21"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "IntegerLiteral",
-      "offset": 71972,
+      "offset": 72198,
       "length": 15,
       "value": "22"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "IntegerLiteral",
-      "offset": 72794,
+      "offset": 73020,
       "length": 4,
       "value": "1"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "IntegerLiteral",
-      "offset": 72812,
+      "offset": 73038,
       "length": 6,
       "value": "2"
     },

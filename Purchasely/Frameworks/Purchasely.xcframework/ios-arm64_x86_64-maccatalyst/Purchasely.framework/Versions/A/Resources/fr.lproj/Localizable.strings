@@ -113,3 +113,10 @@
 "ply_in_app_purchase_not_allowed_error" = "Vous ne pouvez pas effectué d’achat pour ce produit.";
 "ply_in_app_offer_invalid_error" = "L’achat avec l’offre promotionnelle a échoué.";
 "ply_google_feature_not_supported" = "Cette fonctionnalité n\'est pas prise en charge pour cette version de Google Play";
+"ply_web_checkout_pending_payment_title" = "En attente de la confirmation du paiement";
+"ply_web_checkout_pending_payment_body" = "Finalisez le règlement dans votre navigateur web puis revenez dans l\'application une fois l\'opération terminée.";
+"ply_web_checkout_pending_payment_cancel_button" = "Annuler l\'achat";
+"ply_web_checkout_pending_payment_open_browser_button" = "Continuer l\'achat";
+"ply_web_checkout_failure_title" = "ID_121";
+"ply_web_checkout_failure_body" = "ID_122";
+"ply_web_checkout_failure_action" = "ID_123";
