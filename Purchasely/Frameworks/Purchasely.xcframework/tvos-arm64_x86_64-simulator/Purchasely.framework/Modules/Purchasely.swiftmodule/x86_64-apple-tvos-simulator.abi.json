@@ -55271,6 +55271,20 @@
       "value": "\"vendor_id\""
     },
     {
+      "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Services\/AppStore\/PLYProductRequestService.swift",
+      "kind": "BooleanLiteral",
+      "offset": 837,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Services\/AppStore\/PLYProductRequestService.swift",
+      "kind": "StringLiteral",
+      "offset": 894,
+      "length": 43,
+      "value": "\"com.purchasely.productrequestservice.sync\""
+    },
+    {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/specific\/uikit\/Controller\/PLYProductViewController.swift",
       "kind": "IntegerLiteral",
       "offset": 1266,
@@ -56731,7 +56745,7 @@
       "kind": "StringLiteral",
       "offset": 2725,
       "length": 7,
-      "value": "\"5.3.0\""
+      "value": "\"5.3.1\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
@@ -56960,7 +56974,7 @@
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Services\/Purchasely\/PurchaselyAPI.swift",
       "kind": "BooleanLiteral",
-      "offset": 10092,
+      "offset": 10895,
       "length": 5,
       "value": "false"
     },
