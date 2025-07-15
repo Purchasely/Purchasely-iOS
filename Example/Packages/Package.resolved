@@ -1,5 +1,4 @@
 {
-  "originHash" : "ed13123fe980d7557273d7e725878f14d68ca6ac1916a1f1780741772e21cb6d",
   "pins" : [
     {
       "identity" : "lottie-spm",
@@ -24,10 +23,10 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Purchasely/Purchasely-iOS",
       "state" : {
-        "revision" : "a369bd1e06c9b01cae92c1bb6a2a7ea4800a3c62",
-        "version" : "5.2.1"
+        "revision" : "4280dd1e1caaca0887c6ae28dce8143483179865",
+        "version" : "5.3.2"
       }
     }
   ],
-  "version" : 3
+  "version" : 2
 }

@@ -664,6 +664,7 @@ extension Purchasely.PLYPlan {
   @objc final public let abTestId: Swift.String?
   @objc final public let abTestVariantId: Swift.String?
   @objc final public let campaignId: Swift.String?
+  @objc final public let flowId: Swift.String?
   @objc final public let type: Purchasely.PLYPresentationType
   @objc final public let controller: Purchasely.PLYPresentationViewController?
   @objc final public let plans: [Purchasely.PLYPresentationPlan]
@@ -673,6 +674,9 @@ extension Purchasely.PLYPlan {
   @objc final public let displayMode: Purchasely.PLYDisplayMode
   #warning("Duplicate data: Could we get rid of the interal properties, them being contained inside the internalPresentation ? (huge refacto, huge regression risk)")
   @objc public func display(from sourceViewController: UIKit.UIViewController?)
+  @objc public var isFlow: Swift.Bool {
+    @objc get
+  }
   @objc deinit
 }
 @objc public enum PLYPresentationType : Swift.Int {

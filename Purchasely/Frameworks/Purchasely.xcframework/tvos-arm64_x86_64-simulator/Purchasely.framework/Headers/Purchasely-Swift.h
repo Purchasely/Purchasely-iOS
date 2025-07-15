@@ -694,6 +694,7 @@ SWIFT_CLASS("_TtC10Purchasely15PLYPresentation")
 @property (nonatomic, readonly, copy) NSString * _Nullable abTestId;
 @property (nonatomic, readonly, copy) NSString * _Nullable abTestVariantId;
 @property (nonatomic, readonly, copy) NSString * _Nullable campaignId;
+@property (nonatomic, readonly, copy) NSString * _Nullable flowId;
 @property (nonatomic, readonly) enum PLYPresentationType type;
 @property (nonatomic, readonly, strong) PLYPresentationViewController * _Nullable controller;
 @property (nonatomic, readonly, copy) NSArray<PLYPresentationPlan *> * _Nonnull plans;
@@ -702,6 +703,7 @@ SWIFT_CLASS("_TtC10Purchasely15PLYPresentation")
 @property (nonatomic, readonly) NSInteger height;
 @property (nonatomic, readonly) enum PLYDisplayMode displayMode;
 - (void)displayFrom:(UIViewController * _Nullable)sourceViewController;
+@property (nonatomic, readonly) BOOL isFlow;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -2401,6 +2403,7 @@ SWIFT_CLASS("_TtC10Purchasely15PLYPresentation")
 @property (nonatomic, readonly, copy) NSString * _Nullable abTestId;
 @property (nonatomic, readonly, copy) NSString * _Nullable abTestVariantId;
 @property (nonatomic, readonly, copy) NSString * _Nullable campaignId;
+@property (nonatomic, readonly, copy) NSString * _Nullable flowId;
 @property (nonatomic, readonly) enum PLYPresentationType type;
 @property (nonatomic, readonly, strong) PLYPresentationViewController * _Nullable controller;
 @property (nonatomic, readonly, copy) NSArray<PLYPresentationPlan *> * _Nonnull plans;
@@ -2409,6 +2412,7 @@ SWIFT_CLASS("_TtC10Purchasely15PLYPresentation")
 @property (nonatomic, readonly) NSInteger height;
 @property (nonatomic, readonly) enum PLYDisplayMode displayMode;
 - (void)displayFrom:(UIViewController * _Nullable)sourceViewController;
+@property (nonatomic, readonly) BOOL isFlow;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end

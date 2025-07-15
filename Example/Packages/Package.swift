@@ -13,7 +13,7 @@ let package = Package(
             targets: ["PurchaselyExampleApp"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/Purchasely/Purchasely-iOS", from: .init(5, 2, 1)),
+        .package(url: "https://github.com/Purchasely/Purchasely-iOS", from: .init(5, 3, 2)),
         .package(url: "https://github.com/airbnb/lottie-spm.git", from: .init(4, 5, 1)),
         .package(url: "https://github.com/AliSoftware/OHHTTPStubs.git", from: .init(9, 1, 0))
     ],
