@@ -702,7 +702,29 @@ SWIFT_CLASS("_TtC10Purchasely15PLYPresentation")
 @property (nonatomic, readonly, strong) UIColor * _Nullable backgroundColor;
 @property (nonatomic, readonly) NSInteger height;
 @property (nonatomic, readonly) enum PLYDisplayMode displayMode;
+/// Displays the presentation to the user.
+/// This method handles the presentation of the content (e.g., a paywall) on the screen.
+/// It’s a wrapper around the core presentation logic of the Purchasely SDK.
+/// note:
+/// If <code>sourceViewController</code> is <code>nil</code>, the SDK will automatically attempt to find the top-most view controller in your application’s hierarchy to present from. This is useful for calling the display method from a non-UI context.
+/// \param sourceViewController The <code>UIViewController</code> from which to present the new view. This is optional. If you provide a view controller, the presentation will originate from it.
+///
 - (void)displayFrom:(UIViewController * _Nullable)sourceViewController;
+/// Programmatically closes the currently displayed presentation.
+/// Call this method to dismiss the view controller that was shown via the <code>display()</code> method.
+/// It internally handles the correct dismissal logic based on the type of content being shown.
+/// note:
+/// This function differentiates between two presentation types:
+/// <ul>
+///   <li>
+///     A “Flow”: A sequence of multiple, connected screens managed by <code>FlowsManager</code>.
+///   </li>
+///   <li>
+///     A single controller: A standalone screen.
+///     It ensures the appropriate manager handles the dismissal.
+///   </li>
+/// </ul>
+- (void)close;
 @property (nonatomic, readonly) BOOL isFlow;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
@@ -2415,7 +2437,29 @@ SWIFT_CLASS("_TtC10Purchasely15PLYPresentation")
 @property (nonatomic, readonly, strong) UIColor * _Nullable backgroundColor;
 @property (nonatomic, readonly) NSInteger height;
 @property (nonatomic, readonly) enum PLYDisplayMode displayMode;
+/// Displays the presentation to the user.
+/// This method handles the presentation of the content (e.g., a paywall) on the screen.
+/// It’s a wrapper around the core presentation logic of the Purchasely SDK.
+/// note:
+/// If <code>sourceViewController</code> is <code>nil</code>, the SDK will automatically attempt to find the top-most view controller in your application’s hierarchy to present from. This is useful for calling the display method from a non-UI context.
+/// \param sourceViewController The <code>UIViewController</code> from which to present the new view. This is optional. If you provide a view controller, the presentation will originate from it.
+///
 - (void)displayFrom:(UIViewController * _Nullable)sourceViewController;
+/// Programmatically closes the currently displayed presentation.
+/// Call this method to dismiss the view controller that was shown via the <code>display()</code> method.
+/// It internally handles the correct dismissal logic based on the type of content being shown.
+/// note:
+/// This function differentiates between two presentation types:
+/// <ul>
+///   <li>
+///     A “Flow”: A sequence of multiple, connected screens managed by <code>FlowsManager</code>.
+///   </li>
+///   <li>
+///     A single controller: A standalone screen.
+///     It ensures the appropriate manager handles the dismissal.
+///   </li>
+/// </ul>
+- (void)close;
 @property (nonatomic, readonly) BOOL isFlow;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
