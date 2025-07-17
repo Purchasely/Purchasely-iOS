@@ -673,7 +673,8 @@ extension PLYPlan {
   @objc final public let height: Swift.Int
   @objc final public let displayMode: PLYDisplayMode
   #warning("Duplicate data: Could we get rid of the interal properties, them being contained inside the internalPresentation ? (huge refacto, huge regression risk)")
-  @objc public func display(from sourceViewController: UIKit.UIViewController?)
+  @objc public func display(from sourceViewController: UIKit.UIViewController? = nil)
+  @objc public func close()
   @objc public var isFlow: Swift.Bool {
     @objc get
   }
