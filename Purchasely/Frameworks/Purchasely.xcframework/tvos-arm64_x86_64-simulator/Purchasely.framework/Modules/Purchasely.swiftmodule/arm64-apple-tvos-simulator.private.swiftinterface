@@ -525,7 +525,7 @@ public enum PluralType {
 public func PLYLocalizedPluralString(_ key: Swift.String, count: Swift.Int, language: Swift.String?) -> Swift.String
 public func PLYLocalizedPluralString(_ key: Swift.String, pluralType: PluralType, language: Swift.String?) -> Swift.String
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class PLYLogger : ObjectiveC.NSObject {
-  @objc public enum LogLevel : Swift.Int {
+  @objc public enum PLYLogLevel : Swift.Int {
     case debug
     case info
     case warn
@@ -536,7 +536,7 @@ public func PLYLocalizedPluralString(_ key: Swift.String, pluralType: PluralType
       get
     }
   }
-  @objc public class func log(message: Swift.String, level: PLYLogger.LogLevel = .debug)
+  @objc public class func log(message: Swift.String, level: PLYLogger.PLYLogLevel = .debug)
   @objc deinit
 }
 @objc public protocol PLYLogging {
@@ -996,7 +996,7 @@ extension Purchasely {
   @objc public static var anonymousUserId: Swift.String {
     @objc get
   }
-  @objc dynamic public class func start(withAPIKey apiKey: Swift.String, appUserId: Swift.String? = nil, runningMode: PLYRunningMode = .full, paywallActionsInterceptor: PLYPaywallActionsInterceptor? = nil, storekitSettings: StorekitSettings, logLevel: PLYLogger.LogLevel = .error, initialized: PLYSuccessErrorClosure? = nil)
+  @objc dynamic public class func start(withAPIKey apiKey: Swift.String, appUserId: Swift.String? = nil, runningMode: PLYRunningMode = .full, paywallActionsInterceptor: PLYPaywallActionsInterceptor? = nil, storekitSettings: StorekitSettings, logLevel: PLYLogger.PLYLogLevel = .error, initialized: PLYSuccessErrorClosure? = nil)
   @objc dynamic public class func getSDKVersion() -> Swift.String?
   @objc dynamic public class func setUIHandler(_ uiHandler: (any PLYUIHandler)?)
   @objc dynamic public class func setUserAttributeDelegate(_ userAttributeDelegate: any PLYUserAttributeDelegate)
@@ -1009,7 +1009,7 @@ extension Purchasely {
   @objc dynamic public class func setLanguage(from locale: Foundation.Locale?)
   @objc dynamic public class func readyToOpenDeeplink(_ ready: Swift.Bool)
   @objc dynamic public class func setEnvironment(_ environment: PLYEnvironment)
-  @objc dynamic public class func setLogLevel(_ logLevel: PLYLogger.LogLevel)
+  @objc dynamic public class func setLogLevel(_ logLevel: PLYLogger.PLYLogLevel)
   @objc dynamic public class func setAppTechnology(_ technology: PLYAppTechnology)
   @objc dynamic public class func setSdkBridgeVersion(_ sdkBridgeVersion: Swift.String?)
   @objc dynamic public class func addLogger(_ logger: any PLYLogging)
@@ -1224,9 +1224,9 @@ extension PLYLabelHighlightsError : Swift.Equatable {}
 extension PLYLabelHighlightsError : Swift.Hashable {}
 extension PluralType : Swift.Equatable {}
 extension PluralType : Swift.Hashable {}
-extension PLYLogger.LogLevel : Swift.Equatable {}
-extension PLYLogger.LogLevel : Swift.Hashable {}
-extension PLYLogger.LogLevel : Swift.RawRepresentable {}
+extension PLYLogger.PLYLogLevel : Swift.Equatable {}
+extension PLYLogger.PLYLogLevel : Swift.Hashable {}
+extension PLYLogger.PLYLogLevel : Swift.RawRepresentable {}
 extension PLYPlanType : Swift.Equatable {}
 extension PLYPlanType : Swift.Hashable {}
 extension PLYPlanType : Swift.RawRepresentable {}

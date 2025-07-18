@@ -526,7 +526,7 @@ public enum PluralType {
 public func PLYLocalizedPluralString(_ key: Swift.String, count: Swift.Int, language: Swift.String?) -> Swift.String
 public func PLYLocalizedPluralString(_ key: Swift.String, pluralType: Purchasely.PluralType, language: Swift.String?) -> Swift.String
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class PLYLogger : ObjectiveC.NSObject {
-  @objc public enum LogLevel : Swift.Int {
+  @objc public enum PLYLogLevel : Swift.Int {
     case debug
     case info
     case warn
@@ -537,7 +537,7 @@ public func PLYLocalizedPluralString(_ key: Swift.String, pluralType: Purchasely
       get
     }
   }
-  @objc public class func log(message: Swift.String, level: Purchasely.PLYLogger.LogLevel = .debug)
+  @objc public class func log(message: Swift.String, level: Purchasely.PLYLogger.PLYLogLevel = .debug)
   @objc deinit
 }
 @objc public protocol PLYLogging {
@@ -1002,7 +1002,7 @@ extension Purchasely.Purchasely {
   @objc public static var anonymousUserId: Swift.String {
     @objc get
   }
-  @objc dynamic public class func start(withAPIKey apiKey: Swift.String, appUserId: Swift.String? = nil, runningMode: Purchasely.PLYRunningMode = .full, paywallActionsInterceptor: Purchasely.PLYPaywallActionsInterceptor? = nil, storekitSettings: Purchasely.StorekitSettings, logLevel: Purchasely.PLYLogger.LogLevel = .error, initialized: Purchasely.PLYSuccessErrorClosure? = nil)
+  @objc dynamic public class func start(withAPIKey apiKey: Swift.String, appUserId: Swift.String? = nil, runningMode: Purchasely.PLYRunningMode = .full, paywallActionsInterceptor: Purchasely.PLYPaywallActionsInterceptor? = nil, storekitSettings: Purchasely.StorekitSettings, logLevel: Purchasely.PLYLogger.PLYLogLevel = .error, initialized: Purchasely.PLYSuccessErrorClosure? = nil)
   @objc dynamic public class func getSDKVersion() -> Swift.String?
   @objc dynamic public class func setUIHandler(_ uiHandler: (any Purchasely.PLYUIHandler)?)
   @objc dynamic public class func setUserAttributeDelegate(_ userAttributeDelegate: any Purchasely.PLYUserAttributeDelegate)
@@ -1015,7 +1015,7 @@ extension Purchasely.Purchasely {
   @objc dynamic public class func setLanguage(from locale: Foundation.Locale?)
   @objc dynamic public class func readyToOpenDeeplink(_ ready: Swift.Bool)
   @objc dynamic public class func setEnvironment(_ environment: Purchasely.PLYEnvironment)
-  @objc dynamic public class func setLogLevel(_ logLevel: Purchasely.PLYLogger.LogLevel)
+  @objc dynamic public class func setLogLevel(_ logLevel: Purchasely.PLYLogger.PLYLogLevel)
   @objc dynamic public class func setAppTechnology(_ technology: Purchasely.PLYAppTechnology)
   @objc dynamic public class func setSdkBridgeVersion(_ sdkBridgeVersion: Swift.String?)
   @objc dynamic public class func addLogger(_ logger: any Purchasely.PLYLogging)
@@ -1230,9 +1230,9 @@ extension Purchasely.PLYLabelHighlightsError : Swift.Equatable {}
 extension Purchasely.PLYLabelHighlightsError : Swift.Hashable {}
 extension Purchasely.PluralType : Swift.Equatable {}
 extension Purchasely.PluralType : Swift.Hashable {}
-extension Purchasely.PLYLogger.LogLevel : Swift.Equatable {}
-extension Purchasely.PLYLogger.LogLevel : Swift.Hashable {}
-extension Purchasely.PLYLogger.LogLevel : Swift.RawRepresentable {}
+extension Purchasely.PLYLogger.PLYLogLevel : Swift.Equatable {}
+extension Purchasely.PLYLogger.PLYLogLevel : Swift.Hashable {}
+extension Purchasely.PLYLogger.PLYLogLevel : Swift.RawRepresentable {}
 extension Purchasely.PLYPlanType : Swift.Equatable {}
 extension Purchasely.PLYPlanType : Swift.Hashable {}
 extension Purchasely.PLYPlanType : Swift.RawRepresentable {}

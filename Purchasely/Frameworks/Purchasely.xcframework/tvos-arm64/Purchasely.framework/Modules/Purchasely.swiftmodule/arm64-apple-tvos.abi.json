@@ -18924,8 +18924,8 @@
         "children": [
           {
             "kind": "TypeDecl",
-            "name": "LogLevel",
-            "printedName": "LogLevel",
+            "name": "PLYLogLevel",
+            "printedName": "PLYLogLevel",
             "children": [
               {
                 "kind": "Var",
@@ -18935,24 +18935,24 @@
                   {
                     "kind": "TypeFunc",
                     "name": "Function",
-                    "printedName": "(Purchasely.PLYLogger.LogLevel.Type) -> Purchasely.PLYLogger.LogLevel",
+                    "printedName": "(Purchasely.PLYLogger.PLYLogLevel.Type) -> Purchasely.PLYLogger.PLYLogLevel",
                     "children": [
                       {
                         "kind": "TypeNominal",
-                        "name": "LogLevel",
-                        "printedName": "Purchasely.PLYLogger.LogLevel",
-                        "usr": "s:10Purchasely9PLYLoggerC8LogLevelO"
+                        "name": "PLYLogLevel",
+                        "printedName": "Purchasely.PLYLogger.PLYLogLevel",
+                        "usr": "s:10Purchasely9PLYLoggerC11PLYLogLevelO"
                       },
                       {
                         "kind": "TypeNominal",
                         "name": "Metatype",
-                        "printedName": "Purchasely.PLYLogger.LogLevel.Type",
+                        "printedName": "Purchasely.PLYLogger.PLYLogLevel.Type",
                         "children": [
                           {
                             "kind": "TypeNominal",
-                            "name": "LogLevel",
-                            "printedName": "Purchasely.PLYLogger.LogLevel",
-                            "usr": "s:10Purchasely9PLYLoggerC8LogLevelO"
+                            "name": "PLYLogLevel",
+                            "printedName": "Purchasely.PLYLogger.PLYLogLevel",
+                            "usr": "s:10Purchasely9PLYLoggerC11PLYLogLevelO"
                           }
                         ]
                       }
@@ -18960,8 +18960,8 @@
                   }
                 ],
                 "declKind": "EnumElement",
-                "usr": "s:10Purchasely9PLYLoggerC8LogLevelO5debugyA2EmF",
-                "mangledName": "$s10Purchasely9PLYLoggerC8LogLevelO5debugyA2EmF",
+                "usr": "s:10Purchasely9PLYLoggerC11PLYLogLevelO5debugyA2EmF",
+                "mangledName": "$s10Purchasely9PLYLoggerC11PLYLogLevelO5debugyA2EmF",
                 "moduleName": "Purchasely",
                 "declAttributes": [
                   "ObjC"
@@ -18976,24 +18976,24 @@
                   {
                     "kind": "TypeFunc",
                     "name": "Function",
-                    "printedName": "(Purchasely.PLYLogger.LogLevel.Type) -> Purchasely.PLYLogger.LogLevel",
+                    "printedName": "(Purchasely.PLYLogger.PLYLogLevel.Type) -> Purchasely.PLYLogger.PLYLogLevel",
                     "children": [
                       {
                         "kind": "TypeNominal",
-                        "name": "LogLevel",
-                        "printedName": "Purchasely.PLYLogger.LogLevel",
-                        "usr": "s:10Purchasely9PLYLoggerC8LogLevelO"
+                        "name": "PLYLogLevel",
+                        "printedName": "Purchasely.PLYLogger.PLYLogLevel",
+                        "usr": "s:10Purchasely9PLYLoggerC11PLYLogLevelO"
                       },
                       {
                         "kind": "TypeNominal",
                         "name": "Metatype",
-                        "printedName": "Purchasely.PLYLogger.LogLevel.Type",
+                        "printedName": "Purchasely.PLYLogger.PLYLogLevel.Type",
                         "children": [
                           {
                             "kind": "TypeNominal",
-                            "name": "LogLevel",
-                            "printedName": "Purchasely.PLYLogger.LogLevel",
-                            "usr": "s:10Purchasely9PLYLoggerC8LogLevelO"
+                            "name": "PLYLogLevel",
+                            "printedName": "Purchasely.PLYLogger.PLYLogLevel",
+                            "usr": "s:10Purchasely9PLYLoggerC11PLYLogLevelO"
                           }
                         ]
                       }
@@ -19001,8 +19001,8 @@
                   }
                 ],
                 "declKind": "EnumElement",
-                "usr": "s:10Purchasely9PLYLoggerC8LogLevelO4infoyA2EmF",
-                "mangledName": "$s10Purchasely9PLYLoggerC8LogLevelO4infoyA2EmF",
+                "usr": "s:10Purchasely9PLYLoggerC11PLYLogLevelO4infoyA2EmF",
+                "mangledName": "$s10Purchasely9PLYLoggerC11PLYLogLevelO4infoyA2EmF",
                 "moduleName": "Purchasely",
                 "declAttributes": [
                   "ObjC"
@@ -19017,24 +19017,24 @@
                   {
                     "kind": "TypeFunc",
                     "name": "Function",
-                    "printedName": "(Purchasely.PLYLogger.LogLevel.Type) -> Purchasely.PLYLogger.LogLevel",
+                    "printedName": "(Purchasely.PLYLogger.PLYLogLevel.Type) -> Purchasely.PLYLogger.PLYLogLevel",
                     "children": [
                       {
                         "kind": "TypeNominal",
-                        "name": "LogLevel",
-                        "printedName": "Purchasely.PLYLogger.LogLevel",
-                        "usr": "s:10Purchasely9PLYLoggerC8LogLevelO"
+                        "name": "PLYLogLevel",
+                        "printedName": "Purchasely.PLYLogger.PLYLogLevel",
+                        "usr": "s:10Purchasely9PLYLoggerC11PLYLogLevelO"
                       },
                       {
                         "kind": "TypeNominal",
                         "name": "Metatype",
-                        "printedName": "Purchasely.PLYLogger.LogLevel.Type",
+                        "printedName": "Purchasely.PLYLogger.PLYLogLevel.Type",
                         "children": [
                           {
                             "kind": "TypeNominal",
-                            "name": "LogLevel",
-                            "printedName": "Purchasely.PLYLogger.LogLevel",
-                            "usr": "s:10Purchasely9PLYLoggerC8LogLevelO"
+                            "name": "PLYLogLevel",
+                            "printedName": "Purchasely.PLYLogger.PLYLogLevel",
+                            "usr": "s:10Purchasely9PLYLoggerC11PLYLogLevelO"
                           }
                         ]
                       }
@@ -19042,8 +19042,8 @@
                   }
                 ],
                 "declKind": "EnumElement",
-                "usr": "s:10Purchasely9PLYLoggerC8LogLevelO4warnyA2EmF",
-                "mangledName": "$s10Purchasely9PLYLoggerC8LogLevelO4warnyA2EmF",
+                "usr": "s:10Purchasely9PLYLoggerC11PLYLogLevelO4warnyA2EmF",
+                "mangledName": "$s10Purchasely9PLYLoggerC11PLYLogLevelO4warnyA2EmF",
                 "moduleName": "Purchasely",
                 "declAttributes": [
                   "ObjC"
@@ -19058,24 +19058,24 @@
                   {
                     "kind": "TypeFunc",
                     "name": "Function",
-                    "printedName": "(Purchasely.PLYLogger.LogLevel.Type) -> Purchasely.PLYLogger.LogLevel",
+                    "printedName": "(Purchasely.PLYLogger.PLYLogLevel.Type) -> Purchasely.PLYLogger.PLYLogLevel",
                     "children": [
                       {
                         "kind": "TypeNominal",
-                        "name": "LogLevel",
-                        "printedName": "Purchasely.PLYLogger.LogLevel",
-                        "usr": "s:10Purchasely9PLYLoggerC8LogLevelO"
+                        "name": "PLYLogLevel",
+                        "printedName": "Purchasely.PLYLogger.PLYLogLevel",
+                        "usr": "s:10Purchasely9PLYLoggerC11PLYLogLevelO"
                       },
                       {
                         "kind": "TypeNominal",
                         "name": "Metatype",
-                        "printedName": "Purchasely.PLYLogger.LogLevel.Type",
+                        "printedName": "Purchasely.PLYLogger.PLYLogLevel.Type",
                         "children": [
                           {
                             "kind": "TypeNominal",
-                            "name": "LogLevel",
-                            "printedName": "Purchasely.PLYLogger.LogLevel",
-                            "usr": "s:10Purchasely9PLYLoggerC8LogLevelO"
+                            "name": "PLYLogLevel",
+                            "printedName": "Purchasely.PLYLogger.PLYLogLevel",
+                            "usr": "s:10Purchasely9PLYLoggerC11PLYLogLevelO"
                           }
                         ]
                       }
@@ -19083,8 +19083,8 @@
                   }
                 ],
                 "declKind": "EnumElement",
-                "usr": "s:10Purchasely9PLYLoggerC8LogLevelO5erroryA2EmF",
-                "mangledName": "$s10Purchasely9PLYLoggerC8LogLevelO5erroryA2EmF",
+                "usr": "s:10Purchasely9PLYLoggerC11PLYLogLevelO5erroryA2EmF",
+                "mangledName": "$s10Purchasely9PLYLoggerC11PLYLogLevelO5erroryA2EmF",
                 "moduleName": "Purchasely",
                 "declAttributes": [
                   "ObjC"
@@ -19099,13 +19099,13 @@
                   {
                     "kind": "TypeNominal",
                     "name": "Optional",
-                    "printedName": "Purchasely.PLYLogger.LogLevel?",
+                    "printedName": "Purchasely.PLYLogger.PLYLogLevel?",
                     "children": [
                       {
                         "kind": "TypeNominal",
-                        "name": "LogLevel",
-                        "printedName": "Purchasely.PLYLogger.LogLevel",
-                        "usr": "s:10Purchasely9PLYLoggerC8LogLevelO"
+                        "name": "PLYLogLevel",
+                        "printedName": "Purchasely.PLYLogger.PLYLogLevel",
+                        "usr": "s:10Purchasely9PLYLoggerC11PLYLogLevelO"
                       }
                     ],
                     "usr": "s:Sq"
@@ -19118,8 +19118,8 @@
                   }
                 ],
                 "declKind": "Constructor",
-                "usr": "s:10Purchasely9PLYLoggerC8LogLevelO8rawValueAESgSi_tcfc",
-                "mangledName": "$s10Purchasely9PLYLoggerC8LogLevelO8rawValueAESgSi_tcfc",
+                "usr": "s:10Purchasely9PLYLoggerC11PLYLogLevelO8rawValueAESgSi_tcfc",
+                "mangledName": "$s10Purchasely9PLYLoggerC11PLYLogLevelO8rawValueAESgSi_tcfc",
                 "moduleName": "Purchasely",
                 "implicit": true,
                 "init_kind": "Designated"
@@ -19137,8 +19137,8 @@
                   }
                 ],
                 "declKind": "Var",
-                "usr": "s:10Purchasely9PLYLoggerC8LogLevelO8rawValueSivp",
-                "mangledName": "$s10Purchasely9PLYLoggerC8LogLevelO8rawValueSivp",
+                "usr": "s:10Purchasely9PLYLoggerC11PLYLogLevelO8rawValueSivp",
+                "mangledName": "$s10Purchasely9PLYLoggerC11PLYLogLevelO8rawValueSivp",
                 "moduleName": "Purchasely",
                 "implicit": true,
                 "accessors": [
@@ -19155,8 +19155,8 @@
                       }
                     ],
                     "declKind": "Accessor",
-                    "usr": "s:10Purchasely9PLYLoggerC8LogLevelO8rawValueSivg",
-                    "mangledName": "$s10Purchasely9PLYLoggerC8LogLevelO8rawValueSivg",
+                    "usr": "s:10Purchasely9PLYLoggerC11PLYLogLevelO8rawValueSivg",
+                    "mangledName": "$s10Purchasely9PLYLoggerC11PLYLogLevelO8rawValueSivg",
                     "moduleName": "Purchasely",
                     "implicit": true,
                     "accessorKind": "get"
@@ -19165,8 +19165,8 @@
               }
             ],
             "declKind": "Enum",
-            "usr": "s:10Purchasely9PLYLoggerC8LogLevelO",
-            "mangledName": "$s10Purchasely9PLYLoggerC8LogLevelO",
+            "usr": "s:10Purchasely9PLYLoggerC11PLYLogLevelO",
+            "mangledName": "$s10Purchasely9PLYLoggerC11PLYLogLevelO",
             "moduleName": "Purchasely",
             "declAttributes": [
               "AccessControl",
@@ -19244,15 +19244,15 @@
               },
               {
                 "kind": "TypeNominal",
-                "name": "LogLevel",
-                "printedName": "Purchasely.PLYLogger.LogLevel",
+                "name": "PLYLogLevel",
+                "printedName": "Purchasely.PLYLogger.PLYLogLevel",
                 "hasDefaultArg": true,
-                "usr": "s:10Purchasely9PLYLoggerC8LogLevelO"
+                "usr": "s:10Purchasely9PLYLoggerC11PLYLogLevelO"
               }
             ],
             "declKind": "Func",
             "usr": "c:@M@Purchasely@objc(cs)PLYLogger(cm)logWithMessage:level:",
-            "mangledName": "$s10Purchasely9PLYLoggerC3log7message5levelySS_AC8LogLevelOtFZ",
+            "mangledName": "$s10Purchasely9PLYLoggerC3log7message5levelySS_AC11PLYLogLevelOtFZ",
             "moduleName": "Purchasely",
             "static": true,
             "objc_name": "logWithMessage:level:",
@@ -37281,10 +37281,10 @@
               },
               {
                 "kind": "TypeNominal",
-                "name": "LogLevel",
-                "printedName": "Purchasely.PLYLogger.LogLevel",
+                "name": "PLYLogLevel",
+                "printedName": "Purchasely.PLYLogger.PLYLogLevel",
                 "hasDefaultArg": true,
-                "usr": "s:10Purchasely9PLYLoggerC8LogLevelO"
+                "usr": "s:10Purchasely9PLYLoggerC11PLYLogLevelO"
               },
               {
                 "kind": "TypeNominal",
@@ -37337,7 +37337,7 @@
             ],
             "declKind": "Func",
             "usr": "c:@CM@Purchasely@objc(cs)Purchasely(cm)startWithAPIKey:appUserId:runningMode:paywallActionsInterceptor:storekitSettings:logLevel:initialized:",
-            "mangledName": "$s10PurchaselyAAC5start10withAPIKey9appUserId11runningMode25paywallActionsInterceptor16storekitSettings8logLevel11initializedySS_SSSgAA010PLYRunningI0OyAA21PLYPresentationActionO_AA0sT10ParametersCSgAA0S4InfoCSgySbctcSgAA08StorekitN0CAA9PLYLoggerC03LogP0OySb_s5Error_pSgtcSgtFZ",
+            "mangledName": "$s10PurchaselyAAC5start10withAPIKey9appUserId11runningMode25paywallActionsInterceptor16storekitSettings8logLevel11initializedySS_SSSgAA010PLYRunningI0OyAA21PLYPresentationActionO_AA0sT10ParametersCSgAA0S4InfoCSgySbctcSgAA08StorekitN0CAA9PLYLoggerC06PLYLogP0OySb_s5Error_pSgtcSgtFZ",
             "moduleName": "Purchasely",
             "static": true,
             "objc_name": "startWithAPIKey:appUserId:runningMode:paywallActionsInterceptor:storekitSettings:logLevel:initialized:",
@@ -37884,14 +37884,14 @@
               },
               {
                 "kind": "TypeNominal",
-                "name": "LogLevel",
-                "printedName": "Purchasely.PLYLogger.LogLevel",
-                "usr": "s:10Purchasely9PLYLoggerC8LogLevelO"
+                "name": "PLYLogLevel",
+                "printedName": "Purchasely.PLYLogger.PLYLogLevel",
+                "usr": "s:10Purchasely9PLYLoggerC11PLYLogLevelO"
               }
             ],
             "declKind": "Func",
             "usr": "c:@CM@Purchasely@objc(cs)Purchasely(cm)setLogLevel:",
-            "mangledName": "$s10PurchaselyAAC11setLogLevelyyAA9PLYLoggerC0cD0OFZ",
+            "mangledName": "$s10PurchaselyAAC11setLogLevelyyAA9PLYLoggerC06PLYLogD0OFZ",
             "moduleName": "Purchasely",
             "static": true,
             "declAttributes": [
@@ -54882,28 +54882,28 @@
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Utils\/PLYLogger.swift",
       "kind": "IntegerLiteral",
-      "offset": 212,
+      "offset": 215,
       "length": 4,
       "value": "1"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Utils\/PLYLogger.swift",
       "kind": "IntegerLiteral",
-      "offset": 224,
+      "offset": 227,
       "length": 4,
       "value": "2"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Utils\/PLYLogger.swift",
       "kind": "IntegerLiteral",
-      "offset": 236,
+      "offset": 239,
       "length": 5,
       "value": "3"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Utils\/PLYLogger.swift",
       "kind": "StringLiteral",
-      "offset": 963,
+      "offset": 969,
       "length": 14,
       "value": "\"loggingQueue\""
     },
@@ -55624,7 +55624,7 @@
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYRunningMode.swift",
       "kind": "StringLiteral",
-      "offset": 1761,
+      "offset": 1764,
       "length": 16,
       "value": "\"make purchases\""
     },
@@ -56884,203 +56884,203 @@
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "BooleanLiteral",
-      "offset": 5990,
+      "offset": 5993,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "BooleanLiteral",
-      "offset": 13825,
+      "offset": 13831,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "BooleanLiteral",
-      "offset": 14235,
+      "offset": 14241,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "IntegerLiteral",
-      "offset": 65802,
+      "offset": 65808,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "IntegerLiteral",
-      "offset": 66341,
+      "offset": 66347,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "IntegerLiteral",
-      "offset": 71632,
+      "offset": 71638,
       "length": 16,
       "value": "1"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "IntegerLiteral",
-      "offset": 71662,
+      "offset": 71668,
       "length": 13,
       "value": "2"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "IntegerLiteral",
-      "offset": 71689,
+      "offset": 71695,
       "length": 19,
       "value": "3"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "IntegerLiteral",
-      "offset": 71722,
+      "offset": 71728,
       "length": 8,
       "value": "4"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "IntegerLiteral",
-      "offset": 71744,
+      "offset": 71750,
       "length": 11,
       "value": "5"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "IntegerLiteral",
-      "offset": 71769,
+      "offset": 71775,
       "length": 17,
       "value": "6"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "IntegerLiteral",
-      "offset": 71800,
+      "offset": 71806,
       "length": 18,
       "value": "7"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "IntegerLiteral",
-      "offset": 71832,
+      "offset": 71838,
       "length": 11,
       "value": "8"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "IntegerLiteral",
-      "offset": 71857,
+      "offset": 71863,
       "length": 19,
       "value": "9"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "IntegerLiteral",
-      "offset": 71890,
+      "offset": 71896,
       "length": 17,
       "value": "10"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "IntegerLiteral",
-      "offset": 71921,
+      "offset": 71927,
       "length": 14,
       "value": "11"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "IntegerLiteral",
-      "offset": 71949,
+      "offset": 71955,
       "length": 18,
       "value": "12"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "IntegerLiteral",
-      "offset": 71981,
+      "offset": 71987,
       "length": 15,
       "value": "13"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "IntegerLiteral",
-      "offset": 72010,
+      "offset": 72016,
       "length": 16,
       "value": "14"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "IntegerLiteral",
-      "offset": 72040,
+      "offset": 72046,
       "length": 19,
       "value": "15"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "IntegerLiteral",
-      "offset": 72073,
+      "offset": 72079,
       "length": 27,
       "value": "16"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "IntegerLiteral",
-      "offset": 72114,
+      "offset": 72120,
       "length": 15,
       "value": "17"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "IntegerLiteral",
-      "offset": 72143,
+      "offset": 72149,
       "length": 17,
       "value": "18"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "IntegerLiteral",
-      "offset": 72174,
+      "offset": 72180,
       "length": 16,
       "value": "19"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "IntegerLiteral",
-      "offset": 72204,
+      "offset": 72210,
       "length": 19,
       "value": "20"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "IntegerLiteral",
-      "offset": 72237,
+      "offset": 72243,
       "length": 17,
       "value": "21"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "IntegerLiteral",
-      "offset": 72268,
+      "offset": 72274,
       "length": 15,
       "value": "22"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "IntegerLiteral",
-      "offset": 73090,
+      "offset": 73096,
       "length": 4,
       "value": "1"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "IntegerLiteral",
-      "offset": 73108,
+      "offset": 73114,
       "length": 6,
       "value": "2"
     },
