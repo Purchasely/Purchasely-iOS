@@ -732,14 +732,15 @@ SWIFT_CLASS("_TtC10Purchasely15PLYPresentation")
 
 typedef SWIFT_ENUM(NSInteger, PLYPresentationAction, open) {
   PLYPresentationActionClose = 0,
-  PLYPresentationActionLogin = 1,
-  PLYPresentationActionNavigate = 2,
-  PLYPresentationActionPurchase = 3,
-  PLYPresentationActionRestore = 4,
-  PLYPresentationActionOpenPresentation = 5,
-  PLYPresentationActionOpenPlacement = 6,
-  PLYPresentationActionPromoCode = 7,
-  PLYPresentationActionWebCheckout = 8,
+  PLYPresentationActionCloseAll = 1,
+  PLYPresentationActionLogin = 2,
+  PLYPresentationActionNavigate = 3,
+  PLYPresentationActionPurchase = 4,
+  PLYPresentationActionRestore = 5,
+  PLYPresentationActionOpenPresentation = 6,
+  PLYPresentationActionOpenPlacement = 7,
+  PLYPresentationActionPromoCode = 8,
+  PLYPresentationActionWebCheckout = 9,
 };
 
 @class NSURL;
@@ -752,6 +753,7 @@ SWIFT_CLASS("_TtC10Purchasely31PLYPresentationActionParameters")
 @property (nonatomic, strong) PLYPlan * _Nullable plan;
 @property (nonatomic, strong) PLYPromoOffer * _Nullable promoOffer;
 @property (nonatomic, copy) NSString * _Nullable presentation;
+@property (nonatomic, copy) NSString * _Nullable placement;
 @property (nonatomic, copy) NSString * _Nullable queryParameterKey;
 @property (nonatomic) enum PLYWebCheckoutProvider webCheckoutProvider;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
@@ -2467,14 +2469,15 @@ SWIFT_CLASS("_TtC10Purchasely15PLYPresentation")
 
 typedef SWIFT_ENUM(NSInteger, PLYPresentationAction, open) {
   PLYPresentationActionClose = 0,
-  PLYPresentationActionLogin = 1,
-  PLYPresentationActionNavigate = 2,
-  PLYPresentationActionPurchase = 3,
-  PLYPresentationActionRestore = 4,
-  PLYPresentationActionOpenPresentation = 5,
-  PLYPresentationActionOpenPlacement = 6,
-  PLYPresentationActionPromoCode = 7,
-  PLYPresentationActionWebCheckout = 8,
+  PLYPresentationActionCloseAll = 1,
+  PLYPresentationActionLogin = 2,
+  PLYPresentationActionNavigate = 3,
+  PLYPresentationActionPurchase = 4,
+  PLYPresentationActionRestore = 5,
+  PLYPresentationActionOpenPresentation = 6,
+  PLYPresentationActionOpenPlacement = 7,
+  PLYPresentationActionPromoCode = 8,
+  PLYPresentationActionWebCheckout = 9,
 };
 
 @class NSURL;
@@ -2487,6 +2490,7 @@ SWIFT_CLASS("_TtC10Purchasely31PLYPresentationActionParameters")
 @property (nonatomic, strong) PLYPlan * _Nullable plan;
 @property (nonatomic, strong) PLYPromoOffer * _Nullable promoOffer;
 @property (nonatomic, copy) NSString * _Nullable presentation;
+@property (nonatomic, copy) NSString * _Nullable placement;
 @property (nonatomic, copy) NSString * _Nullable queryParameterKey;
 @property (nonatomic) enum PLYWebCheckoutProvider webCheckoutProvider;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
