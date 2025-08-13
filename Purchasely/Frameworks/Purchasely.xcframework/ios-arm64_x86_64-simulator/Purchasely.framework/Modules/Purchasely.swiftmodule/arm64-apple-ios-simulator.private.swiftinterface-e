@@ -694,6 +694,7 @@ extension Purchasely.PLYPlan {
 }
 @objc public enum PLYPresentationAction : Swift.Int {
   case close
+  case closeAll
   case login
   case navigate
   case purchase
@@ -715,6 +716,7 @@ extension Purchasely.PLYPlan {
   @objc public var plan: Purchasely.PLYPlan?
   @objc public var promoOffer: Purchasely.PLYPromoOffer?
   @objc public var presentation: Swift.String?
+  @objc public var placement: Swift.String?
   @objc public var queryParameterKey: Swift.String?
   @objc public var webCheckoutProvider: Purchasely.PLYWebCheckoutProvider
   @objc override dynamic public init()
