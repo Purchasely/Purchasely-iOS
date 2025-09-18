@@ -365,19 +365,38 @@ typedef SWIFT_ENUM(NSInteger, PLYCustomPropertyDataType, open) {
   PLYCustomPropertyDataTypeBool = 4,
 };
 
+typedef SWIFT_ENUM(NSInteger, PLYDataProcessingLegalBasis, open) {
+  PLYDataProcessingLegalBasisOptional = 0,
+  PLYDataProcessingLegalBasisEssential = 1,
+};
+
+SWIFT_CLASS("_TtC10Purchasely24PLYDataProcessingPurpose")
+@interface PLYDataProcessingPurpose : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+/// If PLYColors is not already ObjC-visible (struct/enum), make an ObjC-bridgable class or use NSObject subclass.
+/// Assuming it’s already ObjC-compatible (class or @objc-compatible type).
+SWIFT_CLASS("_TtC10Purchasely14PLYDisplayMode")
+@interface PLYDisplayMode : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
 /// Enumerates the possible transition types for a presentation.
 /// This enum is compatible with Objective-C (as an Int-based enum)
 /// and conforms to Codable in Swift, using specific string values for encoding/decoding.
-typedef SWIFT_ENUM(NSInteger, PLYDisplayMode, open) {
+typedef SWIFT_ENUM(NSInteger, PLYDisplayModeType, open) {
 /// Full-screen transition.
-  PLYDisplayModeFullScreen = 0,
+  PLYDisplayModeTypeFullScreen = 0,
 /// “Push” transition to a full screen.
-  PLYDisplayModeModal = 1,
+  PLYDisplayModeTypeModal = 1,
 /// “Drawer” type transition.
-  PLYDisplayModeDrawer = 2,
+  PLYDisplayModeTypeDrawer = 2,
 /// “Pop-in” type transition.
-  PLYDisplayModePopin = 3,
-  PLYDisplayModePush = 4,
+  PLYDisplayModeTypePopin = 3,
+  PLYDisplayModeTypePush = 4,
 };
 
 typedef SWIFT_ENUM(NSInteger, PLYEnvironment, open) {
@@ -457,81 +476,82 @@ typedef SWIFT_ENUM(NSInteger, PLYEventProperty, open) {
   PLYEventPropertyPurchasablePlans = 12,
   PLYEventPropertyDeeplinkIdentifier = 13,
   PLYEventPropertySourceIdentifier = 14,
-  PLYEventPropertySelectedPlan = 15,
-  PLYEventPropertyPlan = 16,
-  PLYEventPropertyPreviousSelectedPlan = 17,
-  PLYEventPropertyLinkIdentifier = 18,
-  PLYEventPropertyCarousels = 19,
-  PLYEventPropertyDevice = 20,
-  PLYEventPropertyOsVersion = 21,
-  PLYEventPropertyType = 22,
-  PLYEventPropertyErrorMessage = 23,
-  PLYEventPropertyLanguage = 24,
-  PLYEventPropertyPlanType = 25,
-  PLYEventPropertyPurchaselyPlanId = 26,
-  PLYEventPropertyStore = 27,
-  PLYEventPropertyStoreCountry = 28,
-  PLYEventPropertyStoreProductId = 29,
-  PLYEventPropertyPriceInCustomerCurrency = 30,
-  PLYEventPropertyCustomerCurrency = 31,
-  PLYEventPropertyPeriod = 32,
-  PLYEventPropertyDuration = 33,
-  PLYEventPropertyIntroPriceInCustomerCurrency = 34,
-  PLYEventPropertyIntroPeriod = 35,
-  PLYEventPropertyIntroDuration = 36,
-  PLYEventPropertyFreePeriod = 37,
-  PLYEventPropertyFreeDuration = 38,
-  PLYEventPropertyHasFreeTrial = 39,
-  PLYEventPropertyPromotionalOfferPriceInCustomerCurrency = 40,
-  PLYEventPropertyPromotionalOfferPeriod = 41,
-  PLYEventPropertyPromotionalOfferDuration = 42,
-  PLYEventPropertyDiscountReferent = 43,
-  PLYEventPropertyDiscountPercentageComparisonToReferent = 44,
-  PLYEventPropertyDiscountPriceComparisonToReferent = 45,
-  PLYEventPropertyIsDefault = 46,
-  PLYEventPropertySelectedSlide = 47,
-  PLYEventPropertyNumberOfSlides = 48,
-  PLYEventPropertyIsCarouselAutoPlaying = 49,
-  PLYEventPropertyDefaultSlide = 50,
-  PLYEventPropertyPreviousSlide = 51,
-  PLYEventPropertySelectedProduct = 52,
-  PLYEventPropertyPlanChangeType = 53,
-  PLYEventPropertyCancellationReasonId = 54,
-  PLYEventPropertyCancellationReason = 55,
-  PLYEventPropertyRunningSubscriptions = 56,
-  PLYEventPropertyProduct = 57,
-  PLYEventPropertySelectedPresentation = 58,
-  PLYEventPropertyPreviousSelectedPresentation = 59,
-  PLYEventPropertyPlacementId = 60,
-  PLYEventPropertyAudienceId = 61,
-  PLYEventPropertyAbTestId = 62,
-  PLYEventPropertyAbTestVariantId = 63,
-  PLYEventPropertyContentId = 64,
-  PLYEventPropertySessionDuration = 65,
-  PLYEventPropertySessionCount = 66,
-  PLYEventPropertyScreenDuration = 67,
-  PLYEventPropertyScreenDisplayedAt = 68,
-  PLYEventPropertyScreenDisplayedAtMs = 69,
-  PLYEventPropertyAppInstalledAt = 70,
-  PLYEventPropertyAppInstalledAtMs = 71,
-  PLYEventPropertyPaywallrequestDurationInMs = 72,
-  PLYEventPropertyStoreKitVersion = 73,
-  PLYEventPropertyPresentationType = 74,
-  PLYEventPropertyPromoOffer = 75,
-  PLYEventPropertyOrientation = 76,
-  PLYEventPropertySessionId = 77,
-  PLYEventPropertySelectedOptionId = 78,
-  PLYEventPropertySelectedOptions = 79,
-  PLYEventPropertyDisplayedOptions = 80,
-  PLYEventPropertyCampaignId = 81,
-  PLYEventPropertyFlowId = 82,
-  PLYEventPropertyFlowStepId = 83,
-  PLYEventPropertyFlowVersion = 84,
-  PLYEventPropertyFromActionId = 85,
-  PLYEventPropertyFromStepId = 86,
-  PLYEventPropertyDisplayMode = 87,
-  PLYEventPropertyFlowSessionId = 88,
-  PLYEventPropertyWebCheckoutProvider = 89,
+  PLYEventPropertyPlan = 15,
+  PLYEventPropertyPreviousSelectedPlan = 16,
+  PLYEventPropertyLinkIdentifier = 17,
+  PLYEventPropertyCarousels = 18,
+  PLYEventPropertyDevice = 19,
+  PLYEventPropertyOsVersion = 20,
+  PLYEventPropertyType = 21,
+  PLYEventPropertyErrorMessage = 22,
+  PLYEventPropertyLanguage = 23,
+  PLYEventPropertyPlanType = 24,
+  PLYEventPropertyPurchaselyPlanId = 25,
+  PLYEventPropertyStore = 26,
+  PLYEventPropertyStoreCountry = 27,
+  PLYEventPropertyStoreProductId = 28,
+  PLYEventPropertyPriceInCustomerCurrency = 29,
+  PLYEventPropertyCustomerCurrency = 30,
+  PLYEventPropertyPeriod = 31,
+  PLYEventPropertyDuration = 32,
+  PLYEventPropertyIntroPriceInCustomerCurrency = 33,
+  PLYEventPropertyIntroPeriod = 34,
+  PLYEventPropertyIntroDuration = 35,
+  PLYEventPropertyFreePeriod = 36,
+  PLYEventPropertyFreeDuration = 37,
+  PLYEventPropertyHasFreeTrial = 38,
+  PLYEventPropertyPromotionalOfferPriceInCustomerCurrency = 39,
+  PLYEventPropertyPromotionalOfferPeriod = 40,
+  PLYEventPropertyPromotionalOfferDuration = 41,
+  PLYEventPropertyDiscountReferent = 42,
+  PLYEventPropertyDiscountPercentageComparisonToReferent = 43,
+  PLYEventPropertyDiscountPriceComparisonToReferent = 44,
+  PLYEventPropertyIsDefault = 45,
+  PLYEventPropertySelectedSlide = 46,
+  PLYEventPropertyNumberOfSlides = 47,
+  PLYEventPropertyIsCarouselAutoPlaying = 48,
+  PLYEventPropertyDefaultSlide = 49,
+  PLYEventPropertyPreviousSlide = 50,
+  PLYEventPropertySelectedProduct = 51,
+  PLYEventPropertyPlanChangeType = 52,
+  PLYEventPropertyCancellationReasonId = 53,
+  PLYEventPropertyCancellationReason = 54,
+  PLYEventPropertyRunningSubscriptions = 55,
+  PLYEventPropertyProduct = 56,
+  PLYEventPropertySelectedPresentation = 57,
+  PLYEventPropertyPreviousSelectedPresentation = 58,
+  PLYEventPropertyPlacementId = 59,
+  PLYEventPropertyAudienceId = 60,
+  PLYEventPropertyAbTestId = 61,
+  PLYEventPropertyAbTestVariantId = 62,
+  PLYEventPropertyContentId = 63,
+  PLYEventPropertySessionDuration = 64,
+  PLYEventPropertySessionCount = 65,
+  PLYEventPropertyScreenDuration = 66,
+  PLYEventPropertyScreenDisplayedAt = 67,
+  PLYEventPropertyScreenDisplayedAtMs = 68,
+  PLYEventPropertyAppInstalledAt = 69,
+  PLYEventPropertyAppInstalledAtMs = 70,
+  PLYEventPropertyPaywallrequestDurationInMs = 71,
+  PLYEventPropertyStoreKitVersion = 72,
+  PLYEventPropertyPresentationType = 73,
+  PLYEventPropertyPromoOffer = 74,
+  PLYEventPropertyOrientation = 75,
+  PLYEventPropertySessionId = 76,
+  PLYEventPropertySelectedOptionId = 77,
+  PLYEventPropertySelectedOptions = 78,
+  PLYEventPropertyDisplayedOptions = 79,
+  PLYEventPropertyCampaignId = 80,
+  PLYEventPropertyFlowId = 81,
+  PLYEventPropertyFlowStepId = 82,
+  PLYEventPropertyFlowVersion = 83,
+  PLYEventPropertyFromActionId = 84,
+  PLYEventPropertyFromStepId = 85,
+  PLYEventPropertyDisplayMode = 86,
+  PLYEventPropertyFlowSessionId = 87,
+  PLYEventPropertyStripeCheckoutSessionId = 88,
+  PLYEventPropertyStripePurchaseId = 89,
+  PLYEventPropertyWebCheckoutProvider = 90,
 };
 
 typedef SWIFT_ENUM(NSInteger, PLYEventType, open) {
@@ -547,19 +567,19 @@ typedef SWIFT_ENUM(NSInteger, PLYEventType, open) {
   PLYEventTypePhoneSettings = 9,
 };
 
-enum LogLevel : NSInteger;
+enum PLYLogLevel : NSInteger;
 SWIFT_CLASS("_TtC10Purchasely9PLYLogger")
 @interface PLYLogger : NSObject
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-+ (void)logWithMessage:(NSString * _Nonnull)message level:(enum LogLevel)level;
++ (void)logWithMessage:(NSString * _Nonnull)message level:(enum PLYLogLevel)level;
 @end
 
-typedef SWIFT_ENUM(NSInteger, LogLevel, open) {
-  LogLevelDebug = 0,
-  LogLevelInfo = 1,
-  LogLevelWarn = 2,
-  LogLevelError = 3,
+typedef SWIFT_ENUM(NSInteger, PLYLogLevel, open) {
+  PLYLogLevelDebug = 0,
+  PLYLogLevelInfo = 1,
+  PLYLogLevelWarn = 2,
+  PLYLogLevelError = 3,
 };
 
 @class PLYMessage;
@@ -701,7 +721,7 @@ SWIFT_CLASS("_TtC10Purchasely15PLYPresentation")
 @property (nonatomic, readonly, strong) PLYPresentationMetadata * _Nullable metadata;
 @property (nonatomic, readonly, strong) UIColor * _Nullable backgroundColor;
 @property (nonatomic, readonly) NSInteger height;
-@property (nonatomic, readonly) enum PLYDisplayMode displayMode;
+@property (nonatomic, readonly, strong) PLYDisplayMode * _Nonnull displayMode;
 /// Displays the presentation to the user.
 /// This method handles the presentation of the content (e.g., a paywall) on the screen.
 /// It’s a wrapper around the core presentation logic of the Purchasely SDK.
@@ -931,6 +951,7 @@ SWIFT_PROTOCOL("_TtP10Purchasely24PLYUserAttributeDelegate_")
 @protocol PLYUserAttributeDelegate
 @optional
 - (void)onUserAttributeSetWithKey:(NSString * _Nonnull)key type:(enum PLYUserAttributeType)type value:(id _Nullable)value source:(enum PLYUserAttributeSource)source;
+- (void)onUserAttributeSetWithKey:(NSString * _Nonnull)key type:(enum PLYUserAttributeType)type value:(id _Nullable)value source:(enum PLYUserAttributeSource)source processingLegalBasis:(enum PLYDataProcessingLegalBasis)processingLegalBasis;
 - (void)onUserAttributeRemovedWithKey:(NSString * _Nonnull)key source:(enum PLYUserAttributeSource)source;
 @end
 
@@ -984,7 +1005,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 + (NSString * _Nonnull)anonymousUserId SWIFT_WARN_UNUSED_RESULT;
 /// Sets the SDK to point to a client
 /// This must be called in <code>didFinishLaunchingWithOptions</code> to handle the receipts sent on startup
-+ (void)startWithAPIKey:(NSString * _Nonnull)apiKey appUserId:(NSString * _Nullable)appUserId runningMode:(enum PLYRunningMode)runningMode paywallActionsInterceptor:(void (^ _Nullable)(enum PLYPresentationAction, PLYPresentationActionParameters * _Nullable, PLYPresentationInfo * _Nullable, void (^ _Nonnull)(BOOL)))paywallActionsInterceptor storekitSettings:(StorekitSettings * _Nonnull)storekitSettings logLevel:(enum LogLevel)logLevel initialized:(void (^ _Nullable)(BOOL, NSError * _Nullable))initialized;
++ (void)startWithAPIKey:(NSString * _Nonnull)apiKey appUserId:(NSString * _Nullable)appUserId runningMode:(enum PLYRunningMode)runningMode paywallActionsInterceptor:(void (^ _Nullable)(enum PLYPresentationAction, PLYPresentationActionParameters * _Nullable, PLYPresentationInfo * _Nullable, void (^ _Nonnull)(BOOL)))paywallActionsInterceptor storekitSettings:(StorekitSettings * _Nonnull)storekitSettings logLevel:(enum PLYLogLevel)logLevel initialized:(void (^ _Nullable)(BOOL, NSError * _Nullable))initialized;
 + (NSString * _Nullable)getSDKVersion SWIFT_WARN_UNUSED_RESULT;
 + (void)setUIHandler:(id <PLYUIHandler> _Nullable)uiHandler;
 + (void)setUserAttributeDelegate:(id <PLYUserAttributeDelegate> _Nonnull)userAttributeDelegate;
@@ -1038,7 +1059,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 + (void)setLanguageFrom:(NSLocale * _Nullable)locale;
 + (void)readyToOpenDeeplink:(BOOL)ready;
 + (void)setEnvironment:(enum PLYEnvironment)environment;
-+ (void)setLogLevel:(enum LogLevel)logLevel;
++ (void)setLogLevel:(enum PLYLogLevel)logLevel;
 + (void)setAppTechnology:(enum PLYAppTechnology)technology;
 + (void)setSdkBridgeVersion:(NSString * _Nullable)sdkBridgeVersion;
 + (void)addLogger:(id <PLYLogging> _Nonnull)logger;
@@ -1498,35 +1519,45 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSDictionary<N
 ///
 /// \param key The key under which the attribute is stored.
 ///
-+ (void)setUserAttributeWithStringValue:(NSString * _Nonnull)value forKey:(NSString * _Nonnull)key;
+/// \param processingLegalBasis The legal basis for processing this user attribute. Defaults to <code>.consent</code>.
+///
++ (void)setUserAttributeWithStringValue:(NSString * _Nonnull)value forKey:(NSString * _Nonnull)key processingLegalBasis:(enum PLYDataProcessingLegalBasis)processingLegalBasis;
 /// Sets an integer-type user attribute.
 /// Example: <code>setUserAttribute(withIntValue: 28, forKey: "age")</code>
 /// \param value The integer value to store.
 ///
 /// \param key The key under which to save the attribute.
 ///
-+ (void)setUserAttributeWithIntValue:(NSInteger)value forKey:(NSString * _Nonnull)key;
+/// \param processingLegalBasis The legal basis for processing this user attribute. Defaults to <code>.consent</code>.
+///
++ (void)setUserAttributeWithIntValue:(NSInteger)value forKey:(NSString * _Nonnull)key processingLegalBasis:(enum PLYDataProcessingLegalBasis)processingLegalBasis;
 /// Sets a double-type user attribute.
 /// Example: <code>setUserAttribute(withDoubleValue: 99.99, forKey: "total_spent")</code>
 /// \param value The double value to store.
 ///
 /// \param key The key under which to save the attribute.
 ///
-+ (void)setUserAttributeWithDoubleValue:(double)value forKey:(NSString * _Nonnull)key;
+/// \param processingLegalBasis The legal basis for processing this user attribute. Defaults to <code>.consent</code>.
+///
++ (void)setUserAttributeWithDoubleValue:(double)value forKey:(NSString * _Nonnull)key processingLegalBasis:(enum PLYDataProcessingLegalBasis)processingLegalBasis;
 /// Sets a date-type user attribute.
 /// Example: <code>setUserAttribute(withDateValue: Date(), forKey: "signup_date")</code>
 /// \param value The <code>Date</code> to store.
 ///
 /// \param key The key under which to save the attribute.
 ///
-+ (void)setUserAttributeWithDateValue:(NSDate * _Nonnull)value forKey:(NSString * _Nonnull)key;
+/// \param processingLegalBasis The legal basis for processing this user attribute. Defaults to <code>.consent</code>.
+///
++ (void)setUserAttributeWithDateValue:(NSDate * _Nonnull)value forKey:(NSString * _Nonnull)key processingLegalBasis:(enum PLYDataProcessingLegalBasis)processingLegalBasis;
 /// Sets a boolean-type user attribute.
 /// Example: <code>setUserAttribute(withBoolValue: true, forKey: "is_premium")</code>
 /// \param value The boolean value to store.
 ///
 /// \param key The key under which to save the attribute.
 ///
-+ (void)setUserAttributeWithBoolValue:(BOOL)value forKey:(NSString * _Nonnull)key;
+/// \param processingLegalBasis The legal basis for processing this user attribute. Defaults to <code>.consent</code>.
+///
++ (void)setUserAttributeWithBoolValue:(BOOL)value forKey:(NSString * _Nonnull)key processingLegalBasis:(enum PLYDataProcessingLegalBasis)processingLegalBasis;
 /// Sets a user attribute with an array of boolean values for the given key.
 /// <ul>
 ///   <li>
@@ -1538,8 +1569,11 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSDictionary<N
 ///   <li>
 ///     key: The key associated with the user attribute. This key will be used to identify and retrieve the attribute.
 ///   </li>
+///   <li>
+///     processingLegalBasis: The legal basis for processing this user attribute. Defaults to <code>.consent</code>.
+///   </li>
 /// </ul>
-+ (void)setUserAttributeWithBoolArray:(NSArray<NSNumber *> * _Nonnull)value forKey:(NSString * _Nonnull)key;
++ (void)setUserAttributeWithBoolArray:(NSArray<NSNumber *> * _Nonnull)value forKey:(NSString * _Nonnull)key processingLegalBasis:(enum PLYDataProcessingLegalBasis)processingLegalBasis;
 /// Sets a user attribute with an array of integer values for the given key.
 /// <ul>
 ///   <li>
@@ -1551,8 +1585,11 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSDictionary<N
 ///   <li>
 ///     key: The key associated with the user attribute. This key will be used to identify and retrieve the attribute.
 ///   </li>
+///   <li>
+///     processingLegalBasis: The legal basis for processing this user attribute. Defaults to <code>.consent</code>.
+///   </li>
 /// </ul>
-+ (void)setUserAttributeWithIntArray:(NSArray<NSNumber *> * _Nonnull)value forKey:(NSString * _Nonnull)key;
++ (void)setUserAttributeWithIntArray:(NSArray<NSNumber *> * _Nonnull)value forKey:(NSString * _Nonnull)key processingLegalBasis:(enum PLYDataProcessingLegalBasis)processingLegalBasis;
 /// Sets a user attribute with an array of string values for the given key.
 /// <ul>
 ///   <li>
@@ -1564,8 +1601,11 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSDictionary<N
 ///   <li>
 ///     key: The key associated with the user attribute. This key will be used to identify and retrieve the attribute.
 ///   </li>
+///   <li>
+///     processingLegalBasis: The legal basis for processing this user attribute. Defaults to <code>.consent</code>.
+///   </li>
 /// </ul>
-+ (void)setUserAttributeWithStringArray:(NSArray<NSString *> * _Nonnull)value forKey:(NSString * _Nonnull)key;
++ (void)setUserAttributeWithStringArray:(NSArray<NSString *> * _Nonnull)value forKey:(NSString * _Nonnull)key processingLegalBasis:(enum PLYDataProcessingLegalBasis)processingLegalBasis;
 /// Sets a user attribute with an array of double values for the given key.
 /// <ul>
 ///   <li>
@@ -1577,8 +1617,11 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSDictionary<N
 ///   <li>
 ///     key: The key associated with the user attribute. This key will be used to identify and retrieve the attribute.
 ///   </li>
+///   <li>
+///     processingLegalBasis: The legal basis for processing this user attribute. Defaults to <code>.consent</code>.
+///   </li>
 /// </ul>
-+ (void)setUserAttributeWithDoubleArray:(NSArray<NSNumber *> * _Nonnull)value forKey:(NSString * _Nonnull)key;
++ (void)setUserAttributeWithDoubleArray:(NSArray<NSNumber *> * _Nonnull)value forKey:(NSString * _Nonnull)key processingLegalBasis:(enum PLYDataProcessingLegalBasis)processingLegalBasis;
 /// Increments a numerical user attribute by a specified value. If the attribute does not exist, it will be created with the initial increment value.
 /// <ul>
 ///   <li>
@@ -1590,8 +1633,11 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSDictionary<N
 ///   <li>
 ///     value: The value to increment the attribute by. Defaults to 1.
 ///   </li>
+///   <li>
+///     processingLegalBasis: The legal basis for processing this user attribute. Defaults to <code>.consent</code>.
+///   </li>
 /// </ul>
-+ (void)incrementUserAttributeWithKey:(NSString * _Nonnull)key value:(NSInteger)value;
++ (void)incrementUserAttributeWithKey:(NSString * _Nonnull)key value:(NSInteger)value processingLegalBasis:(enum PLYDataProcessingLegalBasis)processingLegalBasis;
 /// Decrements a numerical user attribute by a specified value. If the attribute does not exist, it will be created with the initial negative decrement value.
 /// <ul>
 ///   <li>
@@ -1603,8 +1649,11 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSDictionary<N
 ///   <li>
 ///     value: The value to decrement the attribute by. Defaults to 1.
 ///   </li>
+///   <li>
+///     processingLegalBasis: The legal basis for processing this user attribute. Defaults to <code>.consent</code>.
+///   </li>
 /// </ul>
-+ (void)decrementUserAttributeWithKey:(NSString * _Nonnull)key value:(NSInteger)value;
++ (void)decrementUserAttributeWithKey:(NSString * _Nonnull)key value:(NSInteger)value processingLegalBasis:(enum PLYDataProcessingLegalBasis)processingLegalBasis;
 /// Sets multiple user attributes at once using a dictionary.
 /// <ul>
 ///   <li>
@@ -1613,9 +1662,20 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSDictionary<N
 ///   <li>
 ///     attributes: A dictionary where the keys are the attribute names (String) and the values are the corresponding attribute values (Any). Supported value types are Bool, Int, Double, String, and arrays of these types.
 ///   </li>
+///   <li>
+///     processingLegalBasis: The legal basis for processing these user attributes. Defaults to <code>.consent</code>.
+///   </li>
 /// </ul>
-+ (void)setUserAttributes:(NSDictionary<NSString *, id> * _Nonnull)attributes;
++ (void)setUserAttributes:(NSDictionary<NSString *, id> * _Nonnull)attributes processingLegalBasis:(enum PLYDataProcessingLegalBasis)processingLegalBasis;
 /// Clears all user-defined attributes. This will remove all custom attributes that have been set.
+/// <ul>
+///   <li>
+///     Parameters:
+///   </li>
+///   <li>
+///     processingLegalBasis: The legal basis for processing the clearing of user attributes. Defaults to <code>.consent</code>.
+///   </li>
+/// </ul>
 + (void)clearUserAttributes;
 /// Clears a specific user attribute based on its key.
 /// <ul>
@@ -1663,6 +1723,18 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSDictionary<N
 + (void)setThemeMode:(enum PLYThemeMode)mode;
 /// This method is used to trigger an event telling Purchasely that a content has been consumed through a subscription.
 + (void)userDidConsumeSubscriptionContent;
+/// Informs the SDK the user has withdrawn consent for data processing related to the listed features.
+/// Disables all related features, and clears all locally stored data related to the listed features.
+/// <h3>Usage Example:</h3>
+/// \code
+///  Purchasely.userWithdrewProcessingConsent(for: [
+///      .campaigns,
+///      .personalization
+///  ])
+///
+/// \endcode\param features list of features the user has withdrawn consent for
+///
++ (void)revokeDataProcessingConsentFor:(NSSet<PLYDataProcessingPurpose *> * _Nonnull)dataProcessingPurposes;
 @end
 
 /// WARNING: Add new attribute to the end and always check the list is in the same order than Android
@@ -2098,19 +2170,38 @@ typedef SWIFT_ENUM(NSInteger, PLYCustomPropertyDataType, open) {
   PLYCustomPropertyDataTypeBool = 4,
 };
 
+typedef SWIFT_ENUM(NSInteger, PLYDataProcessingLegalBasis, open) {
+  PLYDataProcessingLegalBasisOptional = 0,
+  PLYDataProcessingLegalBasisEssential = 1,
+};
+
+SWIFT_CLASS("_TtC10Purchasely24PLYDataProcessingPurpose")
+@interface PLYDataProcessingPurpose : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+/// If PLYColors is not already ObjC-visible (struct/enum), make an ObjC-bridgable class or use NSObject subclass.
+/// Assuming it’s already ObjC-compatible (class or @objc-compatible type).
+SWIFT_CLASS("_TtC10Purchasely14PLYDisplayMode")
+@interface PLYDisplayMode : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
 /// Enumerates the possible transition types for a presentation.
 /// This enum is compatible with Objective-C (as an Int-based enum)
 /// and conforms to Codable in Swift, using specific string values for encoding/decoding.
-typedef SWIFT_ENUM(NSInteger, PLYDisplayMode, open) {
+typedef SWIFT_ENUM(NSInteger, PLYDisplayModeType, open) {
 /// Full-screen transition.
-  PLYDisplayModeFullScreen = 0,
+  PLYDisplayModeTypeFullScreen = 0,
 /// “Push” transition to a full screen.
-  PLYDisplayModeModal = 1,
+  PLYDisplayModeTypeModal = 1,
 /// “Drawer” type transition.
-  PLYDisplayModeDrawer = 2,
+  PLYDisplayModeTypeDrawer = 2,
 /// “Pop-in” type transition.
-  PLYDisplayModePopin = 3,
-  PLYDisplayModePush = 4,
+  PLYDisplayModeTypePopin = 3,
+  PLYDisplayModeTypePush = 4,
 };
 
 typedef SWIFT_ENUM(NSInteger, PLYEnvironment, open) {
@@ -2190,81 +2281,82 @@ typedef SWIFT_ENUM(NSInteger, PLYEventProperty, open) {
   PLYEventPropertyPurchasablePlans = 12,
   PLYEventPropertyDeeplinkIdentifier = 13,
   PLYEventPropertySourceIdentifier = 14,
-  PLYEventPropertySelectedPlan = 15,
-  PLYEventPropertyPlan = 16,
-  PLYEventPropertyPreviousSelectedPlan = 17,
-  PLYEventPropertyLinkIdentifier = 18,
-  PLYEventPropertyCarousels = 19,
-  PLYEventPropertyDevice = 20,
-  PLYEventPropertyOsVersion = 21,
-  PLYEventPropertyType = 22,
-  PLYEventPropertyErrorMessage = 23,
-  PLYEventPropertyLanguage = 24,
-  PLYEventPropertyPlanType = 25,
-  PLYEventPropertyPurchaselyPlanId = 26,
-  PLYEventPropertyStore = 27,
-  PLYEventPropertyStoreCountry = 28,
-  PLYEventPropertyStoreProductId = 29,
-  PLYEventPropertyPriceInCustomerCurrency = 30,
-  PLYEventPropertyCustomerCurrency = 31,
-  PLYEventPropertyPeriod = 32,
-  PLYEventPropertyDuration = 33,
-  PLYEventPropertyIntroPriceInCustomerCurrency = 34,
-  PLYEventPropertyIntroPeriod = 35,
-  PLYEventPropertyIntroDuration = 36,
-  PLYEventPropertyFreePeriod = 37,
-  PLYEventPropertyFreeDuration = 38,
-  PLYEventPropertyHasFreeTrial = 39,
-  PLYEventPropertyPromotionalOfferPriceInCustomerCurrency = 40,
-  PLYEventPropertyPromotionalOfferPeriod = 41,
-  PLYEventPropertyPromotionalOfferDuration = 42,
-  PLYEventPropertyDiscountReferent = 43,
-  PLYEventPropertyDiscountPercentageComparisonToReferent = 44,
-  PLYEventPropertyDiscountPriceComparisonToReferent = 45,
-  PLYEventPropertyIsDefault = 46,
-  PLYEventPropertySelectedSlide = 47,
-  PLYEventPropertyNumberOfSlides = 48,
-  PLYEventPropertyIsCarouselAutoPlaying = 49,
-  PLYEventPropertyDefaultSlide = 50,
-  PLYEventPropertyPreviousSlide = 51,
-  PLYEventPropertySelectedProduct = 52,
-  PLYEventPropertyPlanChangeType = 53,
-  PLYEventPropertyCancellationReasonId = 54,
-  PLYEventPropertyCancellationReason = 55,
-  PLYEventPropertyRunningSubscriptions = 56,
-  PLYEventPropertyProduct = 57,
-  PLYEventPropertySelectedPresentation = 58,
-  PLYEventPropertyPreviousSelectedPresentation = 59,
-  PLYEventPropertyPlacementId = 60,
-  PLYEventPropertyAudienceId = 61,
-  PLYEventPropertyAbTestId = 62,
-  PLYEventPropertyAbTestVariantId = 63,
-  PLYEventPropertyContentId = 64,
-  PLYEventPropertySessionDuration = 65,
-  PLYEventPropertySessionCount = 66,
-  PLYEventPropertyScreenDuration = 67,
-  PLYEventPropertyScreenDisplayedAt = 68,
-  PLYEventPropertyScreenDisplayedAtMs = 69,
-  PLYEventPropertyAppInstalledAt = 70,
-  PLYEventPropertyAppInstalledAtMs = 71,
-  PLYEventPropertyPaywallrequestDurationInMs = 72,
-  PLYEventPropertyStoreKitVersion = 73,
-  PLYEventPropertyPresentationType = 74,
-  PLYEventPropertyPromoOffer = 75,
-  PLYEventPropertyOrientation = 76,
-  PLYEventPropertySessionId = 77,
-  PLYEventPropertySelectedOptionId = 78,
-  PLYEventPropertySelectedOptions = 79,
-  PLYEventPropertyDisplayedOptions = 80,
-  PLYEventPropertyCampaignId = 81,
-  PLYEventPropertyFlowId = 82,
-  PLYEventPropertyFlowStepId = 83,
-  PLYEventPropertyFlowVersion = 84,
-  PLYEventPropertyFromActionId = 85,
-  PLYEventPropertyFromStepId = 86,
-  PLYEventPropertyDisplayMode = 87,
-  PLYEventPropertyFlowSessionId = 88,
-  PLYEventPropertyWebCheckoutProvider = 89,
+  PLYEventPropertyPlan = 15,
+  PLYEventPropertyPreviousSelectedPlan = 16,
+  PLYEventPropertyLinkIdentifier = 17,
+  PLYEventPropertyCarousels = 18,
+  PLYEventPropertyDevice = 19,
+  PLYEventPropertyOsVersion = 20,
+  PLYEventPropertyType = 21,
+  PLYEventPropertyErrorMessage = 22,
+  PLYEventPropertyLanguage = 23,
+  PLYEventPropertyPlanType = 24,
+  PLYEventPropertyPurchaselyPlanId = 25,
+  PLYEventPropertyStore = 26,
+  PLYEventPropertyStoreCountry = 27,
+  PLYEventPropertyStoreProductId = 28,
+  PLYEventPropertyPriceInCustomerCurrency = 29,
+  PLYEventPropertyCustomerCurrency = 30,
+  PLYEventPropertyPeriod = 31,
+  PLYEventPropertyDuration = 32,
+  PLYEventPropertyIntroPriceInCustomerCurrency = 33,
+  PLYEventPropertyIntroPeriod = 34,
+  PLYEventPropertyIntroDuration = 35,
+  PLYEventPropertyFreePeriod = 36,
+  PLYEventPropertyFreeDuration = 37,
+  PLYEventPropertyHasFreeTrial = 38,
+  PLYEventPropertyPromotionalOfferPriceInCustomerCurrency = 39,
+  PLYEventPropertyPromotionalOfferPeriod = 40,
+  PLYEventPropertyPromotionalOfferDuration = 41,
+  PLYEventPropertyDiscountReferent = 42,
+  PLYEventPropertyDiscountPercentageComparisonToReferent = 43,
+  PLYEventPropertyDiscountPriceComparisonToReferent = 44,
+  PLYEventPropertyIsDefault = 45,
+  PLYEventPropertySelectedSlide = 46,
+  PLYEventPropertyNumberOfSlides = 47,
+  PLYEventPropertyIsCarouselAutoPlaying = 48,
+  PLYEventPropertyDefaultSlide = 49,
+  PLYEventPropertyPreviousSlide = 50,
+  PLYEventPropertySelectedProduct = 51,
+  PLYEventPropertyPlanChangeType = 52,
+  PLYEventPropertyCancellationReasonId = 53,
+  PLYEventPropertyCancellationReason = 54,
+  PLYEventPropertyRunningSubscriptions = 55,
+  PLYEventPropertyProduct = 56,
+  PLYEventPropertySelectedPresentation = 57,
+  PLYEventPropertyPreviousSelectedPresentation = 58,
+  PLYEventPropertyPlacementId = 59,
+  PLYEventPropertyAudienceId = 60,
+  PLYEventPropertyAbTestId = 61,
+  PLYEventPropertyAbTestVariantId = 62,
+  PLYEventPropertyContentId = 63,
+  PLYEventPropertySessionDuration = 64,
+  PLYEventPropertySessionCount = 65,
+  PLYEventPropertyScreenDuration = 66,
+  PLYEventPropertyScreenDisplayedAt = 67,
+  PLYEventPropertyScreenDisplayedAtMs = 68,
+  PLYEventPropertyAppInstalledAt = 69,
+  PLYEventPropertyAppInstalledAtMs = 70,
+  PLYEventPropertyPaywallrequestDurationInMs = 71,
+  PLYEventPropertyStoreKitVersion = 72,
+  PLYEventPropertyPresentationType = 73,
+  PLYEventPropertyPromoOffer = 74,
+  PLYEventPropertyOrientation = 75,
+  PLYEventPropertySessionId = 76,
+  PLYEventPropertySelectedOptionId = 77,
+  PLYEventPropertySelectedOptions = 78,
+  PLYEventPropertyDisplayedOptions = 79,
+  PLYEventPropertyCampaignId = 80,
+  PLYEventPropertyFlowId = 81,
+  PLYEventPropertyFlowStepId = 82,
+  PLYEventPropertyFlowVersion = 83,
+  PLYEventPropertyFromActionId = 84,
+  PLYEventPropertyFromStepId = 85,
+  PLYEventPropertyDisplayMode = 86,
+  PLYEventPropertyFlowSessionId = 87,
+  PLYEventPropertyStripeCheckoutSessionId = 88,
+  PLYEventPropertyStripePurchaseId = 89,
+  PLYEventPropertyWebCheckoutProvider = 90,
 };
 
 typedef SWIFT_ENUM(NSInteger, PLYEventType, open) {
@@ -2280,19 +2372,19 @@ typedef SWIFT_ENUM(NSInteger, PLYEventType, open) {
   PLYEventTypePhoneSettings = 9,
 };
 
-enum LogLevel : NSInteger;
+enum PLYLogLevel : NSInteger;
 SWIFT_CLASS("_TtC10Purchasely9PLYLogger")
 @interface PLYLogger : NSObject
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-+ (void)logWithMessage:(NSString * _Nonnull)message level:(enum LogLevel)level;
++ (void)logWithMessage:(NSString * _Nonnull)message level:(enum PLYLogLevel)level;
 @end
 
-typedef SWIFT_ENUM(NSInteger, LogLevel, open) {
-  LogLevelDebug = 0,
-  LogLevelInfo = 1,
-  LogLevelWarn = 2,
-  LogLevelError = 3,
+typedef SWIFT_ENUM(NSInteger, PLYLogLevel, open) {
+  PLYLogLevelDebug = 0,
+  PLYLogLevelInfo = 1,
+  PLYLogLevelWarn = 2,
+  PLYLogLevelError = 3,
 };
 
 @class PLYMessage;
@@ -2434,7 +2526,7 @@ SWIFT_CLASS("_TtC10Purchasely15PLYPresentation")
 @property (nonatomic, readonly, strong) PLYPresentationMetadata * _Nullable metadata;
 @property (nonatomic, readonly, strong) UIColor * _Nullable backgroundColor;
 @property (nonatomic, readonly) NSInteger height;
-@property (nonatomic, readonly) enum PLYDisplayMode displayMode;
+@property (nonatomic, readonly, strong) PLYDisplayMode * _Nonnull displayMode;
 /// Displays the presentation to the user.
 /// This method handles the presentation of the content (e.g., a paywall) on the screen.
 /// It’s a wrapper around the core presentation logic of the Purchasely SDK.
@@ -2664,6 +2756,7 @@ SWIFT_PROTOCOL("_TtP10Purchasely24PLYUserAttributeDelegate_")
 @protocol PLYUserAttributeDelegate
 @optional
 - (void)onUserAttributeSetWithKey:(NSString * _Nonnull)key type:(enum PLYUserAttributeType)type value:(id _Nullable)value source:(enum PLYUserAttributeSource)source;
+- (void)onUserAttributeSetWithKey:(NSString * _Nonnull)key type:(enum PLYUserAttributeType)type value:(id _Nullable)value source:(enum PLYUserAttributeSource)source processingLegalBasis:(enum PLYDataProcessingLegalBasis)processingLegalBasis;
 - (void)onUserAttributeRemovedWithKey:(NSString * _Nonnull)key source:(enum PLYUserAttributeSource)source;
 @end
 
@@ -2717,7 +2810,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 + (NSString * _Nonnull)anonymousUserId SWIFT_WARN_UNUSED_RESULT;
 /// Sets the SDK to point to a client
 /// This must be called in <code>didFinishLaunchingWithOptions</code> to handle the receipts sent on startup
-+ (void)startWithAPIKey:(NSString * _Nonnull)apiKey appUserId:(NSString * _Nullable)appUserId runningMode:(enum PLYRunningMode)runningMode paywallActionsInterceptor:(void (^ _Nullable)(enum PLYPresentationAction, PLYPresentationActionParameters * _Nullable, PLYPresentationInfo * _Nullable, void (^ _Nonnull)(BOOL)))paywallActionsInterceptor storekitSettings:(StorekitSettings * _Nonnull)storekitSettings logLevel:(enum LogLevel)logLevel initialized:(void (^ _Nullable)(BOOL, NSError * _Nullable))initialized;
++ (void)startWithAPIKey:(NSString * _Nonnull)apiKey appUserId:(NSString * _Nullable)appUserId runningMode:(enum PLYRunningMode)runningMode paywallActionsInterceptor:(void (^ _Nullable)(enum PLYPresentationAction, PLYPresentationActionParameters * _Nullable, PLYPresentationInfo * _Nullable, void (^ _Nonnull)(BOOL)))paywallActionsInterceptor storekitSettings:(StorekitSettings * _Nonnull)storekitSettings logLevel:(enum PLYLogLevel)logLevel initialized:(void (^ _Nullable)(BOOL, NSError * _Nullable))initialized;
 + (NSString * _Nullable)getSDKVersion SWIFT_WARN_UNUSED_RESULT;
 + (void)setUIHandler:(id <PLYUIHandler> _Nullable)uiHandler;
 + (void)setUserAttributeDelegate:(id <PLYUserAttributeDelegate> _Nonnull)userAttributeDelegate;
@@ -2771,7 +2864,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 + (void)setLanguageFrom:(NSLocale * _Nullable)locale;
 + (void)readyToOpenDeeplink:(BOOL)ready;
 + (void)setEnvironment:(enum PLYEnvironment)environment;
-+ (void)setLogLevel:(enum LogLevel)logLevel;
++ (void)setLogLevel:(enum PLYLogLevel)logLevel;
 + (void)setAppTechnology:(enum PLYAppTechnology)technology;
 + (void)setSdkBridgeVersion:(NSString * _Nullable)sdkBridgeVersion;
 + (void)addLogger:(id <PLYLogging> _Nonnull)logger;
@@ -3231,35 +3324,45 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSDictionary<N
 ///
 /// \param key The key under which the attribute is stored.
 ///
-+ (void)setUserAttributeWithStringValue:(NSString * _Nonnull)value forKey:(NSString * _Nonnull)key;
+/// \param processingLegalBasis The legal basis for processing this user attribute. Defaults to <code>.consent</code>.
+///
++ (void)setUserAttributeWithStringValue:(NSString * _Nonnull)value forKey:(NSString * _Nonnull)key processingLegalBasis:(enum PLYDataProcessingLegalBasis)processingLegalBasis;
 /// Sets an integer-type user attribute.
 /// Example: <code>setUserAttribute(withIntValue: 28, forKey: "age")</code>
 /// \param value The integer value to store.
 ///
 /// \param key The key under which to save the attribute.
 ///
-+ (void)setUserAttributeWithIntValue:(NSInteger)value forKey:(NSString * _Nonnull)key;
+/// \param processingLegalBasis The legal basis for processing this user attribute. Defaults to <code>.consent</code>.
+///
++ (void)setUserAttributeWithIntValue:(NSInteger)value forKey:(NSString * _Nonnull)key processingLegalBasis:(enum PLYDataProcessingLegalBasis)processingLegalBasis;
 /// Sets a double-type user attribute.
 /// Example: <code>setUserAttribute(withDoubleValue: 99.99, forKey: "total_spent")</code>
 /// \param value The double value to store.
 ///
 /// \param key The key under which to save the attribute.
 ///
-+ (void)setUserAttributeWithDoubleValue:(double)value forKey:(NSString * _Nonnull)key;
+/// \param processingLegalBasis The legal basis for processing this user attribute. Defaults to <code>.consent</code>.
+///
++ (void)setUserAttributeWithDoubleValue:(double)value forKey:(NSString * _Nonnull)key processingLegalBasis:(enum PLYDataProcessingLegalBasis)processingLegalBasis;
 /// Sets a date-type user attribute.
 /// Example: <code>setUserAttribute(withDateValue: Date(), forKey: "signup_date")</code>
 /// \param value The <code>Date</code> to store.
 ///
 /// \param key The key under which to save the attribute.
 ///
-+ (void)setUserAttributeWithDateValue:(NSDate * _Nonnull)value forKey:(NSString * _Nonnull)key;
+/// \param processingLegalBasis The legal basis for processing this user attribute. Defaults to <code>.consent</code>.
+///
++ (void)setUserAttributeWithDateValue:(NSDate * _Nonnull)value forKey:(NSString * _Nonnull)key processingLegalBasis:(enum PLYDataProcessingLegalBasis)processingLegalBasis;
 /// Sets a boolean-type user attribute.
 /// Example: <code>setUserAttribute(withBoolValue: true, forKey: "is_premium")</code>
 /// \param value The boolean value to store.
 ///
 /// \param key The key under which to save the attribute.
 ///
-+ (void)setUserAttributeWithBoolValue:(BOOL)value forKey:(NSString * _Nonnull)key;
+/// \param processingLegalBasis The legal basis for processing this user attribute. Defaults to <code>.consent</code>.
+///
++ (void)setUserAttributeWithBoolValue:(BOOL)value forKey:(NSString * _Nonnull)key processingLegalBasis:(enum PLYDataProcessingLegalBasis)processingLegalBasis;
 /// Sets a user attribute with an array of boolean values for the given key.
 /// <ul>
 ///   <li>
@@ -3271,8 +3374,11 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSDictionary<N
 ///   <li>
 ///     key: The key associated with the user attribute. This key will be used to identify and retrieve the attribute.
 ///   </li>
+///   <li>
+///     processingLegalBasis: The legal basis for processing this user attribute. Defaults to <code>.consent</code>.
+///   </li>
 /// </ul>
-+ (void)setUserAttributeWithBoolArray:(NSArray<NSNumber *> * _Nonnull)value forKey:(NSString * _Nonnull)key;
++ (void)setUserAttributeWithBoolArray:(NSArray<NSNumber *> * _Nonnull)value forKey:(NSString * _Nonnull)key processingLegalBasis:(enum PLYDataProcessingLegalBasis)processingLegalBasis;
 /// Sets a user attribute with an array of integer values for the given key.
 /// <ul>
 ///   <li>
@@ -3284,8 +3390,11 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSDictionary<N
 ///   <li>
 ///     key: The key associated with the user attribute. This key will be used to identify and retrieve the attribute.
 ///   </li>
+///   <li>
+///     processingLegalBasis: The legal basis for processing this user attribute. Defaults to <code>.consent</code>.
+///   </li>
 /// </ul>
-+ (void)setUserAttributeWithIntArray:(NSArray<NSNumber *> * _Nonnull)value forKey:(NSString * _Nonnull)key;
++ (void)setUserAttributeWithIntArray:(NSArray<NSNumber *> * _Nonnull)value forKey:(NSString * _Nonnull)key processingLegalBasis:(enum PLYDataProcessingLegalBasis)processingLegalBasis;
 /// Sets a user attribute with an array of string values for the given key.
 /// <ul>
 ///   <li>
@@ -3297,8 +3406,11 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSDictionary<N
 ///   <li>
 ///     key: The key associated with the user attribute. This key will be used to identify and retrieve the attribute.
 ///   </li>
+///   <li>
+///     processingLegalBasis: The legal basis for processing this user attribute. Defaults to <code>.consent</code>.
+///   </li>
 /// </ul>
-+ (void)setUserAttributeWithStringArray:(NSArray<NSString *> * _Nonnull)value forKey:(NSString * _Nonnull)key;
++ (void)setUserAttributeWithStringArray:(NSArray<NSString *> * _Nonnull)value forKey:(NSString * _Nonnull)key processingLegalBasis:(enum PLYDataProcessingLegalBasis)processingLegalBasis;
 /// Sets a user attribute with an array of double values for the given key.
 /// <ul>
 ///   <li>
@@ -3310,8 +3422,11 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSDictionary<N
 ///   <li>
 ///     key: The key associated with the user attribute. This key will be used to identify and retrieve the attribute.
 ///   </li>
+///   <li>
+///     processingLegalBasis: The legal basis for processing this user attribute. Defaults to <code>.consent</code>.
+///   </li>
 /// </ul>
-+ (void)setUserAttributeWithDoubleArray:(NSArray<NSNumber *> * _Nonnull)value forKey:(NSString * _Nonnull)key;
++ (void)setUserAttributeWithDoubleArray:(NSArray<NSNumber *> * _Nonnull)value forKey:(NSString * _Nonnull)key processingLegalBasis:(enum PLYDataProcessingLegalBasis)processingLegalBasis;
 /// Increments a numerical user attribute by a specified value. If the attribute does not exist, it will be created with the initial increment value.
 /// <ul>
 ///   <li>
@@ -3323,8 +3438,11 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSDictionary<N
 ///   <li>
 ///     value: The value to increment the attribute by. Defaults to 1.
 ///   </li>
+///   <li>
+///     processingLegalBasis: The legal basis for processing this user attribute. Defaults to <code>.consent</code>.
+///   </li>
 /// </ul>
-+ (void)incrementUserAttributeWithKey:(NSString * _Nonnull)key value:(NSInteger)value;
++ (void)incrementUserAttributeWithKey:(NSString * _Nonnull)key value:(NSInteger)value processingLegalBasis:(enum PLYDataProcessingLegalBasis)processingLegalBasis;
 /// Decrements a numerical user attribute by a specified value. If the attribute does not exist, it will be created with the initial negative decrement value.
 /// <ul>
 ///   <li>
@@ -3336,8 +3454,11 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSDictionary<N
 ///   <li>
 ///     value: The value to decrement the attribute by. Defaults to 1.
 ///   </li>
+///   <li>
+///     processingLegalBasis: The legal basis for processing this user attribute. Defaults to <code>.consent</code>.
+///   </li>
 /// </ul>
-+ (void)decrementUserAttributeWithKey:(NSString * _Nonnull)key value:(NSInteger)value;
++ (void)decrementUserAttributeWithKey:(NSString * _Nonnull)key value:(NSInteger)value processingLegalBasis:(enum PLYDataProcessingLegalBasis)processingLegalBasis;
 /// Sets multiple user attributes at once using a dictionary.
 /// <ul>
 ///   <li>
@@ -3346,9 +3467,20 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSDictionary<N
 ///   <li>
 ///     attributes: A dictionary where the keys are the attribute names (String) and the values are the corresponding attribute values (Any). Supported value types are Bool, Int, Double, String, and arrays of these types.
 ///   </li>
+///   <li>
+///     processingLegalBasis: The legal basis for processing these user attributes. Defaults to <code>.consent</code>.
+///   </li>
 /// </ul>
-+ (void)setUserAttributes:(NSDictionary<NSString *, id> * _Nonnull)attributes;
++ (void)setUserAttributes:(NSDictionary<NSString *, id> * _Nonnull)attributes processingLegalBasis:(enum PLYDataProcessingLegalBasis)processingLegalBasis;
 /// Clears all user-defined attributes. This will remove all custom attributes that have been set.
+/// <ul>
+///   <li>
+///     Parameters:
+///   </li>
+///   <li>
+///     processingLegalBasis: The legal basis for processing the clearing of user attributes. Defaults to <code>.consent</code>.
+///   </li>
+/// </ul>
 + (void)clearUserAttributes;
 /// Clears a specific user attribute based on its key.
 /// <ul>
@@ -3396,6 +3528,18 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSDictionary<N
 + (void)setThemeMode:(enum PLYThemeMode)mode;
 /// This method is used to trigger an event telling Purchasely that a content has been consumed through a subscription.
 + (void)userDidConsumeSubscriptionContent;
+/// Informs the SDK the user has withdrawn consent for data processing related to the listed features.
+/// Disables all related features, and clears all locally stored data related to the listed features.
+/// <h3>Usage Example:</h3>
+/// \code
+///  Purchasely.userWithdrewProcessingConsent(for: [
+///      .campaigns,
+///      .personalization
+///  ])
+///
+/// \endcode\param features list of features the user has withdrawn consent for
+///
++ (void)revokeDataProcessingConsentFor:(NSSet<PLYDataProcessingPurpose *> * _Nonnull)dataProcessingPurposes;
 @end
 
 /// WARNING: Add new attribute to the end and always check the list is in the same order than Android

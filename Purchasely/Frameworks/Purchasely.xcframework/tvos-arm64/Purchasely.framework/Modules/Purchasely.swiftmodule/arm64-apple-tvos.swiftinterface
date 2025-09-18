@@ -39,6 +39,15 @@ extension Swift.Array {
     return tag & 0x20 != 0
 }
 public func loc(_ textToTranslate: Swift.String, comment: Swift.String = "", language: Swift.String? = nil) -> Swift.String
+@_hasMissingDesignatedInitializers @objc public class PLYDataProcessingPurpose : ObjectiveC.NSObject {
+  public static var allNonEssentials: PLYDataProcessingPurpose
+  public static var analytics: PLYDataProcessingPurpose
+  public static var identifiedAnalytics: PLYDataProcessingPurpose
+  public static var campaigns: PLYDataProcessingPurpose
+  public static var personalization: PLYDataProcessingPurpose
+  public static var thirdPartyIntegrations: PLYDataProcessingPurpose
+  @objc deinit
+}
 public enum LocalReceiptError : Swift.Error {
   case initializationFailed
   case receiptRefreshingInProgress
@@ -249,6 +258,26 @@ public enum PLYComponentError : Swift.Error {
     get
   }
 }
+@objc public enum PLYDisplayModeType : Swift.Int, Swift.Equatable {
+  case fullScreen
+  case modal
+  case drawer
+  case popin
+  case push
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+extension PLYDisplayModeType : Swift.Codable {
+  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+@objc @_hasMissingDesignatedInitializers @objcMembers final public class PLYDisplayMode : ObjectiveC.NSObject, Swift.Decodable {
+  required public init(from decoder: any Swift.Decoder) throws
+  @objc deinit
+}
 @objc public enum PLYEnvironment : Swift.Int {
   case prod
   case staging
@@ -387,7 +416,6 @@ extension Foundation.NSString {
   case purchasablePlans
   case deeplinkIdentifier
   case sourceIdentifier
-  case selectedPlan
   case plan
   case previousSelectedPlan
   case linkIdentifier
@@ -461,6 +489,8 @@ extension Foundation.NSString {
   case fromStepId
   case displayMode
   case flowSessionId
+  case stripeCheckoutSessionId
+  case stripePurchaseId
   case webCheckoutProvider
   public var name: Swift.String {
     get
@@ -525,7 +555,7 @@ public enum PluralType {
 public func PLYLocalizedPluralString(_ key: Swift.String, count: Swift.Int, language: Swift.String?) -> Swift.String
 public func PLYLocalizedPluralString(_ key: Swift.String, pluralType: PluralType, language: Swift.String?) -> Swift.String
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class PLYLogger : ObjectiveC.NSObject {
-  @objc public enum LogLevel : Swift.Int {
+  @objc public enum PLYLogLevel : Swift.Int {
     case debug
     case info
     case warn
@@ -536,7 +566,7 @@ public func PLYLocalizedPluralString(_ key: Swift.String, pluralType: PluralType
       get
     }
   }
-  @objc public class func log(message: Swift.String, level: PLYLogger.LogLevel = .debug)
+  @objc public class func log(message: Swift.String, level: PLYLogger.PLYLogLevel = .debug)
   @objc deinit
 }
 @objc public protocol PLYLogging {
@@ -920,22 +950,6 @@ public enum PLYSubscriptionSourceError : Swift.Error {
     get
   }
 }
-@objc public enum PLYDisplayMode : Swift.Int, Swift.Equatable {
-  case fullScreen
-  case modal
-  case drawer
-  case popin
-  case push
-  public init?(rawValue: Swift.Int)
-  public typealias RawValue = Swift.Int
-  public var rawValue: Swift.Int {
-    get
-  }
-}
-extension PLYDisplayMode : Swift.Codable {
-  public init(from decoder: any Swift.Decoder) throws
-  public func encode(to encoder: any Swift.Encoder) throws
-}
 @objc public enum PLYUIControllerType : Swift.Int {
   case subscriptionList
   case productPage
@@ -965,18 +979,6 @@ extension PLYDisplayMode : Swift.Codable {
     get
   }
 }
-@objc public enum PLYUserAttributeSource : Swift.Int {
-  case purchasely, client
-  public init?(rawValue: Swift.Int)
-  public typealias RawValue = Swift.Int
-  public var rawValue: Swift.Int {
-    get
-  }
-}
-@objc public protocol PLYUserAttributeDelegate {
-  @objc optional func onUserAttributeSet(key: Swift.String, type: PLYUserAttributeType, value: Any?, source: PLYUserAttributeSource)
-  @objc optional func onUserAttributeRemoved(key: Swift.String, source: PLYUserAttributeSource)
-}
 public typealias PLYSuccessErrorClosure = (Swift.Bool, (any Swift.Error)?) -> Swift.Void
 public typealias PLYPaywallLoadingClosure = (PLYPresentationViewController?, Swift.Bool, (any Swift.Error)?) -> Swift.Void
 public typealias PLYLoginTappedHandler = (UIKit.UIViewController, @escaping (Swift.Bool) -> Swift.Void) -> Swift.Void
@@ -988,6 +990,19 @@ public typealias PLYVoidClosure = () -> Swift.Void
 public typealias PLYOfferSignatureClosure = (PLYOfferSignature) -> Swift.Void
 public typealias PLYErrorClosure = (any Swift.Error) -> Swift.Void
 public typealias PLYCancellationClosure = () -> Swift.Void
+@objc public enum PLYDataProcessingLegalBasis : Swift.Int, Swift.CaseIterable {
+  case optional
+  case essential
+  public init?(rawValue: Swift.Int)
+  public typealias AllCases = [PLYDataProcessingLegalBasis]
+  public typealias RawValue = Swift.Int
+  nonisolated public static var allCases: [PLYDataProcessingLegalBasis] {
+    get
+  }
+  public var rawValue: Swift.Int {
+    get
+  }
+}
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class Purchasely : ObjectiveC.NSObject {
   @objc deinit
 }
@@ -998,7 +1013,7 @@ extension Purchasely {
   @objc public static var anonymousUserId: Swift.String {
     @objc get
   }
-  @objc dynamic public class func start(withAPIKey apiKey: Swift.String, appUserId: Swift.String? = nil, runningMode: PLYRunningMode = .full, paywallActionsInterceptor: PLYPaywallActionsInterceptor? = nil, storekitSettings: StorekitSettings, logLevel: PLYLogger.LogLevel = .error, initialized: PLYSuccessErrorClosure? = nil)
+  @objc dynamic public class func start(withAPIKey apiKey: Swift.String, appUserId: Swift.String? = nil, runningMode: PLYRunningMode = .full, paywallActionsInterceptor: PLYPaywallActionsInterceptor? = nil, storekitSettings: StorekitSettings, logLevel: PLYLogger.PLYLogLevel = .error, initialized: PLYSuccessErrorClosure? = nil)
   @objc dynamic public class func getSDKVersion() -> Swift.String?
   @objc dynamic public class func setUIHandler(_ uiHandler: (any PLYUIHandler)?)
   @objc dynamic public class func setUserAttributeDelegate(_ userAttributeDelegate: any PLYUserAttributeDelegate)
@@ -1011,7 +1026,7 @@ extension Purchasely {
   @objc dynamic public class func setLanguage(from locale: Foundation.Locale?)
   @objc dynamic public class func readyToOpenDeeplink(_ ready: Swift.Bool)
   @objc dynamic public class func setEnvironment(_ environment: PLYEnvironment)
-  @objc dynamic public class func setLogLevel(_ logLevel: PLYLogger.LogLevel)
+  @objc dynamic public class func setLogLevel(_ logLevel: PLYLogger.PLYLogLevel)
   @objc dynamic public class func setAppTechnology(_ technology: PLYAppTechnology)
   @objc dynamic public class func setSdkBridgeVersion(_ sdkBridgeVersion: Swift.String?)
   @objc dynamic public class func addLogger(_ logger: any PLYLogging)
@@ -1080,18 +1095,18 @@ extension Purchasely {
     @objc get
   }
   @objc public static func getUserAttribute(for key: Swift.String) -> Any?
-  @objc public static func setUserAttribute(withStringValue value: Swift.String, forKey key: Swift.String)
-  @objc public static func setUserAttribute(withIntValue value: Swift.Int, forKey key: Swift.String)
-  @objc public static func setUserAttribute(withDoubleValue value: Swift.Double, forKey key: Swift.String)
-  @objc public static func setUserAttribute(withDateValue value: Foundation.Date, forKey key: Swift.String)
-  @objc public static func setUserAttribute(withBoolValue value: Swift.Bool, forKey key: Swift.String)
-  @objc public static func setUserAttribute(withBoolArray value: [Swift.Bool], forKey key: Swift.String)
-  @objc public static func setUserAttribute(withIntArray value: [Swift.Int], forKey key: Swift.String)
-  @objc public static func setUserAttribute(withStringArray value: [Swift.String], forKey key: Swift.String)
-  @objc public static func setUserAttribute(withDoubleArray value: [Swift.Double], forKey key: Swift.String)
-  @objc public static func incrementUserAttribute(withKey key: Swift.String, value: Swift.Int = 1)
-  @objc public static func decrementUserAttribute(withKey key: Swift.String, value: Swift.Int = 1)
-  @objc public static func setUserAttributes(_ attributes: [Swift.String : Any])
+  @objc public static func setUserAttribute(withStringValue value: Swift.String, forKey key: Swift.String, processingLegalBasis: PLYDataProcessingLegalBasis = .optional)
+  @objc public static func setUserAttribute(withIntValue value: Swift.Int, forKey key: Swift.String, processingLegalBasis: PLYDataProcessingLegalBasis = .optional)
+  @objc public static func setUserAttribute(withDoubleValue value: Swift.Double, forKey key: Swift.String, processingLegalBasis: PLYDataProcessingLegalBasis = .optional)
+  @objc public static func setUserAttribute(withDateValue value: Foundation.Date, forKey key: Swift.String, processingLegalBasis: PLYDataProcessingLegalBasis = .optional)
+  @objc public static func setUserAttribute(withBoolValue value: Swift.Bool, forKey key: Swift.String, processingLegalBasis: PLYDataProcessingLegalBasis = .optional)
+  @objc public static func setUserAttribute(withBoolArray value: [Swift.Bool], forKey key: Swift.String, processingLegalBasis: PLYDataProcessingLegalBasis = .optional)
+  @objc public static func setUserAttribute(withIntArray value: [Swift.Int], forKey key: Swift.String, processingLegalBasis: PLYDataProcessingLegalBasis = .optional)
+  @objc public static func setUserAttribute(withStringArray value: [Swift.String], forKey key: Swift.String, processingLegalBasis: PLYDataProcessingLegalBasis = .optional)
+  @objc public static func setUserAttribute(withDoubleArray value: [Swift.Double], forKey key: Swift.String, processingLegalBasis: PLYDataProcessingLegalBasis = .optional)
+  @objc public static func incrementUserAttribute(withKey key: Swift.String, value: Swift.Int = 1, processingLegalBasis: PLYDataProcessingLegalBasis = .optional)
+  @objc public static func decrementUserAttribute(withKey key: Swift.String, value: Swift.Int = 1, processingLegalBasis: PLYDataProcessingLegalBasis = .optional)
+  @objc public static func setUserAttributes(_ attributes: [Swift.String : Any], processingLegalBasis: PLYDataProcessingLegalBasis = .optional)
   @objc public static func clearUserAttributes()
   @objc public static func clearUserAttribute(forKey key: Swift.String)
   @objc public static func clearBuiltInAttributes()
@@ -1144,6 +1159,7 @@ extension Purchasely {
   }
   @objc dynamic public class func setThemeMode(_ mode: PLYThemeMode)
   @objc dynamic public class func userDidConsumeSubscriptionContent()
+  @objc public static func revokeDataProcessingConsent(for dataProcessingPurposes: Swift.Set<PLYDataProcessingPurpose>)
 }
 extension Purchasely : UserNotifications.UNUserNotificationCenterDelegate {
 }
@@ -1173,6 +1189,22 @@ extension Swift.String {
   public func regexMatch(_ pattern: Swift.String) -> Swift.Bool
   public func isNULL() -> Swift.Bool
 }
+@objc public enum PLYUserAttributeSource : Swift.Int {
+  case purchasely, client
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public protocol PLYUserAttributeDelegate {
+  @objc optional func onUserAttributeSet(key: Swift.String, type: PLYUserAttributeType, value: Any?, source: PLYUserAttributeSource)
+  @objc optional func onUserAttributeSet(key: Swift.String, type: PLYUserAttributeType, value: Any?, source: PLYUserAttributeSource, processingLegalBasis: PLYDataProcessingLegalBasis)
+  @objc optional func onUserAttributeRemoved(key: Swift.String, source: PLYUserAttributeSource)
+}
+extension PLYCancellationReason : Swift.Equatable {}
+extension PLYCancellationReason : Swift.Hashable {}
+extension PLYCancellationReason : Swift.RawRepresentable {}
 extension PLYAttribute : Swift.Equatable {}
 extension PLYAttribute : Swift.Hashable {}
 extension PLYAttribute : Swift.RawRepresentable {}
@@ -1202,14 +1234,13 @@ extension PLYExposureWindowUnit : Swift.RawRepresentable {}
 extension PLYExposureWindowInit : Swift.Equatable {}
 extension PLYExposureWindowInit : Swift.Hashable {}
 extension PLYExposureWindowInit : Swift.RawRepresentable {}
-extension PLYCancellationReason : Swift.Equatable {}
-extension PLYCancellationReason : Swift.Hashable {}
-extension PLYCancellationReason : Swift.RawRepresentable {}
 extension PLYComponentError : Swift.Equatable {}
 extension PLYComponentError : Swift.Hashable {}
 extension PLYCustomPropertyDataType : Swift.Equatable {}
 extension PLYCustomPropertyDataType : Swift.Hashable {}
 extension PLYCustomPropertyDataType : Swift.RawRepresentable {}
+extension PLYDisplayModeType : Swift.Hashable {}
+extension PLYDisplayModeType : Swift.RawRepresentable {}
 extension PLYEnvironment : Swift.Equatable {}
 extension PLYEnvironment : Swift.Hashable {}
 extension PLYEnvironment : Swift.RawRepresentable {}
@@ -1226,9 +1257,9 @@ extension PLYLabelHighlightsError : Swift.Equatable {}
 extension PLYLabelHighlightsError : Swift.Hashable {}
 extension PluralType : Swift.Equatable {}
 extension PluralType : Swift.Hashable {}
-extension PLYLogger.LogLevel : Swift.Equatable {}
-extension PLYLogger.LogLevel : Swift.Hashable {}
-extension PLYLogger.LogLevel : Swift.RawRepresentable {}
+extension PLYLogger.PLYLogLevel : Swift.Equatable {}
+extension PLYLogger.PLYLogLevel : Swift.Hashable {}
+extension PLYLogger.PLYLogLevel : Swift.RawRepresentable {}
 extension PLYPlanType : Swift.Equatable {}
 extension PLYPlanType : Swift.Hashable {}
 extension PLYPlanType : Swift.RawRepresentable {}
@@ -1264,17 +1295,18 @@ extension PLYSubscriptionSource : Swift.RawRepresentable {}
 extension PLYSubscriptionStatus : Swift.Equatable {}
 extension PLYSubscriptionStatus : Swift.Hashable {}
 extension PLYSubscriptionStatus : Swift.RawRepresentable {}
-extension PLYDisplayMode : Swift.Hashable {}
-extension PLYDisplayMode : Swift.RawRepresentable {}
 extension PLYUIControllerType : Swift.Equatable {}
 extension PLYUIControllerType : Swift.Hashable {}
 extension PLYUIControllerType : Swift.RawRepresentable {}
 extension PLYUserAttributeType : Swift.Equatable {}
 extension PLYUserAttributeType : Swift.Hashable {}
 extension PLYUserAttributeType : Swift.RawRepresentable {}
-extension PLYUserAttributeSource : Swift.Equatable {}
-extension PLYUserAttributeSource : Swift.Hashable {}
-extension PLYUserAttributeSource : Swift.RawRepresentable {}
+extension PLYDataProcessingLegalBasis : Swift.Equatable {}
+extension PLYDataProcessingLegalBasis : Swift.Hashable {}
+extension PLYDataProcessingLegalBasis : Swift.RawRepresentable {}
 extension PLYThemeMode : Swift.Equatable {}
 extension PLYThemeMode : Swift.Hashable {}
 extension PLYThemeMode : Swift.RawRepresentable {}
+extension PLYUserAttributeSource : Swift.Equatable {}
+extension PLYUserAttributeSource : Swift.Hashable {}
+extension PLYUserAttributeSource : Swift.RawRepresentable {}
