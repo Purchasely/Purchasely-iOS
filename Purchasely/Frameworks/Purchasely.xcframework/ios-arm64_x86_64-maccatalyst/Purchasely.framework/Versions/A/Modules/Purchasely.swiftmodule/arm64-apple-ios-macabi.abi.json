@@ -450,7 +450,7 @@
               }
             ],
             "declKind": "Var",
-            "usr": "s:10Purchasely24PLYDataProcessingPurposeC16allNonEssentialsACvpZ",
+            "usr": "c:@M@Purchasely@objc(cs)PLYDataProcessingPurpose(cpy)allNonEssentials",
             "mangledName": "$s10Purchasely24PLYDataProcessingPurposeC16allNonEssentialsACvpZ",
             "moduleName": "Purchasely",
             "static": true,
@@ -458,7 +458,8 @@
               "HasInitialValue",
               "Final",
               "HasStorage",
-              "AccessControl"
+              "AccessControl",
+              "ObjC"
             ],
             "hasStorage": true,
             "accessors": [
@@ -475,13 +476,14 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:10Purchasely24PLYDataProcessingPurposeC16allNonEssentialsACvgZ",
+                "usr": "c:@M@Purchasely@objc(cs)PLYDataProcessingPurpose(cm)allNonEssentials",
                 "mangledName": "$s10Purchasely24PLYDataProcessingPurposeC16allNonEssentialsACvgZ",
                 "moduleName": "Purchasely",
                 "static": true,
                 "implicit": true,
                 "declAttributes": [
-                  "Final"
+                  "Final",
+                  "ObjC"
                 ],
                 "accessorKind": "get"
               },
@@ -503,13 +505,14 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:10Purchasely24PLYDataProcessingPurposeC16allNonEssentialsACvsZ",
+                "usr": "c:@M@Purchasely@objc(cs)PLYDataProcessingPurpose(cm)setAllNonEssentials:",
                 "mangledName": "$s10Purchasely24PLYDataProcessingPurposeC16allNonEssentialsACvsZ",
                 "moduleName": "Purchasely",
                 "static": true,
                 "implicit": true,
                 "declAttributes": [
-                  "Final"
+                  "Final",
+                  "ObjC"
                 ],
                 "accessorKind": "set"
               },
@@ -550,7 +553,7 @@
               }
             ],
             "declKind": "Var",
-            "usr": "s:10Purchasely24PLYDataProcessingPurposeC9analyticsACvpZ",
+            "usr": "c:@M@Purchasely@objc(cs)PLYDataProcessingPurpose(cpy)analytics",
             "mangledName": "$s10Purchasely24PLYDataProcessingPurposeC9analyticsACvpZ",
             "moduleName": "Purchasely",
             "static": true,
@@ -558,7 +561,8 @@
               "HasInitialValue",
               "Final",
               "HasStorage",
-              "AccessControl"
+              "AccessControl",
+              "ObjC"
             ],
             "hasStorage": true,
             "accessors": [
@@ -575,13 +579,14 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:10Purchasely24PLYDataProcessingPurposeC9analyticsACvgZ",
+                "usr": "c:@M@Purchasely@objc(cs)PLYDataProcessingPurpose(cm)analytics",
                 "mangledName": "$s10Purchasely24PLYDataProcessingPurposeC9analyticsACvgZ",
                 "moduleName": "Purchasely",
                 "static": true,
                 "implicit": true,
                 "declAttributes": [
-                  "Final"
+                  "Final",
+                  "ObjC"
                 ],
                 "accessorKind": "get"
               },
@@ -603,13 +608,14 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:10Purchasely24PLYDataProcessingPurposeC9analyticsACvsZ",
+                "usr": "c:@M@Purchasely@objc(cs)PLYDataProcessingPurpose(cm)setAnalytics:",
                 "mangledName": "$s10Purchasely24PLYDataProcessingPurposeC9analyticsACvsZ",
                 "moduleName": "Purchasely",
                 "static": true,
                 "implicit": true,
                 "declAttributes": [
-                  "Final"
+                  "Final",
+                  "ObjC"
                 ],
                 "accessorKind": "set"
               },
@@ -650,7 +656,7 @@
               }
             ],
             "declKind": "Var",
-            "usr": "s:10Purchasely24PLYDataProcessingPurposeC19identifiedAnalyticsACvpZ",
+            "usr": "c:@M@Purchasely@objc(cs)PLYDataProcessingPurpose(cpy)identifiedAnalytics",
             "mangledName": "$s10Purchasely24PLYDataProcessingPurposeC19identifiedAnalyticsACvpZ",
             "moduleName": "Purchasely",
             "static": true,
@@ -658,7 +664,8 @@
               "HasInitialValue",
               "Final",
               "HasStorage",
-              "AccessControl"
+              "AccessControl",
+              "ObjC"
             ],
             "hasStorage": true,
             "accessors": [
@@ -675,13 +682,14 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:10Purchasely24PLYDataProcessingPurposeC19identifiedAnalyticsACvgZ",
+                "usr": "c:@M@Purchasely@objc(cs)PLYDataProcessingPurpose(cm)identifiedAnalytics",
                 "mangledName": "$s10Purchasely24PLYDataProcessingPurposeC19identifiedAnalyticsACvgZ",
                 "moduleName": "Purchasely",
                 "static": true,
                 "implicit": true,
                 "declAttributes": [
-                  "Final"
+                  "Final",
+                  "ObjC"
                 ],
                 "accessorKind": "get"
               },
@@ -703,13 +711,14 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:10Purchasely24PLYDataProcessingPurposeC19identifiedAnalyticsACvsZ",
+                "usr": "c:@M@Purchasely@objc(cs)PLYDataProcessingPurpose(cm)setIdentifiedAnalytics:",
                 "mangledName": "$s10Purchasely24PLYDataProcessingPurposeC19identifiedAnalyticsACvsZ",
                 "moduleName": "Purchasely",
                 "static": true,
                 "implicit": true,
                 "declAttributes": [
-                  "Final"
+                  "Final",
+                  "ObjC"
                 ],
                 "accessorKind": "set"
               },
@@ -750,7 +759,7 @@
               }
             ],
             "declKind": "Var",
-            "usr": "s:10Purchasely24PLYDataProcessingPurposeC9campaignsACvpZ",
+            "usr": "c:@M@Purchasely@objc(cs)PLYDataProcessingPurpose(cpy)campaigns",
             "mangledName": "$s10Purchasely24PLYDataProcessingPurposeC9campaignsACvpZ",
             "moduleName": "Purchasely",
             "static": true,
@@ -758,7 +767,8 @@
               "HasInitialValue",
               "Final",
               "HasStorage",
-              "AccessControl"
+              "AccessControl",
+              "ObjC"
             ],
             "hasStorage": true,
             "accessors": [
@@ -775,13 +785,14 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:10Purchasely24PLYDataProcessingPurposeC9campaignsACvgZ",
+                "usr": "c:@M@Purchasely@objc(cs)PLYDataProcessingPurpose(cm)campaigns",
                 "mangledName": "$s10Purchasely24PLYDataProcessingPurposeC9campaignsACvgZ",
                 "moduleName": "Purchasely",
                 "static": true,
                 "implicit": true,
                 "declAttributes": [
-                  "Final"
+                  "Final",
+                  "ObjC"
                 ],
                 "accessorKind": "get"
               },
@@ -803,13 +814,14 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:10Purchasely24PLYDataProcessingPurposeC9campaignsACvsZ",
+                "usr": "c:@M@Purchasely@objc(cs)PLYDataProcessingPurpose(cm)setCampaigns:",
                 "mangledName": "$s10Purchasely24PLYDataProcessingPurposeC9campaignsACvsZ",
                 "moduleName": "Purchasely",
                 "static": true,
                 "implicit": true,
                 "declAttributes": [
-                  "Final"
+                  "Final",
+                  "ObjC"
                 ],
                 "accessorKind": "set"
               },
@@ -850,7 +862,7 @@
               }
             ],
             "declKind": "Var",
-            "usr": "s:10Purchasely24PLYDataProcessingPurposeC15personalizationACvpZ",
+            "usr": "c:@M@Purchasely@objc(cs)PLYDataProcessingPurpose(cpy)personalization",
             "mangledName": "$s10Purchasely24PLYDataProcessingPurposeC15personalizationACvpZ",
             "moduleName": "Purchasely",
             "static": true,
@@ -858,7 +870,8 @@
               "HasInitialValue",
               "Final",
               "HasStorage",
-              "AccessControl"
+              "AccessControl",
+              "ObjC"
             ],
             "hasStorage": true,
             "accessors": [
@@ -875,13 +888,14 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:10Purchasely24PLYDataProcessingPurposeC15personalizationACvgZ",
+                "usr": "c:@M@Purchasely@objc(cs)PLYDataProcessingPurpose(cm)personalization",
                 "mangledName": "$s10Purchasely24PLYDataProcessingPurposeC15personalizationACvgZ",
                 "moduleName": "Purchasely",
                 "static": true,
                 "implicit": true,
                 "declAttributes": [
-                  "Final"
+                  "Final",
+                  "ObjC"
                 ],
                 "accessorKind": "get"
               },
@@ -903,13 +917,14 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:10Purchasely24PLYDataProcessingPurposeC15personalizationACvsZ",
+                "usr": "c:@M@Purchasely@objc(cs)PLYDataProcessingPurpose(cm)setPersonalization:",
                 "mangledName": "$s10Purchasely24PLYDataProcessingPurposeC15personalizationACvsZ",
                 "moduleName": "Purchasely",
                 "static": true,
                 "implicit": true,
                 "declAttributes": [
-                  "Final"
+                  "Final",
+                  "ObjC"
                 ],
                 "accessorKind": "set"
               },
@@ -950,7 +965,7 @@
               }
             ],
             "declKind": "Var",
-            "usr": "s:10Purchasely24PLYDataProcessingPurposeC22thirdPartyIntegrationsACvpZ",
+            "usr": "c:@M@Purchasely@objc(cs)PLYDataProcessingPurpose(cpy)thirdPartyIntegrations",
             "mangledName": "$s10Purchasely24PLYDataProcessingPurposeC22thirdPartyIntegrationsACvpZ",
             "moduleName": "Purchasely",
             "static": true,
@@ -958,7 +973,8 @@
               "HasInitialValue",
               "Final",
               "HasStorage",
-              "AccessControl"
+              "AccessControl",
+              "ObjC"
             ],
             "hasStorage": true,
             "accessors": [
@@ -975,13 +991,14 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:10Purchasely24PLYDataProcessingPurposeC22thirdPartyIntegrationsACvgZ",
+                "usr": "c:@M@Purchasely@objc(cs)PLYDataProcessingPurpose(cm)thirdPartyIntegrations",
                 "mangledName": "$s10Purchasely24PLYDataProcessingPurposeC22thirdPartyIntegrationsACvgZ",
                 "moduleName": "Purchasely",
                 "static": true,
                 "implicit": true,
                 "declAttributes": [
-                  "Final"
+                  "Final",
+                  "ObjC"
                 ],
                 "accessorKind": "get"
               },
@@ -1003,13 +1020,14 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:10Purchasely24PLYDataProcessingPurposeC22thirdPartyIntegrationsACvsZ",
+                "usr": "c:@M@Purchasely@objc(cs)PLYDataProcessingPurpose(cm)setThirdPartyIntegrations:",
                 "mangledName": "$s10Purchasely24PLYDataProcessingPurposeC22thirdPartyIntegrationsACvsZ",
                 "moduleName": "Purchasely",
                 "static": true,
                 "implicit": true,
                 "declAttributes": [
-                  "Final"
+                  "Final",
+                  "ObjC"
                 ],
                 "accessorKind": "set"
               },
@@ -44217,6 +44235,44 @@
           {
             "kind": "Function",
             "name": "setUserAttribute",
+            "printedName": "setUserAttribute(withStringValue:forKey:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@CM@Purchasely@objc(cs)Purchasely(cm)setUserAttributeWithStringValue:forKey:",
+            "mangledName": "$s10PurchaselyAAC16setUserAttribute15withStringValue6forKeyySS_SStFZ",
+            "moduleName": "Purchasely",
+            "static": true,
+            "objc_name": "setUserAttributeWithStringValue:forKey:",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "setUserAttribute",
             "printedName": "setUserAttribute(withStringValue:forKey:processingLegalBasis:)",
             "children": [
               {
@@ -44250,6 +44306,44 @@
             "moduleName": "Purchasely",
             "static": true,
             "objc_name": "setUserAttributeWithStringValue:forKey:processingLegalBasis:",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "setUserAttribute",
+            "printedName": "setUserAttribute(withIntValue:forKey:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@CM@Purchasely@objc(cs)Purchasely(cm)setUserAttributeWithIntValue:forKey:",
+            "mangledName": "$s10PurchaselyAAC16setUserAttribute12withIntValue6forKeyySi_SStFZ",
+            "moduleName": "Purchasely",
+            "static": true,
+            "objc_name": "setUserAttributeWithIntValue:forKey:",
             "declAttributes": [
               "Final",
               "AccessControl",
@@ -44307,6 +44401,44 @@
           {
             "kind": "Function",
             "name": "setUserAttribute",
+            "printedName": "setUserAttribute(withDoubleValue:forKey:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Double",
+                "printedName": "Swift.Double",
+                "usr": "s:Sd"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@CM@Purchasely@objc(cs)Purchasely(cm)setUserAttributeWithDoubleValue:forKey:",
+            "mangledName": "$s10PurchaselyAAC16setUserAttribute15withDoubleValue6forKeyySd_SStFZ",
+            "moduleName": "Purchasely",
+            "static": true,
+            "objc_name": "setUserAttributeWithDoubleValue:forKey:",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "setUserAttribute",
             "printedName": "setUserAttribute(withDoubleValue:forKey:processingLegalBasis:)",
             "children": [
               {
@@ -44340,6 +44472,44 @@
             "moduleName": "Purchasely",
             "static": true,
             "objc_name": "setUserAttributeWithDoubleValue:forKey:processingLegalBasis:",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "setUserAttribute",
+            "printedName": "setUserAttribute(withDateValue:forKey:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Date",
+                "printedName": "Foundation.Date",
+                "usr": "s:10Foundation4DateV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@CM@Purchasely@objc(cs)Purchasely(cm)setUserAttributeWithDateValue:forKey:",
+            "mangledName": "$s10PurchaselyAAC16setUserAttribute13withDateValue6forKeyy10Foundation0F0V_SStFZ",
+            "moduleName": "Purchasely",
+            "static": true,
+            "objc_name": "setUserAttributeWithDateValue:forKey:",
             "declAttributes": [
               "Final",
               "AccessControl",
@@ -44397,6 +44567,44 @@
           {
             "kind": "Function",
             "name": "setUserAttribute",
+            "printedName": "setUserAttribute(withBoolValue:forKey:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@CM@Purchasely@objc(cs)Purchasely(cm)setUserAttributeWithBoolValue:forKey:",
+            "mangledName": "$s10PurchaselyAAC16setUserAttribute13withBoolValue6forKeyySb_SStFZ",
+            "moduleName": "Purchasely",
+            "static": true,
+            "objc_name": "setUserAttributeWithBoolValue:forKey:",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "setUserAttribute",
             "printedName": "setUserAttribute(withBoolValue:forKey:processingLegalBasis:)",
             "children": [
               {
@@ -44430,6 +44638,52 @@
             "moduleName": "Purchasely",
             "static": true,
             "objc_name": "setUserAttributeWithBoolValue:forKey:processingLegalBasis:",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "setUserAttribute",
+            "printedName": "setUserAttribute(withBoolArray:forKey:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[Swift.Bool]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "usr": "s:Sa"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@CM@Purchasely@objc(cs)Purchasely(cm)setUserAttributeWithBoolArray:forKey:",
+            "mangledName": "$s10PurchaselyAAC16setUserAttribute13withBoolArray6forKeyySaySbG_SStFZ",
+            "moduleName": "Purchasely",
+            "static": true,
+            "objc_name": "setUserAttributeWithBoolArray:forKey:",
             "declAttributes": [
               "Final",
               "AccessControl",
@@ -44495,6 +44749,52 @@
           {
             "kind": "Function",
             "name": "setUserAttribute",
+            "printedName": "setUserAttribute(withIntArray:forKey:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[Swift.Int]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "usr": "s:Sa"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@CM@Purchasely@objc(cs)Purchasely(cm)setUserAttributeWithIntArray:forKey:",
+            "mangledName": "$s10PurchaselyAAC16setUserAttribute12withIntArray6forKeyySaySiG_SStFZ",
+            "moduleName": "Purchasely",
+            "static": true,
+            "objc_name": "setUserAttributeWithIntArray:forKey:",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "setUserAttribute",
             "printedName": "setUserAttribute(withIntArray:forKey:processingLegalBasis:)",
             "children": [
               {
@@ -44536,6 +44836,52 @@
             "moduleName": "Purchasely",
             "static": true,
             "objc_name": "setUserAttributeWithIntArray:forKey:processingLegalBasis:",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "setUserAttribute",
+            "printedName": "setUserAttribute(withStringArray:forKey:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[Swift.String]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sa"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@CM@Purchasely@objc(cs)Purchasely(cm)setUserAttributeWithStringArray:forKey:",
+            "mangledName": "$s10PurchaselyAAC16setUserAttribute15withStringArray6forKeyySaySSG_SStFZ",
+            "moduleName": "Purchasely",
+            "static": true,
+            "objc_name": "setUserAttributeWithStringArray:forKey:",
             "declAttributes": [
               "Final",
               "AccessControl",
@@ -44601,6 +44947,52 @@
           {
             "kind": "Function",
             "name": "setUserAttribute",
+            "printedName": "setUserAttribute(withDoubleArray:forKey:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[Swift.Double]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Double",
+                    "printedName": "Swift.Double",
+                    "usr": "s:Sd"
+                  }
+                ],
+                "usr": "s:Sa"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@CM@Purchasely@objc(cs)Purchasely(cm)setUserAttributeWithDoubleArray:forKey:",
+            "mangledName": "$s10PurchaselyAAC16setUserAttribute15withDoubleArray6forKeyySaySdG_SStFZ",
+            "moduleName": "Purchasely",
+            "static": true,
+            "objc_name": "setUserAttributeWithDoubleArray:forKey:",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "setUserAttribute",
             "printedName": "setUserAttribute(withDoubleArray:forKey:processingLegalBasis:)",
             "children": [
               {
@@ -44642,6 +45034,45 @@
             "moduleName": "Purchasely",
             "static": true,
             "objc_name": "setUserAttributeWithDoubleArray:forKey:processingLegalBasis:",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "incrementUserAttribute",
+            "printedName": "incrementUserAttribute(withKey:value:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "hasDefaultArg": true,
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@CM@Purchasely@objc(cs)Purchasely(cm)incrementUserAttributeWithKey:value:",
+            "mangledName": "$s10PurchaselyAAC22incrementUserAttribute7withKey5valueySS_SitFZ",
+            "moduleName": "Purchasely",
+            "static": true,
+            "objc_name": "incrementUserAttributeWithKey:value:",
             "declAttributes": [
               "Final",
               "AccessControl",
@@ -44700,6 +45131,45 @@
           {
             "kind": "Function",
             "name": "decrementUserAttribute",
+            "printedName": "decrementUserAttribute(withKey:value:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "hasDefaultArg": true,
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@CM@Purchasely@objc(cs)Purchasely(cm)decrementUserAttributeWithKey:value:",
+            "mangledName": "$s10PurchaselyAAC22decrementUserAttribute7withKey5valueySS_SitFZ",
+            "moduleName": "Purchasely",
+            "static": true,
+            "objc_name": "decrementUserAttributeWithKey:value:",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "decrementUserAttribute",
             "printedName": "decrementUserAttribute(withKey:value:processingLegalBasis:)",
             "children": [
               {
@@ -44734,6 +45204,50 @@
             "moduleName": "Purchasely",
             "static": true,
             "objc_name": "decrementUserAttributeWithKey:value:processingLegalBasis:",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "setUserAttributes",
+            "printedName": "setUserAttributes(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Dictionary",
+                "printedName": "[Swift.String : Any]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ProtocolComposition",
+                    "printedName": "Any"
+                  }
+                ],
+                "usr": "s:SD"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@CM@Purchasely@objc(cs)Purchasely(cm)setUserAttributes:",
+            "mangledName": "$s10PurchaselyAAC17setUserAttributesyySDySSypGFZ",
+            "moduleName": "Purchasely",
+            "static": true,
             "declAttributes": [
               "Final",
               "AccessControl",
@@ -58780,7 +59294,7 @@
       "kind": "StringLiteral",
       "offset": 3188,
       "length": 7,
-      "value": "\"5.4.0\""
+      "value": "\"5.4.1\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+Flow.swift",
@@ -58813,182 +59327,196 @@
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "IntegerLiteral",
-      "offset": 67817,
+      "offset": 73055,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "IntegerLiteral",
-      "offset": 68616,
+      "offset": 73694,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "IntegerLiteral",
-      "offset": 74650,
+      "offset": 74462,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
+      "kind": "IntegerLiteral",
+      "offset": 75106,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
+      "kind": "IntegerLiteral",
+      "offset": 81574,
       "length": 16,
       "value": "1"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "IntegerLiteral",
-      "offset": 74680,
+      "offset": 81604,
       "length": 13,
       "value": "2"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "IntegerLiteral",
-      "offset": 74707,
+      "offset": 81631,
       "length": 19,
       "value": "3"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "IntegerLiteral",
-      "offset": 74740,
+      "offset": 81664,
       "length": 8,
       "value": "4"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "IntegerLiteral",
-      "offset": 74762,
+      "offset": 81686,
       "length": 11,
       "value": "5"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "IntegerLiteral",
-      "offset": 74787,
+      "offset": 81711,
       "length": 17,
       "value": "6"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "IntegerLiteral",
-      "offset": 74818,
+      "offset": 81742,
       "length": 18,
       "value": "7"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "IntegerLiteral",
-      "offset": 74850,
+      "offset": 81774,
       "length": 11,
       "value": "8"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "IntegerLiteral",
-      "offset": 74875,
+      "offset": 81799,
       "length": 19,
       "value": "9"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "IntegerLiteral",
-      "offset": 74908,
+      "offset": 81832,
       "length": 17,
       "value": "10"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "IntegerLiteral",
-      "offset": 74939,
+      "offset": 81863,
       "length": 14,
       "value": "11"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "IntegerLiteral",
-      "offset": 74967,
+      "offset": 81891,
       "length": 18,
       "value": "12"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "IntegerLiteral",
-      "offset": 74999,
+      "offset": 81923,
       "length": 15,
       "value": "13"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "IntegerLiteral",
-      "offset": 75028,
+      "offset": 81952,
       "length": 16,
       "value": "14"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "IntegerLiteral",
-      "offset": 75058,
+      "offset": 81982,
       "length": 19,
       "value": "15"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "IntegerLiteral",
-      "offset": 75091,
+      "offset": 82015,
       "length": 27,
       "value": "16"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "IntegerLiteral",
-      "offset": 75132,
+      "offset": 82056,
       "length": 15,
       "value": "17"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "IntegerLiteral",
-      "offset": 75161,
+      "offset": 82085,
       "length": 17,
       "value": "18"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "IntegerLiteral",
-      "offset": 75192,
+      "offset": 82116,
       "length": 16,
       "value": "19"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "IntegerLiteral",
-      "offset": 75222,
+      "offset": 82146,
       "length": 19,
       "value": "20"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "IntegerLiteral",
-      "offset": 75255,
+      "offset": 82179,
       "length": 17,
       "value": "21"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "IntegerLiteral",
-      "offset": 75286,
+      "offset": 82210,
       "length": 15,
       "value": "22"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "IntegerLiteral",
-      "offset": 76144,
+      "offset": 83068,
       "length": 4,
       "value": "1"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "IntegerLiteral",
-      "offset": 76162,
+      "offset": 83086,
       "length": 6,
       "value": "2"
     },

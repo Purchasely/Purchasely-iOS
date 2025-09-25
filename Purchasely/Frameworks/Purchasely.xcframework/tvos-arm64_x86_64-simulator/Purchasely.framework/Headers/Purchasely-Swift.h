@@ -372,6 +372,24 @@ typedef SWIFT_ENUM(NSInteger, PLYDataProcessingLegalBasis, open) {
 
 SWIFT_CLASS("_TtC10Purchasely24PLYDataProcessingPurpose")
 @interface PLYDataProcessingPurpose : NSObject
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, strong) PLYDataProcessingPurpose * _Nonnull allNonEssentials;)
++ (PLYDataProcessingPurpose * _Nonnull)allNonEssentials SWIFT_WARN_UNUSED_RESULT;
++ (void)setAllNonEssentials:(PLYDataProcessingPurpose * _Nonnull)value;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, strong) PLYDataProcessingPurpose * _Nonnull analytics;)
++ (PLYDataProcessingPurpose * _Nonnull)analytics SWIFT_WARN_UNUSED_RESULT;
++ (void)setAnalytics:(PLYDataProcessingPurpose * _Nonnull)value;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, strong) PLYDataProcessingPurpose * _Nonnull identifiedAnalytics;)
++ (PLYDataProcessingPurpose * _Nonnull)identifiedAnalytics SWIFT_WARN_UNUSED_RESULT;
++ (void)setIdentifiedAnalytics:(PLYDataProcessingPurpose * _Nonnull)value;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, strong) PLYDataProcessingPurpose * _Nonnull campaigns;)
++ (PLYDataProcessingPurpose * _Nonnull)campaigns SWIFT_WARN_UNUSED_RESULT;
++ (void)setCampaigns:(PLYDataProcessingPurpose * _Nonnull)value;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, strong) PLYDataProcessingPurpose * _Nonnull personalization;)
++ (PLYDataProcessingPurpose * _Nonnull)personalization SWIFT_WARN_UNUSED_RESULT;
++ (void)setPersonalization:(PLYDataProcessingPurpose * _Nonnull)value;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, strong) PLYDataProcessingPurpose * _Nonnull thirdPartyIntegrations;)
++ (PLYDataProcessingPurpose * _Nonnull)thirdPartyIntegrations SWIFT_WARN_UNUSED_RESULT;
++ (void)setThirdPartyIntegrations:(PLYDataProcessingPurpose * _Nonnull)value;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -1513,51 +1531,101 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSDictionary<N
 /// returns:
 /// The attribute value if found, otherwise <code>nil</code>.
 + (id _Nullable)getUserAttributeFor:(NSString * _Nonnull)key SWIFT_WARN_UNUSED_RESULT;
+/// Sets a string-type user attribute, defaulting processingLegalBasis to <code>PLYDataProcessingLegalBasis.optional</code>.
+/// Example: <code>setUserAttribute(withStringValue: "Gold", forKey: "subscription_tier")</code>
+/// \param value The string value to associate with the key.
+///
+/// \param key The key under which the attribute is stored.
+///
+/// \param processingLegalBasis The legal basis for processing this user attribute. Defaults to <code>.optional</code>.
+///
++ (void)setUserAttributeWithStringValue:(NSString * _Nonnull)value forKey:(NSString * _Nonnull)key;
 /// Sets a string-type user attribute.
 /// Example: <code>setUserAttribute(withStringValue: "Gold", forKey: "subscription_tier")</code>
 /// \param value The string value to associate with the key.
 ///
 /// \param key The key under which the attribute is stored.
 ///
-/// \param processingLegalBasis The legal basis for processing this user attribute. Defaults to <code>.consent</code>.
+/// \param processingLegalBasis The legal basis for processing this user attribute. Defaults to <code>.optional</code>.
 ///
 + (void)setUserAttributeWithStringValue:(NSString * _Nonnull)value forKey:(NSString * _Nonnull)key processingLegalBasis:(enum PLYDataProcessingLegalBasis)processingLegalBasis;
+/// Sets an integer-type user attribute, defaulting processingLegalBasis to <code>PLYDataProcessingLegalBasis.optional</code>.
+/// Example: <code>setUserAttribute(withIntValue: 28, forKey: "age")</code>
+/// \param value The integer value to store.
+///
+/// \param key The key under which to save the attribute.
+///
++ (void)setUserAttributeWithIntValue:(NSInteger)value forKey:(NSString * _Nonnull)key;
 /// Sets an integer-type user attribute.
 /// Example: <code>setUserAttribute(withIntValue: 28, forKey: "age")</code>
 /// \param value The integer value to store.
 ///
 /// \param key The key under which to save the attribute.
 ///
-/// \param processingLegalBasis The legal basis for processing this user attribute. Defaults to <code>.consent</code>.
+/// \param processingLegalBasis The legal basis for processing this user attribute. Defaults to <code>.optional</code>.
 ///
 + (void)setUserAttributeWithIntValue:(NSInteger)value forKey:(NSString * _Nonnull)key processingLegalBasis:(enum PLYDataProcessingLegalBasis)processingLegalBasis;
+/// Sets a double-type user attribute, defaulting processingLegalBasis to <code>PLYDataProcessingLegalBasis.optional</code>.
+/// Example: <code>setUserAttribute(withDoubleValue: 99.99, forKey: "total_spent")</code>
+/// \param value The double value to store.
+///
+/// \param key The key under which to save the attribute.
+///
++ (void)setUserAttributeWithDoubleValue:(double)value forKey:(NSString * _Nonnull)key;
 /// Sets a double-type user attribute.
 /// Example: <code>setUserAttribute(withDoubleValue: 99.99, forKey: "total_spent")</code>
 /// \param value The double value to store.
 ///
 /// \param key The key under which to save the attribute.
 ///
-/// \param processingLegalBasis The legal basis for processing this user attribute. Defaults to <code>.consent</code>.
+/// \param processingLegalBasis The legal basis for processing this user attribute. Defaults to <code>.optional</code>.
 ///
 + (void)setUserAttributeWithDoubleValue:(double)value forKey:(NSString * _Nonnull)key processingLegalBasis:(enum PLYDataProcessingLegalBasis)processingLegalBasis;
+/// Sets a date-type user attribute, defaulting processingLegalBasis to <code>PLYDataProcessingLegalBasis.optional</code>.
+/// Example: <code>setUserAttribute(withDateValue: Date(), forKey: "signup_date")</code>
+/// \param value The <code>Date</code> to store.
+///
+/// \param key The key under which to save the attribute.
+///
++ (void)setUserAttributeWithDateValue:(NSDate * _Nonnull)value forKey:(NSString * _Nonnull)key;
 /// Sets a date-type user attribute.
 /// Example: <code>setUserAttribute(withDateValue: Date(), forKey: "signup_date")</code>
 /// \param value The <code>Date</code> to store.
 ///
 /// \param key The key under which to save the attribute.
 ///
-/// \param processingLegalBasis The legal basis for processing this user attribute. Defaults to <code>.consent</code>.
+/// \param processingLegalBasis The legal basis for processing this user attribute. Defaults to <code>.optional</code>.
 ///
 + (void)setUserAttributeWithDateValue:(NSDate * _Nonnull)value forKey:(NSString * _Nonnull)key processingLegalBasis:(enum PLYDataProcessingLegalBasis)processingLegalBasis;
+/// Sets a boolean-type user attribute, defaulting processingLegalBasis to <code>PLYDataProcessingLegalBasis.optional</code>.
+/// Example: <code>setUserAttribute(withBoolValue: true, forKey: "is_premium")</code>
+/// \param value The boolean value to store.
+///
+/// \param key The key under which to save the attribute.
+///
++ (void)setUserAttributeWithBoolValue:(BOOL)value forKey:(NSString * _Nonnull)key;
 /// Sets a boolean-type user attribute.
 /// Example: <code>setUserAttribute(withBoolValue: true, forKey: "is_premium")</code>
 /// \param value The boolean value to store.
 ///
 /// \param key The key under which to save the attribute.
 ///
-/// \param processingLegalBasis The legal basis for processing this user attribute. Defaults to <code>.consent</code>.
+/// \param processingLegalBasis The legal basis for processing this user attribute. Defaults to <code>.optional</code>.
 ///
 + (void)setUserAttributeWithBoolValue:(BOOL)value forKey:(NSString * _Nonnull)key processingLegalBasis:(enum PLYDataProcessingLegalBasis)processingLegalBasis;
+/// Sets a user attribute with an array of boolean values for the given key, defaulting processingLegalBasis to <code>PLYDataProcessingLegalBasis.optional</code>.
+/// <ul>
+///   <li>
+///     Parameters:
+///   </li>
+///   <li>
+///     value: An array of boolean values to set for the attribute.
+///   </li>
+///   <li>
+///     key: The key associated with the user attribute. This key will be used to identify and retrieve the attribute.
+///   </li>
+/// </ul>
++ (void)setUserAttributeWithBoolArray:(NSArray<NSNumber *> * _Nonnull)value forKey:(NSString * _Nonnull)key;
 /// Sets a user attribute with an array of boolean values for the given key.
 /// <ul>
 ///   <li>
@@ -1570,10 +1638,23 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSDictionary<N
 ///     key: The key associated with the user attribute. This key will be used to identify and retrieve the attribute.
 ///   </li>
 ///   <li>
-///     processingLegalBasis: The legal basis for processing this user attribute. Defaults to <code>.consent</code>.
+///     processingLegalBasis: The legal basis for processing this user attribute. Defaults to <code>.optional</code>.
 ///   </li>
 /// </ul>
 + (void)setUserAttributeWithBoolArray:(NSArray<NSNumber *> * _Nonnull)value forKey:(NSString * _Nonnull)key processingLegalBasis:(enum PLYDataProcessingLegalBasis)processingLegalBasis;
+/// Sets a user attribute with an array of integer values for the given key, defaulting processingLegalBasis to <code>PLYDataProcessingLegalBasis.optional</code>.
+/// <ul>
+///   <li>
+///     Parameters:
+///   </li>
+///   <li>
+///     value: An array of integer values to set for the attribute.
+///   </li>
+///   <li>
+///     key: The key associated with the user attribute. This key will be used to identify and retrieve the attribute.
+///   </li>
+/// </ul>
++ (void)setUserAttributeWithIntArray:(NSArray<NSNumber *> * _Nonnull)value forKey:(NSString * _Nonnull)key;
 /// Sets a user attribute with an array of integer values for the given key.
 /// <ul>
 ///   <li>
@@ -1586,10 +1667,23 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSDictionary<N
 ///     key: The key associated with the user attribute. This key will be used to identify and retrieve the attribute.
 ///   </li>
 ///   <li>
-///     processingLegalBasis: The legal basis for processing this user attribute. Defaults to <code>.consent</code>.
+///     processingLegalBasis: The legal basis for processing this user attribute. Defaults to <code>.optional</code>.
 ///   </li>
 /// </ul>
 + (void)setUserAttributeWithIntArray:(NSArray<NSNumber *> * _Nonnull)value forKey:(NSString * _Nonnull)key processingLegalBasis:(enum PLYDataProcessingLegalBasis)processingLegalBasis;
+/// Sets a user attribute with an array of string values for the given key, defaulting processingLegalBasis to <code>PLYDataProcessingLegalBasis.optional</code>.
+/// <ul>
+///   <li>
+///     Parameters:
+///   </li>
+///   <li>
+///     value: An array of string values to set for the attribute.
+///   </li>
+///   <li>
+///     key: The key associated with the user attribute. This key will be used to identify and retrieve the attribute.
+///   </li>
+/// </ul>
++ (void)setUserAttributeWithStringArray:(NSArray<NSString *> * _Nonnull)value forKey:(NSString * _Nonnull)key;
 /// Sets a user attribute with an array of string values for the given key.
 /// <ul>
 ///   <li>
@@ -1602,10 +1696,23 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSDictionary<N
 ///     key: The key associated with the user attribute. This key will be used to identify and retrieve the attribute.
 ///   </li>
 ///   <li>
-///     processingLegalBasis: The legal basis for processing this user attribute. Defaults to <code>.consent</code>.
+///     processingLegalBasis: The legal basis for processing this user attribute. Defaults to <code>.optional</code>.
 ///   </li>
 /// </ul>
 + (void)setUserAttributeWithStringArray:(NSArray<NSString *> * _Nonnull)value forKey:(NSString * _Nonnull)key processingLegalBasis:(enum PLYDataProcessingLegalBasis)processingLegalBasis;
+/// Sets a user attribute with an array of double values for the given key, defaulting processingLegalBasis to <code>PLYDataProcessingLegalBasis.optional</code>.
+/// <ul>
+///   <li>
+///     Parameters:
+///   </li>
+///   <li>
+///     value: An array of double values to set for the attribute.
+///   </li>
+///   <li>
+///     key: The key associated with the user attribute. This key will be used to identify and retrieve the attribute.
+///   </li>
+/// </ul>
++ (void)setUserAttributeWithDoubleArray:(NSArray<NSNumber *> * _Nonnull)value forKey:(NSString * _Nonnull)key;
 /// Sets a user attribute with an array of double values for the given key.
 /// <ul>
 ///   <li>
@@ -1618,10 +1725,23 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSDictionary<N
 ///     key: The key associated with the user attribute. This key will be used to identify and retrieve the attribute.
 ///   </li>
 ///   <li>
-///     processingLegalBasis: The legal basis for processing this user attribute. Defaults to <code>.consent</code>.
+///     processingLegalBasis: The legal basis for processing this user attribute. Defaults to <code>.optional</code>.
 ///   </li>
 /// </ul>
 + (void)setUserAttributeWithDoubleArray:(NSArray<NSNumber *> * _Nonnull)value forKey:(NSString * _Nonnull)key processingLegalBasis:(enum PLYDataProcessingLegalBasis)processingLegalBasis;
+/// Increments a numerical user attribute by a specified value. If the attribute does not exist, it will be created with the initial increment value, defaulting processingLegalBasis to <code>PLYDataProcessingLegalBasis.optional</code>
+/// <ul>
+///   <li>
+///     Parameters:
+///   </li>
+///   <li>
+///     key: The key of the numerical user attribute to increment.
+///   </li>
+///   <li>
+///     value: The value to increment the attribute by. Defaults to 1.
+///   </li>
+/// </ul>
++ (void)incrementUserAttributeWithKey:(NSString * _Nonnull)key value:(NSInteger)value;
 /// Increments a numerical user attribute by a specified value. If the attribute does not exist, it will be created with the initial increment value.
 /// <ul>
 ///   <li>
@@ -1634,10 +1754,23 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSDictionary<N
 ///     value: The value to increment the attribute by. Defaults to 1.
 ///   </li>
 ///   <li>
-///     processingLegalBasis: The legal basis for processing this user attribute. Defaults to <code>.consent</code>.
+///     processingLegalBasis: The legal basis for processing this user attribute. Defaults to <code>.optional</code>.
 ///   </li>
 /// </ul>
 + (void)incrementUserAttributeWithKey:(NSString * _Nonnull)key value:(NSInteger)value processingLegalBasis:(enum PLYDataProcessingLegalBasis)processingLegalBasis;
+/// Decrements a numerical user attribute by a specified value. If the attribute does not exist, it will be created with the initial negative decrement value, defaulting processingLegalBasis to <code>PLYDataProcessingLegalBasis.optional</code>
+/// <ul>
+///   <li>
+///     Parameters:
+///   </li>
+///   <li>
+///     key: The key of the numerical user attribute to decrement.
+///   </li>
+///   <li>
+///     value: The value to decrement the attribute by. Defaults to 1.
+///   </li>
+/// </ul>
++ (void)decrementUserAttributeWithKey:(NSString * _Nonnull)key value:(NSInteger)value;
 /// Decrements a numerical user attribute by a specified value. If the attribute does not exist, it will be created with the initial negative decrement value.
 /// <ul>
 ///   <li>
@@ -1650,10 +1783,20 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSDictionary<N
 ///     value: The value to decrement the attribute by. Defaults to 1.
 ///   </li>
 ///   <li>
-///     processingLegalBasis: The legal basis for processing this user attribute. Defaults to <code>.consent</code>.
+///     processingLegalBasis: The legal basis for processing this user attribute. Defaults to <code>.optional</code>.
 ///   </li>
 /// </ul>
 + (void)decrementUserAttributeWithKey:(NSString * _Nonnull)key value:(NSInteger)value processingLegalBasis:(enum PLYDataProcessingLegalBasis)processingLegalBasis;
+/// Sets multiple user attributes at once using a dictionary defaulting processingLegalBasis to <code>PLYDataProcessingLegalBasis.optional</code>
+/// <ul>
+///   <li>
+///     Parameters:
+///   </li>
+///   <li>
+///     attributes: A dictionary where the keys are the attribute names (String) and the values are the corresponding attribute values (Any). Supported value types are Bool, Int, Double, String, and arrays of these types.
+///   </li>
+/// </ul>
++ (void)setUserAttributes:(NSDictionary<NSString *, id> * _Nonnull)attributes;
 /// Sets multiple user attributes at once using a dictionary.
 /// <ul>
 ///   <li>
@@ -1663,19 +1806,11 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSDictionary<N
 ///     attributes: A dictionary where the keys are the attribute names (String) and the values are the corresponding attribute values (Any). Supported value types are Bool, Int, Double, String, and arrays of these types.
 ///   </li>
 ///   <li>
-///     processingLegalBasis: The legal basis for processing these user attributes. Defaults to <code>.consent</code>.
+///     processingLegalBasis: The legal basis for processing these user attributes. Defaults to <code>.optional</code>.
 ///   </li>
 /// </ul>
 + (void)setUserAttributes:(NSDictionary<NSString *, id> * _Nonnull)attributes processingLegalBasis:(enum PLYDataProcessingLegalBasis)processingLegalBasis;
 /// Clears all user-defined attributes. This will remove all custom attributes that have been set.
-/// <ul>
-///   <li>
-///     Parameters:
-///   </li>
-///   <li>
-///     processingLegalBasis: The legal basis for processing the clearing of user attributes. Defaults to <code>.consent</code>.
-///   </li>
-/// </ul>
 + (void)clearUserAttributes;
 /// Clears a specific user attribute based on its key.
 /// <ul>
@@ -2177,6 +2312,24 @@ typedef SWIFT_ENUM(NSInteger, PLYDataProcessingLegalBasis, open) {
 
 SWIFT_CLASS("_TtC10Purchasely24PLYDataProcessingPurpose")
 @interface PLYDataProcessingPurpose : NSObject
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, strong) PLYDataProcessingPurpose * _Nonnull allNonEssentials;)
++ (PLYDataProcessingPurpose * _Nonnull)allNonEssentials SWIFT_WARN_UNUSED_RESULT;
++ (void)setAllNonEssentials:(PLYDataProcessingPurpose * _Nonnull)value;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, strong) PLYDataProcessingPurpose * _Nonnull analytics;)
++ (PLYDataProcessingPurpose * _Nonnull)analytics SWIFT_WARN_UNUSED_RESULT;
++ (void)setAnalytics:(PLYDataProcessingPurpose * _Nonnull)value;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, strong) PLYDataProcessingPurpose * _Nonnull identifiedAnalytics;)
++ (PLYDataProcessingPurpose * _Nonnull)identifiedAnalytics SWIFT_WARN_UNUSED_RESULT;
++ (void)setIdentifiedAnalytics:(PLYDataProcessingPurpose * _Nonnull)value;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, strong) PLYDataProcessingPurpose * _Nonnull campaigns;)
++ (PLYDataProcessingPurpose * _Nonnull)campaigns SWIFT_WARN_UNUSED_RESULT;
++ (void)setCampaigns:(PLYDataProcessingPurpose * _Nonnull)value;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, strong) PLYDataProcessingPurpose * _Nonnull personalization;)
++ (PLYDataProcessingPurpose * _Nonnull)personalization SWIFT_WARN_UNUSED_RESULT;
++ (void)setPersonalization:(PLYDataProcessingPurpose * _Nonnull)value;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, strong) PLYDataProcessingPurpose * _Nonnull thirdPartyIntegrations;)
++ (PLYDataProcessingPurpose * _Nonnull)thirdPartyIntegrations SWIFT_WARN_UNUSED_RESULT;
++ (void)setThirdPartyIntegrations:(PLYDataProcessingPurpose * _Nonnull)value;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -3318,51 +3471,101 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSDictionary<N
 /// returns:
 /// The attribute value if found, otherwise <code>nil</code>.
 + (id _Nullable)getUserAttributeFor:(NSString * _Nonnull)key SWIFT_WARN_UNUSED_RESULT;
+/// Sets a string-type user attribute, defaulting processingLegalBasis to <code>PLYDataProcessingLegalBasis.optional</code>.
+/// Example: <code>setUserAttribute(withStringValue: "Gold", forKey: "subscription_tier")</code>
+/// \param value The string value to associate with the key.
+///
+/// \param key The key under which the attribute is stored.
+///
+/// \param processingLegalBasis The legal basis for processing this user attribute. Defaults to <code>.optional</code>.
+///
++ (void)setUserAttributeWithStringValue:(NSString * _Nonnull)value forKey:(NSString * _Nonnull)key;
 /// Sets a string-type user attribute.
 /// Example: <code>setUserAttribute(withStringValue: "Gold", forKey: "subscription_tier")</code>
 /// \param value The string value to associate with the key.
 ///
 /// \param key The key under which the attribute is stored.
 ///
-/// \param processingLegalBasis The legal basis for processing this user attribute. Defaults to <code>.consent</code>.
+/// \param processingLegalBasis The legal basis for processing this user attribute. Defaults to <code>.optional</code>.
 ///
 + (void)setUserAttributeWithStringValue:(NSString * _Nonnull)value forKey:(NSString * _Nonnull)key processingLegalBasis:(enum PLYDataProcessingLegalBasis)processingLegalBasis;
+/// Sets an integer-type user attribute, defaulting processingLegalBasis to <code>PLYDataProcessingLegalBasis.optional</code>.
+/// Example: <code>setUserAttribute(withIntValue: 28, forKey: "age")</code>
+/// \param value The integer value to store.
+///
+/// \param key The key under which to save the attribute.
+///
++ (void)setUserAttributeWithIntValue:(NSInteger)value forKey:(NSString * _Nonnull)key;
 /// Sets an integer-type user attribute.
 /// Example: <code>setUserAttribute(withIntValue: 28, forKey: "age")</code>
 /// \param value The integer value to store.
 ///
 /// \param key The key under which to save the attribute.
 ///
-/// \param processingLegalBasis The legal basis for processing this user attribute. Defaults to <code>.consent</code>.
+/// \param processingLegalBasis The legal basis for processing this user attribute. Defaults to <code>.optional</code>.
 ///
 + (void)setUserAttributeWithIntValue:(NSInteger)value forKey:(NSString * _Nonnull)key processingLegalBasis:(enum PLYDataProcessingLegalBasis)processingLegalBasis;
+/// Sets a double-type user attribute, defaulting processingLegalBasis to <code>PLYDataProcessingLegalBasis.optional</code>.
+/// Example: <code>setUserAttribute(withDoubleValue: 99.99, forKey: "total_spent")</code>
+/// \param value The double value to store.
+///
+/// \param key The key under which to save the attribute.
+///
++ (void)setUserAttributeWithDoubleValue:(double)value forKey:(NSString * _Nonnull)key;
 /// Sets a double-type user attribute.
 /// Example: <code>setUserAttribute(withDoubleValue: 99.99, forKey: "total_spent")</code>
 /// \param value The double value to store.
 ///
 /// \param key The key under which to save the attribute.
 ///
-/// \param processingLegalBasis The legal basis for processing this user attribute. Defaults to <code>.consent</code>.
+/// \param processingLegalBasis The legal basis for processing this user attribute. Defaults to <code>.optional</code>.
 ///
 + (void)setUserAttributeWithDoubleValue:(double)value forKey:(NSString * _Nonnull)key processingLegalBasis:(enum PLYDataProcessingLegalBasis)processingLegalBasis;
+/// Sets a date-type user attribute, defaulting processingLegalBasis to <code>PLYDataProcessingLegalBasis.optional</code>.
+/// Example: <code>setUserAttribute(withDateValue: Date(), forKey: "signup_date")</code>
+/// \param value The <code>Date</code> to store.
+///
+/// \param key The key under which to save the attribute.
+///
++ (void)setUserAttributeWithDateValue:(NSDate * _Nonnull)value forKey:(NSString * _Nonnull)key;
 /// Sets a date-type user attribute.
 /// Example: <code>setUserAttribute(withDateValue: Date(), forKey: "signup_date")</code>
 /// \param value The <code>Date</code> to store.
 ///
 /// \param key The key under which to save the attribute.
 ///
-/// \param processingLegalBasis The legal basis for processing this user attribute. Defaults to <code>.consent</code>.
+/// \param processingLegalBasis The legal basis for processing this user attribute. Defaults to <code>.optional</code>.
 ///
 + (void)setUserAttributeWithDateValue:(NSDate * _Nonnull)value forKey:(NSString * _Nonnull)key processingLegalBasis:(enum PLYDataProcessingLegalBasis)processingLegalBasis;
+/// Sets a boolean-type user attribute, defaulting processingLegalBasis to <code>PLYDataProcessingLegalBasis.optional</code>.
+/// Example: <code>setUserAttribute(withBoolValue: true, forKey: "is_premium")</code>
+/// \param value The boolean value to store.
+///
+/// \param key The key under which to save the attribute.
+///
++ (void)setUserAttributeWithBoolValue:(BOOL)value forKey:(NSString * _Nonnull)key;
 /// Sets a boolean-type user attribute.
 /// Example: <code>setUserAttribute(withBoolValue: true, forKey: "is_premium")</code>
 /// \param value The boolean value to store.
 ///
 /// \param key The key under which to save the attribute.
 ///
-/// \param processingLegalBasis The legal basis for processing this user attribute. Defaults to <code>.consent</code>.
+/// \param processingLegalBasis The legal basis for processing this user attribute. Defaults to <code>.optional</code>.
 ///
 + (void)setUserAttributeWithBoolValue:(BOOL)value forKey:(NSString * _Nonnull)key processingLegalBasis:(enum PLYDataProcessingLegalBasis)processingLegalBasis;
+/// Sets a user attribute with an array of boolean values for the given key, defaulting processingLegalBasis to <code>PLYDataProcessingLegalBasis.optional</code>.
+/// <ul>
+///   <li>
+///     Parameters:
+///   </li>
+///   <li>
+///     value: An array of boolean values to set for the attribute.
+///   </li>
+///   <li>
+///     key: The key associated with the user attribute. This key will be used to identify and retrieve the attribute.
+///   </li>
+/// </ul>
++ (void)setUserAttributeWithBoolArray:(NSArray<NSNumber *> * _Nonnull)value forKey:(NSString * _Nonnull)key;
 /// Sets a user attribute with an array of boolean values for the given key.
 /// <ul>
 ///   <li>
@@ -3375,10 +3578,23 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSDictionary<N
 ///     key: The key associated with the user attribute. This key will be used to identify and retrieve the attribute.
 ///   </li>
 ///   <li>
-///     processingLegalBasis: The legal basis for processing this user attribute. Defaults to <code>.consent</code>.
+///     processingLegalBasis: The legal basis for processing this user attribute. Defaults to <code>.optional</code>.
 ///   </li>
 /// </ul>
 + (void)setUserAttributeWithBoolArray:(NSArray<NSNumber *> * _Nonnull)value forKey:(NSString * _Nonnull)key processingLegalBasis:(enum PLYDataProcessingLegalBasis)processingLegalBasis;
+/// Sets a user attribute with an array of integer values for the given key, defaulting processingLegalBasis to <code>PLYDataProcessingLegalBasis.optional</code>.
+/// <ul>
+///   <li>
+///     Parameters:
+///   </li>
+///   <li>
+///     value: An array of integer values to set for the attribute.
+///   </li>
+///   <li>
+///     key: The key associated with the user attribute. This key will be used to identify and retrieve the attribute.
+///   </li>
+/// </ul>
++ (void)setUserAttributeWithIntArray:(NSArray<NSNumber *> * _Nonnull)value forKey:(NSString * _Nonnull)key;
 /// Sets a user attribute with an array of integer values for the given key.
 /// <ul>
 ///   <li>
@@ -3391,10 +3607,23 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSDictionary<N
 ///     key: The key associated with the user attribute. This key will be used to identify and retrieve the attribute.
 ///   </li>
 ///   <li>
-///     processingLegalBasis: The legal basis for processing this user attribute. Defaults to <code>.consent</code>.
+///     processingLegalBasis: The legal basis for processing this user attribute. Defaults to <code>.optional</code>.
 ///   </li>
 /// </ul>
 + (void)setUserAttributeWithIntArray:(NSArray<NSNumber *> * _Nonnull)value forKey:(NSString * _Nonnull)key processingLegalBasis:(enum PLYDataProcessingLegalBasis)processingLegalBasis;
+/// Sets a user attribute with an array of string values for the given key, defaulting processingLegalBasis to <code>PLYDataProcessingLegalBasis.optional</code>.
+/// <ul>
+///   <li>
+///     Parameters:
+///   </li>
+///   <li>
+///     value: An array of string values to set for the attribute.
+///   </li>
+///   <li>
+///     key: The key associated with the user attribute. This key will be used to identify and retrieve the attribute.
+///   </li>
+/// </ul>
++ (void)setUserAttributeWithStringArray:(NSArray<NSString *> * _Nonnull)value forKey:(NSString * _Nonnull)key;
 /// Sets a user attribute with an array of string values for the given key.
 /// <ul>
 ///   <li>
@@ -3407,10 +3636,23 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSDictionary<N
 ///     key: The key associated with the user attribute. This key will be used to identify and retrieve the attribute.
 ///   </li>
 ///   <li>
-///     processingLegalBasis: The legal basis for processing this user attribute. Defaults to <code>.consent</code>.
+///     processingLegalBasis: The legal basis for processing this user attribute. Defaults to <code>.optional</code>.
 ///   </li>
 /// </ul>
 + (void)setUserAttributeWithStringArray:(NSArray<NSString *> * _Nonnull)value forKey:(NSString * _Nonnull)key processingLegalBasis:(enum PLYDataProcessingLegalBasis)processingLegalBasis;
+/// Sets a user attribute with an array of double values for the given key, defaulting processingLegalBasis to <code>PLYDataProcessingLegalBasis.optional</code>.
+/// <ul>
+///   <li>
+///     Parameters:
+///   </li>
+///   <li>
+///     value: An array of double values to set for the attribute.
+///   </li>
+///   <li>
+///     key: The key associated with the user attribute. This key will be used to identify and retrieve the attribute.
+///   </li>
+/// </ul>
++ (void)setUserAttributeWithDoubleArray:(NSArray<NSNumber *> * _Nonnull)value forKey:(NSString * _Nonnull)key;
 /// Sets a user attribute with an array of double values for the given key.
 /// <ul>
 ///   <li>
@@ -3423,10 +3665,23 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSDictionary<N
 ///     key: The key associated with the user attribute. This key will be used to identify and retrieve the attribute.
 ///   </li>
 ///   <li>
-///     processingLegalBasis: The legal basis for processing this user attribute. Defaults to <code>.consent</code>.
+///     processingLegalBasis: The legal basis for processing this user attribute. Defaults to <code>.optional</code>.
 ///   </li>
 /// </ul>
 + (void)setUserAttributeWithDoubleArray:(NSArray<NSNumber *> * _Nonnull)value forKey:(NSString * _Nonnull)key processingLegalBasis:(enum PLYDataProcessingLegalBasis)processingLegalBasis;
+/// Increments a numerical user attribute by a specified value. If the attribute does not exist, it will be created with the initial increment value, defaulting processingLegalBasis to <code>PLYDataProcessingLegalBasis.optional</code>
+/// <ul>
+///   <li>
+///     Parameters:
+///   </li>
+///   <li>
+///     key: The key of the numerical user attribute to increment.
+///   </li>
+///   <li>
+///     value: The value to increment the attribute by. Defaults to 1.
+///   </li>
+/// </ul>
++ (void)incrementUserAttributeWithKey:(NSString * _Nonnull)key value:(NSInteger)value;
 /// Increments a numerical user attribute by a specified value. If the attribute does not exist, it will be created with the initial increment value.
 /// <ul>
 ///   <li>
@@ -3439,10 +3694,23 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSDictionary<N
 ///     value: The value to increment the attribute by. Defaults to 1.
 ///   </li>
 ///   <li>
-///     processingLegalBasis: The legal basis for processing this user attribute. Defaults to <code>.consent</code>.
+///     processingLegalBasis: The legal basis for processing this user attribute. Defaults to <code>.optional</code>.
 ///   </li>
 /// </ul>
 + (void)incrementUserAttributeWithKey:(NSString * _Nonnull)key value:(NSInteger)value processingLegalBasis:(enum PLYDataProcessingLegalBasis)processingLegalBasis;
+/// Decrements a numerical user attribute by a specified value. If the attribute does not exist, it will be created with the initial negative decrement value, defaulting processingLegalBasis to <code>PLYDataProcessingLegalBasis.optional</code>
+/// <ul>
+///   <li>
+///     Parameters:
+///   </li>
+///   <li>
+///     key: The key of the numerical user attribute to decrement.
+///   </li>
+///   <li>
+///     value: The value to decrement the attribute by. Defaults to 1.
+///   </li>
+/// </ul>
++ (void)decrementUserAttributeWithKey:(NSString * _Nonnull)key value:(NSInteger)value;
 /// Decrements a numerical user attribute by a specified value. If the attribute does not exist, it will be created with the initial negative decrement value.
 /// <ul>
 ///   <li>
@@ -3455,10 +3723,20 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSDictionary<N
 ///     value: The value to decrement the attribute by. Defaults to 1.
 ///   </li>
 ///   <li>
-///     processingLegalBasis: The legal basis for processing this user attribute. Defaults to <code>.consent</code>.
+///     processingLegalBasis: The legal basis for processing this user attribute. Defaults to <code>.optional</code>.
 ///   </li>
 /// </ul>
 + (void)decrementUserAttributeWithKey:(NSString * _Nonnull)key value:(NSInteger)value processingLegalBasis:(enum PLYDataProcessingLegalBasis)processingLegalBasis;
+/// Sets multiple user attributes at once using a dictionary defaulting processingLegalBasis to <code>PLYDataProcessingLegalBasis.optional</code>
+/// <ul>
+///   <li>
+///     Parameters:
+///   </li>
+///   <li>
+///     attributes: A dictionary where the keys are the attribute names (String) and the values are the corresponding attribute values (Any). Supported value types are Bool, Int, Double, String, and arrays of these types.
+///   </li>
+/// </ul>
++ (void)setUserAttributes:(NSDictionary<NSString *, id> * _Nonnull)attributes;
 /// Sets multiple user attributes at once using a dictionary.
 /// <ul>
 ///   <li>
@@ -3468,19 +3746,11 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSDictionary<N
 ///     attributes: A dictionary where the keys are the attribute names (String) and the values are the corresponding attribute values (Any). Supported value types are Bool, Int, Double, String, and arrays of these types.
 ///   </li>
 ///   <li>
-///     processingLegalBasis: The legal basis for processing these user attributes. Defaults to <code>.consent</code>.
+///     processingLegalBasis: The legal basis for processing these user attributes. Defaults to <code>.optional</code>.
 ///   </li>
 /// </ul>
 + (void)setUserAttributes:(NSDictionary<NSString *, id> * _Nonnull)attributes processingLegalBasis:(enum PLYDataProcessingLegalBasis)processingLegalBasis;
 /// Clears all user-defined attributes. This will remove all custom attributes that have been set.
-/// <ul>
-///   <li>
-///     Parameters:
-///   </li>
-///   <li>
-///     processingLegalBasis: The legal basis for processing the clearing of user attributes. Defaults to <code>.consent</code>.
-///   </li>
-/// </ul>
 + (void)clearUserAttributes;
 /// Clears a specific user attribute based on its key.
 /// <ul>
