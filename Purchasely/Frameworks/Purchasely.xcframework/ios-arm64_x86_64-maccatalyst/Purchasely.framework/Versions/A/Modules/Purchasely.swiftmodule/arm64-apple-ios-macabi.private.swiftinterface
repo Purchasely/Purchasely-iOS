@@ -43,12 +43,12 @@ extension Swift.Array {
 }
 public func loc(_ textToTranslate: Swift.String, comment: Swift.String = "", language: Swift.String? = nil) -> Swift.String
 @_hasMissingDesignatedInitializers @objc public class PLYDataProcessingPurpose : ObjectiveC.NSObject {
-  public static var allNonEssentials: PLYDataProcessingPurpose
-  public static var analytics: PLYDataProcessingPurpose
-  public static var identifiedAnalytics: PLYDataProcessingPurpose
-  public static var campaigns: PLYDataProcessingPurpose
-  public static var personalization: PLYDataProcessingPurpose
-  public static var thirdPartyIntegrations: PLYDataProcessingPurpose
+  @objc public static var allNonEssentials: PLYDataProcessingPurpose
+  @objc public static var analytics: PLYDataProcessingPurpose
+  @objc public static var identifiedAnalytics: PLYDataProcessingPurpose
+  @objc public static var campaigns: PLYDataProcessingPurpose
+  @objc public static var personalization: PLYDataProcessingPurpose
+  @objc public static var thirdPartyIntegrations: PLYDataProcessingPurpose
   @objc deinit
 }
 public enum LocalReceiptError : Swift.Error {
@@ -1103,17 +1103,29 @@ extension Purchasely {
     @objc get
   }
   @objc public static func getUserAttribute(for key: Swift.String) -> Any?
+  @objc public static func setUserAttribute(withStringValue value: Swift.String, forKey key: Swift.String)
   @objc public static func setUserAttribute(withStringValue value: Swift.String, forKey key: Swift.String, processingLegalBasis: PLYDataProcessingLegalBasis = .optional)
+  @objc public static func setUserAttribute(withIntValue value: Swift.Int, forKey key: Swift.String)
   @objc public static func setUserAttribute(withIntValue value: Swift.Int, forKey key: Swift.String, processingLegalBasis: PLYDataProcessingLegalBasis = .optional)
+  @objc public static func setUserAttribute(withDoubleValue value: Swift.Double, forKey key: Swift.String)
   @objc public static func setUserAttribute(withDoubleValue value: Swift.Double, forKey key: Swift.String, processingLegalBasis: PLYDataProcessingLegalBasis = .optional)
+  @objc public static func setUserAttribute(withDateValue value: Foundation.Date, forKey key: Swift.String)
   @objc public static func setUserAttribute(withDateValue value: Foundation.Date, forKey key: Swift.String, processingLegalBasis: PLYDataProcessingLegalBasis = .optional)
+  @objc public static func setUserAttribute(withBoolValue value: Swift.Bool, forKey key: Swift.String)
   @objc public static func setUserAttribute(withBoolValue value: Swift.Bool, forKey key: Swift.String, processingLegalBasis: PLYDataProcessingLegalBasis = .optional)
+  @objc public static func setUserAttribute(withBoolArray value: [Swift.Bool], forKey key: Swift.String)
   @objc public static func setUserAttribute(withBoolArray value: [Swift.Bool], forKey key: Swift.String, processingLegalBasis: PLYDataProcessingLegalBasis = .optional)
+  @objc public static func setUserAttribute(withIntArray value: [Swift.Int], forKey key: Swift.String)
   @objc public static func setUserAttribute(withIntArray value: [Swift.Int], forKey key: Swift.String, processingLegalBasis: PLYDataProcessingLegalBasis = .optional)
+  @objc public static func setUserAttribute(withStringArray value: [Swift.String], forKey key: Swift.String)
   @objc public static func setUserAttribute(withStringArray value: [Swift.String], forKey key: Swift.String, processingLegalBasis: PLYDataProcessingLegalBasis = .optional)
+  @objc public static func setUserAttribute(withDoubleArray value: [Swift.Double], forKey key: Swift.String)
   @objc public static func setUserAttribute(withDoubleArray value: [Swift.Double], forKey key: Swift.String, processingLegalBasis: PLYDataProcessingLegalBasis = .optional)
+  @objc public static func incrementUserAttribute(withKey key: Swift.String, value: Swift.Int = 1)
   @objc public static func incrementUserAttribute(withKey key: Swift.String, value: Swift.Int = 1, processingLegalBasis: PLYDataProcessingLegalBasis = .optional)
+  @objc public static func decrementUserAttribute(withKey key: Swift.String, value: Swift.Int = 1)
   @objc public static func decrementUserAttribute(withKey key: Swift.String, value: Swift.Int = 1, processingLegalBasis: PLYDataProcessingLegalBasis = .optional)
+  @objc public static func setUserAttributes(_ attributes: [Swift.String : Any])
   @objc public static func setUserAttributes(_ attributes: [Swift.String : Any], processingLegalBasis: PLYDataProcessingLegalBasis = .optional)
   @objc public static func clearUserAttributes()
   @objc public static func clearUserAttribute(forKey key: Swift.String)
