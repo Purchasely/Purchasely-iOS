@@ -56623,49 +56623,49 @@
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/UI\/PLYGenericComponent.swift",
       "kind": "BooleanLiteral",
-      "offset": 4001,
+      "offset": 4043,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/UI\/PLYGenericComponent.swift",
       "kind": "StringLiteral",
-      "offset": 8843,
+      "offset": 8885,
       "length": 8,
       "value": "\"on_tap\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/UI\/PLYGenericComponent.swift",
       "kind": "StringLiteral",
-      "offset": 8894,
+      "offset": 8936,
       "length": 23,
       "value": "\"tile_selected_actions\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/UI\/PLYGenericComponent.swift",
       "kind": "StringLiteral",
-      "offset": 8973,
+      "offset": 9015,
       "length": 10,
       "value": "\"selected\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/UI\/PLYGenericComponent.swift",
       "kind": "StringLiteral",
-      "offset": 9006,
+      "offset": 9048,
       "length": 16,
       "value": "\"expand_to_fill\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/UI\/PLYGenericComponent.swift",
       "kind": "StringLiteral",
-      "offset": 9050,
+      "offset": 9092,
       "length": 15,
       "value": "\"safe_area_top\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/UI\/PLYGenericComponent.swift",
       "kind": "StringLiteral",
-      "offset": 9096,
+      "offset": 9138,
       "length": 18,
       "value": "\"safe_area_bottom\""
     },
@@ -57757,7 +57757,7 @@
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/specific\/uikit\/Controller\/PLYProductViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 22753,
+      "offset": 22759,
       "length": 5,
       "value": "false"
     },
@@ -59096,7 +59096,7 @@
       "kind": "StringLiteral",
       "offset": 3188,
       "length": 7,
-      "value": "\"5.4.1\""
+      "value": "\"5.4.2\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+Flow.swift",
@@ -59577,70 +59577,70 @@
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/specific\/uikit\/Utils\/UIKit\/UIView+Contraint.swift",
       "kind": "BooleanLiteral",
-      "offset": 7675,
+      "offset": 7705,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/specific\/uikit\/Utils\/UIKit\/UIView+Contraint.swift",
       "kind": "IntegerLiteral",
-      "offset": 7728,
+      "offset": 7758,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/specific\/uikit\/Utils\/UIKit\/UIView+Contraint.swift",
       "kind": "BooleanLiteral",
-      "offset": 7751,
+      "offset": 7781,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/specific\/uikit\/Utils\/UIKit\/UIView+Contraint.swift",
       "kind": "BooleanLiteral",
-      "offset": 8614,
+      "offset": 8714,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/specific\/uikit\/Utils\/UIKit\/UIView+Contraint.swift",
       "kind": "IntegerLiteral",
-      "offset": 8667,
+      "offset": 8767,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/specific\/uikit\/Utils\/UIKit\/UIView+Contraint.swift",
       "kind": "BooleanLiteral",
-      "offset": 8690,
+      "offset": 8790,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/specific\/uikit\/Utils\/UIKit\/UIView+Contraint.swift",
       "kind": "BooleanLiteral",
-      "offset": 10171,
+      "offset": 10390,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/specific\/uikit\/Utils\/UIKit\/UIView+Contraint.swift",
       "kind": "IntegerLiteral",
-      "offset": 10224,
+      "offset": 10443,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/specific\/uikit\/Utils\/UIKit\/UIView+Contraint.swift",
       "kind": "BooleanLiteral",
-      "offset": 10933,
+      "offset": 11154,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/specific\/uikit\/Utils\/UIKit\/UIView+Contraint.swift",
       "kind": "IntegerLiteral",
-      "offset": 10986,
+      "offset": 11207,
       "length": 1,
       "value": "0"
     },
