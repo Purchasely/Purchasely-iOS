@@ -1,13 +1,15 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 6.1.2 effective-5.10 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)
-// swift-module-flags: -target x86_64-apple-ios12.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -module-name Purchasely
-// swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1.2
+// swift-compiler-version: Apple Swift version 6.2.1 effective-5.10 (swiftlang-6.2.1.4.8 clang-1700.4.4.1)
+// swift-module-flags: -target x86_64-apple-ios13.4-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -module-name Purchasely
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2.1
 import AVFoundation
 import AVKit
+import Combine
 import CommonCrypto
 import DeveloperToolsSupport
 import Foundation
 @_exported import Purchasely
+import QuartzCore
 import StoreKit
 import Swift
 import SwiftUI
@@ -17,9 +19,11 @@ import _Concurrency
 import _StoreKit_SwiftUI
 import _SwiftConcurrencyShims
 extension Swift.Array {
+  #if compiler(>=5.3) && $NonescapableTypes
   public subscript(safe index: Swift.Int) -> Element? {
     get
   }
+  #endif
 }
 @inlinable @inline(__always) internal func isHighTag(_ number: Swift.UInt8) -> Swift.Bool {
     return number == 0x1f
@@ -39,7 +43,9 @@ extension Swift.Array {
 @inlinable @inline(__always) internal func tlvConstructed(tag: Swift.UInt8) -> Swift.Bool {
     return tag & 0x20 != 0
 }
+#if compiler(>=5.3) && $NonescapableTypes
 public func loc(_ textToTranslate: Swift.String, comment: Swift.String = "", language: Swift.String? = nil) -> Swift.String
+#endif
 @_hasMissingDesignatedInitializers @objc public class PLYDataProcessingPurpose : ObjectiveC.NSObject {
   @objc public static var allNonEssentials: Purchasely.PLYDataProcessingPurpose
   @objc public static var analytics: Purchasely.PLYDataProcessingPurpose
@@ -71,7 +77,9 @@ extension Foundation.NSNotification.Name {
   case stripe
   case other
   case none
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
@@ -92,13 +100,17 @@ extension Foundation.NSNotification.Name {
   public var title: Swift.String {
     get
   }
+  #if compiler(>=5.3) && $NonescapableTypes
   public var content: Swift.String? {
     get
   }
+  #endif
   public var buttonTitle: Swift.String {
     get
   }
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
@@ -111,7 +123,9 @@ extension Foundation.NSNotification.Name {
   case macCatalyst
   case reactNative
   case unity
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
@@ -122,7 +136,9 @@ public enum PLYFrequencyCapUnit : Swift.String, Swift.Decodable {
   case seconds
   case minutes
   case days
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.String)
+  #endif
   public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
@@ -130,7 +146,9 @@ public enum PLYFrequencyCapUnit : Swift.String, Swift.Decodable {
 }
 public enum PLYImpressionCapUnit : Swift.String, Swift.Decodable {
   case displays
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.String)
+  #endif
   public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
@@ -148,7 +166,9 @@ public struct PLYImpressionCap : Swift.Decodable {
 }
 public enum PLYCampaignStatus : Swift.String, Swift.Decodable {
   case draft, running, deactivated
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.String)
+  #endif
   public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
@@ -156,7 +176,9 @@ public enum PLYCampaignStatus : Swift.String, Swift.Decodable {
 }
 public enum PLYExposureWindowUnit : Swift.String, Swift.Decodable {
   case seconds, minutes, days
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.String)
+  #endif
   public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
@@ -164,7 +186,9 @@ public enum PLYExposureWindowUnit : Swift.String, Swift.Decodable {
 }
 public enum PLYExposureWindowInit : Swift.String, Swift.Decodable {
   case firstDisplay
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.String)
+  #endif
   public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
@@ -199,7 +223,9 @@ public struct PLYExposureWindow : Swift.Decodable {
   case technicalIssues = 5
   case other = 6
   case unknown = 7
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
@@ -228,7 +254,8 @@ public enum PLYComponentError : Swift.Error {
   public var storeKit2Configured: Swift.Bool
   public var userSubscriptionAutoFetchActivated: Swift.Bool
   public var userSubscriptionsCacheTTL: Swift.Int
-  public var eventsBatchFrequencyInSeconds: Swift.Int
+  public var eventsBatchMinIntervalInSeconds: Swift.UInt
+  public var eventsBatchMaxIntervalInSeconds: Swift.UInt
   public var eventsBatchMaxSize: Swift.Int
   public var eventsTimeDriftToleranceInMinutes: Swift.Int?
   public var campaigns: [Purchasely.PLYCampaign]
@@ -249,7 +276,9 @@ public enum PLYComponentError : Swift.Error {
   public var name: Swift.String {
     get
   }
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias AllCases = [Purchasely.PLYCustomPropertyDataType]
   public typealias RawValue = Swift.Int
   nonisolated public static var allCases: [Purchasely.PLYCustomPropertyDataType] {
@@ -265,7 +294,9 @@ public enum PLYComponentError : Swift.Error {
   case drawer
   case popin
   case push
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
@@ -282,7 +313,9 @@ extension Purchasely.PLYDisplayModeType : Swift.Codable {
 @objc public enum PLYEnvironment : Swift.Int {
   case prod
   case staging
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
@@ -329,9 +362,11 @@ public enum PLYError : Swift.Error {
   case productsTimeout
 }
 extension Purchasely.PLYError : Foundation.LocalizedError {
+  #if compiler(>=5.3) && $NonescapableTypes
   public var errorDescription: Swift.String? {
     get
   }
+  #endif
 }
 @objc public enum PLYEvent : Swift.Int, Swift.CaseIterable, Swift.Codable {
   case appConfigured
@@ -388,7 +423,9 @@ extension Purchasely.PLYError : Foundation.LocalizedError {
   public var type: Purchasely.PLYEventType {
     get
   }
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias AllCases = [Purchasely.PLYEvent]
   public typealias RawValue = Swift.Int
   nonisolated public static var allCases: [Purchasely.PLYEvent] {
@@ -411,6 +448,7 @@ extension Foundation.NSString {
   case eventCreatedAtMsOriginal
   case eventCreatedOriginal
   case displayedPresentation
+  case internalPresentationId
   case isFallbackPresentation
   case userId
   case anonymousUserId
@@ -462,9 +500,13 @@ extension Foundation.NSString {
   case selectedPresentation
   case previousSelectedPresentation
   case placementId
+  case internalPlacementId
   case audienceId
+  case internalAudienceId
   case abTestId
+  case internalAbTestId
   case abTestVariantId
+  case internalAbTestVariantId
   case contentId
   case sessionDuration
   case sessionCount
@@ -474,6 +516,8 @@ extension Foundation.NSString {
   case appInstalledAt
   case appInstalledAtMs
   case paywallrequestDurationInMs
+  case paywallDisplayTimeInMs
+  case paywallRenderingTimeInMs
   case storeKitVersion
   case presentationType
   case promoOffer
@@ -483,7 +527,9 @@ extension Foundation.NSString {
   case selectedOptions
   case displayedOptions
   case campaignId
+  case internalCampaignId
   case flowId
+  case internalFlowId
   case flowStepId
   case flowVersion
   case fromActionId
@@ -493,10 +539,13 @@ extension Foundation.NSString {
   case stripeCheckoutSessionId
   case stripePurchaseId
   case webCheckoutProvider
+  case displayMethod
   public var name: Swift.String {
     get
   }
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias AllCases = [Purchasely.PLYEventProperty]
   public typealias RawValue = Swift.Int
   nonisolated public static var allCases: [Purchasely.PLYEventProperty] {
@@ -517,7 +566,9 @@ extension Foundation.NSString {
   case subscriptionTransfer
   case login
   case phoneSettings
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias AllCases = [Purchasely.PLYEventType]
   public typealias RawValue = Swift.Int
   nonisolated public static var allCases: [Purchasely.PLYEventType] {
@@ -553,15 +604,21 @@ public enum PluralType {
     get
   }
 }
+#if compiler(>=5.3) && $NonescapableTypes
 public func PLYLocalizedPluralString(_ key: Swift.String, count: Swift.Int, language: Swift.String?) -> Swift.String
+#endif
+#if compiler(>=5.3) && $NonescapableTypes
 public func PLYLocalizedPluralString(_ key: Swift.String, pluralType: Purchasely.PluralType, language: Swift.String?) -> Swift.String
+#endif
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class PLYLogger : ObjectiveC.NSObject {
   @objc public enum PLYLogLevel : Swift.Int {
     case debug
     case info
     case warn
     case error
+    #if compiler(>=5.3) && $NonescapableTypes
     public init?(rawValue: Swift.Int)
+    #endif
     public typealias RawValue = Swift.Int
     public var rawValue: Swift.Int {
       get
@@ -590,18 +647,26 @@ public func PLYLocalizedPluralString(_ key: Swift.String, pluralType: Purchasely
   @objc final public let reference: Swift.String
   @objc final public let planId: Swift.String
   @objc final public let offerId: Swift.String?
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public init(reference: Swift.String, planId: Swift.String, offerId: Swift.String?)
+  #endif
   required public init(from decoder: any Swift.Decoder) throws
   public func encode(to encoder: any Swift.Encoder) throws
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc override dynamic public func isEqual(_ object: Any?) -> Swift.Bool
+  #endif
   @objc override dynamic public var hash: Swift.Int {
     @objc get
   }
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc(toJsonStringFromArray:) public static func toJsonString(from array: Foundation.NSArray) -> Swift.String?
+  #endif
   @objc deinit
 }
 extension Swift.Array where Element == Purchasely.PLYOffering {
+  #if compiler(>=5.3) && $NonescapableTypes
   public func toJsonString() -> Swift.String?
+  #endif
 }
 @objc public class PLYOfferSignature : ObjectiveC.NSObject, Swift.Decodable {
   @objc public var planVendorId: Swift.String
@@ -621,34 +686,54 @@ extension Swift.Array where Element == Purchasely.PLYOffering {
   @objc public var promoOffers: [Purchasely.PLYPromoOffer]
   required public init(from decoder: any Swift.Decoder) throws
   public func encode(to encoder: any Swift.Encoder) throws
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc override dynamic public func isEqual(_ object: Any?) -> Swift.Bool
+  #endif
   @objc deinit
 }
 extension Purchasely.PLYPlan {
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc dynamic public var amount: Foundation.NSDecimalNumber? {
     @objc get
   }
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc dynamic public var introAmount: Foundation.NSDecimalNumber? {
     @objc get
   }
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc dynamic public var period: Swift.String? {
     @objc get
   }
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc dynamic public var apiPeriod: Swift.String? {
     @objc get
   }
+  #endif
   @objc dynamic public var duration: Swift.Int {
     @objc get
   }
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc dynamic public var currencyCode: Swift.String? {
     @objc get
   }
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc dynamic public var currencySymbol: Swift.String? {
     @objc get
   }
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc dynamic public func localizedFullPrice(language: Swift.String? = nil) -> Swift.String?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc dynamic public func localizedPrice(language: Swift.String? = nil) -> Swift.String?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc dynamic public func localizedPeriod(language: Swift.String? = nil) -> Swift.String?
+  #endif
   @objc dynamic public var hasIntroductoryPrice: Swift.Bool {
     @objc get
   }
@@ -658,16 +743,32 @@ extension Purchasely.PLYPlan {
   @objc dynamic public var hasFreeTrial: Swift.Bool {
     @objc get
   }
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc dynamic public func localizedFullIntroductoryPrice(language: Swift.String? = nil) -> Swift.String?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc dynamic public func localizedIntroductoryPrice(language: Swift.String? = nil) -> Swift.String?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc dynamic public func localizedIntroductoryPeriod(language: Swift.String? = nil) -> Swift.String?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc dynamic public func introductoryPeriod(language: Swift.String? = nil) -> Swift.String?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc dynamic public func localizedIntroductoryDuration(language: Swift.String? = nil) -> Swift.String?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc dynamic public func introductoryDuration(language: Swift.String? = nil) -> Swift.Int
+  #endif
 }
 extension Purchasely.PLYPlan {
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc dynamic public func priceDifference(comparedTo plan: Purchasely.PLYPlan) -> Swift.String?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc dynamic public func priceDifferenceInPercentage(to plan: Purchasely.PLYPlan) -> Swift.String?
+  #endif
 }
 extension Purchasely.PLYPlan {
   @objc dynamic public func isUserEligibleForIntroductoryOffer(completion: @escaping (Swift.Bool) -> ())
@@ -681,7 +782,9 @@ extension Purchasely.PLYPlan {
   public var name: Swift.String {
     get
   }
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
@@ -703,8 +806,9 @@ extension Purchasely.PLYPlan {
   @objc final public let backgroundColor: UIKit.UIColor?
   @objc final public let height: Swift.Int
   @objc final public let displayMode: Purchasely.PLYDisplayMode
-  #warning("Duplicate data: Could we get rid of the interal properties, them being contained inside the internalPresentation ? (huge refacto, huge regression risk)")
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func display(from sourceViewController: UIKit.UIViewController? = nil)
+  #endif
   @objc public func close()
   @objc public var isFlow: Swift.Bool {
     @objc get
@@ -716,7 +820,9 @@ extension Purchasely.PLYPlan {
   case fallback
   case deactivated
   case client
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
@@ -733,7 +839,9 @@ extension Purchasely.PLYPlan {
   case openPlacement
   case promoCode
   case webCheckout
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
@@ -765,9 +873,38 @@ extension Purchasely.PLYPlan {
   @objc deinit
 }
 @_hasMissingDesignatedInitializers @objc public class PLYPresentationMetadata : ObjectiveC.NSObject {
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func getString(with key: Swift.String, completion: @escaping (Swift.String?) -> ())
+  #endif
   @objc public func getKeys() -> [Swift.String]
   @objc public func getRawMetadata() -> [Swift.String : Any]
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc public func get(with key: Swift.String) -> Any?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func getBool(with key: Swift.String) -> Swift.Bool?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func getInt(with key: Swift.String) -> Swift.Int?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func getDouble(with key: Swift.String) -> Swift.Double?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func getFloat(with key: Swift.String) -> Swift.Float?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc public func getImage(with key: Swift.String) -> Swift.String?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc public func getStringWithoutTag(with key: Swift.String) -> Swift.String?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func getJsonObject(with key: Swift.String) throws -> Any?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func getDictionary(with key: Swift.String) throws -> [Swift.String : Any]?
+  #endif
   @objc deinit
 }
 @objc public class PLYPresentationPlan : ObjectiveC.NSObject, Swift.Decodable {
@@ -779,14 +916,11 @@ extension Purchasely.PLYPlan {
   required public init(from decoder: any Swift.Decoder) throws
   @objc deinit
 }
-@available(iOS 13.0, tvOS 13.0, macOS 12.0, watchOS 8.0, *)
 @_Concurrency.MainActor @preconcurrency public struct PLYPresentationView : SwiftUI.UIViewControllerRepresentable {
   public typealias UIViewControllerType = Purchasely.PLYPresentationViewController
   @_Concurrency.MainActor @preconcurrency public func makeUIViewController(context: Purchasely.PLYPresentationView.Context) -> Purchasely.PLYPresentationViewController
   @_Concurrency.MainActor @preconcurrency public func updateUIViewController(_ uiViewController: Purchasely.PLYPresentationViewController, context: Purchasely.PLYPresentationView.Context)
-  @available(iOS 13.0, tvOS 13.0, watchOS 8.0, macOS 12.0, *)
   public typealias Body = Swift.Never
-  @available(iOS 13.0, tvOS 13.0, watchOS 8.0, macOS 12.0, *)
   public typealias Coordinator = Swift.Void
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor @preconcurrency public class PLYPresentationViewController : UIKit.UIViewController {
@@ -798,8 +932,12 @@ extension Purchasely.PLYPlan {
   }
   @available(tvOS, unavailable)
   @_Concurrency.MainActor @preconcurrency public func setStatusBarHidden(shouldHide: Swift.Bool)
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
+  #endif
   @objc deinit
 }
 extension Purchasely.PLYPresentationViewController {
@@ -807,7 +945,6 @@ extension Purchasely.PLYPresentationViewController {
     @objc get
   }
 }
-@available(iOS 13.0, tvOS 13.0, macOS 12.0, watchOS 8.0, *)
 extension Purchasely.PLYPresentationViewController {
   @_Concurrency.MainActor @preconcurrency public var PresentationView: Purchasely.PLYPresentationView {
     get
@@ -828,7 +965,9 @@ public typealias PLYPresentationLoadedCompletionBlock = () -> Swift.Void
   case purchased
   case cancelled
   case restored
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
@@ -846,7 +985,9 @@ public typealias PLYPresentationLoadedCompletionBlock = () -> Swift.Void
   case observer
   case paywallObserver
   case full
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias AllCases = [Purchasely.PLYRunningMode]
   public typealias RawValue = Swift.Int
   nonisolated public static var allCases: [Purchasely.PLYRunningMode] {
@@ -894,7 +1035,9 @@ public enum PLYSubscriptionError : Swift.Error {
   case sandbox
   case production
   case unknown
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
@@ -914,7 +1057,9 @@ public enum PLYSubscriptionOfferTypeError : Swift.Error {
   case introOffer
   case promoCode
   case promotionalOffer
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
@@ -934,7 +1079,9 @@ public enum PLYSubscriptionSourceError : Swift.Error {
   case amazonAppstore
   case huaweiAppGallery
   case none
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
@@ -950,7 +1097,9 @@ public enum PLYSubscriptionSourceError : Swift.Error {
   case paused
   case unpaid
   case unknown
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
@@ -961,7 +1110,9 @@ public enum PLYSubscriptionSourceError : Swift.Error {
   case productPage
   case webPage
   case cancellationSurvey
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
@@ -979,7 +1130,9 @@ public enum PLYSubscriptionSourceError : Swift.Error {
   case boolArray
   case dictionary
   case unknown
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
@@ -999,7 +1152,9 @@ public typealias PLYCancellationClosure = () -> Swift.Void
 @objc public enum PLYDataProcessingLegalBasis : Swift.Int, Swift.CaseIterable {
   case optional
   case essential
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias AllCases = [Purchasely.PLYDataProcessingLegalBasis]
   public typealias RawValue = Swift.Int
   nonisolated public static var allCases: [Purchasely.PLYDataProcessingLegalBasis] {
@@ -1013,82 +1168,160 @@ public typealias PLYCancellationClosure = () -> Swift.Void
   @objc deinit
 }
 @objc public protocol PLYEventDelegate {
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc func eventTriggered(_ event: Purchasely.PLYEvent, properties: [Swift.String : Any]?)
+  #endif
 }
 extension Purchasely.Purchasely {
   @objc public static var anonymousUserId: Swift.String {
     @objc get
   }
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc dynamic public class func start(withAPIKey apiKey: Swift.String, appUserId: Swift.String? = nil, runningMode: Purchasely.PLYRunningMode = .full, paywallActionsInterceptor: Purchasely.PLYPaywallActionsInterceptor? = nil, storekitSettings: Purchasely.StorekitSettings, logLevel: Purchasely.PLYLogger.PLYLogLevel = .error, initialized: Purchasely.PLYSuccessErrorClosure? = nil)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc dynamic public class func getSDKVersion() -> Swift.String?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc dynamic public class func setUIHandler(_ uiHandler: (any Purchasely.PLYUIHandler)?)
+  #endif
   @objc dynamic public class func setUserAttributeDelegate(_ userAttributeDelegate: any Purchasely.PLYUserAttributeDelegate)
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc dynamic public class func setPaywallActionsInterceptor(_ paywallActionsInterceptor: Purchasely.PLYPaywallActionsInterceptor?)
+  #endif
   @objc dynamic public class func userLogin(with appUserId: Swift.String)
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc dynamic public class func userLogin(with appUserId: Swift.String, shouldRefresh: Purchasely.PLYLoginCompletionHandler?)
+  #endif
   @objc dynamic public class func userLogout(_ clearUserAttributes: Swift.Bool = true)
   @objc dynamic public class func isAnonymous() -> Swift.Bool
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc dynamic public class func setDefaultPresentationResultHandler(_ defaultPresentationResultHandler: Purchasely.PLYProductViewControllerCompletionBlock?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc dynamic public class func setLanguage(from locale: Foundation.Locale?)
+  #endif
   @objc dynamic public class func readyToOpenDeeplink(_ ready: Swift.Bool)
   @objc dynamic public class func setEnvironment(_ environment: Purchasely.PLYEnvironment)
   @objc dynamic public class func setLogLevel(_ logLevel: Purchasely.PLYLogger.PLYLogLevel)
   @objc dynamic public class func setAppTechnology(_ technology: Purchasely.PLYAppTechnology)
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc dynamic public class func setSdkBridgeVersion(_ sdkBridgeVersion: Swift.String?)
+  #endif
   @objc dynamic public class func addLogger(_ logger: any Purchasely.PLYLogging)
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc dynamic public class func allProducts(success: @escaping ([Purchasely.PLYProduct]) -> Swift.Void, failure: @escaping ((any Swift.Error)?) -> Swift.Void)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc dynamic public class func product(with vendorId: Swift.String, success: @escaping (Purchasely.PLYProduct) -> Swift.Void, failure: @escaping ((any Swift.Error)?) -> Swift.Void)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc dynamic public class func plan(with vendorId: Swift.String, success: @escaping (Purchasely.PLYPlan) -> Swift.Void, failure: @escaping ((any Swift.Error)?) -> Swift.Void)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc dynamic public class func plan(for sku: Swift.String, success: @escaping (Purchasely.PLYPlan) -> Swift.Void, failure: @escaping ((any Swift.Error)?) -> Swift.Void)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc dynamic public class func userSubscriptionsHistory(_ invalidateCache: Swift.Bool = false, success: @escaping ([Purchasely.PLYSubscription]?) -> Swift.Void, failure: @escaping Purchasely.PLYErrorClosure)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc dynamic public class func userSubscriptions(_ invalidateCache: Swift.Bool = false, success: @escaping ([Purchasely.PLYSubscription]?) -> Swift.Void, failure: @escaping Purchasely.PLYErrorClosure)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc dynamic public class func productController(for productVendorId: Swift.String, with presentationVendorId: Swift.String? = nil, contentId: Swift.String? = nil, loaded: Purchasely.PLYPaywallLoadingClosure? = nil, completion: Purchasely.PLYProductViewControllerCompletionBlock? = nil) -> Purchasely.PLYPresentationViewController?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc dynamic public class func productController(for productVendorId: Swift.String, with presentationVendorId: Swift.String? = nil, loaded: Purchasely.PLYPaywallLoadingClosure? = nil, completion: Purchasely.PLYProductViewControllerCompletionBlock? = nil) -> Purchasely.PLYPresentationViewController?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc dynamic public class func planController(for planVendorId: Swift.String, with presentationVendorId: Swift.String? = nil, contentId: Swift.String?, loaded: Purchasely.PLYPaywallLoadingClosure? = nil, completion: Purchasely.PLYProductViewControllerCompletionBlock? = nil) -> Purchasely.PLYPresentationViewController?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc dynamic public class func planController(for planVendorId: Swift.String, with presentationVendorId: Swift.String? = nil, loaded: Purchasely.PLYPaywallLoadingClosure? = nil, completion: Purchasely.PLYProductViewControllerCompletionBlock? = nil) -> Purchasely.PLYPresentationViewController?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc dynamic public class func presentationController(with presentationVendorId: Swift.String? = nil, contentId: Swift.String?, loaded: Purchasely.PLYPaywallLoadingClosure? = nil, completion: Purchasely.PLYProductViewControllerCompletionBlock? = nil) -> Purchasely.PLYPresentationViewController?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc dynamic public class func presentationController(with presentationVendorId: Swift.String? = nil, loaded: Purchasely.PLYPaywallLoadingClosure? = nil, completion: Purchasely.PLYProductViewControllerCompletionBlock? = nil) -> Purchasely.PLYPresentationViewController?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc dynamic public class func presentationController(for placementId: Swift.String, contentId: Swift.String?, loaded: Purchasely.PLYPaywallLoadingClosure? = nil, completion: Purchasely.PLYProductViewControllerCompletionBlock? = nil) -> Purchasely.PLYPresentationViewController?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc dynamic public class func presentationController(for placementId: Swift.String, loaded: Purchasely.PLYPaywallLoadingClosure? = nil, completion: Purchasely.PLYProductViewControllerCompletionBlock? = nil) -> UIKit.UIViewController?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc dynamic public class func fetchPresentation(with presentationVendorId: Swift.String?, contentId: Swift.String?, fetchCompletion: Purchasely.PLYPresentationFetchCompletionBlock? = nil, completion: Purchasely.PLYProductViewControllerCompletionBlock? = nil, loadedCompletion: Purchasely.PLYPresentationLoadedCompletionBlock? = nil)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc dynamic public class func fetchPresentation(with presentationVendorId: Swift.String?, fetchCompletion: Purchasely.PLYPresentationFetchCompletionBlock? = nil, completion: Purchasely.PLYProductViewControllerCompletionBlock? = nil, loadedCompletion: Purchasely.PLYPresentationLoadedCompletionBlock? = nil)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc dynamic public class func fetchPresentation(for placementId: Swift.String, fetchCompletion: Purchasely.PLYPresentationFetchCompletionBlock? = nil, completion: Purchasely.PLYProductViewControllerCompletionBlock? = nil, loadedCompletion: Purchasely.PLYPresentationLoadedCompletionBlock? = nil)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc dynamic public class func fetchPresentation(for placementId: Swift.String, contentId: Swift.String?, fetchCompletion: Purchasely.PLYPresentationFetchCompletionBlock? = nil, completion: Purchasely.PLYProductViewControllerCompletionBlock? = nil, loadedCompletion: Purchasely.PLYPresentationLoadedCompletionBlock? = nil)
+  #endif
   @objc dynamic public class func closeDisplayedPresentation()
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc dynamic public class func clientPresentationOpened(with presentation: Purchasely.PLYPresentation?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc dynamic public class func clientPresentationClosed(with presentation: Purchasely.PLYPresentation?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc dynamic public class func subscriptionsController() -> UIKit.UIViewController?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc dynamic public class func subscriptionController(for subscription: Purchasely.PLYSubscription) -> UIKit.UIViewController?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc dynamic public class func cancellationSurveyController(for product: Purchasely.PLYProduct?, selected: @escaping (Purchasely.PLYCancellationReason) -> ()) -> UIKit.UIViewController
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc dynamic public class func setEventCallback(_ callback: @escaping (Purchasely.PLYEvent, [Swift.String : Any]?) -> ())
+  #endif
   @objc dynamic public class func setEventDelegate(_ delegate: any Purchasely.PLYEventDelegate)
   @objc dynamic public class func removeEventDelegate()
-  @available(iOS 13.0, tvOS 13.0, macOS 12.0, watchOS 8.0, *)
+  #if compiler(>=5.3) && $NonescapableTypes
   public class func productView(for productVendorId: Swift.String, with presentationVendorId: Swift.String? = nil, contentId: Swift.String? = nil, loaded: Purchasely.PLYPaywallLoadingClosure? = nil, completion: Purchasely.PLYProductViewControllerCompletionBlock? = nil) -> Purchasely.PLYPresentationView?
-  @available(iOS 13.0, tvOS 13.0, macOS 12.0, watchOS 8.0, *)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public class func productView(for productVendorId: Swift.String, with presentationVendorId: Swift.String? = nil, loaded: Purchasely.PLYPaywallLoadingClosure? = nil, completion: Purchasely.PLYProductViewControllerCompletionBlock? = nil) -> Purchasely.PLYPresentationView?
-  @available(iOS 13.0, tvOS 13.0, macOS 12.0, watchOS 8.0, *)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public class func planView(for planVendorId: Swift.String, with presentationVendorId: Swift.String? = nil, contentId: Swift.String?, loaded: Purchasely.PLYPaywallLoadingClosure? = nil, completion: Purchasely.PLYProductViewControllerCompletionBlock? = nil) -> Purchasely.PLYPresentationView?
-  @available(iOS 13.0, tvOS 13.0, macOS 12.0, watchOS 8.0, *)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public class func planView(for planVendorId: Swift.String, with presentationVendorId: Swift.String? = nil, loaded: Purchasely.PLYPaywallLoadingClosure? = nil, completion: Purchasely.PLYProductViewControllerCompletionBlock? = nil) -> Purchasely.PLYPresentationView?
-  @available(iOS 13.0, tvOS 13.0, macOS 12.0, watchOS 8.0, *)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public class func presentationView(with presentationVendorId: Swift.String? = nil, contentId: Swift.String?, loaded: Purchasely.PLYPaywallLoadingClosure? = nil, completion: Purchasely.PLYProductViewControllerCompletionBlock? = nil) -> Purchasely.PLYPresentationView?
-  @available(iOS 13.0, tvOS 13.0, macOS 12.0, watchOS 8.0, *)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public class func presentationView(with presentationVendorId: Swift.String? = nil, loaded: Purchasely.PLYPaywallLoadingClosure? = nil, completion: Purchasely.PLYProductViewControllerCompletionBlock? = nil) -> Purchasely.PLYPresentationView?
-  @available(iOS 13.0, tvOS 13.0, macOS 12.0, watchOS 8.0, *)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public class func presentationView(for placementId: Swift.String, contentId: Swift.String?, loaded: Purchasely.PLYPaywallLoadingClosure? = nil, completion: Purchasely.PLYProductViewControllerCompletionBlock? = nil) -> Purchasely.PLYPresentationView?
-  @available(iOS 13.0, tvOS 13.0, macOS 12.0, watchOS 8.0, *)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public class func presentationView(for placementId: Swift.String, loaded: Purchasely.PLYPaywallLoadingClosure? = nil, completion: Purchasely.PLYProductViewControllerCompletionBlock? = nil) -> Purchasely.PLYPresentationView?
+  #endif
   @discardableResult
   @objc dynamic public class func isDeeplinkHandled(deeplink url: Foundation.URL) -> Swift.Bool
   @available(iOS 12.2, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
   @objc dynamic public class func signPromotionalOffer(plan: Purchasely.PLYPlan, promoOffer: Purchasely.PLYPromoOffer, success: @escaping Purchasely.PLYOfferSignatureClosure, failure: @escaping Purchasely.PLYErrorClosure)
   @available(iOS 12.2, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
   @objc dynamic public class func signPromotionalOffer(storeProductId: Swift.String, storeOfferId: Swift.String, success: @escaping Purchasely.PLYOfferSignatureClosure, failure: @escaping Purchasely.PLYErrorClosure)
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public static func purchase(plan: Purchasely.PLYPlan, contentId: Swift.String?, success: @escaping Purchasely.PLYVoidClosure, failure: @escaping Purchasely.PLYErrorClosure)
+  #endif
   @objc public static func purchase(plan: Purchasely.PLYPlan, success: @escaping Purchasely.PLYVoidClosure, failure: @escaping Purchasely.PLYErrorClosure)
+  #if compiler(>=5.3) && $NonescapableTypes
   @available(iOS 12.2, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
   @objc public static func purchaseWithPromotionalOffer(plan: Purchasely.PLYPlan, contentId: Swift.String?, storeOfferId: Swift.String, success: @escaping Purchasely.PLYVoidClosure, failure: @escaping Purchasely.PLYErrorClosure)
+  #endif
   @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
   public static func syncPurchase(with purchaseResult: StoreKit.Product.PurchaseResult) async throws
   @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
@@ -1096,11 +1329,15 @@ extension Purchasely.Purchasely {
   @objc public static func restoreAllProducts(success: @escaping Purchasely.PLYVoidClosure, failure: @escaping Purchasely.PLYErrorClosure)
   @objc public static func synchronize(success: @escaping Purchasely.PLYVoidClosure, failure: @escaping Purchasely.PLYErrorClosure)
   @objc public static func getBuiltInAttributes() -> [Swift.String : Any]
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public static func getBuiltInAttribute(with key: Swift.String) -> Any?
+  #endif
   @objc public static var userAttributes: [Swift.String : Any] {
     @objc get
   }
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public static func getUserAttribute(for key: Swift.String) -> Any?
+  #endif
   @objc public static func setUserAttribute(withStringValue value: Swift.String, forKey key: Swift.String)
   @objc public static func setUserAttribute(withStringValue value: Swift.String, forKey key: Swift.String, processingLegalBasis: Purchasely.PLYDataProcessingLegalBasis = .optional)
   @objc public static func setUserAttribute(withIntValue value: Swift.Int, forKey key: Swift.String)
@@ -1128,7 +1365,9 @@ extension Purchasely.Purchasely {
   @objc public static func clearUserAttributes()
   @objc public static func clearUserAttribute(forKey key: Swift.String)
   @objc public static func clearBuiltInAttributes()
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public static func setDynamicOffering(reference: Swift.String, planVendorId: Swift.String, offerVendorId: Swift.String? = nil, completion: @escaping (Swift.Bool) -> ())
+  #endif
   @objc public static func getDynamicOfferings() -> [Purchasely.PLYOffering]
   @objc public static func getDynamicOfferings(completion: @escaping ([Purchasely.PLYOffering]) -> ())
   @objc public static func removeDynamicOffering(reference: Swift.String)
@@ -1157,7 +1396,9 @@ extension Purchasely.Purchasely {
     case oneSignalExternalId
     case batchCustomUserId
     case oneSignalUserId
+    #if compiler(>=5.3) && $NonescapableTypes
     public init?(rawValue: Swift.Int)
+    #endif
     public typealias RawValue = Swift.Int
     public var rawValue: Swift.Int {
       get
@@ -1169,7 +1410,9 @@ extension Purchasely.Purchasely {
     case light
     case dark
     case system
+    #if compiler(>=5.3) && $NonescapableTypes
     public init?(rawValue: Swift.Int)
+    #endif
     public typealias RawValue = Swift.Int
     public var rawValue: Swift.Int {
       get
@@ -1182,11 +1425,17 @@ extension Purchasely.Purchasely {
 extension Purchasely.Purchasely : UserNotifications.UNUserNotificationCenterDelegate {
 }
 @objc public protocol PLYUIHandler {
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc optional func display(presentation: Purchasely.PLYPresentation, from sourceController: UIKit.UIViewController?, proceed: @escaping () -> ())
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc optional func display(alert: Purchasely.PLYAlertMessage, with error: (any Swift.Error)?, proceed: @escaping () -> ())
+  #endif
 }
 extension Purchasely.Purchasely {
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc dynamic public class func showController(_ controller: UIKit.UIViewController, type: Purchasely.PLYUIControllerType, from sourceViewController: UIKit.UIViewController? = nil)
+  #endif
 }
 public struct Safe<Base> : Swift.Decodable where Base : Swift.Decodable {
   public let value: Base?
@@ -1194,7 +1443,9 @@ public struct Safe<Base> : Swift.Decodable where Base : Swift.Decodable {
 }
 @available(macCatalyst 14.0, iOS 11.0, tvOS 11.0, *)
 extension StoreKit.SKProductStorePromotionController {
+  #if compiler(>=5.3) && $NonescapableTypes
   public func resetStorePromotionsVisibility(for products: [StoreKit.SKProduct], completed: (() -> Swift.Void)?)
+  #endif
 }
 @objc public class StorekitSettings : ObjectiveC.NSObject {
   @objc public init(shouldUseStorekit2IfAvailable: Swift.Bool, simulateAskToBuy: Swift.Bool = false)
@@ -1203,21 +1454,29 @@ extension StoreKit.SKProductStorePromotionController {
   @objc deinit
 }
 extension Swift.String {
+  #if compiler(>=5.3) && $NonescapableTypes
   public func regexMatchGroup(_ pattern: Swift.String) -> [Swift.String]?
+  #endif
   public func regexMatch(_ pattern: Swift.String) -> Swift.Bool
   public func isNULL() -> Swift.Bool
 }
 @objc public enum PLYUserAttributeSource : Swift.Int {
   case purchasely, client
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
   }
 }
 @objc public protocol PLYUserAttributeDelegate {
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc optional func onUserAttributeSet(key: Swift.String, type: Purchasely.PLYUserAttributeType, value: Any?, source: Purchasely.PLYUserAttributeSource)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc optional func onUserAttributeSet(key: Swift.String, type: Purchasely.PLYUserAttributeType, value: Any?, source: Purchasely.PLYUserAttributeSource, processingLegalBasis: Purchasely.PLYDataProcessingLegalBasis)
+  #endif
   @objc optional func onUserAttributeRemoved(key: Swift.String, source: Purchasely.PLYUserAttributeSource)
 }
 extension Purchasely.PLYCancellationReason : Swift.Equatable {}
@@ -1287,7 +1546,6 @@ extension Purchasely.PLYPresentationType : Swift.RawRepresentable {}
 extension Purchasely.PLYPresentationAction : Swift.Equatable {}
 extension Purchasely.PLYPresentationAction : Swift.Hashable {}
 extension Purchasely.PLYPresentationAction : Swift.RawRepresentable {}
-@available(iOS 13.0, tvOS 13.0, macOS 12.0, watchOS 8.0, *)
 extension Purchasely.PLYPresentationView : Swift.Sendable {}
 extension Purchasely.PLYProductViewControllerResult : Swift.Equatable {}
 extension Purchasely.PLYProductViewControllerResult : Swift.Hashable {}
