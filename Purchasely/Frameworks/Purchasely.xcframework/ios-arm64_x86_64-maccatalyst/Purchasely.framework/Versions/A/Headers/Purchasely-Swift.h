@@ -394,10 +394,17 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, strong) PLYDataProcessingPurpo
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
+enum PLYDisplayModeType : NSInteger;
+@class NSNumber;
 /// If PLYColors is not already ObjC-visible (struct/enum), make an ObjC-bridgable class or use NSObject subclass.
 /// Assuming it’s already ObjC-compatible (class or @objc-compatible type).
 SWIFT_CLASS("_TtC10Purchasely14PLYDisplayMode")
 @interface PLYDisplayMode : NSObject
+/// The type of transition to apply.
+@property (nonatomic, readonly) enum PLYDisplayModeType type;
+/// The percentage (0…1) of the screen height to use for <code>drawer</code>.
+/// NSNumber? so Objective-C can see the optional.
+@property (nonatomic, readonly, strong) NSNumber * _Nullable heightPercentage;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -776,6 +783,14 @@ SWIFT_CLASS("_TtC10Purchasely15PLYPresentation")
 @property (nonatomic, readonly) BOOL isFlow;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+@interface PLYPresentation (SWIFT_EXTENSION(Purchasely))
+/// Navigates back in the presentation flow.
+/// This method attempts to navigate to the previous screen in the current flow.
+/// Use this method when you want to allow the user to go back within the flow,
+/// rather than closing it entirely.
+- (void)back;
 @end
 
 typedef SWIFT_ENUM(NSInteger, PLYPresentationAction, open) {
@@ -1873,6 +1888,13 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSDictionary<N
 /// \param mode The desired theme mode to apply.
 ///
 + (void)setThemeMode:(enum PLYThemeMode)mode;
+/// Enables or disables debug mode for presentations.
+/// When enabled, a debug button appears on presentation screens allowing developers to inspect presentation metadata.
+/// note:
+/// This should typically be disabled in production builds
+/// \param enabled <code>true</code> to enable debug mode, <code>false</code> to disable it
+///
++ (void)setDebugModeWithEnabled:(BOOL)enabled;
 /// This method is used to trigger an event telling Purchasely that a content has been consumed through a subscription.
 + (void)userDidConsumeSubscriptionContent;
 /// Informs the SDK the user has withdrawn consent for data processing related to the listed features.
@@ -2351,10 +2373,17 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, strong) PLYDataProcessingPurpo
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
+enum PLYDisplayModeType : NSInteger;
+@class NSNumber;
 /// If PLYColors is not already ObjC-visible (struct/enum), make an ObjC-bridgable class or use NSObject subclass.
 /// Assuming it’s already ObjC-compatible (class or @objc-compatible type).
 SWIFT_CLASS("_TtC10Purchasely14PLYDisplayMode")
 @interface PLYDisplayMode : NSObject
+/// The type of transition to apply.
+@property (nonatomic, readonly) enum PLYDisplayModeType type;
+/// The percentage (0…1) of the screen height to use for <code>drawer</code>.
+/// NSNumber? so Objective-C can see the optional.
+@property (nonatomic, readonly, strong) NSNumber * _Nullable heightPercentage;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -2733,6 +2762,14 @@ SWIFT_CLASS("_TtC10Purchasely15PLYPresentation")
 @property (nonatomic, readonly) BOOL isFlow;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+@interface PLYPresentation (SWIFT_EXTENSION(Purchasely))
+/// Navigates back in the presentation flow.
+/// This method attempts to navigate to the previous screen in the current flow.
+/// Use this method when you want to allow the user to go back within the flow,
+/// rather than closing it entirely.
+- (void)back;
 @end
 
 typedef SWIFT_ENUM(NSInteger, PLYPresentationAction, open) {
@@ -3830,6 +3867,13 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSDictionary<N
 /// \param mode The desired theme mode to apply.
 ///
 + (void)setThemeMode:(enum PLYThemeMode)mode;
+/// Enables or disables debug mode for presentations.
+/// When enabled, a debug button appears on presentation screens allowing developers to inspect presentation metadata.
+/// note:
+/// This should typically be disabled in production builds
+/// \param enabled <code>true</code> to enable debug mode, <code>false</code> to disable it
+///
++ (void)setDebugModeWithEnabled:(BOOL)enabled;
 /// This method is used to trigger an event telling Purchasely that a content has been consumed through a subscription.
 + (void)userDidConsumeSubscriptionContent;
 /// Informs the SDK the user has withdrawn consent for data processing related to the listed features.
