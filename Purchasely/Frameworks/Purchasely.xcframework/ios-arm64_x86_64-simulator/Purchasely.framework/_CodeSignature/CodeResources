@@ -6,7 +6,7 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		NTJsjZbUnTCKklD9Pm2R/lBf4cI=
+		QDKJh369Srcy4/M2M70sRPxXoEM=
 		</data>
 		<key>Headers/PLYLottieView.h</key>
 		<data>
@@ -14,7 +14,7 @@
 		</data>
 		<key>Headers/Purchasely-Swift.h</key>
 		<data>
-		I1gPoUqnhrflMDnCGRRBZUw/WKQ=
+		/cfsQxPdF3kEbvTF24JI5OrRAfA=
 		</data>
 		<key>Headers/Purchasely-iOS-umbrella.h</key>
 		<data>
@@ -22,47 +22,47 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		YosQ1NBwBvVgdLloqJ4N8r2cEi8=
+		qnUPdt/X5AwRTVM5e/CENe3OBZ4=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		yMoJKZvBASYGIGR4MpjH3Uv7s2Y=
+		JnIL+YvfIP78LewsrEuQnWBQH5M=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		8l9SJygXsf7k3XKyF3Rdv8vu/58=
+		Tt1i/HnUQu9UBOfkHyjGkAIlbNM=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		W87ZE/7/ZMigwD6tWHrPCuFdTEc=
+		XVHOB9WPKy6WXuFe4QWUJz4yYmw=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		8l9SJygXsf7k3XKyF3Rdv8vu/58=
+		Tt1i/HnUQu9UBOfkHyjGkAIlbNM=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		iXH8esGiPrZN2EKmco1/jEb+DWg=
+		47NgTV/8/OYd1mIbz8rLU+dXs9g=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		yMoJKZvBASYGIGR4MpjH3Uv7s2Y=
+		JnIL+YvfIP78LewsrEuQnWBQH5M=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		4kAQ4hHpev0WssbRxXdS/TL4cUA=
+		VtQ218JZ+WJbtOHh5x5Y72tRfHY=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		TuFecB3PpmVfjwG0uN15y4PBjEA=
+		yzkTjjqXH4/WWz+kCBGFeplCqwE=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		4kAQ4hHpev0WssbRxXdS/TL4cUA=
+		VtQ218JZ+WJbtOHh5x5Y72tRfHY=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		s9VL9I3JFOWIyWjh1T1B6lXaTXk=
+		hFPm0ah8qES6YYpcJunIFaidAqI=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -102,11 +102,11 @@
 		</data>
 		<key>PLYSubscriptionViewController.nib</key>
 		<data>
-		hVu8eKGDK/ENO8WCNpSkMG3se8k=
+		7MYviHdBv2hh3P6FQBv8j2TVKNA=
 		</data>
 		<key>PLYSubscriptionsViewController.nib</key>
 		<data>
-		hcvgp1uNXB8LGt8EVjziHw85mnU=
+		/qNF5zSgAaZ8mvnDTN8UzMHSu5I=
 		</data>
 		<key>PLYWebViewViewController.nib</key>
 		<data>
@@ -114,7 +114,7 @@
 		</data>
 		<key>Purchasely.bundle/Info.plist</key>
 		<data>
-		bgDP9pAOuYiyY+RwnXZqrVt/9Dw=
+		0MQPFbmhYBC0BPzZWxCzR5xm24g=
 		</data>
 		<key>Purchasely.bundle/PrivacyInfo.xcprivacy</key>
 		<data>
@@ -370,7 +370,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Eha1cejVOVLMkiZep8KiE4Z4QTf2YuSKzVGPWC6dOLU=
+			PDWTDqpasZqq8BgteGRK4JqqE18KYNNHyGeFYSnx+gw=
 			</data>
 		</dict>
 		<key>Headers/PLYLottieView.h</key>
@@ -384,7 +384,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			hldEy7oqtTEfZO1zDTw5jPRC0lK/PiMK0D4591S9BnQ=
+			gwhq4y5NLfVSKnxwTjiCYiVACv71QmhnNuQTnlpoqWo=
 			</data>
 		</dict>
 		<key>Headers/Purchasely-iOS-umbrella.h</key>
@@ -398,70 +398,70 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			f3rg7lhd+ybopHGVzx8mrJXZizglR3aNzo4nroNOnTk=
+			ShVnM0k08C6L6hPSHbrMffzOi5HzuDrOcmD7yy9CU+s=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			5Yw5pcTQs4DsYeSxqH+1U3/G9tkkLo6DbGBQJ6uRfXs=
+			34JyWmr1dcZWH1gYMcFZHso1dQEP3IoRA/Iwismk2GU=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			/04DyPqODKOgdLS7c50ffQKzEt3r+V9Yn4jxYaFEvRI=
+			YEgGLK6KLc71cknH3ZyI5eZ8tPZUjJOsYTOFGaIZjnM=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			5Yw5pcTQs4DsYeSxqH+1U3/G9tkkLo6DbGBQJ6uRfXs=
+			34JyWmr1dcZWH1gYMcFZHso1dQEP3IoRA/Iwismk2GU=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ZVEGaH6h9DFbFeLAIQc/JRKTLDEktexSVrNk4dS0l+o=
+			FjSxp/ZELfLNVF6qZ4nNzEnCe/gpC3r9LyuFYGxRUlI=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			f3rg7lhd+ybopHGVzx8mrJXZizglR3aNzo4nroNOnTk=
+			ShVnM0k08C6L6hPSHbrMffzOi5HzuDrOcmD7yy9CU+s=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			sPM7N+Q+fY32+ESTNX90C1B723EKp6OJ/nxBKgF89ec=
+			H6yxOQz3Pa9Q8eKQ09mqdofln50UYRYZbd99BRUfl60=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			azDzzmWuQsCmhqSUkicuxeNnaxBPaF/7Eg/XAC3XDxk=
+			1qpJNOJhsYjnRk6cnwt53O6vBqwuuul7IlnLDj7zw10=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			sPM7N+Q+fY32+ESTNX90C1B723EKp6OJ/nxBKgF89ec=
+			H6yxOQz3Pa9Q8eKQ09mqdofln50UYRYZbd99BRUfl60=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			7zAq50D7vFCEYKelyTw/0LSG5IYLE/+GtXzyWyx/FxM=
+			KgO96iBHbhIFu/IratMhzWEOJ0R+MGIac0FT+dtFo5M=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -531,14 +531,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			u6fwHK8U1mFVId21OqmKSxE/+WauSSJaPgZnM8bbgP0=
+			B2rMEQCmOjq1TVaScsNOd+8Q1McAC6bGYxOV9ZIp4QA=
 			</data>
 		</dict>
 		<key>PLYSubscriptionsViewController.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			1dbKgGOkCgPOYIWYvqp0vn51VapzMayMGZEAvWkspxw=
+			oOZNmcEeuGa96tafNChllrbZuPHJEtOaA7UYCP/WeSw=
 			</data>
 		</dict>
 		<key>PLYWebViewViewController.nib</key>
@@ -552,7 +552,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			62lQK7fnFLqR/nudgIxegb/Jh+Vpv7ujrBKCKmY422M=
+			aeO0T5GOWylQR+GNI4GoxeMAvYQXDhoMAYjLdyCHD4k=
 			</data>
 		</dict>
 		<key>Purchasely.bundle/PrivacyInfo.xcprivacy</key>

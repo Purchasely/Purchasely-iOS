@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 6.2.1 effective-5.10 (swiftlang-6.2.1.4.8 clang-1700.4.4.1)
+// swift-compiler-version: Apple Swift version 6.2 effective-5.10 (swiftlang-6.2.0.19.9 clang-1700.3.19.1)
 // swift-module-flags: -target x86_64-apple-ios13.4-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -module-name Purchasely
-// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2.1
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2
 import AVFoundation
 import AVKit
 import Combine
@@ -243,6 +243,7 @@ public enum PLYComponentError : Swift.Error {
   public var receiptPollingFrequency: Swift.Int
   public var receiptPollingMaxRetry: Swift.Int
   public var displayPoweredByPurchasely: Swift.Bool
+  public var presentationDebugFeatureEnabled: Swift.Bool
   public var promoCodesEnabled: Swift.Bool
   public var trackedEvents: [Purchasely.PLYEvent]
   public var highPriorityEvents: [Purchasely.PLYEvent]
