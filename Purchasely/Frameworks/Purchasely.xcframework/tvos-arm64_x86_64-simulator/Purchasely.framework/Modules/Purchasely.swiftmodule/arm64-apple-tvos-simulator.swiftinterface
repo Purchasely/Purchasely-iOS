@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 6.2 effective-5.10 (swiftlang-6.2.0.19.9 clang-1700.3.19.1)
+// swift-compiler-version: Apple Swift version 6.2.1 effective-5.10 (swiftlang-6.2.1.4.8 clang-1700.4.4.1)
 // swift-module-flags: -target arm64-apple-tvos13.4-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -module-name Purchasely
-// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2.1
 import AVFoundation
 import AVKit
 import Combine
@@ -265,6 +265,19 @@ public enum PLYComponentError : Swift.Error {
   public var webCheckoutReceiptStatusPollingFrequency: Swift.Int
   public var webCheckoutReceiptValidationTimeout: Swift.Int
   required public init(from decoder: any Swift.Decoder) throws
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers @objc public class PLYConnection : ObjectiveC.NSObject, Swift.Identifiable {
+  @objc public var id: Swift.String {
+    @objc get
+  }
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc override dynamic public func isEqual(_ object: Any?) -> Swift.Bool
+  #endif
+  @objc override dynamic public var hash: Swift.Int {
+    @objc get
+  }
+  public typealias ID = Swift.String
   @objc deinit
 }
 @objc public enum PLYCustomPropertyDataType : Swift.Int, Swift.CaseIterable, Swift.Codable {
@@ -808,6 +821,7 @@ extension PLYPlan {
   @objc final public let backgroundColor: UIKit.UIColor?
   @objc final public let height: Swift.Int
   @objc final public let displayMode: PLYDisplayMode
+  @objc final public let connections: Swift.Set<PLYConnection>
   #if compiler(>=5.3) && $NonescapableTypes
   @objc public func display(from sourceViewController: UIKit.UIViewController? = nil)
   #endif
@@ -829,6 +843,11 @@ extension PLYPlan {
   public var rawValue: Swift.Int {
     get
   }
+}
+@objc extension PLYPresentation {
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc dynamic public func executeConnection(_ connection: PLYConnection? = nil)
+  #endif
 }
 @objc extension PLYPresentation {
   @objc dynamic public func back()
@@ -1172,6 +1191,15 @@ public typealias PLYCancellationClosure = () -> Swift.Void
   @objc func eventTriggered(_ event: PLYEvent, properties: [Swift.String : Any]?)
   #endif
 }
+@objc public protocol PLYCustomScreenViewControllerDelegate {
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc func viewController(for presentation: PLYPresentation) -> UIKit.UIViewController?
+  #endif
+}
+public protocol PLYCustomScreenViewDelegate {
+  associatedtype Content : SwiftUICore.View
+  @SwiftUICore.ViewBuilder func view(for presentation: PLYPresentation) -> Self.Content
+}
 extension Purchasely {
   @objc public static var anonymousUserId: Swift.String {
     @objc get
@@ -1284,6 +1312,10 @@ extension Purchasely {
   #endif
   @objc dynamic public class func setEventDelegate(_ delegate: any PLYEventDelegate)
   @objc dynamic public class func removeEventDelegate()
+  @objc dynamic public class func setCustomScreenViewControllerDelegate(_ delegate: any PLYCustomScreenViewControllerDelegate)
+  @objc dynamic public class func removeCustomScreenViewControllerDelegate()
+  public class func setCustomScreenViewDelegate<T>(_ delegate: T) where T : PLYCustomScreenViewDelegate
+  public class func removeCustomScreenViewDelegate()
   #if compiler(>=5.3) && $NonescapableTypes
   public class func productView(for productVendorId: Swift.String, with presentationVendorId: Swift.String? = nil, contentId: Swift.String? = nil, loaded: PLYPaywallLoadingClosure? = nil, completion: PLYProductViewControllerCompletionBlock? = nil) -> PLYPresentationView?
   #endif
