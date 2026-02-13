@@ -233,6 +233,13 @@ public struct PLYExposureWindow : Swift.Decodable {
     get
   }
 }
+@objc public class PLYColors : ObjectiveC.NSObject, Swift.Decodable {
+  required public init(from decoder: any Swift.Decoder) throws
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc public init(lightColor: UIKit.UIColor?, darkColor: UIKit.UIColor?)
+  #endif
+  @objc deinit
+}
 public enum PLYComponentError : Swift.Error {
   case unknownComponentType
   public static func == (a: PLYComponentError, b: PLYComponentError) -> Swift.Bool
@@ -310,6 +317,7 @@ public enum PLYComponentError : Swift.Error {
   case drawer
   case popin
   case push
+  case inlinePaywall
   #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
   #endif
@@ -322,10 +330,31 @@ extension PLYDisplayModeType : Swift.Codable {
   public init(from decoder: any Swift.Decoder) throws
   public func encode(to encoder: any Swift.Encoder) throws
 }
-@objc @_hasMissingDesignatedInitializers @objcMembers final public class PLYDisplayMode : ObjectiveC.NSObject, Swift.Decodable {
+@objc @objcMembers final public class PLYDisplayMode : ObjectiveC.NSObject, Swift.Decodable, @unchecked Swift.Sendable {
   @objc final public let type: PLYDisplayModeType
   @objc final public let heightPercentage: Foundation.NSNumber?
+  @objc final public let dismissible: Swift.Bool
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init(type: PLYDisplayModeType?, heightPercentage: Swift.Double? = nil, _ backgroundColors: PLYColors? = nil, dismissible: Swift.Bool = true)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc convenience public init(type: PLYDisplayModeType, heightPercentage: Foundation.NSNumber?, backgroundColors: PLYColors?, dismissible: Swift.Bool = true)
+  #endif
   required public init(from decoder: any Swift.Decoder) throws
+  @objc public static var fullScreen: PLYDisplayMode {
+    @objc get
+  }
+  @objc public static var modal: PLYDisplayMode {
+    @objc get
+  }
+  @objc public static var push: PLYDisplayMode {
+    @objc get
+  }
+  @objc public static func drawer(heightPercentage: Swift.Double = 0.5, dismissible: Swift.Bool = true) -> PLYDisplayMode
+  @objc public static func popin(heightPercentage: Swift.Double = 0.5, dismissible: Swift.Bool = true) -> PLYDisplayMode
+  @objc public static var inlinePaywall: PLYDisplayMode {
+    @objc get
+  }
   @objc deinit
 }
 @objc public enum PLYEnvironment : Swift.Int {
@@ -378,6 +407,7 @@ public enum PLYError : Swift.Error {
   case invalidOfferSignature
   case missingOfferParameters
   case productsTimeout
+  case presentationNotLoaded
 }
 extension PLYError : Foundation.LocalizedError {
   #if compiler(>=5.3) && $NonescapableTypes
@@ -888,6 +918,7 @@ extension PLYPlan {
   @objc public var placement: Swift.String?
   @objc public var queryParameterKey: Swift.String?
   @objc public var webCheckoutProvider: PLYWebCheckoutProvider
+  @objc public var transition: PLYDisplayMode?
   @objc override dynamic public init()
   @objc deinit
 }
@@ -1217,7 +1248,7 @@ extension Purchasely {
     @objc get
   }
   #if compiler(>=5.3) && $NonescapableTypes
-  @objc dynamic public class func start(withAPIKey apiKey: Swift.String, appUserId: Swift.String? = nil, runningMode: PLYRunningMode = .full, paywallActionsInterceptor: PLYPaywallActionsInterceptor? = nil, storekitSettings: StorekitSettings, logLevel: PLYLogger.PLYLogLevel = .error, initialized: PLYSuccessErrorClosure? = nil)
+  @objc dynamic public class func start(withAPIKey apiKey: Swift.String, appUserId: Swift.String? = nil, runningMode: PLYRunningMode = .full, paywallActionsInterceptor: PLYPaywallActionsInterceptor? = nil, storekitSettings: StorekitSettings = .storeKit2, logLevel: PLYLogger.PLYLogLevel = .error, initialized: PLYSuccessErrorClosure? = nil)
   #endif
   #if compiler(>=5.3) && $NonescapableTypes
   @objc dynamic public class func getSDKVersion() -> Swift.String?
@@ -1268,30 +1299,6 @@ extension Purchasely {
   @objc dynamic public class func userSubscriptions(_ invalidateCache: Swift.Bool = false, success: @escaping ([PLYSubscription]?) -> Swift.Void, failure: @escaping PLYErrorClosure)
   #endif
   #if compiler(>=5.3) && $NonescapableTypes
-  @objc dynamic public class func productController(for productVendorId: Swift.String, with presentationVendorId: Swift.String? = nil, contentId: Swift.String? = nil, loaded: PLYPaywallLoadingClosure? = nil, completion: PLYProductViewControllerCompletionBlock? = nil) -> PLYPresentationViewController?
-  #endif
-  #if compiler(>=5.3) && $NonescapableTypes
-  @objc dynamic public class func productController(for productVendorId: Swift.String, with presentationVendorId: Swift.String? = nil, loaded: PLYPaywallLoadingClosure? = nil, completion: PLYProductViewControllerCompletionBlock? = nil) -> PLYPresentationViewController?
-  #endif
-  #if compiler(>=5.3) && $NonescapableTypes
-  @objc dynamic public class func planController(for planVendorId: Swift.String, with presentationVendorId: Swift.String? = nil, contentId: Swift.String?, loaded: PLYPaywallLoadingClosure? = nil, completion: PLYProductViewControllerCompletionBlock? = nil) -> PLYPresentationViewController?
-  #endif
-  #if compiler(>=5.3) && $NonescapableTypes
-  @objc dynamic public class func planController(for planVendorId: Swift.String, with presentationVendorId: Swift.String? = nil, loaded: PLYPaywallLoadingClosure? = nil, completion: PLYProductViewControllerCompletionBlock? = nil) -> PLYPresentationViewController?
-  #endif
-  #if compiler(>=5.3) && $NonescapableTypes
-  @objc dynamic public class func presentationController(with presentationVendorId: Swift.String? = nil, contentId: Swift.String?, loaded: PLYPaywallLoadingClosure? = nil, completion: PLYProductViewControllerCompletionBlock? = nil) -> PLYPresentationViewController?
-  #endif
-  #if compiler(>=5.3) && $NonescapableTypes
-  @objc dynamic public class func presentationController(with presentationVendorId: Swift.String? = nil, loaded: PLYPaywallLoadingClosure? = nil, completion: PLYProductViewControllerCompletionBlock? = nil) -> PLYPresentationViewController?
-  #endif
-  #if compiler(>=5.3) && $NonescapableTypes
-  @objc dynamic public class func presentationController(for placementId: Swift.String, contentId: Swift.String?, loaded: PLYPaywallLoadingClosure? = nil, completion: PLYProductViewControllerCompletionBlock? = nil) -> PLYPresentationViewController?
-  #endif
-  #if compiler(>=5.3) && $NonescapableTypes
-  @objc dynamic public class func presentationController(for placementId: Swift.String, loaded: PLYPaywallLoadingClosure? = nil, completion: PLYProductViewControllerCompletionBlock? = nil) -> UIKit.UIViewController?
-  #endif
-  #if compiler(>=5.3) && $NonescapableTypes
   @objc dynamic public class func fetchPresentation(with presentationVendorId: Swift.String?, contentId: Swift.String?, fetchCompletion: PLYPresentationFetchCompletionBlock? = nil, completion: PLYProductViewControllerCompletionBlock? = nil, loadedCompletion: PLYPresentationLoadedCompletionBlock? = nil)
   #endif
   #if compiler(>=5.3) && $NonescapableTypes
@@ -1304,6 +1311,20 @@ extension Purchasely {
   @objc dynamic public class func fetchPresentation(for placementId: Swift.String, contentId: Swift.String?, fetchCompletion: PLYPresentationFetchCompletionBlock? = nil, completion: PLYProductViewControllerCompletionBlock? = nil, loadedCompletion: PLYPresentationLoadedCompletionBlock? = nil)
   #endif
   @objc dynamic public class func closeDisplayedPresentation()
+  @available(iOS 13.0, tvOS 13.0, macOS 10.15, watchOS 6.0, *)
+  public class func display(for placementId: Swift.String, displayMode: PLYDisplayMode = .modal) async throws -> PLYPresentation
+  #if compiler(>=5.3) && $NonescapableTypes
+  @available(iOS 13.0, tvOS 13.0, macOS 10.15, watchOS 6.0, *)
+  public class func display(with presentationVendorId: Swift.String? = nil, displayMode: PLYDisplayMode = .modal) async throws -> PLYPresentation
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc dynamic public class func display(for placementId: Swift.String, displayMode: PLYDisplayMode = .modal, completion: ((PLYPresentation?, (any Swift.Error)?) -> Swift.Void)?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc dynamic public class func display(with presentationVendorId: Swift.String?, displayMode: PLYDisplayMode = .modal, completion: ((PLYPresentation?, (any Swift.Error)?) -> Swift.Void)?)
+  #endif
+}
+extension Purchasely {
   #if compiler(>=5.3) && $NonescapableTypes
   @objc dynamic public class func clientPresentationOpened(with presentation: PLYPresentation?)
   #endif
@@ -1468,6 +1489,38 @@ extension Purchasely {
   @objc dynamic public class func setDebugMode(enabled: Swift.Bool)
   @objc dynamic public class func userDidConsumeSubscriptionContent()
   @objc public static func revokeDataProcessingConsent(for dataProcessingPurposes: Swift.Set<PLYDataProcessingPurpose>)
+  #if compiler(>=5.3) && $NonescapableTypes
+  @available(*, deprecated, message: "This functionality is scheduled for deprecation in a future version. Please migrate to the display methods.")
+  @objc dynamic public class func productController(for productVendorId: Swift.String, with presentationVendorId: Swift.String? = nil, contentId: Swift.String? = nil, loaded: PLYPaywallLoadingClosure? = nil, completion: PLYProductViewControllerCompletionBlock? = nil) -> PLYPresentationViewController?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @available(*, deprecated, message: "This functionality is scheduled for deprecation in a future version. Please migrate to the display methods.")
+  @objc dynamic public class func productController(for productVendorId: Swift.String, with presentationVendorId: Swift.String? = nil, loaded: PLYPaywallLoadingClosure? = nil, completion: PLYProductViewControllerCompletionBlock? = nil) -> PLYPresentationViewController?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @available(*, deprecated, message: "This functionality is scheduled for deprecation in a future version. Please migrate to the display methods.")
+  @objc dynamic public class func planController(for planVendorId: Swift.String, with presentationVendorId: Swift.String? = nil, contentId: Swift.String?, loaded: PLYPaywallLoadingClosure? = nil, completion: PLYProductViewControllerCompletionBlock? = nil) -> PLYPresentationViewController?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @available(*, deprecated, message: "This functionality is scheduled for deprecation in a future version. Please migrate to the display methods.")
+  @objc dynamic public class func planController(for planVendorId: Swift.String, with presentationVendorId: Swift.String? = nil, loaded: PLYPaywallLoadingClosure? = nil, completion: PLYProductViewControllerCompletionBlock? = nil) -> PLYPresentationViewController?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @available(*, deprecated, message: "This functionality is scheduled for deprecation in a future version. Please migrate to the display methods.")
+  @objc dynamic public class func presentationController(with presentationVendorId: Swift.String? = nil, contentId: Swift.String?, loaded: PLYPaywallLoadingClosure? = nil, completion: PLYProductViewControllerCompletionBlock? = nil) -> PLYPresentationViewController?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @available(*, deprecated, message: "This functionality is scheduled for deprecation in a future version. Please migrate to the display methods.")
+  @objc dynamic public class func presentationController(with presentationVendorId: Swift.String? = nil, loaded: PLYPaywallLoadingClosure? = nil, completion: PLYProductViewControllerCompletionBlock? = nil) -> PLYPresentationViewController?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @available(*, deprecated, message: "This functionality is scheduled for deprecation in a future version. Please migrate to the display methods.")
+  @objc dynamic public class func presentationController(for placementId: Swift.String, contentId: Swift.String?, loaded: PLYPaywallLoadingClosure? = nil, completion: PLYProductViewControllerCompletionBlock? = nil) -> PLYPresentationViewController?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @available(*, deprecated, message: "This functionality is scheduled for deprecation in a future version. Please migrate to the display methods.")
+  @objc dynamic public class func presentationController(for placementId: Swift.String, loaded: PLYPaywallLoadingClosure? = nil, completion: PLYProductViewControllerCompletionBlock? = nil) -> UIKit.UIViewController?
+  #endif
 }
 extension Purchasely : UserNotifications.UNUserNotificationCenterDelegate {
 }

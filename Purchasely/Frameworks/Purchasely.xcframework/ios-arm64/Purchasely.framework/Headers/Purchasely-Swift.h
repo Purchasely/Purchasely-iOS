@@ -357,6 +357,14 @@ typedef SWIFT_ENUM(NSInteger, PLYCancellationReason, open) {
   PLYCancellationReasonUnknown = 7,
 };
 
+@class UIColor;
+SWIFT_CLASS("_TtC10Purchasely9PLYColors")
+@interface PLYColors : NSObject
+- (nonnull instancetype)initWithLightColor:(UIColor * _Nullable)lightColor darkColor:(UIColor * _Nullable)darkColor OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
 /// Represents a connection in a presentation that defines navigation or action paths.
 /// Connections allow custom screens to trigger actions such as navigating to other screens,
 /// completing flows, or executing other configured behaviors.
@@ -432,6 +440,37 @@ SWIFT_CLASS("_TtC10Purchasely14PLYDisplayMode")
 /// The percentage (0…1) of the screen height to use for <code>drawer</code>.
 /// NSNumber? so Objective-C can see the optional.
 @property (nonatomic, readonly, strong) NSNumber * _Nullable heightPercentage;
+/// Whether the presentation can be dismissed by the user via background tap or drag gesture.
+/// Defaults to <code>true</code>. When <code>false</code>, only content-triggered or programmatic dismiss works.
+@property (nonatomic, readonly) BOOL dismissible;
+/// ObjC can call: <code>[[PLYTransition alloc] initWithType:... heightPercentage:@(0.5) backgroundColors:...]</code>
+- (nonnull instancetype)initWithType:(enum PLYDisplayModeType)type heightPercentage:(NSNumber * _Nullable)heightPercentage backgroundColors:(PLYColors * _Nullable)backgroundColors dismissible:(BOOL)dismissible;
+/// Creates a full-screen display mode.
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) PLYDisplayMode * _Nonnull fullScreen;)
++ (PLYDisplayMode * _Nonnull)fullScreen SWIFT_WARN_UNUSED_RESULT;
+/// Creates a modal (page sheet) display mode.
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) PLYDisplayMode * _Nonnull modal;)
++ (PLYDisplayMode * _Nonnull)modal SWIFT_WARN_UNUSED_RESULT;
+/// Creates a push display mode (requires navigation controller context).
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) PLYDisplayMode * _Nonnull push;)
++ (PLYDisplayMode * _Nonnull)push SWIFT_WARN_UNUSED_RESULT;
+/// Creates a drawer display mode with the specified height percentage.
+/// \param heightPercentage The percentage of screen height (0.0 to 1.0). Defaults to 0.5 (50%).
+///
+///
+/// returns:
+/// A configured drawer display mode.
++ (PLYDisplayMode * _Nonnull)drawerWithHeightPercentage:(double)heightPercentage dismissible:(BOOL)dismissible SWIFT_WARN_UNUSED_RESULT;
+/// Creates a pop-in display mode with the specified height percentage.
+/// \param heightPercentage The percentage of screen height (0.0 to 1.0). Defaults to 0.5 (50%).
+///
+///
+/// returns:
+/// A configured pop-in display mode.
++ (PLYDisplayMode * _Nonnull)popinWithHeightPercentage:(double)heightPercentage dismissible:(BOOL)dismissible SWIFT_WARN_UNUSED_RESULT;
+/// Creates an inline paywall display mode (informational only, behaves like default).
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) PLYDisplayMode * _Nonnull inlinePaywall;)
++ (PLYDisplayMode * _Nonnull)inlinePaywall SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -448,7 +487,10 @@ typedef SWIFT_ENUM(NSInteger, PLYDisplayModeType, open) {
   PLYDisplayModeTypeDrawer = 2,
 /// “Pop-in” type transition.
   PLYDisplayModeTypePopin = 3,
+/// “Push” navigation transition.
   PLYDisplayModeTypePush = 4,
+/// Inline paywall (informational only, behaves like default/fullScreen).
+  PLYDisplayModeTypeInlinePaywall = 5,
 };
 
 typedef SWIFT_ENUM(NSInteger, PLYEnvironment, open) {
@@ -769,7 +811,6 @@ enum PLYPresentationType : NSInteger;
 @class PLYPresentationViewController;
 @class PLYPresentationPlan;
 @class PLYPresentationMetadata;
-@class UIColor;
 SWIFT_CLASS("_TtC10Purchasely15PLYPresentation")
 @interface PLYPresentation : NSObject
 @property (nonatomic, readonly, copy) NSString * _Nullable id;
@@ -859,6 +900,7 @@ SWIFT_CLASS("_TtC10Purchasely31PLYPresentationActionParameters")
 @property (nonatomic, copy) NSString * _Nullable placement;
 @property (nonatomic, copy) NSString * _Nullable queryParameterKey;
 @property (nonatomic) enum PLYWebCheckoutProvider webCheckoutProvider;
+@property (nonatomic, strong) PLYDisplayMode * _Nullable transition;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -1088,8 +1130,6 @@ SWIFT_CLASS("_TtC10Purchasely10Purchasely")
 
 @class StorekitSettings;
 @class NSLocale;
-enum PLYAttribute : NSInteger;
-enum PLYThemeMode : NSInteger;
 @interface Purchasely (SWIFT_EXTENSION(Purchasely))
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull anonymousUserId;)
 + (NSString * _Nonnull)anonymousUserId SWIFT_WARN_UNUSED_RESULT;
@@ -1177,144 +1217,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 + (void)planFor:(NSString * _Nonnull)sku success:(void (^ _Nonnull)(PLYPlan * _Nonnull))success failure:(void (^ _Nonnull)(NSError * _Nullable))failure;
 + (void)userSubscriptionsHistory:(BOOL)invalidateCache success:(void (^ _Nonnull)(NSArray<PLYSubscription *> * _Nullable))success failure:(void (^ _Nonnull)(NSError * _Nonnull))failure;
 + (void)userSubscriptions:(BOOL)invalidateCache success:(void (^ _Nonnull)(NSArray<PLYSubscription *> * _Nullable))success failure:(void (^ _Nonnull)(NSError * _Nonnull))failure;
-/// This method returns a presentation for a specific product. If no presentationVendorId is set (or an invalid one)
-/// the product default presentation will be displayed. If none has been set it will fallback to the app default presentation.
-/// If a <code>contentId</code> is provided, this identifier will be sent to your backend for association purposes.
-/// <ul>
-///   <li>
-///     Parameters:
-///   </li>
-///   <li>
-///     productVendorId: the vendorId of the product to show
-///   </li>
-///   <li>
-///     presentationVendorId: (optional) the vendorId of a presentation
-///   </li>
-///   <li>
-///     contentId: (optional) an identifier that can be used to associate the purchase with your internal item id
-///   </li>
-///   <li>
-///     completion: the block called after the product controller has been dismissed to give the output of the action (cancel, purchase, restore)
-///   </li>
-/// </ul>
-+ (PLYPresentationViewController * _Nullable)productControllerFor:(NSString * _Nonnull)productVendorId with:(NSString * _Nullable)presentationVendorId contentId:(NSString * _Nullable)contentId loaded:(void (^ _Nullable)(PLYPresentationViewController * _Nullable, BOOL, NSError * _Nullable))loaded completion:(void (^ _Nullable)(enum PLYProductViewControllerResult, PLYPlan * _Nullable))completion SWIFT_WARN_UNUSED_RESULT;
-/// This method returns a presentation for a specific product. If no presentationVendorId is set (or an invalid one)
-/// the product default presentation will be displayed. If none has been set it will fallback to the app default presentation.
-/// <ul>
-///   <li>
-///     Parameters:
-///   </li>
-///   <li>
-///     productVendorId: the vendorId of the product to show
-///   </li>
-///   <li>
-///     presentationVendorId: (optional) the vendorId of a presentation
-///   </li>
-///   <li>
-///     completion: the block called after the product controller has been dismissed to give the output of the action (cancel, purchase, restore)
-///   </li>
-/// </ul>
-+ (PLYPresentationViewController * _Nullable)productControllerFor:(NSString * _Nonnull)productVendorId with:(NSString * _Nullable)presentationVendorId loaded:(void (^ _Nullable)(PLYPresentationViewController * _Nullable, BOOL, NSError * _Nullable))loaded completion:(void (^ _Nullable)(enum PLYProductViewControllerResult, PLYPlan * _Nullable))completion SWIFT_WARN_UNUSED_RESULT;
-/// This method returns a presentation for a specific plan. If no presentationVendorId is set (or an invalid one)
-/// the plan default presentation will be displayed. If none has been set it will fallback to the app default presentation.
-/// If a <code>contentId</code> is provided, this identifier will be sent to your backend for association purposes.
-/// <ul>
-///   <li>
-///     Parameters:
-///   </li>
-///   <li>
-///     planVendorId: the vendorId of the product to show
-///   </li>
-///   <li>
-///     presentationVendorId: (optional) the vendorId of a presentation
-///   </li>
-///   <li>
-///     contentId: (optional) an identifier that can be used to associate the purchase with your internal item id
-///   </li>
-///   <li>
-///     completion: the block called after the product controller has been dismissed to give the output of the action (cancel, purchase, restore)
-///   </li>
-/// </ul>
-+ (PLYPresentationViewController * _Nullable)planControllerFor:(NSString * _Nonnull)planVendorId with:(NSString * _Nullable)presentationVendorId contentId:(NSString * _Nullable)contentId loaded:(void (^ _Nullable)(PLYPresentationViewController * _Nullable, BOOL, NSError * _Nullable))loaded completion:(void (^ _Nullable)(enum PLYProductViewControllerResult, PLYPlan * _Nullable))completion SWIFT_WARN_UNUSED_RESULT;
-/// This method returns a presentation for a specific plan. If no presentationVendorId is set (or an invalid one)
-/// the plan default presentation will be displayed. If none has been set it will fallback to the app default presentation.
-/// <ul>
-///   <li>
-///     Parameters:
-///   </li>
-///   <li>
-///     planVendorId: the vendorId of the product to show
-///   </li>
-///   <li>
-///     presentationVendorId: (optional) the vendorId of a presentation
-///   </li>
-///   <li>
-///     completion: the block called after the product controller has been dismissed to give the output of the action (cancel, purchase, restore)
-///   </li>
-/// </ul>
-+ (PLYPresentationViewController * _Nullable)planControllerFor:(NSString * _Nonnull)planVendorId with:(NSString * _Nullable)presentationVendorId loaded:(void (^ _Nullable)(PLYPresentationViewController * _Nullable, BOOL, NSError * _Nullable))loaded completion:(void (^ _Nullable)(enum PLYProductViewControllerResult, PLYPlan * _Nullable))completion SWIFT_WARN_UNUSED_RESULT;
-/// This method returns a presentation with a specific vendorId. If no presentationVendorId is set (or an invalid one)
-/// the app default presentation will be displayed.
-/// If a <code>contentId</code> is provided, this identifier will be sent to your backend for association purposes.
-/// <ul>
-///   <li>
-///     Parameters:
-///   </li>
-///   <li>
-///     presentationVendorId: (optional) the vendorId of a presentation
-///   </li>
-///   <li>
-///     contentId: an identifier that can be used to associate the purchase with your internal item id
-///   </li>
-///   <li>
-///     completion: the block called after the product controller has been dismissed to give the output of the action (cancel, purchase, restore)
-///   </li>
-/// </ul>
-+ (PLYPresentationViewController * _Nullable)presentationControllerWith:(NSString * _Nullable)presentationVendorId contentId:(NSString * _Nullable)contentId loaded:(void (^ _Nullable)(PLYPresentationViewController * _Nullable, BOOL, NSError * _Nullable))loaded completion:(void (^ _Nullable)(enum PLYProductViewControllerResult, PLYPlan * _Nullable))completion SWIFT_WARN_UNUSED_RESULT;
-/// This method returns a presentation with a specific vendorId. If no presentationVendorId is set (or an invalid one)
-/// the app default presentation will be displayed.
-/// <ul>
-///   <li>
-///     Parameters:
-///   </li>
-///   <li>
-///     presentationVendorId: (optional) the vendorId of a presentation
-///   </li>
-///   <li>
-///     completion: the block called after the product controller has been dismissed to give the output of the action (cancel, purchase, restore)
-///   </li>
-/// </ul>
-+ (PLYPresentationViewController * _Nullable)presentationControllerWith:(NSString * _Nullable)presentationVendorId loaded:(void (^ _Nullable)(PLYPresentationViewController * _Nullable, BOOL, NSError * _Nullable))loaded completion:(void (^ _Nullable)(enum PLYProductViewControllerResult, PLYPlan * _Nullable))completion SWIFT_WARN_UNUSED_RESULT;
-/// This method returns a presentation for a specific placement Id.
-/// If a <code>contentId</code> is provided, this identifier will be sent to your backend for association purposes.
-/// <ul>
-///   <li>
-///     Parameters:
-///   </li>
-///   <li>
-///     placementId: the placementId identifying where the user was in your app
-///   </li>
-///   <li>
-///     contentId: an identifier that can be used to associate the purchase with your internal item id
-///   </li>
-///   <li>
-///     completion: the block called after the product controller has been dismissed to give the output of the action (cancel, purchase, restore)
-///   </li>
-/// </ul>
-+ (PLYPresentationViewController * _Nullable)presentationControllerFor:(NSString * _Nonnull)placementId contentId:(NSString * _Nullable)contentId loaded:(void (^ _Nullable)(PLYPresentationViewController * _Nullable, BOOL, NSError * _Nullable))loaded completion:(void (^ _Nullable)(enum PLYProductViewControllerResult, PLYPlan * _Nullable))completion SWIFT_WARN_UNUSED_RESULT;
-/// This method returns a presentation for a specific placement Id.
-/// <ul>
-///   <li>
-///     Parameters:
-///   </li>
-///   <li>
-///     placementId: the placementId of a group of presentations
-///   </li>
-///   <li>
-///     completion: the block called after the product controller has been dismissed to give the output of the action (cancel, purchase, restore)
-///   </li>
-/// </ul>
-+ (UIViewController * _Nullable)presentationControllerFor:(NSString * _Nonnull)placementId loaded:(void (^ _Nullable)(PLYPresentationViewController * _Nullable, BOOL, NSError * _Nullable))loaded completion:(void (^ _Nullable)(enum PLYProductViewControllerResult, PLYPlan * _Nullable))completion SWIFT_WARN_UNUSED_RESULT;
 /// This method loads a presentation for a specific placement Id.
 /// If a <code>contentId</code> is provided, this identifier will be sent to your backend for association purposes.
 /// <ul>
@@ -1389,6 +1291,34 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 + (void)fetchPresentationFor:(NSString * _Nonnull)placementId contentId:(NSString * _Nullable)contentId fetchCompletion:(void (^ _Nullable)(PLYPresentation * _Nullable, NSError * _Nullable))fetchCompletion completion:(void (^ _Nullable)(enum PLYProductViewControllerResult, PLYPlan * _Nullable))completion loadedCompletion:(void (^ _Nullable)(void))loadedCompletion;
 /// This method closes the current paywall displayed
 + (void)closeDisplayedPresentation;
+/// Displays the presentation for a specific placement Id. Calls the completion handler with the loaded presentation.
+/// note:
+/// From Objective-C, <code>displayMode</code> must be provided explicitly (default parameter values are not available in ObjC).
+/// Use <code>PLYDisplayMode.modal</code>, <code>.fullScreen</code>, <code>.push</code>, or the factory methods <code>[PLYDisplayMode drawerWithHeightPercentage:]</code> / <code>[PLYDisplayMode popinWithHeightPercentage:]</code>.
+/// \param placementId The placementId identifying where the user is in your app
+///
+/// \param displayMode (optional) How the presentation should be shown (fullScreen, modal, drawer, popin, push). Defaults to <code>.modal</code>.
+///
+/// \param completion Block called with the loaded presentation or an error
+///
++ (void)displayFor:(NSString * _Nonnull)placementId displayMode:(PLYDisplayMode * _Nonnull)displayMode completion:(void (^ _Nullable)(PLYPresentation * _Nullable, NSError * _Nullable))completion;
+/// Displays the presentation with the given vendor Id. Calls the completion handler with the loaded presentation.
+/// If no presentationVendorId is provided, the app default presentation will be displayed.
+/// note:
+/// From Objective-C, <code>displayMode</code> must be provided explicitly (default parameter values are not available in ObjC).
+/// Use <code>PLYDisplayMode.modal</code>, <code>.fullScreen</code>, <code>.push</code>, or the factory methods <code>[PLYDisplayMode drawerWithHeightPercentage:]</code> / <code>[PLYDisplayMode popinWithHeightPercentage:]</code>.
+/// \param presentationVendorId (optional) The vendorId of the presentation to display
+///
+/// \param displayMode (optional) How the presentation should be shown (fullScreen, modal, drawer, popin, push). Defaults to <code>.modal</code>.
+///
+/// \param completion Block called with the loaded presentation or an error
+///
++ (void)displayWith:(NSString * _Nullable)presentationVendorId displayMode:(PLYDisplayMode * _Nonnull)displayMode completion:(void (^ _Nullable)(PLYPresentation * _Nullable, NSError * _Nullable))completion;
+@end
+
+enum PLYAttribute : NSInteger;
+enum PLYThemeMode : NSInteger;
+@interface Purchasely (SWIFT_EXTENSION(Purchasely))
 /// This method is used to notify Purchasely that a client paywall has been opened.
 /// <ul>
 ///   <li>
@@ -1968,6 +1898,144 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSDictionary<N
 /// \endcode\param features list of features the user has withdrawn consent for
 ///
 + (void)revokeDataProcessingConsentFor:(NSSet<PLYDataProcessingPurpose *> * _Nonnull)dataProcessingPurposes;
+/// This method returns a presentation for a specific product. If no presentationVendorId is set (or an invalid one)
+/// the product default presentation will be displayed. If none has been set it will fallback to the app default presentation.
+/// If a <code>contentId</code> is provided, this identifier will be sent to your backend for association purposes.
+/// <ul>
+///   <li>
+///     Parameters:
+///   </li>
+///   <li>
+///     productVendorId: the vendorId of the product to show
+///   </li>
+///   <li>
+///     presentationVendorId: (optional) the vendorId of a presentation
+///   </li>
+///   <li>
+///     contentId: (optional) an identifier that can be used to associate the purchase with your internal item id
+///   </li>
+///   <li>
+///     completion: the block called after the product controller has been dismissed to give the output of the action (cancel, purchase, restore)
+///   </li>
+/// </ul>
++ (PLYPresentationViewController * _Nullable)productControllerFor:(NSString * _Nonnull)productVendorId with:(NSString * _Nullable)presentationVendorId contentId:(NSString * _Nullable)contentId loaded:(void (^ _Nullable)(PLYPresentationViewController * _Nullable, BOOL, NSError * _Nullable))loaded completion:(void (^ _Nullable)(enum PLYProductViewControllerResult, PLYPlan * _Nullable))completion SWIFT_WARN_UNUSED_RESULT SWIFT_DEPRECATED_MSG("This functionality is scheduled for deprecation in a future version. Please migrate to the display methods.");
+/// This method returns a presentation for a specific product. If no presentationVendorId is set (or an invalid one)
+/// the product default presentation will be displayed. If none has been set it will fallback to the app default presentation.
+/// <ul>
+///   <li>
+///     Parameters:
+///   </li>
+///   <li>
+///     productVendorId: the vendorId of the product to show
+///   </li>
+///   <li>
+///     presentationVendorId: (optional) the vendorId of a presentation
+///   </li>
+///   <li>
+///     completion: the block called after the product controller has been dismissed to give the output of the action (cancel, purchase, restore)
+///   </li>
+/// </ul>
++ (PLYPresentationViewController * _Nullable)productControllerFor:(NSString * _Nonnull)productVendorId with:(NSString * _Nullable)presentationVendorId loaded:(void (^ _Nullable)(PLYPresentationViewController * _Nullable, BOOL, NSError * _Nullable))loaded completion:(void (^ _Nullable)(enum PLYProductViewControllerResult, PLYPlan * _Nullable))completion SWIFT_WARN_UNUSED_RESULT SWIFT_DEPRECATED_MSG("This functionality is scheduled for deprecation in a future version. Please migrate to the display methods.");
+/// This method returns a presentation for a specific plan. If no presentationVendorId is set (or an invalid one)
+/// the plan default presentation will be displayed. If none has been set it will fallback to the app default presentation.
+/// If a <code>contentId</code> is provided, this identifier will be sent to your backend for association purposes.
+/// <ul>
+///   <li>
+///     Parameters:
+///   </li>
+///   <li>
+///     planVendorId: the vendorId of the product to show
+///   </li>
+///   <li>
+///     presentationVendorId: (optional) the vendorId of a presentation
+///   </li>
+///   <li>
+///     contentId: (optional) an identifier that can be used to associate the purchase with your internal item id
+///   </li>
+///   <li>
+///     completion: the block called after the product controller has been dismissed to give the output of the action (cancel, purchase, restore)
+///   </li>
+/// </ul>
++ (PLYPresentationViewController * _Nullable)planControllerFor:(NSString * _Nonnull)planVendorId with:(NSString * _Nullable)presentationVendorId contentId:(NSString * _Nullable)contentId loaded:(void (^ _Nullable)(PLYPresentationViewController * _Nullable, BOOL, NSError * _Nullable))loaded completion:(void (^ _Nullable)(enum PLYProductViewControllerResult, PLYPlan * _Nullable))completion SWIFT_WARN_UNUSED_RESULT SWIFT_DEPRECATED_MSG("This functionality is scheduled for deprecation in a future version. Please migrate to the display methods.");
+/// This method returns a presentation for a specific plan. If no presentationVendorId is set (or an invalid one)
+/// the plan default presentation will be displayed. If none has been set it will fallback to the app default presentation.
+/// <ul>
+///   <li>
+///     Parameters:
+///   </li>
+///   <li>
+///     planVendorId: the vendorId of the product to show
+///   </li>
+///   <li>
+///     presentationVendorId: (optional) the vendorId of a presentation
+///   </li>
+///   <li>
+///     completion: the block called after the product controller has been dismissed to give the output of the action (cancel, purchase, restore)
+///   </li>
+/// </ul>
++ (PLYPresentationViewController * _Nullable)planControllerFor:(NSString * _Nonnull)planVendorId with:(NSString * _Nullable)presentationVendorId loaded:(void (^ _Nullable)(PLYPresentationViewController * _Nullable, BOOL, NSError * _Nullable))loaded completion:(void (^ _Nullable)(enum PLYProductViewControllerResult, PLYPlan * _Nullable))completion SWIFT_WARN_UNUSED_RESULT SWIFT_DEPRECATED_MSG("This functionality is scheduled for deprecation in a future version. Please migrate to the display methods.");
+/// This method returns a presentation with a specific vendorId. If no presentationVendorId is set (or an invalid one)
+/// the app default presentation will be displayed.
+/// If a <code>contentId</code> is provided, this identifier will be sent to your backend for association purposes.
+/// <ul>
+///   <li>
+///     Parameters:
+///   </li>
+///   <li>
+///     presentationVendorId: (optional) the vendorId of a presentation
+///   </li>
+///   <li>
+///     contentId: an identifier that can be used to associate the purchase with your internal item id
+///   </li>
+///   <li>
+///     completion: the block called after the product controller has been dismissed to give the output of the action (cancel, purchase, restore)
+///   </li>
+/// </ul>
++ (PLYPresentationViewController * _Nullable)presentationControllerWith:(NSString * _Nullable)presentationVendorId contentId:(NSString * _Nullable)contentId loaded:(void (^ _Nullable)(PLYPresentationViewController * _Nullable, BOOL, NSError * _Nullable))loaded completion:(void (^ _Nullable)(enum PLYProductViewControllerResult, PLYPlan * _Nullable))completion SWIFT_WARN_UNUSED_RESULT SWIFT_DEPRECATED_MSG("This functionality is scheduled for deprecation in a future version. Please migrate to the display methods.");
+/// This method returns a presentation with a specific vendorId. If no presentationVendorId is set (or an invalid one)
+/// the app default presentation will be displayed.
+/// <ul>
+///   <li>
+///     Parameters:
+///   </li>
+///   <li>
+///     presentationVendorId: (optional) the vendorId of a presentation
+///   </li>
+///   <li>
+///     completion: the block called after the product controller has been dismissed to give the output of the action (cancel, purchase, restore)
+///   </li>
+/// </ul>
++ (PLYPresentationViewController * _Nullable)presentationControllerWith:(NSString * _Nullable)presentationVendorId loaded:(void (^ _Nullable)(PLYPresentationViewController * _Nullable, BOOL, NSError * _Nullable))loaded completion:(void (^ _Nullable)(enum PLYProductViewControllerResult, PLYPlan * _Nullable))completion SWIFT_WARN_UNUSED_RESULT SWIFT_DEPRECATED_MSG("This functionality is scheduled for deprecation in a future version. Please migrate to the display methods.");
+/// This method returns a presentation for a specific placement Id.
+/// If a <code>contentId</code> is provided, this identifier will be sent to your backend for association purposes.
+/// <ul>
+///   <li>
+///     Parameters:
+///   </li>
+///   <li>
+///     placementId: the placementId identifying where the user was in your app
+///   </li>
+///   <li>
+///     contentId: an identifier that can be used to associate the purchase with your internal item id
+///   </li>
+///   <li>
+///     completion: the block called after the product controller has been dismissed to give the output of the action (cancel, purchase, restore)
+///   </li>
+/// </ul>
++ (PLYPresentationViewController * _Nullable)presentationControllerFor:(NSString * _Nonnull)placementId contentId:(NSString * _Nullable)contentId loaded:(void (^ _Nullable)(PLYPresentationViewController * _Nullable, BOOL, NSError * _Nullable))loaded completion:(void (^ _Nullable)(enum PLYProductViewControllerResult, PLYPlan * _Nullable))completion SWIFT_WARN_UNUSED_RESULT SWIFT_DEPRECATED_MSG("This functionality is scheduled for deprecation in a future version. Please migrate to the display methods.");
+/// This method returns a presentation for a specific placement Id.
+/// <ul>
+///   <li>
+///     Parameters:
+///   </li>
+///   <li>
+///     placementId: the placementId of a group of presentations
+///   </li>
+///   <li>
+///     completion: the block called after the product controller has been dismissed to give the output of the action (cancel, purchase, restore)
+///   </li>
+/// </ul>
++ (UIViewController * _Nullable)presentationControllerFor:(NSString * _Nonnull)placementId loaded:(void (^ _Nullable)(PLYPresentationViewController * _Nullable, BOOL, NSError * _Nullable))loaded completion:(void (^ _Nullable)(enum PLYProductViewControllerResult, PLYPlan * _Nullable))completion SWIFT_WARN_UNUSED_RESULT SWIFT_DEPRECATED_MSG("This functionality is scheduled for deprecation in a future version. Please migrate to the display methods.");
 @end
 
 /// WARNING: Add new attribute to the end and always check the list is in the same order than Android

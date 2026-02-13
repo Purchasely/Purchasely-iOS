@@ -16,6 +16,16 @@
       },
       {
         "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "Purchasely",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
         "name": "StoreKit",
         "printedName": "StoreKit",
         "declKind": "Import",
@@ -6857,6 +6867,203 @@
         ]
       },
       {
+        "kind": "TypeDecl",
+        "name": "PLYColors",
+        "printedName": "PLYColors",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(from:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "PLYColors",
+                "printedName": "Purchasely.PLYColors",
+                "usr": "c:@M@Purchasely@objc(cs)PLYColors"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Decoder",
+                "printedName": "any Swift.Decoder",
+                "usr": "s:s7DecoderP"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:10Purchasely9PLYColorsC4fromACs7Decoder_p_tKcfc",
+            "mangledName": "$s10Purchasely9PLYColorsC4fromACs7Decoder_p_tKcfc",
+            "moduleName": "Purchasely",
+            "declAttributes": [
+              "Required",
+              "AccessControl"
+            ],
+            "throwing": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(lightColor:darkColor:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "PLYColors",
+                "printedName": "Purchasely.PLYColors",
+                "usr": "c:@M@Purchasely@objc(cs)PLYColors"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "UIKit.UIColor?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UIColor",
+                    "printedName": "UIKit.UIColor",
+                    "usr": "c:objc(cs)UIColor"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "UIKit.UIColor?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UIColor",
+                    "printedName": "UIKit.UIColor",
+                    "usr": "c:objc(cs)UIColor"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@Purchasely@objc(cs)PLYColors(im)initWithLightColor:darkColor:",
+            "mangledName": "$s10Purchasely9PLYColorsC10lightColor04darkD0ACSo7UIColorCSg_AHtcfc",
+            "moduleName": "Purchasely",
+            "objc_name": "initWithLightColor:darkColor:",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "PLYColors",
+                "printedName": "Purchasely.PLYColors",
+                "usr": "c:@M@Purchasely@objc(cs)PLYColors"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@Purchasely@objc(cs)PLYColors(im)init",
+            "mangledName": "$s10Purchasely9PLYColorsCACycfc",
+            "moduleName": "Purchasely",
+            "overriding": true,
+            "implicit": true,
+            "objc_name": "init",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Override"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:@M@Purchasely@objc(cs)PLYColors",
+        "mangledName": "$s10Purchasely9PLYColorsC",
+        "moduleName": "Purchasely",
+        "declAttributes": [
+          "AccessControl",
+          "ObjC"
+        ],
+        "superclassUsr": "c:objc(cs)NSObject",
+        "superclassNames": [
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Decodable",
+            "printedName": "Decodable",
+            "usr": "s:Se",
+            "mangledName": "$sSe"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          }
+        ]
+      },
+      {
         "kind": "Import",
         "name": "Foundation",
         "printedName": "Foundation",
@@ -10494,9 +10701,52 @@
             "mangledName": "$s10Purchasely18PLYDisplayModeTypeO4pushyA2CmF",
             "moduleName": "Purchasely",
             "declAttributes": [
+              "RawDocComment",
               "ObjC"
             ],
             "fixedbinaryorder": 4
+          },
+          {
+            "kind": "Var",
+            "name": "inlinePaywall",
+            "printedName": "inlinePaywall",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Purchasely.PLYDisplayModeType.Type) -> Purchasely.PLYDisplayModeType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "PLYDisplayModeType",
+                    "printedName": "Purchasely.PLYDisplayModeType",
+                    "usr": "c:@M@Purchasely@E@PLYDisplayModeType"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "Purchasely.PLYDisplayModeType.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "PLYDisplayModeType",
+                        "printedName": "Purchasely.PLYDisplayModeType",
+                        "usr": "c:@M@Purchasely@E@PLYDisplayModeType"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "c:@M@Purchasely@E@PLYDisplayModeType@PLYDisplayModeTypeInlinePaywall",
+            "mangledName": "$s10Purchasely18PLYDisplayModeTypeO13inlinePaywallyA2CmF",
+            "moduleName": "Purchasely",
+            "declAttributes": [
+              "RawDocComment",
+              "ObjC"
+            ],
+            "fixedbinaryorder": 5
           },
           {
             "kind": "Constructor",
@@ -10831,6 +11081,196 @@
             ]
           },
           {
+            "kind": "Var",
+            "name": "dismissible",
+            "printedName": "dismissible",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@Purchasely@objc(cs)PLYDisplayMode(py)dismissible",
+            "mangledName": "$s10Purchasely14PLYDisplayModeC11dismissibleSbvp",
+            "moduleName": "Purchasely",
+            "declAttributes": [
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment",
+              "ObjC"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@Purchasely@objc(cs)PLYDisplayMode(im)dismissible",
+                "mangledName": "$s10Purchasely14PLYDisplayModeC11dismissibleSbvg",
+                "moduleName": "Purchasely",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(type:heightPercentage:_:dismissible:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "PLYDisplayMode",
+                "printedName": "Purchasely.PLYDisplayMode",
+                "usr": "c:@M@Purchasely@objc(cs)PLYDisplayMode"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Purchasely.PLYDisplayModeType?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "PLYDisplayModeType",
+                    "printedName": "Purchasely.PLYDisplayModeType",
+                    "usr": "c:@M@Purchasely@E@PLYDisplayModeType"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Double?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Double",
+                    "printedName": "Swift.Double",
+                    "usr": "s:Sd"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Purchasely.PLYColors?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "PLYColors",
+                    "printedName": "Purchasely.PLYColors",
+                    "usr": "c:@M@Purchasely@objc(cs)PLYColors"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "hasDefaultArg": true,
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:10Purchasely14PLYDisplayModeC4type16heightPercentage_11dismissibleAcA0bC4TypeOSg_SdSgAA9PLYColorsCSgSbtcfc",
+            "mangledName": "$s10Purchasely14PLYDisplayModeC4type16heightPercentage_11dismissibleAcA0bC4TypeOSg_SdSgAA9PLYColorsCSgSbtcfc",
+            "moduleName": "Purchasely",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(type:heightPercentage:backgroundColors:dismissible:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "PLYDisplayMode",
+                "printedName": "Purchasely.PLYDisplayMode",
+                "usr": "c:@M@Purchasely@objc(cs)PLYDisplayMode"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "PLYDisplayModeType",
+                "printedName": "Purchasely.PLYDisplayModeType",
+                "usr": "c:@M@Purchasely@E@PLYDisplayModeType"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Foundation.NSNumber?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NSNumber",
+                    "printedName": "Foundation.NSNumber",
+                    "usr": "c:objc(cs)NSNumber"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Purchasely.PLYColors?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "PLYColors",
+                    "printedName": "Purchasely.PLYColors",
+                    "usr": "c:@M@Purchasely@objc(cs)PLYColors"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "hasDefaultArg": true,
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@Purchasely@objc(cs)PLYDisplayMode(im)initWithType:heightPercentage:backgroundColors:dismissible:",
+            "mangledName": "$s10Purchasely14PLYDisplayModeC4type16heightPercentage16backgroundColors11dismissibleAcA0bC4TypeO_So8NSNumberCSgAA9PLYColorsCSgSbtcfc",
+            "moduleName": "Purchasely",
+            "objc_name": "initWithType:heightPercentage:backgroundColors:dismissible:",
+            "declAttributes": [
+              "Convenience",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "init_kind": "Convenience"
+          },
+          {
             "kind": "Constructor",
             "name": "init",
             "printedName": "init(from:)",
@@ -10859,6 +11299,282 @@
             ],
             "throwing": true,
             "init_kind": "Designated"
+          },
+          {
+            "kind": "Var",
+            "name": "fullScreen",
+            "printedName": "fullScreen",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "PLYDisplayMode",
+                "printedName": "Purchasely.PLYDisplayMode",
+                "usr": "c:@M@Purchasely@objc(cs)PLYDisplayMode"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@Purchasely@objc(cs)PLYDisplayMode(cpy)fullScreen",
+            "mangledName": "$s10Purchasely14PLYDisplayModeC10fullScreenACvpZ",
+            "moduleName": "Purchasely",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "PLYDisplayMode",
+                    "printedName": "Purchasely.PLYDisplayMode",
+                    "usr": "c:@M@Purchasely@objc(cs)PLYDisplayMode"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@Purchasely@objc(cs)PLYDisplayMode(cm)fullScreen",
+                "mangledName": "$s10Purchasely14PLYDisplayModeC10fullScreenACvgZ",
+                "moduleName": "Purchasely",
+                "static": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "modal",
+            "printedName": "modal",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "PLYDisplayMode",
+                "printedName": "Purchasely.PLYDisplayMode",
+                "usr": "c:@M@Purchasely@objc(cs)PLYDisplayMode"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@Purchasely@objc(cs)PLYDisplayMode(cpy)modal",
+            "mangledName": "$s10Purchasely14PLYDisplayModeC5modalACvpZ",
+            "moduleName": "Purchasely",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "PLYDisplayMode",
+                    "printedName": "Purchasely.PLYDisplayMode",
+                    "usr": "c:@M@Purchasely@objc(cs)PLYDisplayMode"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@Purchasely@objc(cs)PLYDisplayMode(cm)modal",
+                "mangledName": "$s10Purchasely14PLYDisplayModeC5modalACvgZ",
+                "moduleName": "Purchasely",
+                "static": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "push",
+            "printedName": "push",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "PLYDisplayMode",
+                "printedName": "Purchasely.PLYDisplayMode",
+                "usr": "c:@M@Purchasely@objc(cs)PLYDisplayMode"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@Purchasely@objc(cs)PLYDisplayMode(cpy)push",
+            "mangledName": "$s10Purchasely14PLYDisplayModeC4pushACvpZ",
+            "moduleName": "Purchasely",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "PLYDisplayMode",
+                    "printedName": "Purchasely.PLYDisplayMode",
+                    "usr": "c:@M@Purchasely@objc(cs)PLYDisplayMode"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@Purchasely@objc(cs)PLYDisplayMode(cm)push",
+                "mangledName": "$s10Purchasely14PLYDisplayModeC4pushACvgZ",
+                "moduleName": "Purchasely",
+                "static": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "drawer",
+            "printedName": "drawer(heightPercentage:dismissible:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "PLYDisplayMode",
+                "printedName": "Purchasely.PLYDisplayMode",
+                "usr": "c:@M@Purchasely@objc(cs)PLYDisplayMode"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Double",
+                "printedName": "Swift.Double",
+                "hasDefaultArg": true,
+                "usr": "s:Sd"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "hasDefaultArg": true,
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@Purchasely@objc(cs)PLYDisplayMode(cm)drawerWithHeightPercentage:dismissible:",
+            "mangledName": "$s10Purchasely14PLYDisplayModeC6drawer16heightPercentage11dismissibleACSd_SbtFZ",
+            "moduleName": "Purchasely",
+            "static": true,
+            "objc_name": "drawerWithHeightPercentage:dismissible:",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "popin",
+            "printedName": "popin(heightPercentage:dismissible:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "PLYDisplayMode",
+                "printedName": "Purchasely.PLYDisplayMode",
+                "usr": "c:@M@Purchasely@objc(cs)PLYDisplayMode"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Double",
+                "printedName": "Swift.Double",
+                "hasDefaultArg": true,
+                "usr": "s:Sd"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "hasDefaultArg": true,
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@Purchasely@objc(cs)PLYDisplayMode(cm)popinWithHeightPercentage:dismissible:",
+            "mangledName": "$s10Purchasely14PLYDisplayModeC5popin16heightPercentage11dismissibleACSd_SbtFZ",
+            "moduleName": "Purchasely",
+            "static": true,
+            "objc_name": "popinWithHeightPercentage:dismissible:",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Var",
+            "name": "inlinePaywall",
+            "printedName": "inlinePaywall",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "PLYDisplayMode",
+                "printedName": "Purchasely.PLYDisplayMode",
+                "usr": "c:@M@Purchasely@objc(cs)PLYDisplayMode"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@Purchasely@objc(cs)PLYDisplayMode(cpy)inlinePaywall",
+            "mangledName": "$s10Purchasely14PLYDisplayModeC13inlinePaywallACvpZ",
+            "moduleName": "Purchasely",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "PLYDisplayMode",
+                    "printedName": "Purchasely.PLYDisplayMode",
+                    "usr": "c:@M@Purchasely@objc(cs)PLYDisplayMode"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@Purchasely@objc(cs)PLYDisplayMode(cm)inlinePaywall",
+                "mangledName": "$s10Purchasely14PLYDisplayModeC13inlinePaywallACvgZ",
+                "moduleName": "Purchasely",
+                "static": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
           },
           {
             "kind": "Constructor",
@@ -10899,7 +11615,6 @@
           "ObjC"
         ],
         "superclassUsr": "c:objc(cs)NSObject",
-        "hasMissingDesignatedInitializers": true,
         "superclassNames": [
           "ObjectiveC.NSObject"
         ],
@@ -10910,6 +11625,13 @@
             "printedName": "Decodable",
             "usr": "s:Se",
             "mangledName": "$sSe"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
           },
           {
             "kind": "Conformance",
@@ -10973,6 +11695,13 @@
             "printedName": "CustomDebugStringConvertible",
             "usr": "s:s28CustomDebugStringConvertibleP",
             "mangledName": "$ss28CustomDebugStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -12815,6 +13544,43 @@
             "declKind": "EnumElement",
             "usr": "s:10Purchasely8PLYErrorO15productsTimeoutyA2CmF",
             "mangledName": "$s10Purchasely8PLYErrorO15productsTimeoutyA2CmF",
+            "moduleName": "Purchasely"
+          },
+          {
+            "kind": "Var",
+            "name": "presentationNotLoaded",
+            "printedName": "presentationNotLoaded",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Purchasely.PLYError.Type) -> Purchasely.PLYError",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "PLYError",
+                    "printedName": "Purchasely.PLYError",
+                    "usr": "s:10Purchasely8PLYErrorO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "Purchasely.PLYError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "PLYError",
+                        "printedName": "Purchasely.PLYError",
+                        "usr": "s:10Purchasely8PLYErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:10Purchasely8PLYErrorO21presentationNotLoadedyA2CmF",
+            "mangledName": "$s10Purchasely8PLYErrorO21presentationNotLoadedyA2CmF",
             "moduleName": "Purchasely"
           },
           {
@@ -29329,6 +30095,123 @@
             ]
           },
           {
+            "kind": "Var",
+            "name": "transition",
+            "printedName": "transition",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Purchasely.PLYDisplayMode?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "PLYDisplayMode",
+                    "printedName": "Purchasely.PLYDisplayMode",
+                    "usr": "c:@M@Purchasely@objc(cs)PLYDisplayMode"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@Purchasely@objc(cs)PLYPresentationActionParameters(py)transition",
+            "mangledName": "$s10Purchasely31PLYPresentationActionParametersC10transitionAA14PLYDisplayModeCSgvp",
+            "moduleName": "Purchasely",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Purchasely.PLYDisplayMode?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "PLYDisplayMode",
+                        "printedName": "Purchasely.PLYDisplayMode",
+                        "usr": "c:@M@Purchasely@objc(cs)PLYDisplayMode"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@Purchasely@objc(cs)PLYPresentationActionParameters(im)transition",
+                "mangledName": "$s10Purchasely31PLYPresentationActionParametersC10transitionAA14PLYDisplayModeCSgvg",
+                "moduleName": "Purchasely",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Purchasely.PLYDisplayMode?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "PLYDisplayMode",
+                        "printedName": "Purchasely.PLYDisplayMode",
+                        "usr": "c:@M@Purchasely@objc(cs)PLYDisplayMode"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@Purchasely@objc(cs)PLYPresentationActionParameters(im)setTransition:",
+                "mangledName": "$s10Purchasely31PLYPresentationActionParametersC10transitionAA14PLYDisplayModeCSgvs",
+                "moduleName": "Purchasely",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10Purchasely31PLYPresentationActionParametersC10transitionAA14PLYDisplayModeCSgvM",
+                "mangledName": "$s10Purchasely31PLYPresentationActionParametersC10transitionAA14PLYDisplayModeCSgvM",
+                "moduleName": "Purchasely",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
             "kind": "Constructor",
             "name": "init",
             "printedName": "init()",
@@ -40158,6 +41041,7 @@
                 "kind": "TypeNominal",
                 "name": "StorekitSettings",
                 "printedName": "Purchasely.StorekitSettings",
+                "hasDefaultArg": true,
                 "usr": "c:@M@Purchasely@objc(cs)StorekitSettings"
               },
               {
@@ -41354,1349 +42238,6 @@
           },
           {
             "kind": "Function",
-            "name": "productController",
-            "printedName": "productController(for:with:contentId:loaded:completion:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "Purchasely.PLYPresentationViewController?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "PLYPresentationViewController",
-                    "printedName": "Purchasely.PLYPresentationViewController",
-                    "usr": "c:@M@Purchasely@objc(cs)PLYPresentationViewController"
-                  }
-                ],
-                "usr": "s:Sq"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "Swift.String?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
-                  }
-                ],
-                "hasDefaultArg": true,
-                "usr": "s:Sq"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "Swift.String?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
-                  }
-                ],
-                "hasDefaultArg": true,
-                "usr": "s:Sq"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "((Purchasely.PLYPresentationViewController?, Swift.Bool, (any Swift.Error)?) -> ())?",
-                "children": [
-                  {
-                    "kind": "TypeFunc",
-                    "name": "Function",
-                    "printedName": "(Purchasely.PLYPresentationViewController?, Swift.Bool, (any Swift.Error)?) -> ()",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Void",
-                        "printedName": "()"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Tuple",
-                        "printedName": "(Purchasely.PLYPresentationViewController?, Swift.Bool, (any Swift.Error)?)",
-                        "children": [
-                          {
-                            "kind": "TypeNominal",
-                            "name": "Optional",
-                            "printedName": "Purchasely.PLYPresentationViewController?",
-                            "children": [
-                              {
-                                "kind": "TypeNominal",
-                                "name": "PLYPresentationViewController",
-                                "printedName": "Purchasely.PLYPresentationViewController",
-                                "usr": "c:@M@Purchasely@objc(cs)PLYPresentationViewController"
-                              }
-                            ],
-                            "usr": "s:Sq"
-                          },
-                          {
-                            "kind": "TypeNominal",
-                            "name": "Bool",
-                            "printedName": "Swift.Bool",
-                            "usr": "s:Sb"
-                          },
-                          {
-                            "kind": "TypeNominal",
-                            "name": "Optional",
-                            "printedName": "(any Swift.Error)?",
-                            "children": [
-                              {
-                                "kind": "TypeNominal",
-                                "name": "Error",
-                                "printedName": "any Swift.Error",
-                                "usr": "s:s5ErrorP"
-                              }
-                            ],
-                            "usr": "s:Sq"
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ],
-                "hasDefaultArg": true,
-                "usr": "s:Sq"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "((Purchasely.PLYProductViewControllerResult, Purchasely.PLYPlan?) -> ())?",
-                "children": [
-                  {
-                    "kind": "TypeFunc",
-                    "name": "Function",
-                    "printedName": "(Purchasely.PLYProductViewControllerResult, Purchasely.PLYPlan?) -> ()",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Void",
-                        "printedName": "()"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Tuple",
-                        "printedName": "(Purchasely.PLYProductViewControllerResult, Purchasely.PLYPlan?)",
-                        "children": [
-                          {
-                            "kind": "TypeNominal",
-                            "name": "PLYProductViewControllerResult",
-                            "printedName": "Purchasely.PLYProductViewControllerResult",
-                            "usr": "c:@M@Purchasely@E@PLYProductViewControllerResult"
-                          },
-                          {
-                            "kind": "TypeNominal",
-                            "name": "Optional",
-                            "printedName": "Purchasely.PLYPlan?",
-                            "children": [
-                              {
-                                "kind": "TypeNominal",
-                                "name": "PLYPlan",
-                                "printedName": "Purchasely.PLYPlan",
-                                "usr": "c:@M@Purchasely@objc(cs)PLYPlan"
-                              }
-                            ],
-                            "usr": "s:Sq"
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ],
-                "hasDefaultArg": true,
-                "usr": "s:Sq"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "c:@CM@Purchasely@objc(cs)Purchasely(cm)productControllerFor:with:contentId:loaded:completion:",
-            "mangledName": "$s10PurchaselyAAC17productController3for4with9contentId6loaded10completionAA019PLYPresentationViewC0CSgSS_SSSgALyAK_Sbs5Error_pSgtcSgyAA010PLYProductkC6ResultO_AA7PLYPlanCSgtcSgtFZ",
-            "moduleName": "Purchasely",
-            "static": true,
-            "objc_name": "productControllerFor:with:contentId:loaded:completion:",
-            "declAttributes": [
-              "Dynamic",
-              "AccessControl",
-              "ObjC",
-              "RawDocComment"
-            ],
-            "isFromExtension": true,
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "productController",
-            "printedName": "productController(for:with:loaded:completion:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "Purchasely.PLYPresentationViewController?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "PLYPresentationViewController",
-                    "printedName": "Purchasely.PLYPresentationViewController",
-                    "usr": "c:@M@Purchasely@objc(cs)PLYPresentationViewController"
-                  }
-                ],
-                "usr": "s:Sq"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "Swift.String?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
-                  }
-                ],
-                "hasDefaultArg": true,
-                "usr": "s:Sq"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "((Purchasely.PLYPresentationViewController?, Swift.Bool, (any Swift.Error)?) -> ())?",
-                "children": [
-                  {
-                    "kind": "TypeFunc",
-                    "name": "Function",
-                    "printedName": "(Purchasely.PLYPresentationViewController?, Swift.Bool, (any Swift.Error)?) -> ()",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Void",
-                        "printedName": "()"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Tuple",
-                        "printedName": "(Purchasely.PLYPresentationViewController?, Swift.Bool, (any Swift.Error)?)",
-                        "children": [
-                          {
-                            "kind": "TypeNominal",
-                            "name": "Optional",
-                            "printedName": "Purchasely.PLYPresentationViewController?",
-                            "children": [
-                              {
-                                "kind": "TypeNominal",
-                                "name": "PLYPresentationViewController",
-                                "printedName": "Purchasely.PLYPresentationViewController",
-                                "usr": "c:@M@Purchasely@objc(cs)PLYPresentationViewController"
-                              }
-                            ],
-                            "usr": "s:Sq"
-                          },
-                          {
-                            "kind": "TypeNominal",
-                            "name": "Bool",
-                            "printedName": "Swift.Bool",
-                            "usr": "s:Sb"
-                          },
-                          {
-                            "kind": "TypeNominal",
-                            "name": "Optional",
-                            "printedName": "(any Swift.Error)?",
-                            "children": [
-                              {
-                                "kind": "TypeNominal",
-                                "name": "Error",
-                                "printedName": "any Swift.Error",
-                                "usr": "s:s5ErrorP"
-                              }
-                            ],
-                            "usr": "s:Sq"
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ],
-                "hasDefaultArg": true,
-                "usr": "s:Sq"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "((Purchasely.PLYProductViewControllerResult, Purchasely.PLYPlan?) -> ())?",
-                "children": [
-                  {
-                    "kind": "TypeFunc",
-                    "name": "Function",
-                    "printedName": "(Purchasely.PLYProductViewControllerResult, Purchasely.PLYPlan?) -> ()",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Void",
-                        "printedName": "()"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Tuple",
-                        "printedName": "(Purchasely.PLYProductViewControllerResult, Purchasely.PLYPlan?)",
-                        "children": [
-                          {
-                            "kind": "TypeNominal",
-                            "name": "PLYProductViewControllerResult",
-                            "printedName": "Purchasely.PLYProductViewControllerResult",
-                            "usr": "c:@M@Purchasely@E@PLYProductViewControllerResult"
-                          },
-                          {
-                            "kind": "TypeNominal",
-                            "name": "Optional",
-                            "printedName": "Purchasely.PLYPlan?",
-                            "children": [
-                              {
-                                "kind": "TypeNominal",
-                                "name": "PLYPlan",
-                                "printedName": "Purchasely.PLYPlan",
-                                "usr": "c:@M@Purchasely@objc(cs)PLYPlan"
-                              }
-                            ],
-                            "usr": "s:Sq"
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ],
-                "hasDefaultArg": true,
-                "usr": "s:Sq"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "c:@CM@Purchasely@objc(cs)Purchasely(cm)productControllerFor:with:loaded:completion:",
-            "mangledName": "$s10PurchaselyAAC17productController3for4with6loaded10completionAA019PLYPresentationViewC0CSgSS_SSSgyAJ_Sbs5Error_pSgtcSgyAA010PLYProductiC6ResultO_AA7PLYPlanCSgtcSgtFZ",
-            "moduleName": "Purchasely",
-            "static": true,
-            "objc_name": "productControllerFor:with:loaded:completion:",
-            "declAttributes": [
-              "Dynamic",
-              "AccessControl",
-              "ObjC",
-              "RawDocComment"
-            ],
-            "isFromExtension": true,
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "planController",
-            "printedName": "planController(for:with:contentId:loaded:completion:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "Purchasely.PLYPresentationViewController?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "PLYPresentationViewController",
-                    "printedName": "Purchasely.PLYPresentationViewController",
-                    "usr": "c:@M@Purchasely@objc(cs)PLYPresentationViewController"
-                  }
-                ],
-                "usr": "s:Sq"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "Swift.String?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
-                  }
-                ],
-                "hasDefaultArg": true,
-                "usr": "s:Sq"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "Swift.String?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
-                  }
-                ],
-                "usr": "s:Sq"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "((Purchasely.PLYPresentationViewController?, Swift.Bool, (any Swift.Error)?) -> ())?",
-                "children": [
-                  {
-                    "kind": "TypeFunc",
-                    "name": "Function",
-                    "printedName": "(Purchasely.PLYPresentationViewController?, Swift.Bool, (any Swift.Error)?) -> ()",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Void",
-                        "printedName": "()"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Tuple",
-                        "printedName": "(Purchasely.PLYPresentationViewController?, Swift.Bool, (any Swift.Error)?)",
-                        "children": [
-                          {
-                            "kind": "TypeNominal",
-                            "name": "Optional",
-                            "printedName": "Purchasely.PLYPresentationViewController?",
-                            "children": [
-                              {
-                                "kind": "TypeNominal",
-                                "name": "PLYPresentationViewController",
-                                "printedName": "Purchasely.PLYPresentationViewController",
-                                "usr": "c:@M@Purchasely@objc(cs)PLYPresentationViewController"
-                              }
-                            ],
-                            "usr": "s:Sq"
-                          },
-                          {
-                            "kind": "TypeNominal",
-                            "name": "Bool",
-                            "printedName": "Swift.Bool",
-                            "usr": "s:Sb"
-                          },
-                          {
-                            "kind": "TypeNominal",
-                            "name": "Optional",
-                            "printedName": "(any Swift.Error)?",
-                            "children": [
-                              {
-                                "kind": "TypeNominal",
-                                "name": "Error",
-                                "printedName": "any Swift.Error",
-                                "usr": "s:s5ErrorP"
-                              }
-                            ],
-                            "usr": "s:Sq"
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ],
-                "hasDefaultArg": true,
-                "usr": "s:Sq"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "((Purchasely.PLYProductViewControllerResult, Purchasely.PLYPlan?) -> ())?",
-                "children": [
-                  {
-                    "kind": "TypeFunc",
-                    "name": "Function",
-                    "printedName": "(Purchasely.PLYProductViewControllerResult, Purchasely.PLYPlan?) -> ()",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Void",
-                        "printedName": "()"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Tuple",
-                        "printedName": "(Purchasely.PLYProductViewControllerResult, Purchasely.PLYPlan?)",
-                        "children": [
-                          {
-                            "kind": "TypeNominal",
-                            "name": "PLYProductViewControllerResult",
-                            "printedName": "Purchasely.PLYProductViewControllerResult",
-                            "usr": "c:@M@Purchasely@E@PLYProductViewControllerResult"
-                          },
-                          {
-                            "kind": "TypeNominal",
-                            "name": "Optional",
-                            "printedName": "Purchasely.PLYPlan?",
-                            "children": [
-                              {
-                                "kind": "TypeNominal",
-                                "name": "PLYPlan",
-                                "printedName": "Purchasely.PLYPlan",
-                                "usr": "c:@M@Purchasely@objc(cs)PLYPlan"
-                              }
-                            ],
-                            "usr": "s:Sq"
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ],
-                "hasDefaultArg": true,
-                "usr": "s:Sq"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "c:@CM@Purchasely@objc(cs)Purchasely(cm)planControllerFor:with:contentId:loaded:completion:",
-            "mangledName": "$s10PurchaselyAAC14planController3for4with9contentId6loaded10completionAA019PLYPresentationViewC0CSgSS_SSSgALyAK_Sbs5Error_pSgtcSgyAA010PLYProductkC6ResultO_AA7PLYPlanCSgtcSgtFZ",
-            "moduleName": "Purchasely",
-            "static": true,
-            "objc_name": "planControllerFor:with:contentId:loaded:completion:",
-            "declAttributes": [
-              "Dynamic",
-              "AccessControl",
-              "ObjC",
-              "RawDocComment"
-            ],
-            "isFromExtension": true,
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "planController",
-            "printedName": "planController(for:with:loaded:completion:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "Purchasely.PLYPresentationViewController?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "PLYPresentationViewController",
-                    "printedName": "Purchasely.PLYPresentationViewController",
-                    "usr": "c:@M@Purchasely@objc(cs)PLYPresentationViewController"
-                  }
-                ],
-                "usr": "s:Sq"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "Swift.String?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
-                  }
-                ],
-                "hasDefaultArg": true,
-                "usr": "s:Sq"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "((Purchasely.PLYPresentationViewController?, Swift.Bool, (any Swift.Error)?) -> ())?",
-                "children": [
-                  {
-                    "kind": "TypeFunc",
-                    "name": "Function",
-                    "printedName": "(Purchasely.PLYPresentationViewController?, Swift.Bool, (any Swift.Error)?) -> ()",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Void",
-                        "printedName": "()"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Tuple",
-                        "printedName": "(Purchasely.PLYPresentationViewController?, Swift.Bool, (any Swift.Error)?)",
-                        "children": [
-                          {
-                            "kind": "TypeNominal",
-                            "name": "Optional",
-                            "printedName": "Purchasely.PLYPresentationViewController?",
-                            "children": [
-                              {
-                                "kind": "TypeNominal",
-                                "name": "PLYPresentationViewController",
-                                "printedName": "Purchasely.PLYPresentationViewController",
-                                "usr": "c:@M@Purchasely@objc(cs)PLYPresentationViewController"
-                              }
-                            ],
-                            "usr": "s:Sq"
-                          },
-                          {
-                            "kind": "TypeNominal",
-                            "name": "Bool",
-                            "printedName": "Swift.Bool",
-                            "usr": "s:Sb"
-                          },
-                          {
-                            "kind": "TypeNominal",
-                            "name": "Optional",
-                            "printedName": "(any Swift.Error)?",
-                            "children": [
-                              {
-                                "kind": "TypeNominal",
-                                "name": "Error",
-                                "printedName": "any Swift.Error",
-                                "usr": "s:s5ErrorP"
-                              }
-                            ],
-                            "usr": "s:Sq"
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ],
-                "hasDefaultArg": true,
-                "usr": "s:Sq"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "((Purchasely.PLYProductViewControllerResult, Purchasely.PLYPlan?) -> ())?",
-                "children": [
-                  {
-                    "kind": "TypeFunc",
-                    "name": "Function",
-                    "printedName": "(Purchasely.PLYProductViewControllerResult, Purchasely.PLYPlan?) -> ()",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Void",
-                        "printedName": "()"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Tuple",
-                        "printedName": "(Purchasely.PLYProductViewControllerResult, Purchasely.PLYPlan?)",
-                        "children": [
-                          {
-                            "kind": "TypeNominal",
-                            "name": "PLYProductViewControllerResult",
-                            "printedName": "Purchasely.PLYProductViewControllerResult",
-                            "usr": "c:@M@Purchasely@E@PLYProductViewControllerResult"
-                          },
-                          {
-                            "kind": "TypeNominal",
-                            "name": "Optional",
-                            "printedName": "Purchasely.PLYPlan?",
-                            "children": [
-                              {
-                                "kind": "TypeNominal",
-                                "name": "PLYPlan",
-                                "printedName": "Purchasely.PLYPlan",
-                                "usr": "c:@M@Purchasely@objc(cs)PLYPlan"
-                              }
-                            ],
-                            "usr": "s:Sq"
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ],
-                "hasDefaultArg": true,
-                "usr": "s:Sq"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "c:@CM@Purchasely@objc(cs)Purchasely(cm)planControllerFor:with:loaded:completion:",
-            "mangledName": "$s10PurchaselyAAC14planController3for4with6loaded10completionAA019PLYPresentationViewC0CSgSS_SSSgyAJ_Sbs5Error_pSgtcSgyAA010PLYProductiC6ResultO_AA7PLYPlanCSgtcSgtFZ",
-            "moduleName": "Purchasely",
-            "static": true,
-            "objc_name": "planControllerFor:with:loaded:completion:",
-            "declAttributes": [
-              "Dynamic",
-              "AccessControl",
-              "ObjC",
-              "RawDocComment"
-            ],
-            "isFromExtension": true,
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "presentationController",
-            "printedName": "presentationController(with:contentId:loaded:completion:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "Purchasely.PLYPresentationViewController?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "PLYPresentationViewController",
-                    "printedName": "Purchasely.PLYPresentationViewController",
-                    "usr": "c:@M@Purchasely@objc(cs)PLYPresentationViewController"
-                  }
-                ],
-                "usr": "s:Sq"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "Swift.String?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
-                  }
-                ],
-                "hasDefaultArg": true,
-                "usr": "s:Sq"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "Swift.String?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
-                  }
-                ],
-                "usr": "s:Sq"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "((Purchasely.PLYPresentationViewController?, Swift.Bool, (any Swift.Error)?) -> ())?",
-                "children": [
-                  {
-                    "kind": "TypeFunc",
-                    "name": "Function",
-                    "printedName": "(Purchasely.PLYPresentationViewController?, Swift.Bool, (any Swift.Error)?) -> ()",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Void",
-                        "printedName": "()"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Tuple",
-                        "printedName": "(Purchasely.PLYPresentationViewController?, Swift.Bool, (any Swift.Error)?)",
-                        "children": [
-                          {
-                            "kind": "TypeNominal",
-                            "name": "Optional",
-                            "printedName": "Purchasely.PLYPresentationViewController?",
-                            "children": [
-                              {
-                                "kind": "TypeNominal",
-                                "name": "PLYPresentationViewController",
-                                "printedName": "Purchasely.PLYPresentationViewController",
-                                "usr": "c:@M@Purchasely@objc(cs)PLYPresentationViewController"
-                              }
-                            ],
-                            "usr": "s:Sq"
-                          },
-                          {
-                            "kind": "TypeNominal",
-                            "name": "Bool",
-                            "printedName": "Swift.Bool",
-                            "usr": "s:Sb"
-                          },
-                          {
-                            "kind": "TypeNominal",
-                            "name": "Optional",
-                            "printedName": "(any Swift.Error)?",
-                            "children": [
-                              {
-                                "kind": "TypeNominal",
-                                "name": "Error",
-                                "printedName": "any Swift.Error",
-                                "usr": "s:s5ErrorP"
-                              }
-                            ],
-                            "usr": "s:Sq"
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ],
-                "hasDefaultArg": true,
-                "usr": "s:Sq"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "((Purchasely.PLYProductViewControllerResult, Purchasely.PLYPlan?) -> ())?",
-                "children": [
-                  {
-                    "kind": "TypeFunc",
-                    "name": "Function",
-                    "printedName": "(Purchasely.PLYProductViewControllerResult, Purchasely.PLYPlan?) -> ()",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Void",
-                        "printedName": "()"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Tuple",
-                        "printedName": "(Purchasely.PLYProductViewControllerResult, Purchasely.PLYPlan?)",
-                        "children": [
-                          {
-                            "kind": "TypeNominal",
-                            "name": "PLYProductViewControllerResult",
-                            "printedName": "Purchasely.PLYProductViewControllerResult",
-                            "usr": "c:@M@Purchasely@E@PLYProductViewControllerResult"
-                          },
-                          {
-                            "kind": "TypeNominal",
-                            "name": "Optional",
-                            "printedName": "Purchasely.PLYPlan?",
-                            "children": [
-                              {
-                                "kind": "TypeNominal",
-                                "name": "PLYPlan",
-                                "printedName": "Purchasely.PLYPlan",
-                                "usr": "c:@M@Purchasely@objc(cs)PLYPlan"
-                              }
-                            ],
-                            "usr": "s:Sq"
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ],
-                "hasDefaultArg": true,
-                "usr": "s:Sq"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "c:@CM@Purchasely@objc(cs)Purchasely(cm)presentationControllerWith:contentId:loaded:completion:",
-            "mangledName": "$s10PurchaselyAAC22presentationController4with9contentId6loaded10completionAA019PLYPresentationViewC0CSgSSSg_AKyAJ_Sbs5Error_pSgtcSgyAA010PLYProductjC6ResultO_AA7PLYPlanCSgtcSgtFZ",
-            "moduleName": "Purchasely",
-            "static": true,
-            "objc_name": "presentationControllerWith:contentId:loaded:completion:",
-            "declAttributes": [
-              "Dynamic",
-              "AccessControl",
-              "ObjC",
-              "RawDocComment"
-            ],
-            "isFromExtension": true,
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "presentationController",
-            "printedName": "presentationController(with:loaded:completion:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "Purchasely.PLYPresentationViewController?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "PLYPresentationViewController",
-                    "printedName": "Purchasely.PLYPresentationViewController",
-                    "usr": "c:@M@Purchasely@objc(cs)PLYPresentationViewController"
-                  }
-                ],
-                "usr": "s:Sq"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "Swift.String?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
-                  }
-                ],
-                "hasDefaultArg": true,
-                "usr": "s:Sq"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "((Purchasely.PLYPresentationViewController?, Swift.Bool, (any Swift.Error)?) -> ())?",
-                "children": [
-                  {
-                    "kind": "TypeFunc",
-                    "name": "Function",
-                    "printedName": "(Purchasely.PLYPresentationViewController?, Swift.Bool, (any Swift.Error)?) -> ()",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Void",
-                        "printedName": "()"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Tuple",
-                        "printedName": "(Purchasely.PLYPresentationViewController?, Swift.Bool, (any Swift.Error)?)",
-                        "children": [
-                          {
-                            "kind": "TypeNominal",
-                            "name": "Optional",
-                            "printedName": "Purchasely.PLYPresentationViewController?",
-                            "children": [
-                              {
-                                "kind": "TypeNominal",
-                                "name": "PLYPresentationViewController",
-                                "printedName": "Purchasely.PLYPresentationViewController",
-                                "usr": "c:@M@Purchasely@objc(cs)PLYPresentationViewController"
-                              }
-                            ],
-                            "usr": "s:Sq"
-                          },
-                          {
-                            "kind": "TypeNominal",
-                            "name": "Bool",
-                            "printedName": "Swift.Bool",
-                            "usr": "s:Sb"
-                          },
-                          {
-                            "kind": "TypeNominal",
-                            "name": "Optional",
-                            "printedName": "(any Swift.Error)?",
-                            "children": [
-                              {
-                                "kind": "TypeNominal",
-                                "name": "Error",
-                                "printedName": "any Swift.Error",
-                                "usr": "s:s5ErrorP"
-                              }
-                            ],
-                            "usr": "s:Sq"
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ],
-                "hasDefaultArg": true,
-                "usr": "s:Sq"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "((Purchasely.PLYProductViewControllerResult, Purchasely.PLYPlan?) -> ())?",
-                "children": [
-                  {
-                    "kind": "TypeFunc",
-                    "name": "Function",
-                    "printedName": "(Purchasely.PLYProductViewControllerResult, Purchasely.PLYPlan?) -> ()",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Void",
-                        "printedName": "()"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Tuple",
-                        "printedName": "(Purchasely.PLYProductViewControllerResult, Purchasely.PLYPlan?)",
-                        "children": [
-                          {
-                            "kind": "TypeNominal",
-                            "name": "PLYProductViewControllerResult",
-                            "printedName": "Purchasely.PLYProductViewControllerResult",
-                            "usr": "c:@M@Purchasely@E@PLYProductViewControllerResult"
-                          },
-                          {
-                            "kind": "TypeNominal",
-                            "name": "Optional",
-                            "printedName": "Purchasely.PLYPlan?",
-                            "children": [
-                              {
-                                "kind": "TypeNominal",
-                                "name": "PLYPlan",
-                                "printedName": "Purchasely.PLYPlan",
-                                "usr": "c:@M@Purchasely@objc(cs)PLYPlan"
-                              }
-                            ],
-                            "usr": "s:Sq"
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ],
-                "hasDefaultArg": true,
-                "usr": "s:Sq"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "c:@CM@Purchasely@objc(cs)Purchasely(cm)presentationControllerWith:loaded:completion:",
-            "mangledName": "$s10PurchaselyAAC22presentationController4with6loaded10completionAA019PLYPresentationViewC0CSgSSSg_yAI_Sbs5Error_pSgtcSgyAA010PLYProducthC6ResultO_AA7PLYPlanCSgtcSgtFZ",
-            "moduleName": "Purchasely",
-            "static": true,
-            "objc_name": "presentationControllerWith:loaded:completion:",
-            "declAttributes": [
-              "Dynamic",
-              "AccessControl",
-              "ObjC",
-              "RawDocComment"
-            ],
-            "isFromExtension": true,
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "presentationController",
-            "printedName": "presentationController(for:contentId:loaded:completion:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "Purchasely.PLYPresentationViewController?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "PLYPresentationViewController",
-                    "printedName": "Purchasely.PLYPresentationViewController",
-                    "usr": "c:@M@Purchasely@objc(cs)PLYPresentationViewController"
-                  }
-                ],
-                "usr": "s:Sq"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "Swift.String?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
-                  }
-                ],
-                "usr": "s:Sq"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "((Purchasely.PLYPresentationViewController?, Swift.Bool, (any Swift.Error)?) -> ())?",
-                "children": [
-                  {
-                    "kind": "TypeFunc",
-                    "name": "Function",
-                    "printedName": "(Purchasely.PLYPresentationViewController?, Swift.Bool, (any Swift.Error)?) -> ()",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Void",
-                        "printedName": "()"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Tuple",
-                        "printedName": "(Purchasely.PLYPresentationViewController?, Swift.Bool, (any Swift.Error)?)",
-                        "children": [
-                          {
-                            "kind": "TypeNominal",
-                            "name": "Optional",
-                            "printedName": "Purchasely.PLYPresentationViewController?",
-                            "children": [
-                              {
-                                "kind": "TypeNominal",
-                                "name": "PLYPresentationViewController",
-                                "printedName": "Purchasely.PLYPresentationViewController",
-                                "usr": "c:@M@Purchasely@objc(cs)PLYPresentationViewController"
-                              }
-                            ],
-                            "usr": "s:Sq"
-                          },
-                          {
-                            "kind": "TypeNominal",
-                            "name": "Bool",
-                            "printedName": "Swift.Bool",
-                            "usr": "s:Sb"
-                          },
-                          {
-                            "kind": "TypeNominal",
-                            "name": "Optional",
-                            "printedName": "(any Swift.Error)?",
-                            "children": [
-                              {
-                                "kind": "TypeNominal",
-                                "name": "Error",
-                                "printedName": "any Swift.Error",
-                                "usr": "s:s5ErrorP"
-                              }
-                            ],
-                            "usr": "s:Sq"
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ],
-                "hasDefaultArg": true,
-                "usr": "s:Sq"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "((Purchasely.PLYProductViewControllerResult, Purchasely.PLYPlan?) -> ())?",
-                "children": [
-                  {
-                    "kind": "TypeFunc",
-                    "name": "Function",
-                    "printedName": "(Purchasely.PLYProductViewControllerResult, Purchasely.PLYPlan?) -> ()",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Void",
-                        "printedName": "()"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Tuple",
-                        "printedName": "(Purchasely.PLYProductViewControllerResult, Purchasely.PLYPlan?)",
-                        "children": [
-                          {
-                            "kind": "TypeNominal",
-                            "name": "PLYProductViewControllerResult",
-                            "printedName": "Purchasely.PLYProductViewControllerResult",
-                            "usr": "c:@M@Purchasely@E@PLYProductViewControllerResult"
-                          },
-                          {
-                            "kind": "TypeNominal",
-                            "name": "Optional",
-                            "printedName": "Purchasely.PLYPlan?",
-                            "children": [
-                              {
-                                "kind": "TypeNominal",
-                                "name": "PLYPlan",
-                                "printedName": "Purchasely.PLYPlan",
-                                "usr": "c:@M@Purchasely@objc(cs)PLYPlan"
-                              }
-                            ],
-                            "usr": "s:Sq"
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ],
-                "hasDefaultArg": true,
-                "usr": "s:Sq"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "c:@CM@Purchasely@objc(cs)Purchasely(cm)presentationControllerFor:contentId:loaded:completion:",
-            "mangledName": "$s10PurchaselyAAC22presentationController3for9contentId6loaded10completionAA019PLYPresentationViewC0CSgSS_SSSgyAJ_Sbs5Error_pSgtcSgyAA010PLYProductjC6ResultO_AA7PLYPlanCSgtcSgtFZ",
-            "moduleName": "Purchasely",
-            "static": true,
-            "objc_name": "presentationControllerFor:contentId:loaded:completion:",
-            "declAttributes": [
-              "Dynamic",
-              "AccessControl",
-              "ObjC",
-              "RawDocComment"
-            ],
-            "isFromExtension": true,
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "presentationController",
-            "printedName": "presentationController(for:loaded:completion:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "UIKit.UIViewController?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "UIViewController",
-                    "printedName": "UIKit.UIViewController",
-                    "usr": "c:objc(cs)UIViewController"
-                  }
-                ],
-                "usr": "s:Sq"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "((Purchasely.PLYPresentationViewController?, Swift.Bool, (any Swift.Error)?) -> ())?",
-                "children": [
-                  {
-                    "kind": "TypeFunc",
-                    "name": "Function",
-                    "printedName": "(Purchasely.PLYPresentationViewController?, Swift.Bool, (any Swift.Error)?) -> ()",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Void",
-                        "printedName": "()"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Tuple",
-                        "printedName": "(Purchasely.PLYPresentationViewController?, Swift.Bool, (any Swift.Error)?)",
-                        "children": [
-                          {
-                            "kind": "TypeNominal",
-                            "name": "Optional",
-                            "printedName": "Purchasely.PLYPresentationViewController?",
-                            "children": [
-                              {
-                                "kind": "TypeNominal",
-                                "name": "PLYPresentationViewController",
-                                "printedName": "Purchasely.PLYPresentationViewController",
-                                "usr": "c:@M@Purchasely@objc(cs)PLYPresentationViewController"
-                              }
-                            ],
-                            "usr": "s:Sq"
-                          },
-                          {
-                            "kind": "TypeNominal",
-                            "name": "Bool",
-                            "printedName": "Swift.Bool",
-                            "usr": "s:Sb"
-                          },
-                          {
-                            "kind": "TypeNominal",
-                            "name": "Optional",
-                            "printedName": "(any Swift.Error)?",
-                            "children": [
-                              {
-                                "kind": "TypeNominal",
-                                "name": "Error",
-                                "printedName": "any Swift.Error",
-                                "usr": "s:s5ErrorP"
-                              }
-                            ],
-                            "usr": "s:Sq"
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ],
-                "hasDefaultArg": true,
-                "usr": "s:Sq"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "((Purchasely.PLYProductViewControllerResult, Purchasely.PLYPlan?) -> ())?",
-                "children": [
-                  {
-                    "kind": "TypeFunc",
-                    "name": "Function",
-                    "printedName": "(Purchasely.PLYProductViewControllerResult, Purchasely.PLYPlan?) -> ()",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Void",
-                        "printedName": "()"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Tuple",
-                        "printedName": "(Purchasely.PLYProductViewControllerResult, Purchasely.PLYPlan?)",
-                        "children": [
-                          {
-                            "kind": "TypeNominal",
-                            "name": "PLYProductViewControllerResult",
-                            "printedName": "Purchasely.PLYProductViewControllerResult",
-                            "usr": "c:@M@Purchasely@E@PLYProductViewControllerResult"
-                          },
-                          {
-                            "kind": "TypeNominal",
-                            "name": "Optional",
-                            "printedName": "Purchasely.PLYPlan?",
-                            "children": [
-                              {
-                                "kind": "TypeNominal",
-                                "name": "PLYPlan",
-                                "printedName": "Purchasely.PLYPlan",
-                                "usr": "c:@M@Purchasely@objc(cs)PLYPlan"
-                              }
-                            ],
-                            "usr": "s:Sq"
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ],
-                "hasDefaultArg": true,
-                "usr": "s:Sq"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "c:@CM@Purchasely@objc(cs)Purchasely(cm)presentationControllerFor:loaded:completion:",
-            "mangledName": "$s10PurchaselyAAC22presentationController3for6loaded10completionSo06UIViewC0CSgSS_yAA019PLYPresentationViewC0CSg_Sbs5Error_pSgtcSgyAA010PLYProductiC6ResultO_AA7PLYPlanCSgtcSgtFZ",
-            "moduleName": "Purchasely",
-            "static": true,
-            "objc_name": "presentationControllerFor:loaded:completion:",
-            "declAttributes": [
-              "Dynamic",
-              "AccessControl",
-              "ObjC",
-              "RawDocComment"
-            ],
-            "isFromExtension": true,
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
             "name": "fetchPresentation",
             "printedName": "fetchPresentation(with:contentId:fetchCompletion:completion:loadedCompletion:)",
             "children": [
@@ -43403,6 +42944,303 @@
             "mangledName": "$s10PurchaselyAAC26closeDisplayedPresentationyyFZ",
             "moduleName": "Purchasely",
             "static": true,
+            "declAttributes": [
+              "Dynamic",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "display",
+            "printedName": "display(for:displayMode:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "PLYPresentation",
+                "printedName": "Purchasely.PLYPresentation",
+                "usr": "c:@M@Purchasely@objc(cs)PLYPresentation"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "PLYDisplayMode",
+                "printedName": "Purchasely.PLYDisplayMode",
+                "hasDefaultArg": true,
+                "usr": "c:@M@Purchasely@objc(cs)PLYDisplayMode"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:10PurchaselyAAC7display3for0B4ModeAA15PLYPresentationCSS_AA010PLYDisplayD0CtYaKFZ",
+            "mangledName": "$s10PurchaselyAAC7display3for0B4ModeAA15PLYPresentationCSS_AA010PLYDisplayD0CtYaKFZ",
+            "moduleName": "Purchasely",
+            "static": true,
+            "intro_Macosx": "10.15",
+            "intro_iOS": "13.0",
+            "intro_tvOS": "13.0",
+            "intro_watchOS": "6.0",
+            "declAttributes": [
+              "AccessControl",
+              "Available",
+              "Available",
+              "Available",
+              "Available",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "display",
+            "printedName": "display(with:displayMode:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "PLYPresentation",
+                "printedName": "Purchasely.PLYPresentation",
+                "usr": "c:@M@Purchasely@objc(cs)PLYPresentation"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "PLYDisplayMode",
+                "printedName": "Purchasely.PLYDisplayMode",
+                "hasDefaultArg": true,
+                "usr": "c:@M@Purchasely@objc(cs)PLYDisplayMode"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:10PurchaselyAAC7display4with0B4ModeAA15PLYPresentationCSSSg_AA010PLYDisplayD0CtYaKFZ",
+            "mangledName": "$s10PurchaselyAAC7display4with0B4ModeAA15PLYPresentationCSSSg_AA010PLYDisplayD0CtYaKFZ",
+            "moduleName": "Purchasely",
+            "static": true,
+            "intro_Macosx": "10.15",
+            "intro_iOS": "13.0",
+            "intro_tvOS": "13.0",
+            "intro_watchOS": "6.0",
+            "declAttributes": [
+              "AccessControl",
+              "Available",
+              "Available",
+              "Available",
+              "Available",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "display",
+            "printedName": "display(for:displayMode:completion:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "PLYDisplayMode",
+                "printedName": "Purchasely.PLYDisplayMode",
+                "hasDefaultArg": true,
+                "usr": "c:@M@Purchasely@objc(cs)PLYDisplayMode"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "((Purchasely.PLYPresentation?, (any Swift.Error)?) -> ())?",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(Purchasely.PLYPresentation?, (any Swift.Error)?) -> ()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Tuple",
+                        "printedName": "(Purchasely.PLYPresentation?, (any Swift.Error)?)",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Optional",
+                            "printedName": "Purchasely.PLYPresentation?",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "PLYPresentation",
+                                "printedName": "Purchasely.PLYPresentation",
+                                "usr": "c:@M@Purchasely@objc(cs)PLYPresentation"
+                              }
+                            ],
+                            "usr": "s:Sq"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Optional",
+                            "printedName": "(any Swift.Error)?",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "Error",
+                                "printedName": "any Swift.Error",
+                                "usr": "s:s5ErrorP"
+                              }
+                            ],
+                            "usr": "s:Sq"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@CM@Purchasely@objc(cs)Purchasely(cm)displayFor:displayMode:completion:",
+            "mangledName": "$s10PurchaselyAAC7display3for0B4Mode10completionySS_AA010PLYDisplayD0CyAA15PLYPresentationCSg_s5Error_pSgtcSgtFZ",
+            "moduleName": "Purchasely",
+            "static": true,
+            "objc_name": "displayFor:displayMode:completion:",
+            "declAttributes": [
+              "Dynamic",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "display",
+            "printedName": "display(with:displayMode:completion:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "PLYDisplayMode",
+                "printedName": "Purchasely.PLYDisplayMode",
+                "hasDefaultArg": true,
+                "usr": "c:@M@Purchasely@objc(cs)PLYDisplayMode"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "((Purchasely.PLYPresentation?, (any Swift.Error)?) -> ())?",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(Purchasely.PLYPresentation?, (any Swift.Error)?) -> ()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Tuple",
+                        "printedName": "(Purchasely.PLYPresentation?, (any Swift.Error)?)",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Optional",
+                            "printedName": "Purchasely.PLYPresentation?",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "PLYPresentation",
+                                "printedName": "Purchasely.PLYPresentation",
+                                "usr": "c:@M@Purchasely@objc(cs)PLYPresentation"
+                              }
+                            ],
+                            "usr": "s:Sq"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Optional",
+                            "printedName": "(any Swift.Error)?",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "Error",
+                                "printedName": "any Swift.Error",
+                                "usr": "s:s5ErrorP"
+                              }
+                            ],
+                            "usr": "s:Sq"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@CM@Purchasely@objc(cs)Purchasely(cm)displayWith:displayMode:completion:",
+            "mangledName": "$s10PurchaselyAAC7display4with0B4Mode10completionySSSg_AA010PLYDisplayD0CyAA15PLYPresentationCSg_s5Error_pSgtcSgtFZ",
+            "moduleName": "Purchasely",
+            "static": true,
+            "objc_name": "displayWith:displayMode:completion:",
             "declAttributes": [
               "Dynamic",
               "AccessControl",
@@ -49014,6 +48852,1365 @@
               "Final",
               "AccessControl",
               "ObjC",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "productController",
+            "printedName": "productController(for:with:contentId:loaded:completion:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Purchasely.PLYPresentationViewController?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "PLYPresentationViewController",
+                    "printedName": "Purchasely.PLYPresentationViewController",
+                    "usr": "c:@M@Purchasely@objc(cs)PLYPresentationViewController"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "((Purchasely.PLYPresentationViewController?, Swift.Bool, (any Swift.Error)?) -> ())?",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(Purchasely.PLYPresentationViewController?, Swift.Bool, (any Swift.Error)?) -> ()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Tuple",
+                        "printedName": "(Purchasely.PLYPresentationViewController?, Swift.Bool, (any Swift.Error)?)",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Optional",
+                            "printedName": "Purchasely.PLYPresentationViewController?",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "PLYPresentationViewController",
+                                "printedName": "Purchasely.PLYPresentationViewController",
+                                "usr": "c:@M@Purchasely@objc(cs)PLYPresentationViewController"
+                              }
+                            ],
+                            "usr": "s:Sq"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Bool",
+                            "printedName": "Swift.Bool",
+                            "usr": "s:Sb"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Optional",
+                            "printedName": "(any Swift.Error)?",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "Error",
+                                "printedName": "any Swift.Error",
+                                "usr": "s:s5ErrorP"
+                              }
+                            ],
+                            "usr": "s:Sq"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "((Purchasely.PLYProductViewControllerResult, Purchasely.PLYPlan?) -> ())?",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(Purchasely.PLYProductViewControllerResult, Purchasely.PLYPlan?) -> ()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Tuple",
+                        "printedName": "(Purchasely.PLYProductViewControllerResult, Purchasely.PLYPlan?)",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "PLYProductViewControllerResult",
+                            "printedName": "Purchasely.PLYProductViewControllerResult",
+                            "usr": "c:@M@Purchasely@E@PLYProductViewControllerResult"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Optional",
+                            "printedName": "Purchasely.PLYPlan?",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "PLYPlan",
+                                "printedName": "Purchasely.PLYPlan",
+                                "usr": "c:@M@Purchasely@objc(cs)PLYPlan"
+                              }
+                            ],
+                            "usr": "s:Sq"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@CM@Purchasely@objc(cs)Purchasely(cm)productControllerFor:with:contentId:loaded:completion:",
+            "mangledName": "$s10PurchaselyAAC17productController3for4with9contentId6loaded10completionAA019PLYPresentationViewC0CSgSS_SSSgALyAK_Sbs5Error_pSgtcSgyAA010PLYProductkC6ResultO_AA7PLYPlanCSgtcSgtFZ",
+            "moduleName": "Purchasely",
+            "static": true,
+            "deprecated": true,
+            "objc_name": "productControllerFor:with:contentId:loaded:completion:",
+            "declAttributes": [
+              "Dynamic",
+              "AccessControl",
+              "ObjC",
+              "Available",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "productController",
+            "printedName": "productController(for:with:loaded:completion:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Purchasely.PLYPresentationViewController?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "PLYPresentationViewController",
+                    "printedName": "Purchasely.PLYPresentationViewController",
+                    "usr": "c:@M@Purchasely@objc(cs)PLYPresentationViewController"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "((Purchasely.PLYPresentationViewController?, Swift.Bool, (any Swift.Error)?) -> ())?",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(Purchasely.PLYPresentationViewController?, Swift.Bool, (any Swift.Error)?) -> ()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Tuple",
+                        "printedName": "(Purchasely.PLYPresentationViewController?, Swift.Bool, (any Swift.Error)?)",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Optional",
+                            "printedName": "Purchasely.PLYPresentationViewController?",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "PLYPresentationViewController",
+                                "printedName": "Purchasely.PLYPresentationViewController",
+                                "usr": "c:@M@Purchasely@objc(cs)PLYPresentationViewController"
+                              }
+                            ],
+                            "usr": "s:Sq"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Bool",
+                            "printedName": "Swift.Bool",
+                            "usr": "s:Sb"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Optional",
+                            "printedName": "(any Swift.Error)?",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "Error",
+                                "printedName": "any Swift.Error",
+                                "usr": "s:s5ErrorP"
+                              }
+                            ],
+                            "usr": "s:Sq"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "((Purchasely.PLYProductViewControllerResult, Purchasely.PLYPlan?) -> ())?",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(Purchasely.PLYProductViewControllerResult, Purchasely.PLYPlan?) -> ()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Tuple",
+                        "printedName": "(Purchasely.PLYProductViewControllerResult, Purchasely.PLYPlan?)",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "PLYProductViewControllerResult",
+                            "printedName": "Purchasely.PLYProductViewControllerResult",
+                            "usr": "c:@M@Purchasely@E@PLYProductViewControllerResult"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Optional",
+                            "printedName": "Purchasely.PLYPlan?",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "PLYPlan",
+                                "printedName": "Purchasely.PLYPlan",
+                                "usr": "c:@M@Purchasely@objc(cs)PLYPlan"
+                              }
+                            ],
+                            "usr": "s:Sq"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@CM@Purchasely@objc(cs)Purchasely(cm)productControllerFor:with:loaded:completion:",
+            "mangledName": "$s10PurchaselyAAC17productController3for4with6loaded10completionAA019PLYPresentationViewC0CSgSS_SSSgyAJ_Sbs5Error_pSgtcSgyAA010PLYProductiC6ResultO_AA7PLYPlanCSgtcSgtFZ",
+            "moduleName": "Purchasely",
+            "static": true,
+            "deprecated": true,
+            "objc_name": "productControllerFor:with:loaded:completion:",
+            "declAttributes": [
+              "Dynamic",
+              "AccessControl",
+              "ObjC",
+              "Available",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "planController",
+            "printedName": "planController(for:with:contentId:loaded:completion:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Purchasely.PLYPresentationViewController?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "PLYPresentationViewController",
+                    "printedName": "Purchasely.PLYPresentationViewController",
+                    "usr": "c:@M@Purchasely@objc(cs)PLYPresentationViewController"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "((Purchasely.PLYPresentationViewController?, Swift.Bool, (any Swift.Error)?) -> ())?",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(Purchasely.PLYPresentationViewController?, Swift.Bool, (any Swift.Error)?) -> ()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Tuple",
+                        "printedName": "(Purchasely.PLYPresentationViewController?, Swift.Bool, (any Swift.Error)?)",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Optional",
+                            "printedName": "Purchasely.PLYPresentationViewController?",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "PLYPresentationViewController",
+                                "printedName": "Purchasely.PLYPresentationViewController",
+                                "usr": "c:@M@Purchasely@objc(cs)PLYPresentationViewController"
+                              }
+                            ],
+                            "usr": "s:Sq"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Bool",
+                            "printedName": "Swift.Bool",
+                            "usr": "s:Sb"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Optional",
+                            "printedName": "(any Swift.Error)?",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "Error",
+                                "printedName": "any Swift.Error",
+                                "usr": "s:s5ErrorP"
+                              }
+                            ],
+                            "usr": "s:Sq"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "((Purchasely.PLYProductViewControllerResult, Purchasely.PLYPlan?) -> ())?",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(Purchasely.PLYProductViewControllerResult, Purchasely.PLYPlan?) -> ()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Tuple",
+                        "printedName": "(Purchasely.PLYProductViewControllerResult, Purchasely.PLYPlan?)",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "PLYProductViewControllerResult",
+                            "printedName": "Purchasely.PLYProductViewControllerResult",
+                            "usr": "c:@M@Purchasely@E@PLYProductViewControllerResult"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Optional",
+                            "printedName": "Purchasely.PLYPlan?",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "PLYPlan",
+                                "printedName": "Purchasely.PLYPlan",
+                                "usr": "c:@M@Purchasely@objc(cs)PLYPlan"
+                              }
+                            ],
+                            "usr": "s:Sq"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@CM@Purchasely@objc(cs)Purchasely(cm)planControllerFor:with:contentId:loaded:completion:",
+            "mangledName": "$s10PurchaselyAAC14planController3for4with9contentId6loaded10completionAA019PLYPresentationViewC0CSgSS_SSSgALyAK_Sbs5Error_pSgtcSgyAA010PLYProductkC6ResultO_AA7PLYPlanCSgtcSgtFZ",
+            "moduleName": "Purchasely",
+            "static": true,
+            "deprecated": true,
+            "objc_name": "planControllerFor:with:contentId:loaded:completion:",
+            "declAttributes": [
+              "Dynamic",
+              "AccessControl",
+              "ObjC",
+              "Available",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "planController",
+            "printedName": "planController(for:with:loaded:completion:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Purchasely.PLYPresentationViewController?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "PLYPresentationViewController",
+                    "printedName": "Purchasely.PLYPresentationViewController",
+                    "usr": "c:@M@Purchasely@objc(cs)PLYPresentationViewController"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "((Purchasely.PLYPresentationViewController?, Swift.Bool, (any Swift.Error)?) -> ())?",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(Purchasely.PLYPresentationViewController?, Swift.Bool, (any Swift.Error)?) -> ()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Tuple",
+                        "printedName": "(Purchasely.PLYPresentationViewController?, Swift.Bool, (any Swift.Error)?)",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Optional",
+                            "printedName": "Purchasely.PLYPresentationViewController?",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "PLYPresentationViewController",
+                                "printedName": "Purchasely.PLYPresentationViewController",
+                                "usr": "c:@M@Purchasely@objc(cs)PLYPresentationViewController"
+                              }
+                            ],
+                            "usr": "s:Sq"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Bool",
+                            "printedName": "Swift.Bool",
+                            "usr": "s:Sb"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Optional",
+                            "printedName": "(any Swift.Error)?",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "Error",
+                                "printedName": "any Swift.Error",
+                                "usr": "s:s5ErrorP"
+                              }
+                            ],
+                            "usr": "s:Sq"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "((Purchasely.PLYProductViewControllerResult, Purchasely.PLYPlan?) -> ())?",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(Purchasely.PLYProductViewControllerResult, Purchasely.PLYPlan?) -> ()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Tuple",
+                        "printedName": "(Purchasely.PLYProductViewControllerResult, Purchasely.PLYPlan?)",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "PLYProductViewControllerResult",
+                            "printedName": "Purchasely.PLYProductViewControllerResult",
+                            "usr": "c:@M@Purchasely@E@PLYProductViewControllerResult"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Optional",
+                            "printedName": "Purchasely.PLYPlan?",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "PLYPlan",
+                                "printedName": "Purchasely.PLYPlan",
+                                "usr": "c:@M@Purchasely@objc(cs)PLYPlan"
+                              }
+                            ],
+                            "usr": "s:Sq"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@CM@Purchasely@objc(cs)Purchasely(cm)planControllerFor:with:loaded:completion:",
+            "mangledName": "$s10PurchaselyAAC14planController3for4with6loaded10completionAA019PLYPresentationViewC0CSgSS_SSSgyAJ_Sbs5Error_pSgtcSgyAA010PLYProductiC6ResultO_AA7PLYPlanCSgtcSgtFZ",
+            "moduleName": "Purchasely",
+            "static": true,
+            "deprecated": true,
+            "objc_name": "planControllerFor:with:loaded:completion:",
+            "declAttributes": [
+              "Dynamic",
+              "AccessControl",
+              "ObjC",
+              "Available",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "presentationController",
+            "printedName": "presentationController(with:contentId:loaded:completion:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Purchasely.PLYPresentationViewController?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "PLYPresentationViewController",
+                    "printedName": "Purchasely.PLYPresentationViewController",
+                    "usr": "c:@M@Purchasely@objc(cs)PLYPresentationViewController"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "((Purchasely.PLYPresentationViewController?, Swift.Bool, (any Swift.Error)?) -> ())?",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(Purchasely.PLYPresentationViewController?, Swift.Bool, (any Swift.Error)?) -> ()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Tuple",
+                        "printedName": "(Purchasely.PLYPresentationViewController?, Swift.Bool, (any Swift.Error)?)",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Optional",
+                            "printedName": "Purchasely.PLYPresentationViewController?",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "PLYPresentationViewController",
+                                "printedName": "Purchasely.PLYPresentationViewController",
+                                "usr": "c:@M@Purchasely@objc(cs)PLYPresentationViewController"
+                              }
+                            ],
+                            "usr": "s:Sq"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Bool",
+                            "printedName": "Swift.Bool",
+                            "usr": "s:Sb"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Optional",
+                            "printedName": "(any Swift.Error)?",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "Error",
+                                "printedName": "any Swift.Error",
+                                "usr": "s:s5ErrorP"
+                              }
+                            ],
+                            "usr": "s:Sq"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "((Purchasely.PLYProductViewControllerResult, Purchasely.PLYPlan?) -> ())?",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(Purchasely.PLYProductViewControllerResult, Purchasely.PLYPlan?) -> ()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Tuple",
+                        "printedName": "(Purchasely.PLYProductViewControllerResult, Purchasely.PLYPlan?)",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "PLYProductViewControllerResult",
+                            "printedName": "Purchasely.PLYProductViewControllerResult",
+                            "usr": "c:@M@Purchasely@E@PLYProductViewControllerResult"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Optional",
+                            "printedName": "Purchasely.PLYPlan?",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "PLYPlan",
+                                "printedName": "Purchasely.PLYPlan",
+                                "usr": "c:@M@Purchasely@objc(cs)PLYPlan"
+                              }
+                            ],
+                            "usr": "s:Sq"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@CM@Purchasely@objc(cs)Purchasely(cm)presentationControllerWith:contentId:loaded:completion:",
+            "mangledName": "$s10PurchaselyAAC22presentationController4with9contentId6loaded10completionAA019PLYPresentationViewC0CSgSSSg_AKyAJ_Sbs5Error_pSgtcSgyAA010PLYProductjC6ResultO_AA7PLYPlanCSgtcSgtFZ",
+            "moduleName": "Purchasely",
+            "static": true,
+            "deprecated": true,
+            "objc_name": "presentationControllerWith:contentId:loaded:completion:",
+            "declAttributes": [
+              "Dynamic",
+              "AccessControl",
+              "ObjC",
+              "Available",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "presentationController",
+            "printedName": "presentationController(with:loaded:completion:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Purchasely.PLYPresentationViewController?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "PLYPresentationViewController",
+                    "printedName": "Purchasely.PLYPresentationViewController",
+                    "usr": "c:@M@Purchasely@objc(cs)PLYPresentationViewController"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "((Purchasely.PLYPresentationViewController?, Swift.Bool, (any Swift.Error)?) -> ())?",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(Purchasely.PLYPresentationViewController?, Swift.Bool, (any Swift.Error)?) -> ()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Tuple",
+                        "printedName": "(Purchasely.PLYPresentationViewController?, Swift.Bool, (any Swift.Error)?)",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Optional",
+                            "printedName": "Purchasely.PLYPresentationViewController?",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "PLYPresentationViewController",
+                                "printedName": "Purchasely.PLYPresentationViewController",
+                                "usr": "c:@M@Purchasely@objc(cs)PLYPresentationViewController"
+                              }
+                            ],
+                            "usr": "s:Sq"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Bool",
+                            "printedName": "Swift.Bool",
+                            "usr": "s:Sb"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Optional",
+                            "printedName": "(any Swift.Error)?",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "Error",
+                                "printedName": "any Swift.Error",
+                                "usr": "s:s5ErrorP"
+                              }
+                            ],
+                            "usr": "s:Sq"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "((Purchasely.PLYProductViewControllerResult, Purchasely.PLYPlan?) -> ())?",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(Purchasely.PLYProductViewControllerResult, Purchasely.PLYPlan?) -> ()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Tuple",
+                        "printedName": "(Purchasely.PLYProductViewControllerResult, Purchasely.PLYPlan?)",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "PLYProductViewControllerResult",
+                            "printedName": "Purchasely.PLYProductViewControllerResult",
+                            "usr": "c:@M@Purchasely@E@PLYProductViewControllerResult"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Optional",
+                            "printedName": "Purchasely.PLYPlan?",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "PLYPlan",
+                                "printedName": "Purchasely.PLYPlan",
+                                "usr": "c:@M@Purchasely@objc(cs)PLYPlan"
+                              }
+                            ],
+                            "usr": "s:Sq"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@CM@Purchasely@objc(cs)Purchasely(cm)presentationControllerWith:loaded:completion:",
+            "mangledName": "$s10PurchaselyAAC22presentationController4with6loaded10completionAA019PLYPresentationViewC0CSgSSSg_yAI_Sbs5Error_pSgtcSgyAA010PLYProducthC6ResultO_AA7PLYPlanCSgtcSgtFZ",
+            "moduleName": "Purchasely",
+            "static": true,
+            "deprecated": true,
+            "objc_name": "presentationControllerWith:loaded:completion:",
+            "declAttributes": [
+              "Dynamic",
+              "AccessControl",
+              "ObjC",
+              "Available",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "presentationController",
+            "printedName": "presentationController(for:contentId:loaded:completion:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Purchasely.PLYPresentationViewController?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "PLYPresentationViewController",
+                    "printedName": "Purchasely.PLYPresentationViewController",
+                    "usr": "c:@M@Purchasely@objc(cs)PLYPresentationViewController"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "((Purchasely.PLYPresentationViewController?, Swift.Bool, (any Swift.Error)?) -> ())?",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(Purchasely.PLYPresentationViewController?, Swift.Bool, (any Swift.Error)?) -> ()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Tuple",
+                        "printedName": "(Purchasely.PLYPresentationViewController?, Swift.Bool, (any Swift.Error)?)",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Optional",
+                            "printedName": "Purchasely.PLYPresentationViewController?",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "PLYPresentationViewController",
+                                "printedName": "Purchasely.PLYPresentationViewController",
+                                "usr": "c:@M@Purchasely@objc(cs)PLYPresentationViewController"
+                              }
+                            ],
+                            "usr": "s:Sq"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Bool",
+                            "printedName": "Swift.Bool",
+                            "usr": "s:Sb"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Optional",
+                            "printedName": "(any Swift.Error)?",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "Error",
+                                "printedName": "any Swift.Error",
+                                "usr": "s:s5ErrorP"
+                              }
+                            ],
+                            "usr": "s:Sq"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "((Purchasely.PLYProductViewControllerResult, Purchasely.PLYPlan?) -> ())?",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(Purchasely.PLYProductViewControllerResult, Purchasely.PLYPlan?) -> ()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Tuple",
+                        "printedName": "(Purchasely.PLYProductViewControllerResult, Purchasely.PLYPlan?)",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "PLYProductViewControllerResult",
+                            "printedName": "Purchasely.PLYProductViewControllerResult",
+                            "usr": "c:@M@Purchasely@E@PLYProductViewControllerResult"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Optional",
+                            "printedName": "Purchasely.PLYPlan?",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "PLYPlan",
+                                "printedName": "Purchasely.PLYPlan",
+                                "usr": "c:@M@Purchasely@objc(cs)PLYPlan"
+                              }
+                            ],
+                            "usr": "s:Sq"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@CM@Purchasely@objc(cs)Purchasely(cm)presentationControllerFor:contentId:loaded:completion:",
+            "mangledName": "$s10PurchaselyAAC22presentationController3for9contentId6loaded10completionAA019PLYPresentationViewC0CSgSS_SSSgyAJ_Sbs5Error_pSgtcSgyAA010PLYProductjC6ResultO_AA7PLYPlanCSgtcSgtFZ",
+            "moduleName": "Purchasely",
+            "static": true,
+            "deprecated": true,
+            "objc_name": "presentationControllerFor:contentId:loaded:completion:",
+            "declAttributes": [
+              "Dynamic",
+              "AccessControl",
+              "ObjC",
+              "Available",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "presentationController",
+            "printedName": "presentationController(for:loaded:completion:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "UIKit.UIViewController?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UIViewController",
+                    "printedName": "UIKit.UIViewController",
+                    "usr": "c:objc(cs)UIViewController"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "((Purchasely.PLYPresentationViewController?, Swift.Bool, (any Swift.Error)?) -> ())?",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(Purchasely.PLYPresentationViewController?, Swift.Bool, (any Swift.Error)?) -> ()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Tuple",
+                        "printedName": "(Purchasely.PLYPresentationViewController?, Swift.Bool, (any Swift.Error)?)",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Optional",
+                            "printedName": "Purchasely.PLYPresentationViewController?",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "PLYPresentationViewController",
+                                "printedName": "Purchasely.PLYPresentationViewController",
+                                "usr": "c:@M@Purchasely@objc(cs)PLYPresentationViewController"
+                              }
+                            ],
+                            "usr": "s:Sq"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Bool",
+                            "printedName": "Swift.Bool",
+                            "usr": "s:Sb"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Optional",
+                            "printedName": "(any Swift.Error)?",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "Error",
+                                "printedName": "any Swift.Error",
+                                "usr": "s:s5ErrorP"
+                              }
+                            ],
+                            "usr": "s:Sq"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "((Purchasely.PLYProductViewControllerResult, Purchasely.PLYPlan?) -> ())?",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(Purchasely.PLYProductViewControllerResult, Purchasely.PLYPlan?) -> ()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Tuple",
+                        "printedName": "(Purchasely.PLYProductViewControllerResult, Purchasely.PLYPlan?)",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "PLYProductViewControllerResult",
+                            "printedName": "Purchasely.PLYProductViewControllerResult",
+                            "usr": "c:@M@Purchasely@E@PLYProductViewControllerResult"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Optional",
+                            "printedName": "Purchasely.PLYPlan?",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "PLYPlan",
+                                "printedName": "Purchasely.PLYPlan",
+                                "usr": "c:@M@Purchasely@objc(cs)PLYPlan"
+                              }
+                            ],
+                            "usr": "s:Sq"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@CM@Purchasely@objc(cs)Purchasely(cm)presentationControllerFor:loaded:completion:",
+            "mangledName": "$s10PurchaselyAAC22presentationController3for6loaded10completionSo06UIViewC0CSgSS_yAA019PLYPresentationViewC0CSg_Sbs5Error_pSgtcSgyAA010PLYProductiC6ResultO_AA7PLYPlanCSgtcSgtFZ",
+            "moduleName": "Purchasely",
+            "static": true,
+            "deprecated": true,
+            "objc_name": "presentationControllerFor:loaded:completion:",
+            "declAttributes": [
+              "Dynamic",
+              "AccessControl",
+              "ObjC",
+              "Available",
               "RawDocComment"
             ],
             "isFromExtension": true,
@@ -55849,6 +57046,13 @@
   },
   "ConstValues": [
     {
+      "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Manager\/ActionExecutor.swift",
+      "kind": "Dictionary",
+      "offset": 772,
+      "length": 3,
+      "value": "[]"
+    },
+    {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Services\/Purchasely\/API.swift",
       "kind": "StringLiteral",
       "offset": 13368,
@@ -56460,77 +57664,77 @@
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Utils\/Foundation\/Date+Extension.swift",
       "kind": "StringLiteral",
-      "offset": 412,
+      "offset": 174,
       "length": 32,
       "value": "\"yyyy-MM-dd'T'HH:mm:ss.SSSZZZZZ\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Utils\/Foundation\/Date+Extension.swift",
       "kind": "StringLiteral",
-      "offset": 470,
+      "offset": 232,
       "length": 28,
       "value": "\"yyyy-MM-dd'T'HH:mm:ss.SSSZ\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Utils\/Foundation\/Date+Extension.swift",
       "kind": "StringLiteral",
-      "offset": 521,
+      "offset": 283,
       "length": 28,
       "value": "\"yyyy-MM-dd'T'HH:mm:ssZZZZZ\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Utils\/Foundation\/Date+Extension.swift",
       "kind": "StringLiteral",
-      "offset": 575,
+      "offset": 337,
       "length": 24,
       "value": "\"yyyy-MM-dd'T'HH:mm:ssZ\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Utils\/Foundation\/Date+Extension.swift",
       "kind": "StringLiteral",
-      "offset": 630,
+      "offset": 392,
       "length": 30,
       "value": "\"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Utils\/Foundation\/Date+Extension.swift",
       "kind": "StringLiteral",
-      "offset": 686,
+      "offset": 448,
       "length": 12,
       "value": "\"yyyy-MM-dd\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Utils\/Foundation\/Date+Extension.swift",
       "kind": "StringLiteral",
-      "offset": 724,
+      "offset": 486,
       "length": 18,
       "value": "\"yyyy-MM-dd HH:mm\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Utils\/Foundation\/Date+Extension.swift",
       "kind": "StringLiteral",
-      "offset": 776,
+      "offset": 538,
       "length": 29,
       "value": "\"EEE, dd MMM yyyy HH:mm:ss z\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Utils\/Foundation\/Date+Extension.swift",
       "kind": "StringLiteral",
-      "offset": 1589,
+      "offset": 1389,
       "length": 13,
       "value": "\"en_US_POSIX\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Utils\/Foundation\/Date+Extension.swift",
       "kind": "StringLiteral",
-      "offset": 2743,
+      "offset": 2581,
       "length": 13,
       "value": "\"en_US_POSIX\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Utils\/Foundation\/Date+Extension.swift",
       "kind": "StringLiteral",
-      "offset": 3057,
+      "offset": 2895,
       "length": 13,
       "value": "\"en_US_POSIX\""
     },
@@ -56774,8 +57978,15 @@
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Manager\/MethodsUsageMonitor\/DefaultMethodsUsageMonitor.swift",
+      "kind": "StringLiteral",
+      "offset": 614,
+      "length": 19,
+      "value": "\"CAN_OPEN_DEEPLINK\""
+    },
+    {
+      "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Manager\/MethodsUsageMonitor\/DefaultMethodsUsageMonitor.swift",
       "kind": "BooleanLiteral",
-      "offset": 1133,
+      "offset": 1184,
       "length": 5,
       "value": "false"
     },
@@ -57034,133 +58245,133 @@
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/UI\/PLYAction.swift",
       "kind": "IntegerLiteral",
-      "offset": 655,
+      "offset": 1072,
       "length": 5,
       "value": "1"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/UI\/PLYAction.swift",
       "kind": "IntegerLiteral",
-      "offset": 670,
+      "offset": 1087,
       "length": 4,
       "value": "2"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/UI\/PLYAction.swift",
       "kind": "StringLiteral",
-      "offset": 1072,
+      "offset": 1489,
       "length": 8,
       "value": "\"stripe\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/UI\/PLYAction.swift",
       "kind": "StringLiteral",
-      "offset": 1102,
+      "offset": 1519,
       "length": 7,
       "value": "\"other\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/UI\/PLYAction.swift",
       "kind": "StringLiteral",
-      "offset": 9291,
+      "offset": 10138,
       "length": 6,
       "value": "\"type\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/UI\/PLYAction.swift",
       "kind": "StringLiteral",
-      "offset": 9311,
+      "offset": 10158,
       "length": 5,
       "value": "\"url\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/UI\/PLYAction.swift",
       "kind": "StringLiteral",
-      "offset": 9332,
+      "offset": 10179,
       "length": 7,
       "value": "\"title\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/UI\/PLYAction.swift",
       "kind": "StringLiteral",
-      "offset": 9362,
+      "offset": 10209,
       "length": 16,
       "value": "\"plan_vendor_id\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/UI\/PLYAction.swift",
       "kind": "StringLiteral",
-      "offset": 9413,
+      "offset": 10260,
       "length": 23,
       "value": "\"promo_offer_vendor_id\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/UI\/PLYAction.swift",
       "kind": "StringLiteral",
-      "offset": 9467,
+      "offset": 10314,
       "length": 24,
       "value": "\"presentation_vendor_id\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/UI\/PLYAction.swift",
       "kind": "StringLiteral",
-      "offset": 9525,
+      "offset": 10372,
       "length": 21,
       "value": "\"placement_vendor_id\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/UI\/PLYAction.swift",
       "kind": "StringLiteral",
-      "offset": 9568,
+      "offset": 10415,
       "length": 17,
       "value": "\"open_in_browser\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/UI\/PLYAction.swift",
       "kind": "StringLiteral",
-      "offset": 9608,
+      "offset": 10455,
       "length": 8,
       "value": "\"select\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/UI\/PLYAction.swift",
       "kind": "StringLiteral",
-      "offset": 9645,
+      "offset": 10492,
       "length": 16,
       "value": "\"open_flow_step\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/UI\/PLYAction.swift",
       "kind": "StringLiteral",
-      "offset": 9686,
+      "offset": 10533,
       "length": 11,
       "value": "\"action_id\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/UI\/PLYAction.swift",
       "kind": "StringLiteral",
-      "offset": 9725,
+      "offset": 10572,
       "length": 13,
       "value": "\"conditional\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/UI\/PLYAction.swift",
       "kind": "StringLiteral",
-      "offset": 9765,
+      "offset": 10612,
       "length": 12,
       "value": "\"transition\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/UI\/PLYAction.swift",
       "kind": "StringLiteral",
-      "offset": 9811,
+      "offset": 10658,
       "length": 17,
       "value": "\"query_parameter\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/UI\/PLYAction.swift",
       "kind": "StringLiteral",
-      "offset": 9864,
+      "offset": 10711,
       "length": 10,
       "value": "\"provider\""
     },
@@ -57888,14 +59099,14 @@
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYColors.swift",
       "kind": "StringLiteral",
-      "offset": 1240,
+      "offset": 1933,
       "length": 7,
       "value": "\"light\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYColors.swift",
       "kind": "StringLiteral",
-      "offset": 1267,
+      "offset": 1960,
       "length": 6,
       "value": "\"dark\""
     },
@@ -58210,23 +59421,72 @@
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYDisplayMode.swift",
       "kind": "IntegerLiteral",
-      "offset": 594,
+      "offset": 627,
       "length": 4,
       "value": "4"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYDisplayMode.swift",
+      "kind": "IntegerLiteral",
+      "offset": 719,
+      "length": 13,
+      "value": "5"
+    },
+    {
+      "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYDisplayMode.swift",
       "kind": "StringLiteral",
-      "offset": 3073,
+      "offset": 3562,
       "length": 19,
       "value": "\"height_percentage\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYDisplayMode.swift",
       "kind": "StringLiteral",
-      "offset": 3125,
+      "offset": 3614,
       "length": 19,
       "value": "\"background_colors\""
+    },
+    {
+      "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYDisplayMode.swift",
+      "kind": "BooleanLiteral",
+      "offset": 3926,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYDisplayMode.swift",
+      "kind": "BooleanLiteral",
+      "offset": 4552,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYDisplayMode.swift",
+      "kind": "FloatLiteral",
+      "offset": 6302,
+      "length": 3,
+      "value": "0.5"
+    },
+    {
+      "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYDisplayMode.swift",
+      "kind": "BooleanLiteral",
+      "offset": 6327,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYDisplayMode.swift",
+      "kind": "FloatLiteral",
+      "offset": 6758,
+      "length": 3,
+      "value": "0.5"
+    },
+    {
+      "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYDisplayMode.swift",
+      "kind": "BooleanLiteral",
+      "offset": 6783,
+      "length": 4,
+      "value": "true"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/Core\/PLYEnvironment.swift",
@@ -59414,42 +60674,42 @@
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/UI\/PLYGenericComponent.swift",
       "kind": "StringLiteral",
-      "offset": 8885,
+      "offset": 8747,
       "length": 8,
       "value": "\"on_tap\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/UI\/PLYGenericComponent.swift",
       "kind": "StringLiteral",
-      "offset": 8936,
+      "offset": 8798,
       "length": 23,
       "value": "\"tile_selected_actions\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/UI\/PLYGenericComponent.swift",
       "kind": "StringLiteral",
-      "offset": 9015,
+      "offset": 8877,
       "length": 10,
       "value": "\"selected\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/UI\/PLYGenericComponent.swift",
       "kind": "StringLiteral",
-      "offset": 9048,
+      "offset": 8910,
       "length": 16,
       "value": "\"expand_to_fill\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/UI\/PLYGenericComponent.swift",
       "kind": "StringLiteral",
-      "offset": 9092,
+      "offset": 8954,
       "length": 15,
       "value": "\"safe_area_top\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/UI\/PLYGenericComponent.swift",
       "kind": "StringLiteral",
-      "offset": 9138,
+      "offset": 9000,
       "length": 18,
       "value": "\"safe_area_bottom\""
     },
@@ -60239,31 +61499,45 @@
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/specific\/uikit\/View\/PLYPopoverView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 544,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/specific\/uikit\/View\/PLYPopoverView.swift",
       "kind": "FloatLiteral",
-      "offset": 567,
+      "offset": 598,
       "length": 3,
       "value": "0.8"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/specific\/uikit\/View\/PLYPopoverView.swift",
       "kind": "IntegerLiteral",
-      "offset": 648,
+      "offset": 679,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/specific\/uikit\/View\/PLYPopoverView.swift",
       "kind": "FloatLiteral",
-      "offset": 733,
+      "offset": 764,
       "length": 3,
       "value": "0.5"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/specific\/uikit\/View\/PLYPopoverView.swift",
       "kind": "BooleanLiteral",
-      "offset": 5912,
+      "offset": 5943,
       "length": 5,
       "value": "false"
+    },
+    {
+      "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/specific\/uikit\/Controller\/PLYPopoverViewController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 2013,
+      "length": 4,
+      "value": "true"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/UI\/PLYPresentation.swift",
@@ -60499,77 +61773,77 @@
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/specific\/uikit\/Controller\/PLYProductViewController.swift",
       "kind": "StringLiteral",
-      "offset": 1853,
+      "offset": 1849,
       "length": 12,
       "value": "\"CONTROLLER\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/specific\/uikit\/Controller\/PLYProductViewController.swift",
       "kind": "StringLiteral",
-      "offset": 1897,
+      "offset": 1893,
       "length": 18,
       "value": "\"FETCH_CONTROLLER\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/specific\/uikit\/Controller\/PLYProductViewController.swift",
       "kind": "StringLiteral",
-      "offset": 1944,
+      "offset": 1940,
       "length": 15,
       "value": "\"FETCH_DISPLAY\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/specific\/uikit\/Controller\/PLYProductViewController.swift",
       "kind": "StringLiteral",
-      "offset": 2059,
+      "offset": 2051,
       "length": 29,
       "value": "\"ply_intro_offer_eligibility\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/specific\/uikit\/Controller\/PLYProductViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 2409,
+      "offset": 2389,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/specific\/uikit\/Controller\/PLYProductViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 2882,
+      "offset": 2842,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/specific\/uikit\/Controller\/PLYProductViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 2923,
+      "offset": 2883,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/specific\/uikit\/Controller\/PLYProductViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 3747,
+      "offset": 3710,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/specific\/uikit\/Controller\/PLYProductViewController.swift",
       "kind": "Dictionary",
-      "offset": 4022,
+      "offset": 3973,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/specific\/uikit\/Controller\/PLYProductViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 5266,
+      "offset": 5185,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/specific\/uikit\/Controller\/PLYProductViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 5335,
+      "offset": 5250,
       "length": 5,
       "value": "false"
     },
@@ -60583,14 +61857,14 @@
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/specific\/uikit\/Controller\/PLYProductViewController+LoadData.swift",
       "kind": "BooleanLiteral",
-      "offset": 4454,
+      "offset": 4734,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/specific\/uikit\/Controller\/PLYProductViewController+Prefetch.swift",
       "kind": "BooleanLiteral",
-      "offset": 2720,
+      "offset": 2735,
       "length": 5,
       "value": "false"
     },
@@ -61948,42 +63222,42 @@
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Utils\/UI\/PresentationDebug\/PresentationDebugButtonContainerViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 445,
+      "offset": 587,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Utils\/UI\/PresentationDebug\/PresentationDebugButtonContainerViewController.swift",
       "kind": "FloatLiteral",
-      "offset": 9041,
+      "offset": 9183,
       "length": 3,
       "value": "0.0"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Utils\/UI\/PresentationDebug\/PresentationDebugButtonContainerViewController.swift",
       "kind": "FloatLiteral",
-      "offset": 12310,
+      "offset": 12452,
       "length": 4,
       "value": "0.05"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Utils\/UI\/PresentationDebug\/PresentationDebugViewPresenter.swift",
       "kind": "BooleanLiteral",
-      "offset": 2703,
+      "offset": 2709,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Utils\/UI\/PresentationDebug\/PresentationDebugViewPresenter.swift",
       "kind": "BooleanLiteral",
-      "offset": 3408,
+      "offset": 3414,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Utils\/UI\/PresentationDebug\/PresentationDebugViewPresenter.swift",
       "kind": "BooleanLiteral",
-      "offset": 3800,
+      "offset": 3806,
       "length": 4,
       "value": "true"
     },
@@ -62020,7 +63294,7 @@
       "kind": "StringLiteral",
       "offset": 7782,
       "length": 7,
-      "value": "\"5.6.4\""
+      "value": "\"5.7.0\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+Flow.swift",
@@ -62032,217 +63306,217 @@
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "BooleanLiteral",
-      "offset": 5971,
+      "offset": 5984,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "BooleanLiteral",
-      "offset": 14278,
+      "offset": 14291,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "BooleanLiteral",
-      "offset": 14688,
+      "offset": 14701,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "IntegerLiteral",
-      "offset": 74420,
+      "offset": 78983,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "IntegerLiteral",
-      "offset": 75059,
+      "offset": 79622,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "IntegerLiteral",
-      "offset": 75827,
+      "offset": 80390,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "IntegerLiteral",
-      "offset": 76471,
+      "offset": 81034,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "IntegerLiteral",
-      "offset": 83716,
+      "offset": 88279,
       "length": 16,
       "value": "1"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "IntegerLiteral",
-      "offset": 83746,
+      "offset": 88309,
       "length": 13,
       "value": "2"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "IntegerLiteral",
-      "offset": 83773,
+      "offset": 88336,
       "length": 19,
       "value": "3"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "IntegerLiteral",
-      "offset": 83806,
+      "offset": 88369,
       "length": 8,
       "value": "4"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "IntegerLiteral",
-      "offset": 83828,
+      "offset": 88391,
       "length": 11,
       "value": "5"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "IntegerLiteral",
-      "offset": 83853,
+      "offset": 88416,
       "length": 17,
       "value": "6"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "IntegerLiteral",
-      "offset": 83884,
+      "offset": 88447,
       "length": 18,
       "value": "7"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "IntegerLiteral",
-      "offset": 83916,
+      "offset": 88479,
       "length": 11,
       "value": "8"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "IntegerLiteral",
-      "offset": 83941,
+      "offset": 88504,
       "length": 19,
       "value": "9"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "IntegerLiteral",
-      "offset": 83974,
+      "offset": 88537,
       "length": 17,
       "value": "10"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "IntegerLiteral",
-      "offset": 84005,
+      "offset": 88568,
       "length": 14,
       "value": "11"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "IntegerLiteral",
-      "offset": 84033,
+      "offset": 88596,
       "length": 18,
       "value": "12"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "IntegerLiteral",
-      "offset": 84065,
+      "offset": 88628,
       "length": 15,
       "value": "13"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "IntegerLiteral",
-      "offset": 84094,
+      "offset": 88657,
       "length": 16,
       "value": "14"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "IntegerLiteral",
-      "offset": 84124,
+      "offset": 88687,
       "length": 19,
       "value": "15"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "IntegerLiteral",
-      "offset": 84157,
+      "offset": 88720,
       "length": 27,
       "value": "16"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "IntegerLiteral",
-      "offset": 84198,
+      "offset": 88761,
       "length": 15,
       "value": "17"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "IntegerLiteral",
-      "offset": 84227,
+      "offset": 88790,
       "length": 17,
       "value": "18"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "IntegerLiteral",
-      "offset": 84258,
+      "offset": 88821,
       "length": 16,
       "value": "19"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "IntegerLiteral",
-      "offset": 84288,
+      "offset": 88851,
       "length": 19,
       "value": "20"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "IntegerLiteral",
-      "offset": 84321,
+      "offset": 88884,
       "length": 17,
       "value": "21"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "IntegerLiteral",
-      "offset": 84352,
+      "offset": 88915,
       "length": 15,
       "value": "22"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "IntegerLiteral",
-      "offset": 85219,
+      "offset": 89782,
       "length": 4,
       "value": "1"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PublicInterface.swift",
       "kind": "IntegerLiteral",
-      "offset": 85237,
+      "offset": 89800,
       "length": 6,
       "value": "2"
     },
