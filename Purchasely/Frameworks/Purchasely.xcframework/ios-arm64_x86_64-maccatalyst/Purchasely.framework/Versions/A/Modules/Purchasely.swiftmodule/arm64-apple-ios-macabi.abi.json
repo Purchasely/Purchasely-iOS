@@ -61672,28 +61672,28 @@
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/UI\/PLYPresentation.swift",
       "kind": "IntegerLiteral",
-      "offset": 5696,
+      "offset": 6073,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/UI\/PLYPresentation.swift",
       "kind": "IntegerLiteral",
-      "offset": 5707,
+      "offset": 6084,
       "length": 8,
       "value": "1"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/UI\/PLYPresentation.swift",
       "kind": "IntegerLiteral",
-      "offset": 5725,
+      "offset": 6102,
       "length": 11,
       "value": "2"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Model\/UI\/PLYPresentation.swift",
       "kind": "IntegerLiteral",
-      "offset": 5746,
+      "offset": 6123,
       "length": 6,
       "value": "3"
     },
@@ -63444,13 +63444,13 @@
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely.swift",
       "kind": "StringLiteral",
       "offset": 8172,
-      "length": 7,
-      "value": "\"5.7.2\""
+      "length": 10,
+      "value": "\"5.7.3-rc\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely.swift",
       "kind": "StringLiteral",
-      "offset": 11959,
+      "offset": 11962,
       "length": 37,
       "value": "\"com.purchasely.promotedPaywallQueue\""
     },
