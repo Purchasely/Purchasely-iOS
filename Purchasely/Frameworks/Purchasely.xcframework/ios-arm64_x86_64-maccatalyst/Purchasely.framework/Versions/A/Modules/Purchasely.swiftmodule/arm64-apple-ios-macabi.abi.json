@@ -58165,7 +58165,7 @@
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/specific\/uikit\/Manager\/ImageCacheManager.swift",
       "kind": "StringLiteral",
-      "offset": 1003,
+      "offset": 850,
       "length": 39,
       "value": "\"com.purchasely.ImageCacheManager.sync\""
     },
@@ -63494,7 +63494,7 @@
       "kind": "StringLiteral",
       "offset": 8172,
       "length": 7,
-      "value": "\"5.7.4\""
+      "value": "\"5.7.5\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely.swift",
