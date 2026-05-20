@@ -690,6 +690,23 @@ typedef SWIFT_ENUM(NSInteger, PLYLogLevel, open) {
   PLYLogLevelError = 3,
 };
 
+@interface PLYLogger (SWIFT_EXTENSION(Purchasely))
+/// Current process resident memory in MB, formatted for log lines. Used by
+/// 🔥 traces sprinkled across the purchase flow to detect the customer’s
+/// freeze + OOM-after-purchase symptom (memory climbing past the iOS
+/// per-process limit ~30 s after <code>IN_APP_PURCHASING</code>).
++ (NSString * _Nonnull)debugResidentMemoryMB SWIFT_WARN_UNUSED_RESULT;
+/// Convenience wrapper for 🔥 debug traces. ALWAYS prints (bypasses the
+/// SDK’s <code>logLevel</code> filter) and ALWAYS forwards to every registered
+/// <code>PLYLogging</code> instance, so the host app sees these lines even when it
+/// boots Purchasely with <code>logLevel: .warn</code> / <code>.error</code> (the customer’s
+/// production config).
+/// Filter the console with <code>🔥</code> to follow the purchase / receipt /
+/// transaction trace. Each line carries <code>[mem=XX.XMB]</code> so memory growth
+/// can be correlated with the step that triggered it.
++ (void)fire:(NSString * _Nonnull)message;
+@end
+
 @class PLYMessage;
 /// Protocol used to forward logged messages to any object.
 SWIFT_PROTOCOL("_TtP10Purchasely10PLYLogging_")
@@ -2802,6 +2819,23 @@ typedef SWIFT_ENUM(NSInteger, PLYLogLevel, open) {
   PLYLogLevelWarn = 2,
   PLYLogLevelError = 3,
 };
+
+@interface PLYLogger (SWIFT_EXTENSION(Purchasely))
+/// Current process resident memory in MB, formatted for log lines. Used by
+/// 🔥 traces sprinkled across the purchase flow to detect the customer’s
+/// freeze + OOM-after-purchase symptom (memory climbing past the iOS
+/// per-process limit ~30 s after <code>IN_APP_PURCHASING</code>).
++ (NSString * _Nonnull)debugResidentMemoryMB SWIFT_WARN_UNUSED_RESULT;
+/// Convenience wrapper for 🔥 debug traces. ALWAYS prints (bypasses the
+/// SDK’s <code>logLevel</code> filter) and ALWAYS forwards to every registered
+/// <code>PLYLogging</code> instance, so the host app sees these lines even when it
+/// boots Purchasely with <code>logLevel: .warn</code> / <code>.error</code> (the customer’s
+/// production config).
+/// Filter the console with <code>🔥</code> to follow the purchase / receipt /
+/// transaction trace. Each line carries <code>[mem=XX.XMB]</code> so memory growth
+/// can be correlated with the step that triggered it.
++ (void)fire:(NSString * _Nonnull)message;
+@end
 
 @class PLYMessage;
 /// Protocol used to forward logged messages to any object.

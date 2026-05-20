@@ -679,6 +679,10 @@ public func PLYLocalizedPluralString(_ key: Swift.String, pluralType: Purchasely
   @objc public class func log(message: Swift.String, level: Purchasely.PLYLogger.PLYLogLevel = .debug)
   @objc deinit
 }
+extension Purchasely.PLYLogger {
+  @objc dynamic public class func debugResidentMemoryMB() -> Swift.String
+  @objc dynamic public class func fire(_ message: Swift.String)
+}
 @objc public protocol PLYLogging {
   @objc func messageLogged(message: Purchasely.PLYMessage)
 }

@@ -22664,6 +22664,63 @@
               "ObjC"
             ],
             "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "debugResidentMemoryMB",
+            "printedName": "debugResidentMemoryMB()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@CM@Purchasely@objc(cs)PLYLogger(cm)debugResidentMemoryMB",
+            "mangledName": "$s10Purchasely9PLYLoggerC21debugResidentMemoryMBSSyFZ",
+            "moduleName": "Purchasely",
+            "static": true,
+            "declAttributes": [
+              "Dynamic",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "fire",
+            "printedName": "fire(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@CM@Purchasely@objc(cs)PLYLogger(cm)fire:",
+            "mangledName": "$s10Purchasely9PLYLoggerC4fireyySSFZ",
+            "moduleName": "Purchasely",
+            "static": true,
+            "declAttributes": [
+              "Dynamic",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
           }
         ],
         "declKind": "Class",
@@ -63295,13 +63352,13 @@
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely.swift",
       "kind": "StringLiteral",
       "offset": 8172,
-      "length": 7,
-      "value": "\"5.7.5\""
+      "length": 15,
+      "value": "\"5.7.5-kidsono\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely.swift",
       "kind": "StringLiteral",
-      "offset": 11959,
+      "offset": 11967,
       "length": 37,
       "value": "\"com.purchasely.promotedPaywallQueue\""
     },
@@ -63539,7 +63596,7 @@
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Purchasely\/Classes\/common\/Purchasely+PurchaseAsync.swift",
       "kind": "BooleanLiteral",
-      "offset": 19780,
+      "offset": 21597,
       "length": 4,
       "value": "true"
     },
