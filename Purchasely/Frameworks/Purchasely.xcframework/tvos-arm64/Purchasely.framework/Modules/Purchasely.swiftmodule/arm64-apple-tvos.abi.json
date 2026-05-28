@@ -40386,16 +40386,6 @@
       },
       {
         "kind": "Import",
-        "name": "UIKit",
-        "printedName": "UIKit",
-        "declKind": "Import",
-        "moduleName": "Purchasely",
-        "declAttributes": [
-          "RawDocComment"
-        ]
-      },
-      {
-        "kind": "Import",
         "name": "Foundation",
         "printedName": "Foundation",
         "declKind": "Import",
@@ -63143,21 +63133,21 @@
     {
       "filePath": "\/Users\/thomasleger\/projects\/workspaces\/develop\/Purchasely\/Classes\/common\/Manager\/PLYWindowManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 516,
+      "offset": 350,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/thomasleger\/projects\/workspaces\/develop\/Purchasely\/Classes\/common\/Manager\/PLYWindowManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 647,
+      "offset": 481,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/thomasleger\/projects\/workspaces\/develop\/Purchasely\/Classes\/common\/Manager\/PLYWindowManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 681,
+      "offset": 515,
       "length": 5,
       "value": "false"
     },
@@ -63306,7 +63296,7 @@
       "kind": "StringLiteral",
       "offset": 8172,
       "length": 12,
-      "value": "\"5.7.6-rc.4\""
+      "value": "\"5.7.6-rc.5\""
     },
     {
       "filePath": "\/Users\/thomasleger\/projects\/workspaces\/develop\/Purchasely\/Classes\/common\/Purchasely.swift",
