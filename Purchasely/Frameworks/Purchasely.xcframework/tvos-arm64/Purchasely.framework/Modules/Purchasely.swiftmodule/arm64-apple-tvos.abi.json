@@ -63152,6 +63152,13 @@
       "value": "false"
     },
     {
+      "filePath": "\/Users\/thomasleger\/projects\/workspaces\/develop\/Purchasely\/Classes\/common\/Manager\/PLYWindowManager.swift",
+      "kind": "BooleanLiteral",
+      "offset": 2839,
+      "length": 4,
+      "value": "true"
+    },
+    {
       "filePath": "\/Users\/thomasleger\/projects\/workspaces\/develop\/Purchasely\/Classes\/specific\/uikit\/Utils\/PreciseTimer.swift",
       "kind": "BooleanLiteral",
       "offset": 101,
@@ -63295,13 +63302,13 @@
       "filePath": "\/Users\/thomasleger\/projects\/workspaces\/develop\/Purchasely\/Classes\/common\/Purchasely.swift",
       "kind": "StringLiteral",
       "offset": 8172,
-      "length": 12,
-      "value": "\"5.7.6-rc.5\""
+      "length": 7,
+      "value": "\"5.7.6\""
     },
     {
       "filePath": "\/Users\/thomasleger\/projects\/workspaces\/develop\/Purchasely\/Classes\/common\/Purchasely.swift",
       "kind": "StringLiteral",
-      "offset": 11964,
+      "offset": 11959,
       "length": 37,
       "value": "\"com.purchasely.promotedPaywallQueue\""
     },
