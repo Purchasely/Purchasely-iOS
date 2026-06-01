@@ -63370,13 +63370,13 @@
       "filePath": "\/Users\/thomasleger\/projects\/workspaces\/develop\/Purchasely\/Classes\/common\/Purchasely.swift",
       "kind": "StringLiteral",
       "offset": 8172,
-      "length": 12,
-      "value": "\"5.7.7-rc.1\""
+      "length": 7,
+      "value": "\"5.7.7\""
     },
     {
       "filePath": "\/Users\/thomasleger\/projects\/workspaces\/develop\/Purchasely\/Classes\/common\/Purchasely.swift",
       "kind": "StringLiteral",
-      "offset": 11964,
+      "offset": 11959,
       "length": 37,
       "value": "\"com.purchasely.promotedPaywallQueue\""
     },
