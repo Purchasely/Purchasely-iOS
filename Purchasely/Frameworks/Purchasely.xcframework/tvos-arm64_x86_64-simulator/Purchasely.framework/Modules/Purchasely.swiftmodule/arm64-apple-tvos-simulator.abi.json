@@ -63302,13 +63302,13 @@
       "filePath": "\/Users\/thomasleger\/projects\/workspaces\/develop\/Purchasely\/Classes\/common\/Purchasely.swift",
       "kind": "StringLiteral",
       "offset": 8172,
-      "length": 7,
-      "value": "\"5.7.6\""
+      "length": 12,
+      "value": "\"5.7.7-rc.1\""
     },
     {
       "filePath": "\/Users\/thomasleger\/projects\/workspaces\/develop\/Purchasely\/Classes\/common\/Purchasely.swift",
       "kind": "StringLiteral",
-      "offset": 11959,
+      "offset": 11964,
       "length": 37,
       "value": "\"com.purchasely.promotedPaywallQueue\""
     },
