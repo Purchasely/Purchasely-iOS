@@ -4,115 +4,91 @@
 <dict>
 	<key>files</key>
 	<dict>
-		<key>Assets.car</key>
-		<data>
-		8+MSu6Kz4ffa8gXO3V9ifBaAAKY=
-		</data>
-		<key>Headers/PLYLottieView.h</key>
-		<data>
-		MYjpl9IghIo7EvFa10Sn1+vN+SM=
-		</data>
 		<key>Headers/Purchasely-Swift.h</key>
 		<data>
-		a9zxGUrfh4gBwLHc6y4kkX50w1o=
-		</data>
-		<key>Headers/Purchasely-iOS-umbrella.h</key>
-		<data>
-		RutNigBgz8RiMx/4f6/Sb4JVLfI=
+		sabl5d+UG+qhSC32ZxOixiJQeaQ=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		g8PwwEvV/XhsPWyt2SPbsKWsadU=
+		fVc700TW1paEkn5OniBw3B+rDPY=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		BYaHO3+HqcbZLQ0jCyCbBnJN008=
+		nl6KPB6WTAFzRI/JKg1y0N4QGjA=
+		</data>
+		<key>Modules/Purchasely.swiftmodule/arm64-apple-ios-simulator.package.swiftinterface</key>
+		<data>
+		3FOKZjvQOB/L9bLYQpuEFxUDsO4=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		VADhKYlDxUu7zD/YZuk3lN/v8ns=
+		3FOKZjvQOB/L9bLYQpuEFxUDsO4=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		3gJilql1+NG6pdNdXxXs/ja3o8k=
+		L8XfX/x/pVKmW41NodPyms7Nss8=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		VADhKYlDxUu7zD/YZuk3lN/v8ns=
+		3FOKZjvQOB/L9bLYQpuEFxUDsO4=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		GUhzY0n5Z2YKoRMoKC4Bg/mTKv0=
+		3O1MFnb37/MEiwTRyTh4lXMAbjI=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		BYaHO3+HqcbZLQ0jCyCbBnJN008=
+		nl6KPB6WTAFzRI/JKg1y0N4QGjA=
+		</data>
+		<key>Modules/Purchasely.swiftmodule/x86_64-apple-ios-simulator.package.swiftinterface</key>
+		<data>
+		Nxfr6jDslprw/oQH/dU8EnOvME0=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		pu1ZTLfDBjdIlo+2eP0C60nggO8=
+		Nxfr6jDslprw/oQH/dU8EnOvME0=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		56NGaTw/EeWhwHxsaO0+3y9qQrw=
+		pUrwnBUw8OD4Y340GCOWE2+LVtc=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		pu1ZTLfDBjdIlo+2eP0C60nggO8=
+		Nxfr6jDslprw/oQH/dU8EnOvME0=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		c9tDP7VvQEAn5h8Wsgu4KEYYpBg=
+		KCsyCJlb0Gh7xS1XCtt45aG2iIk=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
-		Rb9+5XFfuFHprlk91sZWInC7Weo=
+		srrJRVxD1sOpMb9Ek0p3/V1k4Yc=
 		</data>
-		<key>PLYCancelSubscriptionTableViewCell.nib</key>
+		<key>Purchasely_Purchasely.bundle/Info.plist</key>
 		<data>
-		Nh54ZMwkd/ZS8eTV3i5eD8H1Cag=
+		JRgs3aoaQoCEwjgAlsI+8FhX9Ek=
 		</data>
-		<key>PLYEmptyTableViewCell.nib</key>
-		<data>
-		xczHKdnKk/mV5/x6nJ1hnPjHGsE=
-		</data>
-		<key>PLYLoadingTableViewCell.nib</key>
-		<data>
-		4B1LKswnST708QBl+XxSfXgFPJc=
-		</data>
-		<key>PLYNoSubscriptionTableViewCell.nib</key>
-		<data>
-		NrNmuZqG9+xjLrk9+dJpw5gypt0=
-		</data>
-		<key>PLYPlanTableViewCell.nib</key>
-		<data>
-		brLKJkXpq8vt0Tz5Dbnn1b/pci0=
-		</data>
-		<key>PLYProductViewController.nib</key>
-		<data>
-		F5Fn5zxtQTtKXbj3iI+8dZHQWQA=
-		</data>
-		<key>PLYSubscriptionTableViewCell.nib</key>
-		<data>
-		OWG1WHc/HB+QneUpNUP+88ngNEU=
-		</data>
-		<key>PLYSubscriptionViewController.nib</key>
-		<data>
-		hVu8eKGDK/ENO8WCNpSkMG3se8k=
-		</data>
-		<key>PLYWebViewViewController.nib</key>
-		<data>
-		wxF6JvKgEhFA3SexUdcb8So9bzo=
-		</data>
-		<key>Purchasely.bundle/Info.plist</key>
-		<data>
-		au6Sxd5fsdbsOuOuSjE3HVmxwA8=
-		</data>
-		<key>Purchasely.bundle/PrivacyInfo.xcprivacy</key>
+		<key>Purchasely_Purchasely.bundle/PrivacyInfo.xcprivacy</key>
 		<data>
 		e5VfeUs95WnlYXyTa4ppwMVJ/GY=
 		</data>
-		<key>ar.lproj/Localizable.strings</key>
+		<key>Purchasely_Purchasely.bundle/_CodeSignature/CodeDirectory</key>
+		<data>
+		Lqg+cbGnC89z7hgq8fYkTUyl/T8=
+		</data>
+		<key>Purchasely_Purchasely.bundle/_CodeSignature/CodeRequirements</key>
+		<data>
+		OnX22wWFKRSOFN1+obRynMCeyXM=
+		</data>
+		<key>Purchasely_Purchasely.bundle/_CodeSignature/CodeResources</key>
+		<data>
+		jeGQyme8CrnQ0Vb9YpKIepeU6kk=
+		</data>
+		<key>Purchasely_Purchasely.bundle/_CodeSignature/CodeSignature</key>
+		<data>
+		2jmj7l5rSw0yVb/vlWAYkK/YBwk=
+		</data>
+		<key>Purchasely_Purchasely.bundle/ar.lproj/Localizable.strings</key>
 		<dict>
 			<key>hash</key>
 			<data>
@@ -121,7 +97,7 @@
 			<key>optional</key>
 			<true/>
 		</dict>
-		<key>bn.lproj/Localizable.strings</key>
+		<key>Purchasely_Purchasely.bundle/bn.lproj/Localizable.strings</key>
 		<dict>
 			<key>hash</key>
 			<data>
@@ -130,7 +106,7 @@
 			<key>optional</key>
 			<true/>
 		</dict>
-		<key>cs.lproj/Localizable.strings</key>
+		<key>Purchasely_Purchasely.bundle/cs.lproj/Localizable.strings</key>
 		<dict>
 			<key>hash</key>
 			<data>
@@ -139,7 +115,7 @@
 			<key>optional</key>
 			<true/>
 		</dict>
-		<key>de.lproj/Localizable.strings</key>
+		<key>Purchasely_Purchasely.bundle/de.lproj/Localizable.strings</key>
 		<dict>
 			<key>hash</key>
 			<data>
@@ -148,7 +124,7 @@
 			<key>optional</key>
 			<true/>
 		</dict>
-		<key>el.lproj/Localizable.strings</key>
+		<key>Purchasely_Purchasely.bundle/el.lproj/Localizable.strings</key>
 		<dict>
 			<key>hash</key>
 			<data>
@@ -157,7 +133,7 @@
 			<key>optional</key>
 			<true/>
 		</dict>
-		<key>en.lproj/Localizable.strings</key>
+		<key>Purchasely_Purchasely.bundle/en.lproj/Localizable.strings</key>
 		<dict>
 			<key>hash</key>
 			<data>
@@ -166,7 +142,7 @@
 			<key>optional</key>
 			<true/>
 		</dict>
-		<key>es-AR.lproj/Localizable.strings</key>
+		<key>Purchasely_Purchasely.bundle/es-AR.lproj/Localizable.strings</key>
 		<dict>
 			<key>hash</key>
 			<data>
@@ -175,7 +151,7 @@
 			<key>optional</key>
 			<true/>
 		</dict>
-		<key>es.lproj/Localizable.strings</key>
+		<key>Purchasely_Purchasely.bundle/es.lproj/Localizable.strings</key>
 		<dict>
 			<key>hash</key>
 			<data>
@@ -184,7 +160,7 @@
 			<key>optional</key>
 			<true/>
 		</dict>
-		<key>fa.lproj/Localizable.strings</key>
+		<key>Purchasely_Purchasely.bundle/fa.lproj/Localizable.strings</key>
 		<dict>
 			<key>hash</key>
 			<data>
@@ -193,7 +169,7 @@
 			<key>optional</key>
 			<true/>
 		</dict>
-		<key>fr.lproj/Localizable.strings</key>
+		<key>Purchasely_Purchasely.bundle/fr.lproj/Localizable.strings</key>
 		<dict>
 			<key>hash</key>
 			<data>
@@ -202,7 +178,7 @@
 			<key>optional</key>
 			<true/>
 		</dict>
-		<key>he.lproj/Localizable.strings</key>
+		<key>Purchasely_Purchasely.bundle/he.lproj/Localizable.strings</key>
 		<dict>
 			<key>hash</key>
 			<data>
@@ -211,7 +187,7 @@
 			<key>optional</key>
 			<true/>
 		</dict>
-		<key>id.lproj/Localizable.strings</key>
+		<key>Purchasely_Purchasely.bundle/id.lproj/Localizable.strings</key>
 		<dict>
 			<key>hash</key>
 			<data>
@@ -220,7 +196,7 @@
 			<key>optional</key>
 			<true/>
 		</dict>
-		<key>it.lproj/Localizable.strings</key>
+		<key>Purchasely_Purchasely.bundle/it.lproj/Localizable.strings</key>
 		<dict>
 			<key>hash</key>
 			<data>
@@ -229,7 +205,7 @@
 			<key>optional</key>
 			<true/>
 		</dict>
-		<key>ja.lproj/Localizable.strings</key>
+		<key>Purchasely_Purchasely.bundle/ja.lproj/Localizable.strings</key>
 		<dict>
 			<key>hash</key>
 			<data>
@@ -238,7 +214,7 @@
 			<key>optional</key>
 			<true/>
 		</dict>
-		<key>ko.lproj/Localizable.strings</key>
+		<key>Purchasely_Purchasely.bundle/ko.lproj/Localizable.strings</key>
 		<dict>
 			<key>hash</key>
 			<data>
@@ -247,7 +223,7 @@
 			<key>optional</key>
 			<true/>
 		</dict>
-		<key>ms.lproj/Localizable.strings</key>
+		<key>Purchasely_Purchasely.bundle/ms.lproj/Localizable.strings</key>
 		<dict>
 			<key>hash</key>
 			<data>
@@ -256,7 +232,7 @@
 			<key>optional</key>
 			<true/>
 		</dict>
-		<key>nl.lproj/Localizable.strings</key>
+		<key>Purchasely_Purchasely.bundle/nl.lproj/Localizable.strings</key>
 		<dict>
 			<key>hash</key>
 			<data>
@@ -265,7 +241,7 @@
 			<key>optional</key>
 			<true/>
 		</dict>
-		<key>pl.lproj/Localizable.strings</key>
+		<key>Purchasely_Purchasely.bundle/pl.lproj/Localizable.strings</key>
 		<dict>
 			<key>hash</key>
 			<data>
@@ -274,7 +250,7 @@
 			<key>optional</key>
 			<true/>
 		</dict>
-		<key>pt-BR.lproj/Localizable.strings</key>
+		<key>Purchasely_Purchasely.bundle/pt-BR.lproj/Localizable.strings</key>
 		<dict>
 			<key>hash</key>
 			<data>
@@ -283,7 +259,7 @@
 			<key>optional</key>
 			<true/>
 		</dict>
-		<key>pt-PT.lproj/Localizable.strings</key>
+		<key>Purchasely_Purchasely.bundle/pt-PT.lproj/Localizable.strings</key>
 		<dict>
 			<key>hash</key>
 			<data>
@@ -292,7 +268,7 @@
 			<key>optional</key>
 			<true/>
 		</dict>
-		<key>pt.lproj/Localizable.strings</key>
+		<key>Purchasely_Purchasely.bundle/pt.lproj/Localizable.strings</key>
 		<dict>
 			<key>hash</key>
 			<data>
@@ -301,7 +277,7 @@
 			<key>optional</key>
 			<true/>
 		</dict>
-		<key>ru.lproj/Localizable.strings</key>
+		<key>Purchasely_Purchasely.bundle/ru.lproj/Localizable.strings</key>
 		<dict>
 			<key>hash</key>
 			<data>
@@ -310,7 +286,7 @@
 			<key>optional</key>
 			<true/>
 		</dict>
-		<key>sv-SE.lproj/Localizable.strings</key>
+		<key>Purchasely_Purchasely.bundle/sv-SE.lproj/Localizable.strings</key>
 		<dict>
 			<key>hash</key>
 			<data>
@@ -319,7 +295,7 @@
 			<key>optional</key>
 			<true/>
 		</dict>
-		<key>tr.lproj/Localizable.strings</key>
+		<key>Purchasely_Purchasely.bundle/tr.lproj/Localizable.strings</key>
 		<dict>
 			<key>hash</key>
 			<data>
@@ -328,7 +304,7 @@
 			<key>optional</key>
 			<true/>
 		</dict>
-		<key>uk.lproj/Localizable.strings</key>
+		<key>Purchasely_Purchasely.bundle/uk.lproj/Localizable.strings</key>
 		<dict>
 			<key>hash</key>
 			<data>
@@ -337,7 +313,7 @@
 			<key>optional</key>
 			<true/>
 		</dict>
-		<key>zh-Hans.lproj/Localizable.strings</key>
+		<key>Purchasely_Purchasely.bundle/zh-Hans.lproj/Localizable.strings</key>
 		<dict>
 			<key>hash</key>
 			<data>
@@ -346,7 +322,7 @@
 			<key>optional</key>
 			<true/>
 		</dict>
-		<key>zh-Hant.lproj/Localizable.strings</key>
+		<key>Purchasely_Purchasely.bundle/zh-Hant.lproj/Localizable.strings</key>
 		<dict>
 			<key>hash</key>
 			<data>
@@ -355,192 +331,210 @@
 			<key>optional</key>
 			<true/>
 		</dict>
+		<key>Purchasely_PurchaselyiOS.bundle/Assets.car</key>
+		<data>
+		8+MSu6Kz4ffa8gXO3V9ifBaAAKY=
+		</data>
+		<key>Purchasely_PurchaselyiOS.bundle/Info.plist</key>
+		<data>
+		OHwg88FS0xXBzmE1udPeltjfhlQ=
+		</data>
+		<key>Purchasely_PurchaselyiOS.bundle/PLYCancelSubscriptionTableViewCell.nib</key>
+		<data>
+		Nh54ZMwkd/ZS8eTV3i5eD8H1Cag=
+		</data>
+		<key>Purchasely_PurchaselyiOS.bundle/PLYEmptyTableViewCell.nib</key>
+		<data>
+		xczHKdnKk/mV5/x6nJ1hnPjHGsE=
+		</data>
+		<key>Purchasely_PurchaselyiOS.bundle/PLYLoadingTableViewCell.nib</key>
+		<data>
+		4B1LKswnST708QBl+XxSfXgFPJc=
+		</data>
+		<key>Purchasely_PurchaselyiOS.bundle/PLYNoSubscriptionTableViewCell.nib</key>
+		<data>
+		NrNmuZqG9+xjLrk9+dJpw5gypt0=
+		</data>
+		<key>Purchasely_PurchaselyiOS.bundle/PLYPlanTableViewCell.nib</key>
+		<data>
+		A3Lu3hiENBorptDTZHXn5uAfiMM=
+		</data>
+		<key>Purchasely_PurchaselyiOS.bundle/PLYProductViewController.nib</key>
+		<data>
+		F5Fn5zxtQTtKXbj3iI+8dZHQWQA=
+		</data>
+		<key>Purchasely_PurchaselyiOS.bundle/PLYSubscriptionTableViewCell.nib</key>
+		<data>
+		OWG1WHc/HB+QneUpNUP+88ngNEU=
+		</data>
+		<key>Purchasely_PurchaselyiOS.bundle/PLYSubscriptionViewController.nib</key>
+		<data>
+		hVu8eKGDK/ENO8WCNpSkMG3se8k=
+		</data>
+		<key>Purchasely_PurchaselyiOS.bundle/PLYWebViewViewController.nib</key>
+		<data>
+		wxF6JvKgEhFA3SexUdcb8So9bzo=
+		</data>
+		<key>Purchasely_PurchaselyiOS.bundle/_CodeSignature/CodeDirectory</key>
+		<data>
+		GXluxx7TMV5BQ36avz0xZuDw/l0=
+		</data>
+		<key>Purchasely_PurchaselyiOS.bundle/_CodeSignature/CodeRequirements</key>
+		<data>
+		OnX22wWFKRSOFN1+obRynMCeyXM=
+		</data>
+		<key>Purchasely_PurchaselyiOS.bundle/_CodeSignature/CodeResources</key>
+		<data>
+		vR/oADmxPe2pM4Wxa8+7/mf2WEs=
+		</data>
+		<key>Purchasely_PurchaselyiOS.bundle/_CodeSignature/CodeSignature</key>
+		<data>
+		2jmj7l5rSw0yVb/vlWAYkK/YBwk=
+		</data>
 	</dict>
 	<key>files2</key>
 	<dict>
-		<key>Assets.car</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			zheJoBwaO7fd96JXj9YP2kRZ7LI+MNnGa5iLTWxmnHE=
-			</data>
-		</dict>
-		<key>Headers/PLYLottieView.h</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			ezmaAtlHlYTXwrkGhzMng0OlklNmN6AKZ5jXGqWdIs8=
-			</data>
-		</dict>
 		<key>Headers/Purchasely-Swift.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			hhj62tRcNc+jKLt23NfcMBcgVs2NwNxnrxS9phwN9iE=
-			</data>
-		</dict>
-		<key>Headers/Purchasely-iOS-umbrella.h</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			Q64HaYIluzw8CEr2olgqMvHE1Vh02EJT2WoOzkHMxi0=
+			9RlffrNzy4SCkkOxCVzmrowez61SMm0mwxq4CMJO6fw=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			IwnAq30dPnl/dISiNvtocbK2JFiaxSYl9QzA/+wo5pg=
+			hPX3ViYTXtYALlZKXicegB9gp49Xha78ytah2ZyYCFo=
+			</data>
+		</dict>
+		<key>Modules/Purchasely.swiftmodule/arm64-apple-ios-simulator.package.swiftinterface</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			DaAhZ4a7FDHaBoZ+fdoGdR+qRopFMBp2+Qom4iGpwm8=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			6ZCLCfAYOQO/lkE6vPOsdfnVjM1QWuBfgspai0tGeVE=
+			DaAhZ4a7FDHaBoZ+fdoGdR+qRopFMBp2+Qom4iGpwm8=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			N6ZbzHeNUxoLPhdOFzdv2hn5AWJMkhySUselSqLZITQ=
+			GHEcfl77Eg31Qogotvx/YnjWsaNbtnlvHJWZnXIqRoE=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			6ZCLCfAYOQO/lkE6vPOsdfnVjM1QWuBfgspai0tGeVE=
+			DaAhZ4a7FDHaBoZ+fdoGdR+qRopFMBp2+Qom4iGpwm8=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			fGU4sg9//t2174DfR443XXe57yND2/w74Y17pwmMUos=
+			CYOgdcHd4/NDXYdUSC5YSrPQNMDUeSCs3tR4D5Lue9Q=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			IwnAq30dPnl/dISiNvtocbK2JFiaxSYl9QzA/+wo5pg=
+			hPX3ViYTXtYALlZKXicegB9gp49Xha78ytah2ZyYCFo=
+			</data>
+		</dict>
+		<key>Modules/Purchasely.swiftmodule/x86_64-apple-ios-simulator.package.swiftinterface</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			OIho7spmwc+TU7sDZic+pbtTWfv6vCNuEFBgNBjZmB0=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			pC+NdH+UckZKBBVe8JBmaUtjnNZZRj+BLTNhZpnr4mg=
+			OIho7spmwc+TU7sDZic+pbtTWfv6vCNuEFBgNBjZmB0=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ns2UqTWBKZi/zkTG7/7vNrN9dEPq7xLJ/WZKDBB3BFA=
+			i9/sQ9NZSe08peeIe/EwG/JLJsUVkvGtbvEZyFiL1Yg=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			pC+NdH+UckZKBBVe8JBmaUtjnNZZRj+BLTNhZpnr4mg=
+			OIho7spmwc+TU7sDZic+pbtTWfv6vCNuEFBgNBjZmB0=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			/G6BHD5zfmpeaMGcashBXD8Oq+mSwTu9I++faHl/we4=
+			l9cpDdhbz1+I53IHuEVAMfTb6VYnpTxKiDhtYXumu4Y=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			k4ZE9dn7HoNDJPZmdpbwL8uX5ZGP8xUnlid7FUcyNBE=
+			dPk9i+HaZ7ZIVbhnF8bNhaqlxB2OKEBAQRQhjPGkqqk=
 			</data>
 		</dict>
-		<key>PLYCancelSubscriptionTableViewCell.nib</key>
+		<key>Purchasely_Purchasely.bundle/Info.plist</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			6/6L5YMVaY4oRCbXEwsqZZkdLbhFaQks+KsBw2NKs0k=
+			cFUjuWYv+eS8X5x5Zi1ttGkg+jxZhl1/zoGe8rUmuHI=
 			</data>
 		</dict>
-		<key>PLYEmptyTableViewCell.nib</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			mSeKoCxLpkHf7xbbUshmCsqVAJ4H3bsdDsvK2nwZo+4=
-			</data>
-		</dict>
-		<key>PLYLoadingTableViewCell.nib</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			3DvJWv5m8GvAu7/MzmJ4pj5EGqjLKXALL1lFrUZGKH8=
-			</data>
-		</dict>
-		<key>PLYNoSubscriptionTableViewCell.nib</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			VEDtxxIW2AIfYJQx0RN/OLF/PnUK7cvMgo314R86GZA=
-			</data>
-		</dict>
-		<key>PLYPlanTableViewCell.nib</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			Mc9Tz3pxuGPxvgdRtOmVtyAjkkrT4/NIgwTlvc53b8c=
-			</data>
-		</dict>
-		<key>PLYProductViewController.nib</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			A2/J+MkKwQWsU3aPqUXZcGW4s2nun4qYHrtoZccUVyE=
-			</data>
-		</dict>
-		<key>PLYSubscriptionTableViewCell.nib</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			Yc8WlRuEntg8w93QiFA/oIWR49p8FsG++ruoXLId9tQ=
-			</data>
-		</dict>
-		<key>PLYSubscriptionViewController.nib</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			u6fwHK8U1mFVId21OqmKSxE/+WauSSJaPgZnM8bbgP0=
-			</data>
-		</dict>
-		<key>PLYWebViewViewController.nib</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			iZMsOhCNQxkuBAYVlowa03XhU/p7mJSQNcwfb7FUFT4=
-			</data>
-		</dict>
-		<key>Purchasely.bundle/Info.plist</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			nDnYX9yBTwpjkA0jjrwDHgnPtYrJQ9zzjfMft4dj/Gc=
-			</data>
-		</dict>
-		<key>Purchasely.bundle/PrivacyInfo.xcprivacy</key>
+		<key>Purchasely_Purchasely.bundle/PrivacyInfo.xcprivacy</key>
 		<dict>
 			<key>hash2</key>
 			<data>
 			D2JE9Fh0Vw1cVuAsbBEnMYbIooKPOTeL7mB34F4ZHBw=
 			</data>
 		</dict>
-		<key>ar.lproj/Localizable.strings</key>
+		<key>Purchasely_Purchasely.bundle/_CodeSignature/CodeDirectory</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			EfsxoptGAfTZNReOsnHKVT0VroUyHKYa5UC8g2CuVX4=
+			</data>
+		</dict>
+		<key>Purchasely_Purchasely.bundle/_CodeSignature/CodeRequirements</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			mHkgkE6rZQ51eIwFSqCwUk5qgL/HGqMt+NI3phdD+YY=
+			</data>
+		</dict>
+		<key>Purchasely_Purchasely.bundle/_CodeSignature/CodeResources</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			pUPVfpHy8hhdW95mTlOPxZFLBQGhRKj6LktMaos6x4Y=
+			</data>
+		</dict>
+		<key>Purchasely_Purchasely.bundle/_CodeSignature/CodeSignature</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=
+			</data>
+		</dict>
+		<key>Purchasely_Purchasely.bundle/ar.lproj/Localizable.strings</key>
 		<dict>
 			<key>hash2</key>
 			<data>
@@ -549,7 +543,7 @@
 			<key>optional</key>
 			<true/>
 		</dict>
-		<key>bn.lproj/Localizable.strings</key>
+		<key>Purchasely_Purchasely.bundle/bn.lproj/Localizable.strings</key>
 		<dict>
 			<key>hash2</key>
 			<data>
@@ -558,7 +552,7 @@
 			<key>optional</key>
 			<true/>
 		</dict>
-		<key>cs.lproj/Localizable.strings</key>
+		<key>Purchasely_Purchasely.bundle/cs.lproj/Localizable.strings</key>
 		<dict>
 			<key>hash2</key>
 			<data>
@@ -567,7 +561,7 @@
 			<key>optional</key>
 			<true/>
 		</dict>
-		<key>de.lproj/Localizable.strings</key>
+		<key>Purchasely_Purchasely.bundle/de.lproj/Localizable.strings</key>
 		<dict>
 			<key>hash2</key>
 			<data>
@@ -576,7 +570,7 @@
 			<key>optional</key>
 			<true/>
 		</dict>
-		<key>el.lproj/Localizable.strings</key>
+		<key>Purchasely_Purchasely.bundle/el.lproj/Localizable.strings</key>
 		<dict>
 			<key>hash2</key>
 			<data>
@@ -585,7 +579,7 @@
 			<key>optional</key>
 			<true/>
 		</dict>
-		<key>en.lproj/Localizable.strings</key>
+		<key>Purchasely_Purchasely.bundle/en.lproj/Localizable.strings</key>
 		<dict>
 			<key>hash2</key>
 			<data>
@@ -594,7 +588,7 @@
 			<key>optional</key>
 			<true/>
 		</dict>
-		<key>es-AR.lproj/Localizable.strings</key>
+		<key>Purchasely_Purchasely.bundle/es-AR.lproj/Localizable.strings</key>
 		<dict>
 			<key>hash2</key>
 			<data>
@@ -603,7 +597,7 @@
 			<key>optional</key>
 			<true/>
 		</dict>
-		<key>es.lproj/Localizable.strings</key>
+		<key>Purchasely_Purchasely.bundle/es.lproj/Localizable.strings</key>
 		<dict>
 			<key>hash2</key>
 			<data>
@@ -612,7 +606,7 @@
 			<key>optional</key>
 			<true/>
 		</dict>
-		<key>fa.lproj/Localizable.strings</key>
+		<key>Purchasely_Purchasely.bundle/fa.lproj/Localizable.strings</key>
 		<dict>
 			<key>hash2</key>
 			<data>
@@ -621,7 +615,7 @@
 			<key>optional</key>
 			<true/>
 		</dict>
-		<key>fr.lproj/Localizable.strings</key>
+		<key>Purchasely_Purchasely.bundle/fr.lproj/Localizable.strings</key>
 		<dict>
 			<key>hash2</key>
 			<data>
@@ -630,7 +624,7 @@
 			<key>optional</key>
 			<true/>
 		</dict>
-		<key>he.lproj/Localizable.strings</key>
+		<key>Purchasely_Purchasely.bundle/he.lproj/Localizable.strings</key>
 		<dict>
 			<key>hash2</key>
 			<data>
@@ -639,7 +633,7 @@
 			<key>optional</key>
 			<true/>
 		</dict>
-		<key>id.lproj/Localizable.strings</key>
+		<key>Purchasely_Purchasely.bundle/id.lproj/Localizable.strings</key>
 		<dict>
 			<key>hash2</key>
 			<data>
@@ -648,7 +642,7 @@
 			<key>optional</key>
 			<true/>
 		</dict>
-		<key>it.lproj/Localizable.strings</key>
+		<key>Purchasely_Purchasely.bundle/it.lproj/Localizable.strings</key>
 		<dict>
 			<key>hash2</key>
 			<data>
@@ -657,7 +651,7 @@
 			<key>optional</key>
 			<true/>
 		</dict>
-		<key>ja.lproj/Localizable.strings</key>
+		<key>Purchasely_Purchasely.bundle/ja.lproj/Localizable.strings</key>
 		<dict>
 			<key>hash2</key>
 			<data>
@@ -666,7 +660,7 @@
 			<key>optional</key>
 			<true/>
 		</dict>
-		<key>ko.lproj/Localizable.strings</key>
+		<key>Purchasely_Purchasely.bundle/ko.lproj/Localizable.strings</key>
 		<dict>
 			<key>hash2</key>
 			<data>
@@ -675,7 +669,7 @@
 			<key>optional</key>
 			<true/>
 		</dict>
-		<key>ms.lproj/Localizable.strings</key>
+		<key>Purchasely_Purchasely.bundle/ms.lproj/Localizable.strings</key>
 		<dict>
 			<key>hash2</key>
 			<data>
@@ -684,7 +678,7 @@
 			<key>optional</key>
 			<true/>
 		</dict>
-		<key>nl.lproj/Localizable.strings</key>
+		<key>Purchasely_Purchasely.bundle/nl.lproj/Localizable.strings</key>
 		<dict>
 			<key>hash2</key>
 			<data>
@@ -693,7 +687,7 @@
 			<key>optional</key>
 			<true/>
 		</dict>
-		<key>pl.lproj/Localizable.strings</key>
+		<key>Purchasely_Purchasely.bundle/pl.lproj/Localizable.strings</key>
 		<dict>
 			<key>hash2</key>
 			<data>
@@ -702,7 +696,7 @@
 			<key>optional</key>
 			<true/>
 		</dict>
-		<key>pt-BR.lproj/Localizable.strings</key>
+		<key>Purchasely_Purchasely.bundle/pt-BR.lproj/Localizable.strings</key>
 		<dict>
 			<key>hash2</key>
 			<data>
@@ -711,7 +705,7 @@
 			<key>optional</key>
 			<true/>
 		</dict>
-		<key>pt-PT.lproj/Localizable.strings</key>
+		<key>Purchasely_Purchasely.bundle/pt-PT.lproj/Localizable.strings</key>
 		<dict>
 			<key>hash2</key>
 			<data>
@@ -720,7 +714,7 @@
 			<key>optional</key>
 			<true/>
 		</dict>
-		<key>pt.lproj/Localizable.strings</key>
+		<key>Purchasely_Purchasely.bundle/pt.lproj/Localizable.strings</key>
 		<dict>
 			<key>hash2</key>
 			<data>
@@ -729,7 +723,7 @@
 			<key>optional</key>
 			<true/>
 		</dict>
-		<key>ru.lproj/Localizable.strings</key>
+		<key>Purchasely_Purchasely.bundle/ru.lproj/Localizable.strings</key>
 		<dict>
 			<key>hash2</key>
 			<data>
@@ -738,7 +732,7 @@
 			<key>optional</key>
 			<true/>
 		</dict>
-		<key>sv-SE.lproj/Localizable.strings</key>
+		<key>Purchasely_Purchasely.bundle/sv-SE.lproj/Localizable.strings</key>
 		<dict>
 			<key>hash2</key>
 			<data>
@@ -747,7 +741,7 @@
 			<key>optional</key>
 			<true/>
 		</dict>
-		<key>tr.lproj/Localizable.strings</key>
+		<key>Purchasely_Purchasely.bundle/tr.lproj/Localizable.strings</key>
 		<dict>
 			<key>hash2</key>
 			<data>
@@ -756,7 +750,7 @@
 			<key>optional</key>
 			<true/>
 		</dict>
-		<key>uk.lproj/Localizable.strings</key>
+		<key>Purchasely_Purchasely.bundle/uk.lproj/Localizable.strings</key>
 		<dict>
 			<key>hash2</key>
 			<data>
@@ -765,7 +759,7 @@
 			<key>optional</key>
 			<true/>
 		</dict>
-		<key>zh-Hans.lproj/Localizable.strings</key>
+		<key>Purchasely_Purchasely.bundle/zh-Hans.lproj/Localizable.strings</key>
 		<dict>
 			<key>hash2</key>
 			<data>
@@ -774,7 +768,7 @@
 			<key>optional</key>
 			<true/>
 		</dict>
-		<key>zh-Hant.lproj/Localizable.strings</key>
+		<key>Purchasely_Purchasely.bundle/zh-Hant.lproj/Localizable.strings</key>
 		<dict>
 			<key>hash2</key>
 			<data>
@@ -782,6 +776,111 @@
 			</data>
 			<key>optional</key>
 			<true/>
+		</dict>
+		<key>Purchasely_PurchaselyiOS.bundle/Assets.car</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			zheJoBwaO7fd96JXj9YP2kRZ7LI+MNnGa5iLTWxmnHE=
+			</data>
+		</dict>
+		<key>Purchasely_PurchaselyiOS.bundle/Info.plist</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			XWrKw18YLwL1vBPf8gS+AwQ35521xDJwK6nUKKk5gZE=
+			</data>
+		</dict>
+		<key>Purchasely_PurchaselyiOS.bundle/PLYCancelSubscriptionTableViewCell.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			6/6L5YMVaY4oRCbXEwsqZZkdLbhFaQks+KsBw2NKs0k=
+			</data>
+		</dict>
+		<key>Purchasely_PurchaselyiOS.bundle/PLYEmptyTableViewCell.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			mSeKoCxLpkHf7xbbUshmCsqVAJ4H3bsdDsvK2nwZo+4=
+			</data>
+		</dict>
+		<key>Purchasely_PurchaselyiOS.bundle/PLYLoadingTableViewCell.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			3DvJWv5m8GvAu7/MzmJ4pj5EGqjLKXALL1lFrUZGKH8=
+			</data>
+		</dict>
+		<key>Purchasely_PurchaselyiOS.bundle/PLYNoSubscriptionTableViewCell.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			VEDtxxIW2AIfYJQx0RN/OLF/PnUK7cvMgo314R86GZA=
+			</data>
+		</dict>
+		<key>Purchasely_PurchaselyiOS.bundle/PLYPlanTableViewCell.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			hXmSBXKLHRQ8K4805r7JmvXBzNlYR+U5Z/LopLZH9wo=
+			</data>
+		</dict>
+		<key>Purchasely_PurchaselyiOS.bundle/PLYProductViewController.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			A2/J+MkKwQWsU3aPqUXZcGW4s2nun4qYHrtoZccUVyE=
+			</data>
+		</dict>
+		<key>Purchasely_PurchaselyiOS.bundle/PLYSubscriptionTableViewCell.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			Yc8WlRuEntg8w93QiFA/oIWR49p8FsG++ruoXLId9tQ=
+			</data>
+		</dict>
+		<key>Purchasely_PurchaselyiOS.bundle/PLYSubscriptionViewController.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			u6fwHK8U1mFVId21OqmKSxE/+WauSSJaPgZnM8bbgP0=
+			</data>
+		</dict>
+		<key>Purchasely_PurchaselyiOS.bundle/PLYWebViewViewController.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			iZMsOhCNQxkuBAYVlowa03XhU/p7mJSQNcwfb7FUFT4=
+			</data>
+		</dict>
+		<key>Purchasely_PurchaselyiOS.bundle/_CodeSignature/CodeDirectory</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			hbwm1CkjfH2Z7Yj1KTouCMCboMsNBrLJgPBRWPliH0g=
+			</data>
+		</dict>
+		<key>Purchasely_PurchaselyiOS.bundle/_CodeSignature/CodeRequirements</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			mHkgkE6rZQ51eIwFSqCwUk5qgL/HGqMt+NI3phdD+YY=
+			</data>
+		</dict>
+		<key>Purchasely_PurchaselyiOS.bundle/_CodeSignature/CodeResources</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			3hE1Csz07d8bFbl9PhL6LDTFsyGN2av7oHbtRaL3prw=
+			</data>
+		</dict>
+		<key>Purchasely_PurchaselyiOS.bundle/_CodeSignature/CodeSignature</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=
+			</data>
 		</dict>
 	</dict>
 	<key>rules</key>
