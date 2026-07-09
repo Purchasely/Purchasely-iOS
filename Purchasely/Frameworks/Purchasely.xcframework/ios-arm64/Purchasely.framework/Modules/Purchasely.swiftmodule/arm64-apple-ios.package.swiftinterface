@@ -321,55 +321,6 @@ extension PLYCloseReason : Swift.CustomStringConvertible {
     get
   }
 }
-@objc public enum PLYDisplayModeType : Swift.Int, Swift.Equatable {
-  case fullScreen
-  case modal
-  case drawer
-  case popin
-  case push
-  case inlinePaywall
-  public init?(rawValue: Swift.Int)
-  public typealias RawValue = Swift.Int
-  public var rawValue: Swift.Int {
-    get
-  }
-}
-extension PLYDisplayModeType : Swift.Codable {
-  public init(from decoder: any Swift.Decoder) throws
-  public func encode(to encoder: any Swift.Encoder) throws
-}
-@objc @objcMembers final public class PLYDisplayMode : ObjectiveC.NSObject, Swift.Decodable, @unchecked Swift.Sendable {
-  @objc final public let type: PLYDisplayModeType
-  final public let height: PLYDimension?
-  final public let width: PLYDimension?
-  @objc final public let heightPercentage: Foundation.NSNumber?
-  @objc final public let dismissible: Swift.Bool
-  public init(type: PLYDisplayModeType?, height: PLYDimension? = nil, width: PLYDimension? = nil, heightPercentage: Foundation.NSNumber? = nil, backgroundColors: PLYColors? = nil, dismissible: Swift.Bool = true)
-  @available(*, deprecated, message: "Use init(type:height:width:dismissible:) with PLYDimension values.")
-  convenience public init(type: PLYDisplayModeType?, heightPercentage: Swift.Double, _ backgroundColors: PLYColors? = nil, dismissible: Swift.Bool = true)
-  @objc convenience public init(type: PLYDisplayModeType, heightPercentage: Foundation.NSNumber?, backgroundColors: PLYColors?, dismissible: Swift.Bool = true)
-  required public init(from decoder: any Swift.Decoder) throws
-  @objc public static var fullScreen: PLYDisplayMode {
-    @objc get
-  }
-  @objc public static var modal: PLYDisplayMode {
-    @objc get
-  }
-  @objc public static func modal(dismissible: Swift.Bool) -> PLYDisplayMode
-  @objc public static var push: PLYDisplayMode {
-    @objc get
-  }
-  public static func drawer(height: PLYDimension?, dismissible: Swift.Bool = true) -> PLYDisplayMode
-  public static func popin(width: PLYDimension?, height: PLYDimension?, dismissible: Swift.Bool = true) -> PLYDisplayMode
-  @available(*, deprecated, message: "Use PLYDisplayMode.drawer(height: .percentage(Float(heightPercentage)), dismissible:) instead.")
-  @objc public static func drawer(heightPercentage: Swift.Double = 0.5, dismissible: Swift.Bool = true) -> PLYDisplayMode
-  @available(*, deprecated, message: "Use PLYDisplayMode.popin(width: nil, height: .percentage(Float(heightPercentage)), dismissible:) instead.")
-  @objc public static func popin(heightPercentage: Swift.Double = 0.5, dismissible: Swift.Bool = true) -> PLYDisplayMode
-  @objc public static var inlinePaywall: PLYDisplayMode {
-    @objc get
-  }
-  @objc deinit
-}
 @objc public enum PLYEnvironment : Swift.Int {
   case prod
   case staging
@@ -780,7 +731,7 @@ public enum PLYPresentationSource {
   @discardableResult
   @objc public func onPresented(_ handler: @escaping ((any PLYPresentation)?, (any Swift.Error)?) -> Swift.Void) -> Self
   @discardableResult
-  @objc public func onClose(_ handler: @escaping () -> Swift.Void) -> Self
+  @objc public func onCloseRequested(_ handler: @escaping () -> Swift.Void) -> Self
   @discardableResult
   @objc public func onDismissed(_ handler: @escaping (PLYPresentationOutcome) -> Swift.Void) -> Self
   @objc public func build() -> any PLYPresentationRequest
@@ -797,13 +748,13 @@ public enum PLYPresentationSource {
   @objc var progressColor: UIKit.UIColor? { get set }
   @objc(preloadWithCompletion:) func preload(completion: @escaping ((any PLYPresentation)?, (any Swift.Error)?) -> Swift.Void)
   @objc(displayWithCompletion:) func display(completion: (((any PLYPresentation)?, (any Swift.Error)?) -> Swift.Void)?)
-  @objc(displayWithTransition:completion:) func display(transition: PLYDisplayMode?, completion: (((any PLYPresentation)?, (any Swift.Error)?) -> Swift.Void)?)
+  @objc(displayWithTransition:completion:) func display(transition: PLYTransition?, completion: (((any PLYPresentation)?, (any Swift.Error)?) -> Swift.Void)?)
 }
 extension PLYPresentationRequest {
   @available(iOS 13.0, tvOS 13.0, macOS 10.15, watchOS 6.0, *)
   public func preload() async throws -> any PLYPresentation
   @available(iOS 13.0, tvOS 13.0, macOS 10.15, watchOS 6.0, *)
-  public func display(transition: PLYDisplayMode? = nil) async throws -> any PLYPresentation
+  public func display(transition: PLYTransition? = nil) async throws -> any PLYPresentation
 }
 @objc public enum PLYPresentationAction : Swift.Int {
   case close
@@ -833,7 +784,7 @@ extension PLYPresentationRequest {
   @objc public var placement: Swift.String?
   @objc public var queryParameterKey: Swift.String?
   @objc public var webCheckoutProvider: PLYWebCheckoutProvider
-  @objc public var transition: PLYDisplayMode?
+  @objc public var transition: PLYTransition?
   @objc override dynamic public init()
   @objc deinit
 }
@@ -1001,6 +952,55 @@ public enum PLYSubscriptionSourceError : Swift.Error {
     get
   }
 }
+@objc public enum PLYTransitionType : Swift.Int, Swift.Equatable {
+  case fullScreen
+  case modal
+  case drawer
+  case popin
+  case push
+  case inlinePaywall
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+extension PLYTransitionType : Swift.Codable {
+  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+@objc @objcMembers final public class PLYTransition : ObjectiveC.NSObject, Swift.Decodable, @unchecked Swift.Sendable {
+  @objc final public let type: PLYTransitionType
+  final public let height: PLYDimension?
+  final public let width: PLYDimension?
+  @objc final public let heightPercentage: Foundation.NSNumber?
+  @objc final public let dismissible: Swift.Bool
+  public init(type: PLYTransitionType?, height: PLYDimension? = nil, width: PLYDimension? = nil, heightPercentage: Foundation.NSNumber? = nil, backgroundColors: PLYColors? = nil, dismissible: Swift.Bool = true)
+  @available(*, deprecated, message: "Use init(type:height:width:dismissible:) with PLYDimension values.")
+  convenience public init(type: PLYTransitionType?, heightPercentage: Swift.Double, _ backgroundColors: PLYColors? = nil, dismissible: Swift.Bool = true)
+  @objc convenience public init(type: PLYTransitionType, heightPercentage: Foundation.NSNumber?, backgroundColors: PLYColors?, dismissible: Swift.Bool = true)
+  required public init(from decoder: any Swift.Decoder) throws
+  @objc public static var fullScreen: PLYTransition {
+    @objc get
+  }
+  @objc public static var modal: PLYTransition {
+    @objc get
+  }
+  @objc public static func modal(dismissible: Swift.Bool) -> PLYTransition
+  @objc public static var push: PLYTransition {
+    @objc get
+  }
+  public static func drawer(height: PLYDimension?, dismissible: Swift.Bool = true) -> PLYTransition
+  public static func popin(width: PLYDimension?, height: PLYDimension?, dismissible: Swift.Bool = true) -> PLYTransition
+  @available(*, deprecated, message: "Use PLYTransition.drawer(height: .percentage(Float(heightPercentage)), dismissible:) instead.")
+  @objc public static func drawer(heightPercentage: Swift.Double = 0.5, dismissible: Swift.Bool = true) -> PLYTransition
+  @available(*, deprecated, message: "Use PLYTransition.popin(width: nil, height: .percentage(Float(heightPercentage)), dismissible:) instead.")
+  @objc public static func popin(heightPercentage: Swift.Double = 0.5, dismissible: Swift.Bool = true) -> PLYTransition
+  @objc public static var inlinePaywall: PLYTransition {
+    @objc get
+  }
+  @objc deinit
+}
 @objc public enum PLYUserAttributeType : Swift.Int {
   case string = 0
   case bool
@@ -1118,7 +1118,7 @@ public enum PLYLabelHighlightsError : Swift.Error {
   }
 }
 @objc public protocol PLYPresentation : ObjectiveC.NSObjectProtocol {
-  @objc var id: Swift.String { get }
+  @objc var screenId: Swift.String { get }
   @objc var language: Swift.String { get }
   @objc var placementId: Swift.String? { get }
   @objc var audienceId: Swift.String? { get }
@@ -1132,17 +1132,17 @@ public enum PLYLabelHighlightsError : Swift.Error {
   @objc var metadata: PLYPresentationMetadata? { get }
   @objc var backgroundColor: UIKit.UIColor? { get }
   @objc var height: Swift.Int { get }
-  @objc var displayMode: PLYDisplayMode { get }
+  @objc var transition: PLYTransition { get }
   @objc var connections: Swift.Set<PLYConnection> { get }
   @objc var isFlow: Swift.Bool { get }
   @objc(displayFrom:) func display(from sourceViewController: UIKit.UIViewController?)
-  @objc(displayFrom:transitionType:) func display(from sourceViewController: UIKit.UIViewController?, transitionType: PLYDisplayMode?)
+  @objc(displayFrom:transitionType:) func display(from sourceViewController: UIKit.UIViewController?, transitionType: PLYTransition?)
   @objc func close()
   @objc func back()
   @objc(executeConnection:) func executeConnection(_ connection: PLYConnection?)
   @objc(preloadWithCompletion:) func preload(completion: @escaping ((any PLYPresentation)?, (any Swift.Error)?) -> Swift.Void)
   @objc var onPresented: (((any PLYPresentation)?, (any Swift.Error)?) -> Swift.Void)? { get set }
-  @objc var onClose: (() -> Swift.Void)? { get set }
+  @objc var onCloseRequested: (() -> Swift.Void)? { get set }
   @objc var onDismissed: ((PLYPresentationOutcome) -> Swift.Void)? { get set }
 }
 extension PLYPresentation {
@@ -1209,8 +1209,6 @@ extension Purchasely {
   @objc dynamic public class func setDefaultPresentationDismissHandler(_ defaultPresentationDismissHandler: PLYPresentationOutcomeHandler?)
   @objc dynamic public class func setLanguage(from locale: Foundation.Locale?)
   @objc dynamic public class func allowDeeplink(_ allow: Swift.Bool)
-  @available(*, deprecated, renamed: "allowDeeplink(_:)")
-  @objc dynamic public class func readyToOpenDeeplink(_ ready: Swift.Bool)
   @objc dynamic public class func allowCampaigns(_ allow: Swift.Bool)
   @available(*, deprecated, message: "Set .showsPromotedInAppPurchasePaywall(…) on the PurchaselyBuilder chain instead. Removed in v7.0.")
   @objc dynamic public class func setShowPromotedInAppPurchasePaywall(_ enabled: Swift.Bool)
@@ -1228,13 +1226,13 @@ extension Purchasely {
   @objc dynamic public class func plan(for sku: Swift.String, success: @escaping (PLYPlan) -> Swift.Void, failure: @escaping ((any Swift.Error)?) -> Swift.Void)
   @objc dynamic public class func userSubscriptionsHistory(_ invalidateCache: Swift.Bool = false, success: @escaping ([PLYSubscription]?) -> Swift.Void, failure: @escaping PLYErrorClosure)
   @objc dynamic public class func userSubscriptions(_ invalidateCache: Swift.Bool = false, success: @escaping ([PLYSubscription]?) -> Swift.Void, failure: @escaping PLYErrorClosure)
-  @objc dynamic public class func display(for placementId: Swift.String, transition: PLYDisplayMode? = nil)
+  @objc dynamic public class func display(for placementId: Swift.String, transition: PLYTransition? = nil)
   @available(iOS 13.0, tvOS 13.0, macOS 10.15, watchOS 6.0, *)
-  public class func display(for placementId: Swift.String, transition: PLYDisplayMode? = nil) async throws -> any PLYPresentation
+  public class func display(for placementId: Swift.String, transition: PLYTransition? = nil) async throws -> any PLYPresentation
 }
 extension Purchasely {
   @objc dynamic public class func closeAllScreens()
-  @objc dynamic public class func clientPresentationOpened(with presentation: (any PLYPresentation)?)
+  @objc dynamic public class func clientPresentationDisplayed(with presentation: (any PLYPresentation)?)
   @objc dynamic public class func clientPresentationClosed(with presentation: (any PLYPresentation)?)
   @objc dynamic public class func setEventCallback(_ callback: @escaping (PLYEvent, [Swift.String : Any]?) -> ())
   @objc dynamic public class func setEventDelegate(_ delegate: any PLYEventDelegate)
@@ -1245,9 +1243,6 @@ extension Purchasely {
   public class func removeCustomScreenViewDelegate()
   @discardableResult
   @objc dynamic public class func handleDeeplink(_ url: Foundation.URL) -> Swift.Bool
-  @available(*, deprecated, renamed: "handleDeeplink(_:)")
-  @discardableResult
-  @objc dynamic public class func isDeeplinkHandled(deeplink url: Foundation.URL) -> Swift.Bool
   @available(iOS 12.2, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
   @objc dynamic public class func signPromotionalOffer(plan: PLYPlan, promoOffer: PLYPromoOffer, success: @escaping PLYOfferSignatureClosure, failure: @escaping PLYErrorClosure)
   @available(iOS 12.2, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
@@ -1492,19 +1487,8 @@ extension PLYPresentationViewController {
     @objc get
   }
 }
-public typealias PLYProductViewControllerCompletionBlock = (PLYProductViewControllerResult, PLYPlan?) -> Swift.Void
 public typealias PLYPresentationFetchCompletionBlock = ((any PLYPresentation)?, (any Swift.Error)?) -> Swift.Void
 public typealias PLYPresentationLoadedCompletionBlock = () -> Swift.Void
-@objc public enum PLYProductViewControllerResult : Swift.Int {
-  case purchased
-  case cancelled
-  case restored
-  public init?(rawValue: Swift.Int)
-  public typealias RawValue = Swift.Int
-  public var rawValue: Swift.Int {
-    get
-  }
-}
 @objc public protocol PLYUIHandler {
   @objc optional func display(presentation: any PLYPresentation, from sourceController: UIKit.UIViewController?, proceed: @escaping () -> ())
   @objc optional func display(alert: PLYAlertMessage, with error: (any Swift.Error)?, proceed: @escaping () -> ())
@@ -1565,8 +1549,6 @@ extension PLYCloseReason : Swift.RawRepresentable {}
 extension PLYCustomPropertyDataType : Swift.Equatable {}
 extension PLYCustomPropertyDataType : Swift.Hashable {}
 extension PLYCustomPropertyDataType : Swift.RawRepresentable {}
-extension PLYDisplayModeType : Swift.Hashable {}
-extension PLYDisplayModeType : Swift.RawRepresentable {}
 extension PLYEnvironment : Swift.Equatable {}
 extension PLYEnvironment : Swift.Hashable {}
 extension PLYEnvironment : Swift.RawRepresentable {}
@@ -1609,6 +1591,8 @@ extension PLYSubscriptionSource : Swift.RawRepresentable {}
 extension PLYSubscriptionStatus : Swift.Equatable {}
 extension PLYSubscriptionStatus : Swift.Hashable {}
 extension PLYSubscriptionStatus : Swift.RawRepresentable {}
+extension PLYTransitionType : Swift.Hashable {}
+extension PLYTransitionType : Swift.RawRepresentable {}
 extension PLYUserAttributeType : Swift.Equatable {}
 extension PLYUserAttributeType : Swift.Hashable {}
 extension PLYUserAttributeType : Swift.RawRepresentable {}
@@ -1636,6 +1620,3 @@ extension PLYLogger.PLYLogLevel : Swift.Equatable {}
 extension PLYLogger.PLYLogLevel : Swift.Hashable {}
 extension PLYLogger.PLYLogLevel : Swift.RawRepresentable {}
 extension PLYPresentationView : Swift.Sendable {}
-extension PLYProductViewControllerResult : Swift.Equatable {}
-extension PLYProductViewControllerResult : Swift.Hashable {}
-extension PLYProductViewControllerResult : Swift.RawRepresentable {}

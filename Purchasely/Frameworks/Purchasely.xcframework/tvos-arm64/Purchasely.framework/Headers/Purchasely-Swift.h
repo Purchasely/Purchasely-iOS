@@ -581,68 +581,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, strong) PLYDataProcessingPurpo
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
-SWIFT_ENUM_FWD_DECL(NSInteger, PLYDisplayModeType)
-@class NSNumber;
-SWIFT_CLASS("_TtC10Purchasely14PLYDisplayMode")
-@interface PLYDisplayMode : NSObject
-/// The type of transition to apply.
-@property (nonatomic, readonly) enum PLYDisplayModeType type;
-/// Legacy 0…1 height percentage. Kept for Objective-C compatibility and as a
-/// defensive fallback when the new <code>height</code> field is absent from the wire
-/// (back-compat against a backend-rewrite race).
-/// TODO(6.1): remove this property and its fallback once telemetry shows the
-/// <code>🔧 PLYDisplayMode: falling back to legacy height_percentage</code> debug log
-/// no longer fires.
-@property (nonatomic, readonly, strong) NSNumber * _Nullable heightPercentage;
-/// Whether the presentation can be dismissed by the user via background tap,
-/// drag gesture, or swipe-down. Defaults to <code>true</code>. When <code>false</code>, only
-/// content-triggered or programmatic dismiss works — the close button
-/// (<code>ply_close_button</code>) stays functional regardless.
-@property (nonatomic, readonly) BOOL dismissible;
-/// ObjC: <code>[[PLYDisplayMode alloc] initWithType:... heightPercentage:@(0.5) backgroundColors:... dismissible:YES]</code>
-- (nonnull instancetype)initWithType:(enum PLYDisplayModeType)type heightPercentage:(NSNumber * _Nullable)heightPercentage backgroundColors:(PLYColors * _Nullable)backgroundColors dismissible:(BOOL)dismissible;
-/// Creates a full-screen display mode.
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) PLYDisplayMode * _Nonnull fullScreen;)
-+ (PLYDisplayMode * _Nonnull)fullScreen SWIFT_WARN_UNUSED_RESULT;
-/// Creates a modal (page sheet) display mode that can be dismissed by the user.
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) PLYDisplayMode * _Nonnull modal;)
-+ (PLYDisplayMode * _Nonnull)modal SWIFT_WARN_UNUSED_RESULT;
-/// Creates a modal (page sheet) display mode with explicit dismissible control.
-/// When <code>dismissible</code> is <code>false</code>, the user cannot swipe down to dismiss; the
-/// close button and programmatic dismiss still work.
-+ (PLYDisplayMode * _Nonnull)modalWithDismissible:(BOOL)dismissible SWIFT_WARN_UNUSED_RESULT;
-/// Creates a push display mode (requires navigation controller context).
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) PLYDisplayMode * _Nonnull push;)
-+ (PLYDisplayMode * _Nonnull)push SWIFT_WARN_UNUSED_RESULT;
-/// Legacy factory. Use <code>PLYDisplayMode.drawer(height:dismissible:)</code> with <code>.percentage(...)</code>.
-+ (PLYDisplayMode * _Nonnull)drawerWithHeightPercentage:(double)heightPercentage dismissible:(BOOL)dismissible SWIFT_WARN_UNUSED_RESULT SWIFT_DEPRECATED_MSG("Use PLYDisplayMode.drawer(height: .percentage(Float(heightPercentage)), dismissible:) instead.");
-/// Legacy factory. Use <code>PLYDisplayMode.popin(width:height:dismissible:)</code> with <code>.percentage(...)</code>.
-+ (PLYDisplayMode * _Nonnull)popinWithHeightPercentage:(double)heightPercentage dismissible:(BOOL)dismissible SWIFT_WARN_UNUSED_RESULT SWIFT_DEPRECATED_MSG("Use PLYDisplayMode.popin(width: nil, height: .percentage(Float(heightPercentage)), dismissible:) instead.");
-/// Creates an inline paywall display mode (informational only, behaves like default).
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) PLYDisplayMode * _Nonnull inlinePaywall;)
-+ (PLYDisplayMode * _Nonnull)inlinePaywall SWIFT_WARN_UNUSED_RESULT;
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
-
-/// Enumerates the possible transition types for a presentation.
-/// This enum is compatible with Objective-C (as an Int-based enum)
-/// and conforms to Codable in Swift, using specific string values for encoding/decoding.
-typedef SWIFT_ENUM(NSInteger, PLYDisplayModeType, open) {
-/// Full-screen transition.
-  PLYDisplayModeTypeFullScreen = 0,
-/// “Push” transition to a full screen.
-  PLYDisplayModeTypeModal = 1,
-/// “Drawer” type transition.
-  PLYDisplayModeTypeDrawer = 2,
-/// “Pop-in” type transition.
-  PLYDisplayModeTypePopin = 3,
-/// “Push” navigation transition.
-  PLYDisplayModeTypePush = 4,
-/// Inline paywall (informational only, behaves like default/fullScreen).
-  PLYDisplayModeTypeInlinePaywall = 5,
-};
-
 typedef SWIFT_ENUM(NSInteger, PLYEnvironment, open) {
   PLYEnvironmentProd = 0,
   PLYEnvironmentStaging = 1,
@@ -994,6 +932,7 @@ SWIFT_ENUM_FWD_DECL(NSInteger, PLYPresentationType)
 @class PLYPresentationViewController;
 @class PLYPresentationPlan;
 @class PLYPresentationMetadata;
+@class PLYTransition;
 @class PLYPresentationOutcome;
 /// Public-facing presentation type. Returned and consumed by every <code>Purchasely</code>
 /// surface that today exposes a paywall presentation. The SDK internally maps
@@ -1001,7 +940,7 @@ SWIFT_ENUM_FWD_DECL(NSInteger, PLYPresentationType)
 /// implementation boundary.
 SWIFT_PROTOCOL("_TtP10Purchasely15PLYPresentation_")
 @protocol PLYPresentation <NSObject>
-@property (nonatomic, readonly, copy) NSString * _Nonnull id;
+@property (nonatomic, readonly, copy) NSString * _Nonnull screenId;
 @property (nonatomic, readonly, copy) NSString * _Nonnull language;
 @property (nonatomic, readonly, copy) NSString * _Nullable placementId;
 @property (nonatomic, readonly, copy) NSString * _Nullable audienceId;
@@ -1015,11 +954,11 @@ SWIFT_PROTOCOL("_TtP10Purchasely15PLYPresentation_")
 @property (nonatomic, readonly, strong) PLYPresentationMetadata * _Nullable metadata;
 @property (nonatomic, readonly, strong) UIColor * _Nullable backgroundColor;
 @property (nonatomic, readonly) NSInteger height;
-@property (nonatomic, readonly, strong) PLYDisplayMode * _Nonnull displayMode;
+@property (nonatomic, readonly, strong) PLYTransition * _Nonnull transition;
 @property (nonatomic, readonly, copy) NSSet<PLYConnection *> * _Nonnull connections;
 @property (nonatomic, readonly) BOOL isFlow;
 - (void)displayFrom:(UIViewController * _Nullable)sourceViewController;
-- (void)displayFrom:(UIViewController * _Nullable)sourceViewController transitionType:(PLYDisplayMode * _Nullable)transitionType;
+- (void)displayFrom:(UIViewController * _Nullable)sourceViewController transitionType:(PLYTransition * _Nullable)transitionType;
 - (void)close;
 - (void)back;
 - (void)executeConnection:(PLYConnection * _Nullable)connection;
@@ -1036,7 +975,7 @@ SWIFT_PROTOCOL("_TtP10Purchasely15PLYPresentation_")
 /// Fires when the user requests to close the presentation (tap close,
 /// swipe down, hardware back). The presentation is not fully dismissed
 /// yet — see <code>onDismissed</code> for the post-dismissal outcome.
-@property (nonatomic, copy) void (^ _Nullable onClose)(void);
+@property (nonatomic, copy) void (^ _Nullable onCloseRequested)(void);
 /// Fires when the presentation is fully dismissed, delivering the
 /// outcome (purchase result + plan).
 @property (nonatomic, copy) void (^ _Nullable onDismissed)(PLYPresentationOutcome * _Nonnull);
@@ -1069,7 +1008,7 @@ SWIFT_CLASS("_TtC10Purchasely31PLYPresentationActionParameters")
 @property (nonatomic, copy) NSString * _Nullable placement;
 @property (nonatomic, copy) NSString * _Nullable queryParameterKey;
 @property (nonatomic) enum PLYWebCheckoutProvider webCheckoutProvider;
-@property (nonatomic, strong) PLYDisplayMode * _Nullable transition;
+@property (nonatomic, strong) PLYTransition * _Nullable transition;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -1107,7 +1046,7 @@ SWIFT_CLASS("_TtC10Purchasely22PLYPresentationBuilder")
 /// on <code>PLYPresentationRequest</code>; set it before <code>build()</code>.
 - (nonnull instancetype)displayBackButton:(BOOL)display;
 - (nonnull instancetype)onPresented:(void (^ _Nonnull)(id <PLYPresentation> _Nullable, NSError * _Nullable))handler;
-- (nonnull instancetype)onClose:(void (^ _Nonnull)(void))handler;
+- (nonnull instancetype)onCloseRequested:(void (^ _Nonnull)(void))handler;
 - (nonnull instancetype)onDismissed:(void (^ _Nonnull)(PLYPresentationOutcome * _Nonnull))handler;
 - (id <PLYPresentationRequest> _Nonnull)build SWIFT_WARN_UNUSED_RESULT;
 + (PLYPresentationBuilder * _Nonnull)forPlacementId:(NSString * _Nonnull)id SWIFT_WARN_UNUSED_RESULT;
@@ -1171,7 +1110,7 @@ SWIFT_CLASS("_TtC10Purchasely19PLYPresentationPlan")
 /// A configured presentation that has not yet been fetched from the backend.
 /// Returned by <code>PLYPresentationBuilder.build()</code>. The presentation data lives
 /// on <code>any PLYPresentation</code>, delivered through <code>preload</code> or <code>display</code>. The
-/// lifecycle callbacks (<code>onPresented</code>, <code>onClose</code>, <code>onDismissed</code>) live on the
+/// lifecycle callbacks (<code>onPresented</code>, <code>onCloseRequested</code>, <code>onDismissed</code>) live on the
 /// <code>PLYPresentation</code> itself — the builder seeds them, the request transfers
 /// them onto the loaded presentation when the fetch completes.
 /// The <code>@objc</code> protocol carries the completion-based public surface and the
@@ -1200,13 +1139,13 @@ SWIFT_PROTOCOL("_TtP10Purchasely22PLYPresentationRequest_")
 - (void)displayWithCompletion:(void (^ _Nullable)(id <PLYPresentation> _Nullable, NSError * _Nullable))completion;
 /// Triggers display with an optional transition override.
 /// Pass <code>nil</code> (or call <code>display(completion:)</code>) to honor the backend-
-/// defined <code>presentation.displayMode</code>. Pass a non-nil <code>PLYDisplayMode</code>
+/// defined <code>presentation.transition</code>. Pass a non-nil <code>PLYTransition</code>
 /// to override it. From Objective-C, pass <code>nil</code> for “no override” or a
-/// <code>PLYDisplayMode</code> instance to override — same shape as the legacy
+/// <code>PLYTransition</code> instance to override — same shape as the legacy
 /// <code>Purchasely.display(for:displayMode:completion:)</code> API.
 /// <code>completion</code> semantics match <code>display(completion:)</code> — fires on
 /// display-triggered, not on visible-on-screen.
-- (void)displayWithTransition:(PLYDisplayMode * _Nullable)transition completion:(void (^ _Nullable)(id <PLYPresentation> _Nullable, NSError * _Nullable))completion;
+- (void)displayWithTransition:(PLYTransition * _Nullable)transition completion:(void (^ _Nullable)(id <PLYPresentation> _Nullable, NSError * _Nullable))completion;
 @end
 
 typedef SWIFT_ENUM(NSInteger, PLYPresentationType, open) {
@@ -1224,7 +1163,7 @@ SWIFT_CLASS("_TtC10Purchasely29PLYPresentationViewController")
 /// Set when a <code>LegacyPresentation</code> is constructed with this controller.
 /// Weak to avoid a retain cycle with <code>PLYPresentation.controller</code>.
 /// The view controller reads its lifecycle callbacks
-/// (<code>onPresented</code> / <code>onClose</code> / <code>onDismissed</code>) off this back-reference.
+/// (<code>onPresented</code> / <code>onCloseRequested</code> / <code>onDismissed</code>) off this back-reference.
 @property (nonatomic, weak) id <PLYPresentation> _Nullable representedPresentation;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
@@ -1238,12 +1177,6 @@ SWIFT_CLASS("_TtC10Purchasely10PLYProduct")
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
-
-typedef SWIFT_ENUM(NSInteger, PLYProductViewControllerResult, open) {
-  PLYProductViewControllerResultPurchased = 0,
-  PLYProductViewControllerResultCancelled = 1,
-  PLYProductViewControllerResultRestored = 2,
-};
 
 SWIFT_CLASS("_TtC10Purchasely13PLYPromoOffer")
 @interface PLYPromoOffer : NSObject
@@ -1334,6 +1267,68 @@ typedef SWIFT_ENUM(NSInteger, PLYSubscriptionStatus, open) {
   PLYSubscriptionStatusPaused = 6,
   PLYSubscriptionStatusUnpaid = 7,
   PLYSubscriptionStatusUnknown = 8,
+};
+
+SWIFT_ENUM_FWD_DECL(NSInteger, PLYTransitionType)
+@class NSNumber;
+SWIFT_CLASS("_TtC10Purchasely13PLYTransition")
+@interface PLYTransition : NSObject
+/// The type of transition to apply.
+@property (nonatomic, readonly) enum PLYTransitionType type;
+/// Legacy 0…1 height percentage. Kept for Objective-C compatibility and as a
+/// defensive fallback when the new <code>height</code> field is absent from the wire
+/// (back-compat against a backend-rewrite race).
+/// TODO(6.1): remove this property and its fallback once telemetry shows the
+/// <code>🔧 PLYTransition: falling back to legacy height_percentage</code> debug log
+/// no longer fires.
+@property (nonatomic, readonly, strong) NSNumber * _Nullable heightPercentage;
+/// Whether the presentation can be dismissed by the user via background tap,
+/// drag gesture, or swipe-down. Defaults to <code>true</code>. When <code>false</code>, only
+/// content-triggered or programmatic dismiss works — the close button
+/// (<code>ply_close_button</code>) stays functional regardless.
+@property (nonatomic, readonly) BOOL dismissible;
+/// ObjC: <code>[[PLYTransition alloc] initWithType:... heightPercentage:@(0.5) backgroundColors:... dismissible:YES]</code>
+- (nonnull instancetype)initWithType:(enum PLYTransitionType)type heightPercentage:(NSNumber * _Nullable)heightPercentage backgroundColors:(PLYColors * _Nullable)backgroundColors dismissible:(BOOL)dismissible;
+/// Creates a full-screen display mode.
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) PLYTransition * _Nonnull fullScreen;)
++ (PLYTransition * _Nonnull)fullScreen SWIFT_WARN_UNUSED_RESULT;
+/// Creates a modal (page sheet) display mode that can be dismissed by the user.
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) PLYTransition * _Nonnull modal;)
++ (PLYTransition * _Nonnull)modal SWIFT_WARN_UNUSED_RESULT;
+/// Creates a modal (page sheet) display mode with explicit dismissible control.
+/// When <code>dismissible</code> is <code>false</code>, the user cannot swipe down to dismiss; the
+/// close button and programmatic dismiss still work.
++ (PLYTransition * _Nonnull)modalWithDismissible:(BOOL)dismissible SWIFT_WARN_UNUSED_RESULT;
+/// Creates a push display mode (requires navigation controller context).
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) PLYTransition * _Nonnull push;)
++ (PLYTransition * _Nonnull)push SWIFT_WARN_UNUSED_RESULT;
+/// Legacy factory. Use <code>PLYTransition.drawer(height:dismissible:)</code> with <code>.percentage(...)</code>.
++ (PLYTransition * _Nonnull)drawerWithHeightPercentage:(double)heightPercentage dismissible:(BOOL)dismissible SWIFT_WARN_UNUSED_RESULT SWIFT_DEPRECATED_MSG("Use PLYTransition.drawer(height: .percentage(Float(heightPercentage)), dismissible:) instead.");
+/// Legacy factory. Use <code>PLYTransition.popin(width:height:dismissible:)</code> with <code>.percentage(...)</code>.
++ (PLYTransition * _Nonnull)popinWithHeightPercentage:(double)heightPercentage dismissible:(BOOL)dismissible SWIFT_WARN_UNUSED_RESULT SWIFT_DEPRECATED_MSG("Use PLYTransition.popin(width: nil, height: .percentage(Float(heightPercentage)), dismissible:) instead.");
+/// Creates an inline paywall display mode (informational only, behaves like default).
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) PLYTransition * _Nonnull inlinePaywall;)
++ (PLYTransition * _Nonnull)inlinePaywall SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+/// Enumerates the possible transition types for a presentation.
+/// This enum is compatible with Objective-C (as an Int-based enum)
+/// and conforms to Codable in Swift, using specific string values for encoding/decoding.
+typedef SWIFT_ENUM(NSInteger, PLYTransitionType, open) {
+/// Full-screen transition.
+  PLYTransitionTypeFullScreen = 0,
+/// “Push” transition to a full screen.
+  PLYTransitionTypeModal = 1,
+/// “Drawer” type transition.
+  PLYTransitionTypeDrawer = 2,
+/// “Pop-in” type transition.
+  PLYTransitionTypePopin = 3,
+/// “Push” navigation transition.
+  PLYTransitionTypePush = 4,
+/// Inline paywall (informational only, behaves like default/fullScreen).
+  PLYTransitionTypeInlinePaywall = 5,
 };
 
 typedef SWIFT_ENUM(NSInteger, PLYUIControllerType, open) {
@@ -1464,10 +1459,10 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 /// The language passed must be ISO 639-1 or ISO 639-2
 + (void)setLanguageFrom:(NSLocale * _Nullable)locale;
 + (void)allowDeeplink:(BOOL)allow;
-+ (void)readyToOpenDeeplink:(BOOL)ready SWIFT_DEPRECATED_MSG("", "allowDeeplink:");
 /// Controls whether campaign deeplinks can be displayed.
 /// When <code>false</code>, campaigns are still evaluated and queued but not displayed.
-/// Defaults to <code>false</code>. The backend <code>allow_campaigns</code> config field sets the initial value.
+/// Defaults to <code>true</code>. The backend <code>allow_campaigns</code> config field seeds the
+/// value unless the app sets an explicit override.
 /// \param allow <code>true</code> to allow campaign display, <code>false</code> to suppress.
 ///
 + (void)allowCampaigns:(BOOL)allow;
@@ -1517,7 +1512,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 /// \param transition (optional) Display mode override. When <code>nil</code> (default),
 /// uses the backend-defined display mode.
 ///
-+ (void)displayFor:(NSString * _Nonnull)placementId transition:(PLYDisplayMode * _Nullable)transition;
++ (void)displayFor:(NSString * _Nonnull)placementId transition:(PLYTransition * _Nullable)transition;
 @end
 
 SWIFT_ENUM_FWD_DECL(NSInteger, PLYAttribute)
@@ -1534,7 +1529,7 @@ SWIFT_ENUM_FWD_DECL(NSInteger, PLYThemeMode)
 ///     presentation: The presentation obtained via <code>PLYPresentationBuilder.…build().preload()</code>.
 ///   </li>
 /// </ul>
-+ (void)clientPresentationOpenedWith:(id <PLYPresentation> _Nullable)presentation;
++ (void)clientPresentationDisplayedWith:(id <PLYPresentation> _Nullable)presentation;
 /// This method is used to notify Purchasely that a client paywall has been closed.
 /// <ul>
 ///   <li>
@@ -1590,7 +1585,6 @@ SWIFT_ENUM_FWD_DECL(NSInteger, PLYThemeMode)
 /// returns:
 /// <code>true</code> if the deeplink was recognized and handled by Purchasely
 + (BOOL)handleDeeplink:(NSURL * _Nonnull)url;
-+ (BOOL)isDeeplinkHandledWithDeeplink:(NSURL * _Nonnull)url SWIFT_DEPRECATED_MSG("", "handleDeeplink:");
 /// This method performs a Promotional Offer signature with StoreKit 2
 /// <ul>
 ///   <li>
