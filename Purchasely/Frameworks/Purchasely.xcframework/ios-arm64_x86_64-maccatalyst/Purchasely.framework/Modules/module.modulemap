@@ -1,5 +1,0 @@
-framework module Purchasely {
-  header "Purchasely-Swift.h"
-  requires objc
-  export *
-}
