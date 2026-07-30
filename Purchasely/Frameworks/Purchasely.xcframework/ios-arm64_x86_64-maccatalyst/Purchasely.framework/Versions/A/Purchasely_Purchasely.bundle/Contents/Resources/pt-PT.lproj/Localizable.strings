@@ -112,3 +112,16 @@
 "ply_in_app_offer_ineligible_error" = "You are not eligible for this promotional offer.";
 "ply_in_app_purchase_not_allowed_error" = "You are not allowed to purchase this product.";
 "ply_in_app_offer_invalid_error" = "Purchase with promotional offer failed.";
+
+"ply_redemption_expired_title" = "Link expirou";
+"ply_redemption_expired_body_hint" = "Enviamos um novo link para %@. Abra-o para restaurar sua assinatura.";
+"ply_redemption_expired_body" = "Enviamos um novo link para o e-mail associado à sua assinatura. Abra-o para reativar sua assinatura.";
+"ply_redemption_loading_title" = "Recuperando sua assinatura…";
+"ply_redemption_loading_body" = "Isto levará apenas um momento.";
+"ply_redemption_invalid_title" = "Nenhuma assinatura encontrada";
+"ply_redemption_invalid_body" = "Nenhuma subscrição foi encontrada a partir deste link.";
+"ply_redemption_retry_title" = "Ocorreu um erro";
+"ply_redemption_retry_body" = "Não foi possível confirmar a sua assinatura. Uma nova tentativa será feita automaticamente na próxima inicialização.";
+"ply_redemption_alert_button" = "OK";
+"ply_redemption_success_title" = "Subscrição recuperada";
+"ply_redemption_success_body" = "A sua subscrição está agora ativa neste dispositivo.";

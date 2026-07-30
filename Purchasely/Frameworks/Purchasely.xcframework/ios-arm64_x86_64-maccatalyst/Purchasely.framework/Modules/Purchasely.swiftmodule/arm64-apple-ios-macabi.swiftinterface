@@ -78,6 +78,10 @@ extension Foundation.NSLock {
   case unsubscribeiOS
   case unsubscribeAmazon
   case webCheckoutReceiptPollingFailure
+  case redemptionTokenExpired
+  case redemptionTokenInvalid
+  case redemptionFailedRetry
+  case redemptionSuccess
   public var title: Swift.String {
     get
   }
@@ -927,6 +931,7 @@ public enum PLYSubscriptionSourceError : Swift.Error {
   case googlePlayStore
   case amazonAppstore
   case huaweiAppGallery
+  case stripe
   case none
   public init?(rawValue: Swift.Int)
   public typealias RawValue = Swift.Int

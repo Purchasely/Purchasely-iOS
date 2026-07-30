@@ -404,6 +404,18 @@ typedef SWIFT_ENUM(NSInteger, PLYAlertMessage, open) {
   PLYAlertMessageUnsubscribeiOS = 8,
   PLYAlertMessageUnsubscribeAmazon = 9,
   PLYAlertMessageWebCheckoutReceiptPollingFailure = 10,
+/// Web2App redemption (MOB-266): the link expired (1h TTL, or already redeemed by a
+/// different user) — the backend already emailed a fresh one. <code>content</code> is nil ON PURPOSE:
+/// <code>controller(for:error:)</code> falls back to <code>error?.localizedDescription</code>, which is how the
+/// <code>email_hint</code>-templated body rides in (see <code>RedemptionTerminal.alert</code>).
+  PLYAlertMessageRedemptionTokenExpired = 11,
+/// Web2App redemption: the token resolved to no subscription (terminal, undifferentiated).
+  PLYAlertMessageRedemptionTokenInvalid = 12,
+/// Web2App redemption: retry budget exhausted — re-attempted automatically on next launch.
+  PLYAlertMessageRedemptionFailedRetry = 13,
+/// Web2App redemption: confirmation shown after a successful redeem (QA 2026-07-24 —
+/// supersedes the original silent-success decision D-7).
+  PLYAlertMessageRedemptionSuccess = 14,
 };
 
 typedef SWIFT_ENUM(NSInteger, PLYAppTechnology, open) {
@@ -1252,7 +1264,8 @@ typedef SWIFT_ENUM(NSInteger, PLYSubscriptionSource, open) {
   PLYSubscriptionSourceGooglePlayStore = 1,
   PLYSubscriptionSourceAmazonAppstore = 2,
   PLYSubscriptionSourceHuaweiAppGallery = 3,
-  PLYSubscriptionSourceNone = 4,
+  PLYSubscriptionSourceStripe = 4,
+  PLYSubscriptionSourceNone = 5,
 };
 
 typedef SWIFT_ENUM(NSInteger, PLYSubscriptionStatus, open) {
