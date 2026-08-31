@@ -58034,7 +58034,7 @@
     {
       "filePath": "\/Users\/thomasleger\/projects\/Sources\/release-5.7.9-rc.1\/Purchasely\/Classes\/common\/Manager\/CacheManager\/DefaultCacheManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 20641,
+      "offset": 19919,
       "length": 4,
       "value": "true"
     },
@@ -63565,13 +63565,13 @@
       "filePath": "\/Users\/thomasleger\/projects\/Sources\/release-5.7.9-rc.1\/Purchasely\/Classes\/common\/Purchasely.swift",
       "kind": "StringLiteral",
       "offset": 8413,
-      "length": 12,
-      "value": "\"5.7.9-rc.2\""
+      "length": 7,
+      "value": "\"5.7.9\""
     },
     {
       "filePath": "\/Users\/thomasleger\/projects\/Sources\/release-5.7.9-rc.1\/Purchasely\/Classes\/common\/Purchasely.swift",
       "kind": "StringLiteral",
-      "offset": 12205,
+      "offset": 12200,
       "length": 37,
       "value": "\"com.purchasely.promotedPaywallQueue\""
     },
@@ -63802,14 +63802,14 @@
     {
       "filePath": "\/Users\/thomasleger\/projects\/Sources\/release-5.7.9-rc.1\/Purchasely\/Classes\/common\/Purchasely+Purchase.swift",
       "kind": "BooleanLiteral",
-      "offset": 9696,
+      "offset": 10012,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/thomasleger\/projects\/Sources\/release-5.7.9-rc.1\/Purchasely\/Classes\/common\/Purchasely+PurchaseAsync.swift",
       "kind": "BooleanLiteral",
-      "offset": 19780,
+      "offset": 20851,
       "length": 4,
       "value": "true"
     },
