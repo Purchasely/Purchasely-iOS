@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 6.3.2 effective-5.10 (swiftlang-6.3.2.1.108 clang-2100.1.1.101)
-// swift-module-flags: -target arm64-apple-ios13.4-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -O -enable-experimental-feature DebugDescriptionMacro -module-name Purchasely -package-name purchasely_ios_sources
-// swift-module-flags-ignorable:  -formal-cxx-interoperability-mode=off -interface-compiler-version 6.3.2
+// swift-compiler-version: Apple Swift version 6.3.3 effective-5.10 (swiftlang-6.3.3.1.3 clang-2100.1.1.101)
+// swift-module-flags: -target arm64-apple-ios13.4-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -O -enable-experimental-feature DebugDescriptionMacro -module-name Purchasely -package-name stateless_hugging_cat
+// swift-module-flags-ignorable:  -formal-cxx-interoperability-mode=off -interface-compiler-version 6.3.3
 import AVFoundation
 import AVKit
 import Combine
@@ -11,7 +11,10 @@ import Foundation
 import Foundation/*.Bundle*/
 import Foundation/*.ProcessInfo*/
 import Foundation/*.URL*/
+import MachO
+import MetricKit
 import QuartzCore
+import Security
 import StoreKit
 import Swift
 import SwiftUI
@@ -20,6 +23,13 @@ import _Concurrency
 import _StoreKit_SwiftUI
 import _StringProcessing
 import _SwiftConcurrencyShims
+extension Foundation.NSRecursiveLock {
+  @inlinable internal func withRecursiveLock<T>(_ body: () throws -> T) rethrows -> T {
+        lock()
+        defer { unlock() }
+        return try body()
+    }
+}
 @_hasMissingDesignatedInitializers public class PlansEligibilityManager {
   public static let shared: PlansEligibilityManager
   @objc deinit
@@ -427,6 +437,8 @@ extension PLYError : Foundation.LocalizedError {
   case webCheckoutOpenedInWebBrowser
   case webCheckoutTapped
   case webCheckoutTimedOut
+  case redemptionConsumed
+  case redemptionFailed
   public var name: Swift.String {
     get
   }
@@ -556,6 +568,7 @@ extension Foundation.NSString {
   case commitment
   case commitmentProgress
   case commitmentInfo
+  case redemption
   public var name: Swift.String {
     get
   }
@@ -1022,6 +1035,40 @@ extension PLYTransitionType : Swift.Codable {
     get
   }
 }
+@_hasMissingDesignatedInitializers @objc final public class PLYWebRedemptionContext : ObjectiveC.NSObject {
+  @objc final public var subscription: PLYSubscription? {
+    @objc get
+  }
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers @objc final public class PLYWebRedemptionResult : ObjectiveC.NSObject {
+  @objc final public var isSuccess: Swift.Bool {
+    @objc get
+  }
+  @objc final public var context: PLYWebRedemptionContext? {
+    @objc get
+  }
+  @objc final public var replay: Swift.Bool {
+    @objc get
+  }
+  @objc final public var errorCode: Swift.String? {
+    @objc get
+  }
+  @objc final public var errorMessage: Swift.String? {
+    @objc get
+  }
+  @objc deinit
+}
+extension PLYWebRedemptionResult {
+  public enum Outcome {
+    case success(context: PLYWebRedemptionContext?, replay: Swift.Bool)
+    case failure(errorCode: Swift.String?, errorMessage: Swift.String?)
+  }
+  final public func asResult() -> PLYWebRedemptionResult.Outcome
+}
+@objc public protocol PLYWebRedemptionDelegate {
+  @objc func webRedemptionCompleted(result: PLYWebRedemptionResult)
+}
 @objc public class StorekitSettings : ObjectiveC.NSObject {
   @objc public init(shouldUseStorekit2IfAvailable: Swift.Bool, simulateAskToBuy: Swift.Bool = false)
   @objc public static let storeKit1: StorekitSettings
@@ -1343,17 +1390,22 @@ extension Purchasely : UserNotifications.UNUserNotificationCenterDelegate {
   @objc deinit
 }
 @_hasMissingDesignatedInitializers @objc final public class PurchaselyBuilder : ObjectiveC.NSObject, @unchecked Swift.Sendable {
+  @objc final public func appAnonymousUserId(_ value: Foundation.UUID?) -> PurchaselyBuilder
+  @objc final public func appAnonymousUserId(_ value: Foundation.UUID?, override: Swift.Bool) -> PurchaselyBuilder
   @objc final public func appUserId(_ value: Swift.String?) -> PurchaselyBuilder
   @objc final public func runningMode(_ value: PLYRunningMode) -> PurchaselyBuilder
   @objc final public func storekitSettings(_ value: StorekitSettings) -> PurchaselyBuilder
   @objc final public func logLevel(_ value: PLYLogger.PLYLogLevel) -> PurchaselyBuilder
   @objc final public func environment(_ value: PLYEnvironment) -> PurchaselyBuilder
+  @objc final public func proxy() -> PurchaselyBuilder
+  @objc final public func proxy(api: Foundation.URL?) -> PurchaselyBuilder
   @objc final public func showsPromotedInAppPurchasePaywall(_ value: Swift.Bool) -> PurchaselyBuilder
   @objc final public func appTechnology(_ value: PLYAppTechnology) -> PurchaselyBuilder
   @objc final public func sdkBridgeVersion(_ value: Swift.String?) -> PurchaselyBuilder
   @objc final public func themeMode(_ value: Purchasely.PLYThemeMode) -> PurchaselyBuilder
   @objc final public func allowDeeplink(_ allow: Swift.Bool) -> PurchaselyBuilder
   @objc final public func allowCampaigns(_ allow: Swift.Bool) -> PurchaselyBuilder
+  @objc final public func webRedemptionDelegate(_ value: (any PLYWebRedemptionDelegate)?, appHandlesRedemptionAlert: Swift.Bool = false) -> PurchaselyBuilder
   @objc final public func handleDeeplink(_ url: Foundation.URL?) -> PurchaselyBuilder
   final public func start() async throws
   @objc final public func start(initialized: (@Sendable ((any Swift.Error)?) -> Swift.Void)? = nil)

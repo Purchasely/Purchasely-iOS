@@ -6,35 +6,35 @@
 	<dict>
 		<key>Headers/Purchasely-Swift.h</key>
 		<data>
-		faTyplK0G9Dyi+mctCOssOmNipo=
+		/zvQg0TUNg9BVQCuGdkb6M+e0ho=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		MXm0CAcsVETYAvhgWZBkgjx0U8Q=
+		rlV5ailMYZdL9e1Qr4+ELHPZKPw=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-tvos.abi.json</key>
 		<data>
-		AMEO4TnnxzyOFwNhVOmUjeQSnmU=
+		h95LoPLdyyelPwQAIvIlv4R78fc=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-tvos.package.swiftinterface</key>
 		<data>
-		tw3HolmS9ymMFk+IUSF5oSN1cj0=
+		fIeM7b0pribhcztc1A7LNpW6dnQ=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-tvos.private.swiftinterface</key>
 		<data>
-		tw3HolmS9ymMFk+IUSF5oSN1cj0=
+		HuWIkOjPVdXL8qRSgEeKXWlDsa0=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-tvos.swiftdoc</key>
 		<data>
-		qYrQbC8ApEh2F1MtpHntiIm6Suk=
+		IGd8M2DaUimnP5yX2gVypLiVRzI=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-tvos.swiftinterface</key>
 		<data>
-		tw3HolmS9ymMFk+IUSF5oSN1cj0=
+		HuWIkOjPVdXL8qRSgEeKXWlDsa0=
 		</data>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-tvos.swiftmodule</key>
 		<data>
-		RGB7ZMcZTisTe/wqq5pMI8BZAZM=
+		zhMGmpmcC30dR/mpBq7kDmy6/7U=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -42,15 +42,15 @@
 		</data>
 		<key>Purchasely_Purchasely.bundle/Info.plist</key>
 		<data>
-		hcGDB1q92ZG8o5aoKoccJl0K/SE=
+		mG1X7165u5qMwJFCCkiA018G6aw=
 		</data>
 		<key>Purchasely_Purchasely.bundle/PrivacyInfo.xcprivacy</key>
 		<data>
-		e5VfeUs95WnlYXyTa4ppwMVJ/GY=
+		0DTtGN/rBqwGvWGkLRsIM5EBJbk=
 		</data>
 		<key>Purchasely_Purchasely.bundle/_CodeSignature/CodeDirectory</key>
 		<data>
-		6ZihQNRBpIqlui1xxvh9Q+QnYKA=
+		sFR2Rc80CjaZuLaEEL6HNccRB84=
 		</data>
 		<key>Purchasely_Purchasely.bundle/_CodeSignature/CodeRequirements</key>
 		<data>
@@ -58,7 +58,7 @@
 		</data>
 		<key>Purchasely_Purchasely.bundle/_CodeSignature/CodeResources</key>
 		<data>
-		t4Hu+HecdlMesovCBoCdOez5WMc=
+		7tAwlYd1yat46tj3b+U0jusNUFw=
 		</data>
 		<key>Purchasely_Purchasely.bundle/_CodeSignature/CodeSignature</key>
 		<data>
@@ -309,7 +309,7 @@
 		</dict>
 		<key>Purchasely_PurchaselytvOS.bundle/Info.plist</key>
 		<data>
-		rRPhQbxQEI7oeyFtJoecNwjJA8o=
+		2tLPwyTgO2j08BV/sVEe+8rG2Vs=
 		</data>
 		<key>Purchasely_PurchaselytvOS.bundle/PLYWebViewViewController.nib</key>
 		<data>
@@ -317,7 +317,7 @@
 		</data>
 		<key>Purchasely_PurchaselytvOS.bundle/_CodeSignature/CodeDirectory</key>
 		<data>
-		xNCe0cS2fW2SMyVx/aLh2Y6BBqI=
+		NGSk+IvBUsJb2qVQRRXvU7Tx6jM=
 		</data>
 		<key>Purchasely_PurchaselytvOS.bundle/_CodeSignature/CodeRequirements</key>
 		<data>
@@ -338,49 +338,49 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			uoA1IaWJQKtE7FK1K3gFIJF3hiPjJdcolHOa5rMf7MU=
+			3gZU8NWmM3AjuSvA5zUyShicz8sh29L+TnlTczejxbY=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-tvos.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			FQJslAweKeCf835146NPiU6+yyQzGw9YZj94Hcd1foc=
+			/zPSoxpyBvCqav76xML1igPuBXGauxY2EGwOmTwBYJE=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-tvos.package.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			KSm97m/ZcWuUNGf2nO2POPprKZVj+I5A4P3k4mTSAWE=
+			I0RxQN7ccPjiQWIFsbFx9arABmvD8zk/FugyTXA/NIA=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-tvos.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			KSm97m/ZcWuUNGf2nO2POPprKZVj+I5A4P3k4mTSAWE=
+			hsnapiutcyndZMbMxUzoKiPQ+bsLp0B7VT5x+y5/Etk=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-tvos.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			NaLVw3LpPQZRgKNq9+O3tC2wb1MhUmi2dmdprvolSr0=
+			zDUSWTvgXwlwx/DtvzPwAwR5q7bicrmscbSZOr9sFXk=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-tvos.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			KSm97m/ZcWuUNGf2nO2POPprKZVj+I5A4P3k4mTSAWE=
+			hsnapiutcyndZMbMxUzoKiPQ+bsLp0B7VT5x+y5/Etk=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-tvos.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			9yBBhaa/MYz61L/cc1worUCqb7RtUayrsUj1g89sQf0=
+			7pTRA4TwuzkZVak8RfsC3McgyjLEMQgeTqkxrGkDM88=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -394,21 +394,21 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			l6/ww42Hn6N38qKeUywaUJ+8Y7HUD9BhPe8VivKEB48=
+			4pv6UB+Fk19ztyKoClMboZoM8G9ZQ52rbUEUdmvQPbs=
 			</data>
 		</dict>
 		<key>Purchasely_Purchasely.bundle/PrivacyInfo.xcprivacy</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			D2JE9Fh0Vw1cVuAsbBEnMYbIooKPOTeL7mB34F4ZHBw=
+			Gyizp5cbUD9I4iL1LQRPNzHdTP6gWdBCYbmXrCNAp68=
 			</data>
 		</dict>
 		<key>Purchasely_Purchasely.bundle/_CodeSignature/CodeDirectory</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			/r0r3VYv+duuv4hV6ETGclmQBwN7cQmPMd9Ghk3IpWs=
+			TGe50maDDs4+6TcO8FOWhoaUdxwtr/JD5wl96B0n0ZU=
 			</data>
 		</dict>
 		<key>Purchasely_Purchasely.bundle/_CodeSignature/CodeRequirements</key>
@@ -422,7 +422,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			kVJg8kqclCW3bVUbovqontvEzq6r9SauhWXiVh4A1PU=
+			z7aiqdyh9xHDRILdTBHM+oQ8hvh6+oqSxQaGhw+sRdU=
 			</data>
 		</dict>
 		<key>Purchasely_Purchasely.bundle/_CodeSignature/CodeSignature</key>
@@ -679,7 +679,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			hmdBNe7nAgK0zym20tnfdsGlcajj9XBkXw0r7y3ShOo=
+			m5h5KgXVv4pN6hwh4PNA8GDu9GbzsfbMqVdrUdfRmlk=
 			</data>
 		</dict>
 		<key>Purchasely_PurchaselytvOS.bundle/PLYWebViewViewController.nib</key>
@@ -693,7 +693,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Wg7LS0iRQZ4ITDHiiIWqxEUyZAAYs3+CZKXY/alExec=
+			ukJ9uo1YKeo5NVjBZcYXccnS7vMTVWISEqhlDBf98kE=
 			</data>
 		</dict>
 		<key>Purchasely_PurchaselytvOS.bundle/_CodeSignature/CodeRequirements</key>

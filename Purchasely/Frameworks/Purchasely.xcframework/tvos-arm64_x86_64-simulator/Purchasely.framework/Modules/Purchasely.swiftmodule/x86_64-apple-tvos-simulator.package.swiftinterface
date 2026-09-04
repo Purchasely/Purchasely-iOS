@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 6.3.2 effective-5.10 (swiftlang-6.3.2.1.108 clang-2100.1.1.101)
-// swift-module-flags: -target x86_64-apple-tvos13.4-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -O -enable-experimental-feature DebugDescriptionMacro -module-name Purchasely -package-name purchasely_ios_sources
-// swift-module-flags-ignorable:  -formal-cxx-interoperability-mode=off -interface-compiler-version 6.3.2
+// swift-compiler-version: Apple Swift version 6.3.3 effective-5.10 (swiftlang-6.3.3.1.3 clang-2100.1.1.101)
+// swift-module-flags: -target x86_64-apple-tvos13.4-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -O -enable-experimental-feature DebugDescriptionMacro -module-name Purchasely -package-name stateless_hugging_cat
+// swift-module-flags-ignorable:  -formal-cxx-interoperability-mode=off -interface-compiler-version 6.3.3
 import AVFoundation
 import AVKit
 import Combine
@@ -11,7 +11,9 @@ import Foundation
 import Foundation/*.Bundle*/
 import Foundation/*.ProcessInfo*/
 import Foundation/*.URL*/
+import MachO
 import QuartzCore
+import Security
 import StoreKit
 import Swift
 import SwiftUI
@@ -21,6 +23,13 @@ import _Concurrency
 import _StoreKit_SwiftUI
 import _StringProcessing
 import _SwiftConcurrencyShims
+extension Foundation.NSRecursiveLock {
+  @inlinable internal func withRecursiveLock<T>(_ body: () throws -> T) rethrows -> T {
+        lock()
+        defer { unlock() }
+        return try body()
+    }
+}
 @_hasMissingDesignatedInitializers public class PlansEligibilityManager {
   public static let shared: PlansEligibilityManager
   @objc deinit
@@ -66,6 +75,9 @@ extension Foundation.NSLock {
   @objc optional func onUserAttributeSet(key: Swift.String, type: PLYUserAttributeType, value: Any?, source: PLYUserAttributeSource)
   @objc optional func onUserAttributeSet(key: Swift.String, type: PLYUserAttributeType, value: Any?, source: PLYUserAttributeSource, processingLegalBasis: PLYDataProcessingLegalBasis)
   @objc optional func onUserAttributeRemoved(key: Swift.String, source: PLYUserAttributeSource)
+}
+package struct AppAnonymousUserId {
+  package init(value: Foundation.UUID, override: Swift.Bool)
 }
 @objc public enum PLYAlertMessage : Swift.Int {
   case commonError
@@ -428,6 +440,8 @@ extension PLYError : Foundation.LocalizedError {
   case webCheckoutOpenedInWebBrowser
   case webCheckoutTapped
   case webCheckoutTimedOut
+  case redemptionConsumed
+  case redemptionFailed
   public var name: Swift.String {
     get
   }
@@ -557,6 +571,7 @@ extension Foundation.NSString {
   case commitment
   case commitmentProgress
   case commitmentInfo
+  case redemption
   public var name: Swift.String {
     get
   }
@@ -1023,6 +1038,40 @@ extension PLYTransitionType : Swift.Codable {
     get
   }
 }
+@_hasMissingDesignatedInitializers @objc final public class PLYWebRedemptionContext : ObjectiveC.NSObject {
+  @objc final public var subscription: PLYSubscription? {
+    @objc get
+  }
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers @objc final public class PLYWebRedemptionResult : ObjectiveC.NSObject {
+  @objc final public var isSuccess: Swift.Bool {
+    @objc get
+  }
+  @objc final public var context: PLYWebRedemptionContext? {
+    @objc get
+  }
+  @objc final public var replay: Swift.Bool {
+    @objc get
+  }
+  @objc final public var errorCode: Swift.String? {
+    @objc get
+  }
+  @objc final public var errorMessage: Swift.String? {
+    @objc get
+  }
+  @objc deinit
+}
+extension PLYWebRedemptionResult {
+  public enum Outcome {
+    case success(context: PLYWebRedemptionContext?, replay: Swift.Bool)
+    case failure(errorCode: Swift.String?, errorMessage: Swift.String?)
+  }
+  final public func asResult() -> PLYWebRedemptionResult.Outcome
+}
+@objc public protocol PLYWebRedemptionDelegate {
+  @objc func webRedemptionCompleted(result: PLYWebRedemptionResult)
+}
 @objc public class StorekitSettings : ObjectiveC.NSObject {
   @objc public init(shouldUseStorekit2IfAvailable: Swift.Bool, simulateAskToBuy: Swift.Bool = false)
   @objc public static let storeKit1: StorekitSettings
@@ -1344,17 +1393,22 @@ extension Purchasely : UserNotifications.UNUserNotificationCenterDelegate {
   @objc deinit
 }
 @_hasMissingDesignatedInitializers @objc final public class PurchaselyBuilder : ObjectiveC.NSObject, @unchecked Swift.Sendable {
+  @objc final public func appAnonymousUserId(_ value: Foundation.UUID?) -> PurchaselyBuilder
+  @objc final public func appAnonymousUserId(_ value: Foundation.UUID?, override: Swift.Bool) -> PurchaselyBuilder
   @objc final public func appUserId(_ value: Swift.String?) -> PurchaselyBuilder
   @objc final public func runningMode(_ value: PLYRunningMode) -> PurchaselyBuilder
   @objc final public func storekitSettings(_ value: StorekitSettings) -> PurchaselyBuilder
   @objc final public func logLevel(_ value: PLYLogger.PLYLogLevel) -> PurchaselyBuilder
   @objc final public func environment(_ value: PLYEnvironment) -> PurchaselyBuilder
+  @objc final public func proxy() -> PurchaselyBuilder
+  @objc final public func proxy(api: Foundation.URL?) -> PurchaselyBuilder
   @objc final public func showsPromotedInAppPurchasePaywall(_ value: Swift.Bool) -> PurchaselyBuilder
   @objc final public func appTechnology(_ value: PLYAppTechnology) -> PurchaselyBuilder
   @objc final public func sdkBridgeVersion(_ value: Swift.String?) -> PurchaselyBuilder
   @objc final public func themeMode(_ value: Purchasely.PLYThemeMode) -> PurchaselyBuilder
   @objc final public func allowDeeplink(_ allow: Swift.Bool) -> PurchaselyBuilder
   @objc final public func allowCampaigns(_ allow: Swift.Bool) -> PurchaselyBuilder
+  @objc final public func webRedemptionDelegate(_ value: (any PLYWebRedemptionDelegate)?, appHandlesRedemptionAlert: Swift.Bool = false) -> PurchaselyBuilder
   @objc final public func handleDeeplink(_ url: Foundation.URL?) -> PurchaselyBuilder
   final public func start() async throws
   @objc final public func start(initialized: (@Sendable ((any Swift.Error)?) -> Swift.Void)? = nil)
@@ -1369,6 +1423,72 @@ extension Purchasely : UserNotifications.UNUserNotificationCenterDelegate {
 public protocol PLYCustomScreenViewDelegate {
   associatedtype Content : SwiftUICore.View
   @SwiftUICore.ViewBuilder func view(for presentation: any PLYPresentation) -> Self.Content
+}
+extension Purchasely {
+  package static var isTelemetryEnabledByClient: Swift.Bool? {
+    get
+    set
+  }
+}
+package struct TelemetryContextGates : Swift.Codable, Swift.Equatable {
+  package var development: Swift.Bool?
+  package var preproduction: Swift.Bool?
+  package var production: Swift.Bool?
+  package static let unspecified: Purchasely.TelemetryContextGates
+  package init(development: Swift.Bool? = nil, preproduction: Swift.Bool? = nil, production: Swift.Bool? = nil)
+  package init(from decoder: any Swift.Decoder) throws
+  package var isEmpty: Swift.Bool {
+    get
+  }
+  package func merged(over base: Purchasely.TelemetryContextGates?) -> Purchasely.TelemetryContextGates
+  package static func == (a: Purchasely.TelemetryContextGates, b: Purchasely.TelemetryContextGates) -> Swift.Bool
+  package func encode(to encoder: any Swift.Encoder) throws
+}
+package struct TelemetryDebugOverride : Swift.Codable, Swift.Equatable {
+  package var mode: Swift.String?
+  package var endpoint: Swift.String?
+  package var otelKey: Swift.String?
+  package var tracesSampleRate: Swift.Double?
+  package var logsMinSeverity: Swift.String?
+  package var crashReporting: Swift.Bool?
+  package var tracing: Purchasely.TelemetryContextGates?
+  package var crashDetection: Purchasely.TelemetryContextGates?
+  package init(mode: Swift.String? = nil, endpoint: Swift.String? = nil, otelKey: Swift.String? = nil, tracesSampleRate: Swift.Double? = nil, logsMinSeverity: Swift.String? = nil, crashReporting: Swift.Bool? = nil, tracing: Purchasely.TelemetryContextGates? = nil, crashDetection: Purchasely.TelemetryContextGates? = nil)
+  package var isEmpty: Swift.Bool {
+    get
+  }
+  package static func == (a: Purchasely.TelemetryDebugOverride, b: Purchasely.TelemetryDebugOverride) -> Swift.Bool
+  package func encode(to encoder: any Swift.Encoder) throws
+  package init(from decoder: any Swift.Decoder) throws
+}
+package struct TelemetryDebugSnapshot {
+  package let backendMode: Swift.String?
+  package let backendEndpoint: Swift.String?
+  package let backendOtelKey: Swift.String?
+  package let backendTracesSampleRate: Swift.Double?
+  package let backendLogsMinSeverity: Swift.String?
+  package let backendCrashReporting: Swift.Bool?
+  package let backendTracingGates: Purchasely.TelemetryContextGates?
+  package let backendCrashDetectionGates: Purchasely.TelemetryContextGates?
+  package let override: Purchasely.TelemetryDebugOverride?
+  package let overrideCrashReporting: Swift.Bool?
+  package let effectiveMode: Swift.String
+  package let effectiveEndpoint: Swift.String?
+  package let effectiveOtelKey: Swift.String?
+  package let effectiveTracesSampleRate: Swift.Double
+  package let effectiveLogsMinSeverityNumber: Swift.Int
+  package let effectiveCrashReporting: Swift.Bool
+  package let effectiveTracingGates: Purchasely.TelemetryContextGates
+  package let effectiveCrashDetectionGates: Purchasely.TelemetryContextGates
+  package let gatingContext: Swift.String
+  package let isTracingRecording: Swift.Bool
+  package let isCrashDetectionArmed: Swift.Bool
+  package let isActive: Swift.Bool
+  package init(backendMode: Swift.String?, backendEndpoint: Swift.String?, backendOtelKey: Swift.String?, backendTracesSampleRate: Swift.Double?, backendLogsMinSeverity: Swift.String?, backendCrashReporting: Swift.Bool? = nil, backendTracingGates: Purchasely.TelemetryContextGates? = nil, backendCrashDetectionGates: Purchasely.TelemetryContextGates? = nil, override: Purchasely.TelemetryDebugOverride?, overrideCrashReporting: Swift.Bool? = nil, effectiveMode: Swift.String, effectiveEndpoint: Swift.String?, effectiveOtelKey: Swift.String?, effectiveTracesSampleRate: Swift.Double, effectiveLogsMinSeverityNumber: Swift.Int, effectiveCrashReporting: Swift.Bool = false, effectiveTracingGates: Purchasely.TelemetryContextGates = .unspecified, effectiveCrashDetectionGates: Purchasely.TelemetryContextGates = .unspecified, gatingContext: Swift.String, isTracingRecording: Swift.Bool, isCrashDetectionArmed: Swift.Bool, isActive: Swift.Bool)
+}
+extension Purchasely {
+  package static func telemetryDebugSnapshot() -> Purchasely.TelemetryDebugSnapshot
+  package static func setTelemetryDebugOverride(_ override: Purchasely.TelemetryDebugOverride?)
 }
 public func loc(_ textToTranslate: Swift.String, comment: Swift.String = "", language: Swift.String? = nil) -> Swift.String
 public struct Safe<Base> : Swift.Decodable where Base : Swift.Decodable {
