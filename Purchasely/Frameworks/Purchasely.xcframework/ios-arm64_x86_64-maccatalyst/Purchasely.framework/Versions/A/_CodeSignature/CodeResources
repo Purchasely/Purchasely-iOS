@@ -6,7 +6,7 @@
 	<dict>
 		<key>Resources/Info.plist</key>
 		<data>
-		sVVGsDmda2O/8IoYyoQfajyCN5o=
+		b1oU5es4sw0FFDYXIWPARos5l1Y=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -15,91 +15,91 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			U3f9OXoTt282XPWbX38JBW3peozNfsryqZnZdNVH94I=
+			tLnea/M57forw40ZtRfbCXrdO+UhipxcTOpCJn1NR2Y=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-ios-macabi.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			2icGg0glC7On5KY+DulPK9Q1CvgavYXyxBDgOBS8R+Y=
+			mcNFeQ9PBqu0MGh3+KzP9iv3q+ErFqrt1WyBw2WW6rk=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-ios-macabi.package.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			b7n7+6IM+duLybcwuNsxalM2CmjI9ZMJEwtUP5jW3+E=
+			V2MPB50XDkLpO3vLXJj0ilPK+lmiKBTG0FxOKi48QVU=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-ios-macabi.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			5ul7BPP3qTh5WKgzX9rzOw1woadrjOj+uhYBe6BeopI=
+			OPgTaMXUIZ49/Jf+SltQynxeAsRbdpEeAcyjWRI5xXI=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-ios-macabi.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			dH/p9S+l9bva8swUIXOBJuoK18TbvG7YuW9Nf5fT9uQ=
+			BobpRNhURFxgusdiqu0ndbFnrYy78qniCppSC9lyYR4=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-ios-macabi.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			5ul7BPP3qTh5WKgzX9rzOw1woadrjOj+uhYBe6BeopI=
+			OPgTaMXUIZ49/Jf+SltQynxeAsRbdpEeAcyjWRI5xXI=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-ios-macabi.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			76TRCn4d1GukcPDFZqvPPD7SNndBsMJd599VEAb2kZA=
+			BIKFxMXguNrDAMaMtzJDd2bKDA6FNZ8JtukcvVZHEoU=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-ios-macabi.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			2icGg0glC7On5KY+DulPK9Q1CvgavYXyxBDgOBS8R+Y=
+			mcNFeQ9PBqu0MGh3+KzP9iv3q+ErFqrt1WyBw2WW6rk=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-ios-macabi.package.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			H01vARBMoMvIYmBFtEsctnrfOTicbhvdleCb7ON9BmQ=
+			wjVaGEg00NNIcwW7Icusc7cVsDSX4/QstMInHERHPDY=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-ios-macabi.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			bhBX8Rh9saZCkBPD3hCCKATjRg+l8w3F/xQ6yLJM+wQ=
+			MqBpftj88GsSey1aikzOV7Krh5F0y83c6/P6ohp1rVU=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-ios-macabi.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			FEwJ1+VqBjzXxW8YLFhkqKMpHpuH+zGqN9uCKmolkG4=
+			JHidRNkmnNHryDjor0+sFB6foQ5Vrc9d43DQIQwdeVg=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-ios-macabi.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			bhBX8Rh9saZCkBPD3hCCKATjRg+l8w3F/xQ6yLJM+wQ=
+			MqBpftj88GsSey1aikzOV7Krh5F0y83c6/P6ohp1rVU=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-ios-macabi.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			shs4MJAMTt7maJNBXzofm6r8cuoutSyaIg5AjAYyjmw=
+			0mFygA86dqynNpIBAgdEwbe50BrRqBoyIrja1s89das=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -113,25 +113,25 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			GwG+19AKFx2F2/nDgOw5c8ON9Yw=
+			1gb2FtU/1L3HOpvOGQqMuCKf274=
 			</data>
 			<key>requirement</key>
-			<string>cdhash H"1b01bed7d00a171d85dbf9c380ec3973c38df58c"</string>
+			<string>cdhash H"d606f616d53fd4bdc73a9bce190a8cb8229fdbbe"</string>
 		</dict>
 		<key>Purchasely_PurchaselyiOS.bundle</key>
 		<dict>
 			<key>cdhash</key>
 			<data>
-			WBW+FaMwh7g0AZF4d3QnWh0u/wI=
+			Xb8vtMwOI/40K5KZcbQq0syGZQE=
 			</data>
 			<key>requirement</key>
-			<string>cdhash H"5815be15a33087b8340191787774275a1d2eff02"</string>
+			<string>cdhash H"5dbf2fb4cc0e23fe342b929971b42ad2cc866501"</string>
 		</dict>
 		<key>Resources/Info.plist</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			p/FebbcACGPIiRaiRdl2Hh3+iv9JnyAWFI+xHLBM9Xs=
+			E3xJtX5HfH8izzXjMsFbpxi7/CUvugsP2K82C56EmPA=
 			</data>
 		</dict>
 	</dict>
