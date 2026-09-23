@@ -71868,7 +71868,7 @@
       "kind": "StringLiteral",
       "offset": 12271,
       "length": 7,
-      "value": "\"6.1.0\""
+      "value": "\"6.1.2\""
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Sources\/Purchasely\/common\/PurchaselyImplementation.swift",
@@ -72797,14 +72797,14 @@
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Sources\/Purchasely\/common\/Telemetry\/TelemetryController.swift",
       "kind": "Array",
-      "offset": 34685,
+      "offset": 35323,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Sources\/Purchasely\/common\/Telemetry\/TelemetryController.swift",
       "kind": "Array",
-      "offset": 34759,
+      "offset": 35397,
       "length": 2,
       "value": "[]"
     },
@@ -73972,8 +73972,15 @@
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Sources\/Purchasely\/common\/Utils\/PLYUtils.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1442,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Sources\/Purchasely\/common\/Utils\/PLYUtils.swift",
       "kind": "StringLiteral",
-      "offset": 978,
+      "offset": 5883,
       "length": 2,
       "value": "\"\""
     },
@@ -74736,14 +74743,14 @@
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Sources\/Purchasely\/uikit\/Controller\/PLYPopoverViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 3311,
+      "offset": 3608,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/florianhuet\/Developpement\/Purchasely-iOS-SDK\/Sources\/Purchasely-iOS-Sources\/Sources\/Purchasely\/uikit\/Controller\/PLYPopoverViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 3353,
+      "offset": 3650,
       "length": 5,
       "value": "false"
     },

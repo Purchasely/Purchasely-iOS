@@ -6,7 +6,7 @@
 	<dict>
 		<key>Resources/Info.plist</key>
 		<data>
-		b1oU5es4sw0FFDYXIWPARos5l1Y=
+		PxX8Ub7JenFT5+x+XVlvj216Xsc=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -22,7 +22,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			mcNFeQ9PBqu0MGh3+KzP9iv3q+ErFqrt1WyBw2WW6rk=
+			22aHwe6FgQfhc1lo9bTOUJJ2OgO76Tks+VHOISxVBiI=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/arm64-apple-ios-macabi.package.swiftinterface</key>
@@ -57,14 +57,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			BIKFxMXguNrDAMaMtzJDd2bKDA6FNZ8JtukcvVZHEoU=
+			VbG4Ae2lJUGpgaHR+uG2DoA2h8sOoiB95uYMgRsGZWY=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-ios-macabi.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			mcNFeQ9PBqu0MGh3+KzP9iv3q+ErFqrt1WyBw2WW6rk=
+			22aHwe6FgQfhc1lo9bTOUJJ2OgO76Tks+VHOISxVBiI=
 			</data>
 		</dict>
 		<key>Modules/Purchasely.swiftmodule/x86_64-apple-ios-macabi.package.swiftinterface</key>
@@ -99,7 +99,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			0mFygA86dqynNpIBAgdEwbe50BrRqBoyIrja1s89das=
+			HexILeu9QXNUtcMwC7RAsMCvYcYzEfIIGIvpQfO9j48=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -113,25 +113,25 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			1gb2FtU/1L3HOpvOGQqMuCKf274=
+			KtaSo4UikvcfPO1tPggHid9gzlE=
 			</data>
 			<key>requirement</key>
-			<string>cdhash H"d606f616d53fd4bdc73a9bce190a8cb8229fdbbe"</string>
+			<string>cdhash H"2ad692a3852292f71f3ced6d3e080789df60ce51"</string>
 		</dict>
 		<key>Purchasely_PurchaselyiOS.bundle</key>
 		<dict>
 			<key>cdhash</key>
 			<data>
-			Xb8vtMwOI/40K5KZcbQq0syGZQE=
+			H9iR9KdzB+K7W+Mw0qS4i2XRXfY=
 			</data>
 			<key>requirement</key>
-			<string>cdhash H"5dbf2fb4cc0e23fe342b929971b42ad2cc866501"</string>
+			<string>cdhash H"1fd891f4a77307e2bb5be330d2a4b88b65d15df6"</string>
 		</dict>
 		<key>Resources/Info.plist</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			E3xJtX5HfH8izzXjMsFbpxi7/CUvugsP2K82C56EmPA=
+			a8+anza5IMuNn9HpFGDDgptH3Lz+aNnJ+30O6SY68gk=
 			</data>
 		</dict>
 	</dict>
