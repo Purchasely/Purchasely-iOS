@@ -441,6 +441,7 @@ SWIFT_CLASS("_TtC10Purchasely11PLYCampaign")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
+/// Public façade of one <code>triggers</code> entry of the configuration. Everything lives in <code>CampaignTrigger</code>.
 SWIFT_CLASS("_TtC10Purchasely18PLYCampaignTrigger")
 @interface PLYCampaignTrigger : NSObject
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
@@ -589,6 +590,9 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, strong) PLYDataProcessingPurpo
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, strong) PLYDataProcessingPurpose * _Nonnull thirdPartyIntegrations;)
 + (PLYDataProcessingPurpose * _Nonnull)thirdPartyIntegrations SWIFT_WARN_UNUSED_RESULT;
 + (void)setThirdPartyIntegrations:(PLYDataProcessingPurpose * _Nonnull)value;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, strong) PLYDataProcessingPurpose * _Nonnull refundHandling;)
++ (PLYDataProcessingPurpose * _Nonnull)refundHandling SWIFT_WARN_UNUSED_RESULT;
++ (void)setRefundHandling:(PLYDataProcessingPurpose * _Nonnull)value;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -768,6 +772,12 @@ typedef SWIFT_ENUM(NSInteger, PLYEventProperty, open) {
 /// APPENDED: this enum’s implicit <code>Int</code> raw values are <code>Codable</code>-persisted, so a case inserted
 /// above would re-map every stored value after it.
   PLYEventPropertyRedemption = 109,
+  PLYEventPropertyPurchaseContextToken = 110,
+/// The event that fired the campaign which opened the screen, as the trigger route returned it:
+/// <code>built-in</code> or <code>custom</code>, and its name. Carried beside <code>campaignId</code>, on the same events.
+/// APPENDED, like <code>redemption</code>: see above.
+  PLYEventPropertyTriggeringEventType = 111,
+  PLYEventPropertyTriggeringEventName = 112,
 };
 
 typedef SWIFT_ENUM(NSInteger, PLYEventType, open) {
@@ -1686,6 +1696,7 @@ SWIFT_ENUM_FWD_DECL(NSInteger, PLYThemeMode)
 ///     failure: the block called when any error occured. The error can be displayed to the user using localizedDescription
 ///   </li>
 /// </ul>
+/// This method signs for the anonymous user id. To sign for a purchase context token, use <code>signPromotionalOffer(storeProductId:storeOfferId:purchaseContextToken:success:failure:)</code>.
 + (void)signPromotionalOfferWithPlan:(PLYPlan * _Nonnull)plan promoOffer:(PLYPromoOffer * _Nonnull)promoOffer success:(void (^ _Nonnull)(PLYOfferSignature * _Nonnull))success failure:(void (^ _Nonnull)(NSError * _Nonnull))failure SWIFT_AVAILABILITY(watchos,introduced=8.0) SWIFT_AVAILABILITY(tvos,introduced=15.0) SWIFT_AVAILABILITY(macos,introduced=12.0) SWIFT_AVAILABILITY(ios,introduced=12.2);
 /// This method performs a Promotional Offer signature with StoreKit 2
 /// <ul>
@@ -1705,7 +1716,36 @@ SWIFT_ENUM_FWD_DECL(NSInteger, PLYThemeMode)
 ///     failure: the block called when any error occured. The error can be displayed to the user using localizedDescription
 ///   </li>
 /// </ul>
+/// This method signs for the anonymous user id. To sign for a purchase context token, use <code>signPromotionalOffer(storeProductId:storeOfferId:purchaseContextToken:success:failure:)</code>.
 + (void)signPromotionalOfferWithStoreProductId:(NSString * _Nonnull)storeProductId storeOfferId:(NSString * _Nonnull)storeOfferId success:(void (^ _Nonnull)(PLYOfferSignature * _Nonnull))success failure:(void (^ _Nonnull)(NSError * _Nonnull))failure SWIFT_AVAILABILITY(watchos,introduced=8.0) SWIFT_AVAILABILITY(tvos,introduced=15.0) SWIFT_AVAILABILITY(macos,introduced=12.0) SWIFT_AVAILABILITY(ios,introduced=12.2);
+/// Signs a promotional offer for a purchase context token. Gives the signature and the token.
+/// Use this method when your app makes the purchase with StoreKit (Observer mode).
+/// Apple compares the signature with the value in the account field of the purchase. Put the
+/// token that this method gives in that field. Do not change the token:
+/// <ul>
+///   <li>
+///     StoreKit 2: add <code>Product.PurchaseOption.appAccountToken(token)</code>.
+///   </li>
+///   <li>
+///     StoreKit 1: set <code>SKMutablePayment.applicationUsername</code> to <code>token.uuidString.lowercased()</code>.
+///     Use lowercase letters. If the case is different, Apple rejects the offer.
+///   </li>
+/// </ul>
+/// If <code>purchaseContextToken</code> is <code>nil</code>, the SDK makes a new token. To sign again for the same
+/// purchase (for example, after an error), give the token that you received before.
+/// The other <code>signPromotionalOffer</code> methods do not use a token. They sign for the anonymous
+/// user id. If you use one of these methods, do not put a token in the account field.
+/// \param storeProductId the App Store product identifier.
+///
+/// \param storeOfferId the promotional offer identifier in App Store Connect.
+///
+/// \param purchaseContextToken the token of this purchase, or <code>nil</code> to make a new token.
+///
+/// \param success the SDK calls this block with the signature and the token.
+///
+/// \param failure the SDK calls this block if the signature fails.
+///
++ (void)signPromotionalOfferWithStoreProductId:(NSString * _Nonnull)storeProductId storeOfferId:(NSString * _Nonnull)storeOfferId purchaseContextToken:(NSUUID * _Nullable)purchaseContextToken success:(void (^ _Nonnull)(PLYOfferSignature * _Nonnull, NSUUID * _Nonnull))success failure:(void (^ _Nonnull)(NSError * _Nonnull))failure SWIFT_AVAILABILITY(watchos,introduced=8.0) SWIFT_AVAILABILITY(tvos,introduced=15.0) SWIFT_AVAILABILITY(macos,introduced=12.0) SWIFT_AVAILABILITY(ios,introduced=12.2);
 /// This method performs a purchase on an plan of a Purchasely product
 /// <ul>
 ///   <li>
@@ -1839,6 +1879,23 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSDictionary<N
 /// \param processingLegalBasis The legal basis for processing this user attribute. Defaults to <code>.optional</code>.
 ///
 + (void)setUserAttributeWithStringValue:(NSString * _Nonnull)value forKey:(NSString * _Nonnull)key;
+/// Hands a business event of your application to the SDK.
+/// The event is tracked only if its name is declared in the Purchasely Console; the comparison is
+/// exact (case, spaces). An undeclared event is dropped silently. Custom events are never forwarded
+/// to your <code>PLYEventDelegate</code>.
+/// The name is never transformed (no trim, no case change). The properties travel as given, nested
+/// under <code>custom_event_properties</code>; the SDK validates no type, the backend casts against the declared
+/// <code>data_type</code>.
+/// \code
+/// Purchasely.emit(name: "recipe_viewed", properties: ["recipe_id": 42])
+/// Purchasely.emit(name: "checkout_started")
+///
+/// \endcodeObjective-C: <code>[Purchasely emitWithName:@"recipe_viewed" properties:@{@"recipe_id": @42}]</code>.
+/// \param name the event name, exactly as the Console declares it.
+///
+/// \param properties the event’s properties. Defaults to none.
+///
++ (void)emitWithName:(NSString * _Nonnull)name properties:(NSDictionary<NSString *, id> * _Nonnull)properties;
 /// Sets a string-type user attribute.
 /// Example: <code>setUserAttribute(withStringValue: "Gold", forKey: "subscription_tier")</code>
 /// \param value The string value to associate with the key.
@@ -2245,11 +2302,10 @@ SWIFT_CLASS("_TtC10Purchasely17PurchaselyBuilder")
 /// The SDK applies the id at <code>start()</code>, and only when the device holds no anonymous user id.
 /// Use <code>appAnonymousUserId(_:override:)</code> to replace an id that already exists.
 /// Pass <code>nil</code> to change nothing. This method never clears a stored id.
-/// The parameter type is <code>UUID</code>, so the SDK cannot receive an id that StoreKit rejects.
-/// Apple accepts a UUID only for <code>Transaction.appAccountToken</code>. The SDK stores the id as an
-/// uppercase UUID string, because <code>UUID.uuidString</code> always returns uppercase characters.
-/// seealso:
-/// <a href="https://developer.apple.com/documentation/storekit/transaction/appaccounttoken">Transaction.appAccountToken</a>
+/// The parameter type is <code>UUID</code>, so the id is always a valid UUID. The SDK does not put this id
+/// in the StoreKit purchase. The SDK puts a purchase context token in <code>appAccountToken</code> and
+/// <code>applicationUsername</code>. The SDK stores the id as an uppercase UUID string, because
+/// <code>UUID.uuidString</code> always returns uppercase characters.
 /// \param value the anonymous user id, or <code>nil</code> to change nothing.
 ///
 ///
@@ -2267,16 +2323,15 @@ SWIFT_CLASS("_TtC10Purchasely17PurchaselyBuilder")
 /// each time this flag replaces a stored id.
 /// An explicit id also takes precedence over an id that a Web2App redemption deeplink
 /// supplies, because the SDK applies the explicit id first.
-/// The parameter type is <code>UUID</code>, so the SDK cannot receive an id that StoreKit rejects.
-/// Apple accepts a UUID only for <code>Transaction.appAccountToken</code>. The SDK stores the id as an
-/// uppercase UUID string, because <code>UUID.uuidString</code> always returns uppercase characters. Send
-/// the same uppercase form from your backend when you compare the two ids.
+/// The parameter type is <code>UUID</code>, so the id is always a valid UUID. The SDK does not put this id
+/// in the StoreKit purchase. The SDK puts a purchase context token in <code>appAccountToken</code> and
+/// <code>applicationUsername</code>. The SDK stores the id as an uppercase UUID string, because
+/// <code>UUID.uuidString</code> always returns uppercase characters. Send the same uppercase form from
+/// your backend when you compare the two ids.
 /// This API exists on the builder only, by design. A free-standing setter would let an
 /// integrator change the anonymous user id at any moment. Nothing downstream in the SDK
 /// expects that change. A setter of that kind also works against the dependency-injection
 /// direction that the SDK follows. Do not add one.
-/// seealso:
-/// <a href="https://developer.apple.com/documentation/storekit/transaction/appaccounttoken">Transaction.appAccountToken</a>
 /// \param value the anonymous user id, or <code>nil</code> to change nothing.
 ///
 /// \param override <code>true</code> to replace an anonymous user id that already exists.

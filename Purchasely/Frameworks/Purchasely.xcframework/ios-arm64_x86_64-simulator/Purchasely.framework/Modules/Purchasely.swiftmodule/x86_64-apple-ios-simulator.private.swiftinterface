@@ -11,10 +11,7 @@ import Foundation
 import Foundation/*.Bundle*/
 import Foundation/*.ProcessInfo*/
 import Foundation/*.URL*/
-import MachO
-import MetricKit
 import QuartzCore
-import Security
 import StoreKit
 import Swift
 import SwiftUI
@@ -48,6 +45,7 @@ extension Foundation.NSLock {
   @objc public static var campaigns: PLYDataProcessingPurpose
   @objc public static var personalization: PLYDataProcessingPurpose
   @objc public static var thirdPartyIntegrations: PLYDataProcessingPurpose
+  @objc public static var refundHandling: PLYDataProcessingPurpose
   @objc deinit
 }
 @objc public enum PLYDataProcessingLegalBasis : Swift.Int, Swift.CaseIterable {
@@ -200,7 +198,7 @@ public struct PLYExposureWindow : Swift.Decodable {
   public typealias ID = Swift.String?
   @objc deinit
 }
-@objc public class PLYCampaignTrigger : ObjectiveC.NSObject, Swift.Decodable {
+@_hasMissingDesignatedInitializers @objc public class PLYCampaignTrigger : ObjectiveC.NSObject, Swift.Decodable {
   required public init(from decoder: any Swift.Decoder) throws
   @objc deinit
 }
@@ -305,11 +303,15 @@ extension PLYCloseReason : Swift.CustomStringConvertible {
   public var eventsBatchMinIntervalInSeconds: Swift.UInt
   public var eventsBatchMaxIntervalInSeconds: Swift.UInt
   public var eventsBatchMaxSize: Swift.Int
+  public var customEventsBatchMinIntervalInSeconds: Swift.UInt
+  public var customEventsBatchMaxIntervalInSeconds: Swift.UInt
+  public var customEventsBatchMaxSize: Swift.Int
   public var eventsTimeDriftToleranceInMinutes: Swift.Int?
   public var campaigns: [PLYCampaign]
   public var triggers: [PLYCampaignTrigger]
   public var maxNumberOfOffering: Swift.Int
   public var userAttributesTrackedEvents: [Swift.String]
+  public var trackedCustomEvents: [Swift.String]
   public var webCheckoutReceiptStatusPollingFrequency: Swift.Int
   public var webCheckoutReceiptValidationTimeout: Swift.Int
   public var allowCampaigns: Swift.Bool
@@ -569,6 +571,9 @@ extension Foundation.NSString {
   case commitmentProgress
   case commitmentInfo
   case redemption
+  case purchaseContextToken
+  case triggeringEventType
+  case triggeringEventName
   public var name: Swift.String {
     get
   }
@@ -652,7 +657,7 @@ extension Swift.Array where Element == PLYOffering {
 extension PLYPlan {
   @objc dynamic public func isUserEligibleForIntroductoryOffer(completion: @escaping (Swift.Bool) -> ())
 }
-@objc public class PLYPlan : ObjectiveC.NSObject, Swift.Decodable, Swift.Encodable {
+@_hasMissingDesignatedInitializers @objc public class PLYPlan : ObjectiveC.NSObject, Swift.Decodable, Swift.Encodable {
   @objc public var vendorId: Swift.String
   @objc public var appleProductId: Swift.String?
   @objc public var type: PLYPlanType
@@ -836,7 +841,7 @@ public enum PLYPresentationState {
   case displayed
   case error(PLYPresentationState.Failure)
 }
-@objc public class PLYProduct : ObjectiveC.NSObject, Swift.Decodable, Swift.Encodable {
+@_hasMissingDesignatedInitializers @objc public class PLYProduct : ObjectiveC.NSObject, Swift.Decodable, Swift.Encodable {
   @objc public var vendorId: Swift.String
   @objc public var plans: [PLYPlan]
   @objc public var name: Swift.String?
@@ -1286,6 +1291,8 @@ extension Purchasely {
   @objc dynamic public class func signPromotionalOffer(plan: PLYPlan, promoOffer: PLYPromoOffer, success: @escaping PLYOfferSignatureClosure, failure: @escaping PLYErrorClosure)
   @available(iOS 12.2, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
   @objc dynamic public class func signPromotionalOffer(storeProductId: Swift.String, storeOfferId: Swift.String, success: @escaping PLYOfferSignatureClosure, failure: @escaping PLYErrorClosure)
+  @available(iOS 12.2, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
+  @objc dynamic public class func signPromotionalOffer(storeProductId: Swift.String, storeOfferId: Swift.String, purchaseContextToken: Foundation.UUID?, success: @escaping (PLYOfferSignature, Foundation.UUID) -> Swift.Void, failure: @escaping PLYErrorClosure)
   @objc public static func purchase(plan: PLYPlan, contentId: Swift.String?, success: @escaping PLYVoidClosure, failure: @escaping PLYErrorClosure)
   @objc public static func purchase(plan: PLYPlan, success: @escaping PLYVoidClosure, failure: @escaping PLYErrorClosure)
   @available(iOS 12.2, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
@@ -1303,6 +1310,7 @@ extension Purchasely {
   }
   @objc public static func getUserAttribute(for key: Swift.String) -> Any?
   @objc public static func setUserAttribute(withStringValue value: Swift.String, forKey key: Swift.String)
+  @objc public static func emit(name: Swift.String, properties: [Swift.String : Any] = [:])
   @objc public static func setUserAttribute(withStringValue value: Swift.String, forKey key: Swift.String, processingLegalBasis: PLYDataProcessingLegalBasis = .optional)
   @objc public static func setUserAttribute(withIntValue value: Swift.Int, forKey key: Swift.String)
   @objc public static func setUserAttribute(withIntValue value: Swift.Int, forKey key: Swift.String, processingLegalBasis: PLYDataProcessingLegalBasis = .optional)

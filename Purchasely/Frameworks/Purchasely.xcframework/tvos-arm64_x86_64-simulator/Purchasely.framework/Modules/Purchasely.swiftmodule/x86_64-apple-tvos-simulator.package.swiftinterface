@@ -11,9 +11,8 @@ import Foundation
 import Foundation/*.Bundle*/
 import Foundation/*.ProcessInfo*/
 import Foundation/*.URL*/
-import MachO
+package import PurchaselyTelemetryAPI
 import QuartzCore
-import Security
 import StoreKit
 import Swift
 import SwiftUI
@@ -48,6 +47,7 @@ extension Foundation.NSLock {
   @objc public static var campaigns: PLYDataProcessingPurpose
   @objc public static var personalization: PLYDataProcessingPurpose
   @objc public static var thirdPartyIntegrations: PLYDataProcessingPurpose
+  @objc public static var refundHandling: PLYDataProcessingPurpose
   @objc deinit
 }
 @objc public enum PLYDataProcessingLegalBasis : Swift.Int, Swift.CaseIterable {
@@ -203,7 +203,7 @@ public struct PLYExposureWindow : Swift.Decodable {
   public typealias ID = Swift.String?
   @objc deinit
 }
-@objc public class PLYCampaignTrigger : ObjectiveC.NSObject, Swift.Decodable {
+@_hasMissingDesignatedInitializers @objc public class PLYCampaignTrigger : ObjectiveC.NSObject, Swift.Decodable {
   required public init(from decoder: any Swift.Decoder) throws
   @objc deinit
 }
@@ -308,11 +308,15 @@ extension PLYCloseReason : Swift.CustomStringConvertible {
   public var eventsBatchMinIntervalInSeconds: Swift.UInt
   public var eventsBatchMaxIntervalInSeconds: Swift.UInt
   public var eventsBatchMaxSize: Swift.Int
+  public var customEventsBatchMinIntervalInSeconds: Swift.UInt
+  public var customEventsBatchMaxIntervalInSeconds: Swift.UInt
+  public var customEventsBatchMaxSize: Swift.Int
   public var eventsTimeDriftToleranceInMinutes: Swift.Int?
   public var campaigns: [PLYCampaign]
   public var triggers: [PLYCampaignTrigger]
   public var maxNumberOfOffering: Swift.Int
   public var userAttributesTrackedEvents: [Swift.String]
+  public var trackedCustomEvents: [Swift.String]
   public var webCheckoutReceiptStatusPollingFrequency: Swift.Int
   public var webCheckoutReceiptValidationTimeout: Swift.Int
   public var allowCampaigns: Swift.Bool
@@ -572,6 +576,9 @@ extension Foundation.NSString {
   case commitmentProgress
   case commitmentInfo
   case redemption
+  case purchaseContextToken
+  case triggeringEventType
+  case triggeringEventName
   public var name: Swift.String {
     get
   }
@@ -655,7 +662,7 @@ extension Swift.Array where Element == PLYOffering {
 extension PLYPlan {
   @objc dynamic public func isUserEligibleForIntroductoryOffer(completion: @escaping (Swift.Bool) -> ())
 }
-@objc public class PLYPlan : ObjectiveC.NSObject, Swift.Decodable, Swift.Encodable {
+@_hasMissingDesignatedInitializers @objc public class PLYPlan : ObjectiveC.NSObject, Swift.Decodable, Swift.Encodable {
   @objc public var vendorId: Swift.String
   @objc public var appleProductId: Swift.String?
   @objc public var type: PLYPlanType
@@ -839,7 +846,7 @@ public enum PLYPresentationState {
   case displayed
   case error(PLYPresentationState.Failure)
 }
-@objc public class PLYProduct : ObjectiveC.NSObject, Swift.Decodable, Swift.Encodable {
+@_hasMissingDesignatedInitializers @objc public class PLYProduct : ObjectiveC.NSObject, Swift.Decodable, Swift.Encodable {
   @objc public var vendorId: Swift.String
   @objc public var plans: [PLYPlan]
   @objc public var name: Swift.String?
@@ -1289,6 +1296,8 @@ extension Purchasely {
   @objc dynamic public class func signPromotionalOffer(plan: PLYPlan, promoOffer: PLYPromoOffer, success: @escaping PLYOfferSignatureClosure, failure: @escaping PLYErrorClosure)
   @available(iOS 12.2, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
   @objc dynamic public class func signPromotionalOffer(storeProductId: Swift.String, storeOfferId: Swift.String, success: @escaping PLYOfferSignatureClosure, failure: @escaping PLYErrorClosure)
+  @available(iOS 12.2, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
+  @objc dynamic public class func signPromotionalOffer(storeProductId: Swift.String, storeOfferId: Swift.String, purchaseContextToken: Foundation.UUID?, success: @escaping (PLYOfferSignature, Foundation.UUID) -> Swift.Void, failure: @escaping PLYErrorClosure)
   @objc public static func purchase(plan: PLYPlan, contentId: Swift.String?, success: @escaping PLYVoidClosure, failure: @escaping PLYErrorClosure)
   @objc public static func purchase(plan: PLYPlan, success: @escaping PLYVoidClosure, failure: @escaping PLYErrorClosure)
   @available(iOS 12.2, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
@@ -1306,6 +1315,7 @@ extension Purchasely {
   }
   @objc public static func getUserAttribute(for key: Swift.String) -> Any?
   @objc public static func setUserAttribute(withStringValue value: Swift.String, forKey key: Swift.String)
+  @objc public static func emit(name: Swift.String, properties: [Swift.String : Any] = [:])
   @objc public static func setUserAttribute(withStringValue value: Swift.String, forKey key: Swift.String, processingLegalBasis: PLYDataProcessingLegalBasis = .optional)
   @objc public static func setUserAttribute(withIntValue value: Swift.Int, forKey key: Swift.String)
   @objc public static func setUserAttribute(withIntValue value: Swift.Int, forKey key: Swift.String, processingLegalBasis: PLYDataProcessingLegalBasis = .optional)
@@ -1430,65 +1440,11 @@ extension Purchasely {
     set
   }
 }
-package struct TelemetryContextGates : Swift.Codable, Swift.Equatable {
-  package var development: Swift.Bool?
-  package var preproduction: Swift.Bool?
-  package var production: Swift.Bool?
-  package static let unspecified: Purchasely.TelemetryContextGates
-  package init(development: Swift.Bool? = nil, preproduction: Swift.Bool? = nil, production: Swift.Bool? = nil)
-  package init(from decoder: any Swift.Decoder) throws
-  package var isEmpty: Swift.Bool {
-    get
-  }
-  package func merged(over base: Purchasely.TelemetryContextGates?) -> Purchasely.TelemetryContextGates
-  package static func == (a: Purchasely.TelemetryContextGates, b: Purchasely.TelemetryContextGates) -> Swift.Bool
-  package func encode(to encoder: any Swift.Encoder) throws
-}
-package struct TelemetryDebugOverride : Swift.Codable, Swift.Equatable {
-  package var mode: Swift.String?
-  package var endpoint: Swift.String?
-  package var otelKey: Swift.String?
-  package var tracesSampleRate: Swift.Double?
-  package var logsMinSeverity: Swift.String?
-  package var crashReporting: Swift.Bool?
-  package var tracing: Purchasely.TelemetryContextGates?
-  package var crashDetection: Purchasely.TelemetryContextGates?
-  package init(mode: Swift.String? = nil, endpoint: Swift.String? = nil, otelKey: Swift.String? = nil, tracesSampleRate: Swift.Double? = nil, logsMinSeverity: Swift.String? = nil, crashReporting: Swift.Bool? = nil, tracing: Purchasely.TelemetryContextGates? = nil, crashDetection: Purchasely.TelemetryContextGates? = nil)
-  package var isEmpty: Swift.Bool {
-    get
-  }
-  package static func == (a: Purchasely.TelemetryDebugOverride, b: Purchasely.TelemetryDebugOverride) -> Swift.Bool
-  package func encode(to encoder: any Swift.Encoder) throws
-  package init(from decoder: any Swift.Decoder) throws
-}
-package struct TelemetryDebugSnapshot {
-  package let backendMode: Swift.String?
-  package let backendEndpoint: Swift.String?
-  package let backendOtelKey: Swift.String?
-  package let backendTracesSampleRate: Swift.Double?
-  package let backendLogsMinSeverity: Swift.String?
-  package let backendCrashReporting: Swift.Bool?
-  package let backendTracingGates: Purchasely.TelemetryContextGates?
-  package let backendCrashDetectionGates: Purchasely.TelemetryContextGates?
-  package let override: Purchasely.TelemetryDebugOverride?
-  package let overrideCrashReporting: Swift.Bool?
-  package let effectiveMode: Swift.String
-  package let effectiveEndpoint: Swift.String?
-  package let effectiveOtelKey: Swift.String?
-  package let effectiveTracesSampleRate: Swift.Double
-  package let effectiveLogsMinSeverityNumber: Swift.Int
-  package let effectiveCrashReporting: Swift.Bool
-  package let effectiveTracingGates: Purchasely.TelemetryContextGates
-  package let effectiveCrashDetectionGates: Purchasely.TelemetryContextGates
-  package let gatingContext: Swift.String
-  package let isTracingRecording: Swift.Bool
-  package let isCrashDetectionArmed: Swift.Bool
-  package let isActive: Swift.Bool
-  package init(backendMode: Swift.String?, backendEndpoint: Swift.String?, backendOtelKey: Swift.String?, backendTracesSampleRate: Swift.Double?, backendLogsMinSeverity: Swift.String?, backendCrashReporting: Swift.Bool? = nil, backendTracingGates: Purchasely.TelemetryContextGates? = nil, backendCrashDetectionGates: Purchasely.TelemetryContextGates? = nil, override: Purchasely.TelemetryDebugOverride?, overrideCrashReporting: Swift.Bool? = nil, effectiveMode: Swift.String, effectiveEndpoint: Swift.String?, effectiveOtelKey: Swift.String?, effectiveTracesSampleRate: Swift.Double, effectiveLogsMinSeverityNumber: Swift.Int, effectiveCrashReporting: Swift.Bool = false, effectiveTracingGates: Purchasely.TelemetryContextGates = .unspecified, effectiveCrashDetectionGates: Purchasely.TelemetryContextGates = .unspecified, gatingContext: Swift.String, isTracingRecording: Swift.Bool, isCrashDetectionArmed: Swift.Bool, isActive: Swift.Bool)
-}
+package typealias TelemetryDebugOverride = PurchaselyTelemetryAPI.TelemetryDebugOverride
+package typealias TelemetryDebugSnapshot = PurchaselyTelemetryAPI.TelemetryDebugSnapshot
 extension Purchasely {
-  package static func telemetryDebugSnapshot() -> Purchasely.TelemetryDebugSnapshot
-  package static func setTelemetryDebugOverride(_ override: Purchasely.TelemetryDebugOverride?)
+  package static func telemetryDebugSnapshot() async -> Purchasely.TelemetryDebugSnapshot
+  package static func setTelemetryDebugOverride(_ override: Purchasely.TelemetryDebugOverride?) async
 }
 public func loc(_ textToTranslate: Swift.String, comment: Swift.String = "", language: Swift.String? = nil) -> Swift.String
 public struct Safe<Base> : Swift.Decodable where Base : Swift.Decodable {
