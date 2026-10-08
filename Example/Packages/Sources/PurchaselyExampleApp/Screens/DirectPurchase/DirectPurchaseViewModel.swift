@@ -120,10 +120,11 @@ class DirectPurchaseViewModel: ObservableObject {
     
     func storeKit1PurchaseProcess(appleProductId: String, storeOfferId: String?) {
         if let storeOfferId = storeOfferId {
-            Purchasely.signPromotionalOffer(storeProductId: appleProductId, storeOfferId: storeOfferId) { signature in
+            Purchasely.signPromotionalOffer(storeProductId: appleProductId, storeOfferId: storeOfferId, purchaseContextToken: nil) { signature, token in
                 let request = SKProductsRequest(productIdentifiers: Set<String>([appleProductId]))
                 self.productRequestDelegate = ProductRequestDelegate()
                 self.productRequestDelegate?.offerSignature = signature
+                self.productRequestDelegate?.purchaseContextToken = token
                 self.productRequestDelegate?.didFinish = { self.viewState = .success }
                 self.productRequestDelegate?.didFinishWithError = {
                     self.toast = PLYToast(type: .error, title: "Failure", message: "Failed to purchase")
@@ -157,18 +158,15 @@ class DirectPurchaseViewModel: ObservableObject {
 
             
             Purchasely.signPromotionalOffer(storeProductId: appleProductId,
-                                            storeOfferId: promoOfferId) { signature in
+                                            storeOfferId: promoOfferId,
+                                            purchaseContextToken: nil) { signature, token in
                 
                 if let decodedSignature = Data(base64Encoded: signature.signature) {
                     
                     Task {
                         var options: Set<Product.PurchaseOption> = []
-                        // ⚠️ MUST BE LOWERCASED ⚠️
-                        
-                        if let userId = EnvironmentRepository.shared.getUserId(),
-                           let uuid = UUID(uuidString: userId.lowercased()) {
-                            options.insert(.appAccountToken(uuid))
-                        }
+                        // The token returned by the signature goes unchanged into `appAccountToken`.
+                        options.insert(.appAccountToken(token))
                         
                         let offerOption:Product.PurchaseOption = .promotionalOffer(offerID: signature.identifier,
                                                                                    keyID: signature.keyIdentifier,

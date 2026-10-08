@@ -26,6 +26,7 @@ struct PresentationContainerView: View {
             switch self.viewModel.viewState {
             case .content:
                 self.viewModel.paywallView
+                    .overlay(alignment: .bottom) { InfoCard() }
                 
             case .failure(let error):
                 Text(error.debugDescription)
@@ -44,6 +45,24 @@ struct PresentationContainerView: View {
         .navigationBarTitle("")
         .navigationBarHidden(true)
         .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+    }
+}
+
+extension PresentationContainerView {
+    @ViewBuilder
+    func InfoCard() -> some View {
+        if let info = viewModel.info {
+            VStack(alignment: .leading, spacing: 2) {
+                ForEach(info.rows, id: \.0) { row in
+                    Text("\(row.0): \(row.1)")
+                        .font(.caption2.monospaced())
+                }
+            }
+            .padding(8)
+            .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 8))
+            .padding(.bottom, 24)
+            .allowsHitTesting(false)
+        }
     }
 }
 

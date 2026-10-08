@@ -91,9 +91,6 @@ struct LogsView: View {
                 maxHeight: .infinity,
                 alignment: .top)
         .background(Color.main)
-        .onAppear() {
-            Purchasely.addLogger(logger)
-        }
     }
 }
 

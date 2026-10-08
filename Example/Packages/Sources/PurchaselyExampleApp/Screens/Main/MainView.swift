@@ -11,11 +11,15 @@ import Purchasely
 @MainActor
 struct MainView: View {
     @State private var showingSheet = false
-    @State private var path = NavigationPath()
-    
+    // Screen navigation is router-driven; paywall presentation stays local @State below.
+    @StateObject private var router = AppRouter()
+    @State private var selectedSampleDisplayMode: DisplayMode = .modal
+
     @State private var showingQRCodeScannerSheet = false
     @State private var scannedCode: String? = nil
-    
+    @State private var showPushPresentation = false
+    @State private var pushPaywallIdentifier: String? = nil
+
     @StateObject var viewModel: MainViewModel
     
     init(viewModel: MainViewModel = MainViewModel()) {
@@ -40,20 +44,29 @@ struct MainView: View {
             case .content:
                 ContentView()
             case .failure( _):
-                ContentView().toastView(toast: $viewModel.toast)
+                ContentView()
             }
-        }.onAppear() {
+        }
+        // Attached to the Group, not to one branch. It used to hang off `.failure` alone, which was
+        // enough for the only toast that existed then (SDK init failed → the view is in `.failure`
+        // by definition). The web-redemption delegate toast fires while the app sits in `.content`,
+        // so a per-branch modifier would have silently dropped it.
+        .toastView(toast: $viewModel.toast)
+        .onAppear() {
             viewModel.InitPurchaselySDK()
             viewModel.loadConfiguration()
         }.onOpenURL { (url) in
             // Handle url here
-            viewModel.handleDeeplink(url: url)
-        }.preferredColorScheme(.light)
+            viewModel.openDeeplink(url: url.absoluteString)
+        }.onContinueUserActivity(NSUserActivityTypeBrowsingWeb) { activity in
+            guard let url = (activity.webpageURL ?? activity.userInfo?["url"] as? URL) else { return }
+            viewModel.openDeeplink(url: url.absoluteString)
+          }
+        .preferredColorScheme(.light)
     }
-    
-    @ViewBuilder
+
     func ContentView() -> some View {
-        NavigationStack {
+        NavigationStack(path: $router.path) {
             ScrollView {
                 VStack(spacing: 18) {
                     HStack {
@@ -82,8 +95,14 @@ struct MainView: View {
                        alignment: .top)
                 .navigationTitle("")
             }.background(Color.main)
+            // The SDK keeps one interceptor per action, and the Presentation screen replaces them.
+            // Registering again when this screen is back keeps the Observer purchase working.
+            .onAppear { if viewModel.didStart { viewModel.setupPaywallInterceptor() } }
             .alert(item: $viewModel.showAlert) { alert in
-                    Alert(title: Text(alert.title), message: Text(alert.content ?? ""), dismissButton: .default(Text("Ok")))
+                    // Fall back to the error message (mirrors the SDK's controller(for:error:)):
+                    // the redemption "expired" alert has content == nil and carries its
+                    // (email_hint-templated) body via the error.
+                    Alert(title: Text(alert.title), message: Text(alert.content ?? viewModel.alertErrorMessage ?? ""), dismissButton: .default(Text("Ok")))
                 }
             .sheet(isPresented: $showingQRCodeScannerSheet) {
                 // Present your QR code scanner view.
@@ -95,20 +114,45 @@ struct MainView: View {
                     .onChange(of: scannedCode) { newValue in
                         if let code = newValue {
                             // Perform action
-                            viewModel.handleScannedQRCode(code: code)
+                            viewModel.openDeeplink(url: code)
                             // Dismiss the sheet
                             showingQRCodeScannerSheet = false
                             scannedCode = nil
                         }
                     }
             }
+            .navigationDestination(for: AppRoute.self) { route in
+                destinationView(for: route)
+            }
         }
         .accentColor(.white)
     }
-    
-    @ViewBuilder
-    func QRCodeButton() -> some View {
 
+    // Maps a shared AppRoute to its iOS screen. Route decisions live in AppRouter.
+    @ViewBuilder
+    func destinationView(for route: AppRoute) -> some View {
+        switch route {
+        case .settings:          SettingsView()
+        case .deeplinks:         DeeplinksView(mainViewModel: viewModel)
+        case .products:          ProductsView()
+        case .subscriptions:     SubscriptionsView()
+        case .dynamicOfferings:  DynamicOfferingsView()
+        case .attributes:        AttributesView()
+        case .builtInAttributes: BuiltInAttributesView()
+        case .directPurchase:    DirectPurchaseView()
+        case .eventsQueue:       EventsQueueView()
+        case .customEvents:      CustomEventsView()
+        case .logs:              LogsView()
+        case .privacy:           PrivacyView()
+        }
+    }
+
+    /// Presentation replaces the SDK's per-action interceptors; put Main's back when it closes.
+    private func restoreInterceptors() {
+        if viewModel.didStart { viewModel.setupPaywallInterceptor() }
+    }
+
+    func QRCodeButton() -> some View {
         Button(action: {
             self.showingQRCodeScannerSheet = true
         }) {
@@ -118,11 +162,10 @@ struct MainView: View {
                 .font(.title)
         }.frame(maxWidth: .infinity, alignment: .leading)
     }
-    
-    @ViewBuilder
+
     func SettingsButton() -> some View {
-        NavigationLink {
-            SettingsView()
+        Button {
+            router.push(.settings)
         } label: {
             Image(systemName: "gearshape")
                 .foregroundColor(.white)
@@ -134,14 +177,18 @@ struct MainView: View {
     @ViewBuilder
     func InfosView() -> some View {
         if !viewModel.userId.isEmpty ||
+            !viewModel.anonymousUserId.isEmpty ||
             !viewModel.presentationId.isEmpty ||
             !viewModel.placementId.isEmpty ||
             !viewModel.contentId.isEmpty {
             Group {
                 VStack(alignment: .leading, spacing: 8) {
-                    
+
                     if !viewModel.userId.isEmpty {
                         InfoText(observedValue: viewModel.userId, title: "User ID")
+                    }
+                    if !viewModel.anonymousUserId.isEmpty {
+                        InfoText(observedValue: viewModel.anonymousUserId, title: "Anonymous User ID")
                     }
                     if !viewModel.presentationId.isEmpty {
                         InfoText(observedValue: viewModel.presentationId, title: "Presentation ID")
@@ -155,12 +202,11 @@ struct MainView: View {
                 }.padding()
             }.frame(maxWidth: .infinity,
                     maxHeight: .infinity)
-            .background(Color(hex: "#FFFFFF", alpha: 0.3))
+            .background(Color.brandLightGreen.opacity(0.12))
             .cornerRadius(24)
         }
     }
-    
-    @ViewBuilder
+
     func InfoText(observedValue: String, title: String) -> some View {
         VStack(alignment: .leading) {
             Text(title)
@@ -180,97 +226,210 @@ struct MainView: View {
         }.frame(maxWidth: .infinity, alignment: .leading)
     }
     
+    private func handleDefaultDisplay() {
+        // If ViewModel handled it (SDK display), we're done
+        if viewModel.displayDefaultPresentation() { return }
+
+        // Otherwise it's "Display by Sample App" — View handles SwiftUI presentation
+        let mode = viewModel.displayMode
+        switch mode {
+        case .modal, .drawer, .popin:
+            selectedSampleDisplayMode = .modal
+            showingSheet = true
+        case .fullscreen:
+            selectedSampleDisplayMode = .fullscreen
+            showingSheet = true
+        case .push:
+            pushPaywallIdentifier = nil
+            showPushPresentation = true
+        }
+    }
+
     @ViewBuilder
     func PresentationButton() -> some View {
-        switch viewModel.displayMode {
-        case .modal:
-            Button(action: {
-                showingSheet.toggle()
-            }, label: {
-                Text("View Presentation")
-                    .frame(maxWidth: .infinity)
-                    .bold()
-                    .foregroundColor(.black)
-            }).tint(.white)
-                .controlSize(.large) // .large, .medium or .small
-                .buttonStyle(.borderedProminent)
-                .frame(maxWidth: .infinity)
-            .sheet(isPresented: $showingSheet) {
+        Button {
+            handleDefaultDisplay()
+        } label: {
+            // Same shape as `MainViewButton` so it can share a row with one; one line, shrunk if needed.
+            Text("View Presentation")
+                .lineLimit(1)
+                .minimumScaleFactor(0.8)
+                .padding(.horizontal, 8)
+                .frame(maxWidth: .infinity, minHeight: 50)
+                .bold()
+                .foregroundColor(.black)
+                .background(.white)
+                .cornerRadius(12)
+        }
+        .buttonStyle(.plain)
+        .frame(maxWidth: .infinity)
+        .contextMenu {
+            // MARK: - Display API (async/await)
+            Menu("Display API (async/await)") {
+                Menu("Placement") {
+                    displayModeButtons(category: .displayAsyncAwait, source: .placement)
+                }
+                Menu("Presentation") {
+                    displayModeButtons(category: .displayAsyncAwait, source: .presentation)
+                }
+            }
+
+            // MARK: - Display API (ObjC completion)
+            Menu("Display API (completion)") {
+                Menu("Placement") {
+                    displayModeButtons(category: .displayObjC, source: .placement)
+                }
+                Menu("Presentation") {
+                    displayModeButtons(category: .displayObjC, source: .presentation)
+                }
+            }
+
+            Divider()
+
+            // MARK: - Fetch then Display
+            Menu("Fetch then Display") {
+                Button("Placement") {
+                    viewModel.displayPresentation(category: .fetchThenDisplay, source: .placement, displayMode: nil)
+                }
+                Button("Presentation") {
+                    viewModel.displayPresentation(category: .fetchThenDisplay, source: .presentation, displayMode: nil)
+                }
+            }
+
+            Divider()
+
+            // MARK: - Display by Sample App (SwiftUI)
+            Menu("Display by Sample App") {
+                Button("Modal Sheet") {
+                    selectedSampleDisplayMode = .modal
+                    showingSheet = true
+                }
+                Button("FullScreen Cover") {
+                    selectedSampleDisplayMode = .fullscreen
+                    showingSheet = true
+                }
+                Button("Navigation Push") {
+                    pushPaywallIdentifier = nil
+                    showPushPresentation = true
+                }
+
+            }
+        }
+        .sheet(isPresented: Binding(
+            get: { showingSheet && selectedSampleDisplayMode == .modal },
+            set: { if !$0 { showingSheet = false } }
+        ), onDismiss: restoreInterceptors) {
+            PresentationContainerView()
+        }
+        .fullScreenCover(isPresented: Binding(
+            get: { showingSheet && selectedSampleDisplayMode == .fullscreen },
+            set: { if !$0 { showingSheet = false } }
+        ), onDismiss: restoreInterceptors) {
+            PresentationContainerView()
+        }
+        .navigationDestination(isPresented: $showPushPresentation) {
+            if let id = pushPaywallIdentifier {
+                PresentationContainerView(paywallIdentifier: id)
+            } else {
                 PresentationContainerView()
             }
-        case .fullscreen:
-            Button(action: {
-                showingSheet.toggle()
-            }, label: {
-                Text("View Presentation")
-                    .frame(maxWidth: .infinity)
-                    .bold()
-                    .foregroundColor(.black)
-            }).tint(.white)
-                .controlSize(.large) // .large, .medium or .small
-                .buttonStyle(.borderedProminent)
-                .frame(maxWidth: .infinity)
-            .fullScreenCover(isPresented: $showingSheet) {
-                PresentationContainerView()
-            }
-        case .push:
-            NavigationLink(destination: PresentationContainerView()) {
-                MainViewButton(text: "View Presentation")
-            }
+        }
+    }
+
+    @ViewBuilder
+    private func displayModeButtons(category: DisplayMethodCategory, source: SourceType) -> some View {
+        Button("FullScreen") {
+            viewModel.displayPresentation(category: category, source: source,
+                                          displayMode: .fullScreen)
+        }
+        Button("Modal") {
+            viewModel.displayPresentation(category: category, source: source,
+                                          displayMode: .modal)
+        }
+        Button("Drawer (60%)") {
+            viewModel.displayPresentation(category: category, source: source,
+                                          displayMode: .drawer(heightPercentage: 0.6))
+        }
+        Button("Popin (70%)") {
+            viewModel.displayPresentation(category: category, source: source,
+                                          displayMode: .popin(heightPercentage: 0.7))
+        }
+        Button("Push") {
+            viewModel.displayPresentation(category: category, source: source,
+                                          displayMode: .push)
         }
     }
     
     @ViewBuilder
     func ButtonsView() -> some View {
+        if let inlinePaywall = viewModel.inlinePaywall, let presentationView = inlinePaywall.presentation.swiftUIView {
+            presentationView
+                .frame(maxWidth: .infinity)
+                .frame(height: CGFloat(inlinePaywall.presentation.height))
+        }
 
         PresentationButton()
-        
-        NavigationLink(destination: DeeplinksView()) {
+
+        Button { router.push(.deeplinks) } label: {
             MainViewButton(text: "Deeplinks")
-        }
-        
-        NavigationLink(destination: ProductsView()) {
-            MainViewButton(text: "Products and Plans")
-        }
-        
-        NavigationLink(destination: DynamicOfferingsView()) {
+        }.buttonStyle(.plain)
+
+        Button { router.push(.products) } label: {
+            MainViewButton(text: "Products")
+        }.buttonStyle(.plain)
+
+        Button { router.push(.dynamicOfferings) } label: {
             MainViewButton(text: "Dynamic Offerings")
-        }
+        }.buttonStyle(.plain)
 
         ExpendableView(title: "Attributes") {
-            NavigationLink(destination: AttributesView()) {
+            Button { router.push(.attributes) } label: {
                 MainViewButton(text: "User Attributes", defaultColor: false)
-            }
-            
-            NavigationLink(destination: BuiltInAttributesView()) {
+            }.buttonStyle(.plain)
+
+            Button { router.push(.builtInAttributes) } label: {
                 MainViewButton(text: "Built-in Attributes", defaultColor: false)
-            }
+            }.buttonStyle(.plain)
+
         }
-        
-        ExpendableView(title: "Subscriptions Methods") {
-            NavigationLink(destination: DirectPurchaseView()) {
+
+        ExpendableView(title: "SDK Public Methods") {
+            Button { router.push(.directPurchase) } label: {
                 MainViewButton(text: "Direct Purchase", defaultColor: false)
-            }
-            
+            }.buttonStyle(.plain)
+
+            Button { router.push(.subscriptions) } label: {
+                MainViewButton(text: "Subscriptions", defaultColor: false)
+            }.buttonStyle(.plain)
+
             MainViewButton(text: "Synchronize/Restore", defaultColor: false)
                 .onTapGesture {
                     self.viewModel.restore()
                 }
-            
-            NavigationLink(destination: SubscriptionsView()) {
-                MainViewButton(text: "Subscriptions", defaultColor: false)
-            }
+
+            MainViewButton(text: "Restore all products", defaultColor: false)
+                .onTapGesture {
+                    self.viewModel.restoreAllProducts()
+                }
         }
 
+        Button { router.push(.customEvents) } label: {
+            MainViewButton(text: "Custom Events")
+        }.buttonStyle(.plain)
+
         ExpendableView(title: "Events and Logs") {
-            NavigationLink(destination: EventsQueueView()) {
-                MainViewButton(text: "Events Queue", defaultColor: false)
-            }
-            
-            NavigationLink(destination: LogsView()) {
+            Button { router.push(.eventsQueue) } label: {
+                MainViewButton(text: "SDK events", defaultColor: false)
+            }.buttonStyle(.plain)
+
+            Button { router.push(.logs) } label: {
                 MainViewButton(text: "Logs", defaultColor: false)
-            }
+            }.buttonStyle(.plain)
         }
+
+        Button { router.push(.privacy) } label: {
+            MainViewButton(text: "Privacy")
+        }.buttonStyle(.plain)
     }
     
     struct ErrorView: View {
@@ -305,15 +464,18 @@ struct ExpendableView<Content: View>: View {
 
     var body: some View {
         VStack {
+            // Collapsed, the same 50 pt as `MainViewButton`, so the two line up on a shared row.
             Text(title)
                 .font(.headline)
                 .foregroundColor(secondaryColor ? .white : .black)
+                .frame(maxWidth: .infinity, minHeight: 50)
 
             if isExpanded {
                 content // Displays embedded views when expanded
             }
         }
-        .padding()
+        .padding(.horizontal)
+        .padding(.bottom, isExpanded ? 16 : 0)
         .frame(maxWidth: .infinity)
         .background(secondaryColor ? Color.main.cornerRadius(10.0) : Color.white.cornerRadius(10.0))
         .onTapGesture {
@@ -388,6 +550,13 @@ struct MainView_Previews: PreviewProvider {
 @MainActor
 class MockMainViewModel: MainViewModel {
 
+    private let handleDeepLinkClosure: (URL?) -> Bool
+    
+    init(handleDeepLinkClosure: (@escaping (URL?) -> Bool) = { _ in false }) {
+        self.handleDeepLinkClosure = handleDeepLinkClosure
+        super.init()
+    }
+
     override func InitPurchaselySDK() {
         print("MockMainViewModel: InitPurchaselySDK called")
         viewState = .content
@@ -403,16 +572,23 @@ class MockMainViewModel: MainViewModel {
 
     override func loadConfiguration() {
         print("MockMainViewModel: loadConfiguration called")
-        // Simulate configuration loading
     }
 
-    override func handleDeeplink(url: URL) {
-        print("MockMainViewModel: handleDeeplink called with \(url)")
-//        self.toast = Toast(message: "Deeplink received (Preview): \(url.lastPathComponent)")
+    @discardableResult
+    override func handleDeeplink(url: URL?) -> Bool {
+        print("MockMainViewModel: handleDeeplink called with \(url!)")
+        return handleDeepLinkClosure(url)
+    }
+
+    override func openDeeplink(url: String) {
+        print("MockMainViewModel: openDeeplink called with \(url)")
     }
 
     override func restore() {
         print("MockMainViewModel: restore called")
-//        self.showAlert = AlertInfo(title: "Restore Triggered", content: "This is a preview of the restore action.")
+    }
+
+    override func displayPresentation(category: DisplayMethodCategory, source: SourceType, displayMode: PLYTransition?) {
+        print("MockMainViewModel: displayPresentation called - category: \(category.rawValue), source: \(source.rawValue), mode: \(displayMode?.type.displayName ?? "nil")")
     }
 }

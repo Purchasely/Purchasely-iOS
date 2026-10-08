@@ -28,8 +28,7 @@ struct DirectPurchaseView: View {
             ContentView()
         }
     }
-    
-    @ViewBuilder
+
     func ContentView() -> some View {
         VStack {
             Rectangle()

@@ -2,54 +2,44 @@
 //  EventsQueueViewModel.swift
 //  PurchaselySampleV2
 //
-//  Created by Florian Huet on 14/02/2024.
+//  The "SDK events" screen: the events the SDK reports to the public event delegate while the
+//  app runs. The list lives in memory only and starts empty at each launch.
 //
 
 import Foundation
 import Purchasely
 
-struct Wrapper<T> : Codable where T : Codable {
-    let wrapped : T
+struct SDKEvent: Identifiable {
+    let id = UUID()
+    let date = Date()
+    let name: String
+    let properties: [String: Any]
 }
 
-internal struct EventBatchElement: Hashable {
-    var event: String
-    var properties: [String: Any]
-    
-    var identifier: String {
-        return UUID().uuidString
+/// Receives `PLYEventDelegate` callbacks. A singleton registered at SDK start, so the list also
+/// holds the events sent before the screen opens.
+final class SDKEventLog: NSObject, ObservableObject, PLYEventDelegate {
+
+    static let shared = SDKEventLog()
+
+    @Published private(set) var events: [SDKEvent] = []
+
+    private let limit = 200
+
+    func eventTriggered(_ event: PLYEvent, properties: [String: Any]?) {
+        let entry = SDKEvent(name: event.name, properties: properties ?? [:])
+        // The SDK may call the delegate from a background queue.
+        DispatchQueue.main.async {
+            self.events.insert(entry, at: 0)
+            if self.events.count > self.limit { self.events.removeLast(self.events.count - self.limit) }
+        }
     }
-    
-    static func == (lhs: EventBatchElement, rhs: EventBatchElement) -> Bool {
-        return lhs.identifier == rhs.identifier
-    }
-    
-    public func hash(into hasher: inout Hasher) {
-        return hasher.combine(identifier)
+
+    func clear() {
+        events = []
     }
 }
-
-internal typealias EventBatch = [EventBatchElement]
 
 class EventsQueueViewModel: ObservableObject {
-    @Published var events: EventBatch = EventBatch()
-    
-    init() {
-        refreshEvents()
-    }
-    
-    func refreshEvents() {
-        guard let decodedBatchData = try? JSONDecoder().decode(Wrapper<String>.self, from: UserDefaults.standard.object(forKey: "com.purchasely.pending.events") as! Data).wrapped.data(using: .utf8),
-              let decodedBatch = try? JSONSerialization.jsonObject(with: decodedBatchData, options: []) as? [[String: Any]] else { return }
-        
-        var decodedEventsArray: EventBatch = [EventBatchElement]()
-        
-        for eventDict in decodedBatch {
-            let event = EventBatchElement(event: eventDict["event"] as? String ?? "",
-                                          properties: eventDict["properties"] as? [String: Any] ?? [:])
-            decodedEventsArray.append(event)
-        }
-        
-        self.events = decodedEventsArray
-    }
+    let log = SDKEventLog.shared
 }

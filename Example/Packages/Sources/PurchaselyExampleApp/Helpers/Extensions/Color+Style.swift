@@ -13,14 +13,29 @@ struct CustomTextFieldStyle : TextFieldStyle {
         configuration
             .padding(20)
             .background(RoundedRectangle(cornerRadius: 12)
-                .strokeBorder(Color.primary.opacity(0.1), lineWidth: 1))
+                .strokeBorder(Color.brandDarkGreen.opacity(0.15), lineWidth: 1))
     }
 }
 
+/// Purchasely brand swatches, mirroring the `--_swatches---*` tokens on purchasely.com.
 extension Color {
-    public static let main = Color(hex: "#6668F5")
-    public static let mainLight = Color(hex: "#6668F5", alpha: 0.3)
-    public static let backgroundGrey = Color(hex: "#F7F7FD", alpha: 1)
+    public static let brandBlackGreen = Color(hex: "#001614")
+    public static let brandDarkGreen = Color(hex: "#002420")
+    public static let brandDeepGreen = Color(hex: "#00352F")
+    public static let brandLightGreen = Color(hex: "#CEECD0")
+    public static let brandLightGrey = Color(hex: "#EEF3E9")
+    public static let brandCream = Color(hex: "#FFF3D6")
+    public static let brandLavender = Color(hex: "#BDBBFF")
+    public static let brandCoral = Color(hex: "#FFB6B2")
+}
+
+/// Semantic roles the sample app paints with. Mapped onto the brand swatches above:
+/// `main` is the dark chrome surface (`--container--primary` on dark),
+/// `backgroundGrey` the light content surface (`--container--primary` on light).
+extension Color {
+    public static let main = Color.brandDarkGreen
+    public static let mainLight = Color(hex: "#CEECD0", alpha: 0.35)
+    public static let backgroundGrey = Color.brandLightGrey
 }
 
 extension Color {

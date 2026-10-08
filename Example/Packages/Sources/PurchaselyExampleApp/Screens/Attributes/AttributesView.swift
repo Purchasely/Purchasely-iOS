@@ -5,6 +5,7 @@
 //  Created by Florian Huet on 15/12/2023.
 //
 
+import Purchasely
 import SwiftUI
 
 struct AttributesView: View {
@@ -16,6 +17,7 @@ struct AttributesView: View {
     @State private var dateValue: Date = Date()
     
     @State private var selectedType: AttributesViewModel.Types = .Bool
+    @State private var processingLegalBasis: PLYDataProcessingLegalBasis = .optional
     
     @StateObject private var viewModel = AttributesViewModel()
     
@@ -52,42 +54,47 @@ extension AttributesView {
         switch selectedType {
         case .String:
             guard self.value != "" else { return }
-            viewModel.addNewAttribute(key: self.key, value: self.value)
+            viewModel.addNewAttribute(key: self.key, value: self.value, processingLegalBasis: self.processingLegalBasis)
         case .Bool:
-            viewModel.addNewAttribute(key: self.key, value: self.boolValue)
+            viewModel.addNewAttribute(key: self.key, value: self.boolValue, processingLegalBasis: self.processingLegalBasis)
         case .Double:
             guard self.value != "",
                   let doubleValue = Double(value) else { return }
-            viewModel.addNewAttribute(key: self.key, value: doubleValue)
+            viewModel.addNewAttribute(key: self.key, value: doubleValue, processingLegalBasis: self.processingLegalBasis)
         case .Int:
             guard self.value != "",
                   let intValue = Int(value) else { return }
-            viewModel.addNewAttribute(key: self.key, value: intValue)
+            viewModel.addNewAttribute(key: self.key, value: intValue, processingLegalBasis: self.processingLegalBasis)
         case .Date:
-            viewModel.addNewAttribute(key: self.key, value: self.dateValue)
+            viewModel.addNewAttribute(key: self.key, value: self.dateValue, processingLegalBasis: self.processingLegalBasis)
         case .StringArray:
             let attributeArray: [String] = self.value.components(separatedBy: ";")
-            viewModel.addNewAttribute(key: self.key, value: attributeArray)
+            viewModel.addNewAttribute(key: self.key, value: attributeArray, processingLegalBasis: self.processingLegalBasis)
         case .BoolArray:
             let attributeArray: [Bool] = self.value.components(separatedBy: ";")
                 .compactMap { Bool($0) }
-            viewModel.addNewAttribute(key: self.key, value: attributeArray)
+            viewModel.addNewAttribute(key: self.key, value: attributeArray, processingLegalBasis: self.processingLegalBasis)
         case .IntArray:
             let attributeArray: [Int] = self.value.components(separatedBy: ";")
                 .compactMap { Int($0) }
-            viewModel.addNewAttribute(key: self.key, value: attributeArray)
+            viewModel.addNewAttribute(key: self.key, value: attributeArray, processingLegalBasis: self.processingLegalBasis)
         case .DoubleArray:
             let attributeArray: [Double] = self.value.components(separatedBy: ";")
                 .compactMap { Double($0) }
-            viewModel.addNewAttribute(key: self.key, value: attributeArray)
+            viewModel.addNewAttribute(key: self.key, value: attributeArray, processingLegalBasis: self.processingLegalBasis)
         }
     }
     
+    /// Increment / decrement work on the Int attribute named in "Key", by the Int in "Value" (1 if empty).
+    private func step(_ change: (String, Int, PLYDataProcessingLegalBasis) -> Void) {
+        guard key != "" else { return }
+        change(key, Int(value) ?? 1, processingLegalBasis)
+    }
+
     private func delete(indexSet: IndexSet?) {
         viewModel.removeAttribute(index: indexSet)
     }
-    
-    @ViewBuilder
+
     func AttributesListView() -> some View {
         List {
             ForEach(viewModel.attributes, id: \.self) { attr in
@@ -98,6 +105,7 @@ extension AttributesView {
                     Text("Type: \(attr.type)")
                         .font(.title3)
                     Text(verbatim: "Value: \(attr.value)")
+                    Text(verbatim: "Processing Legal Basis: \(Self.name(for: attr.processingLegalBasis))")
                 }
             }
             .onDelete(perform: delete)
@@ -105,8 +113,7 @@ extension AttributesView {
 
         }.listRowSpacing(10)
     }
-    
-    @ViewBuilder
+
     func AttributeGroupView() -> some View {
         VStack {
             VStack(spacing: 16) {
@@ -129,10 +136,26 @@ extension AttributesView {
                         .accentColor(.main)
                         .padding(.vertical)
                 }.frame(height: 80)
+                    .cornerRadius(12)
+                    .padding(.horizontal)
                     .listRowSeparator(.hidden)
                     .listStyle(.inset)
-                    .scrollDisabled(true)
-                    .card()
+                    .shadow(color: .gray.opacity(0.5), radius: 3, x: 1, y: 1)
+                
+                List {
+                    Picker("Processing Basis", selection: $processingLegalBasis) {
+                        ForEach(PLYDataProcessingLegalBasis.allCases, id: \.self) {
+                            Text(Self.name(for: $0))
+                        }
+                    }.pickerStyle(.menu)
+                        .accentColor(.main)
+                        .padding(.vertical)
+                }.frame(height: 80)
+                    .cornerRadius(12)
+                    .padding(.horizontal)
+                    .listRowSeparator(.hidden)
+                    .listStyle(.inset)
+                    .shadow(color: .gray.opacity(0.5), radius: 3, x: 1, y: 1)
                 
                 ValueTextFieldView()
                 
@@ -146,11 +169,22 @@ extension AttributesView {
                     .padding(.vertical, 16)
                     .padding(.horizontal)
                     .frame(maxWidth: .infinity)
+
+                HStack {
+                    Button("Increment") { step(viewModel.increment) }
+                    Button("Decrement") { step(viewModel.decrement) }
+                    Button("Clear all", role: .destructive) { viewModel.clearAll() }
+                }
+                .tint(.main)
+                .buttonStyle(.bordered)
+                .padding(.bottom, 16)
             }
             
-        }
-        .card()
-        .padding(.top, 15)
+        }.background(Color.white)
+            .cornerRadius(12)
+            .shadow(color: .gray.opacity(0.5), radius: 3, x: 1, y: 1)
+            .padding(.horizontal, 15)
+            .padding(.top, 15)
     }
     
     @ViewBuilder
@@ -170,21 +204,9 @@ extension AttributesView {
                 Text("Value").padding(.horizontal)
                     .padding(.leading)
                 
-                if #available(iOS 17.0, *) {
-                    Toggle(isOn: $boolValue) { }
-                        .toggleStyle(SwitchToggleStyle(tint: .main))
-                        .padding(24)
-                        .onChange(of: boolValue) {
-                            
-                        }
-                } else {
-                    Toggle(isOn: $boolValue) { }
-                        .toggleStyle(SwitchToggleStyle(tint: .main))
-                        .padding(24)
-                        .onChange(of: boolValue, perform: { value in
-                            
-                        })
-                }
+                Toggle(isOn: $boolValue) { }
+                    .toggleStyle(SwitchToggleStyle(tint: .main))
+                    .padding(24)
             }
         case .Double, .Int:
             TextField("Value", text: $value)
@@ -207,6 +229,17 @@ extension AttributesView {
                 .onAppear {
                     UITextField.appearance().clearButtonMode = .whileEditing
                 }
+        }
+    }
+    
+    static func name(for privacyFeaturesProcessingLegalBasis: PLYDataProcessingLegalBasis?) -> String {
+        switch privacyFeaturesProcessingLegalBasis {
+        case .optional:
+            "consent"
+        case .essential:
+            "legitimate interest"
+        case .none:
+            "unknown"
         }
     }
 }

@@ -10,21 +10,12 @@
       }
     },
     {
-      "identity" : "ohhttpstubs",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/AliSoftware/OHHTTPStubs.git",
-      "state" : {
-        "revision" : "12f19662426d0434d6c330c6974d53e2eb10ecd9",
-        "version" : "9.1.0"
-      }
-    },
-    {
       "identity" : "purchasely-ios",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Purchasely/Purchasely-iOS",
       "state" : {
-        "revision" : "4280dd1e1caaca0887c6ae28dce8143483179865",
-        "version" : "5.3.2"
+        "revision" : "82f50b546e26f0df4a04b49af3bc694fe4949b96",
+        "version" : "6.2.0"
       }
     }
   ],

@@ -19,21 +19,19 @@ struct ProductsView: View {
     @StateObject var viewModel = ProductsViewModel()
     
     var body: some View {
-        
         VStack {
-            
             Rectangle()
                 .foregroundColor(.main)
                 .frame(maxHeight: 1)
                 .navigationBarTitle("Products and Plans", displayMode: .inline)
-            
             ProductListView()
                 .background(Color.white)
                 .searchable(text: $viewModel.searchQuery, prompt: "Products and Plans")
             
-        }.frame(maxWidth: .infinity,
-                maxHeight: .infinity,
-                alignment: .top)
+        }
+        .frame(maxWidth: .infinity,
+               maxHeight: .infinity,
+               alignment: .top)
         .background(Color.main)
     }
 }
@@ -134,14 +132,28 @@ struct PlanView: View {
                 labelWithValue("intro. period", with: plan.plyPlan.introductoryPeriod())
                 labelWithValue("localized period", with: plan.plyPlan.localizedPeriod())
                 labelWithValue("localized intro. period", with: plan.plyPlan.localizedIntroductoryPeriod())
+//                labelWithValue("period unit", with: plan.plyPlan.period)
+//                labelWithValue("free trial period unit", with: plan.plyPlan)
                 Divider()
                 labelWithValue("duration", with: plan.plyPlan.duration)
                 labelWithValue("intro. duration", with: plan.plyPlan.introductoryDuration())
                 labelWithValue("localized intro. duration", with: plan.plyPlan.localizedIntroductoryDuration())
+//                labelWithValue("localized trial duration", with: plan.plyPlan)
                 Divider()
                 labelWithValue("amount", with: plan.plyPlan.amount)
                 labelWithValue("currency code", with: plan.plyPlan.currencyCode)
                 labelWithValue("currency symbol", with: plan.plyPlan.currencySymbol)
+//                Divider()
+//                labelWithValue("daily price", with: <#T##CustomStringConvertible?#>)
+//                labelWithValue("weekly price", with: <#T##CustomStringConvertible?#>)
+//                labelWithValue("monthly price", with: <#T##CustomStringConvertible?#>)
+//                labelWithValue("yearly price", with: <#T##CustomStringConvertible?#>)
+//                Divider()
+//                labelWithValue("duration in days", with: <#T##CustomStringConvertible?#>)
+//                labelWithValue("duration in weeks", with: <#T##CustomStringConvertible?#>)
+//                labelWithValue("duration in months", with: <#T##CustomStringConvertible?#>)
+//                labelWithValue("duration in quarters", with: <#T##CustomStringConvertible?#>)
+//                labelWithValue("duration in years", with: <#T##CustomStringConvertible?#>)
             }
         }
         .font(.subheadline)

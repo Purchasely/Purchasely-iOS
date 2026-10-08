@@ -15,7 +15,7 @@ struct MainViewButton: View {
         Text(text).frame(maxWidth: .infinity, minHeight: 50)
             .bold()
             .background(defaultColor ? .white : .main)
-            .foregroundColor(defaultColor ? .black : .white)
+            .foregroundColor(defaultColor ? .main : .white)
             .cornerRadius(12)
     }
 }

@@ -24,7 +24,7 @@ public struct CardViewModifier: ViewModifier {
         content
             .background(Color.white)
             .cornerRadius(Constants.cornerRadius)
-            .shadow(color: .gray.opacity(0.5),
+            .shadow(color: .brandDarkGreen.opacity(0.2),
                     radius: Constants.shadowRadius,
                     x: Constants.shadowXOffset,
                     y: Constants.shadowYOffset)

@@ -13,9 +13,8 @@ let package = Package(
             targets: ["PurchaselyExampleApp"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/Purchasely/Purchasely-iOS", from: .init(5, 3, 2)),
-        .package(url: "https://github.com/airbnb/lottie-spm.git", from: .init(4, 5, 1)),
-        .package(url: "https://github.com/AliSoftware/OHHTTPStubs.git", from: .init(9, 1, 0))
+        .package(url: "https://github.com/Purchasely/Purchasely-iOS", from: .init(6, 2, 0)),
+        .package(url: "https://github.com/airbnb/lottie-spm.git", from: .init(4, 5, 1))
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
@@ -24,13 +23,17 @@ let package = Package(
             name: "PurchaselyExampleApp",
             dependencies: [
                 .product(name: "Purchasely", package: "purchasely-ios"),
-                .product(name: "Lottie", package: "lottie-spm"),
-                .product(name: "OHHTTPStubs", package: "OHHTTPStubs")
+                .product(name: "Lottie", package: "lottie-spm")
             ],
             resources: [
                 .process("Assets.xcassets"),
                 .process("Resources")
             ]
+        ),
+        .testTarget(
+            name: "PurchaselyExampleAppTests",
+            dependencies: ["PurchaselyExampleApp"],
+            path: "Tests/PurchaselyExampleAppTests"
         )
     ]
 )

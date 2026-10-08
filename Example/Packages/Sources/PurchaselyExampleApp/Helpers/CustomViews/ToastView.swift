@@ -104,26 +104,26 @@ struct PLYToastModifier: ViewModifier {
             .overlay(
                 ZStack {
                     mainToastView()
-                        .offset(y: -30)
                 }.animation(.spring(), value: toast)
             )
             .onChange(of: toast) { value in
                 showToast()
             }
     }
-    
+
     @ViewBuilder func mainToastView() -> some View {
         if let toast = toast {
             VStack {
-                Spacer()
                 PLYToastView(
                     type: toast.type,
                     title: toast.title,
                     message: toast.message) {
                         dismissToast()
                     }
+                    .padding(.top, 50)
+                Spacer()
             }
-            .transition(.move(edge: .bottom))
+            .transition(.move(edge: .top))
         }
     }
     

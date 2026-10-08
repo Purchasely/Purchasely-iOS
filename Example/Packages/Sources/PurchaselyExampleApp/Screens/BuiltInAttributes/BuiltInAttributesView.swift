@@ -16,8 +16,7 @@ struct BuiltInAttributesView: View {
             viewModel.loadAttributes()
         }
     }
-    
-    @ViewBuilder
+
     func ContentView() -> some View {
         VStack {
             Rectangle()

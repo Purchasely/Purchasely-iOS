@@ -45,8 +45,7 @@ struct DynamicOfferingsView: View {
                 alignment: .top)
         .background(Color.main)
     }
-    
-    @ViewBuilder
+
     func DynamicOfferingsEditionView() -> some View {
         VStack {
             VStack(spacing: 16) {
@@ -127,8 +126,7 @@ struct DynamicOfferingsView: View {
         .card()
         .padding(.top, 15)
     }
-    
-    @ViewBuilder
+
     func DynamicOfferingsListView() -> some View {
         List {
             ForEach(viewModel.offerings, id: \.self) { offering in
