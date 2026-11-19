@@ -572,6 +572,7 @@ typedef SWIFT_ENUM(NSInteger, PLYDataProcessingLegalBasis, open) {
 
 SWIFT_CLASS("_TtC10Purchasely24PLYDataProcessingPurpose")
 @interface PLYDataProcessingPurpose : NSObject
+/// Same set as Android’s <code>AllNonEssentials</code>. <code>refundHandling</code> stays out: it is iOS only, about Apple refund requests.
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, strong) PLYDataProcessingPurpose * _Nonnull allNonEssentials;)
 + (PLYDataProcessingPurpose * _Nonnull)allNonEssentials SWIFT_WARN_UNUSED_RESULT;
 + (void)setAllNonEssentials:(PLYDataProcessingPurpose * _Nonnull)value;
@@ -593,6 +594,9 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, strong) PLYDataProcessingPurpo
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, strong) PLYDataProcessingPurpose * _Nonnull refundHandling;)
 + (PLYDataProcessingPurpose * _Nonnull)refundHandling SWIFT_WARN_UNUSED_RESULT;
 + (void)setRefundHandling:(PLYDataProcessingPurpose * _Nonnull)value;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, strong) PLYDataProcessingPurpose * _Nonnull supportInvestigation;)
++ (PLYDataProcessingPurpose * _Nonnull)supportInvestigation SWIFT_WARN_UNUSED_RESULT;
++ (void)setSupportInvestigation:(PLYDataProcessingPurpose * _Nonnull)value;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -651,6 +655,8 @@ typedef SWIFT_ENUM(NSInteger, PLYEvent, open) {
   PLYEventWebCheckoutTimedOut = 45,
   PLYEventRedemptionConsumed = 46,
   PLYEventRedemptionFailed = 47,
+  PLYEventExperimentAssigned = 48,
+  PLYEventExperimentExposed = 49,
 };
 
 SWIFT_PROTOCOL("_TtP10Purchasely16PLYEventDelegate_")
@@ -778,6 +784,10 @@ typedef SWIFT_ENUM(NSInteger, PLYEventProperty, open) {
 /// APPENDED, like <code>redemption</code>: see above.
   PLYEventPropertyTriggeringEventType = 111,
   PLYEventPropertyTriggeringEventName = 112,
+/// The experiment an <code>EXPERIMENT_ASSIGNED</code> / <code>EXPERIMENT_EXPOSED</code> is about (Campaigns v2).
+/// APPENDED, like <code>redemption</code>.
+  PLYEventPropertyExperimentId = 113,
+  PLYEventPropertyExperimentVariantId = 114,
 };
 
 typedef SWIFT_ENUM(NSInteger, PLYEventType, open) {
@@ -987,6 +997,17 @@ SWIFT_PROTOCOL("_TtP10Purchasely15PLYPresentation_")
 - (void)displayFrom:(UIViewController * _Nullable)sourceViewController transitionType:(PLYTransition * _Nullable)transitionType;
 - (void)close;
 - (void)back;
+/// Tells Purchasely that the user was exposed to this presentation, for a campaign’s experiment
+/// arm that shows no screen.
+/// A campaign’s experiment can serve a “no screen” arm: the presentation’s <code>type</code> is <code>.deactivated</code>.
+/// <code>display()</code> on it shows nothing and counts the exposure. An app that does not call <code>display()</code>
+/// on it (an inline placement, for example) calls this method instead, at the moment the user would
+/// have seen the screen. Each call counts one exposure: <code>EXPERIMENT_EXPOSED</code> is sent, and the
+/// exposure counts for the campaign’s capping.
+/// On a presentation of any other type it does nothing but log a warning: a screen the SDK shows is
+/// exposed by the SDK.
+/// You can call it from any thread: the exposure is recorded on the main thread.
+- (void)exposed;
 - (void)executeConnection:(PLYConnection * _Nullable)connection;
 /// Mirrors <code>PLYPresentationRequest.preload</code> for symmetry with the Android
 /// <code>PLYPresentation</code> API. By the time you hold a <code>PLYPresentation</code> the
@@ -998,12 +1019,28 @@ SWIFT_PROTOCOL("_TtP10Purchasely15PLYPresentation_")
 /// error if the fetch / display failed. The builder seeds this; consumers
 /// can swap it at any time before the event fires.
 @property (nonatomic, copy) void (^ _Nullable onPresented)(id <PLYPresentation> _Nullable, NSError * _Nullable);
-/// Fires when the user requests to close the presentation (tap close,
-/// swipe down, hardware back). The presentation is not fully dismissed
-/// yet — see <code>onDismissed</code> for the post-dismissal outcome.
+/// Fires when a standard presentation is dismissed with a cancellation
+/// outcome. For app-owned inline content, it asks the app to remove the
+/// content on user close or an SDK close request, including programmatic
+/// close and purchase or restore completion; the SDK does not navigate or
+/// dismiss the app’s host. If a pending inline cancellation is superseded by
+/// purchase or restore, this callback can fire again for the updated outcome,
+/// so make inline removal idempotent. Without this callback, <code>onDismissed</code>
+/// fires at once and the SDK leaves the inline content in place. See
+/// <code>onDismissed</code> for the final outcome after actual removal.
 @property (nonatomic, copy) void (^ _Nullable onCloseRequested)(void);
-/// Fires when the presentation is fully dismissed, delivering the
-/// outcome (purchase result + plan).
+/// Fires once with the final outcome (purchase result + plan). For a
+/// standard presentation, it fires when the SDK closes the presentation.
+/// For app-owned inline content with <code>onCloseRequested</code>, it fires after the
+/// app removes the content and delivers a pending close outcome or the
+/// existing UIKit modal/navigation cancellation; without
+/// <code>onCloseRequested</code>, it fires at once. A result that
+/// arrives while the child is detached fires at once after <code>onCloseRequested</code>.
+/// If the app removes the child under a UIKit parent or removes its host
+/// before the SDK requests removal, no outcome is invented; late results from
+/// that display are ignored until the presentation is attached or appears
+/// again. Modal dismissals and navigation pops keep their existing
+/// cancellation callbacks.
 @property (nonatomic, copy) void (^ _Nullable onDismissed)(PLYPresentationOutcome * _Nonnull);
 @end
 
@@ -1398,6 +1435,43 @@ typedef SWIFT_ENUM(NSInteger, PLYUserAttributeType, open) {
   PLYUserAttributeTypeUnknown = 10,
 };
 
+SWIFT_ENUM_FWD_DECL(NSInteger, PLYUserSubscriptionStatusReason)
+/// The user subscription status, as the SDK sends it to a <code>PLYUserSubscriptionStatusDelegate</code>.
+SWIFT_CLASS("_TtC10Purchasely25PLYUserSubscriptionStatus")
+@interface PLYUserSubscriptionStatus : NSObject
+/// <code>true</code> when the user has one or more active subscriptions. Non-consumables do not count.
+@property (nonatomic, readonly) BOOL isActive;
+/// Why the SDK sends this status. <code>.none</code> for a status call.
+@property (nonatomic, readonly) enum PLYUserSubscriptionStatusReason reason;
+/// The subscription of this call. <code>nil</code> only in a status call for a user with no subscription: <code>isActive</code> is then <code>false</code>.
+@property (nonatomic, readonly, strong) PLYSubscription * _Nullable subscription;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+/// Receives the user subscription status.
+/// The SDK holds the delegate weakly. The SDK calls the delegate on the main thread.
+SWIFT_PROTOCOL("_TtP10Purchasely33PLYUserSubscriptionStatusDelegate_")
+@protocol PLYUserSubscriptionStatusDelegate
+/// Called with a status call (<code>reason</code> is <code>.none</code>) or with a change: a subscription of the user is purchased,
+/// restored, redeemed from the web or expired.
+- (void)userSubscriptionStatusUpdated:(PLYUserSubscriptionStatus * _Nonnull)status;
+@end
+
+/// Why the SDK sends a user subscription status.
+typedef SWIFT_ENUM(NSInteger, PLYUserSubscriptionStatusReason, open) {
+/// A status call: the SDK tells the current status, nothing changed.
+  PLYUserSubscriptionStatusReasonNone = 0,
+/// The user bought a subscription.
+  PLYUserSubscriptionStatusReasonPurchased = 1,
+/// The user restored a subscription.
+  PLYUserSubscriptionStatusReasonRestored = 2,
+/// A subscription is no longer active.
+  PLYUserSubscriptionStatusReasonExpired = 3,
+/// A subscription new for the SDK arrived through a Web2App redemption (<code>ply/redeem</code>).
+  PLYUserSubscriptionStatusReasonWebRedeemed = 4,
+};
+
 typedef SWIFT_ENUM(NSInteger, PLYWebCheckoutProvider, open) {
   PLYWebCheckoutProviderStripe = 0,
   PLYWebCheckoutProviderOther = 1,
@@ -1498,8 +1572,8 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 /// (<code>.appUserId(...)</code>, <code>.runningMode(...)</code>, <code>.environment(...)</code>, …) and two
 /// terminal methods: a sync <code>start(initialized:)</code> and a Swift Concurrency
 /// <code>start() async throws</code>.
-/// Defaults on the returned builder reflect the current state of
-/// <code>PurchaselyImplementation.shared</code>, so values set via the deprecated pre-<code>start</code>
+/// Defaults on the returned builder reflect the SDK’s current state,
+/// so values set via the deprecated pre-<code>start</code>
 /// class funcs (<code>setEnvironment</code>, <code>setShowPromotedInAppPurchasePaywall</code>,
 /// <code>setAppTechnology</code>, <code>setSdkBridgeVersion</code>, <code>setThemeMode</code>) are preserved.
 /// Chain modifiers override.
@@ -1650,6 +1724,13 @@ SWIFT_ENUM_FWD_DECL(NSInteger, PLYThemeMode)
 + (void)setEventCallback:(void (^ _Nonnull)(enum PLYEvent, NSDictionary<NSString *, id> * _Nullable))callback;
 + (void)setEventDelegate:(id <PLYEventDelegate> _Nonnull)delegate;
 + (void)removeEventDelegate;
+/// Adds a delegate that receives the user subscription status: purchased, restored and expired changes.
+/// Each call carries <code>isActive</code>, <code>reason</code> and the <code>subscription</code> of the call.
+/// The SDK also sends the delegate one status call (<code>reason</code> is <code>.none</code>) when the status is already known.
+/// The SDK holds the delegate weakly and calls it on the main thread.
++ (void)addUserSubscriptionStatusDelegate:(id <PLYUserSubscriptionStatusDelegate> _Nonnull)delegate;
+/// Removes a delegate added with <code>addUserSubscriptionStatusDelegate(_:)</code>.
++ (void)removeUserSubscriptionStatusDelegate:(id <PLYUserSubscriptionStatusDelegate> _Nonnull)delegate;
 /// Sets the Custom Screen UIKit delegate.
 /// note:
 /// should be called after the SDK has started.

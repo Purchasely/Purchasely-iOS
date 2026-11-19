@@ -6,6 +6,7 @@ import AVFoundation
 import AVKit
 import Combine
 import CommonCrypto
+import Compression
 import CoreGraphics
 import Foundation
 import Foundation/*.Bundle*/
@@ -46,6 +47,7 @@ extension Foundation.NSLock {
   @objc public static var personalization: PLYDataProcessingPurpose
   @objc public static var thirdPartyIntegrations: PLYDataProcessingPurpose
   @objc public static var refundHandling: PLYDataProcessingPurpose
+  @objc public static var supportInvestigation: PLYDataProcessingPurpose
   @objc deinit
 }
 @objc public enum PLYDataProcessingLegalBasis : Swift.Int, Swift.CaseIterable {
@@ -187,13 +189,34 @@ public struct PLYExposureWindow : Swift.Decodable {
   public init(from decoder: any Swift.Decoder) throws
 }
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class PLYCampaign : ObjectiveC.NSObject, Swift.Decodable, Swift.Identifiable {
-  public var id: Swift.String?
-  public var publicId: Swift.String?
-  public var startsAt: Foundation.Date?
-  public var endsAt: Foundation.Date?
-  public var frequencyCap: PLYFrequencyCap?
-  public var impressionCap: PLYImpressionCap?
-  public var exposureWindow: PLYExposureWindow?
+  public var id: Swift.String? {
+    get
+    set
+  }
+  public var publicId: Swift.String? {
+    get
+    set
+  }
+  public var startsAt: Foundation.Date? {
+    get
+    set
+  }
+  public var endsAt: Foundation.Date? {
+    get
+    set
+  }
+  public var frequencyCap: PLYFrequencyCap? {
+    get
+    set
+  }
+  public var impressionCap: PLYImpressionCap? {
+    get
+    set
+  }
+  public var exposureWindow: PLYExposureWindow? {
+    get
+    set
+  }
   required public init(from decoder: any Swift.Decoder) throws
   public typealias ID = Swift.String?
   @objc deinit
@@ -441,6 +464,8 @@ extension PLYError : Foundation.LocalizedError {
   case webCheckoutTimedOut
   case redemptionConsumed
   case redemptionFailed
+  case experimentAssigned
+  case experimentExposed
   public var name: Swift.String {
     get
   }
@@ -574,6 +599,8 @@ extension Foundation.NSString {
   case purchaseContextToken
   case triggeringEventType
   case triggeringEventName
+  case experimentId
+  case experimentVariantId
   public var name: Swift.String {
     get
   }
@@ -1040,6 +1067,33 @@ extension PLYTransitionType : Swift.Codable {
     get
   }
 }
+@objc public enum PLYUserSubscriptionStatusReason : Swift.Int {
+  case none
+  case purchased
+  case restored
+  case expired
+  case webRedeemed
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public protocol PLYUserSubscriptionStatusDelegate {
+  @objc func userSubscriptionStatusUpdated(_ status: PLYUserSubscriptionStatus)
+}
+@_hasMissingDesignatedInitializers @objc public class PLYUserSubscriptionStatus : ObjectiveC.NSObject {
+  @objc public var isActive: Swift.Bool {
+    @objc get
+  }
+  @objc public var reason: PLYUserSubscriptionStatusReason {
+    @objc get
+  }
+  @objc public var subscription: PLYSubscription? {
+    @objc get
+  }
+  @objc deinit
+}
 @_hasMissingDesignatedInitializers @objc final public class PLYWebRedemptionContext : ObjectiveC.NSObject {
   @objc final public var subscription: PLYSubscription? {
     @objc get
@@ -1194,6 +1248,7 @@ public enum PLYLabelHighlightsError : Swift.Error {
   @objc(displayFrom:transitionType:) func display(from sourceViewController: UIKit.UIViewController?, transitionType: PLYTransition?)
   @objc func close()
   @objc func back()
+  @objc func exposed()
   @objc(executeConnection:) func executeConnection(_ connection: PLYConnection?)
   @objc(preloadWithCompletion:) func preload(completion: @escaping ((any PLYPresentation)?, (any Swift.Error)?) -> Swift.Void)
   @objc var onPresented: (((any PLYPresentation)?, (any Swift.Error)?) -> Swift.Void)? { get set }
@@ -1281,6 +1336,8 @@ extension Purchasely {
   @objc dynamic public class func setEventCallback(_ callback: @escaping (PLYEvent, [Swift.String : Any]?) -> ())
   @objc dynamic public class func setEventDelegate(_ delegate: any PLYEventDelegate)
   @objc dynamic public class func removeEventDelegate()
+  @objc dynamic public class func addUserSubscriptionStatusDelegate(_ delegate: any PLYUserSubscriptionStatusDelegate)
+  @objc dynamic public class func removeUserSubscriptionStatusDelegate(_ delegate: any PLYUserSubscriptionStatusDelegate)
   @objc dynamic public class func setCustomScreenViewControllerDelegate(_ delegate: any PLYCustomScreenViewControllerDelegate)
   @objc dynamic public class func removeCustomScreenViewControllerDelegate()
   public class func setCustomScreenViewDelegate<T>(_ delegate: T) where T : PLYCustomScreenViewDelegate
@@ -1445,6 +1502,7 @@ extension Swift.String {
   public func isNULL() -> Swift.Bool
 }
 extension Foundation.NSNotification.Name {
+  @available(*, deprecated, message: "Use Purchasely.addUserSubscriptionStatusDelegate(_:)")
   public static let ply_purchasedSubscription: Foundation.Notification.Name
   public static let ply_eligibilityUpdated: Foundation.Notification.Name
 }
@@ -1644,6 +1702,9 @@ extension PLYTransitionType : Swift.RawRepresentable {}
 extension PLYUserAttributeType : Swift.Equatable {}
 extension PLYUserAttributeType : Swift.Hashable {}
 extension PLYUserAttributeType : Swift.RawRepresentable {}
+extension PLYUserSubscriptionStatusReason : Swift.Equatable {}
+extension PLYUserSubscriptionStatusReason : Swift.Hashable {}
+extension PLYUserSubscriptionStatusReason : Swift.RawRepresentable {}
 extension LocalReceiptError : Swift.Equatable {}
 extension LocalReceiptError : Swift.Hashable {}
 extension PLYPresentationType : Swift.Equatable {}
